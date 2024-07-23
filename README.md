@@ -1,11 +1,12 @@
 # edumfa-authenticator
 Authenticator App for eduMFA Authentication Server
 
-The edumfa-authenticator currently support HOTP and TOTP (30 and 60 seconds) and also eduMFA's PUSH authentication. Supported hashing algorithms are SHA-1, SHA-256 and SHA-512.
-It also supports scanning qr codes that match the [Google Authenticator Key URI](https://github.com/google/google-authenticator/wiki/Key-Uri-Format) format.
+The edumfa-authenticator is the official eduMFA's PUSH authentication companion.
 
-The App is best used with [eduMFA](https://github.com/edumfa/edumfa), and runs on both Android and iOS.
+The App is to be used with [eduMFA](https://github.com/edumfa/edumfa), and runs on both Android and iOS.
 The edumfa-authenticator can also be configured to support PUSH authentication without Firebase.
+
+The App is a fork of [pi-authenticator](https://github.com/privacyidea/pi-authenticator) with most features removed to ease usability.
 
 # Development
 
@@ -15,8 +16,6 @@ The app can be build for android by running `flutter build apk [--release | --de
 For testing purposes the application can be run in release mode by running `flutter run --release`.
 
 For serializing the model of this application (i.e., the tokens) we use generated files. If the model was changed, run the script `update_serialization.sh` to update the generated files.
-
-Building a version of the app prior to `v4.0.0` requires an old version of flutter, this can be done by, e.g., `git checkout tags/1.22.6`.
 
 # Tests
 
