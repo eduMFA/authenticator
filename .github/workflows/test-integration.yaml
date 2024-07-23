@@ -6,7 +6,7 @@ on:
     pull_request:
 jobs:
     drive_android:
-      runs-on: macos-latest
+      runs-on: ubuntu-latest
       strategy:
         matrix:
           api-level: [29]

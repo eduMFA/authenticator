@@ -27,11 +27,11 @@ jobs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        flutter-version: '3.16.5'
-    - run: "flutter upgrade"
+        flutter-version: '3.19.0'
+    # - run: "flutter upgrade"
     - run: "flutter --version"
     - run: "flutter pub get"
-    - run: "flutter build ios -t 'lib/main.dart' --debug --flavor edumfa --no-codesign"
+    - run: "flutter build ios -t 'lib/main.dart' --debug --no-codesign"
 
   build_appbundle:
     name: (Android)
@@ -54,7 +54,7 @@ jobs:
         with:
           channel: 'stable'
           flutter-version: '3.19.0'
-      - run: "flutter upgrade"
+      # - run: "flutter upgrade"
       - run: "flutter --version"
       - run: "flutter pub get"
       - run: 'flutter clean'
