@@ -61,7 +61,7 @@ void _testPushToken() {
       expect(pushToken.rolloutState, PushTokenRollOutState.rolloutNotStarted);
       expect(pushToken.pushRequests, PushRequestQueue());
       expect(pushToken.knownPushRequests.list, CustomIntBuffer().list);
-      expect(pushToken.type, 'PIPUSH');
+      expect(pushToken.type, 'EDUMFA_PUSH');
       expect(pushToken.sortIndex, 0);
       expect(pushToken.tokenImage, 'example.png');
       expect(pushToken.folderId, 0);
@@ -226,7 +226,7 @@ void _testPushToken() {
       expect(token.tokenImage, 'example.png');
       expect(token.folderId, 0);
       expect(token.sortIndex, 0);
-      expect(token.type, 'PIPUSH');
+      expect(token.type, 'EDUMFA_PUSH');
       expect(token.expirationDate.toString(), DateTime(2017, 9, 7, 17, 30).toString());
       expect(token.serial, 'serial');
       expect(token.sslVerify, true);
@@ -254,7 +254,7 @@ void _testPushToken() {
         "folderId": 0,
         "sortIndex": 0,
         "origin": null,
-        "type": "PIPUSH",
+        "type": "EDUMFA_PUSH",
         "expirationDate": "2017-09-07T17:30:00.000",
         "serial": "serial",
         "sslVerify": true,
@@ -273,7 +273,7 @@ void _testPushToken() {
     group('fromUriMap', () {
       test('with full map', () {
         final uriMap = <String, dynamic>{
-          'URI_TYPE': 'PIPUSH',
+          'URI_TYPE': 'EDUMFA_PUSH',
           'URI_LABEL': 'label',
           'URI_ISSUER': 'issuer',
           'URI_SERIAL': 'serial',
@@ -283,7 +283,7 @@ void _testPushToken() {
           'URI_TTL': 10,
         };
         final token = PushToken.fromUriMap(uriMap);
-        expect(token.type, 'PIPUSH');
+        expect(token.type, 'EDUMFA_PUSH');
         expect(token.label, 'label');
         expect(token.issuer, 'issuer');
         expect(token.serial, 'serial');

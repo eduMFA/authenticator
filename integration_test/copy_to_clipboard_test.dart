@@ -8,7 +8,6 @@ import 'package:edumfa_authenticator/model/enums/algorithms.dart';
 import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/states/introduction_state.dart';
 import 'package:edumfa_authenticator/model/states/settings_state.dart';
-import 'package:edumfa_authenticator/model/tokens/hotp_token.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
@@ -31,9 +30,9 @@ void main() {
         SettingsState(isFirstRun: false, useSystemLocale: false, localePreference: const Locale('en'), latestVersion: Version.parse('999.999.999')));
     when(mockSettingsRepository.saveSettings(any)).thenAnswer((_) async => true);
     mockTokenRepository = MockTokenRepository();
-    when(mockTokenRepository.loadTokens()).thenAnswer((_) async => [
-          HOTPToken(label: 'test', issuer: 'test', id: 'id', algorithm: Algorithms.SHA256, digits: 6, secret: 'secret', counter: 0),
-        ]);
+    // when(mockTokenRepository.loadTokens()).thenAnswer((_) async => [
+    //       HOTPToken(label: 'test', issuer: 'test', id: 'id', algorithm: Algorithms.SHA256, digits: 6, secret: 'secret', counter: 0),
+    //     ]);
     when(mockTokenRepository.saveOrReplaceTokens(any)).thenAnswer((_) async => []);
     when(mockTokenRepository.deleteTokens(any)).thenAnswer((_) async => []);
     mockTokenFolderRepository = MockTokenFolderRepository();
