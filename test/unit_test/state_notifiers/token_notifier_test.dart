@@ -5,7 +5,6 @@ import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 import 'package:pointycastle/export.dart';
 import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart';
-import 'package:edumfa_authenticator/model/enums/algorithms.dart';
 import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
 import 'package:edumfa_authenticator/model/push_request.dart';
 import 'package:edumfa_authenticator/model/push_request_queue.dart';
@@ -64,168 +63,6 @@ void _testTokenNotifier() {
       expect(state.tokens, after);
       verify(mockRepo.loadTokens()).called(2);
     });
-    // test('getTokenFromId', () async {
-    //   final container = ProviderContainer();
-    //   final mockRepo = MockTokenRepository();
-    //   final before = <Token>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //   ];
-    //   final after = before;
-    //   when(mockRepo.loadTokens()).thenAnswer((_) async => before);
-    //   final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-    //     (ref) => TokenNotifier(repository: mockRepo),
-    //   );
-    //   final notifier = container.read(testProvider.notifier);
-    //   await notifier.loadingRepo;
-    //   expect(notifier.getTokenFromId(before.first.id), before.first);
-    //   final state = container.read(testProvider);
-    //   expect(state, isNotNull);
-    //   expect(state.tokens, after);
-    // });
-    // test('incrementCounter', () async {
-    //   final container = ProviderContainer();
-    //   final mockRepo = MockTokenRepository();
-    //   final before = <HOTPToken>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret', counter: 522),
-    //   ];
-    //   final after = <HOTPToken>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret', counter: 523),
-    //   ];
-    //   when(mockRepo.loadTokens()).thenAnswer((_) async => before);
-    //   when(mockRepo.saveOrReplaceTokens([after.first])).thenAnswer((_) async => []);
-    //   final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-    //     (ref) => TokenNotifier(
-    //       repository: mockRepo,
-    //     ),
-    //   );
-    //   final notifier = container.read(testProvider.notifier);
-    //   await notifier.incrementCounter(before.first);
-    //   final state = container.read(testProvider);
-    //   expect(state, isNotNull);
-    //   expect(state.tokens, after);
-    //   verify(mockRepo.saveOrReplaceTokens(after)).called(1);
-    // });
-    // test('removeToken', () async {
-    //   final container = ProviderContainer();
-    //   final mockRepo = MockTokenRepository();
-    //   final before = <Token>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //     HOTPToken(label: 'label2', issuer: 'issuer2', id: 'id2', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret2'),
-    //   ];
-    //   final after = <Token>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //   ];
-    //   when(mockRepo.loadTokens()).thenAnswer((_) async => before);
-    //   when(mockRepo.deleteTokens([before.last])).thenAnswer((_) async => []);
-    //   final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-    //     (ref) => TokenNotifier(repository: mockRepo),
-    //   );
-    //   final notifier = container.read(testProvider.notifier);
-    //   await notifier.removeToken(before.last);
-    //   final state = container.read(testProvider);
-    //   expect(state, isNotNull);
-    //   expect(state.tokens, after);
-    //   verify(mockRepo.deleteTokens([before.last])).called(1);
-    // });
-    // group('addOrReplaceToken', () {
-    //   test('add Token', () async {
-    //     final container = ProviderContainer();
-    //     final mockRepo = MockTokenRepository();
-    //     final before = <Token>[
-    //       HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //     ];
-    //     final after = <Token>[
-    //       HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //       HOTPToken(label: 'label2', issuer: 'issuer2', id: 'id2', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret2'),
-    //     ];
-    //     when(mockRepo.loadTokens()).thenAnswer((_) async => before);
-    //     when(mockRepo.saveOrReplaceTokens([after.last])).thenAnswer((_) async => []);
-    //     final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-    //       (ref) => TokenNotifier(
-    //         repository: mockRepo,
-    //       ),
-    //     );
-    //     final notifier = container.read(testProvider.notifier);
-    //     await notifier.addOrReplaceToken(after.last);
-    //     final state = container.read(testProvider);
-    //     expect(state, isNotNull);
-    //     expect(state.tokens, after);
-    //     verify(mockRepo.saveOrReplaceTokens([after.last])).called(1);
-    //   });
-    //   test('replace Token', () async {
-    //     final container = ProviderContainer();
-    //     final mockRepo = MockTokenRepository();
-    //     final before = <Token>[
-    //       HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //       HOTPToken(label: 'label2', issuer: 'issuer2', id: 'id2', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret2'),
-    //     ];
-    //     final after = <Token>[
-    //       HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //       HOTPToken(label: 'labelUpdated', issuer: 'issuer2Updated', id: 'id2', algorithm: Algorithms.SHA256, digits: 8, secret: 'secret2Updated'),
-    //     ];
-    //     when(mockRepo.loadTokens()).thenAnswer((_) async => before);
-    //     when(mockRepo.saveOrReplaceTokens([after.last])).thenAnswer((_) async => []);
-    //     final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-    //       (ref) => TokenNotifier(
-    //         repository: mockRepo,
-    //       ),
-    //     );
-    //     final notifier = container.read(testProvider.notifier);
-    //     await notifier.addOrReplaceToken(after.last);
-    //     final state = container.read(testProvider);
-    //     expect(state, isNotNull);
-    //     expect(state.tokens, after);
-    //     verify(mockRepo.saveOrReplaceTokens([after.last])).called(1);
-    //   });
-    // });
-    // test('addOrReplaceTokens', () async {
-    //   final container = ProviderContainer();
-    //   final mockRepo = MockTokenRepository();
-    //   final before = <Token>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //   ];
-    //   final after = <Token>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //     HOTPToken(label: 'label2', issuer: 'issuer2', id: 'id2', algorithm: Algorithms.SHA256, digits: 6, secret: 'secret2'),
-    //     HOTPToken(label: 'label3', issuer: 'issuer3', id: 'id3', algorithm: Algorithms.SHA512, digits: 8, secret: 'secret3'),
-    //   ];
-    //   when(mockRepo.loadTokens()).thenAnswer((_) async => before);
-    //   when(mockRepo.saveOrReplaceTokens([...after])).thenAnswer((_) async => []);
-    //   final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-    //     (ref) => TokenNotifier(
-    //       repository: mockRepo,
-    //     ),
-    //   );
-    //   final notifier = container.read(testProvider.notifier);
-    //   await notifier.addOrReplaceTokens([...after]);
-    //   final state = container.read(testProvider);
-    //   expect(state, isNotNull);
-    //   expect(state.tokens, after);
-    // });
-    // test('addTokenFromOtpAuth', () async {
-    //   final container = ProviderContainer();
-    //   final mockRepo = MockTokenRepository();
-    //   final before = <Token>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //   ];
-    //   final after = <Token>[
-    //     HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-    //     HOTPToken(label: 'label2', issuer: 'issuer2', id: 'id2', algorithm: Algorithms.SHA256, digits: 6, secret: 'secret2'),
-    //   ];
-    //   when(mockRepo.loadTokens()).thenAnswer((_) async => before);
-    //   when(mockRepo.saveOrReplaceTokens(any)).thenAnswer((_) async => []);
-
-    //   final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-    //     (ref) => TokenNotifier(repository: mockRepo),
-    //   );
-    //   final notifier = container.read(testProvider.notifier);
-    //   await notifier.handleQrCode('otpauth://totp/issuer2:label2?secret=secret2&issuer=issuer2&algorithm=SHA256&digits=6&period=30');
-    //   final state = container.read(testProvider);
-    //   expect(state, isNotNull);
-    //   after.last = after.last.copyWith(id: state.tokens.last.id);
-    //   expect(state.tokens, after);
-    //   verify(mockRepo.saveOrReplaceTokens(any)).called(1);
-    // });
     test('addTokenFromOtpAuth: rolloutPushToken', () async {
       final container = ProviderContainer();
       final mockRepo = MockTokenRepository();
@@ -242,10 +79,6 @@ void _testTokenNotifier() {
       final publicServerKey = rsaUtils.deserializeRSAPublicKeyPKCS1(publicServerKeyString);
       final publicTokenKey = rsaUtils.deserializeRSAPublicKeyPKCS1(publicTokenKeyString);
       final privateTokenKey = rsaUtils.deserializeRSAPrivateKeyPKCS1(privateTokenKeyString);
-
-      // final before = <Token>[
-      //   HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-      // ];
 
       final pushTokenShouldBe = PushToken(
         label: 'PIPU0006BF18',
@@ -268,7 +101,6 @@ void _testTokenNotifier() {
         pushRequests: PushRequestQueue(),
       );
       final after = <Token>[
-        // HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
         pushTokenShouldBe,
       ];
       const otpAuth =
@@ -452,19 +284,6 @@ void _testTokenNotifier() {
         body: anyNamed('body'),
         sslVerify: anyNamed('sslVerify'),
       )).called(greaterThan(0));
-    });
-    test('loadFromRepo', () async {
-      final mockRepo = MockTokenRepository();
-      // final before = <Token>[
-      //   HOTPToken(label: 'label', issuer: 'issuer', id: 'id', algorithm: Algorithms.SHA1, digits: 6, secret: 'secret'),
-      // ];
-      // when(mockRepo.loadTokens()).thenAnswer((_) => Future.value(before));
-      final notifier = TokenNotifier(repository: mockRepo);
-      Logger.info('before loadFromRepo');
-      final newState = await notifier.loadStateFromRepo();
-      Logger.info('after loadFromRepo');
-      // expect(newState?.tokens, before);
-      // expect(notifier.state.tokens, before);
     });
   });
 }

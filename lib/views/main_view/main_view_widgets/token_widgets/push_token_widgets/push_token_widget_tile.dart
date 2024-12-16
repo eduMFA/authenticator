@@ -4,13 +4,8 @@ import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_wid
 import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/token_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../../widgets/custom_trailing.dart';
 
-import '../../../../../l10n/app_localizations.dart';
-import '../../../../../model/enums/introduction.dart';
 import '../../../../../model/tokens/push_token.dart';
-import '../../../../../utils/riverpod_providers.dart';
-import '../../../../../widgets/focused_item_as_overlay.dart';
 import '../token_widget_tile.dart';
 
 class PushTokenWidgetTile extends ConsumerWidget {

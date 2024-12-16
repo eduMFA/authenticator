@@ -7,9 +7,6 @@ import '../../../../model/mixins/sortable_mixin.dart';
 import '../../../../model/tokens/token.dart';
 import '../../../../utils/riverpod_providers.dart';
 import '../../../../utils/utils.dart';
-import 'default_token_actions/default_delete_action.dart';
-import 'default_token_actions/default_edit_action.dart';
-import 'default_token_actions/default_lock_action.dart';
 import 'token_action.dart';
 
 class TokenWidgetBase extends ConsumerWidget {
@@ -35,7 +32,6 @@ class TokenWidgetBase extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final SortableMixin? draggingSortable = ref.watch(draggingSortableProvider);
-    final List<TokenAction> actions = [];
 
     final child = Stack(
       children: [

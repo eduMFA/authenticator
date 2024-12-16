@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../model/mixins/sortable_mixin.dart';
-import '../../../model/token_folder.dart';
 import '../../../model/tokens/token.dart';
 import 'token_widgets/token_widget_builder.dart';
 

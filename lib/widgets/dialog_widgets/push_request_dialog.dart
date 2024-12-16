@@ -22,7 +22,6 @@ class PushRequestDialog extends StatefulWidget {
 
 class _PushRequestDialogState extends State<PushRequestDialog> {
   static const titleScale = 1.35;
-  static const questionScale = 1.1;
   double get lineHeight => Theme.of(context).textTheme.titleLarge?.fontSize ?? 16;
 
   bool isHandled = false;

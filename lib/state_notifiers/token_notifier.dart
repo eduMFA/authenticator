@@ -325,9 +325,6 @@ class TokenNotifier extends StateNotifier<TokenState> {
     // Save the pending request.
     token = await updateToken(token, (p0) => p0.withPushRequest(pr)) ?? token;
 
-    // Remove the request after it expires.
-    int time = pr.expirationDate.difference(DateTime.now()).inMilliseconds;
-    // Future.delayed(Duration(milliseconds: time < 1 ? 1 : time), () async => globalRef?.read(tokenProvider.notifier).removePushRequest(pr));
     Logger.info('Added push request ${pr.id} to token ${token.id}', name: 'token_notifier.dart#addPushRequestToToken');
 
     return true;

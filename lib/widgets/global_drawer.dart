@@ -1,7 +1,6 @@
 import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:edumfa_authenticator/views/license_view/license_view.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 

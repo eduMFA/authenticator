@@ -28,14 +28,10 @@ import 'package:asn1lib/asn1lib.dart';
 import 'package:base32/base32.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pointycastle/export.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/model/tokens/push_token.dart';
 import 'package:edumfa_authenticator/utils/crypto_utils.dart';
 import 'package:edumfa_authenticator/utils/identifiers.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
-import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
-
-import 'globals.dart';
 
 class RsaUtils {
   const RsaUtils();

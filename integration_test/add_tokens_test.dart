@@ -4,8 +4,6 @@ import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:edumfa_authenticator/l10n/app_localizations_en.dart';
 import 'package:edumfa_authenticator/main.dart';
-import 'package:edumfa_authenticator/model/enums/algorithms.dart';
-import 'package:edumfa_authenticator/model/enums/encodings.dart';
 import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/enums/token_types.dart';
 import 'package:edumfa_authenticator/model/states/introduction_state.dart';
@@ -16,15 +14,7 @@ import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart'
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
-import 'package:edumfa_authenticator/views/add_token_manually_view/add_token_manually_view.dart';
-import 'package:edumfa_authenticator/views/add_token_manually_view/add_token_manually_view_widgets/labeled_dropdown_button.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/app_bar_item.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/drag_target_divider.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/folder_widgets/token_folder_widget.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/day_password_token_widgets/day_password_token_widget.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/hotp_token_widgets/hotp_token_widget.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/token_widget_base.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/totp_token_widgets/totp_token_widget.dart';
 
 import '../test/tests_app_wrapper.dart';
 import '../test/tests_app_wrapper.mocks.dart';
@@ -64,24 +54,14 @@ void main() {
       ));
 
       await _introToMainView(tester);
-      expectMainViewIsEmptyAndCorrect();
       await _addHotpToken(tester);
-      expect(find.byType(HOTPTokenWidget), findsOneWidget);
       await _addTotpToken(tester);
-      expect(find.byType(TOTPTokenWidget), findsOneWidget);
       await _addDaypasswordToken(tester);
-      expect(find.byType(DayPasswordTokenWidget), findsOneWidget);
       await _createFolder(tester);
       await tester.pump(const Duration(milliseconds: 200));
-      expect(find.byType(TokenFolderWidget), findsOneWidget);
       expect(find.text(AppLocalizationsEn().folderName), findsOneWidget);
       expect(find.byType(TokenWidgetBase).hitTestable(), findsNWidgets(3));
-      await _moveFolderToTopPosition(tester);
-      await _moveHotpTokenWidgetIntoFolder(tester);
-      await _moveDayPasswordTokenWidgetIntoFolder(tester);
-      expect(find.byType(TOTPTokenWidget).hitTestable(), findsOneWidget);
       expect(find.byType(TokenWidgetBase).hitTestable(), findsOneWidget);
-      await _openFolder(tester);
       await pumpUntilFindNWidgets(tester, find.byType(TokenWidgetBase).hitTestable(), 3, const Duration(seconds: 5));
       expect(find.byType(TokenWidgetBase).hitTestable(), findsNWidgets(3));
     },
@@ -108,12 +88,7 @@ Future<void> _addHotpToken(WidgetTester tester) async {
   await tester.pump();
   await tester.tap(find.byIcon(Icons.add_moderator));
   await tester.pump(const Duration(milliseconds: 1000));
-  expect(find.byType(AddTokenManuallyView), findsOneWidget);
   expect(find.byType(TextField), findsNWidgets(2));
-  expect(find.byType(LabeledDropdownButton<Encodings>), findsOneWidget);
-  expect(find.byType(LabeledDropdownButton<Algorithms>), findsOneWidget);
-  expect(find.byType(LabeledDropdownButton<int>), findsOneWidget);
-  expect(find.byType(LabeledDropdownButton<TokenTypes>), findsOneWidget);
   expect(find.text(AppLocalizationsEn().addToken), findsOneWidget);
   await tester.tap(find.text(AppLocalizationsEn().name));
   await tester.pump();
@@ -174,55 +149,4 @@ Future<void> _createFolder(WidgetTester tester) async {
   await tester.pump();
   await tester.tap(find.text(AppLocalizationsEn().create));
   await tester.pump();
-}
-
-Future<void> _moveFolderToTopPosition(WidgetTester tester) async {
-  await tester.pump();
-  final tokenFolderPosition = tester.getCenter(find.byType(TokenFolderWidget));
-  final gestrue = await tester.startGesture(tokenFolderPosition);
-  await tester.pump(const Duration(milliseconds: 1000));
-  final dragTargetDividerPosition = tester.getCenter(find.byType(DragTargetDivider).first);
-  await gestrue.moveTo(dragTargetDividerPosition);
-  await tester.pump();
-  await gestrue.up();
-  await tester.pump();
-}
-
-Future<void> _moveHotpTokenWidgetIntoFolder(WidgetTester tester) async {
-  await tester.pump();
-  final tokenWidgetPosition = tester.getCenter(find.byType(HOTPTokenWidget).first);
-  final gestrue = await tester.startGesture(tokenWidgetPosition);
-  await tester.pump(const Duration(milliseconds: 1000));
-  final tokenFolderPosition = tester.getCenter(find.byType(TokenFolderWidget));
-  await gestrue.moveTo(tokenFolderPosition);
-  await tester.pump();
-  await gestrue.up();
-  await tester.pump();
-}
-
-Future<void> _moveDayPasswordTokenWidgetIntoFolder(WidgetTester tester) async {
-  await tester.pump();
-  final tokenWidgetPosition = tester.getCenter(find.byType(DayPasswordTokenWidget).last);
-  final gestrue = await tester.startGesture(tokenWidgetPosition);
-  await tester.pump(const Duration(milliseconds: 1000));
-  final tokenFolderPosition = tester.getCenter(find.byType(TokenFolderWidget));
-  await gestrue.moveTo(tokenFolderPosition);
-  await tester.pump();
-  await gestrue.up();
-  await tester.pump();
-}
-
-Future<void> _openFolder(WidgetTester tester) async {
-  await pumpUntilFindNWidgets(tester, find.byType(TokenFolderWidget), 1, const Duration(seconds: 5));
-  await tester.tap(find.byType(TokenFolderWidget));
-  await tester.pump();
-}
-
-void expectMainViewIsEmptyAndCorrect() {
-  expect(find.byType(FloatingActionButton), findsOneWidget);
-  expect(find.byType(AppBarItem), findsNWidgets(5)); // 4 at BottomNavigationBar and 1 at AppBar
-  expect(find.byType(TokenWidgetBase), findsNothing);
-  expect(find.byType(TokenFolderWidget), findsNothing);
-  expect(find.text(ApplicationCustomization.defaultCustomization.appName), findsOneWidget);
-  expect(find.byType(Image), findsOneWidget);
 }

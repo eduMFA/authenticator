@@ -9,8 +9,6 @@ extension ThemeModeExtension on ThemeMode {
         return 'Light';
       case ThemeMode.dark:
         return 'Dark';
-      default:
-        return 'Unknown';
-    }
+      }
   }
 }
