@@ -52,7 +52,7 @@ void main() {
         tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
         tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
       ],
-      child: eduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+      child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
     ));
     await _renameToken(tester, 'Renamed Token');
     await _renameToken(tester, 'Renamed Token Again');

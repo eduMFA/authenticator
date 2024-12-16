@@ -72,7 +72,7 @@ void main() {
             )),
         tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
       ],
-      child: eduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+      child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
     ));
 
     await _licensesViewTest(tester);

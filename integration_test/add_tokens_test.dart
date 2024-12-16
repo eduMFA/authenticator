@@ -60,7 +60,7 @@ void main() {
           tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
           introductionProvider.overrideWith((ref) => InrtroductionNotifier(repository: mockIntroductionRepository)),
         ],
-        child: eduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+        child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
       ));
 
       await _introToMainView(tester);

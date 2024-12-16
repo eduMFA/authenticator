@@ -44,16 +44,16 @@ void main() async {
       navigatorKey: globalNavigatorKey,
       appRunner: () async {
         WidgetsFlutterBinding.ensureInitialized();
-        runApp(AppWrapper(child: eduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization)));
+        runApp(AppWrapper(child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization)));
       });
 }
 
-class eduMFAAuthenticator extends ConsumerWidget {
+class EduMFAAuthenticator extends ConsumerWidget {
   static ApplicationCustomization? currentCustomization;
   final ApplicationCustomization _customization;
-  eduMFAAuthenticator({required ApplicationCustomization customization, super.key}) : _customization = customization {
+  EduMFAAuthenticator({required ApplicationCustomization customization, super.key}) : _customization = customization {
     // ignore: prefer_initializing_formals
-    eduMFAAuthenticator.currentCustomization = customization;
+    EduMFAAuthenticator.currentCustomization = customization;
   }
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -49,7 +49,7 @@ void main() {
         tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
         tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
       ],
-      child: eduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+      child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
     ));
     await tester.pumpAndSettle();
     await pumpUntilFindNWidgets(tester, find.text('356 306'), 1, const Duration(seconds: 10));
