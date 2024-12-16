@@ -153,7 +153,7 @@ flutter:
 flutter_launcher_icons:
   android: true
   image_path_android: "launcher_icons/edumfa/ic_launcher_app.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
+  min_sdk_android: 24 # android min sdk min:16, default 21
   adaptive_icon_background: "#FFFFFF"
   adaptive_icon_foreground: "launcher_icons/edumfa/ic_launcher_adaptive.png"
   #
