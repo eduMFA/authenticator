@@ -219,6 +219,7 @@ class RsaUtils {
     if (token.privateTokenKey != null) {
       return createBase32Signature(token.rsaPrivateTokenKey!, utf8.encode(message));
     }
+    return null;
   }
 
   Future<AsymmetricKeyPair<RSAPublicKey, RSAPrivateKey>> generateRSAKeyPair() async {

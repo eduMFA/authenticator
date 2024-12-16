@@ -362,7 +362,7 @@ class ThemeCustomization {
           ),
           iconButtonTheme: IconButtonThemeData(
             style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all(foregroundColor),
+              foregroundColor: WidgetStateProperty.all(foregroundColor),
             ),
           ),
           elevatedButtonTheme: ElevatedButtonThemeData(
@@ -404,7 +404,7 @@ class ThemeCustomization {
           navigationBarTheme: const NavigationBarThemeData().copyWith(
             backgroundColor: navigationBarColor,
             shadowColor: shadowColor,
-            iconTheme: MaterialStatePropertyAll(
+            iconTheme: WidgetStatePropertyAll(
                 IconThemeData(color: navigationBarIconColor)),
             elevation: 3,
           ),
@@ -415,7 +415,7 @@ class ThemeCustomization {
           ),
           textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
-              overlayColor: MaterialStateColor.resolveWith(
+              overlayColor: WidgetStateColor.resolveWith(
                   (states) => foregroundColor.withOpacity(0.1)),
             ),
           ),
@@ -444,47 +444,47 @@ class ThemeCustomization {
                 ),
           checkboxTheme: CheckboxThemeData(
             checkColor:
-                MaterialStateProperty.resolveWith<Color?>((_) => onPrimary),
-            fillColor: MaterialStateProperty.resolveWith<Color?>(
-                (Set<MaterialState> states) {
-              if (states.contains(MaterialState.disabled)) {
+                WidgetStateProperty.resolveWith<Color?>((_) => onPrimary),
+            fillColor: WidgetStateProperty.resolveWith<Color?>(
+                (Set<WidgetState> states) {
+              if (states.contains(WidgetState.disabled)) {
                 return null;
               }
-              if (states.contains(MaterialState.selected)) {
+              if (states.contains(WidgetState.selected)) {
                 return primaryColor;
               }
               return null;
             }),
           ),
           radioTheme: RadioThemeData(
-            fillColor: MaterialStateProperty.resolveWith<Color?>(
-                (Set<MaterialState> states) {
-              if (states.contains(MaterialState.disabled)) {
+            fillColor: WidgetStateProperty.resolveWith<Color?>(
+                (Set<WidgetState> states) {
+              if (states.contains(WidgetState.disabled)) {
                 return null;
               }
-              if (states.contains(MaterialState.selected)) {
+              if (states.contains(WidgetState.selected)) {
                 return primaryColor;
               }
               return null;
             }),
           ),
           switchTheme: SwitchThemeData(
-            thumbColor: MaterialStateProperty.resolveWith<Color?>(
-                (Set<MaterialState> states) {
-              if (states.contains(MaterialState.disabled)) {
+            thumbColor: WidgetStateProperty.resolveWith<Color?>(
+                (Set<WidgetState> states) {
+              if (states.contains(WidgetState.disabled)) {
                 return null;
               }
-              if (states.contains(MaterialState.selected)) {
+              if (states.contains(WidgetState.selected)) {
                 return primaryColor;
               }
               return null;
             }),
-            trackColor: MaterialStateProperty.resolveWith<Color?>(
-                (Set<MaterialState> states) {
-              if (states.contains(MaterialState.disabled)) {
+            trackColor: WidgetStateProperty.resolveWith<Color?>(
+                (Set<WidgetState> states) {
+              if (states.contains(WidgetState.disabled)) {
                 return null;
               }
-              if (states.contains(MaterialState.selected)) {
+              if (states.contains(WidgetState.selected)) {
                 return primaryColor;
               }
               return null;
@@ -548,7 +548,7 @@ class ApplicationCustomization {
   final ThemeCustomization lightTheme;
   final ThemeCustomization darkTheme;
 
-  static final defaultCustomization = const ApplicationCustomization(
+  static const defaultCustomization = ApplicationCustomization(
     appName: 'eduMFA Authenticator',
     websiteLink: 'https://edumfa.io/',
     appImageUint8List: null,

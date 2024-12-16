@@ -18,9 +18,9 @@ class DrawerWidget extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-            Container(
+            const SizedBox(
                 height: 200,
-                child: const DrawerHeader(
+                child: DrawerHeader(
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         image: DecorationImage(

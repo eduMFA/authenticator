@@ -20,7 +20,9 @@ class DefaultLockAction extends TokenAction {
         child: token.isLocked ? Text(AppLocalizations.of(context)!.unlock) : Text(AppLocalizations.of(context)!.lock) ,
         onTap: () async {
           if (await lockAuth(localizedReason: AppLocalizations.of(context)!
-              .authenticateToUnLockToken) == false) return;
+              .authenticateToUnLockToken) == false) {
+            return;
+          }
           Logger.info(
               'Changing lock status of token to isLocked = ${!token.isLocked}',
               name: 'token_widgets.dart#_changeLockStatus');

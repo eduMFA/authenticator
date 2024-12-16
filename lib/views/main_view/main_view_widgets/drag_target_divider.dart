@@ -53,7 +53,7 @@ class _DragTargetDividerState<T extends SortableMixin> extends ConsumerState<Dra
 
   @override
   Widget build(BuildContext context) => DragTarget(
-        onWillAccept: (data) {
+        onWillAcceptWithDetails: (data) {
           final willAccept = _onWillAccept<T>(data, ref);
           if (willAccept) {
             expansionController.forward();
@@ -63,7 +63,7 @@ class _DragTargetDividerState<T extends SortableMixin> extends ConsumerState<Dra
         onLeave: (data) {
           expansionController.reverse();
         },
-        onAccept: (dragedSortable) {
+        onAcceptWithDetails: (dragedSortable) {
           expansionController.reset();
           _onAccept(
             dragedSortable: dragedSortable,

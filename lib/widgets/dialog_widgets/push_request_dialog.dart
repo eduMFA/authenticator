@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:edumfa_authenticator/extensions/color_extension.dart';
@@ -82,7 +81,9 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                     child: PressButton(
                       onPressed: () async {
                         if (widget.tokenWithPushRequest.isLocked &&
-                            await lockAuth(localizedReason: AppLocalizations.of(context)!.authToAcceptPushRequest) == false) return;
+                            await lockAuth(localizedReason: AppLocalizations.of(context)!.authToAcceptPushRequest) == false) {
+                              return;
+                        }
                         globalRef?.read(pushRequestProvider.notifier).acceptPop(widget.tokenWithPushRequest);
                         if (mounted) setState(() => isHandled = true);
                       },
@@ -97,7 +98,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),
-                          Icon(
+                          const Icon(
                             Icons.check_outlined,
                           ),
                         ],
@@ -109,7 +110,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                     // Decline button
                     height: lineHeight * titleScale + 16,
                     child: PressButton(
-                        style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
+                        style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
                         onPressed: () async {
                           if (widget.tokenWithPushRequest.isLocked &&
                               await lockAuth(localizedReason: AppLocalizations.of(context)!.authToDeclinePushRequest) == false) {
@@ -129,7 +130,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
                               textAlign: TextAlign.center,
                             ),
-                            Icon(Icons.close_outlined),
+                            const Icon(Icons.close_outlined),
                           ],
                         )),
                   ),
@@ -200,7 +201,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                   Expanded(
                     flex: 6,
                     child: PressButton(
-                      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
+                      style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
                       onPressed: () {
                         //TODO: Notify issuer
                         globalRef?.read(pushRequestProvider.notifier).declinePop(token);

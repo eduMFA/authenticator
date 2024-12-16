@@ -137,7 +137,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
               curve: Curves.ease,
             );
           },
-          backgroundColor: Theme.of(context).colorScheme.background,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           child: Icon(
             Icons.arrow_forward_ios_outlined,
             color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black,
