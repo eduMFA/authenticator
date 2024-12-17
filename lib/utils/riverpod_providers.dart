@@ -1,10 +1,10 @@
 import 'dart:ui';
 
+import 'package:app_links/app_links.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:uni_links/uni_links.dart';
 
 import '../l10n/app_localizations.dart';
 import '../model/mixins/sortable_mixin.dart';
@@ -122,7 +122,11 @@ final deeplinkProvider = StateNotifierProvider<DeeplinkNotifier, DeepLink?>(
   (ref) {
     Logger.info("New DeeplinkNotifier created", name: 'deeplinkProvider');
     return DeeplinkNotifier(sources: [
-      DeeplinkSource(name: 'uni_links', stream: uriLinkStream, initialUri: getInitialUri()),
+      DeeplinkSource(
+          name: 'uni_links',
+          stream: AppLinks().uriLinkStream,
+          initialUri: Future.value(null)
+      ),
     ]);
   },
   name: 'deeplinkProvider',
