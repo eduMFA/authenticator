@@ -2,7 +2,6 @@ import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:edumfa_authenticator/widgets/global_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n/app_localizations.dart';
@@ -34,7 +33,6 @@ class SettingsView extends ConsumerView {
 
     return PushRequestListener(
       child: Scaffold(
-        drawer: const DrawerWidget(),
         appBar: AppBar(
           title: Text(
             AppLocalizations.of(context)!.settings,

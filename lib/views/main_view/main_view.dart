@@ -1,8 +1,8 @@
+import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view_widgets/main_view_navigation_buttons/qr_scanner_button.dart';
-import 'package:edumfa_authenticator/widgets/global_drawer.dart';
 
 import '../../model/states/token_filter.dart';
 import '../../utils/logger.dart';
@@ -55,7 +55,6 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         floatingActionButton: const QrScannerButton(),
-        drawer: const DrawerWidget(),
         body: ExpandableAppBar(
           startExpand: hasFilter,
           appBar: AppBar(
@@ -65,6 +64,12 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                 overflow: TextOverflow.ellipsis,
                 // maxLines: 2 only works like this.
                 maxLines: 2, // Title can be shown on small screens too.
+              ),
+              leading: IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, SettingsView.routeName);
+                  },
+                  icon: const Icon(Icons.settings)
               ),
               actions: [
                 hasFilter
