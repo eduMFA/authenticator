@@ -100,7 +100,7 @@ class ThemeCustomization {
         subtitleColor = subtitleColor ?? const Color(0xFF9E9E9E),
         backgroundColor = backgroundColor ?? const Color(0xFF303030),
         foregroundColor = foregroundColor ?? const Color(0xffF5F5F5),
-        shadowColor = shadowColor ?? const Color(0xFFEFEFEF),
+        shadowColor = shadowColor ?? const Color(0xff303030),
         deleteColor = deleteColor ?? const Color(0xffCD3C14),
         renameColor = renameColor ?? const Color(0xff527EDB),
         lockColor = lockColor ?? const Color(0xffFFCC00),
