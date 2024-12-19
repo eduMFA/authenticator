@@ -416,7 +416,7 @@ class ThemeCustomization {
           textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
               overlayColor: WidgetStateColor.resolveWith(
-                  (states) => foregroundColor.withOpacity(0.1)),
+                  (states) => foregroundColor.withAlpha((0.1 * 255).round())),
             ),
           ),
           listTileTheme: ListTileThemeData(
