@@ -46,6 +46,16 @@ android {
         manifestPlaceholders = [applicationName: "io.flutter.app.FlutterApplication"]
     }
 
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    kotlinOptions {
+        jvmTarget = '21'
+    }
+
     signingConfigs {
         edumfa {
             storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
@@ -95,6 +105,11 @@ android {
                     'proguard-rules.pro'
         }
     }
+    namespace 'io.edumfa.authenticator'
+}
+
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
 }
 
 flutter {
