@@ -30,10 +30,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:edumfa_authenticator/model/extensions/enum_extension.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
-
-import '../model/enums/algorithms.dart';
 
 /// Inserts [char] at the position [pos] in the given String ([str]),
 /// and returns the resulting String.
@@ -58,15 +55,6 @@ String splitPeriodically(String str, int period) {
   }
 
   return result.trim();
-}
-
-Algorithms mapStringToAlgorithm(String algoAsString) {
-  for (Algorithms alg in Algorithms.values) {
-    if (alg.isString(algoAsString)) {
-      return alg;
-    }
-  }
-  throw ArgumentError.value(algoAsString, 'algorAsString', '$algoAsString cannot be mapped to $Algorithms');
 }
 
 // / This implementation is taken from the library

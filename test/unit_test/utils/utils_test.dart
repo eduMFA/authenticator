@@ -21,14 +21,11 @@
   limitations under the License.
 */
 import 'package:flutter_test/flutter_test.dart';
-import 'package:edumfa_authenticator/model/enums/algorithms.dart';
 import 'package:edumfa_authenticator/utils/utils.dart';
 
 void main() {
   _testInsertCharAt();
   _testSplitPeriodically();
-  _testMapStringToAlgorithm();
-  _testEnumAsString();
 }
 
 void _testInsertCharAt() {
@@ -54,22 +51,5 @@ void _testSplitPeriodically() {
     test('Split every 3', () => expect('ABC DEF GHI JKL MNO PQR STU VWX YZ', splitPeriodically(str, 3)));
     test('Split every 7', () => expect('ABCDEFG HIJKLMN OPQRSTU VWXYZ', splitPeriodically(str, 7)));
     test('Split every 12', () => expect('ABCDEFGHIJKL MNOPQRSTUVWX YZ', splitPeriodically(str, 12)));
-  });
-}
-
-void _testMapStringToAlgorithm() {
-  group('mapStringToAlgorithm', () {
-    test('Test SHA1', () => expect(mapStringToAlgorithm('SHA1'), Algorithms.SHA1));
-    test('Test SHA256', () => expect(mapStringToAlgorithm('SHA256'), Algorithms.SHA256));
-    test('Test SHA512', () => expect(mapStringToAlgorithm('SHA512'), Algorithms.SHA512));
-    test('Test invalid', () => expect(() => mapStringToAlgorithm('invalid'), throwsArgumentError));
-  });
-}
-
-void _testEnumAsString() {
-  group('enumAsString', () {
-    test('Test SHA1', () => expect(enumAsString(Algorithms.SHA1), 'SHA1'));
-    test('Test SHA256', () => expect(enumAsString(Algorithms.SHA256), 'SHA256'));
-    test('Test SHA512', () => expect(enumAsString(Algorithms.SHA512), 'SHA512'));
   });
 }
