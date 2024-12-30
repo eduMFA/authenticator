@@ -1,9 +1,8 @@
 import '../../../model/tokens/token.dart';
-import '../../mixins/token_import_processor.dart';
 import '../scheme_processor_interface.dart';
 import 'otp_auth_processor.dart';
 
-abstract class TokenImportSchemeProcessor with TokenImportProcessor<Uri, bool> implements SchemeProcessor {
+abstract class TokenImportSchemeProcessor implements SchemeProcessor {
   const TokenImportSchemeProcessor();
   static const Set<TokenImportSchemeProcessor> implementations = {
     OtpAuthProcessor(),
