@@ -37,8 +37,6 @@ import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/splash_screen/splash_screen.dart';
 import 'package:edumfa_authenticator/widgets/app_wrapper.dart';
 
-import 'views/feedback_view/feedback_view.dart';
-
 void main() async {
   Logger.init(
       navigatorKey: globalNavigatorKey,
@@ -80,7 +78,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
         themeMode: EasyDynamicTheme.of(context).themeMode,
         initialRoute: SplashScreen.routeName,
         routes: {
-          FeedbackView.routeName: (context) => const FeedbackView(),
           LicenseView.routeName: (context) => LicenseView(
                 appImage: _customization.appImage,
                 appName: _customization.appName,

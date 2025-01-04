@@ -398,36 +398,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get introPollForChallenges => 'Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen.';
 
   @override
-  String get feedback => 'Feedback';
-
-  @override
-  String get feedbackTitle => 'Ihr Feedback ist immer willkommen!';
-
-  @override
-  String get feedbackDescription => 'Wenn Sie Fragen, Anregungen oder Probleme haben, lassen Sie es uns wissen.';
-
-  @override
-  String get feedbackHint => 'Es öffnet sich eine vorgefertigte E-Mail, die Sie an uns senden können. Falls gewünscht, werden Informationen über Ihr Gerät und die Version der Anwendung hinzugefügt. Vor dem Versenden können Sie die E-Mail überprüfen und bearbeiten.';
-
-  @override
-  String get feedbackPrivacyPolicy1 => 'Mit dem Senden des Feedbacks stimmen Sie unserer ';
-
-  @override
-  String get feedbackPrivacyPolicy2 => 'Datenschutzerklärung';
-
-  @override
-  String get feedbackPrivacyPolicy3 => ' zu.';
-
-  @override
-  String get addSystemInfo => 'Systeminfos hinzufügen';
-
-  @override
-  String get feedbackSentTitle => 'Feedback gesendet';
-
-  @override
-  String get feedbackSentDescription => 'Vielen Dank für Ihre Hilfe bei der Verbesserung dieser App!';
-
-  @override
   String get noMailAppTitle => 'Keine Mail-App gefunden';
 
   @override

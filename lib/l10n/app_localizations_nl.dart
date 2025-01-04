@@ -398,36 +398,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get introPollForChallenges => 'Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen.';
 
   @override
-  String get feedback => 'Feedback';
-
-  @override
-  String get feedbackTitle => 'Uw feedback is altijd welkom!';
-
-  @override
-  String get feedbackDescription => 'Als je vragen, suggesties of problemen hebt, laat het ons dan weten.';
-
-  @override
-  String get feedbackHint => 'Er wordt een kant-en-klare e-mail geopend die je naar ons kunt sturen. Indien gewenst wordt informatie over je apparaat en de versie van de applicatie toegevoegd. U kunt de e-mail controleren en bewerken voordat u deze verzendt.';
-
-  @override
-  String get feedbackPrivacyPolicy1 => 'Door feedback te sturen ga je akkoord met ons ';
-
-  @override
-  String get feedbackPrivacyPolicy2 => 'privacybeleid';
-
-  @override
-  String get feedbackPrivacyPolicy3 => '.';
-
-  @override
-  String get addSystemInfo => 'Systeeminformatie toevoegen';
-
-  @override
-  String get feedbackSentTitle => 'Feedback verzonden';
-
-  @override
-  String get feedbackSentDescription => 'Hartelijk dank voor je hulp om deze applicatie beter te maken!';
-
-  @override
   String get noMailAppTitle => 'Geen mail app gevonden';
 
   @override

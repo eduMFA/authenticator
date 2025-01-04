@@ -855,66 +855,6 @@ abstract class AppLocalizations {
   /// **'You can check for new challenges by dragging down the token list.'**
   String get introPollForChallenges;
 
-  /// No description provided for @feedback.
-  ///
-  /// In en, this message translates to:
-  /// **'Feedback'**
-  String get feedback;
-
-  /// No description provided for @feedbackTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Your feedback is always welcome!'**
-  String get feedbackTitle;
-
-  /// No description provided for @feedbackDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'If you have any questions, suggestions or problems, please let us know.'**
-  String get feedbackDescription;
-
-  /// No description provided for @feedbackHint.
-  ///
-  /// In en, this message translates to:
-  /// **'A ready-made e-mail will open, which you can send to us. If desired, information about your device and the version of the application will be added. You can check and edit the email before sending it.'**
-  String get feedbackHint;
-
-  /// No description provided for @feedbackPrivacyPolicy1.
-  ///
-  /// In en, this message translates to:
-  /// **'By sending the feedback you agree to our '**
-  String get feedbackPrivacyPolicy1;
-
-  /// Taping on this should open the privacy policy.
-  ///
-  /// In en, this message translates to:
-  /// **'privacy policy'**
-  String get feedbackPrivacyPolicy2;
-
-  /// No description provided for @feedbackPrivacyPolicy3.
-  ///
-  /// In en, this message translates to:
-  /// **'.'**
-  String get feedbackPrivacyPolicy3;
-
-  /// No description provided for @addSystemInfo.
-  ///
-  /// In en, this message translates to:
-  /// **'Add system information'**
-  String get addSystemInfo;
-
-  /// No description provided for @feedbackSentTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Feedback sent'**
-  String get feedbackSentTitle;
-
-  /// No description provided for @feedbackSentDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Thank you very much for your help in making this application better!'**
-  String get feedbackSentDescription;
-
   /// No description provided for @noMailAppTitle.
   ///
   /// In en, this message translates to:

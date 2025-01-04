@@ -398,36 +398,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get introPollForChallenges => 'Możesz sprawdzić nowe wyzwania, przeciągając listę tokenów w dół.';
 
   @override
-  String get feedback => 'Informacje zwrotne';
-
-  @override
-  String get feedbackTitle => 'Twoja opinia jest zawsze mile widziana!';
-
-  @override
-  String get feedbackDescription => 'Jeśli masz jakieś pytania, sugestie lub problemy, daj nam znać.';
-
-  @override
-  String get feedbackHint => 'Otworzy się gotowa wiadomość e-mail, którą możesz do nas wysłać. W razie potrzeby dodane zostaną informacje o urządzeniu i wersji aplikacji. Możesz sprawdzić i edytować wiadomość e-mail przed jej wysłaniem.';
-
-  @override
-  String get feedbackPrivacyPolicy1 => 'Wysyłając opinię, zgadzasz się z naszą ';
-
-  @override
-  String get feedbackPrivacyPolicy2 => 'polityką prywatności';
-
-  @override
-  String get feedbackPrivacyPolicy3 => '.';
-
-  @override
-  String get addSystemInfo => 'Dodaj informacje systemowe';
-
-  @override
-  String get feedbackSentTitle => 'Opinia została wysłana';
-
-  @override
-  String get feedbackSentDescription => 'Dziękujemy bardzo za pomoc w ulepszeniu tej aplikacji!';
-
-  @override
   String get noMailAppTitle => 'Nie znaleziono aplikacji pocztowej';
 
   @override
