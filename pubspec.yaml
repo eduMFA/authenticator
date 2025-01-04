@@ -85,8 +85,6 @@ dev_dependencies:
   mockito: ^5.4.4
   test: ^1.25.8
 
-  flutter_launcher_icons: ^0.14.2
-
   # dependencies to serialize objects to json
   build_runner: ^2.4.13
   json_serializable: ^6.9.0
@@ -142,17 +140,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
-flutter_launcher_icons:
-  android: true
-  image_path_android: "launcher_icons/edumfa/ic_launcher_app.png"
-  min_sdk_android: 24 # android min sdk min:16, default 21
-  adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: "launcher_icons/edumfa/ic_launcher_adaptive.png"
-  #
-  # Note: We currently manage the icons manually in xcode, since the integration is at least buggy somehow.
-  # Since we have needed machines and accounts available, this is okay for now.
-  #
-  # ios: true
-  # image_path_ios: "launcher_icons/edumfa/ic_launcher_app.png"
-  # remove_alpha_ios: true # default false x
