@@ -12,16 +12,13 @@ import '../model/push_request.dart';
 import '../model/states/introduction_state.dart';
 import '../model/states/settings_state.dart';
 import '../model/states/token_filter.dart';
-import '../model/states/token_folder_state.dart';
 import '../model/states/token_state.dart';
 import '../repo/preference_introduction_repository.dart';
 import '../repo/preference_settings_repository.dart';
-import '../repo/preference_token_folder_repository.dart';
 import '../state_notifiers/completed_introduction_notifier.dart';
 import '../state_notifiers/deeplink_notifier.dart';
 import '../state_notifiers/push_request_notifier.dart';
 import '../state_notifiers/settings_notifier.dart';
-import '../state_notifiers/token_folder_notifier.dart';
 import '../state_notifiers/token_notifier.dart';
 import 'app_customizer.dart';
 import 'globals.dart';
@@ -138,21 +135,6 @@ final appStateProvider = StateProvider<AppLifecycleState?>(
     return null;
   },
   name: 'appStateProvider',
-);
-
-final tokenFolderProvider = StateNotifierProvider<TokenFolderNotifier, TokenFolderState>(
-  (ref) {
-    Logger.info("New TokenFolderNotifier created", name: 'tokenFolderProvider');
-    final newTokenFolderNotifier = TokenFolderNotifier(repository: PreferenceTokenFolderRepository());
-    ref.listen(appStateProvider, (previous, next) {
-      if (previous == AppLifecycleState.resumed && next == AppLifecycleState.paused) {
-        Logger.info('Collapsing locked folders on pause', name: 'tokenFolderProvider#appStateProvider');
-        newTokenFolderNotifier.collapseLockedFolders();
-      }
-    });
-    return newTokenFolderNotifier;
-  },
-  name: 'tokenFolderProvider',
 );
 
 final draggingSortableProvider = StateProvider<SortableMixin?>(

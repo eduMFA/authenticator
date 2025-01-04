@@ -80,9 +80,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get confirmTokenDeletionHint => 'Il se peut que vous ne puissiez plus vous connecter si vous supprimez ce token.\nVeuillez vous assurer que vous pouvez vous connecter au compte associé sans ce token.';
 
   @override
-  String get confirmFolderDeletionHint => 'La suppression d\'un dossier n\'a aucun effet sur les tokens qui s\'y trouvent.\nLes tokens sont déplacés dans la liste principale.';
-
-  @override
   String get generatingPhonePart => 'Générer la part du téléphone';
 
   @override
@@ -362,18 +359,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get editLockedToken => 'Veuillez vous authentifier pour modifier le jeton verrouillé.';
-
-  @override
-  String get expandLockedFolder => 'Veuillez vous authentifier pour ouvrir le dossier verrouillé.';
-
-  @override
-  String get renameTokenFolder => 'Renommer le dossier';
-
-  @override
-  String get addANewFolder => 'Créer un nouveau dossier';
-
-  @override
-  String get folderName => 'Nom du dossier';
 
   @override
   String get retryRollout => 'Réessayer le déploiement';

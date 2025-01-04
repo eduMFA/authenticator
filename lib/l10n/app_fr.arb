@@ -106,10 +106,6 @@
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "confirmFolderDeletionHint": "La suppression d'un dossier n'a aucun effet sur les tokens qui s'y trouvent.\nLes tokens sont déplacés dans la liste principale.",
-  "@confirmFolderDeletionHint": {
-    "description": "Gives the user a hint about the consequences of deleting a folder."
-  },
   "generatingPhonePart": "Générer la part du téléphone",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
@@ -404,10 +400,6 @@
   "validUntil": "Valide jusqu'à",
   "deleteLockedToken": "Veuillez vous authentifier pour supprimer le jeton verrouillé.",
   "editLockedToken": "Veuillez vous authentifier pour modifier le jeton verrouillé.",
-  "expandLockedFolder": "Veuillez vous authentifier pour ouvrir le dossier verrouillé.",
-  "renameTokenFolder": "Renommer le dossier",
-  "addANewFolder": "Créer un nouveau dossier",
-  "folderName": "Nom du dossier",
   "retryRollout": "Réessayer le déploiement",
   "generatingRSAKeyPair": "Génération de la paire de clés RSA",
   "@generatingRSAKeyPair": {

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../utils/logger.dart';
 import '../enums/push_token_rollout_state.dart';
-import '../token_folder.dart';
 import '../tokens/push_token.dart';
 import '../tokens/token.dart';
 
@@ -131,24 +130,6 @@ class TokenState {
     }
     return TokenState(tokens: newTokens, lastlyUpdatedTokens: lastlyUpdatedTokens);
   }
-
-  List<Token> tokensInFolder(TokenFolder folder, {List<Type>? only, List<Type>? exclude}) => tokens.where((token) {
-        if (token.folderId != folder.folderId) {
-          return false;
-        }
-        if (exclude != null && exclude.contains(token.runtimeType)) return false;
-        if (only != null && !only.contains(token.runtimeType)) return false;
-        return true;
-      }).toList();
-
-  List<Token> tokensWithoutFolder({List<Type>? only, List<Type>? exclude}) => tokens.where((token) {
-        if (token.folderId != null) {
-          return false;
-        }
-        if (exclude != null && exclude.contains(token.runtimeType)) return false;
-        if (only != null && !only.contains(token.runtimeType)) return false;
-        return true;
-      }).toList();
 
   PushToken? tokenWithPushRequest() => tokens.whereType<PushToken>().firstWhereOrNull((token) => token.pushRequests.isNotEmpty);
 }

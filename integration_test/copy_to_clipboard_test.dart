@@ -8,7 +8,6 @@ import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/states/introduction_state.dart';
 import 'package:edumfa_authenticator/model/states/settings_state.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
-import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -21,7 +20,6 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   late final MockSettingsRepository mockSettingsRepository;
   late final MockTokenRepository mockTokenRepository;
-  late final MockTokenFolderRepository mockTokenFolderRepository;
   late final MockIntroductionRepository mockIntroductionRepository;
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
@@ -31,9 +29,6 @@ void main() {
     mockTokenRepository = MockTokenRepository();
     when(mockTokenRepository.saveOrReplaceTokens(any)).thenAnswer((_) async => []);
     when(mockTokenRepository.deleteTokens(any)).thenAnswer((_) async => []);
-    mockTokenFolderRepository = MockTokenFolderRepository();
-    when(mockTokenFolderRepository.loadFolders()).thenAnswer((_) async => []);
-    when(mockTokenFolderRepository.saveOrReplaceFolders(any)).thenAnswer((_) async => []);
     mockIntroductionRepository = MockIntroductionRepository();
     final introductions = {...Introduction.values}..remove(Introduction.introductionScreen);
     when(mockIntroductionRepository.loadCompletedIntroductions()).thenAnswer((_) async => IntroductionState(completedIntroductions: introductions));
@@ -43,7 +38,6 @@ void main() {
       overrides: [
         settingsProvider.overrideWith((ref) => SettingsNotifier(repository: mockSettingsRepository)),
         tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
-        tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
       ],
       child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
     ));

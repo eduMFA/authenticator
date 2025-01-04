@@ -80,9 +80,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get confirmTokenDeletionHint => 'Usunięcie tego tokenu może uniemożliwić zalogowanie się. Upewnij się, że możesz zalogować się na powiązane konto bez tego tokenu.';
 
   @override
-  String get confirmFolderDeletionHint => 'Usunięcie folderu nie ma wpływu na znajdujące się w nim tokeny. Tokeny są przenoszone do głównej listy.';
-
-  @override
   String get generatingPhonePart => 'Generowanie sekretu po stronie telefonu...';
 
   @override
@@ -362,18 +359,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get editLockedToken => 'Aby edytować zablokowany token, należy się uwierzytelnić.';
-
-  @override
-  String get expandLockedFolder => 'Uwierzytelnij, aby otworzyć zablokowany folder.';
-
-  @override
-  String get renameTokenFolder => 'Zmiana nazwy folderu';
-
-  @override
-  String get addANewFolder => 'Utwórz nowy folder';
-
-  @override
-  String get folderName => 'Nazwa folderu';
 
   @override
   String get retryRollout => 'Ponowne uruchomienie';

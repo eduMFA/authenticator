@@ -80,9 +80,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get confirmTokenDeletionHint => 'U kunt mogelijk niet meer inloggen als u dit token verwijdert. Controleer of u zonder dit token kunt inloggen op het gekoppelde account.';
 
   @override
-  String get confirmFolderDeletionHint => 'Het verwijderen van een map heeft geen effect op de tokens in de map. De tokens worden verplaatst naar de hoofdlijst.';
-
-  @override
   String get generatingPhonePart => 'Genereren telefoon gedeelte';
 
   @override
@@ -362,18 +359,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get editLockedToken => 'Verifieer om het vergrendelde token te bewerken.';
-
-  @override
-  String get expandLockedFolder => 'Verifieer om de vergrendelde map te openen.';
-
-  @override
-  String get renameTokenFolder => 'Map hernoemen';
-
-  @override
-  String get addANewFolder => 'Nieuwe map maken';
-
-  @override
-  String get folderName => 'Mapnaam';
 
   @override
   String get retryRollout => 'Opnieuw uitrollen';

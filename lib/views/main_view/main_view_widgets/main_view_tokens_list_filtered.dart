@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../model/mixins/sortable_mixin.dart';
-import '../../../model/tokens/token.dart';
 import '../../../utils/riverpod_providers.dart';
 import 'token_widgets/token_widget_builder.dart';
 
@@ -24,19 +22,15 @@ class MainViewTokensListFiltered extends ConsumerWidget {
   List<Widget> _mapTokensToWidgets({required WidgetRef ref}) {
     final filter = ref.watch(tokenFilterProvider);
     if (filter == null) return [];
-    final tokenFolders = ref.watch(tokenFolderProvider).folders;
-    final tokensInNoFolder = filter.filterTokens(ref.watch(tokenProvider).tokensWithoutFolder());
-    List<SortableMixin> sortables = [...tokenFolders, ...tokensInNoFolder];
+    final tokens = filter.filterTokens(ref.watch(tokenProvider).tokens);
 
-    sortables.sort((a, b) => a.compareTo(b));
+    tokens.sort((a, b) => a.compareTo(b));
     final List<Widget> widgets = [];
-    for (int i = 0; i < sortables.length; i++) {
-      final sortable = sortables[i];
-      if (sortable is Token) {
-        widgets.add(TokenWidgetBuilder.fromToken(sortable));
-        if (i != sortables.length - 1) {
-          widgets.add(const Divider());
-        }
+    for (int i = 0; i < tokens.length; i++) {
+      final sortable = tokens[i];
+      widgets.add(TokenWidgetBuilder.fromToken(sortable));
+      if (i != tokens.length - 1) {
+        widgets.add(const Divider());
       }
     }
     return widgets;

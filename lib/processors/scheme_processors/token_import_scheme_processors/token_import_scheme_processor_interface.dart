@@ -9,12 +9,6 @@ abstract class TokenImportSchemeProcessor implements SchemeProcessor {
   };
 
   @override
-
-  /// data: [Uri] uri
-  /// args: [bool] fromInit
-  Future<List<Token>> processTokenMigrate(Uri data, {bool args = false}) => processUri(data, fromInit: args);
-
-  @override
   Future<List<Token>> processUri(Uri uri, {bool fromInit = false});
 
   static Future<List<Token>?> processUriByAny(Uri uri) async {

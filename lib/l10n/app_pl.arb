@@ -102,10 +102,6 @@
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "confirmFolderDeletionHint": "Usunięcie folderu nie ma wpływu na znajdujące się w nim tokeny. Tokeny są przenoszone do głównej listy.",
-  "@confirmFolderDeletionHint": {
-    "description": "Gives the user a hint about the consequences of deleting a folder."
-  },
   "generatingPhonePart": "Generowanie sekretu po stronie telefonu...",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
@@ -400,10 +396,6 @@
   "validUntil": "Ważny do",
   "deleteLockedToken": "Uwierzytelnij, aby usunąć zablokowany token.",
   "editLockedToken": "Aby edytować zablokowany token, należy się uwierzytelnić.",
-  "expandLockedFolder": "Uwierzytelnij, aby otworzyć zablokowany folder.",
-  "renameTokenFolder": "Zmiana nazwy folderu",
-  "addANewFolder": "Utwórz nowy folder",
-  "folderName": "Nazwa folderu",
   "retryRollout": "Ponowne uruchomienie",
   "generatingRSAKeyPair": "Generowanie pary kluczy RSA",
   "@generatingRSAKeyPair": {

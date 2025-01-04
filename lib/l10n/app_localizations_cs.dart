@@ -80,9 +80,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get confirmTokenDeletionHint => 'Pokud tento token odstraníte, nebude již možné se přihlásit.\nProsím, ujistěte se, že se můžete přihlásit k přidruženému účtu bez tohoto tokenu.';
 
   @override
-  String get confirmFolderDeletionHint => 'Odstranění složky nemá žádný vliv na tokeny v ní.\nTokeny jsou přesunuty do hlavního seznamu.';
-
-  @override
   String get generatingPhonePart => 'Generování klientské části';
 
   @override
@@ -362,18 +359,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get editLockedToken => 'Prosím, autentifikujte se pro úpravu uzamčeného tokenu.';
-
-  @override
-  String get expandLockedFolder => 'Chcete-li otevřít uzamčenou složku, ověřte se.';
-
-  @override
-  String get renameTokenFolder => 'Přejmenování složky';
-
-  @override
-  String get addANewFolder => 'Vytvoření nové složky';
-
-  @override
-  String get folderName => 'Název složky';
 
   @override
   String get retryRollout => 'Zkusit znovu';

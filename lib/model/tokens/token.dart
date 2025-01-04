@@ -18,7 +18,6 @@ abstract class Token with SortableMixin {
   final bool isHidden;
   Duration get showDuration;
   final String? tokenImage;
-  final int? folderId;
   @override
   final int? sortIndex;
 
@@ -47,7 +46,6 @@ abstract class Token with SortableMixin {
     required this.type,
     this.tokenImage,
     this.sortIndex,
-    this.folderId,
     this.origin,
     bool? pin,
     bool? isLocked,
@@ -79,7 +77,6 @@ abstract class Token with SortableMixin {
     bool? pin,
     String? tokenImage,
     int? sortIndex,
-    int? Function()? folderId,
     TokenOriginData? origin,
   });
 
@@ -102,7 +99,6 @@ abstract class Token with SortableMixin {
         'tokenImage: $tokenImage, '
         'type: $type, '
         'sortIndex: $sortIndex, '
-        'folderId: $folderId, '
         'origin: $origin, ';
   }
 }

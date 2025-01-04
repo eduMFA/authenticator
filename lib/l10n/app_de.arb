@@ -105,10 +105,6 @@
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "confirmFolderDeletionHint": "Das Löschen eines Ordners hat keine Auswirkungen auf die Token, die sich darin befinden.\nDie Token werden in die Hauptliste verschoben.",
-  "@confirmFolderDeletionHint": {
-    "description": "Gives the user a hint about the consequences of deleting a folder."
-  },
   "generatingPhonePart": "Generiere Telefonanteil",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
@@ -397,10 +393,6 @@
   "validUntil": "Gültig bis",
   "deleteLockedToken": "Bitte authentifizieren Sie sich, um den gesperrten Token zu löschen.",
   "editLockedToken": "Bitte authentifizieren Sie sich, um den gesperrten Token zu bearbeiten.",
-  "expandLockedFolder": "Bitte authentifizieren Sie sich, um den gesperrten Ordner zu öffnen.",
-  "renameTokenFolder": "Ordner umbenennen",
-  "addANewFolder": "Neuen Ordner anlegen",
-  "folderName": "Ordnername",
   "retryRollout": "Erneut ausrollen",
   "generatingRSAKeyPair": "Generiere RSA Schlüsselpaar",
   "@generatingRSAKeyPair": {

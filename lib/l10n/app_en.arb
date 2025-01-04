@@ -97,10 +97,6 @@
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "confirmFolderDeletionHint": "Deleting a folder has no effect on the tokens in it.\nThe tokens are moved to the main list.",
-  "@confirmFolderDeletionHint": {
-    "description": "Gives the user a hint about the consequences of deleting a folder."
-  },
   "generatingPhonePart": "Generating phone part",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
@@ -396,13 +392,6 @@
   "validUntil": "Valid until",
   "deleteLockedToken": "Please authenticate to delete the locked token.",
   "editLockedToken": "Please authenticate to edit the locked token.",
-  "expandLockedFolder": "Please authenticate to uncollapse the locked folder.",
-  "renameTokenFolder": "Rename folder",
-  "@renameTokenFolder": {
-    "description": "Title of the dialog where a new name for a token folder can be entered."
-  },
-  "addANewFolder": "Create new folder",
-  "folderName": "Folder name",
   "retryRollout": "Retry rollout",
   "generatingRSAKeyPair": "Generating RSA key pair",
   "@generatingRSAKeyPair": {

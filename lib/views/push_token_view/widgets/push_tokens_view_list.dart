@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../../model/mixins/sortable_mixin.dart';
-import '../../../model/token_folder.dart';
 import '../../../utils/riverpod_providers.dart';
 import '../../../widgets/deactivateable_refresh_indicator.dart';
 import '../../../widgets/drag_item_scroller.dart';
@@ -69,21 +68,20 @@ List<Widget> _buildSortableWidgets(List<SortableMixin> sortables, SortableMixin?
   for (var i = 0; i < sortables.length; i++) {
     final isFirst = i == 0;
     final isDraggingTheCurrent = draggingSortable == sortables[i];
-    final previousWasExpandedFolder = i > 0 && sortables[i - 1] is TokenFolder && (sortables[i - 1] as TokenFolder).isExpanded;
     // 1. Add a divider if the current sortable is not the one which is dragged
     // 2. Dont add a divider if the current sortable is the first
     // 3. Dont add a divider if the previous sortable was an expanded folder
     // 4. Ignore 2. and 3. if there is a sortable that is dragged
     //           1                     2                     3                         4
-    if (!isDraggingTheCurrent && ((!isFirst && !previousWasExpandedFolder) || draggingSortable != null)) {
+    if (!isDraggingTheCurrent && (!isFirst || draggingSortable != null)) {
       widgets.add(
-        DragTargetDivider(dependingFolder: null, nextSortable: sortables[i], ignoreFolderId: true),
+        DragTargetDivider(nextSortable: sortables[i]),
       );
     }
     widgets.add(SortableWidgetBuilder.fromSortable(sortables[i]));
   }
   if (draggingSortable != null) {
-    widgets.add(const DragTargetDivider(dependingFolder: null, nextSortable: null, isLastDivider: true, ignoreFolderId: true));
+    widgets.add(const DragTargetDivider(nextSortable: null, isLastDivider: true));
   }
   widgets.add(const SizedBox(height: 80));
   return widgets;

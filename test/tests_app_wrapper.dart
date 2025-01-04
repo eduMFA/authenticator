@@ -5,7 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:edumfa_authenticator/interfaces/repo/introduction_repository.dart';
 import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart';
-import 'package:edumfa_authenticator/interfaces/repo/token_folder_repository.dart';
 import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart';
 import 'package:edumfa_authenticator/utils/firebase_utils.dart';
 import 'package:edumfa_authenticator/utils/network_utils.dart';
@@ -14,7 +13,6 @@ import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 @GenerateNiceMocks([
   MockSpec<TokenRepository>(),
   MockSpec<SettingsRepository>(),
-  MockSpec<TokenFolderRepository>(),
   MockSpec<EduMFAIOClient>(),
   MockSpec<RsaUtils>(),
   MockSpec<FirebaseUtils>(),

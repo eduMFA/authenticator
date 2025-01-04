@@ -10,7 +10,6 @@ import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/states/introduction_state.dart';
 import 'package:edumfa_authenticator/model/states/settings_state.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
-import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -25,7 +24,6 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   late final MockSettingsRepository mockSettingsRepository;
   late final MockTokenRepository mockTokenRepository;
-  late final MockTokenFolderRepository mockTokenFolderRepository;
   late final MockRsaUtils mockRsaUtils;
   late final MockFirebaseUtils mockFirebaseUtils;
   late final MockEduMFAIOClient mockIOClient;
@@ -39,9 +37,6 @@ void main() {
     when(mockTokenRepository.loadTokens()).thenAnswer((_) async => []);
     when(mockTokenRepository.saveOrReplaceTokens(any)).thenAnswer((_) async => []);
     when(mockTokenRepository.deleteTokens(any)).thenAnswer((_) async => []);
-    mockTokenFolderRepository = MockTokenFolderRepository();
-    when(mockTokenFolderRepository.loadFolders()).thenAnswer((_) async => []);
-    when(mockTokenFolderRepository.saveOrReplaceFolders(any)).thenAnswer((_) async => []);
     mockRsaUtils = MockRsaUtils();
     when(mockRsaUtils.serializeRSAPublicKeyPKCS8(any)).thenAnswer((_) => 'publicKey');
     when(mockRsaUtils.generateRSAKeyPair()).thenAnswer((_) => const RsaUtils()
@@ -70,7 +65,6 @@ void main() {
               firebaseUtils: mockFirebaseUtils,
               ioClient: mockIOClient,
             )),
-        tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
       ],
       child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
     ));

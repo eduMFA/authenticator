@@ -10,7 +10,6 @@ import 'package:edumfa_authenticator/model/states/introduction_state.dart';
 import 'package:edumfa_authenticator/model/states/settings_state.dart';
 import 'package:edumfa_authenticator/state_notifiers/completed_introduction_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
-import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -23,7 +22,6 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   late final MockSettingsRepository mockSettingsRepository;
   late final MockTokenRepository mockTokenRepository;
-  late final MockTokenFolderRepository mockTokenFolderRepository;
   late final MockIntroductionRepository mockIntroductionRepository;
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
@@ -33,9 +31,6 @@ void main() {
     when(mockTokenRepository.loadTokens()).thenAnswer((_) async => []);
     when(mockTokenRepository.saveOrReplaceTokens(any)).thenAnswer((_) async => []);
     when(mockTokenRepository.deleteTokens(any)).thenAnswer((_) async => []);
-    mockTokenFolderRepository = MockTokenFolderRepository();
-    when(mockTokenFolderRepository.loadFolders()).thenAnswer((_) async => []);
-    when(mockTokenFolderRepository.saveOrReplaceFolders(any)).thenAnswer((_) async => []);
     mockIntroductionRepository = MockIntroductionRepository();
     final introductions = {...Introduction.values}..remove(Introduction.introductionScreen);
     when(mockIntroductionRepository.loadCompletedIntroductions()).thenAnswer((_) async => IntroductionState(completedIntroductions: introductions));
@@ -47,7 +42,6 @@ void main() {
         overrides: [
           settingsProvider.overrideWith((ref) => SettingsNotifier(repository: mockSettingsRepository)),
           tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
-          tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
           introductionProvider.overrideWith((ref) => InrtroductionNotifier(repository: mockIntroductionRepository)),
         ],
         child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
@@ -57,9 +51,7 @@ void main() {
       await _addHotpToken(tester);
       await _addTotpToken(tester);
       await _addDaypasswordToken(tester);
-      await _createFolder(tester);
       await tester.pump(const Duration(milliseconds: 200));
-      expect(find.text(AppLocalizationsEn().folderName), findsOneWidget);
       expect(find.byType(TokenWidgetBase).hitTestable(), findsNWidgets(3));
       expect(find.byType(TokenWidgetBase).hitTestable(), findsOneWidget);
       await pumpUntilFindNWidgets(tester, find.byType(TokenWidgetBase).hitTestable(), 3, const Duration(seconds: 5));
@@ -139,14 +131,4 @@ Future<void> _addDaypasswordToken(WidgetTester tester) async {
   await tester.pump();
   await tester.tap(find.text(AppLocalizationsEn().addToken));
   await tester.pump(const Duration(milliseconds: 1000));
-}
-
-Future<void> _createFolder(WidgetTester tester) async {
-  await tester.pump();
-  await tester.tap(find.byIcon(Icons.create_new_folder));
-  await tester.pump(const Duration(milliseconds: 1000));
-  await tester.enterText(find.byType(TextField).first, AppLocalizationsEn().folderName);
-  await tester.pump();
-  await tester.tap(find.text(AppLocalizationsEn().create));
-  await tester.pump();
 }

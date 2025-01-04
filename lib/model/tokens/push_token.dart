@@ -85,7 +85,6 @@ class PushToken extends Token {
     String? type, // just for @JsonSerializable(): type of PushToken is always TokenTypes.PIPUSH
     super.sortIndex,
     super.tokenImage,
-    super.folderId,
     super.pin,
     super.isLocked,
     super.isHidden,
@@ -134,7 +133,6 @@ class PushToken extends Token {
     bool? isRolledOut,
     PushTokenRollOutState? rolloutState,
     CustomIntBuffer? knownPushRequests,
-    int? Function()? folderId,
     TokenOriginData? origin,
   }) {
     return PushToken(
@@ -158,7 +156,6 @@ class PushToken extends Token {
       isRolledOut: isRolledOut ?? this.isRolledOut,
       rolloutState: rolloutState ?? this.rolloutState,
       knownPushRequests: knownPushRequests ?? this.knownPushRequests,
-      folderId: folderId != null ? folderId() : this.folderId,
       origin: origin ?? this.origin,
     );
   }

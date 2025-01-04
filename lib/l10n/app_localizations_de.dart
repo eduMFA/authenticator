@@ -80,9 +80,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get confirmTokenDeletionHint => 'Unter Umständen können Sie sich nicht mehr einloggen, wenn Sie diesen Token löschen.\nBitte stellen Sie sicher, dass Sie sich ohne diesen Token in den dazugehörigen Account einloggen können.';
 
   @override
-  String get confirmFolderDeletionHint => 'Das Löschen eines Ordners hat keine Auswirkungen auf die Token, die sich darin befinden.\nDie Token werden in die Hauptliste verschoben.';
-
-  @override
   String get generatingPhonePart => 'Generiere Telefonanteil';
 
   @override
@@ -362,18 +359,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get editLockedToken => 'Bitte authentifizieren Sie sich, um den gesperrten Token zu bearbeiten.';
-
-  @override
-  String get expandLockedFolder => 'Bitte authentifizieren Sie sich, um den gesperrten Ordner zu öffnen.';
-
-  @override
-  String get renameTokenFolder => 'Ordner umbenennen';
-
-  @override
-  String get addANewFolder => 'Neuen Ordner anlegen';
-
-  @override
-  String get folderName => 'Ordnername';
 
   @override
   String get retryRollout => 'Erneut ausrollen';

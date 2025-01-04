@@ -80,9 +80,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmTokenDeletionHint => 'You may no longer be able to log in if you delete this token.\nPlease make sure that you can log in to the associated account without this token.';
 
   @override
-  String get confirmFolderDeletionHint => 'Deleting a folder has no effect on the tokens in it.\nThe tokens are moved to the main list.';
-
-  @override
   String get generatingPhonePart => 'Generating phone part';
 
   @override
@@ -362,18 +359,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editLockedToken => 'Please authenticate to edit the locked token.';
-
-  @override
-  String get expandLockedFolder => 'Please authenticate to uncollapse the locked folder.';
-
-  @override
-  String get renameTokenFolder => 'Rename folder';
-
-  @override
-  String get addANewFolder => 'Create new folder';
-
-  @override
-  String get folderName => 'Folder name';
 
   @override
   String get retryRollout => 'Retry rollout';

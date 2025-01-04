@@ -80,9 +80,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get confirmTokenDeletionHint => 'Es posible que ya no pueda iniciar sesión si elimina este token.\nAsegúrese de que puede iniciar sesión en la cuenta asociada sin este token.';
 
   @override
-  String get confirmFolderDeletionHint => 'Eliminar una carpeta no afecta a los tokens que contiene.\nLos tokens se mueven a la lista principal.';
-
-  @override
   String get generatingPhonePart => 'Generar parte telefónico';
 
   @override
@@ -362,18 +359,6 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get editLockedToken => 'Por favor, autentíquese para editar el token bloqueado.';
-
-  @override
-  String get expandLockedFolder => 'Por favor, autentifíquese para abrir la carpeta bloqueada.';
-
-  @override
-  String get renameTokenFolder => 'Cambiar nombre de carpeta';
-
-  @override
-  String get addANewFolder => 'Crear nueva carpeta';
-
-  @override
-  String get folderName => 'Nombre de la carpeta';
 
   @override
   String get retryRollout => 'Reintentar despliegue';

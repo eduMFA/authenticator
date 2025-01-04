@@ -41,7 +41,6 @@ void _testPushToken() {
       type: 'type',
       sortIndex: 0,
       tokenImage: 'example.png',
-      folderId: 0,
       isLocked: true,
       pin: true,
     );
@@ -64,7 +63,6 @@ void _testPushToken() {
       expect(pushToken.type, 'EDUMFA_PUSH');
       expect(pushToken.sortIndex, 0);
       expect(pushToken.tokenImage, 'example.png');
-      expect(pushToken.folderId, 0);
       expect(pushToken.isLocked, true);
       expect(pushToken.pin, true);
     });
@@ -87,7 +85,6 @@ void _testPushToken() {
         knownPushRequests: CustomIntBuffer()..put(0),
         sortIndex: 1,
         tokenImage: 'exampleCopy.png',
-        folderId: () => 1,
         isLocked: false,
         pin: false,
       );
@@ -108,7 +105,6 @@ void _testPushToken() {
       expect(copy.knownPushRequests.list, [0]);
       expect(copy.sortIndex, 1);
       expect(copy.tokenImage, 'exampleCopy.png');
-      expect(copy.folderId, 1);
       expect(copy.isLocked, false);
       expect(copy.pin, false);
     });
@@ -132,7 +128,6 @@ void _testPushToken() {
         type: 'type',
         sortIndex: 0,
         tokenImage: 'example.png',
-        folderId: 0,
         isLocked: true,
         pin: true,
       ).withPushRequest(pr);
@@ -159,7 +154,6 @@ void _testPushToken() {
         type: 'type',
         sortIndex: 0,
         tokenImage: 'example.png',
-        folderId: 0,
         isLocked: true,
         pin: true,
       );
@@ -187,7 +181,6 @@ void _testPushToken() {
         type: 'type',
         sortIndex: 0,
         tokenImage: 'example.png',
-        folderId: 0,
         isLocked: true,
         pin: true,
       );
@@ -224,7 +217,6 @@ void _testPushToken() {
       expect(token.isLocked, true);
       expect(token.pin, true);
       expect(token.tokenImage, 'example.png');
-      expect(token.folderId, 0);
       expect(token.sortIndex, 0);
       expect(token.type, 'EDUMFA_PUSH');
       expect(token.expirationDate.toString(), DateTime(2017, 9, 7, 17, 30).toString());

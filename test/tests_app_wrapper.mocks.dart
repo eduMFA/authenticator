@@ -10,14 +10,11 @@ import 'package:edumfa_authenticator/interfaces/repo/introduction_repository.dar
     as _i19;
 import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart'
     as _i9;
-import 'package:edumfa_authenticator/interfaces/repo/token_folder_repository.dart'
-    as _i10;
 import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart'
     as _i6;
 import 'package:edumfa_authenticator/model/states/introduction_state.dart'
     as _i5;
 import 'package:edumfa_authenticator/model/states/settings_state.dart' as _i2;
-import 'package:edumfa_authenticator/model/token_folder.dart' as _i11;
 import 'package:edumfa_authenticator/model/tokens/push_token.dart' as _i16;
 import 'package:edumfa_authenticator/model/tokens/token.dart' as _i8;
 import 'package:edumfa_authenticator/utils/firebase_utils.dart' as _i17;
@@ -183,38 +180,6 @@ class MockSettingsRepository extends _i1.Mock
           ),
         )),
       ) as _i7.Future<_i2.SettingsState>);
-}
-
-/// A class which mocks [TokenFolderRepository].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockTokenFolderRepository extends _i1.Mock
-    implements _i10.TokenFolderRepository {
-  @override
-  _i7.Future<List<_i11.TokenFolder>> saveOrReplaceFolders(
-          List<_i11.TokenFolder>? folders) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #saveOrReplaceFolders,
-          [folders],
-        ),
-        returnValue:
-            _i7.Future<List<_i11.TokenFolder>>.value(<_i11.TokenFolder>[]),
-        returnValueForMissingStub:
-            _i7.Future<List<_i11.TokenFolder>>.value(<_i11.TokenFolder>[]),
-      ) as _i7.Future<List<_i11.TokenFolder>>);
-
-  @override
-  _i7.Future<List<_i11.TokenFolder>> loadFolders() => (super.noSuchMethod(
-        Invocation.method(
-          #loadFolders,
-          [],
-        ),
-        returnValue:
-            _i7.Future<List<_i11.TokenFolder>>.value(<_i11.TokenFolder>[]),
-        returnValueForMissingStub:
-            _i7.Future<List<_i11.TokenFolder>>.value(<_i11.TokenFolder>[]),
-      ) as _i7.Future<List<_i11.TokenFolder>>);
 }
 
 /// A class which mocks [EduMFAIOClient].

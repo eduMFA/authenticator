@@ -101,10 +101,6 @@
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "confirmFolderDeletionHint": "Het verwijderen van een map heeft geen effect op de tokens in de map. De tokens worden verplaatst naar de hoofdlijst.",
-  "@confirmFolderDeletionHint": {
-    "description": "Gives the user a hint about the consequences of deleting a folder."
-  },
   "generatingPhonePart": "Genereren telefoon gedeelte",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
@@ -397,10 +393,6 @@
   "validUntil": "Geldig tot",
   "deleteLockedToken": "Verifieer om het vergrendelde token te verwijderen.",
   "editLockedToken": "Verifieer om het vergrendelde token te bewerken.",
-  "expandLockedFolder": "Verifieer om de vergrendelde map te openen.",
-  "renameTokenFolder": "Map hernoemen",
-  "addANewFolder": "Nieuwe map maken",
-  "folderName": "Mapnaam",
   "retryRollout": "Opnieuw uitrollen",
   "generatingRSAKeyPair": "Genereren RSA sleutelpaar",
   "@generatingRSAKeyPair": {

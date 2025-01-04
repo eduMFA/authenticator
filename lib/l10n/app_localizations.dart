@@ -243,12 +243,6 @@ abstract class AppLocalizations {
   /// **'You may no longer be able to log in if you delete this token.\nPlease make sure that you can log in to the associated account without this token.'**
   String get confirmTokenDeletionHint;
 
-  /// Gives the user a hint about the consequences of deleting a folder.
-  ///
-  /// In en, this message translates to:
-  /// **'Deleting a folder has no effect on the tokens in it.\nThe tokens are moved to the main list.'**
-  String get confirmFolderDeletionHint;
-
   /// Title of a dialog telling the user that the phone part gets generated right now.
   ///
   /// In en, this message translates to:
@@ -782,30 +776,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please authenticate to edit the locked token.'**
   String get editLockedToken;
-
-  /// No description provided for @expandLockedFolder.
-  ///
-  /// In en, this message translates to:
-  /// **'Please authenticate to uncollapse the locked folder.'**
-  String get expandLockedFolder;
-
-  /// Title of the dialog where a new name for a token folder can be entered.
-  ///
-  /// In en, this message translates to:
-  /// **'Rename folder'**
-  String get renameTokenFolder;
-
-  /// No description provided for @addANewFolder.
-  ///
-  /// In en, this message translates to:
-  /// **'Create new folder'**
-  String get addANewFolder;
-
-  /// No description provided for @folderName.
-  ///
-  /// In en, this message translates to:
-  /// **'Folder name'**
-  String get folderName;
 
   /// No description provided for @retryRollout.
   ///
