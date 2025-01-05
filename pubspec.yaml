@@ -66,6 +66,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   fluentui_system_icons: ^1.1.268
   # UI
+  dynamic_color: ^1.7.0
   easy_dynamic_theme: ^2.3.1
   flutter_slidable: ^3.1.2
   firebase_messaging: ^15.1.6
