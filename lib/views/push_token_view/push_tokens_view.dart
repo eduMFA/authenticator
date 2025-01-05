@@ -21,7 +21,7 @@ class PushTokensView extends StatelessView {
         child: Stack(
           children: [
             Center(
-              child: Icon(Icons.notifications_none, size: 300, color: Colors.grey.withOpacity(0.2)),
+              child: Icon(Icons.notifications_none, size: 300, color: Colors.grey.withAlpha(51)),  // 20%
             ),
             const PushTokensViwList(),
           ],

@@ -32,7 +32,7 @@ class Logger {
       methodCount: 0,
       colors: true,
       printEmojis: true,
-      printTime: false,
+      dateTimeFormat: printer.DateTimeFormat.onlyTimeAndSinceStart,
     ),
   );
 

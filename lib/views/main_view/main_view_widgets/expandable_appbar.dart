@@ -90,7 +90,7 @@ class _ExpandableAppBarState extends State<ExpandableAppBar> {
                 color: Theme.of(context).canvasColor,
                 boxShadow: [
                   BoxShadow(
-                    color: Theme.of(context).shadowColor.withOpacity(0.3),
+                    color: Theme.of(context).shadowColor.withAlpha(77),  // 30%
                     blurRadius: 2,
                     offset: const Offset(0, 2),
                   ),
