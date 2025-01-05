@@ -1,4 +1,5 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+import 'package:edumfa_authenticator/widgets/navigation_bar.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -273,6 +274,7 @@ class SettingsView extends ConsumerView {
             ],
           ),
         ),
+        bottomNavigationBar: AppNavigationBar(current: AppNavigationBarDestination.settings),
       ),
     );
   }

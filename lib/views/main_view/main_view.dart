@@ -1,4 +1,4 @@
-import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
+import 'package:edumfa_authenticator/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
@@ -65,12 +65,6 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                 // maxLines: 2 only works like this.
                 maxLines: 2, // Title can be shown on small screens too.
               ),
-              leading: IconButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, SettingsView.routeName);
-                  },
-                  icon: const Icon(Icons.settings)
-              ),
               actions: [
                 hasFilter
                     ? AppBarItem(
@@ -101,6 +95,7 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
             ),
           ),
         ),
+        bottomNavigationBar: AppNavigationBar(current: AppNavigationBarDestination.home),
       ),
     );
   }
