@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../utils/riverpod_providers.dart';
 import 'token_widgets/token_widget_builder.dart';
 
-class MainViewTokensListFiltered extends ConsumerWidget {
-  const MainViewTokensListFiltered({super.key});
+class TokensListFiltered extends ConsumerWidget {
+  const TokensListFiltered({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

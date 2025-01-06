@@ -1,7 +1,7 @@
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/default_token_actions/default_delete_action.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/default_token_actions/default_edit_action.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/default_token_actions/default_lock_action.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/token_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_delete_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_edit_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_lock_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_action.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

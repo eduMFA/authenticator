@@ -11,16 +11,16 @@ import 'no_token_screen.dart';
 import 'poll_loading_indicator.dart';
 import 'sortable_widget_builder.dart';
 
-class MainViewTokensList extends ConsumerStatefulWidget {
+class TokensList extends ConsumerStatefulWidget {
   final GlobalKey<NestedScrollViewState> nestedScrollViewKey;
 
-  const MainViewTokensList({super.key, required this.nestedScrollViewKey});
+  const TokensList({super.key, required this.nestedScrollViewKey});
 
   @override
-  ConsumerState<MainViewTokensList> createState() => _MainViewTokensListState();
+  ConsumerState<TokensList> createState() => _TokensListState();
 }
 
-class _MainViewTokensListState extends ConsumerState<MainViewTokensList> {
+class _TokensListState extends ConsumerState<TokensList> {
   final listViewKey = GlobalKey();
   final scrollController = ScrollController();
 

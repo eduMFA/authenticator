@@ -1,3 +1,6 @@
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/drag_target_divider.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/poll_loading_indicator.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/sortable_widget_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -6,9 +9,6 @@ import '../../../model/mixins/sortable_mixin.dart';
 import '../../../utils/riverpod_providers.dart';
 import '../../../widgets/deactivateable_refresh_indicator.dart';
 import '../../../widgets/drag_item_scroller.dart';
-import '../../main_view/main_view_widgets/drag_target_divider.dart';
-import '../../main_view/main_view_widgets/poll_loading_indicator.dart';
-import '../../main_view/main_view_widgets/sortable_widget_builder.dart';
 
 class PushTokensViwList extends ConsumerStatefulWidget {
   const PushTokensViwList({super.key});
