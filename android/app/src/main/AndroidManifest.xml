@@ -30,6 +30,7 @@
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
+        android:localeConfig="@xml/locales_config"
         android:requestLegacyExternalStorage="true">
         <activity
             android:name=".MainActivity"
