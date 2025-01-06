@@ -2,7 +2,6 @@ import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/navigator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MainView extends ConsumerStatefulView {
@@ -11,8 +10,10 @@ class MainView extends ConsumerStatefulView {
   @override
   RouteSettings get routeSettings => const RouteSettings(name: routeName);
 
+  const MainView({super.key});
+
   @override
-  _MainViewState createState() => _MainViewState();
+  ConsumerState<MainView> createState() => _MainViewState();
 }
 
 class _MainViewState extends ConsumerState<MainView> {
