@@ -154,15 +154,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get couldNotSignMessage => 'Could not sign message.';
 
   @override
-  String get useDeviceLocaleTitle => 'Use device language';
-
-  @override
-  String get useDeviceLocaleDescription => 'Use device language if it is supported, otherwise default to english.';
-
-  @override
-  String get language => 'Language';
-
-  @override
   String get authenticateToShowOtp => 'Please authenticate to show one time password.';
 
   @override

@@ -154,15 +154,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get couldNotSignMessage => 'Nie można podpisać wiadomości.';
 
   @override
-  String get useDeviceLocaleTitle => 'Użyj języka urządzenia.';
-
-  @override
-  String get useDeviceLocaleDescription => 'Użyj języka urządzenia, jeśli jest wspierany. W innym wypadku zostanie ustawiony domyślny język angielski.';
-
-  @override
-  String get language => 'Język';
-
-  @override
   String get authenticateToShowOtp => 'Zweryfikuj tożsamość, by pokazać hasło jednorazowe.';
 
   @override

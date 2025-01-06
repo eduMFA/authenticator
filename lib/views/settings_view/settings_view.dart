@@ -137,47 +137,6 @@ class SettingsView extends ConsumerView {
               ),
               const Divider(),
               SettingsGroup(
-                title: AppLocalizations.of(context)!.language,
-                children: [
-                  SwitchListTile(
-                      title: Text(
-                        AppLocalizations.of(context)!.useDeviceLocaleTitle,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      subtitle: Text(
-                        AppLocalizations.of(context)!.useDeviceLocaleDescription,
-                        overflow: TextOverflow.fade,
-                      ),
-                      value: ref.watch(settingsProvider).useSystemLocale,
-                      onChanged: (value) => ref.read(settingsProvider.notifier).setUseSystemLocale(value)),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: DropdownButton<Locale>(
-                      disabledHint: Text(
-                        '${ref.watch(settingsProvider).currentLocale}',
-                        style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey),
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
-                      ),
-                      isExpanded: true,
-                      value: ref.watch(settingsProvider).currentLocale,
-                      items: AppLocalizations.supportedLocales.map<DropdownMenuItem<Locale>>((Locale itemLocale) {
-                        return DropdownMenuItem<Locale>(
-                          value: itemLocale,
-                          child: Text(
-                            '$itemLocale',
-                            overflow: TextOverflow.fade,
-                            softWrap: false,
-                          ),
-                        );
-                      }).toList(),
-                      onChanged:
-                          ref.watch(settingsProvider).useSystemLocale ? null : (value) => ref.read(settingsProvider.notifier).setLocalePreference(value!),
-                    ),
-                  ),
-                ],
-              ),
-              SettingsGroup(
                 isActive: enablePushSettingsGroup,
                 title: AppLocalizations.of(context)!.pushToken,
                 children: [

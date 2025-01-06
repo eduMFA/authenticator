@@ -206,18 +206,6 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Gebruik de taal van het apparaat",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Gebruik de taal van het apparaat wanneer het wordt ondersteund, val anders terug op Engels.",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
-  },
-  "language": "Taal",
-  "@language": {
-    "description": "Title of language setting group."
-  },
   "authenticateToShowOtp": "Authenticeer om het eenmalige wachtwoord te tonen.",
   "@authenticateToShowOtp": {
     "description": "Reason to authenticate when trying to view a one time password."

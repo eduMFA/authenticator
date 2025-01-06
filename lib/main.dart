@@ -58,7 +58,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     globalRef = ref;
-    final locale = ref.watch(settingsProvider).currentLocale;
     return LayoutBuilder(builder: (context, constraints) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(appConstraintsProvider.notifier).state = constraints;
@@ -72,7 +71,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
         navigatorKey: globalNavigatorKey,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        locale: locale,
         title: _customization.appName,
         theme: _customization.generateLightTheme(),
         darkTheme: _customization.generateDarkTheme(),

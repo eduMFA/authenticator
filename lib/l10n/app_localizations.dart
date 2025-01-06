@@ -375,24 +375,6 @@ abstract class AppLocalizations {
   /// **'Could not sign message.'**
   String get couldNotSignMessage;
 
-  /// Title of the switch tile where using the devices language can be enabled.
-  ///
-  /// In en, this message translates to:
-  /// **'Use device language'**
-  String get useDeviceLocaleTitle;
-
-  /// Description of the switch tile where using the devices language can be enabled.
-  ///
-  /// In en, this message translates to:
-  /// **'Use device language if it is supported, otherwise default to english.'**
-  String get useDeviceLocaleDescription;
-
-  /// Title of language setting group.
-  ///
-  /// In en, this message translates to:
-  /// **'Language'**
-  String get language;
-
   /// Reason to authenticate when trying to view a one time password.
   ///
   /// In en, this message translates to:

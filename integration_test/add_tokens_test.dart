@@ -7,7 +7,6 @@ import 'package:edumfa_authenticator/main.dart';
 import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/enums/token_types.dart';
 import 'package:edumfa_authenticator/model/states/introduction_state.dart';
-import 'package:edumfa_authenticator/model/states/settings_state.dart';
 import 'package:edumfa_authenticator/state_notifiers/completed_introduction_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
@@ -25,7 +24,6 @@ void main() {
   late final MockIntroductionRepository mockIntroductionRepository;
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
-    when(mockSettingsRepository.loadSettings()).thenAnswer((_) async => SettingsState(useSystemLocale: false, localePreference: const Locale('en')));
     when(mockSettingsRepository.saveSettings(any)).thenAnswer((_) async => true);
     mockTokenRepository = MockTokenRepository();
     when(mockTokenRepository.loadTokens()).thenAnswer((_) async => []);

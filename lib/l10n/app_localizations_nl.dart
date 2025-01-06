@@ -154,15 +154,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get couldNotSignMessage => 'Bericht niet kunnen ondertekenen.';
 
   @override
-  String get useDeviceLocaleTitle => 'Gebruik de taal van het apparaat';
-
-  @override
-  String get useDeviceLocaleDescription => 'Gebruik de taal van het apparaat wanneer het wordt ondersteund, val anders terug op Engels.';
-
-  @override
-  String get language => 'Taal';
-
-  @override
   String get authenticateToShowOtp => 'Authenticeer om het eenmalige wachtwoord te tonen.';
 
   @override

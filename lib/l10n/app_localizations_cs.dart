@@ -154,15 +154,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get couldNotSignMessage => 'Zprávu se nepodařilo podepsat.';
 
   @override
-  String get useDeviceLocaleTitle => 'Použít jazyk zařízení';
-
-  @override
-  String get useDeviceLocaleDescription => 'Použít jazyk zařízení, pokud je podporován, případně angličtinu.';
-
-  @override
-  String get language => 'Jazyk';
-
-  @override
   String get authenticateToShowOtp => 'Pro zobrazení jednorázového kódu se přihlaste.';
 
   @override

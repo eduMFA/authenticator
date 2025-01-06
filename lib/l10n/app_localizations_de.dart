@@ -154,15 +154,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get couldNotSignMessage => 'Nachricht konnte nicht signiert werden.';
 
   @override
-  String get useDeviceLocaleTitle => 'Nutze Systemsprache';
-
-  @override
-  String get useDeviceLocaleDescription => 'Nutze Systemsprache, falls diese unterstützt wird. Anderenfalls nutze Englisch. ';
-
-  @override
-  String get language => 'Sprache';
-
-  @override
   String get authenticateToShowOtp => 'Bitte authentifizieren Sie sich, um das Einmalpasswort anzuzeigen.';
 
   @override

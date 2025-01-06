@@ -212,18 +212,6 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Použít jazyk zařízení",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Použít jazyk zařízení, pokud je podporován, případně angličtinu.",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
-  },
-  "language": "Jazyk",
-  "@language": {
-    "description": "Title of language setting group."
-  },
   "authenticateToShowOtp": "Pro zobrazení jednorázového kódu se přihlaste.",
   "@authenticateToShowOtp": {
     "description": "Reason to authenticate when trying to view a one time password."

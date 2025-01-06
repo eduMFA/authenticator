@@ -208,18 +208,6 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Użyj języka urządzenia.",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Użyj języka urządzenia, jeśli jest wspierany. W innym wypadku zostanie ustawiony domyślny język angielski.",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
-  },
-  "language": "Język",
-  "@language": {
-    "description": "Title of language setting group."
-  },
   "authenticateToShowOtp": "Zweryfikuj tożsamość, by pokazać hasło jednorazowe.",
   "@authenticateToShowOtp": {
     "description": "Reason to authenticate when trying to view a one time password."

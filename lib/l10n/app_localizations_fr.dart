@@ -154,15 +154,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get couldNotSignMessage => 'Impossible de signer le message.';
 
   @override
-  String get useDeviceLocaleTitle => 'Utiliser la langue de l\'appareil';
-
-  @override
-  String get useDeviceLocaleDescription => 'Utilisez la langue de l\'appareil si elle est prise en charge, sinon l\'anglais par défaut.';
-
-  @override
-  String get language => 'Langue';
-
-  @override
   String get authenticateToShowOtp => 'Veuillez vous authentifier pour afficher un mot de passe à usage unique.';
 
   @override
