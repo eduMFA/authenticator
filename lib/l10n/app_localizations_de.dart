@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -21,21 +19,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get secretKey => 'Geheimer Schlüssel';
 
   @override
-  String get encoding => 'Kodierung';
-
-  @override
-  String get algorithm => 'Algorithmus';
-
-  @override
-  String get digits => 'Ziffern';
-
-  @override
-  String get type => 'Art';
-
-  @override
-  String get period => 'Periode';
-
-  @override
   String get rename => 'Umbenennen';
 
   @override
@@ -52,18 +35,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get scanQrCode => 'QR-Code scannen';
-
-  @override
-  String get enterDetailsForToken => 'Neuen Token konfigurieren';
-
-  @override
-  String get pleaseEnterANameForThisToken => 'Bitte geben Sie einen Namen ein.';
-
-  @override
-  String get pleaseEnterASecretForThisToken => 'Bitte geben Sie ein Geheimnis ein.';
-
-  @override
-  String get theSecretDoesNotFitTheCurrentEncoding => 'Das Geheimnis entspricht nicht der gewählten Verschlüsselung.';
 
   @override
   String get renameToken => 'Token umbenennen';
@@ -84,11 +55,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get phonePart => 'Telefonanteil:';
-
-  @override
-  String otpValueCopiedMessage(Object otpValue) {
-    return 'Passwort \"$otpValue\" wurde in Zwischenablage kopiert.';
-  }
 
   @override
   String get tokens => 'Token';
@@ -165,9 +131,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get rollingOut => 'Ausrollen';
 
   @override
-  String get pollingChallenges => 'Frage ausstehende Authentifizierungsanfragen ab';
-
-  @override
   String get unexpectedError => 'Ein unerwarteter Fehler ist aufgetreten.';
 
   @override
@@ -186,9 +149,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get checkYourNetwork => 'Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut.';
-
-  @override
-  String get serverNotReachable => 'Der Server konnte nicht erreicht werden.';
 
   @override
   String get couldNotSignMessage => 'Nachricht konnte nicht signiert werden.';
@@ -322,39 +282,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get open => 'Öffnen';
 
   @override
-  String get sendErrorDialogBody => 'Ein unbekannter Fehler ist aufgetreten. Die unten gezeigten Informationen können den Entwicklern per E-Mail zugesendet werden, um zu helfen, diesen Fehler in Zukunft zu vermeiden.';
-
-  @override
-  String get noFbToken => 'Kein Firebase Token vorhanden';
-
-  @override
-  String get firebaseToken => 'Firebase Token';
-
-  @override
-  String get noPublicKey => 'Kein öffentlicher Schlüssel vorhanden';
-
-  @override
-  String get publicKey => 'Öffentlicher Schlüssel';
-
-  @override
-  String get editToken => 'Token bearbeiten';
-
-  @override
-  String get edit => 'Bearbeiten';
-
-  @override
-  String get save => 'Speichern';
-
-  @override
-  String get create => 'Erstellen';
-
-  @override
-  String get validFor => 'Gültig für';
-
-  @override
-  String get validUntil => 'Gültig bis';
-
-  @override
   String get deleteLockedToken => 'Bitte authentifizieren Sie sich, um den gesperrten Token zu löschen.';
 
   @override
@@ -392,9 +319,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get pushRequestParseError => 'Die Push-Anfrage konnte nicht verarbeitet werden.';
-
-  @override
-  String get imageUrl => 'Bild URL';
 
   @override
   String get errorRollOutSSLHandshakeFailed => 'SSL-Handshake fehlgeschlagen. Roll-out nicht möglich.';
@@ -470,9 +394,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get introScanQrCode => 'Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die eduMFA Token.';
 
   @override
-  String get introTokenSwipe => 'Wischen Sie Token nach links, um die verfügbaren Aktionen zu sehen.';
-
-  @override
   String get introEditToken => 'Hier können Sie den Namen des Tokens bearbeiten und einige Details einsehen.';
 
   @override
@@ -480,100 +401,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get introPollForChallenges => 'Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen.';
-
-  @override
-  String legacySigningErrorTitle(Object tokenLabel) {
-    return 'Bei der Verwendung des veralteten Tokens ist ein Fehler aufgetreten: $tokenLabel';
-  }
-
-  @override
-  String get legacySigningErrorMessage => 'Der Token wurde in einer veralteten Version der App erstellt, was zu Problemen bei der Verwendung führen kann. Es wird empfohlen, einen neuen Push-Token zu erstellen, wenn das Problem weiterhin besteht!';
-
-  @override
-  String get qrScan => 'Scannen';
-
-  @override
-  String get enterLink => 'Link eingeben';
-
-  @override
-  String invalidBackupFile(Object appName) {
-    return 'Die ausgewählte Datei ist kein gültiges Backup von $appName.';
-  }
-
-  @override
-  String invalidQrScan(Object appName) {
-    return 'Der gescannte QR-Code ist kein gültiges Backup von $appName.';
-  }
-
-  @override
-  String invalidQrFile(Object appName) {
-    return 'Die ausgewählte Datei enthällt kein gültigen QR-Code von $appName.';
-  }
-
-  @override
-  String invalidLink(Object appName) {
-    return 'Der eingegebene Link ist kein gültiger Token von $appName, oder er wird nicht unterstützt.';
-  }
-
-  @override
-  String importExistingToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Es wurden $count Token gefunden, die sich bereits in der Anwendung befinden.',
-      one: 'Es wurde ein Token gefunden, das sich bereits in der Anwendung befindet.',
-      zero: 'Es wurde kein Token gefunden, das sich bereits in der App befindet.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importConflictToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Es besteht ein Konflikt mit bereits existierenden Token.\nBitte wählen Sie aus, welches Sie behalten möchten.',
-      one: 'Es besteht ein Konflikt mit bereits existierenden Token.\nBitte wählen Sie aus, welches Sie behalten möchten.',
-      zero: 'Es besteht kein Konflikt mit bereits existierenden Token.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importNewToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Es wurden $count neue Token gefunden, die importiert werden.',
-      one: 'Es wurde ein neues Token gefunden, das importiert wird.',
-      zero: 'Es wurde kein neues Token gefunden.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get importHint2FAS => 'Wählen Sie das 2FAS-Backup aus.\nFalls Sie kein Backup haben, erstellen Sie eins in der 2FAS-App. Wir empfehlen die Verwendung eines Passworts.';
-
-  @override
-  String get importHintAegisBackupFile => 'Wähle dein Aegis-Export (.json) aus.\nWenn Sie keinen Export haben, erstellen Sie bitte eins über das Einstellungen Menu in der Aegis-App. Wir empfehlen die Verwendung eines Passworts.';
-
-  @override
-  String get importHintAegisQrScan => 'Scannen Sie den QR-Code, den Sie erhalten, wenn Sie Einträge aus Aegis übertragen.';
-
-  @override
-  String get importHintAegisLink => 'Geben Sie den Link ein, den Sie erhalten, wenn Sie Einträge aus Aegis übertragen.';
-
-  @override
-  String get importHintGoogleQrScan => 'Scannen Sie den QR-Code, den Sie erhalten, wenn Sie Ihre Konten aus Google Authenticator exportieren.';
-
-  @override
-  String get importHintGoogleQrFile => 'Wählen Sie eine Bilddatei mit dem QR-Code, den Sie erhalten, wenn Sie Ihre Konten aus dem Google Authenticator exportieren.\n!! Der QR-Code enthält die Token in unverschlüsselter Form. Es ist deshalb nicht sicher, diesen länger als nötig aufzubewahren !!';
-
-  @override
-  String get qrFileDecodeError => 'Es war nicht möglich, den QR-Code aus dem ausgewählten Bild zu dekodieren. Bitte verwenden Sie stattdessen den QR-Code-Scanner.';
-
-  @override
-  String get tokenLink => 'Token Link';
 
   @override
   String get feedback => 'Feedback';
@@ -604,12 +431,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get feedbackSentDescription => 'Vielen Dank für Ihre Hilfe bei der Verbesserung dieser App!';
-
-  @override
-  String get patchNotesDialogTitle => 'Was ist neu?';
-
-  @override
-  String get version => 'Version';
 
   @override
   String get noMailAppTitle => 'Keine Mail-App gefunden';

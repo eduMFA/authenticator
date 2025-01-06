@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -21,21 +19,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get secretKey => 'Tajny klucz';
 
   @override
-  String get encoding => 'Kodowanie';
-
-  @override
-  String get algorithm => 'Algorytm';
-
-  @override
-  String get digits => 'Ilość cyfr';
-
-  @override
-  String get type => 'Typ';
-
-  @override
-  String get period => 'Cykl';
-
-  @override
   String get rename => 'Zmień nazwę';
 
   @override
@@ -52,18 +35,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get scanQrCode => 'Zeskanuj kod QR';
-
-  @override
-  String get enterDetailsForToken => 'Wprowadź szczegóły dla tokenu';
-
-  @override
-  String get pleaseEnterANameForThisToken => 'Wprowadź nazwę dla tokenu';
-
-  @override
-  String get pleaseEnterASecretForThisToken => 'Wprowadź sekret dla tokenu';
-
-  @override
-  String get theSecretDoesNotFitTheCurrentEncoding => 'Sekret nie odpowiada wybranemu sposobowi kodowania.';
 
   @override
   String get renameToken => 'Zmień nazwę tokenu';
@@ -84,11 +55,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get phonePart => 'Sekret po stronie telefonu:';
-
-  @override
-  String otpValueCopiedMessage(Object otpValue) {
-    return 'Jednorazowe hasło \"$otpValue\" skopiowane do schowka.';
-  }
 
   @override
   String get tokens => 'Token';
@@ -165,9 +131,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get rollingOut => 'Wdrażanie';
 
   @override
-  String get pollingChallenges => 'Sprawdzanie nowych wyzwań';
-
-  @override
   String get unexpectedError => 'Wystąpił nieoczekiwany błąd.';
 
   @override
@@ -186,9 +149,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get checkYourNetwork => 'Sprawdź połączenie sieciowe i spróbuj ponownie.';
-
-  @override
-  String get serverNotReachable => 'Nie można uzyskać połączenia z serwerem.';
 
   @override
   String get couldNotSignMessage => 'Nie można podpisać wiadomości.';
@@ -322,39 +282,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get open => 'Otwórz';
 
   @override
-  String get sendErrorDialogBody => 'Napotkano nieoczekiwany błąd w aplikacji. Poniższa wiadomość może zostać wysłana do deweloperów poprzez email, żeby pomóc uniknąć tego problemu w przyszłości.';
-
-  @override
-  String get noFbToken => 'Brak dostępnego tokena Firebase';
-
-  @override
-  String get firebaseToken => 'Token Firebase';
-
-  @override
-  String get noPublicKey => 'Brak dostępnego klucza publicznego';
-
-  @override
-  String get publicKey => 'Klucz publiczny';
-
-  @override
-  String get editToken => 'Edytuj token';
-
-  @override
-  String get edit => 'Edytuj';
-
-  @override
-  String get save => 'Zapisz';
-
-  @override
-  String get create => 'Utwórz';
-
-  @override
-  String get validFor => 'Ważny przez';
-
-  @override
-  String get validUntil => 'Ważny do';
-
-  @override
   String get deleteLockedToken => 'Uwierzytelnij, aby usunąć zablokowany token.';
 
   @override
@@ -392,9 +319,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get pushRequestParseError => 'Żądanie push nie mogło zostać przetworzone.';
-
-  @override
-  String get imageUrl => 'Adres URL obrazu';
 
   @override
   String get errorRollOutSSLHandshakeFailed => 'Uścisk dłoni SSL nie powiódł się. Rozwijanie nie jest możliwe.';
@@ -470,9 +394,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get introScanQrCode => 'Możesz skanować kody QR, aby dodawać tokeny. Obsługujemy każdy popularny token uwierzytelniania dwuskładnikowego, a także tokeny eduMFA.';
 
   @override
-  String get introTokenSwipe => 'Przesuń tokeny w lewo, aby zobaczyć dostępne akcje.';
-
-  @override
   String get introEditToken => 'Tutaj możesz edytować nazwę tokena i zobaczyć kilka szczegółów.';
 
   @override
@@ -480,100 +401,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get introPollForChallenges => 'Możesz sprawdzić nowe wyzwania, przeciągając listę tokenów w dół.';
-
-  @override
-  String legacySigningErrorTitle(Object tokenLabel) {
-    return 'Wystąpił błąd podczas korzystania z przestarzałego tokena: $tokenLabel';
-  }
-
-  @override
-  String get legacySigningErrorMessage => 'Token został utworzony w nieaktualnej wersji aplikacji, co może prowadzić do problemów podczas korzystania z niego.\nZaleca się utworzenie nowego tokena push, jeśli problem nadal występuje!';
-
-  @override
-  String get qrScan => 'Scan';
-
-  @override
-  String get enterLink => 'Wprowadź link';
-
-  @override
-  String invalidBackupFile(Object appName) {
-    return 'Wybrany plik nie jest prawidłową kopią zapasową $appName.';
-  }
-
-  @override
-  String invalidQrScan(Object appName) {
-    return 'Zeskanowany kod QR nie jest prawidłową kopią zapasową $appName.';
-  }
-
-  @override
-  String invalidQrFile(Object appName) {
-    return 'Wybrany plik nie zawiera prawidłowego kodu QR z $appName.';
-  }
-
-  @override
-  String invalidLink(Object appName) {
-    return 'Wprowadzony link nie jest prawidłowym tokenem $appName lub nie jest obsługiwany.';
-  }
-
-  @override
-  String importExistingToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Znaleziono $count tokenów, które już znajdują się w aplikacji.',
-      one: 'Znaleziono token, który już istnieje w aplikacji.',
-      zero: 'Nie znaleziono tokena, który już znajduje się w aplikacji.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importConflictToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Istnieje konflikt z tokenami, które już istnieją.',
-      one: 'Istnieje konflikt z tokenami, które już istnieją.',
-      zero: 'Nie ma konfliktu z tokenami, które już istnieją.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importNewToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Znaleziono nowy token $count, który zostanie zaimportowany.',
-      one: 'Znaleziono nowy token, który zostanie zaimportowany.',
-      zero: 'Nie znaleziono nowego tokena.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get importHint2FAS => 'Wybierz kopię zapasową 2FAS. Jeśli nie masz kopii zapasowej, utwórz ją w aplikacji 2FAS. Zalecamy użycie hasła.';
-
-  @override
-  String get importHintAegisBackupFile => 'Wybierz swój eksport Aegis (.JSON).\nJeśli nie masz eksportu, utwórz go za pomocą menu ustawień w aplikacji Aegis. Zalecane jest użycie hasła.';
-
-  @override
-  String get importHintAegisQrScan => 'Zeskanuj kod QR otrzymany podczas przesyłania wpisów z Aegis';
-
-  @override
-  String get importHintAegisLink => 'Wprowadź link otrzymany podczas przesyłania wpisów z Aegis.';
-
-  @override
-  String get importHintGoogleQrScan => 'Zeskanuj kod QR otrzymany podczas eksportowania kont z Google Authenticator';
-
-  @override
-  String get importHintGoogleQrFile => 'Wybierz plik obrazu z kodem QR otrzymanym podczas eksportowania kont z Google Authenticator.\n!! Należy pamiętać, że zapisywanie kodu QR na urządzeniu nie jest bezpieczne, ponieważ tokeny nie są szyfrowane !!';
-
-  @override
-  String get qrFileDecodeError => 'Nie można było zdekodować kodu QR z wybranego obrazu, zamiast tego użyj skanera kodów QR.';
-
-  @override
-  String get tokenLink => 'TokenLink';
 
   @override
   String get feedback => 'Informacje zwrotne';
@@ -604,12 +431,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get feedbackSentDescription => 'Dziękujemy bardzo za pomoc w ulepszeniu tej aplikacji!';
-
-  @override
-  String get patchNotesDialogTitle => 'Co nowego?';
-
-  @override
-  String get version => 'Wersja';
 
   @override
   String get noMailAppTitle => 'Nie znaleziono aplikacji pocztowej';

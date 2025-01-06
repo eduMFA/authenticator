@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2023-08-07",
+  "@@last_modified": "2025-01-06",
   "guide": "Handleiding",
   "@guide": {
     "description": "Button to open the guide screen."
@@ -19,26 +19,6 @@
   "secretKey": "Geheime sleutel",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
-  },
-  "encoding": "Codering",
-  "@encoding": {
-    "description": "Title of the dropdown button where the encoding is selected."
-  },
-  "algorithm": "Algoritme",
-  "@algorithm": {
-    "description": "Title of the dropdown button where the encoding is selected."
-  },
-  "digits": "Cijfers",
-  "@digits": {
-    "description": "Title of the dropdown button where the number of digits for the opt value is selected."
-  },
-  "type": "Type",
-  "@type": {
-    "description": "Title of the dropdown button where the type of the token is selected."
-  },
-  "period": "Duur",
-  "@period": {
-    "description": "Title of the dropdown button where the period of the totp token is selected."
   },
   "rename": "Wijzigen",
   "@rename": {
@@ -63,22 +43,6 @@
   "scanQrCode": "Scan QR-Code",
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
-  },
-  "enterDetailsForToken": "Voer informatie over token in",
-  "@enterDetailsForToken": {
-    "description": "Title of the screen where tokens are created manually, tells the user to enter all required values."
-  },
-  "pleaseEnterANameForThisToken": "Voer de naam in voor deze token.",
-  "@pleaseEnterANameForThisToken": {
-    "description": "Hint telling the user to enter a name for a token."
-  },
-  "pleaseEnterASecretForThisToken": "Voer de geheime sleutel in voor deze token.",
-  "@pleaseEnterASecretForThisToken": {
-    "description": "Hint telling the user to enter a secret for a token."
-  },
-  "theSecretDoesNotFitTheCurrentEncoding": "De geheime sleutel past niet bij de huidige codering",
-  "@theSecretDoesNotFitTheCurrentEncoding": {
-    "description": "Hint telling the user that the secret does not fit the selected encoding."
   },
   "renameToken": "Hernoem token",
   "@renameToken": {
@@ -108,15 +72,6 @@
   "phonePart": "Telefoon gedeelte:",
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
-  },
-  "otpValueCopiedMessage": "Wachtwoord \"{otpValue}\" gekopieerd naar het klembord.",
-  "@otpValueCopiedMessage": {
-    "description": "Tells the user that the otp value was copied to the clipboard.",
-    "placeholders": {
-      "otpValue": {
-        "example": "055374"
-      }
-    }
   },
   "tokens": "Token",
   "settings": "Instellingen",
@@ -215,10 +170,6 @@
   "@rollingOut": {
     "description": "Label that tells the user that the token is being rolled out."
   },
-  "pollingChallenges": "Zoeken naar nieuwe aanvragen",
-  "@pollingChallenges": {
-    "type": "text"
-  },
   "unexpectedError": "Er is een onverwachte fout opgetreden.",
   "@unexpectedError": {
     "description": "Title of page report mode."
@@ -247,10 +198,6 @@
   "checkYourNetwork": "Controleer je netwerkverbinding en probeer het opnieuw.",
   "@checkYourNetwork": {
     "description": "Tells the user to check the network connection."
-  },
-  "serverNotReachable": "De server kon niet worden bereikt.",
-  "@serverNotReachable": {
-    "description": "Tells the user that the server could not be reached."
   },
   "couldNotSignMessage": "Bericht niet kunnen ondertekenen.",
   "@couldNotSignMessage": {
@@ -377,20 +324,6 @@
   },
   "showDetails": "Details tonen",
   "open": "Openen",
-  "sendErrorDialogBody": "Een onverwachte fout heeft plaatsgevonden in de applicatie. De onderstaande informatie kan worden verstuurd naar de ontwikkelaars via e-mail om het probleem in de toekomst te voorkomen.",
-  "@sendErrorDialogBody": {
-    "description": "Description shown to the user about what info the error report contains."
-  },
-  "noFbToken": "Geen Firebase Token beschikbaar",
-  "firebaseToken": "Firebase Token",
-  "noPublicKey": "Geen openbare sleutel beschikbaar",
-  "publicKey": "Openbare sleutel",
-  "editToken": "Token bewerken",
-  "edit": "Bewerken",
-  "save": "Opslaan",
-  "create": "Creëer",
-  "validFor": "Geldig voor",
-  "validUntil": "Geldig tot",
   "deleteLockedToken": "Verifieer om het vergrendelde token te verwijderen.",
   "editLockedToken": "Verifieer om het vergrendelde token te bewerken.",
   "retryRollout": "Opnieuw uitrollen",
@@ -435,7 +368,6 @@
     "description": "Message for the rollout process"
   },
   "pushRequestParseError": "Het pushverzoek kon niet worden verwerkt.",
-  "imageUrl": "Afbeeldings-URL",
   "errorRollOutSSLHandshakeFailed": "SSL-handdruk mislukt. Uitrollen niet mogelijk.",
   "@errorRollOutSSLHandshakeFailed": {
     "description": "Message for the rollout process"
@@ -476,40 +408,9 @@
   "licensesAndVersion": "Licenties en versie",
   "privacyPolicy": "Privacybeleid",
   "introScanQrCode": "Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de eduMFA tokens.",
-  "introTokenSwipe": "Veeg tokens naar links om beschikbare acties te zien.",
   "introEditToken": "Hier kun je de naam van het token bewerken en enkele details bekijken.",
   "introLockToken": "Om de beveiliging nog meer te verbeteren, kun je tokens vergrendelen.¨Dan kan het token alleen gebruikt worden na authenticatie.",
   "introPollForChallenges": "Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen.",
-  "legacySigningErrorTitle": "Er is een fout opgetreden bij het gebruik van het verouderde token: {tokenLabel}",
-  "@legacySigningErrorTitle": {
-    "description": "Title of the error dialog that is shown when an error occurs while using a legacy token.",
-    "placeholders": {
-      "tokenLabel": {
-        "example": "PUSH1234A"
-      }
-    }
-  },
-  "legacySigningErrorMessage": "Het token is aangemaakt in een verouderde versie van de app, wat kan leiden tot problemen bij het gebruik ervan.\nHet wordt aanbevolen om een nieuw push token aan te maken als het probleem zich blijft voordoen!",
-  "@legacySigningErrorMessage": {
-    "description": "Message of the error dialog that is shown when an error occurs while using a legacy token."
-  },
-  "qrScan": "Scan",
-  "enterLink": "Link invoeren",
-  "invalidBackupFile": "Het geselecteerde bestand is geen geldige backup van {appName}.",
-  "invalidQrScan": "De gescande QR code is geen geldige backup van {appName}.",
-  "invalidQrFile": "Het geselecteerde bestand bevat geen geldige QR code van {appName}.",
-  "invalidLink": "De ingevoerde link is geen geldig token van {appName}, of wordt niet ondersteund.",
-  "importExistingToken": "{count, plural, zero{Er is geen token gevonden dat al in de toepassing aanwezig is.} one{Er is een token gevonden dat al bestaat in de applicatie.} other{{count} tokens gevonden die al in de applicatie staan.}}",
-  "importConflictToken": "{count, plural, zero{Er is geen conflict met tokens die al bestaan.} one{Er is een conflict met tokens die al bestaan.Selecteer welke u wilt behouden.} other{Er is een conflict met tokens die al bestaan.Selecteer welke u wilt behouden.}}",
-  "importNewToken": "{count, plural, zero{Er is geen nieuw token gevonden.} one{Er is een nieuw token gevonden dat zal worden geïmporteerd.} other{Er is een nieuw token {count} gevonden dat zal worden geïmporteerd.}}",
-  "importHint2FAS": "Selecteer uw 2FAS-back-up. Als u geen back-up hebt, maak er dan een aan in de 2FAS-app. Wij raden u aan een wachtwoord te gebruiken.",
-  "importHintAegisBackupFile": "Selecteer uw Aegis-export (.JSON).Als u geen export hebt, maak er dan een aan via het instellingenmenu in de Aegis-app. Het gebruik van een wachtwoord wordt aanbevolen.",
-  "importHintAegisQrScan": "Scan de QR-code die u ontvangt bij het overbrengen van items uit Aegis.",
-  "importHintAegisLink": "Voer de link in die u ontvangt wanneer u vermeldingen van Aegis overdraagt.",
-  "importHintGoogleQrScan": "Scan de QR-code die u ontvangt wanneer u uw accounts exporteert vanuit Google Authenticator.",
-  "importHintGoogleQrFile": "Selecteer een afbeeldingsbestand met de QR-code die u ontvangt wanneer u uw accounts exporteert vanuit Google Authenticator.\n!! Let op: het is niet veilig om de QR-code op je apparaat op te slaan, omdat de tokens niet versleuteld zijn !!",
-  "qrFileDecodeError": "Het was niet mogelijk om de QR code te decoderen van de geselecteerde afbeelding, gebruik in plaats daarvan de QR code scanner.",
-  "tokenLink": "tokenlink",
   "feedback": "Feedback",
   "feedbackTitle": "Uw feedback is altijd welkom!",
   "feedbackDescription": "Als je vragen, suggesties of problemen hebt, laat het ons dan weten.",
@@ -523,8 +424,6 @@
   "addSystemInfo": "Systeeminformatie toevoegen",
   "feedbackSentTitle": "Feedback verzonden",
   "feedbackSentDescription": "Hartelijk dank voor je hulp om deze applicatie beter te maken!",
-  "patchNotesDialogTitle": "Wat is er nieuw?",
-  "version": "Versie",
   "noMailAppTitle": "Geen mail app gevonden",
   "noMailAppDescription": "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden.",
   "authenticationRequest": "Verificatieverzoek",

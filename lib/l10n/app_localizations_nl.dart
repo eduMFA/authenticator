@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -21,21 +19,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get secretKey => 'Geheime sleutel';
 
   @override
-  String get encoding => 'Codering';
-
-  @override
-  String get algorithm => 'Algoritme';
-
-  @override
-  String get digits => 'Cijfers';
-
-  @override
-  String get type => 'Type';
-
-  @override
-  String get period => 'Duur';
-
-  @override
   String get rename => 'Wijzigen';
 
   @override
@@ -52,18 +35,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get scanQrCode => 'Scan QR-Code';
-
-  @override
-  String get enterDetailsForToken => 'Voer informatie over token in';
-
-  @override
-  String get pleaseEnterANameForThisToken => 'Voer de naam in voor deze token.';
-
-  @override
-  String get pleaseEnterASecretForThisToken => 'Voer de geheime sleutel in voor deze token.';
-
-  @override
-  String get theSecretDoesNotFitTheCurrentEncoding => 'De geheime sleutel past niet bij de huidige codering';
 
   @override
   String get renameToken => 'Hernoem token';
@@ -84,11 +55,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get phonePart => 'Telefoon gedeelte:';
-
-  @override
-  String otpValueCopiedMessage(Object otpValue) {
-    return 'Wachtwoord \"$otpValue\" gekopieerd naar het klembord.';
-  }
 
   @override
   String get tokens => 'Token';
@@ -165,9 +131,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get rollingOut => 'Uitrollen';
 
   @override
-  String get pollingChallenges => 'Zoeken naar nieuwe aanvragen';
-
-  @override
   String get unexpectedError => 'Er is een onverwachte fout opgetreden.';
 
   @override
@@ -186,9 +149,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get checkYourNetwork => 'Controleer je netwerkverbinding en probeer het opnieuw.';
-
-  @override
-  String get serverNotReachable => 'De server kon niet worden bereikt.';
 
   @override
   String get couldNotSignMessage => 'Bericht niet kunnen ondertekenen.';
@@ -322,39 +282,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get open => 'Openen';
 
   @override
-  String get sendErrorDialogBody => 'Een onverwachte fout heeft plaatsgevonden in de applicatie. De onderstaande informatie kan worden verstuurd naar de ontwikkelaars via e-mail om het probleem in de toekomst te voorkomen.';
-
-  @override
-  String get noFbToken => 'Geen Firebase Token beschikbaar';
-
-  @override
-  String get firebaseToken => 'Firebase Token';
-
-  @override
-  String get noPublicKey => 'Geen openbare sleutel beschikbaar';
-
-  @override
-  String get publicKey => 'Openbare sleutel';
-
-  @override
-  String get editToken => 'Token bewerken';
-
-  @override
-  String get edit => 'Bewerken';
-
-  @override
-  String get save => 'Opslaan';
-
-  @override
-  String get create => 'Creëer';
-
-  @override
-  String get validFor => 'Geldig voor';
-
-  @override
-  String get validUntil => 'Geldig tot';
-
-  @override
   String get deleteLockedToken => 'Verifieer om het vergrendelde token te verwijderen.';
 
   @override
@@ -392,9 +319,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get pushRequestParseError => 'Het pushverzoek kon niet worden verwerkt.';
-
-  @override
-  String get imageUrl => 'Afbeeldings-URL';
 
   @override
   String get errorRollOutSSLHandshakeFailed => 'SSL-handdruk mislukt. Uitrollen niet mogelijk.';
@@ -470,9 +394,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get introScanQrCode => 'Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de eduMFA tokens.';
 
   @override
-  String get introTokenSwipe => 'Veeg tokens naar links om beschikbare acties te zien.';
-
-  @override
   String get introEditToken => 'Hier kun je de naam van het token bewerken en enkele details bekijken.';
 
   @override
@@ -480,100 +401,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get introPollForChallenges => 'Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen.';
-
-  @override
-  String legacySigningErrorTitle(Object tokenLabel) {
-    return 'Er is een fout opgetreden bij het gebruik van het verouderde token: $tokenLabel';
-  }
-
-  @override
-  String get legacySigningErrorMessage => 'Het token is aangemaakt in een verouderde versie van de app, wat kan leiden tot problemen bij het gebruik ervan.\nHet wordt aanbevolen om een nieuw push token aan te maken als het probleem zich blijft voordoen!';
-
-  @override
-  String get qrScan => 'Scan';
-
-  @override
-  String get enterLink => 'Link invoeren';
-
-  @override
-  String invalidBackupFile(Object appName) {
-    return 'Het geselecteerde bestand is geen geldige backup van $appName.';
-  }
-
-  @override
-  String invalidQrScan(Object appName) {
-    return 'De gescande QR code is geen geldige backup van $appName.';
-  }
-
-  @override
-  String invalidQrFile(Object appName) {
-    return 'Het geselecteerde bestand bevat geen geldige QR code van $appName.';
-  }
-
-  @override
-  String invalidLink(Object appName) {
-    return 'De ingevoerde link is geen geldig token van $appName, of wordt niet ondersteund.';
-  }
-
-  @override
-  String importExistingToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count tokens gevonden die al in de applicatie staan.',
-      one: 'Er is een token gevonden dat al bestaat in de applicatie.',
-      zero: 'Er is geen token gevonden dat al in de toepassing aanwezig is.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importConflictToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Er is een conflict met tokens die al bestaan.Selecteer welke u wilt behouden.',
-      one: 'Er is een conflict met tokens die al bestaan.Selecteer welke u wilt behouden.',
-      zero: 'Er is geen conflict met tokens die al bestaan.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importNewToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Er is een nieuw token $count gevonden dat zal worden geïmporteerd.',
-      one: 'Er is een nieuw token gevonden dat zal worden geïmporteerd.',
-      zero: 'Er is geen nieuw token gevonden.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get importHint2FAS => 'Selecteer uw 2FAS-back-up. Als u geen back-up hebt, maak er dan een aan in de 2FAS-app. Wij raden u aan een wachtwoord te gebruiken.';
-
-  @override
-  String get importHintAegisBackupFile => 'Selecteer uw Aegis-export (.JSON).Als u geen export hebt, maak er dan een aan via het instellingenmenu in de Aegis-app. Het gebruik van een wachtwoord wordt aanbevolen.';
-
-  @override
-  String get importHintAegisQrScan => 'Scan de QR-code die u ontvangt bij het overbrengen van items uit Aegis.';
-
-  @override
-  String get importHintAegisLink => 'Voer de link in die u ontvangt wanneer u vermeldingen van Aegis overdraagt.';
-
-  @override
-  String get importHintGoogleQrScan => 'Scan de QR-code die u ontvangt wanneer u uw accounts exporteert vanuit Google Authenticator.';
-
-  @override
-  String get importHintGoogleQrFile => 'Selecteer een afbeeldingsbestand met de QR-code die u ontvangt wanneer u uw accounts exporteert vanuit Google Authenticator.\n!! Let op: het is niet veilig om de QR-code op je apparaat op te slaan, omdat de tokens niet versleuteld zijn !!';
-
-  @override
-  String get qrFileDecodeError => 'Het was niet mogelijk om de QR code te decoderen van de geselecteerde afbeelding, gebruik in plaats daarvan de QR code scanner.';
-
-  @override
-  String get tokenLink => 'tokenlink';
 
   @override
   String get feedback => 'Feedback';
@@ -604,12 +431,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get feedbackSentDescription => 'Hartelijk dank voor je hulp om deze applicatie beter te maken!';
-
-  @override
-  String get patchNotesDialogTitle => 'Wat is er nieuw?';
-
-  @override
-  String get version => 'Versie';
 
   @override
   String get noMailAppTitle => 'Geen mail app gevonden';

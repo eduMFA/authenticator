@@ -129,36 +129,6 @@ abstract class AppLocalizations {
   /// **'Secret key'**
   String get secretKey;
 
-  /// Title of the dropdown button where the encoding is selected.
-  ///
-  /// In en, this message translates to:
-  /// **'Encoding'**
-  String get encoding;
-
-  /// Title of the dropdown button where the encoding is selected.
-  ///
-  /// In en, this message translates to:
-  /// **'Algorithm'**
-  String get algorithm;
-
-  /// Title of the dropdown button where the number of digits for the opt value is selected.
-  ///
-  /// In en, this message translates to:
-  /// **'Digits'**
-  String get digits;
-
-  /// Title of the dropdown button where the type of the token is selected.
-  ///
-  /// In en, this message translates to:
-  /// **'Type'**
-  String get type;
-
-  /// Title of the dropdown button where the period of the totp token is selected.
-  ///
-  /// In en, this message translates to:
-  /// **'Period'**
-  String get period;
-
   /// Label that describes renaming the token.
   ///
   /// In en, this message translates to:
@@ -195,30 +165,6 @@ abstract class AppLocalizations {
   /// **'Scan QR-Code'**
   String get scanQrCode;
 
-  /// Title of the screen where tokens are created manually, tells the user to enter all required values.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter details for token'**
-  String get enterDetailsForToken;
-
-  /// Hint telling the user to enter a name for a token.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a name for this token.'**
-  String get pleaseEnterANameForThisToken;
-
-  /// Hint telling the user to enter a secret for a token.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter a secret for this token.'**
-  String get pleaseEnterASecretForThisToken;
-
-  /// Hint telling the user that the secret does not fit the selected encoding.
-  ///
-  /// In en, this message translates to:
-  /// **'The secret does not fit the current encoding'**
-  String get theSecretDoesNotFitTheCurrentEncoding;
-
   /// Title of the dialog where a new name for a token can be entered.
   ///
   /// In en, this message translates to:
@@ -254,12 +200,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone part:'**
   String get phonePart;
-
-  /// Tells the user that the otp value was copied to the clipboard.
-  ///
-  /// In en, this message translates to:
-  /// **'Password \"{otpValue}\" copied to clipboard.'**
-  String otpValueCopiedMessage(Object otpValue);
 
   /// No description provided for @tokens.
   ///
@@ -393,12 +333,6 @@ abstract class AppLocalizations {
   /// **'Rolling out'**
   String get rollingOut;
 
-  /// No description provided for @pollingChallenges.
-  ///
-  /// In en, this message translates to:
-  /// **'Polling for new challenges'**
-  String get pollingChallenges;
-
   /// Title of page report mode.
   ///
   /// In en, this message translates to:
@@ -434,12 +368,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please check your network connection and try again.'**
   String get checkYourNetwork;
-
-  /// Tells the user that the server could not be reached.
-  ///
-  /// In en, this message translates to:
-  /// **'The server could not be reached.'**
-  String get serverNotReachable;
 
   /// Tells the user that the message could not be signed.
   ///
@@ -699,72 +627,6 @@ abstract class AppLocalizations {
   /// **'Open'**
   String get open;
 
-  /// Description shown to the user about what info the error report contains.
-  ///
-  /// In en, this message translates to:
-  /// **'An unexpected error occurred in the application. The information below can be send to the developers by email to help prevent this error in the future.'**
-  String get sendErrorDialogBody;
-
-  /// No description provided for @noFbToken.
-  ///
-  /// In en, this message translates to:
-  /// **'No Firebase token available'**
-  String get noFbToken;
-
-  /// No description provided for @firebaseToken.
-  ///
-  /// In en, this message translates to:
-  /// **'Firebase Token'**
-  String get firebaseToken;
-
-  /// No description provided for @noPublicKey.
-  ///
-  /// In en, this message translates to:
-  /// **'No public key available'**
-  String get noPublicKey;
-
-  /// No description provided for @publicKey.
-  ///
-  /// In en, this message translates to:
-  /// **'Public Key'**
-  String get publicKey;
-
-  /// No description provided for @editToken.
-  ///
-  /// In en, this message translates to:
-  /// **'Edit Token'**
-  String get editToken;
-
-  /// No description provided for @edit.
-  ///
-  /// In en, this message translates to:
-  /// **'Edit'**
-  String get edit;
-
-  /// No description provided for @save.
-  ///
-  /// In en, this message translates to:
-  /// **'Save'**
-  String get save;
-
-  /// No description provided for @create.
-  ///
-  /// In en, this message translates to:
-  /// **'Create'**
-  String get create;
-
-  /// No description provided for @validFor.
-  ///
-  /// In en, this message translates to:
-  /// **'Valid for'**
-  String get validFor;
-
-  /// No description provided for @validUntil.
-  ///
-  /// In en, this message translates to:
-  /// **'Valid until'**
-  String get validUntil;
-
   /// No description provided for @deleteLockedToken.
   ///
   /// In en, this message translates to:
@@ -842,12 +704,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Push request could not be parsed.'**
   String get pushRequestParseError;
-
-  /// No description provided for @imageUrl.
-  ///
-  /// In en, this message translates to:
-  /// **'Image URL'**
-  String get imageUrl;
 
   /// Tells the user that the roll-out failed because the SSL handshake failed.
   ///
@@ -987,12 +843,6 @@ abstract class AppLocalizations {
   /// **'You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.'**
   String get introScanQrCode;
 
-  /// No description provided for @introTokenSwipe.
-  ///
-  /// In en, this message translates to:
-  /// **'Swipe tokens to the left to see available actions.'**
-  String get introTokenSwipe;
-
   /// No description provided for @introEditToken.
   ///
   /// In en, this message translates to:
@@ -1010,120 +860,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You can check for new challenges by dragging down the token list.'**
   String get introPollForChallenges;
-
-  /// Title of the error dialog that is shown when an error occurs while using a legacy token.
-  ///
-  /// In en, this message translates to:
-  /// **'An error occured while using the legacy token: {tokenLabel}'**
-  String legacySigningErrorTitle(Object tokenLabel);
-
-  /// Message of the error dialog that is shown when an error occurs while using a legacy token.
-  ///
-  /// In en, this message translates to:
-  /// **'The token was enrolled in a old version of this app, which may cause trouble using it.\nIt is suggested to enroll a new push token if the problem persist!'**
-  String get legacySigningErrorMessage;
-
-  /// No description provided for @qrScan.
-  ///
-  /// In en, this message translates to:
-  /// **'Scan'**
-  String get qrScan;
-
-  /// No description provided for @enterLink.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter link'**
-  String get enterLink;
-
-  /// No description provided for @invalidBackupFile.
-  ///
-  /// In en, this message translates to:
-  /// **'The selected file is not a valid backup of {appName}.'**
-  String invalidBackupFile(Object appName);
-
-  /// No description provided for @invalidQrScan.
-  ///
-  /// In en, this message translates to:
-  /// **'The scanned QR code is not a valid backup of {appName}.'**
-  String invalidQrScan(Object appName);
-
-  /// No description provided for @invalidQrFile.
-  ///
-  /// In en, this message translates to:
-  /// **'The selected file does not contain a valid QR code from {appName}.'**
-  String invalidQrFile(Object appName);
-
-  /// No description provided for @invalidLink.
-  ///
-  /// In en, this message translates to:
-  /// **'The link entered is not a valid token of {appName}, or it is not supported.'**
-  String invalidLink(Object appName);
-
-  /// No description provided for @importExistingToken.
-  ///
-  /// In en, this message translates to:
-  /// **'{count, plural, zero{No token was found that is already in the application.} one{A token was found that already exists in the application.} other{{count} tokens was found that are already in the application.}}'**
-  String importExistingToken(num count);
-
-  /// No description provided for @importConflictToken.
-  ///
-  /// In en, this message translates to:
-  /// **'{count, plural, zero{There is no conflict with existing tokens.} one{There is a conflict with an existing token.\nPlease choose which one you want to keep.} other{There are conflicts with existing tokens.\nPlease choose which one you want to keep.}}'**
-  String importConflictToken(num count);
-
-  /// No description provided for @importNewToken.
-  ///
-  /// In en, this message translates to:
-  /// **'{count, plural, zero{No new token has been found.} one{A new token has been found and is being imported.} other{{count} new tokens have been found and will be imported.}}'**
-  String importNewToken(num count);
-
-  /// No description provided for @importHint2FAS.
-  ///
-  /// In en, this message translates to:
-  /// **'Select your 2FAS backup.\nIf you do not have a backup, create one in the 2FAS app. We recommend using a password.'**
-  String get importHint2FAS;
-
-  /// No description provided for @importHintAegisBackupFile.
-  ///
-  /// In en, this message translates to:
-  /// **'Select your Aegis export (.JSON).\nIf you do not have an export, please create one via the settings menu in the Aegis app. The use of a password is recommended.'**
-  String get importHintAegisBackupFile;
-
-  /// No description provided for @importHintAegisQrScan.
-  ///
-  /// In en, this message translates to:
-  /// **'Scan the QR code you receive when you transfer entries from Aegis.'**
-  String get importHintAegisQrScan;
-
-  /// No description provided for @importHintAegisLink.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter the link you receive when you transfer entries from Aegis.'**
-  String get importHintAegisLink;
-
-  /// No description provided for @importHintGoogleQrScan.
-  ///
-  /// In en, this message translates to:
-  /// **'Scan the QR code you receive when you export your accounts from Google Authenticator.'**
-  String get importHintGoogleQrScan;
-
-  /// No description provided for @importHintGoogleQrFile.
-  ///
-  /// In en, this message translates to:
-  /// **'Select an image file with the QR code you receive when you export your accounts from Google Authenticator.\n!! Note that it is not safe to save the QR code on your device as the tokens are not encrypted !!'**
-  String get importHintGoogleQrFile;
-
-  /// No description provided for @qrFileDecodeError.
-  ///
-  /// In en, this message translates to:
-  /// **'It was not possible to decode the QR code from the selected image, please use the QR code scanner instead.'**
-  String get qrFileDecodeError;
-
-  /// No description provided for @tokenLink.
-  ///
-  /// In en, this message translates to:
-  /// **'Token link'**
-  String get tokenLink;
 
   /// No description provided for @feedback.
   ///
@@ -1184,18 +920,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Thank you very much for your help in making this application better!'**
   String get feedbackSentDescription;
-
-  /// No description provided for @patchNotesDialogTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'What\'s new?'**
-  String get patchNotesDialogTitle;
-
-  /// No description provided for @version.
-  ///
-  /// In en, this message translates to:
-  /// **'Version'**
-  String get version;
 
   /// No description provided for @noMailAppTitle.
   ///

@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -21,21 +19,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get secretKey => 'Tajný klíč';
 
   @override
-  String get encoding => 'Kódování';
-
-  @override
-  String get algorithm => 'Algoritmus';
-
-  @override
-  String get digits => 'Počet číslic';
-
-  @override
-  String get type => 'Typ';
-
-  @override
-  String get period => 'Časový interval';
-
-  @override
   String get rename => 'Přejmenovat';
 
   @override
@@ -52,18 +35,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get scanQrCode => 'Naskenovat QR kód';
-
-  @override
-  String get enterDetailsForToken => 'Vložte podrobnosti tokenu';
-
-  @override
-  String get pleaseEnterANameForThisToken => 'Vložte název pro tento token.';
-
-  @override
-  String get pleaseEnterASecretForThisToken => 'Vložte tajný klíč pro tento token.';
-
-  @override
-  String get theSecretDoesNotFitTheCurrentEncoding => 'Tajný klíč neodpovídá zvolenému kódování.';
 
   @override
   String get renameToken => 'Přejmenovat token';
@@ -84,11 +55,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get phonePart => 'Klientská část:';
-
-  @override
-  String otpValueCopiedMessage(Object otpValue) {
-    return 'Heslo \"$otpValue\" bylo zkopírováno do schránky.';
-  }
 
   @override
   String get tokens => 'Token';
@@ -165,9 +131,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get rollingOut => 'Registrace';
 
   @override
-  String get pollingChallenges => 'Čekám na nové požadavky';
-
-  @override
   String get unexpectedError => 'Nastala neočekávaná chyba.';
 
   @override
@@ -186,9 +149,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get checkYourNetwork => 'Zkontrolujte prosím síťové připojení a zkuste to znovu.';
-
-  @override
-  String get serverNotReachable => 'Na server se nepodařilo dovolat.';
 
   @override
   String get couldNotSignMessage => 'Zprávu se nepodařilo podepsat.';
@@ -322,39 +282,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get open => 'Otevřít';
 
   @override
-  String get sendErrorDialogBody => 'V aplikaci se vyskytla neznámá chyba. Informace uvedené níže mohou být odeslány vývojářům e-mailem pro vyřešení chyby v budoucnu.';
-
-  @override
-  String get noFbToken => 'Není k dispozici žádný token Firebase.';
-
-  @override
-  String get firebaseToken => 'Token Firebase';
-
-  @override
-  String get noPublicKey => 'Není k dispozici žádný veřejný klíč.';
-
-  @override
-  String get publicKey => 'Veřejný klíč';
-
-  @override
-  String get editToken => 'Upravit token';
-
-  @override
-  String get edit => 'Upravit';
-
-  @override
-  String get save => 'Uložit';
-
-  @override
-  String get create => 'Vytvořit';
-
-  @override
-  String get validFor => 'Platné pro';
-
-  @override
-  String get validUntil => 'Platné do';
-
-  @override
   String get deleteLockedToken => 'Prosím, autentifikujte se pro smazání uzamčeného tokenu.';
 
   @override
@@ -392,9 +319,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get pushRequestParseError => 'Požadavek na odeslání se nepodařilo zpracovat.';
-
-  @override
-  String get imageUrl => 'URL obrázku';
 
   @override
   String get errorRollOutSSLHandshakeFailed => 'SSL handshake se nezdařil. Roll-out není možný.';
@@ -470,9 +394,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get introScanQrCode => 'Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny eduMFA.';
 
   @override
-  String get introTokenSwipe => 'Přejetím po tokenech doleva zobrazíte dostupné akce.';
-
-  @override
   String get introEditToken => 'Zde můžete upravit název tokenu a zobrazit některé podrobnosti.';
 
   @override
@@ -480,100 +401,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get introPollForChallenges => 'Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů.';
-
-  @override
-  String legacySigningErrorTitle(Object tokenLabel) {
-    return 'Při použití staršího tokenu došlo k chybě: $tokenLabel';
-  }
-
-  @override
-  String get legacySigningErrorMessage => 'Token byl vytvořen v zastaralé verzi aplikace, což může vést k problémům při jeho používání.\nPokud problém přetrvává, doporučujeme vytvořit nový push token!';
-
-  @override
-  String get qrScan => 'Skenování';
-
-  @override
-  String get enterLink => 'Zadejte odkaz';
-
-  @override
-  String invalidBackupFile(Object appName) {
-    return 'Vybraný soubor není platnou zálohou $appName.';
-  }
-
-  @override
-  String invalidQrScan(Object appName) {
-    return 'Naskenovaný QR kód není platnou zálohou $appName.';
-  }
-
-  @override
-  String invalidQrFile(Object appName) {
-    return 'Vybraný soubor neobsahuje platný QR kód z $appName.';
-  }
-
-  @override
-  String invalidLink(Object appName) {
-    return 'Zadaný odkaz není platným tokenem $appName nebo není podporován.';
-  }
-
-  @override
-  String importExistingToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count byly nalezeny tokeny, které se již v aplikaci nacházejí.',
-      one: 'Byl nalezen token, který již v aplikaci existuje.',
-      zero: 'Nebyl nalezen žádný token, který by se již v aplikaci nacházel.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importConflictToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Je konflikt s tokeny, které již existují.\nProsím, vyberte, který z nich chcete zachovat.',
-      one: 'Je konflikt s tokeny, které již existují.\nProsím, vyberte, který z nich chcete zachovat.',
-      zero: 'Není žádný konflikt s tokeny, které již existují.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String importNewToken(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: 'Nalezen nový token $count, který bude importován.',
-      one: 'Nalezen nový token, který bude importován.',
-      zero: 'Nenalezen žádný nový token.',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get importHint2FAS => 'Vyberte zálohu 2FAS.\nPokud nemáte zálohu, vytvořte ji v aplikaci 2FAS. Doporučujeme použít heslo.';
-
-  @override
-  String get importHintAegisBackupFile => 'Vyberte svůj export Aegis (.JSON).\nPokud nemáte export, vytvořte si jej prostřednictvím nabídky nastavení v aplikaci Aegis. Doporučujeme použít heslo.';
-
-  @override
-  String get importHintAegisQrScan => 'Naskenujte QR kód, který obdržíte při přenosu záznamů z aplikace Aegis.';
-
-  @override
-  String get importHintAegisLink => 'Zadejte odkaz, který obdržíte při přenosu záznamů ze systému Aegis.';
-
-  @override
-  String get importHintGoogleQrScan => 'Naskenujte QR kód, který obdržíte při exportu účtů z Google Authenticator.';
-
-  @override
-  String get importHintGoogleQrFile => 'Vyberte obrazový soubor s QR kódem, který obdržíte při exportu účtů z Google Authenticator.\n!! Upozorňujeme, že není bezpečné ukládat QR kód do zařízení, protože tokeny nejsou šifrovány !!';
-
-  @override
-  String get qrFileDecodeError => 'Z vybraného obrázku nebylo možné dekódovat QR kód, použijte prosím místo toho skener QR kódů.';
-
-  @override
-  String get tokenLink => 'Token link';
 
   @override
   String get feedback => 'Zpětná vazba';
@@ -604,12 +431,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get feedbackSentDescription => 'Děkujeme vám za pomoc při vylepšování této aplikace!';
-
-  @override
-  String get patchNotesDialogTitle => 'Co je nového?';
-
-  @override
-  String get version => 'Verze';
 
   @override
   String get noMailAppTitle => 'Není nainstalována žádná e-mailová aplikace';

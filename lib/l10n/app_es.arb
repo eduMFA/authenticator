@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2023-08-07",
+  "@@last_modified": "2025-01-06",
   "guide": "guía",
   "@guide": {
     "description": "Button to open the guide screen."
@@ -24,26 +24,6 @@
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
   },
-  "encoding": "Codificación",
-  "@encoding": {
-    "description": "Title of the dropdown button where the encoding is selected."
-  },
-  "algorithm": "Algorithmo",
-  "@algorithm": {
-    "description": "Title of the dropdown button where the encoding is selected."
-  },
-  "digits": "Dígitos",
-  "@digits": {
-    "description": "Title of the dropdown button where the number of digits for the opt value is selected."
-  },
-  "type": "Tipo",
-  "@type": {
-    "description": "Title of the dropdown button where the type of the token is selected."
-  },
-  "period": "Periodo",
-  "@period": {
-    "description": "Title of the dropdown button where the period of the totp token is selected."
-  },
   "rename": "Renombrar",
   "@rename": {
     "description": "Label that describes renaming the token."
@@ -67,22 +47,6 @@
   "scanQrCode": "Escanear código QR",
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
-  },
-  "enterDetailsForToken": "Introduzca los datos de el token",
-  "@enterDetailsForToken": {
-    "description": "Title of the screen where tokens are created manually, tells the user to enter all required values."
-  },
-  "pleaseEnterANameForThisToken": "Introduzca un nombre para este token.",
-  "@pleaseEnterANameForThisToken": {
-    "description": "Hint telling the user to enter a name for a token."
-  },
-  "pleaseEnterASecretForThisToken": "Por favor, introduzca un secreto para este token.",
-  "@pleaseEnterASecretForThisToken": {
-    "description": "Hint telling the user to enter a secret for a token."
-  },
-  "theSecretDoesNotFitTheCurrentEncoding": "El secreto no se ajusta a la codificación actual",
-  "@theSecretDoesNotFitTheCurrentEncoding": {
-    "description": "Hint telling the user that the secret does not fit the selected encoding."
   },
   "renameToken": "Renombrar token",
   "@renameToken": {
@@ -112,15 +76,6 @@
   "phonePart": "Pieza de teléfono:",
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
-  },
-  "otpValueCopiedMessage": "Contraseña \"{otpValue}\" copiada en el portapapeles.",
-  "@otpValueCopiedMessage": {
-    "description": "Tells the user that the otp value was copied to the clipboard.",
-    "placeholders": {
-      "otpValue": {
-        "example": "055374"
-      }
-    }
   },
   "tokens": "Token",
   "settings": "Configuración",
@@ -218,10 +173,6 @@
   "@rollingOut": {
     "description": "Label that tells the user that the token is being rolled out."
   },
-  "pollingChallenges": "Sondeo para nuevos challenges",
-  "@pollingChallenges": {
-    "placeholders": {}
-  },
   "unexpectedError": "Se ha producido un error inesperado.",
   "@unexpectedError": {
     "description": "Title of page report mode."
@@ -250,10 +201,6 @@
   "checkYourNetwork": "Compruebe su conexión de red e inténtelo de nuevo.",
   "@checkYourNetwork": {
     "description": "Tells the user to check the network connection."
-  },
-  "serverNotReachable": "No se ha podido acceder al servidor.",
-  "@serverNotReachable": {
-    "description": "Tells the user that the server could not be reached."
   },
   "couldNotSignMessage": "No se ha podido firmar el mensaje.",
   "@couldNotSignMessage": {
@@ -380,20 +327,6 @@
   },
   "showDetails": "Mostrar detalles",
   "open": "Abrir",
-  "sendErrorDialogBody": "Se ha producido un error inesperado en la aplicación. La siguiente información puede ser enviada a los desarrolladores por correo electrónico para ayudar a prevenir este error en el futuro.",
-  "@sendErrorDialogBody": {
-    "description": "Description shown to the user about what info the error report contains."
-  },
-  "noFbToken": "No hay token de Firebase.",
-  "firebaseToken": "Token de Firebase",
-  "noPublicKey": "No hay clave pública.",
-  "publicKey": "Clave pública",
-  "editToken": "Editar token",
-  "edit": "Editar",
-  "save": "Guardar",
-  "create": "Crear",
-  "validFor": "Válido para",
-  "validUntil": "Válido hasta",
   "deleteLockedToken": "Por favor, autentíquese para eliminar el token bloqueado.",
   "editLockedToken": "Por favor, autentíquese para editar el token bloqueado.",
   "retryRollout": "Reintentar despliegue",
@@ -437,7 +370,6 @@
   "authToAcceptPushRequest": "Por favor, autentifíquese para aceptar la solicitud push.",
   "authToDeclinePushRequest": "Por favor, autentifíquese para rechazar la solicitud push.",
   "pushRequestParseError": "No se ha podido procesar la solicitud push.",
-  "imageUrl": "URL de la imagen",
   "errorRollOutSSLHandshakeFailed": "Ha fallado el protocolo SSL. No es posible el despliegue.",
   "errorWhenPullingChallenges": "Se ha producido un error al buscar retos de {name}",
   "@errorWhenPullingChallenges": {
@@ -475,40 +407,9 @@
   "licensesAndVersion": "Licencias y versión",
   "privacyPolicy": "Política de privacidad",
   "introScanQrCode": "Puedes escanear códigos QR para añadir tokens.\nSoportamos todos los tokens comunes de Two-Factor-Authentication y también los tokens eduMFA",
-  "introTokenSwipe": "Desliza los tokens hacia la izquierda para ver las acciones disponibles",
   "introEditToken": "Aquí puedes editar el nombre del token y ver algunos detalles",
   "introLockToken": "Para mejorar la seguridad aún más, puedes bloquear los tokens.\nEntonces el token sólo se puede utilizar después de la autenticación.",
   "introPollForChallenges": "Puedes buscar nuevos retos arrastrando hacia abajo la lista de tokens",
-  "legacySigningErrorTitle": "Se ha producido un error al utilizar el token obsoleto: {tokenLabel}",
-  "@legacySigningErrorTitle": {
-    "description": "Title of the error dialog that is shown when an error occurs while using a legacy token.",
-    "placeholders": {
-      "tokenLabel": {
-        "example": "PUSH1234A"
-      }
-    }
-  },
-  "legacySigningErrorMessage": "El token se creó en una versión obsoleta de la aplicación, lo que puede provocar problemas al utilizarlo.\nSe recomienda crear un nuevo token push si el problema persiste.",
-  "@legacySigningErrorMessage": {
-    "description": "Message of the error dialog that is shown when an error occurs while using a legacy token."
-  },
-  "qrScan": "Escanear",
-  "enterLink": "Introducir enlace",
-  "invalidBackupFile": "El archivo seleccionado no es una copia de seguridad válida de {appName}",
-  "invalidQrScan": "El código QR escaneado no es una copia de seguridad válida de {appName}",
-  "invalidQrFile": "El archivo seleccionado no contiene un código QR válido de {appName}",
-  "invalidLink": "El enlace introducido no es un token válido de {appName}, o no es compatible",
-  "importExistingToken": "{count, plural, zero{No se ha encontrado ningún token que ya esté en la aplicación.} one{Se ha encontrado un token que ya existe en la aplicación.} other{Se han encontrado {count} tokens que ya están en la aplicación.}}",
-  "importConflictToken": "{count, plural, zero{No hay conflicto con tokens que ya existen.} one{Hay un conflicto con tokens que ya existen.\nPor favor, seleccione cuál le gustaría conservar.} other{Hay un conflicto con tokens que ya existen.\nPor favor, seleccione cuál le gustaría conservar.}}",
-  "importNewToken": "{count, plural, zero{No se ha encontrado un nuevo token.} one{Se ha encontrado un nuevo token que se importará.} other{Se ha encontrado un nuevo token {count} que se importará.}}",
-  "importHint2FAS": "Seleccione su copia de seguridad de 2FAS. Si no tiene una copia de seguridad, cree una en la aplicación 2FAS. Le recomendamos que utilice una contraseña",
-  "importHintAegisBackupFile": "Seleccione su exportación de Aegis (.JSON).\nSi no tiene una exportación, cree una a través del menú de configuración en la app de Aegis. Se recomienda utilizar una contraseña",
-  "importHintAegisQrScan": "Escanea el código QR que recibes al transferir entradas desde Aegis",
-  "importHintAegisLink": "Introduzca el enlace que recibe al transferir entradas desde Aegis",
-  "importHintGoogleQrScan": "Escanea el código QR que recibes al exportar tus cuentas desde Google Authenticator",
-  "importHintGoogleQrFile": "Selecciona un archivo de imagen con el código QR que recibes al exportar tus cuentas desde Google Authenticator.\n!! Tenga en cuenta que no es seguro guardar el código QR en su dispositivo, ya que los tokens no están cifrados !!",
-  "qrFileDecodeError": "No fue posible decodificar el código QR de la imagen seleccionada, por favor utilice el escáner de código QR en su lugar.",
-  "tokenLink": "Enlace token",
   "feedback": "Comentarios",
   "feedbackTitle": "¡Tus comentarios son siempre bienvenidos!",
   "feedbackDescription": "Si tienes alguna pregunta, sugerencia o problema, háznoslo saber",
@@ -522,8 +423,6 @@
   "addSystemInfo": "Añadir información del sistema",
   "feedbackSentTitle": "Comentarios enviados",
   "feedbackSentDescription": "Muchas gracias por su ayuda para mejorar esta aplicación.",
-  "patchNotesDialogTitle": "¿Qué hay de nuevo?",
-  "version": "Versión",
   "noMailAppTitle": "No hay aplicación de correo electrónico",
   "noMailAppDescription": "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico.",
   "authenticationRequest": "Autenticación",
