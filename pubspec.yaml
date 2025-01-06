@@ -21,7 +21,7 @@ version: 1.0.0+42
 # iOS    : CFBundleShortVersionString + CFBundleVersion
 
 environment:
-  sdk: '>=3.0.0 < 4.0.0'
+  sdk: ^3.0.0
   flutter: 3.27.0
 
 dependencies:
