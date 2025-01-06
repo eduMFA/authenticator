@@ -9,13 +9,4 @@ extension ColorExtension on Color {
       blue: ((b + other.b) / 2).clamp(0.0, 1.0),
     );
   }
-
-  Color opposite() {
-    return Color.from(
-      alpha: a,
-      red: 1.0 - (r.toDouble() / 255.0),
-      green: 1.0 - (g.toDouble() / 255.0),
-      blue: 1.0 - (b.toDouble() / 255.0),
-    );
-  }
 }
