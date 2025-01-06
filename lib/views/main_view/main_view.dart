@@ -1,8 +1,11 @@
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
 
 class MainView extends ConsumerStatefulView {
   static const routeName = '/main';
@@ -16,27 +19,40 @@ class MainView extends ConsumerStatefulView {
   ConsumerState<MainView> createState() => _MainViewState();
 }
 
-class _MainViewState extends ConsumerState<MainView> {
+class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
+  final List<Widget> _views = [
     TokensView(),
     SettingsView(),
   ];
 
-  void _onItemTapped(int index) {
+  void _onDestinationSelected(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
   @override
+  void onAppResume() {
+    Logger.info('TokensView Resume', name: 'tokens_view.dart#onAppResume');
+    globalRef?.read(appStateProvider.notifier).state =
+        AppLifecycleState.resumed;
+  }
+
+  @override
+  void onAppPause() {
+    Logger.info('TokensView Pause', name: 'tokens_view.dart#onAppPause');
+    globalRef?.read(appStateProvider.notifier).state = AppLifecycleState.paused;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
+      body: _views[_selectedIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
-        onDestinationSelected: _onItemTapped,
+        onDestinationSelected: _onDestinationSelected,
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
