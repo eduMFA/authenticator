@@ -329,7 +329,7 @@ Device Parameters $deviceInfo""";
   }
 
   String _convertLogToSingleString(String? message, {dynamic error, dynamic stackTrace, String? name, LogLevel logLevel = LogLevel.INFO}) {
-    String fileMessage = '${DateTime.now().toString()}';
+    String fileMessage = DateTime.now().toString();
     fileMessage += name != null ? ' [$name]\n' : '\n';
     fileMessage += message ?? '';
     fileMessage += error != null ? '\nError: $error' : '';

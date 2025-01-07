@@ -12,7 +12,7 @@ class PiMailer {
   static String _mailSubject(String? subject, String? subjectPrefix, bool subjectAppVersion) {
     String mailSubject = subjectPrefix != null ? '[$subjectPrefix] ' : '';
     if (subjectAppVersion) mailSubject += '(${AppInfoUtils.currentVersionString}+${AppInfoUtils.currentBuildNumber}) ';
-    mailSubject += '${AppInfoUtils.appName}';
+    mailSubject += AppInfoUtils.appName;
     if (subject != null) mailSubject += ' >>> $subject';
     return mailSubject;
   }
