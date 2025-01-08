@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
-import '../../utils/version.dart';
+import 'package:version/version.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../utils/identifiers.dart';

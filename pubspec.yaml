@@ -39,6 +39,7 @@ dependencies:
   permission_handler: ^11.3.1
   uuid: ^4.5.1
   json_annotation: ^4.9.0
+  version: ^3.0.2
   # Crypto
   mutex: ^3.1.0
   hex: ^0.2.0
