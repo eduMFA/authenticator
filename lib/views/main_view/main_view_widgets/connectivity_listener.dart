@@ -16,6 +16,7 @@ class ConnectivityListener extends ConsumerWidget {
     if (connectivity != null && connectivity.contains(ConnectivityResult.none)) {
       ref.read(tokenProvider.notifier).loadingRepo.then((newState) {
         if (newState.hasPushTokens) {
+          if (!context.mounted) return;
           Logger.info("Connectivity changed: $connectivity");
           ref.read(statusMessageProvider.notifier).state = (AppLocalizations.of(context)!.noNetworkConnection, null);
         }
