@@ -1,7 +1,7 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../l10n/app_localizations.dart';
 import '../../../utils/riverpod_providers.dart';
 import '../../../widgets/dialog_widgets/default_dialog.dart';
 import 'errorlog_buttons/delete_errorlog_button.dart';
@@ -20,7 +20,7 @@ class LoggingMenu extends ConsumerWidget {
       child: DefaultDialog(
         scrollable: true,
         title: Text(
-          AppLocalizations.of(context)!.logMenu,
+          S.of(context).logMenu,
           style: Theme.of(context).listTileTheme.titleTextStyle,
         ),
         content: Column(
@@ -29,7 +29,7 @@ class LoggingMenu extends ConsumerWidget {
           children: [
             ListTile(
               title: Text(
-                AppLocalizations.of(context)!.verboseLogging,
+                S.of(context).verboseLogging,
                 style: Theme.of(context).textTheme.titleMedium,
                 textAlign: TextAlign.center,
               ),
@@ -47,7 +47,7 @@ class LoggingMenu extends ConsumerWidget {
         actions: [
           TextButton(
             child: Text(
-              AppLocalizations.of(context)!.dismiss,
+              S.of(context).dismiss,
               overflow: TextOverflow.fade,
               softWrap: false,
             ),

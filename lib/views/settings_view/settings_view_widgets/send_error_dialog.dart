@@ -1,7 +1,7 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../l10n/app_localizations.dart';
 import '../../../utils/logger.dart';
 import '../../../widgets/dialog_widgets/default_dialog.dart';
 
@@ -11,7 +11,7 @@ class SendErrorDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DefaultDialog(
         title: Text(
-          AppLocalizations.of(context)!.send,
+          S.of(context).send,
           overflow: TextOverflow.fade,
           softWrap: false,
         ),
@@ -23,14 +23,14 @@ class SendErrorDialog extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                 child: Text(
-                  AppLocalizations.of(context)!.sendErrorLogDescription,
+                  S.of(context).sendErrorLogDescription,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                 child: TextButton(
                     child: Text(
-                      AppLocalizations.of(context)!.showPrivacyPolicy,
+                      S.of(context).showPrivacyPolicy,
                     ),
                     onPressed: () => launchUrl(Uri.parse('https://edumfa.io/app-privacy/'))),
               ),
@@ -40,7 +40,7 @@ class SendErrorDialog extends StatelessWidget {
         actions: [
           TextButton(
             child: Text(
-              AppLocalizations.of(context)!.dismiss,
+              S.of(context).dismiss,
               overflow: TextOverflow.fade,
               softWrap: false,
             ),
@@ -62,12 +62,12 @@ class NoLogDialog extends StatelessWidget {
     return DefaultDialog(
       scrollable: true,
       title: Text(
-        AppLocalizations.of(context)!.errorLogEmpty,
+        S.of(context).errorLogEmpty,
       ),
       actions: [
         TextButton(
           child: Text(
-            AppLocalizations.of(context)!.ok,
+            S.of(context).ok,
             overflow: TextOverflow.fade,
             softWrap: false,
           ),

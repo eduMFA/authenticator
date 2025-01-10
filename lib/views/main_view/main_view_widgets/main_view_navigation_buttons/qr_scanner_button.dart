@@ -1,8 +1,8 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import '../../../../l10n/app_localizations.dart';
 import '../../../../utils/globals.dart';
 import '../../../../utils/riverpod_providers.dart';
 import '../../../../utils/view_utils.dart';
@@ -18,8 +18,8 @@ class QrScannerButton extends ConsumerWidget {
           if (await Permission.camera.isPermanentlyDenied) {
             showAsyncDialog(
               builder: (_) => DefaultDialog(
-                title: Text(AppLocalizations.of(context)!.grantCameraPermissionDialogTitle),
-                content: Text(AppLocalizations.of(context)!.grantCameraPermissionDialogPermanentlyDenied),
+                title: Text(S.of(context).grantCameraPermissionDialogTitle),
+                content: Text(S.of(context).grantCameraPermissionDialogPermanentlyDenied),
               ),
             );
             return;
@@ -31,7 +31,7 @@ class QrScannerButton extends ConsumerWidget {
             if (qrCode != null) ref.read(tokenProvider.notifier).handleQrCode(qrCode);
           });
         },
-        tooltip: AppLocalizations.of(context)?.scanQrCode ?? '',
+        tooltip: S.of(context).scanQrCode,
         child: const Icon(Icons.qr_code),
       );
 }

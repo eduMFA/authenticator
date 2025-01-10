@@ -1,10 +1,10 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:pointycastle/asymmetric/api.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations_en.dart';
 import 'package:edumfa_authenticator/main.dart';
 import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/states/introduction_state.dart';
@@ -98,14 +98,14 @@ Future<void> _settingsViewTest(WidgetTester tester) async {
   await pumpUntilFindNWidgets(tester, find.byIcon(Icons.settings), 1, const Duration(seconds: 10));
   await tester.tap(find.byIcon(Icons.settings));
   await tester.pumpAndSettle();
-  expect(find.text(AppLocalizationsEn().settings), findsOneWidget);
-  expect(find.text(AppLocalizationsEn().theme), findsOneWidget);
-  expect(find.text(AppLocalizationsEn().language), findsOneWidget);
-  expect(find.text(AppLocalizationsEn().errorLogTitle), findsOneWidget);
+  expect(find.text(S.current.settings), findsOneWidget);
+  expect(find.text(S.current.theme), findsOneWidget);
+  expect(find.text(S.current.language), findsOneWidget);
+  expect(find.text(S.current.errorLogTitle), findsOneWidget);
   expect(find.byType(SettingsGroup), findsNWidgets(5));
   globalRef!.read(tokenProvider.notifier).handleQrCode(
       'otpauth://pipush/label?url=http%3A%2F%2Fwww.example.com&ttl=10&issuer=issuer&enrollment_credential=enrollmentCredentials&v=1&serial=serial&serial=serial&sslverify=0');
-  await pumpUntilFindNWidgets(tester, find.text(AppLocalizationsEn().pushToken), 1, const Duration(minutes: 5));
-  expect(find.text(AppLocalizationsEn().pushToken), findsOneWidget);
+  await pumpUntilFindNWidgets(tester, find.text(S.current.pushToken), 1, const Duration(minutes: 5));
+  expect(find.text(S.current.pushToken), findsOneWidget);
   expect(find.byType(SettingsGroup), findsNWidgets(5));
 }

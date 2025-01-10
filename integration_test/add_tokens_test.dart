@@ -1,8 +1,8 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations_en.dart';
 import 'package:edumfa_authenticator/main.dart';
 import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/enums/token_types.dart';
@@ -70,7 +70,7 @@ Future<void> _introToMainView(WidgetTester tester) async {
   await tester.pump(const Duration(milliseconds: 2000));
   await tester.tap(finder);
   await tester.pump(const Duration(milliseconds: 2000));
-  finder = find.text(AppLocalizationsEn().ok);
+  finder = find.text(S.current.ok);
   await pumpUntilFindNWidgets(tester, finder, 1, const Duration(seconds: 10));
   await tester.tap(finder);
   await tester.pump(const Duration(milliseconds: 1000));
@@ -81,16 +81,16 @@ Future<void> _addHotpToken(WidgetTester tester) async {
   await tester.tap(find.byIcon(Icons.add_moderator));
   await tester.pump(const Duration(milliseconds: 1000));
   expect(find.byType(TextField), findsNWidgets(2));
-  expect(find.text(AppLocalizationsEn().addToken), findsOneWidget);
-  await tester.tap(find.text(AppLocalizationsEn().name));
+  expect(find.text(S.current.addToken), findsOneWidget);
+  await tester.tap(find.text(S.current.name));
   await tester.pump();
   await tester.enterText(find.byType(TextField).first, 'test');
   await tester.pump();
-  await tester.tap(find.text(AppLocalizationsEn().secretKey));
+  await tester.tap(find.text(S.current.secretKey));
   await tester.pump();
   await tester.enterText(find.byType(TextField).last, 'test');
   await tester.pump();
-  await tester.tap(find.text(AppLocalizationsEn().addToken));
+  await tester.tap(find.text(S.current.addToken));
   await tester.pump(const Duration(milliseconds: 1000));
 }
 
@@ -98,11 +98,11 @@ Future<void> _addTotpToken(WidgetTester tester) async {
   await tester.pump();
   await tester.tap(find.byIcon(Icons.add_moderator));
   await tester.pump(const Duration(milliseconds: 1000));
-  await tester.tap(find.text(AppLocalizationsEn().name));
+  await tester.tap(find.text(S.current.name));
   await tester.pump();
   await tester.enterText(find.byType(TextField).first, 'test');
   await tester.pump();
-  await tester.tap(find.text(AppLocalizationsEn().secretKey));
+  await tester.tap(find.text(S.current.secretKey));
   await tester.pump();
   await tester.enterText(find.byType(TextField).last, 'test');
   await tester.pump();
@@ -111,7 +111,7 @@ Future<void> _addTotpToken(WidgetTester tester) async {
   await tester.tap(find.text('TOTP'));
   await tester.pump();
   expect(find.byType(DropdownButton<int>), findsNWidgets(2));
-  await tester.tap(find.text(AppLocalizationsEn().addToken));
+  await tester.tap(find.text(S.current.addToken));
   await tester.pump(const Duration(milliseconds: 1000));
 }
 
@@ -121,7 +121,7 @@ Future<void> _addDaypasswordToken(WidgetTester tester) async {
   await tester.pump(const Duration(milliseconds: 1000));
   await tester.enterText(find.byType(TextField).first, 'test');
   await tester.pump();
-  await tester.tap(find.text(AppLocalizationsEn().secretKey));
+  await tester.tap(find.text(S.current.secretKey));
   await tester.pump();
   await tester.enterText(find.byType(TextField).last, 'test');
   await tester.pump();
@@ -129,6 +129,6 @@ Future<void> _addDaypasswordToken(WidgetTester tester) async {
   await tester.pump();
   await tester.tap(find.text('DAYPASSWORD'));
   await tester.pump();
-  await tester.tap(find.text(AppLocalizationsEn().addToken));
+  await tester.tap(find.text(S.current.addToken));
   await tester.pump(const Duration(milliseconds: 1000));
 }
