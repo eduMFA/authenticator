@@ -220,11 +220,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get noResultText2 => ' de knop om te beginnen!';
 
   @override
-  String onBoardingTitle1(Object appName) {
-    return '$appName';
-  }
-
-  @override
   String get onBoardingText1 => 'Twee-factoren authenticatie\nmakkelijk gemaakt';
 
   @override

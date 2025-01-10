@@ -300,14 +300,6 @@
   "@noResultText2": {
     "description": "second noresult text"
   },
-  "onBoardingTitle1": "{appName}",
-  "@onBoardingTitle1": {
-    "placeholders": {
-      "appName": {
-        "example": "eduMFA Authenticator"
-      }
-    }
-  },
   "onBoardingText1": "vícefázové ověření\nusnadněno",
   "onBoardingTitle2": "Maximální Bezpečnost",
   "onBoardingText2": "Uložte tokeny do svého zařízení\nchráněné biometrickým ověřením",

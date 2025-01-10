@@ -220,11 +220,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noResultText2 => 'bouton pour commencer!';
 
   @override
-  String onBoardingTitle1(Object appName) {
-    return '$appName';
-  }
-
-  @override
   String get onBoardingText1 => 'Authentification à deux facteurs\nrendue facile';
 
   @override

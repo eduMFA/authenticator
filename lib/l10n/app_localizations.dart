@@ -507,12 +507,6 @@ abstract class AppLocalizations {
   /// **' button to get started!'**
   String get noResultText2;
 
-  /// No description provided for @onBoardingTitle1.
-  ///
-  /// In en, this message translates to:
-  /// **'{appName}'**
-  String onBoardingTitle1(Object appName);
-
   /// No description provided for @onBoardingText1.
   ///
   /// In en, this message translates to:

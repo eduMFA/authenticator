@@ -220,11 +220,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get noResultText2 => ' przycisku, żeby zacząć!';
 
   @override
-  String onBoardingTitle1(Object appName) {
-    return '$appName';
-  }
-
-  @override
   String get onBoardingText1 => 'Uwierzytelnianie dwuskładnikowe\nuczynione prostym';
 
   @override

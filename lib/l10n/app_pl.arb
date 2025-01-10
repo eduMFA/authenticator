@@ -296,14 +296,6 @@
   "@noResultText2": {
     "description": "second noresult text"
   },
-  "onBoardingTitle1": "{appName}",
-  "@onBoardingTitle1": {
-    "placeholders": {
-      "appName": {
-        "example": "eduMFA Authenticator"
-      }
-    }
-  },
   "onBoardingText1": "Uwierzytelnianie dwuskładnikowe\nuczynione prostym",
   "onBoardingTitle2": "Maksymalne Bezpieczeństwo",
   "onBoardingText2": "Przechowuj tokeny w swoim urządzeniu\nzabezpieczone biometrycznie",

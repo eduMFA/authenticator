@@ -220,11 +220,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get noResultText2 => ' Icon um loszulegen!';
 
   @override
-  String onBoardingTitle1(Object appName) {
-    return '$appName';
-  }
-
-  @override
   String get onBoardingText1 => 'Zwei-Faktor-Authentifizierung\neinfach gemacht';
 
   @override

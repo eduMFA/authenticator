@@ -220,11 +220,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get noResultText2 => ' a začněte s používáním.';
 
   @override
-  String onBoardingTitle1(Object appName) {
-    return '$appName';
-  }
-
-  @override
   String get onBoardingText1 => 'vícefázové ověření\nusnadněno';
 
   @override

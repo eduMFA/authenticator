@@ -77,7 +77,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                       itemBuilder: (BuildContext context, int index) {
                         if (_currentIndex == 0) {
                           return OnboardingPage(
-                            title: AppLocalizations.of(context)!.onBoardingTitle1(widget.appName),
+                            title: widget.appName,
                             subtitle: AppLocalizations.of(context)!.onBoardingText1,
                           );
                         }

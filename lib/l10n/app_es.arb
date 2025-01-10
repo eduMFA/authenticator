@@ -297,14 +297,6 @@
   "@noResultText2": {
     "description": "second no result text"
   },
-  "onBoardingTitle1": "{appName}",
-  "@onBoardingTitle1": {
-    "placeholders": {
-      "appName": {
-        "example": "eduMFA Authenticator"
-      }
-    }
-  },
   "onBoardingText1": "Autenticación de dos factores\nmuy fácil",
   "onBoardingTitle2": "Máxima seguridad",
   "onBoardingText2": "Almacena fichas de forma segura en tu teléfono.\nProtegido por tus datos biométricos.",

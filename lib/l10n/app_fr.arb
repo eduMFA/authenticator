@@ -300,14 +300,6 @@
   "@noResultText2": {
     "description": "second noresult text"
   },
-  "onBoardingTitle1": "{appName}",
-  "@onBoardingTitle1": {
-    "placeholders": {
-      "appName": {
-        "example": "eduMFA Authenticator"
-      }
-    }
-  },
   "onBoardingText1": "Authentification à deux facteurs\nrendue facile",
   "onBoardingTitle2": "Sécurité Maximale",
   "onBoardingText2": "Stockez les jetons sur votre \nappareil en toute sécurité\nProtégé par votre biométrie",

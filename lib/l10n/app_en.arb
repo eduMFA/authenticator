@@ -293,14 +293,6 @@
   "@noResultText2": {
     "description": "second no result text"
   },
-  "onBoardingTitle1": "{appName}",
-  "@onBoardingTitle1": {
-    "placeholders": {
-      "appName": {
-        "example": "eduMFA Authenticator"
-      }
-    }
-  },
   "onBoardingText1": "Two-factor authentication\nmade easy",
   "onBoardingTitle2": "Maximum Security",
   "onBoardingText2": "Store tokens on your device securely\nProtected by your biometrics",
