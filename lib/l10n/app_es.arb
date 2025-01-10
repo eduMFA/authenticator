@@ -233,7 +233,7 @@
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
   },
-  "biometricHint": "AAutenticación necesaria",
+  "biometricHint": "Autenticación necesaria",
   "@biometricHint": {
     "description": "Hint message advising the user how to authenticate with biometrics. It is used on Android side. Maximum 60 characters."
   },

@@ -172,7 +172,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get biometricRequiredTitle => 'Biometría no configurada';
 
   @override
-  String get biometricHint => 'AAutenticación necesaria';
+  String get biometricHint => 'Autenticación necesaria';
 
   @override
   String get biometricNotRecognized => 'No reconocido. Inténtelo de nuevo.';
