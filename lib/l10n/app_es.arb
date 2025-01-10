@@ -163,7 +163,7 @@
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
-  "errorRollOutUnknownError": "An unknown error occurred. Roll-out not possible: {e}",
+  "errorRollOutUnknownError": null,
   "@errorRollOutUnknownError": {
     "description": "Tells the user that the roll-out failed because of an unknown error.",
     "placeholders": {
@@ -217,7 +217,7 @@
   "@useDeviceLocaleDescription": {
     "description": "Description of the switch tile where using the devices language can be enabled."
   },
-  "language": "Language",
+  "language": null,
   "@language": {
     "description": "Título del grupo de configuración lingüística."
   },

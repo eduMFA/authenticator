@@ -405,7 +405,7 @@
   "settingsGroupGeneral": "Généralités",
   "licensesAndVersion": "Licences et version",
   "privacyPolicy": "Politique de confidentialité",
-  "introScanQrCode": "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.",
+  "introScanQrCode": null,
   "introEditToken": "Ici, vous pouvez modifier le nom du token et voir quelques détails",
   "introLockToken": "Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu'après l'authentification.",
   "introPollForChallenges": "Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas",
