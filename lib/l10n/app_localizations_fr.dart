@@ -57,7 +57,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get phonePart => 'Part du téléphone:';
 
   @override
-  String get tokens => 'Token';
+  String get tokens => 'Tokens';
 
   @override
   String get settings => 'Paramètres';

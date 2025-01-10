@@ -57,7 +57,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get phonePart => 'Pieza de teléfono:';
 
   @override
-  String get tokens => 'Token';
+  String get tokens => 'Tokens';
 
   @override
   String get settings => 'Configuración';

@@ -57,7 +57,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get phonePart => 'Klientská část:';
 
   @override
-  String get tokens => 'Token';
+  String get tokens => 'Tokens';
 
   @override
   String get settings => 'Nastavení';

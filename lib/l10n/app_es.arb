@@ -77,7 +77,10 @@
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
   },
-  "tokens": "Token",
+  "tokens": null,
+  "@tokens": {
+    "description": "Button to open the tokens page."
+  },
   "settings": "Configuración",
   "@settings": {
     "description": "Button to open the settings page."

@@ -201,10 +201,10 @@ abstract class AppLocalizations {
   /// **'Phone part:'**
   String get phonePart;
 
-  /// No description provided for @tokens.
+  /// Button to open the tokens page.
   ///
   /// In en, this message translates to:
-  /// **'Token'**
+  /// **'Tokens'**
   String get tokens;
 
   /// Button to open the settings page.

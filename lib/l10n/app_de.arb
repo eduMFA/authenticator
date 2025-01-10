@@ -78,6 +78,9 @@
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
   },
   "tokens": "Token",
+  "@tokens": {
+    "description": "Button to open the tokens page."
+  },
   "settings": "Einstellungen",
   "@settings": {
     "description": "Button to open the settings page."

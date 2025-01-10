@@ -57,7 +57,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get phonePart => 'Sekret po stronie telefonu:';
 
   @override
-  String get tokens => 'Token';
+  String get tokens => 'Tokens';
 
   @override
   String get settings => 'Ustawienia';

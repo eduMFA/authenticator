@@ -57,7 +57,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get phonePart => 'Telefoon gedeelte:';
 
   @override
-  String get tokens => 'Token';
+  String get tokens => 'Tokens';
 
   @override
   String get settings => 'Instellingen';
