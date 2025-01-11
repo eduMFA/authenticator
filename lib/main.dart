@@ -32,7 +32,6 @@ import 'package:edumfa_authenticator/views/license_view/license_view.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view.dart';
 import 'package:edumfa_authenticator/views/onboarding_view/onboarding_view.dart';
 import 'package:edumfa_authenticator/views/push_token_view/push_tokens_view.dart';
-import 'package:edumfa_authenticator/views/qr_scanner_view/qr_scanner_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/splash_screen/splash_screen.dart';
 import 'package:edumfa_authenticator/widgets/app_wrapper.dart';
@@ -98,7 +97,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
                 appImage: _customization.appImage,
                 appName: _customization.appName,
               ),
-          QRScannerView.routeName: (context) => const QRScannerView(),
         },
       );
     });

@@ -37,6 +37,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String get scanQrCode => 'QR-Code scannen';
 
   @override
+  String get addTokenTitle => 'Neuen Push-Token verknüpfen';
+
+  @override
+  String get addTokenSubtitle => 'Richten Sie Ihre Kamera auf Ihren Bildschirm, um den QR-Code zu scanne';
+
+  @override
+  String get or => 'ODER';
+
+  @override
+  String get uploadQrCodeButton => 'QR Code hochladen';
+
+  @override
   String get renameToken => 'Token umbenennen';
 
   @override
@@ -347,16 +359,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get requestTriggerdByUserQuestion => 'Wurde diese Anfrage von Ihnen ausgelöst?';
 
   @override
-  String get grantCameraPermissionDialogTitle => 'Kamera-Berechtigung erforderlich';
+  String get cameraPermissionPermanentlyDenied => 'Die Kamera-Berechtigung ist dauerhaft entzogen. Bitte erlauben Sie die Kamera-Berechtigung in den Systemeinstellungen.';
 
   @override
-  String get grantCameraPermissionDialogContent => 'Um QR-Codes zu scannen, benötigt die App Zugriff auf die Kamera.';
-
-  @override
-  String get grantCameraPermissionDialogPermanentlyDenied => 'Sie haben die Berechtigung für den Kamerazugriff permanent verweigert. Bitte aktivieren Sie die Berechtigung in den Einstellungen ihres Smartphones.';
-
-  @override
-  String get grantCameraPermissionDialogButton => 'Berechtigung erteilen';
+  String get cameraPermissionPermanentlyDeniedButton => 'Berechtigung erteilen';
 
   @override
   String get decryptErrorTitle => 'Entschlüsselung fehlgeschlagen';

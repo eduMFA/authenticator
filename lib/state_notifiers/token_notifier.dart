@@ -492,17 +492,22 @@ class TokenNotifier extends StateNotifier<TokenState> {
 
   // The return value of a qrCode could be any object. In this case should be a String that is a valid URI.
   // If it is not a valid URI, the user will be informed.
-  Future<void> handleQrCode(Object? qrCode) async {
+  // TODO: Translate messages
+  Future<void> handleQrCodeUri(String? qrCodeUri) async {
+    if (qrCodeUri == null) {
+      showMessage(message: 'The provided image doesn\'t contain a QR code.', duration: const Duration(seconds: 3));
+      return;
+    }
+
     Uri uri;
     try {
-      qrCode as String;
-      uri = Uri.parse(qrCode);
+      uri = Uri.parse(qrCodeUri);
     } catch (_) {
       showMessage(message: 'The scanned QR code is not a valid URI.', duration: const Duration(seconds: 3));
       return;
     }
     List<Token> tokens = await _tokensFromUri(uri);
-    tokens = tokens.map((e) => TokenOriginSourceType.qrScan.addOriginToToken(token: e, data: qrCode)).toList();
+    tokens = tokens.map((e) => TokenOriginSourceType.qrScan.addOriginToToken(token: e, data: qrCodeUri)).toList();
     await addOrReplaceTokens(tokens);
     await _handlePushTokensIfExist();
   }

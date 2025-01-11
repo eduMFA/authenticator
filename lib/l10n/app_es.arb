@@ -48,6 +48,22 @@
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
   },
+  "addTokenTitle": null,
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": null,
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": null,
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": null,
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
+  },
   "renameToken": "Renombrar token",
   "@renameToken": {
     "description": "Title of the dialog where a new name for a token can be entered."
@@ -388,10 +404,8 @@
   "butDiscardIt": "pero descártelo",
   "declineIt": "rechazar",
   "requestTriggerdByUserQuestion": "¿Fue usted quien provocó esta petición?",
-  "grantCameraPermissionDialogTitle": "El permiso de cámara no está concedido",
-  "grantCameraPermissionDialogContent": "Por favor, concede permiso a la cámara para escanear códigos QR",
-  "grantCameraPermissionDialogPermanentlyDenied": "El permiso de cámara está denegado permanentemente. Concede el permiso de cámara en la configuración del teléfono",
-  "grantCameraPermissionDialogButton": "Conceder permiso",
+  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDeniedButton": "Conceder permiso",
   "decryptErrorTitle": "Error de descifrado",
   "decryptErrorContent": "Lamentablemente, la aplicación no ha podido descifrar tus tokens. Esto indica que la clave de cifrado está rota. Puedes volver a intentarlo o borrar los datos de la app, lo que eliminaría los tokens de la app.",
   "decryptErrorButtonDelete": "Borrar",

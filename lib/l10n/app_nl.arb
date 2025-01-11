@@ -44,6 +44,22 @@
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
   },
+  "addTokenTitle": null,
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": null,
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": null,
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": null,
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
+  },
   "renameToken": "Hernoem token",
   "@renameToken": {
     "description": "Title of the dialog where a new name for a token can be entered."
@@ -389,10 +405,8 @@
   "butDiscardIt": "maar verwijder",
   "declineIt": "weigeren",
   "requestTriggerdByUserQuestion": "Is dit verzoek door jou gedaan?",
-  "grantCameraPermissionDialogTitle": "Cameratoestemming is niet verleend",
-  "grantCameraPermissionDialogContent": "Geef de camera toestemming om QR-codes te scannen.",
-  "grantCameraPermissionDialogPermanentlyDenied": "Cameratoestemming is permanent geweigerd. Geef de camera toestemming in de instellingen van uw telefoon.",
-  "grantCameraPermissionDialogButton": "Toestemming verlenen",
+  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDeniedButton": "Toestemming verlenen",
   "decryptErrorTitle": "Fout bij decoderen",
   "decryptErrorContent": "Helaas heeft de app je tokens niet kunnen decoderen. Dit geeft aan dat de coderingssleutel is verbroken. U kunt het opnieuw proberen of de app-gegevens verwijderen, waardoor de tokens in de app worden verwijderd.",
   "decryptErrorButtonDelete": "Verwijderen",

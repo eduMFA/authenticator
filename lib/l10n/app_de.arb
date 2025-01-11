@@ -48,6 +48,22 @@
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
   },
+  "addTokenTitle": "Neuen Push-Token verknüpfen",
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": "Richten Sie Ihre Kamera auf Ihren Bildschirm, um den QR-Code zu scanne",
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": "ODER",
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": "QR Code hochladen",
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
+  },
   "renameToken": "Token umbenennen",
   "@renameToken": {
     "description": "Title of the dialog where a new name for a token can be entered."
@@ -374,10 +390,8 @@
   "butDiscardIt": "aber verwerfen",
   "declineIt": "ablehnen",
   "requestTriggerdByUserQuestion": "Wurde diese Anfrage von Ihnen ausgelöst?",
-  "grantCameraPermissionDialogTitle": "Kamera-Berechtigung erforderlich",
-  "grantCameraPermissionDialogContent": "Um QR-Codes zu scannen, benötigt die App Zugriff auf die Kamera.",
-  "grantCameraPermissionDialogPermanentlyDenied": "Sie haben die Berechtigung für den Kamerazugriff permanent verweigert. Bitte aktivieren Sie die Berechtigung in den Einstellungen ihres Smartphones.",
-  "grantCameraPermissionDialogButton": "Berechtigung erteilen",
+  "cameraPermissionPermanentlyDenied": "Die Kamera-Berechtigung ist dauerhaft entzogen. Bitte erlauben Sie die Kamera-Berechtigung in den Systemeinstellungen.",
+  "cameraPermissionPermanentlyDeniedButton": "Berechtigung erteilen",
   "decryptErrorTitle": "Entschlüsselung fehlgeschlagen",
   "decryptErrorContent": "Leider konnten Ihre Token nicht entschlüsselt werden. Das deutet darauf hin, dass der Verschlüsselungsschlüssel nicht mehr verfügbar ist. Sie können es erneut versuchen oder die App Daten löschen. Dabei werden alle Token aus der App geschlöscht.",
   "decryptErrorButtonDelete": "Löschen.",

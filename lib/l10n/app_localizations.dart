@@ -165,6 +165,30 @@ abstract class AppLocalizations {
   /// **'Scan QR-Code'**
   String get scanQrCode;
 
+  /// The title of the token add screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Pair new Push Token'**
+  String get addTokenTitle;
+
+  /// The subtitle of the token add screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Point your camera at your screen to capture the QR code'**
+  String get addTokenSubtitle;
+
+  /// This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file.
+  ///
+  /// In en, this message translates to:
+  /// **'OR'**
+  String get or;
+
+  /// The button in the token add view to upload QR codes as an image.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload QR Code'**
+  String get uploadQrCodeButton;
+
   /// Title of the dialog where a new name for a token can be entered.
   ///
   /// In en, this message translates to:
@@ -753,29 +777,17 @@ abstract class AppLocalizations {
   /// **'Was this request triggered by you?'**
   String get requestTriggerdByUserQuestion;
 
-  /// No description provided for @grantCameraPermissionDialogTitle.
+  /// No description provided for @cameraPermissionPermanentlyDenied.
   ///
   /// In en, this message translates to:
-  /// **'Camera permission is not granted'**
-  String get grantCameraPermissionDialogTitle;
+  /// **'Camera permission is permanently denied. Please grant camera permission in the system settings.'**
+  String get cameraPermissionPermanentlyDenied;
 
-  /// No description provided for @grantCameraPermissionDialogContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Please grant camera permission to scan QR codes.'**
-  String get grantCameraPermissionDialogContent;
-
-  /// No description provided for @grantCameraPermissionDialogPermanentlyDenied.
-  ///
-  /// In en, this message translates to:
-  /// **'Camera permission is permanently denied. Please grant camera permission in your Phone\'s settings.'**
-  String get grantCameraPermissionDialogPermanentlyDenied;
-
-  /// No description provided for @grantCameraPermissionDialogButton.
+  /// No description provided for @cameraPermissionPermanentlyDeniedButton.
   ///
   /// In en, this message translates to:
   /// **'Grant permission'**
-  String get grantCameraPermissionDialogButton;
+  String get cameraPermissionPermanentlyDeniedButton;
 
   /// No description provided for @decryptErrorTitle.
   ///

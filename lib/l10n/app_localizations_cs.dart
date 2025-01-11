@@ -37,6 +37,18 @@ class AppLocalizationsCs extends AppLocalizations {
   String get scanQrCode => 'Naskenovat QR kód';
 
   @override
+  String get addTokenTitle => 'Pair new Push Token';
+
+  @override
+  String get addTokenSubtitle => 'Point your camera at your screen to capture the QR code';
+
+  @override
+  String get or => 'OR';
+
+  @override
+  String get uploadQrCodeButton => 'Upload QR Code';
+
+  @override
   String get renameToken => 'Přejmenovat token';
 
   @override
@@ -347,16 +359,10 @@ class AppLocalizationsCs extends AppLocalizations {
   String get requestTriggerdByUserQuestion => 'Byl tento požadavek vyvolán vámi?';
 
   @override
-  String get grantCameraPermissionDialogTitle => 'Camera permission is not granted';
+  String get cameraPermissionPermanentlyDenied => 'Camera permission is permanently denied. Please grant camera permission in the system settings.';
 
   @override
-  String get grantCameraPermissionDialogContent => 'Please grant camera permission to scan QR codes.';
-
-  @override
-  String get grantCameraPermissionDialogPermanentlyDenied => 'Oprávnění kamery je trvale odepřeno. Udělte prosím oprávnění fotoaparátu v nastavení telefonu.';
-
-  @override
-  String get grantCameraPermissionDialogButton => 'Udělit oprávnění';
+  String get cameraPermissionPermanentlyDeniedButton => 'Udělit oprávnění';
 
   @override
   String get decryptErrorTitle => 'Chyba dešifrování';

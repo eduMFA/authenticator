@@ -1,0 +1,123 @@
+import 'dart:async';
+
+import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_add_widgets/qr_code_scanner.dart';
+import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_add_widgets/upload_qr_code_button.dart';
+import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
+
+class AddTokenSheetWidget extends StatefulWidget {
+  const AddTokenSheetWidget({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _AddTokenSheetWidgetState();
+}
+
+class _AddTokenSheetWidgetState extends State<AddTokenSheetWidget> with WidgetsBindingObserver {
+  final MobileScannerController controller = MobileScannerController(
+    autoStart: false,
+    formats: [BarcodeFormat.qrCode],
+  );
+
+  StreamSubscription<Object?>? _subscription;
+
+  void _handleBarcode(BarcodeCapture? barcodes) {
+    if (!mounted) return;
+    Navigator.pop(context, barcodes != null ? barcodes.barcodes.firstOrNull : false);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _subscription = controller.barcodes.listen(_handleBarcode);
+    unawaited(controller.start());
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (!controller.value.hasCameraPermission) return;
+
+    switch (state) {
+      case AppLifecycleState.resumed:
+        _subscription = controller.barcodes.listen(_handleBarcode);
+        unawaited(controller.start());
+      case AppLifecycleState.inactive:
+        unawaited(_subscription?.cancel());
+        _subscription = null;
+        unawaited(controller.stop());
+      default:
+        return;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+
+    return Container(
+      constraints: const BoxConstraints(minHeight: 0),
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            AppLocalizations.of(context)!.addTokenTitle,
+            style: textTheme.headlineMedium!.copyWith(
+                fontWeight: FontWeight.bold
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            AppLocalizations.of(context)!.addTokenSubtitle,
+            style: textTheme.titleSmall,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 24),
+          QrCodeScannerWidget(controller: controller),
+          const SizedBox(height: 24),
+          Row(
+            children: [
+              Expanded(
+                child: Divider(
+                  color: colorScheme.outlineVariant,
+                  thickness: 1,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  AppLocalizations.of(context)!.or,
+                  style: textTheme.labelLarge?.copyWith(
+                    color: colorScheme.outline,
+                    letterSpacing: 1.5,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Divider(
+                  color: colorScheme.outlineVariant,
+                  thickness: 1,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 24),
+          UploadQrCodeButton(controller: controller, handleBarcodes: _handleBarcode),
+          const SizedBox(height: 24),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Future<void> dispose() async {
+    WidgetsBinding.instance.removeObserver(this);
+    unawaited(_subscription?.cancel());
+    _subscription = null;
+    super.dispose();
+    await controller.dispose();
+  }
+}

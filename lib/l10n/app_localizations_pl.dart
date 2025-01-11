@@ -37,6 +37,18 @@ class AppLocalizationsPl extends AppLocalizations {
   String get scanQrCode => 'Zeskanuj kod QR';
 
   @override
+  String get addTokenTitle => 'Pair new Push Token';
+
+  @override
+  String get addTokenSubtitle => 'Point your camera at your screen to capture the QR code';
+
+  @override
+  String get or => 'OR';
+
+  @override
+  String get uploadQrCodeButton => 'Upload QR Code';
+
+  @override
   String get renameToken => 'Zmień nazwę tokenu';
 
   @override
@@ -347,16 +359,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get requestTriggerdByUserQuestion => 'Czy ta prośba została wywołana przez Ciebie?';
 
   @override
-  String get grantCameraPermissionDialogTitle => 'Uprawnienie do kamery nie zostało przyznane';
+  String get cameraPermissionPermanentlyDenied => 'Camera permission is permanently denied. Please grant camera permission in the system settings.';
 
   @override
-  String get grantCameraPermissionDialogContent => 'Przyznaj uprawnienia kamery do skanowania kodów QR.';
-
-  @override
-  String get grantCameraPermissionDialogPermanentlyDenied => 'Uprawnienia do aparatu zostały trwale zablokowane. Przyznaj uprawnienia aparatu w ustawieniach telefonu.';
-
-  @override
-  String get grantCameraPermissionDialogButton => 'Grant permission';
+  String get cameraPermissionPermanentlyDeniedButton => 'Grant permission';
 
   @override
   String get decryptErrorTitle => 'Decryption error';
