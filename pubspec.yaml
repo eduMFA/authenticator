@@ -64,7 +64,6 @@ dependencies:
   # Icons
   lottie: ^3.3.0
   cupertino_icons: ^1.0.8
-  fluentui_system_icons: ^1.1.268
   # UI
   easy_dynamic_theme: ^2.3.1
   flutter_slidable: ^3.1.2
