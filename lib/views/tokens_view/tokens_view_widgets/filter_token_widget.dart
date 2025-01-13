@@ -19,6 +19,18 @@ class SearchInputField extends ConsumerStatefulWidget {
   ConsumerState<SearchInputField> createState() => _SearchInputFieldState();
 }
 
+class _ClearButton extends StatelessWidget {
+  const _ClearButton({required this.controller});
+
+  final TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) => IconButton(
+    icon: const Icon(Icons.clear),
+    onPressed: () => controller.clear(),
+  );
+}
+
 class _SearchInputFieldState extends ConsumerState<SearchInputField> {
   final TextEditingController _controller = TextEditingController();
 
@@ -60,12 +72,11 @@ class _SearchInputFieldState extends ConsumerState<SearchInputField> {
   Widget build(BuildContext context) => TextField(
         controller: _controller,
         focusNode: _focusNode,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
+          prefixIcon: const Icon(Icons.search),
+          suffixIcon: _ClearButton(controller: _controller),
           hintText: 'Label / Serial / Issuer / Type',
-          border: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          prefixIcon: Icon(Icons.search),
+          border: const OutlineInputBorder(),
         ),
       );
 }
