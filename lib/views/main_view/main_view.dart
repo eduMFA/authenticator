@@ -37,14 +37,14 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
 
   @override
   void onAppResume() {
-    Logger.info('TokensView Resume', name: 'tokens_view.dart#onAppResume');
+    Logger.info('MainView Resume', name: 'tokens_view.dart#onAppResume');
     globalRef?.read(appStateProvider.notifier).state =
         AppLifecycleState.resumed;
   }
 
   @override
   void onAppPause() {
-    Logger.info('TokensView Pause', name: 'tokens_view.dart#onAppPause');
+    Logger.info('MainView Pause', name: 'tokens_view.dart#onAppPause');
     globalRef?.read(appStateProvider.notifier).state = AppLifecycleState.paused;
   }
 
