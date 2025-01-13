@@ -1,7 +1,7 @@
-name: privacyidea_authenticator
-description: An OTP Authenticator App for privacyIDEA Authentication Server.
-homepage: https://netknights.it
-repository: https://github.com/privacyidea/pi-authenticator
+name: edumfa_authenticator
+description: An Authenticator App for eduMFA Authentication Server.
+homepage: https://edumfa.io
+repository: https://github.com/edumfa/authenticator
 publish_to: none
 
 # The following defines the version and build number for your application.
@@ -14,7 +14,7 @@ publish_to: none
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 4.3.0+403008 # TODO Set the right version number 
+version: 1.0.0+42
 # version: major.minor.build          + 2x major|2x minor|3x build
 # version: version number             + build number (optional)
 # android: build-name                 + versionCode
@@ -50,8 +50,6 @@ dependencies:
   easy_dynamic_theme: ^2.2.0
   firebase_messaging: ^14.6.4
   firebase_core: ^2.14.0
-  pi_authenticator_legacy:
-    path: local_plugins/pi-authenticator-legacy
   collection: ^1.17.2
   uni_links: ^0.5.1
   local_auth: ^2.1.6
@@ -95,7 +93,6 @@ dev_dependencies:
   mockito: ^5.4.2
   test: ^1.24.1
 
-
   # dependencies to serialize objects to json
   build_runner: ^2.4.6
   json_serializable: ^6.0.1
@@ -120,11 +117,11 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - res/logo/
-    - CHANGELOG.md
     - res/guide/
     - res/gif/
     - res/lottie/
     - res/rive/
+    - launcher_icons/edumfa/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -154,10 +151,14 @@ flutter:
 
 flutter_launcher_icons:
   android: true
-  image_path: "customization/temp/app_icon.png"
+  image_path_android: "launcher_icons/edumfa/ic_launcher_app.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
   adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: "customization/temp/app_icon_adaptive.png"
-  ios: true
-  image_path_ios: "customization/temp/app_icon_ios.png"
-  remove_alpha_ios: false # default false
+  adaptive_icon_foreground: "launcher_icons/edumfa/ic_launcher_adaptive.png"
+  #
+  # Note: We currently manage the icons manually in xcode, since the integration is at least buggy somehow.
+  # Since we have needed machines and accounts available, this is okay for now.
+  #
+  # ios: true
+  # image_path_ios: "launcher_icons/edumfa/ic_launcher_app.png"
+  # remove_alpha_ios: true # default false x

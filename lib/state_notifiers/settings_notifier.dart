@@ -121,12 +121,6 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
     _saveToRepo();
   }
 
-  void setHidePushTokens(bool value) {
-    Logger.info('Hide push tokens set to $value', name: 'settings_notifier.dart#setHidePushTokens');
-    state = state.copyWith(hidePushTokens: value);
-    _saveToRepo();
-  }
-
   void setLatestStartedVersion(Version version) {
     Logger.info('Latest started version set to $version', name: 'settings_notifier.dart#setLatestStartedVersion');
     state = state.copyWith(latestStartedVersion: version);

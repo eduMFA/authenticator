@@ -1,10 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -22,23 +25,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../l10n/app_localizations.dart';
-import '../model/enums/patch_note_type.dart';
-import 'version.dart';
-
-Map<Version, Map<PatchNoteType, List<String>>> getLocalizedPatchNotes(AppLocalizations localizations) => {
-      const Version(4, 3, 0): {
-        PatchNoteType.newFeature: [
-          localizations.patchNotesV4_3_0NewFeatures1,
-          localizations.patchNotesV4_3_0NewFeatures2,
-          localizations.patchNotesV4_3_0NewFeatures3,
-          localizations.patchNotesV4_3_0NewFeatures4,
-          localizations.patchNotesV4_3_0NewFeatures5,
-          localizations.patchNotesV4_3_0NewFeatures6,
-        ],
-      }
-    };
-
 final globalSnackbarKey = GlobalKey<ScaffoldMessengerState>();
 final globalNavigatorKey = GlobalKey<NavigatorState>();
 final Future<GlobalKey<NavigatorState>> contextedGlobalNavigatorKey = Future(() async => await _getContextedGlobalNavigatorKey());
@@ -52,4 +38,4 @@ Future<GlobalKey<NavigatorState>> _getContextedGlobalNavigatorKey() async {
   }
 }
 
-final policyStatementUri = Uri.parse("https://netknights.it/en/privacy-statement/");
+final policyStatementUri = Uri.parse("https://edumfa.io/app-privacy");

@@ -61,6 +61,9 @@ build/
 **/ios/Flutter/flutter_assets/
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/Flutter.podspec
+**/ios/flutter_export_environment.sh
+**/ios/Flutter/flutter_export_environment.sh
 
 
 ### https://raw.github.com/github/gitignore//Android.gitignore
@@ -890,3 +893,7 @@ DerivedData/
 .flutter-plugins-dependencies
 lib/l10n/untranslated.txt
 *.jks
+
+
+# Excluding flake.lock
+!flake.lock

@@ -30,7 +30,7 @@ class TokenWidgetTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 8.0),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
         horizontalTitleGap: isPreview ? 0 : 8,
         leading: (leading != null) ? leading! : null,
         onTap: onTap,
@@ -44,22 +44,19 @@ class TokenWidgetTile extends ConsumerWidget {
           children: [
             TokenImage(tokenImage: tokenImage),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 4.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    for (var line in subtitles)
-                      Text(
-                        line,
-                        style: Theme.of(context).listTileTheme.subtitleTextStyle,
-                        textAlign: TextAlign.left,
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
-                      ),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  for (var line in subtitles)
+                    Text(
+                      line,
+                      style: Theme.of(context).listTileTheme.subtitleTextStyle,
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.fade,
+                      softWrap: false,
+                    ),
+                ],
               ),
             ),
           ],
@@ -74,7 +71,9 @@ Future<Uint8List?> getTokenImageBytesAsync(String? tokenImageUrl) async {
   if (tokenImages.containsKey(tokenImageUrl)) {
     return tokenImages[tokenImageUrl]!;
   } else {
-    if (tokenImageUrl == null || tokenImageUrl.isEmpty || Uri.tryParse(tokenImageUrl) == null) {
+    if (tokenImageUrl == null ||
+        tokenImageUrl.isEmpty ||
+        Uri.tryParse(tokenImageUrl) == null) {
       tokenImages[tokenImageUrl] = null;
       return null;
     }
@@ -90,10 +89,12 @@ Future<Uint8List?> getTokenImageBytesAsync(String? tokenImageUrl) async {
   }
 }
 
-Uint8List? getTokenImageBytesSync(String? tokenImageUrl) => tokenImages[tokenImageUrl];
+Uint8List? getTokenImageBytesSync(String? tokenImageUrl) =>
+    tokenImages[tokenImageUrl];
 
 class TokenImage extends StatefulWidget {
   final String? tokenImage;
+
   const TokenImage({super.key, this.tokenImage});
 
   @override

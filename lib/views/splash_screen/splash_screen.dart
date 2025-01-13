@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../model/enums/introduction.dart';
 import '../../utils/app_info_utils.dart';
-import '../../utils/home_widget_utils.dart';
 import '../../utils/logger.dart';
 import '../../utils/riverpod_providers.dart';
 import '../main_view/main_view.dart';
@@ -16,10 +15,9 @@ class SplashScreen extends ConsumerStatefulWidget {
   static bool didNavigated = false;
 
   final Widget appImage;
-  final Widget appIcon;
   final String appName;
 
-  const SplashScreen({required this.appImage, required this.appIcon, required this.appName, super.key});
+  const SplashScreen({required this.appImage, required this.appName, super.key});
 
   @override
   ConsumerState<SplashScreen> createState() => _SplashScreenState();
@@ -60,7 +58,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
           ref.read(tokenProvider.notifier).loadingRepo,
           ref.read(introductionProvider.notifier).loadingRepo,
           AppInfoUtils.init(),
-          HomeWidgetUtils().homeWidgetInit(),
         ],
         eagerError: true,
         cleanUp: (error) {
@@ -100,7 +97,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
 
   void _pushReplace() {
     final isFirstRun = ref.read(introductionProvider).isConditionFulfilled(ref, Introduction.introductionScreen) && ref.read(settingsProvider).isFirstRun;
-    final ViewWidget nextView = isFirstRun ? OnboardingView(appName: widget.appName) : MainView(appName: widget.appName, appIcon: widget.appIcon);
+    final ViewWidget nextView = isFirstRun ? OnboardingView(appName: widget.appName) : MainView(appName: widget.appName);
     final routeBuilder = SplashScreen._initialView == null
         ? PageRouteBuilder(
             pageBuilder: (_, __, ___) => nextView,

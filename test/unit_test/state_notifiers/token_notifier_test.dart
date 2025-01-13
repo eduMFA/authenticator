@@ -3,22 +3,21 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
-import 'package:pi_authenticator_legacy/pi_authenticator_legacy.dart';
 import 'package:pointycastle/export.dart';
-import 'package:privacyidea_authenticator/interfaces/repo/token_repository.dart';
-import 'package:privacyidea_authenticator/model/enums/algorithms.dart';
-import 'package:privacyidea_authenticator/model/enums/push_token_rollout_state.dart';
-import 'package:privacyidea_authenticator/model/push_request.dart';
-import 'package:privacyidea_authenticator/model/push_request_queue.dart';
-import 'package:privacyidea_authenticator/model/states/token_state.dart';
-import 'package:privacyidea_authenticator/model/tokens/hotp_token.dart';
-import 'package:privacyidea_authenticator/model/tokens/push_token.dart';
-import 'package:privacyidea_authenticator/model/tokens/token.dart';
-import 'package:privacyidea_authenticator/state_notifiers/token_notifier.dart';
-import 'package:privacyidea_authenticator/utils/firebase_utils.dart';
-import 'package:privacyidea_authenticator/utils/logger.dart';
-import 'package:privacyidea_authenticator/utils/network_utils.dart';
-import 'package:privacyidea_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart';
+import 'package:edumfa_authenticator/model/enums/algorithms.dart';
+import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/push_request_queue.dart';
+import 'package:edumfa_authenticator/model/states/token_state.dart';
+import 'package:edumfa_authenticator/model/tokens/hotp_token.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
+import 'package:edumfa_authenticator/utils/firebase_utils.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/network_utils.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 
 import 'token_notifier_test.mocks.dart';
 
@@ -26,9 +25,8 @@ import 'token_notifier_test.mocks.dart';
   [
     TokenRepository,
     RsaUtils,
-    PrivacyIdeaIOClient,
+    EduMFAIOClient,
     FirebaseUtils,
-    LegacyUtils,
   ],
 )
 void main() {
@@ -233,7 +231,7 @@ void _testTokenNotifier() {
       final container = ProviderContainer();
       final mockRepo = MockTokenRepository();
       final mockRsaUtils = MockRsaUtils();
-      final mockIOClient = MockPrivacyIdeaIOClient();
+      final mockIOClient = MockEduMFAIOClient();
       final mockFirebaseUtils = MockFirebaseUtils();
       const rsaUtils = RsaUtils();
       const publicServerKeyString =
@@ -406,7 +404,7 @@ void _testTokenNotifier() {
     test('rolloutPushToken', () async {
       final container = ProviderContainer();
       final mockRepo = MockTokenRepository();
-      final mockIOClient = MockPrivacyIdeaIOClient();
+      final mockIOClient = MockEduMFAIOClient();
       final mockFirebaseUtils = MockFirebaseUtils();
       final mockRsaUtils = MockRsaUtils();
       final uri = Uri.parse('https://example.com');

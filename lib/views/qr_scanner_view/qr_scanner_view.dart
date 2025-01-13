@@ -1,8 +1,12 @@
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -20,10 +24,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:privacyidea_authenticator/l10n/app_localizations.dart';
-import 'package:privacyidea_authenticator/views/view_interface.dart';
-import 'package:privacyidea_authenticator/widgets/dialog_widgets/default_dialog.dart';
-import 'package:privacyidea_authenticator/widgets/dialog_widgets/default_dialog_button.dart';
+import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/views/view_interface.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog_button.dart';
 
 import 'qr_scanner_view_widgets/qr_scanner_widget.dart';
 

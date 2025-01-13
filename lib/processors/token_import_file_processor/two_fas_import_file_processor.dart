@@ -3,8 +3,8 @@
 import 'dart:convert';
 
 import 'package:file_selector/file_selector.dart';
-import 'package:privacyidea_authenticator/model/enums/encodings.dart';
-import 'package:privacyidea_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/model/enums/encodings.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
 
 import '../../model/encryption/aes_encrypted.dart';
 import '../../model/tokens/token.dart';

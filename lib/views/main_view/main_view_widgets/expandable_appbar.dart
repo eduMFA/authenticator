@@ -87,7 +87,6 @@ class _ExpandableAppBarState extends State<ExpandableAppBar> {
             AnimatedContainer(
               margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
               decoration: BoxDecoration(
-                borderRadius: const BorderRadius.all(Radius.circular(20)),
                 color: Theme.of(context).canvasColor,
                 boxShadow: [
                   BoxShadow(

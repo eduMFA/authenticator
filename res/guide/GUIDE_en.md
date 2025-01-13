@@ -1,4 +1,4 @@
-# Welcome to the privacyIDEA Authenticator.
+# Welcome to the eduMFA Authenticator.
 
 + Token form the previous App version can be loaded via the `Settings` in the `Migration` section.
 
@@ -10,9 +10,9 @@
   Also, the Token can be locked to require the device credentials for access.
 
 
-# privacyIDEA Push Token:
+# eduMFA Push Token:
 
-+ If privacyIDEAs push tokens are used, pending challenges can be polled by swiping down:
++ If eduMFAs push tokens are used, pending challenges can be polled by swiping down:
   ![Manually polling by swiping down](resource:res/gif/help_manual_poll.gif)
 
 + If the app is opened, automatic polling can be activated in the settings.

@@ -1,8 +1,12 @@
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -23,14 +27,13 @@ import 'dart:convert';
 import 'package:asn1lib/asn1lib.dart';
 import 'package:base32/base32.dart';
 import 'package:flutter/foundation.dart';
-import 'package:pi_authenticator_legacy/pi_authenticator_legacy.dart';
 import 'package:pointycastle/export.dart';
-import 'package:privacyidea_authenticator/l10n/app_localizations.dart';
-import 'package:privacyidea_authenticator/model/tokens/push_token.dart';
-import 'package:privacyidea_authenticator/utils/crypto_utils.dart';
-import 'package:privacyidea_authenticator/utils/identifiers.dart';
-import 'package:privacyidea_authenticator/utils/logger.dart';
-import 'package:privacyidea_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/utils/crypto_utils.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 
 import 'globals.dart';
 
@@ -219,16 +222,6 @@ class RsaUtils {
   Future<String?> trySignWithToken(PushToken token, String message) async {
     if (token.privateTokenKey != null) {
       return createBase32Signature(token.rsaPrivateTokenKey!, utf8.encode(message));
-    }
-    // It is a legacy token so the operation could cause an exception
-    try {
-      return await const LegacyUtils().sign(token.serial, message);
-    } catch (error) {
-      final legacySigningErrorTitle = AppLocalizations.of(globalNavigatorKey.currentContext!)!.legacySigningErrorTitle(token.label);
-      final legacySigningErrorMessage = AppLocalizations.of(globalNavigatorKey.currentContext!)!.legacySigningErrorMessage;
-      globalRef?.read(statusMessageProvider.notifier).state = (legacySigningErrorTitle, legacySigningErrorMessage);
-
-      return null;
     }
   }
 

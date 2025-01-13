@@ -26,18 +26,11 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
-def keystorePropertiesNetknights = new Properties()
-def keystorePropertiesFileNetknights = rootProject.file('app/src/netknights/key.properties')
-if (keystorePropertiesFileNetknights.exists()) {
-    keystorePropertiesNetknights.load(new FileInputStream(keystorePropertiesFileNetknights))
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('app/src/edumfa/key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
-
-def keystorePropertiesNetknightsDebug = new Properties()
-def keystorePropertiesFileNetknightsDebug = rootProject.file('app/src/netknights_debug/key.properties')
-if (keystorePropertiesFileNetknightsDebug.exists()) {
-    keystorePropertiesNetknightsDebug.load(new FileInputStream(keystorePropertiesFileNetknightsDebug))
-}
-
 
 android {
     compileSdkVersion 34
@@ -48,8 +41,8 @@ android {
 
 
     defaultConfig {
-        applicationId "it.netknights.piauthenticator"
-        minSdkVersion 21    
+        applicationId "io.edumfa.authenticator"
+        minSdkVersion 21
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -57,34 +50,22 @@ android {
     }
 
     signingConfigs {
-        netknights {
-            storeFile keystorePropertiesNetknights['storeFile'] ? file(keystorePropertiesNetknights['storeFile']) : null
-            storePassword keystorePropertiesNetknights['storePassword']
-            keyAlias keystorePropertiesNetknights['keyAlias']
-            keyPassword keystorePropertiesNetknights['keyPassword']
+        edumfa {
+            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
         }        
-        netknights_debug {
-            storeFile keystorePropertiesNetknightsDebug['storeFile'] ? file(keystorePropertiesNetknightsDebug['storeFile']) : null
-            storePassword keystorePropertiesNetknightsDebug['storePassword']
-            keyAlias keystorePropertiesNetknightsDebug['keyAlias']
-            keyPassword keystorePropertiesNetknightsDebug['keyPassword']
-        }
     }
 
-    flavorDimensions "pi-authenticator"
+    flavorDimensions "edumfa-authenticator"
     
     productFlavors {
-        netknights{
-            dimension "pi-authenticator"
-            applicationId "it.netknights.piauthenticator"
-            resValue "string", "app_name", "privacyIDEA Authenticator"
-            signingConfig signingConfigs.netknights
-        }
-        netknights_debug{
-            dimension "pi-authenticator"
-            applicationId "it.netknights.piauthenticator.debug"
-            resValue "string", "app_name", "Internal - privacyIDEA Authenticator"
-            signingConfig signingConfigs.netknights_debug
+        edumfa{
+            dimension "edumfa-authenticator"
+            applicationId "io.edumfa.authenticator"
+            resValue "string", "app_name", "eduMFA Authenticator"
+            signingConfig signingConfigs.edumfa
         }
     }
    

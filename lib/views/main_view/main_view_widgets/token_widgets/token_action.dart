@@ -5,5 +5,5 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 abstract class TokenAction extends ConsumerWidget {
   const TokenAction({super.key});
   @override
-  CustomSlidableAction build(BuildContext context, WidgetRef ref);
+  PopupMenuItem<String> build(BuildContext context, WidgetRef ref);
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../../../../l10n/app_localizations.dart';
@@ -16,30 +17,18 @@ class DefaultDeleteAction extends TokenAction {
   const DefaultDeleteAction({super.key, required this.token});
 
   @override
-  CustomSlidableAction build(context, ref) {
-    return CustomSlidableAction(
-      backgroundColor: Theme.of(context).extension<ActionTheme>()!.deleteColor,
-      foregroundColor: Theme.of(context).extension<ActionTheme>()!.foregroundColor,
-      onPressed: (_) async {
-        if (token.isLocked && await lockAuth(localizedReason: AppLocalizations.of(context)?.deleteLockedToken ?? '') == false) {
-          return;
-        }
-        _showDialog();
-      },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Icon(Icons.delete),
-          Text(
-            AppLocalizations.of(context)!.delete,
-            overflow: TextOverflow.fade,
-            softWrap: false,
-          ),
-        ],
-      ),
-    );
+  PopupMenuItem<String> build(BuildContext context, WidgetRef ref) {
+    return PopupMenuItem<String>(
+        value: 'delete',
+        child: Text(AppLocalizations.of(context)!.delete),
+        onTap: () async {
+          if (token.isLocked && await lockAuth(localizedReason: AppLocalizations.of(context)?.deleteLockedToken ?? '') == false) {
+            return;
+          }
+          _showDialog();
+        });
   }
+
 
   void _showDialog() => globalNavigatorKey.currentContext == null
       ? null

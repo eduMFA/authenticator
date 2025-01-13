@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pointycastle/export.dart';
-import 'package:privacyidea_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 
 void main() {
   _testSerializingRSAKeys();

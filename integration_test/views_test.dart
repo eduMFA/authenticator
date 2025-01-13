@@ -4,19 +4,19 @@ import 'package:http/http.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:pointycastle/asymmetric/api.dart';
-import 'package:privacyidea_authenticator/l10n/app_localizations_en.dart';
-import 'package:privacyidea_authenticator/mains/main_netknights.dart';
-import 'package:privacyidea_authenticator/model/enums/introduction.dart';
-import 'package:privacyidea_authenticator/model/states/introduction_state.dart';
-import 'package:privacyidea_authenticator/model/states/settings_state.dart';
-import 'package:privacyidea_authenticator/state_notifiers/settings_notifier.dart';
-import 'package:privacyidea_authenticator/state_notifiers/token_folder_notifier.dart';
-import 'package:privacyidea_authenticator/state_notifiers/token_notifier.dart';
-import 'package:privacyidea_authenticator/utils/app_customizer.dart';
-import 'package:privacyidea_authenticator/utils/riverpod_providers.dart';
-import 'package:privacyidea_authenticator/utils/rsa_utils.dart';
-import 'package:privacyidea_authenticator/utils/version.dart';
-import 'package:privacyidea_authenticator/views/settings_view/settings_view_widgets/settings_groups.dart';
+import 'package:edumfa_authenticator/l10n/app_localizations_en.dart';
+import 'package:edumfa_authenticator/main.dart';
+import 'package:edumfa_authenticator/model/enums/introduction.dart';
+import 'package:edumfa_authenticator/model/states/introduction_state.dart';
+import 'package:edumfa_authenticator/model/states/settings_state.dart';
+import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
+import 'package:edumfa_authenticator/utils/app_customizer.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/utils/version.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/settings_groups.dart';
 
 import '../test/tests_app_wrapper.dart';
 import '../test/tests_app_wrapper.mocks.dart';
@@ -28,7 +28,7 @@ void main() {
   late final MockTokenFolderRepository mockTokenFolderRepository;
   late final MockRsaUtils mockRsaUtils;
   late final MockFirebaseUtils mockFirebaseUtils;
-  late final MockPrivacyIdeaIOClient mockIOClient;
+  late final MockEduMFAIOClient mockIOClient;
   late final MockIntroductionRepository mockIntroductionRepository;
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
@@ -49,7 +49,7 @@ void main() {
     mockFirebaseUtils = MockFirebaseUtils();
     when(mockFirebaseUtils.getFBToken()).thenAnswer((_) => Future.value('fbToken'));
     when(mockRsaUtils.deserializeRSAPublicKeyPKCS1('publicKey')).thenAnswer((_) => RSAPublicKey(BigInt.one, BigInt.one));
-    mockIOClient = MockPrivacyIdeaIOClient();
+    mockIOClient = MockEduMFAIOClient();
     when(mockIOClient.doPost(
       url: anyNamed('url'),
       body: anyNamed('body'),
@@ -72,7 +72,7 @@ void main() {
             )),
         tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
       ],
-      child: PrivacyIDEAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+      child: eduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
     ));
 
     await _licensesViewTest(tester);

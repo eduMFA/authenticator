@@ -1,8 +1,12 @@
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -19,7 +23,7 @@
 */
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:privacyidea_authenticator/utils/custom_int_buffer.dart';
+import 'package:edumfa_authenticator/utils/custom_int_buffer.dart';
 
 void main() {
   verifyCustomStringBufferWorks();

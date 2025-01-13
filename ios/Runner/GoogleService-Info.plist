@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCeAkf2jSp6-YUb-p34hO5A9dlYf7ZAenM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1025987636042</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.edumfa.authenticator</string>
+	<key>PROJECT_ID</key>
+	<string>edumfa-5b429</string>
+	<key>STORAGE_BUCKET</key>
+	<string>edumfa-5b429.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1025987636042:ios:035e5bb6b2134036316fb3</string>
+</dict>
+</plist>

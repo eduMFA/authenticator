@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:privacyidea_authenticator/extensions/color_extension.dart';
+import 'package:edumfa_authenticator/extensions/color_extension.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../model/tokens/push_token.dart';
@@ -55,7 +55,6 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                 AppLocalizations.of(context)!.authenticationRequest,
                 style: Theme.of(context).textTheme.titleLarge!,
                 textAlign: TextAlign.center,
-                textScaler: const TextScaler.linear(titleScale),
               ),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -67,7 +66,6 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                       widget.tokenWithPushRequest.label,
                     ),
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
-                    textScaler: const TextScaler.linear(questionScale),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: lineHeight),
@@ -75,14 +73,13 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                     Text(
                       question,
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
-                      textScaler: const TextScaler.linear(questionScale),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: lineHeight),
                   ],
                   SizedBox(
                     // Accept button
-                    height: lineHeight * titleScale * 2 + 16,
+                    height: lineHeight * titleScale + 16,
                     child: PressButton(
                       onPressed: () async {
                         if (widget.tokenWithPushRequest.isLocked &&
@@ -97,14 +94,12 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                         children: [
                           Text(
                             AppLocalizations.of(context)!.accept,
-                            style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                            textScaler: const TextScaler.linear(titleScale),
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),
                           Icon(
                             Icons.check_outlined,
-                            size: lineHeight * titleScale,
                           ),
                         ],
                       ),
@@ -132,11 +127,10 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                           children: [
                             Text(
                               AppLocalizations.of(context)!.decline,
-                              style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                              textScaler: const TextScaler.linear(titleScale),
+                              style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
                               textAlign: TextAlign.center,
                             ),
-                            Icon(Icons.close_outlined, size: lineHeight * titleScale),
+                            Icon(Icons.close_outlined),
                           ],
                         )),
                   ),
@@ -156,7 +150,6 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
             AppLocalizations.of(context)!.authenticationRequest,
             style: Theme.of(context).textTheme.titleLarge!,
             textAlign: TextAlign.center,
-            textScaler: const TextScaler.linear(titleScale),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -165,7 +158,6 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
               Text(
                 AppLocalizations.of(context)!.requestTriggerdByUserQuestion,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
-                textScaler: const TextScaler.linear(questionScale),
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: lineHeight),
@@ -188,7 +180,6 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                           Text(
                             AppLocalizations.of(context)!.yes,
                             style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                            textScaler: const TextScaler.linear(titleScale),
                             textAlign: TextAlign.center,
                           ),
                           FittedBox(
@@ -223,7 +214,6 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                           Text(
                             AppLocalizations.of(context)!.no,
                             style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                            textScaler: const TextScaler.linear(titleScale),
                             textAlign: TextAlign.center,
                           ),
                           Text(

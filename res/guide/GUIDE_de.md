@@ -1,4 +1,4 @@
-# Willkommen im privacyIDEA Authenticator
+# Willkommen im eduMFA Authenticator
 
 + Token aus der vorherigen App Version können in den `Einstellungen` im Bereich `Migration` geladen
   werden.
@@ -11,7 +11,7 @@
   Das Token kann auch gesperrt werden um den Zugriff nur nach Authentifizierung des Nutzers zu
   erlauben.
 
-# privacyIDEA Push Token:
+# eduMFA Push Token:
 
 + Ausstehende Push-Anfragen können manuell abgefragt werden, indem Sie nach unten wischen:
   ![Manually polling by swiping down](resource:res/gif/help_manual_poll.gif)

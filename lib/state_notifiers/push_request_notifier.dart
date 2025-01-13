@@ -1,8 +1,11 @@
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -22,29 +25,29 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
-import 'package:privacyidea_authenticator/model/push_request.dart';
-import 'package:privacyidea_authenticator/model/tokens/push_token.dart';
-import 'package:privacyidea_authenticator/utils/firebase_utils.dart';
-import 'package:privacyidea_authenticator/utils/logger.dart';
-import 'package:privacyidea_authenticator/utils/network_utils.dart';
-import 'package:privacyidea_authenticator/utils/push_provider.dart';
-import 'package:privacyidea_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/utils/firebase_utils.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/network_utils.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 
 /// Interface between the [PushProvider] and the UI.
 class PushRequestNotifier extends StateNotifier<PushRequest?> {
   // Used for periodically polling for push challenges
 
   final PushProvider _pushProvider;
-  final PrivacyIdeaIOClient _ioClient;
+  final EduMFAIOClient _ioClient;
   final RsaUtils _rsaUtils;
 
   PushRequestNotifier({
     PushRequest? initState,
     PushProvider? pushProvider,
-    PrivacyIdeaIOClient? ioClient,
+    EduMFAIOClient? ioClient,
     RsaUtils? rsaUtils,
     FirebaseUtils? firebaseUtils,
-  })  : _ioClient = ioClient ?? const PrivacyIdeaIOClient(),
+  })  : _ioClient = ioClient ?? const EduMFAIOClient(),
         _pushProvider = pushProvider ?? PushProvider(),
         _rsaUtils = rsaUtils ?? const RsaUtils(),
         super(initState) {
@@ -85,7 +88,7 @@ class PushRequestNotifier extends StateNotifier<PushRequest?> {
   Future<bool> _handleReaction({required PushRequest pushRequest, required PushToken token}) async {
     if (pushRequest.accepted == null) return false;
 
-    Logger.info('Push auth request accepted=${pushRequest.accepted}, sending response to privacyidea', name: 'token_widgets.dart#handleReaction');
+    Logger.info('Push auth request accepted=${pushRequest.accepted}, sending response to edumfa', name: 'token_widgets.dart#handleReaction');
 
     // signature ::=  {nonce}|{serial}[|decline]
     String msg = '${pushRequest.nonce}|${token.serial}';
@@ -97,7 +100,7 @@ class PushRequestNotifier extends StateNotifier<PushRequest?> {
       return false;
     }
 
-    //    POST https://privacyideaserver/validate/check
+    //    POST https://edumfaserver/validate/check
     //    nonce=<nonce_from_request>
     //    serial=<serial>
     //    signature=<signature>

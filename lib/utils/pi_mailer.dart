@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mailer/flutter_mailer.dart';
-import 'package:privacyidea_authenticator/l10n/app_localizations.dart';
-import 'package:privacyidea_authenticator/utils/view_utils.dart';
-import 'package:privacyidea_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/utils/view_utils.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
 import 'app_info_utils.dart';
 import 'logger.dart';
 
 class PiMailer {
-  static String get _mailRecipient => 'app-crash@netknights.it';
+  static String get _mailRecipient => 'edumfa-app-support@gwdg.de';
   static String _mailSubject(String? subject, String? subjectPrefix, bool subjectAppVersion) {
     String mailSubject = subjectPrefix != null ? '[$subjectPrefix] ' : '';
     if (subjectAppVersion) mailSubject += '(${AppInfoUtils.currentVersionString}+${AppInfoUtils.currentBuildNumber}) ';

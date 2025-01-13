@@ -1,14 +1,5 @@
 {
   "@@last_modified": "2023-08-07",
-  "patchNotesNewFeatures": "Nové funkce",
-  "patchNotesImprovements": "Improvements",
-  "patchNotesBugFixes": "Opravy chyb",
-  "patchNotesV4_3_0NewFeatures1": "Přidána podpora pro import tokenů z Google, Aegis a 2FAS Authenticator. Další zdroje importu budou přidány v budoucnu.",
-  "patchNotesV4_3_0NewFeatures2": "Do nastavení byla přidána možnost zpětné vazby.",
-  "patchNotesV4_3_0NewFeatures3": "Tokeny Push lze nyní skrýt ze seznamu tokenů.",
-  "patchNotesV4_3_0NewFeatures4": "Byly přidány úvodní informace, které novým uživatelům usnadní začátky.",
-  "patchNotesV4_3_0NewFeatures5": "Žetony nyní můžete vyhledávat klepnutím na lupu v pravém horním rohu.",
-  "patchNotesV4_3_0NewFeatures6": "Přidán token HomeWidget pro systém Android 12 a novější.",
   "guide": "Průvodce",
   "@guide": {
     "description": "Button to open the guide screen."
@@ -137,6 +128,7 @@
       }
     }
   },
+  "tokens": "Token",
   "settings": "Nastavení",
   "@settings": {
     "description": "Button to open the settings page."
@@ -173,7 +165,7 @@
   "@synchronizePushTokens": {
     "description": "Title of synchronizing push tokens in settings."
   },
-  "synchronizesTokensWithServer": "Synchronizovat tokeny se serverem privacyIDEA.",
+  "synchronizesTokensWithServer": "Synchronizovat tokeny se serverem eduMFA.",
   "@synchronizesTokensWithServer": {
     "description": "Description of synchronizing push tokens in settings."
   },
@@ -216,7 +208,7 @@
       }
     }
   },
-  "errorSynchronizationNoNetworkConnection": "Synchronizace tokenů selhala, připojení k serveru privacyIDEA se nezdařilo.",
+  "errorSynchronizationNoNetworkConnection": "Synchronizace tokenů selhala, připojení k serveru eduMFA se nezdařilo.",
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
@@ -367,7 +359,7 @@
   "@onBoardingTitle1": {
     "placeholders": {
       "appName": {
-        "example": "privacyIDEA Authenticator"
+        "example": "eduMFA Authenticator"
       }
     }
   },
@@ -491,20 +483,14 @@
   "decryptErrorButtonSendError": "Odeslat chybu",
   "decryptErrorButtonRetry": "Opakování",
   "decryptErrorDeleteConfirmationContent": "Jste si jisti, že chcete data aplikace odstranit?",
-  "hidePushTokens": "Skrýt push tokeny",
-  "hidePushTokensDescription": "Skrýt push tokeny ze seznamu tokenů. Tím se tokeny neodstraní a budou stále viditelné na samostatné obrazovce.",
   "settingsGroupGeneral": "Obecné informace",
   "licensesAndVersion": "Licence a verze",
   "privacyPolicy": "Zásady ochrany osobních údajů",
-  "introScanQrCode": "Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny privacyIDEA.",
-  "introAddTokenManually": "Pokud nechcete skenovat QR kód, můžete tokeny přidávat také ručně.",
+  "introScanQrCode": "Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny eduMFA.",
   "introTokenSwipe": "Přejetím po tokenech doleva zobrazíte dostupné akce.",
   "introEditToken": "Zde můžete upravit název tokenu a zobrazit některé podrobnosti.",
   "introLockToken": "To improve security even more, you can lock tokens. Then the token can only be used after authentication.",
-  "introDragToken": "Reorganizujte tokeny tak, že je na několik sekund stisknete a poté je přetáhnete na požadované místo.",
-  "introAddFolder": "Můžete vytvářet složky\npro uspořádání svých tokenů.",
   "introPollForChallenges": "Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů.",
-  "introHidePushTokens": "Vaše push tokeny jsou nyní skryté.\nNa obrazovce push tokenů je však stále vidíte.",
   "legacySigningErrorTitle": "Při použití staršího tokenu došlo k chybě: {tokenLabel}",
   "@legacySigningErrorTitle": {
     "description": "Title of the error dialog that is shown when an error occurs while using a legacy token.",
@@ -518,16 +504,6 @@
   "@legacySigningErrorMessage": {
     "description": "Message of the error dialog that is shown when an error occurs while using a legacy token."
   },
-  "selectImportSource": "Vyberte zdroj importu",
-  "selectImportType": "Jak chcete importovat žetony?",
-  "importTokens": "Importní token",
-  "selectFile": "Vybrat soubor",
-  "decrypt": "Dešifrovat",
-  "tokensAreEncrypted": "Tokeny jsou zašifrované. Please enter the password to decrypt them.",
-  "tokensNotEncrypted": "Tokeny nejsou šifrované a lze je importovat přímo.",
-  "tokensSuccessfullyDecrypted": "Tokeny byly úspěšně dešifrovány a nyní je lze importovat.",
-  "password": "Heslo",
-  "wrongPassword": "Nesprávné heslo",
   "qrScan": "Skenování",
   "enterLink": "Zadejte odkaz",
   "invalidBackupFile": "Vybraný soubor není platnou zálohou {appName}.",
@@ -567,7 +543,7 @@
   "@requestInfo": {
     "placeholders": {
       "issuer": {
-        "example": "privacyIDEA"
+        "example": "eduMFA"
       },
       "account": {
         "example": "GitHub"

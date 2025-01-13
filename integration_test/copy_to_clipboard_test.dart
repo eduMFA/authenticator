@@ -3,18 +3,18 @@ import 'dart:ui';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:privacyidea_authenticator/mains/main_netknights.dart';
-import 'package:privacyidea_authenticator/model/enums/algorithms.dart';
-import 'package:privacyidea_authenticator/model/enums/introduction.dart';
-import 'package:privacyidea_authenticator/model/states/introduction_state.dart';
-import 'package:privacyidea_authenticator/model/states/settings_state.dart';
-import 'package:privacyidea_authenticator/model/tokens/hotp_token.dart';
-import 'package:privacyidea_authenticator/state_notifiers/settings_notifier.dart';
-import 'package:privacyidea_authenticator/state_notifiers/token_folder_notifier.dart';
-import 'package:privacyidea_authenticator/state_notifiers/token_notifier.dart';
-import 'package:privacyidea_authenticator/utils/app_customizer.dart';
-import 'package:privacyidea_authenticator/utils/riverpod_providers.dart';
-import 'package:privacyidea_authenticator/utils/version.dart';
+import 'package:edumfa_authenticator/main.dart';
+import 'package:edumfa_authenticator/model/enums/algorithms.dart';
+import 'package:edumfa_authenticator/model/enums/introduction.dart';
+import 'package:edumfa_authenticator/model/states/introduction_state.dart';
+import 'package:edumfa_authenticator/model/states/settings_state.dart';
+import 'package:edumfa_authenticator/model/tokens/hotp_token.dart';
+import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
+import 'package:edumfa_authenticator/utils/app_customizer.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/version.dart';
 
 import '../test/tests_app_wrapper.dart';
 import '../test/tests_app_wrapper.mocks.dart';
@@ -50,7 +50,7 @@ void main() {
         tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
         tokenFolderProvider.overrideWith((ref) => TokenFolderNotifier(repository: mockTokenFolderRepository)),
       ],
-      child: PrivacyIDEAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+      child: eduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
     ));
     await tester.pumpAndSettle();
     await pumpUntilFindNWidgets(tester, find.text('356 306'), 1, const Duration(seconds: 10));

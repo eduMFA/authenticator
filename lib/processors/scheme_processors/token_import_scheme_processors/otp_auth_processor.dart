@@ -16,7 +16,7 @@ import 'token_import_scheme_processor_interface.dart';
 class OtpAuthProcessor extends TokenImportSchemeProcessor {
   const OtpAuthProcessor();
   @override
-  Set<String> get supportedSchemes => {'otpauth'};
+  Set<String> get supportedSchemes => {'edumfa-push'};
 
   @override
   Future<List<Token>> processUri(Uri uri, {bool fromInit = false}) async {
@@ -24,7 +24,7 @@ class OtpAuthProcessor extends TokenImportSchemeProcessor {
     Logger.info('Try to handle otpAuth:', name: 'token_notifier.dart#addTokenFromOtpAuth');
     Map<String, dynamic> uriMap;
     try {
-      uriMap = _parseOtpToken(uri);
+      uriMap = _parseEduMFAPushToken(uri);
     } on ArgumentError catch (e, s) {
       // Error while parsing qr code.
       Logger.warning('Malformed QR code:', name: 'token_notifier.dart#_handleOtpAuth', error: e, stackTrace: s);
@@ -63,184 +63,11 @@ class OtpAuthProcessor extends TokenImportSchemeProcessor {
   }
 }
 
-/// This method parses otpauth uris according
-/// to https://github.com/google/google-authenticator/wiki/Key-Uri-Format.
-Map<String, dynamic> _parseOtpToken(Uri uri) {
-  final type = uri.host;
-  if (TokenTypes.PIPUSH.isString(type)) {
-    // otpauth://pipush/LABEL?PARAMETERS
-    return _parsePiPushToken(uri);
-  }
-  if (TokenTypes.HOTP.isString(type) || TokenTypes.TOTP.isString(type) || TokenTypes.DAYPASSWORD.isString(type)) {
-    return _parseOtpAuth(uri);
-  }
-  throw ArgumentError.value(
-    'Invalid type: $type',
-    'QrParser#_parseOtpToken',
-    'The type [$type] is not supported.',
-  );
-}
-
-Map<String, dynamic> _parseOtpAuth(Uri uri) {
-  // otpauth://TYPE/LABEL?PARAMETERS
-  Map<String, dynamic> uriMap = {};
-
-  // parse.host -> Type totp or hotp
-  uriMap[URI_TYPE] = uri.host;
-
-  // parse.path.substring(1) -> Label
-  String infoLog = '\nKey: [..] | Value: [..]';
-  uri.queryParameters.forEach((key, value) {
-    if (key == URI_SECRET || key.toLowerCase().contains('secret')) {
-      value = '********';
-    }
-    infoLog += '\n${key.padLeft(9)} | $value';
-  });
-  Logger.info(
-    infoLog,
-    name: 'parsing_utils.dart#_parseOtpAuth',
-  );
-
-  final (label, issuer) = _parseLabelAndIssuer(uri);
-  uriMap[URI_LABEL] = label;
-  uriMap[URI_ISSUER] = issuer;
-
-  // parse pin from response 'True'
-  if (uri.queryParameters['pin'] == 'True') {
-    uriMap[URI_PIN] = true;
-  }
-
-  if (uri.queryParameters['image'] != null) {
-    uriMap[URI_IMAGE] = uri.queryParameters['image'];
-  }
-
-  String algorithm = uri.queryParameters['algorithm'] ?? Algorithms.SHA1.asString; // Optional parameter
-
-  if (!Algorithms.SHA1.isString(algorithm) && !Algorithms.SHA256.isString(algorithm) && !Algorithms.SHA512.isString(algorithm)) {
-    throw ArgumentError.value(
-      uri,
-      'uri',
-      'The algorithm [$algorithm] is not supported',
-    );
-  }
-
-  uriMap[URI_ALGORITHM] = algorithm;
-
-  // Parse digits.
-  String digitsAsString = uri.queryParameters['digits'] ?? '6'; // Optional parameter
-
-  if (digitsAsString != '6' && digitsAsString != '8') {
-    throw ArgumentError.value(
-      uri,
-      'uri',
-      '[$digitsAsString] is not a valid number of digits',
-    );
-  }
-
-  int digits = int.parse(digitsAsString);
-
-  uriMap[URI_DIGITS] = digits;
-
-  // Parse secret.
-  String? secretAsString = uri.queryParameters['secret'];
-  ArgumentError.checkNotNull(secretAsString);
-
-  // This is a fix for omitted padding in base32 encoded secrets.
-  //
-  // According to https://github.com/google/google-authenticator/wiki/Key-Uri-Format,
-  // the padding can be omitted, but the libraries for base32 do not allow this.
-  if (secretAsString!.length % 2 == 1) {
-    secretAsString += '=';
-  }
-  secretAsString = secretAsString.toUpperCase();
-  if (!isValidEncoding(secretAsString, Encodings.base32)) {
-    throw ArgumentError.value(
-      uri,
-      'uri',
-      '[${Encodings.base32.asString}] is not a valid encoding for [$secretAsString].',
-    );
-  }
-
-  Uint8List secret = decodeSecretToUint8(secretAsString, Encodings.base32);
-
-  uriMap[URI_SECRET] = secret;
-
-  if (uriMap[URI_TYPE] == 'hotp') {
-    // Parse counter.
-    String? counterAsString = uri.queryParameters['counter'];
-    try {
-      if (counterAsString == null) {
-        throw ArgumentError.value(
-          uri,
-          'uri',
-          'Value for parameter [counter] is not optional and is missing.',
-        );
-      }
-      uriMap[URI_COUNTER] = int.parse(counterAsString);
-    } on FormatException {
-      throw ArgumentError.value(
-        uri,
-        'uri',
-        '[$counterAsString] is not a valid value for uri parameter [counter].',
-      );
-    }
-  }
-
-  if (uriMap[URI_TYPE] == 'totp' || uriMap[URI_TYPE] == 'daypassword') {
-    // Parse period.
-    String periodAsString = uri.queryParameters['period'] ?? '30';
-
-    int? period = int.tryParse(periodAsString);
-    if (period == null) {
-      throw ArgumentError('Value [$periodAsString] for parameter [period] is invalid.');
-    }
-    uriMap[URI_PERIOD] = period;
-  }
-
-  if (_is2StepURI(uri)) {
-    // Parse for 2 step roll out.
-    String saltLengthAsString = uri.queryParameters['2step_salt'] ?? '10';
-    String outputLengthInByteAsString = uri.queryParameters['2step_output'] ?? '20';
-    String iterationsAsString = uri.queryParameters['2step_difficulty'] ?? '10000';
-
-    // Parse parameters
-    try {
-      uriMap[URI_SALT_LENGTH] = int.parse(saltLengthAsString);
-    } on FormatException {
-      throw ArgumentError.value(
-        uri,
-        'uri',
-        '[$saltLengthAsString] is not a valid value for parameter [2step_salt].',
-      );
-    }
-    try {
-      uriMap[URI_OUTPUT_LENGTH_IN_BYTES] = int.parse(outputLengthInByteAsString);
-    } on FormatException {
-      throw ArgumentError.value(
-        uri,
-        'uri',
-        '[$outputLengthInByteAsString] is not a valid value for parameter [2step_output].',
-      );
-    }
-    try {
-      uriMap[URI_ITERATIONS] = int.parse(iterationsAsString);
-    } on FormatException {
-      throw ArgumentError.value(
-        uri,
-        'uri',
-        '[$iterationsAsString] is not a valid value for parameter [2step_difficulty].',
-      );
-    }
-  }
-
-  return uriMap;
-}
-
-Map<String, dynamic> _parsePiPushToken(Uri uri) {
+Map<String, dynamic> _parseEduMFAPushToken(Uri uri) {
   // otpauth://pipush/LABELTEXT?
-  // url=https://privacyidea.org/enroll/this/token
+  // url=https://edumfa.io/enroll/this/token
   // &ttl=120
-  // &issuer=privacyIDEA
+  // &issuer=eduMFA
   // &enrollment_credential=9311ee50678983c0f29d3d843f86e39405e2b427
   // &v=1
   // &serial=PIPU0006EF87
@@ -248,7 +75,7 @@ Map<String, dynamic> _parsePiPushToken(Uri uri) {
 
   Map<String, dynamic> uriMap = {};
 
-  uriMap[URI_TYPE] = uri.host;
+  uriMap[URI_TYPE] = "EDUMFA_PUSH";
 
   // If we do not support the version of this piauth url, we can stop here.
   String? pushVersionAsString = uri.queryParameters['v'];
@@ -260,19 +87,19 @@ Map<String, dynamic> _parsePiPushToken(Uri uri) {
   try {
     int pushVersion = int.parse(pushVersionAsString);
 
-    Logger.info('Parsing push token with version: $pushVersion', name: 'parsing_utils.dart#parsePiAuth');
+    Logger.info('Parsing push token with version: $pushVersion', name: 'parsing_utils.dart#parseEduMFAPushToken');
 
     if (pushVersion > maxPushTokenVersion) {
       throw ArgumentError.value(
         'Unsupported version: $pushVersion',
-        'QrParser#_parsePiAuth',
+        'QrParser#parseEduMFAPushToken',
         'The piauth version [$pushVersionAsString] is not supported by this version of the app.',
       );
     }
   } on FormatException {
     throw ArgumentError.value(
       'Invalid version: $pushVersionAsString',
-      'QrParser#_parsePiAuth',
+      'QrParser#parseEduMFAPushToken',
       '[$pushVersionAsString] is not a valid value for parameter [v].',
     );
   }

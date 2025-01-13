@@ -11,7 +11,6 @@ import 'default_token_actions/default_delete_action.dart';
 import 'default_token_actions/default_edit_action.dart';
 import 'default_token_actions/default_lock_action.dart';
 import 'token_action.dart';
-import 'token_widget_slideable.dart';
 
 class TokenWidgetBase extends ConsumerWidget {
   final Widget tile;
@@ -36,15 +35,14 @@ class TokenWidgetBase extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final SortableMixin? draggingSortable = ref.watch(draggingSortableProvider);
-    final List<TokenAction> actions = [
-      deleteAction ?? DefaultDeleteAction(token: token, key: Key('${token.id}deleteAction')),
-      editAction ?? DefaultEditAction(token: token, key: Key('${token.id}editAction')),
-    ];
-    if ((token.pin == false)) {
-      actions.add(
-        lockAction ?? DefaultLockAction(token: token, key: Key('${token.id}lockAction')),
-      );
-    }
+    final List<TokenAction> actions = [];
+
+    final child = Stack(
+      children: [
+        tile,
+        for (var item in stack) item,
+      ],
+    );
     return draggingSortable == null
         ? LongPressDraggable(
             maxSimultaneousDrags: 1,
@@ -57,39 +55,26 @@ class TokenWidgetBase extends ConsumerWidget {
             onDraggableCanceled: (velocity, offset) {
               globalRef?.read(draggingSortableProvider.notifier).state = null;
             },
-            dragAnchorStrategy: (Draggable<Object> d, BuildContext context, Offset point) {
-              final textSize = textSizeOf(token.label, Theme.of(context).textTheme.titleLarge!);
-              return Offset(max(textSize.width / 2, 30), textSize.height / 2 + 30);
+            dragAnchorStrategy:
+                (Draggable<Object> d, BuildContext context, Offset point) {
+              final textSize = textSizeOf(
+                  token.label, Theme.of(context).textTheme.titleLarge!);
+              return Offset(
+                  max(textSize.width / 2, 30), textSize.height / 2 + 30);
             },
-            feedback: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(dragIcon, size: 60),
-                Material(
-                    color: Colors.transparent,
-                    child: Text(
-                      token.label,
-                      style: Theme.of(context).textTheme.titleLarge,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    )),
-              ],
+            feedback: Material(
+              elevation: 4.0,
+              child: ConstrainedBox(
+                constraints:
+                    BoxConstraints(maxWidth: MediaQuery.of(context).size.width),
+                child: tile,
+              ),
             ),
             data: token,
-            child: TokenWidgetSlideable(
-              token: token,
-              actions: actions,
-              stack: stack,
-              tile: tile,
-            ),
+            child: child,
           )
         : draggingSortable == token
             ? const SizedBox()
-            : TokenWidgetSlideable(
-                token: token,
-                actions: actions,
-                stack: stack,
-                tile: tile,
-              );
+            : child;
   }
 }

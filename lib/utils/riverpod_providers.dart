@@ -14,7 +14,6 @@ import '../model/states/settings_state.dart';
 import '../model/states/token_filter.dart';
 import '../model/states/token_folder_state.dart';
 import '../model/states/token_state.dart';
-import '../model/tokens/otp_token.dart';
 import '../repo/preference_introduction_repository.dart';
 import '../repo/preference_settings_repository.dart';
 import '../repo/preference_token_folder_repository.dart';
@@ -26,7 +25,6 @@ import '../state_notifiers/token_folder_notifier.dart';
 import '../state_notifiers/token_notifier.dart';
 import 'app_customizer.dart';
 import 'globals.dart';
-import 'home_widget_utils.dart';
 import 'logger.dart';
 import 'push_provider.dart';
 import 'riverpod_state_listener.dart';
@@ -125,11 +123,6 @@ final deeplinkProvider = StateNotifierProvider<DeeplinkNotifier, DeepLink?>(
     Logger.info("New DeeplinkNotifier created", name: 'deeplinkProvider');
     return DeeplinkNotifier(sources: [
       DeeplinkSource(name: 'uni_links', stream: uriLinkStream, initialUri: getInitialUri()),
-      DeeplinkSource(
-        name: 'home_widget',
-        stream: HomeWidgetUtils().widgetClicked,
-        initialUri: HomeWidgetUtils().initiallyLaunchedFromHomeWidget(),
-      ),
     ]);
   },
   name: 'deeplinkProvider',
@@ -204,16 +197,6 @@ final appConstraintsProvider = StateProvider<BoxConstraints?>(
   (ref) {
     Logger.info("New constraintsProvider created", name: 'appConstraintsProvider');
     return null;
-  },
-);
-
-final homeWidgetProvider = StateProvider<Map<String, OTPToken>>(
-  (ref) {
-    Logger.info("New homeWidgetProvider created", name: 'homeWidgetProvider');
-    ref.listen(tokenProvider, (previous, next) {
-      HomeWidgetUtils().updateTokensIfLinked(next.lastlyUpdatedTokens);
-    });
-    return {};
   },
 );
 

@@ -103,60 +103,6 @@ abstract class AppLocalizations {
     Locale('pl')
   ];
 
-  /// No description provided for @patchNotesNewFeatures.
-  ///
-  /// In en, this message translates to:
-  /// **'New features'**
-  String get patchNotesNewFeatures;
-
-  /// No description provided for @patchNotesImprovements.
-  ///
-  /// In en, this message translates to:
-  /// **'Improvements'**
-  String get patchNotesImprovements;
-
-  /// No description provided for @patchNotesBugFixes.
-  ///
-  /// In en, this message translates to:
-  /// **'Bug fixes'**
-  String get patchNotesBugFixes;
-
-  /// No description provided for @patchNotesV4_3_0NewFeatures1.
-  ///
-  /// In en, this message translates to:
-  /// **'Support for importing tokens from Google, Aegis and 2FAS Authenticator has been added. More import sources will be added in the future.'**
-  String get patchNotesV4_3_0NewFeatures1;
-
-  /// No description provided for @patchNotesV4_3_0NewFeatures2.
-  ///
-  /// In en, this message translates to:
-  /// **'Added feedback option to the settings.'**
-  String get patchNotesV4_3_0NewFeatures2;
-
-  /// No description provided for @patchNotesV4_3_0NewFeatures3.
-  ///
-  /// In en, this message translates to:
-  /// **'Push tokens can now be hidden from the token list.'**
-  String get patchNotesV4_3_0NewFeatures3;
-
-  /// No description provided for @patchNotesV4_3_0NewFeatures4.
-  ///
-  /// In en, this message translates to:
-  /// **'Introductions have been added to help new users get started.'**
-  String get patchNotesV4_3_0NewFeatures4;
-
-  /// No description provided for @patchNotesV4_3_0NewFeatures5.
-  ///
-  /// In en, this message translates to:
-  /// **'You can now search for tokens by tapping the magnifying glass in the upper right corner.'**
-  String get patchNotesV4_3_0NewFeatures5;
-
-  /// No description provided for @patchNotesV4_3_0NewFeatures6.
-  ///
-  /// In en, this message translates to:
-  /// **'Added HomeWidget token for Android 12 and later.'**
-  String get patchNotesV4_3_0NewFeatures6;
-
   /// Label for e.g. a button. Something gets accepted by the user.
   ///
   /// In en, this message translates to:
@@ -319,6 +265,12 @@ abstract class AppLocalizations {
   /// **'Password \"{otpValue}\" copied to clipboard.'**
   String otpValueCopiedMessage(Object otpValue);
 
+  /// No description provided for @tokens.
+  ///
+  /// In en, this message translates to:
+  /// **'Token'**
+  String get tokens;
+
   /// Button to open the settings page.
   ///
   /// In en, this message translates to:
@@ -376,7 +328,7 @@ abstract class AppLocalizations {
   /// Description of synchronizing push tokens in settings.
   ///
   /// In en, this message translates to:
-  /// **'Synchronizes tokens with the privacyIDEA server.'**
+  /// **'Synchronizes tokens with the eduMFA server.'**
   String get synchronizesTokensWithServer;
 
   /// Text of button that is used to synchronize push tokens.
@@ -424,7 +376,7 @@ abstract class AppLocalizations {
   /// Tells the user that synchronizing the push tokens failed because the server could not be reached.
   ///
   /// In en, this message translates to:
-  /// **'Synchronizing tokens failed, privacyIDEA server could not be reached.'**
+  /// **'Synchronizing tokens failed, eduMFA server could not be reached.'**
   String get errorSynchronizationNoNetworkConnection;
 
   /// Tells the user that the roll-out failed because the server could not be reached.
@@ -1039,18 +991,6 @@ abstract class AppLocalizations {
   /// **'Are you sure you want to delete the app data?'**
   String get decryptErrorDeleteConfirmationContent;
 
-  /// No description provided for @hidePushTokens.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide push tokens'**
-  String get hidePushTokens;
-
-  /// No description provided for @hidePushTokensDescription.
-  ///
-  /// In en, this message translates to:
-  /// **'Hide push tokens from the token list. This will not delete the tokens and they will still be visible on a separate screen.'**
-  String get hidePushTokensDescription;
-
   /// No description provided for @settingsGroupGeneral.
   ///
   /// In en, this message translates to:
@@ -1072,14 +1012,8 @@ abstract class AppLocalizations {
   /// No description provided for @introScanQrCode.
   ///
   /// In en, this message translates to:
-  /// **'You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the privacyIDEA tokens.'**
+  /// **'You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.'**
   String get introScanQrCode;
-
-  /// No description provided for @introAddTokenManually.
-  ///
-  /// In en, this message translates to:
-  /// **'If you don\'t want to scan a QR code, you can also add tokens manually.'**
-  String get introAddTokenManually;
 
   /// No description provided for @introTokenSwipe.
   ///
@@ -1099,29 +1033,11 @@ abstract class AppLocalizations {
   /// **'To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.'**
   String get introLockToken;
 
-  /// No description provided for @introDragToken.
-  ///
-  /// In en, this message translates to:
-  /// **'Reorganize your tokens by pressing it for a few seconds and then dragging it to the desired position.'**
-  String get introDragToken;
-
-  /// No description provided for @introAddFolder.
-  ///
-  /// In en, this message translates to:
-  /// **'You can create folders\nto organize your tokens.'**
-  String get introAddFolder;
-
   /// No description provided for @introPollForChallenges.
   ///
   /// In en, this message translates to:
   /// **'You can check for new challenges by dragging down the token list.'**
   String get introPollForChallenges;
-
-  /// No description provided for @introHidePushTokens.
-  ///
-  /// In en, this message translates to:
-  /// **'Your push tokens are hidden now.\nBut you can still see them on the push token screen.'**
-  String get introHidePushTokens;
 
   /// Title of the error dialog that is shown when an error occurs while using a legacy token.
   ///
@@ -1134,66 +1050,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The token was enrolled in a old version of this app, which may cause trouble using it.\nIt is suggested to enroll a new push token if the problem persist!'**
   String get legacySigningErrorMessage;
-
-  /// No description provided for @selectImportSource.
-  ///
-  /// In en, this message translates to:
-  /// **'Select import source'**
-  String get selectImportSource;
-
-  /// No description provided for @selectImportType.
-  ///
-  /// In en, this message translates to:
-  /// **'How do you want to import the tokens?'**
-  String get selectImportType;
-
-  /// No description provided for @importTokens.
-  ///
-  /// In en, this message translates to:
-  /// **'Import token'**
-  String get importTokens;
-
-  /// No description provided for @selectFile.
-  ///
-  /// In en, this message translates to:
-  /// **'Select file'**
-  String get selectFile;
-
-  /// No description provided for @decrypt.
-  ///
-  /// In en, this message translates to:
-  /// **'Decrypt'**
-  String get decrypt;
-
-  /// No description provided for @tokensAreEncrypted.
-  ///
-  /// In en, this message translates to:
-  /// **'The tokens are encrypted. Please enter the password to decrypt them.'**
-  String get tokensAreEncrypted;
-
-  /// No description provided for @tokensNotEncrypted.
-  ///
-  /// In en, this message translates to:
-  /// **'The tokens are not encrypted and can be imported directly.'**
-  String get tokensNotEncrypted;
-
-  /// No description provided for @tokensSuccessfullyDecrypted.
-  ///
-  /// In en, this message translates to:
-  /// **'The tokens have been successfully decrypted and can now be imported.'**
-  String get tokensSuccessfullyDecrypted;
-
-  /// No description provided for @password.
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get password;
-
-  /// No description provided for @wrongPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Incorrect password'**
-  String get wrongPassword;
 
   /// No description provided for @qrScan.
   ///

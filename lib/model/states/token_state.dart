@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../utils/logger.dart';
 import '../enums/push_token_rollout_state.dart';
 import '../token_folder.dart';
-import '../tokens/otp_token.dart';
 import '../tokens/push_token.dart';
 import '../tokens/token.dart';
 
@@ -12,9 +11,6 @@ import '../tokens/token.dart';
 class TokenState {
   final List<Token> tokens;
   final List<Token> lastlyUpdatedTokens;
-
-  List<OTPToken> get otpTokens => tokens.whereType<OTPToken>().toList();
-  bool get hasOTPTokens => otpTokens.isNotEmpty;
 
   List<PushToken> get pushTokens => tokens.whereType<PushToken>().toList();
   bool get hasPushTokens => pushTokens.isNotEmpty;
@@ -33,8 +29,6 @@ class TokenState {
   Map<Token, Token?> tokensWithSameSectet(List<Token> tokens) {
     final tokensWithSameSectet = <Token, Token?>{};
     final stateTokens = this.tokens;
-    List<OTPToken> otpTokens = tokens.whereType<OTPToken>().toList();
-    Map<String, OTPToken> stateOtpTokens = {for (var e in stateTokens.whereType<OTPToken>()) (e).secret: e};
     List<PushToken> pushTokens = tokens.whereType<PushToken>().toList();
     Map<(String?, String?, String?), PushToken> statePushTokens = {
       for (var e in stateTokens.whereType<PushToken>()) (e.publicServerKey, e.privateTokenKey, e.publicTokenKey): e
@@ -42,9 +36,6 @@ class TokenState {
 
     for (var pushToken in pushTokens) {
       tokensWithSameSectet[pushToken] = statePushTokens[(pushToken.publicServerKey, pushToken.privateTokenKey, pushToken.publicTokenKey)];
-    }
-    for (var otpToken in otpTokens) {
-      tokensWithSameSectet[otpToken] = stateOtpTokens[otpToken.secret];
     }
 
     return tokensWithSameSectet;

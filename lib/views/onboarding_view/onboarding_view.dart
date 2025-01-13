@@ -91,9 +91,9 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                           return OnboardingPage(
                             title: AppLocalizations.of(context)!.onBoardingTitle3,
                             subtitle: AppLocalizations.of(context)!.onBoardingText3,
-                            buttonTitle: 'Github',
+                            buttonTitle: 'GitHub',
                             onPressed: () async {
-                              Uri uri = Uri.parse("https://github.com/privacyidea/pi-authenticator");
+                              Uri uri = Uri.parse("https://github.com/edumfa/authenticator");
                               if (!await launchUrl(uri)) {
                                 throw Exception('Could not launch $uri');
                               }

@@ -8,7 +8,6 @@ import '../../../model/tokens/push_token.dart';
 import '../../../utils/riverpod_providers.dart';
 import '../../../widgets/deactivateable_refresh_indicator.dart';
 import '../../../widgets/drag_item_scroller.dart';
-import '../../../widgets/introduction_widgets/token_introduction.dart';
 import 'drag_target_divider.dart';
 import 'no_token_screen.dart';
 import 'poll_loading_indicator.dart';
@@ -35,9 +34,8 @@ class _MainViewTokensListState extends ConsumerState<MainViewTokensList> {
     final tokenState = ref.watch(tokenProvider);
     final allowToRefresh = tokenState.hasPushTokens;
     final draggingSortable = ref.watch(draggingSortableProvider);
-    bool filterPushTokens = ref.watch(settingsProvider).hidePushTokens && tokenState.hasOTPTokens;
 
-    final tokenStateWithNoFolder = tokenState.tokensWithoutFolder(exclude: filterPushTokens ? [PushToken] : []);
+    final tokenStateWithNoFolder = tokenState.tokensWithoutFolder();
 
     List<SortableMixin> sortables = [...tokenFolders, ...tokenStateWithNoFolder];
 
@@ -61,12 +59,10 @@ class _MainViewTokensListState extends ConsumerState<MainViewTokensList> {
                     hasScrollBody: false,
                     child: Column(
                       children: [
-                        TokenIntroduction(
-                          child: Column(
+                        Column(
                             children: [
                               ..._buildSortableWidgets(sortables, draggingSortable),
                             ],
-                          ),
                         ),
                         ...(draggingSortable != null)
                             ? [

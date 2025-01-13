@@ -1,4 +1,4 @@
-import '../../mains/main_netknights.dart';
+import '../../main.dart';
 import '../token_origin.dart';
 import '../tokens/token.dart';
 
@@ -13,7 +13,7 @@ enum TokenOriginSourceType {
 
 extension TokenSourceTypeExtension on TokenOriginSourceType {
   TokenOriginData toTokenOrigin({String data = '', String? appName}) =>
-      TokenOriginData(source: this, data: data, appName: appName ?? PrivacyIDEAAuthenticator.currentCustomization?.appName);
+      TokenOriginData(source: this, data: data, appName: appName ?? eduMFAAuthenticator.currentCustomization?.appName);
 
   Token addOriginToToken({required Token token, required String data, String? appName}) => token.copyWith(origin: toTokenOrigin(data: data, appName: appName));
 }

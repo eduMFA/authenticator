@@ -10,7 +10,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
-import 'package:pi_authenticator_legacy/pi_authenticator_legacy.dart';
 import 'package:pointycastle/asymmetric/api.dart';
 import '../model/enums/token_origin_source_type.dart';
 
@@ -19,14 +18,12 @@ import '../l10n/app_localizations.dart';
 import '../model/enums/push_token_rollout_state.dart';
 import '../model/push_request.dart';
 import '../model/states/token_state.dart';
-import '../model/tokens/hotp_token.dart';
 import '../model/tokens/push_token.dart';
 import '../model/tokens/token.dart';
 import '../processors/scheme_processors/token_import_scheme_processors/token_import_scheme_processor_interface.dart';
 import '../repo/secure_token_repository.dart';
 import '../utils/firebase_utils.dart';
 import '../utils/globals.dart';
-import '../utils/home_widget_utils.dart';
 import '../utils/identifiers.dart';
 import '../utils/lock_auth.dart';
 import '../utils/logger.dart';
@@ -42,22 +39,18 @@ class TokenNotifier extends StateNotifier<TokenState> {
   late Future<List<Token>?> updatingTokens = Future(() => null);
   final TokenRepository _repo;
   final RsaUtils _rsaUtils;
-  final LegacyUtils _legacy;
-  final PrivacyIdeaIOClient _ioClient;
+  final EduMFAIOClient _ioClient;
   final FirebaseUtils _firebaseUtils;
 
   TokenNotifier({
     TokenState? initialState,
     TokenRepository? repository,
     RsaUtils? rsaUtils,
-    LegacyUtils? legacy,
-    PrivacyIdeaIOClient? ioClient,
+    EduMFAIOClient? ioClient,
     FirebaseUtils? firebaseUtils,
-    HomeWidgetUtils? homeWidgetUtils,
   })  : _rsaUtils = rsaUtils ?? const RsaUtils(),
         _repo = repository ?? const SecureTokenRepository(),
-        _legacy = legacy ?? const LegacyUtils(),
-        _ioClient = ioClient ?? const PrivacyIdeaIOClient(),
+        _ioClient = ioClient ?? const EduMFAIOClient(),
         _firebaseUtils = firebaseUtils ?? FirebaseUtils(),
         super(
           initialState ?? TokenState(),
@@ -190,16 +183,6 @@ class TokenNotifier extends StateNotifier<TokenState> {
     return (await updatingTokens)?.whereType<T>().toList() ?? [];
   }
 
-  Future<void> incrementCounter(HOTPToken token) async {
-    await updatingTokens;
-    updatingTokens = Future(() async {
-      await loadingRepo;
-      token = state.currentOf(token)?.copyWith(counter: token.counter + 1) ?? token.copyWith(counter: token.counter + 1);
-      return await _replaceTokens([token]);
-    });
-    await updatingTokens;
-  }
-
   Future<void> hideToken(Token token) async {
     await updatingTokens;
     updatingTokens = Future(() async {
@@ -320,9 +303,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
       return false;
     }
 
-    bool isVerified = token.privateTokenKey == null
-        ? await _legacy.verify(token.serial, signedData, signature)
-        : _rsaUtils.verifyRSASignature(token.rsaPublicServerKey!, utf8.encode(signedData), base32.decode(signature));
+    bool isVerified = _rsaUtils.verifyRSASignature(token.rsaPublicServerKey!, utf8.encode(signedData), base32.decode(signature));
 
     if (!isVerified) {
       Logger.warning(
@@ -346,7 +327,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
 
     // Remove the request after it expires.
     int time = pr.expirationDate.difference(DateTime.now()).inMilliseconds;
-    Future.delayed(Duration(milliseconds: time < 1 ? 1 : time), () async => globalRef?.read(tokenProvider.notifier).removePushRequest(pr));
+    // Future.delayed(Duration(milliseconds: time < 1 ? 1 : time), () async => globalRef?.read(tokenProvider.notifier).removePushRequest(pr));
     Logger.info('Added push request ${pr.id} to token ${token.id}', name: 'token_notifier.dart#addPushRequestToToken');
 
     return true;
@@ -564,11 +545,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
 
   Future<void> _handlePushTokensIfExist() async {
     await loadingRepo;
-    if (state.hasPushTokens == false || state.hasOTPTokens == false) {
-      if (globalRef?.read(settingsProvider).hidePushTokens == true) {
-        globalRef!.read(settingsProvider.notifier).setHidePushTokens(false);
-      }
-    }
+
     if (state.hasRolledOutPushTokens) {
       checkNotificationPermission();
     }

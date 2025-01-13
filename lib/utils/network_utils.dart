@@ -1,8 +1,12 @@
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -24,14 +28,14 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 import 'package:http/io_client.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:privacyidea_authenticator/l10n/app_localizations.dart';
-import 'package:privacyidea_authenticator/utils/globals.dart';
-import 'package:privacyidea_authenticator/utils/logger.dart';
-import 'package:privacyidea_authenticator/utils/riverpod_providers.dart';
-import 'package:privacyidea_authenticator/utils/view_utils.dart';
+import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/view_utils.dart';
 
-class PrivacyIdeaIOClient {
-  const PrivacyIdeaIOClient();
+class EduMFAIOClient {
+  const EduMFAIOClient();
 
   /// Dummy network request can be used to trigger the network access permission
   /// on iOS devices. Doing this at an appropriate place in the code can prevent
@@ -40,7 +44,7 @@ class PrivacyIdeaIOClient {
     if (kIsWeb) return false;
     HttpClient httpClient = HttpClient();
     httpClient.badCertificateCallback = ((X509Certificate cert, String host, int port) => !sslVerify);
-    httpClient.userAgent = 'privacyIDEA-App'
+    httpClient.userAgent = 'eduMFA-App'
         '/${(await PackageInfo.fromPlatform()).version}'
         ' ${Platform.operatingSystem}'
         '/${Platform.operatingSystemVersion}';
@@ -98,7 +102,7 @@ class PrivacyIdeaIOClient {
 
     HttpClient httpClient = HttpClient();
     httpClient.badCertificateCallback = ((_, __, ___) => !sslVerify);
-    httpClient.userAgent = 'privacyIDEA-App'
+    httpClient.userAgent = 'eduMFA-App'
         '/${(await PackageInfo.fromPlatform()).version}'
         ' ${Platform.operatingSystem}'
         '/${Platform.operatingSystemVersion}';
@@ -141,7 +145,7 @@ class PrivacyIdeaIOClient {
 
     HttpClient httpClient = HttpClient();
     httpClient.badCertificateCallback = ((X509Certificate cert, String host, int port) => !sslVerify);
-    httpClient.userAgent = 'privacyIDEA-App /'
+    httpClient.userAgent = 'eduMFA-App /'
         ' ${Platform.operatingSystem}'
         ' ${(await PackageInfo.fromPlatform()).version}';
 

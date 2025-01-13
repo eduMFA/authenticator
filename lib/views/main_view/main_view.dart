@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
+import 'package:edumfa_authenticator/views/main_view/main_view_widgets/main_view_navigation_buttons/qr_scanner_button.dart';
+import 'package:edumfa_authenticator/widgets/global_drawer.dart';
 
 import '../../model/states/token_filter.dart';
 import '../../utils/logger.dart';
-import '../../utils/patch_notes_utils.dart';
 import '../../utils/riverpod_providers.dart';
 import '../../widgets/push_request_listener.dart';
 import '../../widgets/status_bar.dart';
@@ -12,11 +13,10 @@ import '../view_interface.dart';
 import 'main_view_widgets/app_bar_item.dart';
 import 'main_view_widgets/connectivity_listener.dart';
 import 'main_view_widgets/expandable_appbar.dart';
-import 'main_view_widgets/main_view_navigation_bar.dart';
 import 'main_view_widgets/main_view_tokens_list.dart';
 import 'main_view_widgets/main_view_tokens_list_filtered.dart';
 
-export 'package:privacyidea_authenticator/views/main_view/main_view.dart';
+export 'package:edumfa_authenticator/views/main_view/main_view.dart';
 
 class MainView extends ConsumerStatefulView {
   static const routeName = '/mainView';
@@ -24,10 +24,9 @@ class MainView extends ConsumerStatefulView {
   @override
   RouteSettings get routeSettings => const RouteSettings(name: routeName);
 
-  final Widget appIcon;
   final String appName;
 
-  const MainView({required this.appIcon, required this.appName, super.key});
+  const MainView({required this.appName, super.key});
 
   @override
   ConsumerState<MainView> createState() => _MainViewState();
@@ -37,19 +36,10 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
   final globalKey = GlobalKey<NestedScrollViewState>();
 
   @override
-  void initState() {
-    super.initState();
-    final latestStartedVersion = globalRef?.read(settingsProvider).latestStartedVersion;
-    if (latestStartedVersion == null) return;
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      PatchNotesUtils.showPatchNotesIfNeeded(context, latestStartedVersion);
-    });
-  }
-
-  @override
   void onAppResume() {
     Logger.info('MainView Resume', name: 'main_view.dart#onAppResume');
-    globalRef?.read(appStateProvider.notifier).state = AppLifecycleState.resumed;
+    globalRef?.read(appStateProvider.notifier).state =
+        AppLifecycleState.resumed;
   }
 
   @override
@@ -64,6 +54,8 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
     return PushRequestListener(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
+        floatingActionButton: const QrScannerButton(),
+        drawer: const DrawerWidget(),
         body: ExpandableAppBar(
           startExpand: hasFilter,
           appBar: AppBar(
@@ -73,10 +65,6 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                 overflow: TextOverflow.ellipsis,
                 // maxLines: 2 only works like this.
                 maxLines: 2, // Title can be shown on small screens too.
-              ),
-              leading: Padding(
-                padding: const EdgeInsets.all(4),
-                child: widget.appIcon,
               ),
               actions: [
                 hasFilter
@@ -88,7 +76,8 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                       )
                     : AppBarItem(
                         onPressed: () {
-                          ref.read(tokenFilterProvider.notifier).state = TokenFilter(
+                          ref.read(tokenFilterProvider.notifier).state =
+                              TokenFilter(
                             searchQuery: '',
                           );
                         },
@@ -101,7 +90,6 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                   ? Stack(
                       children: [
                         MainViewTokensList(nestedScrollViewKey: globalKey),
-                        const MainViewNavigationBar(),
                       ],
                     )
                   : const MainViewTokensListFiltered(),

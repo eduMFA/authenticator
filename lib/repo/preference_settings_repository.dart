@@ -13,7 +13,6 @@ class PreferenceSettingsRepository extends SettingsRepository {
   static const String _localePreferenceKey = 'KEY_LOCALE_PREFERENCE';
   static const String _useSystemLocaleKey = 'KEY_USE_SYSTEM_LOCALE';
   static const String _enableLoggingKey = 'KEY_VERBOSE_LOGGING';
-  static const String _hidePushTokensKey = 'KEY_HIDE_PUSH_TOKENS';
   static const String _latestVersionKey = 'KEY_LATEST_VERSION';
 
   late final Future<SharedPreferences> _preferences;
@@ -35,7 +34,6 @@ class PreferenceSettingsRepository extends SettingsRepository {
       localePreference: prefs.getString(_localePreferenceKey) != null ? SettingsState.decodeLocale(prefs.getString(_localePreferenceKey)!) : null,
       useSystemLocale: prefs.getBool(_useSystemLocaleKey),
       verboseLogging: prefs.getBool(_enableLoggingKey),
-      hidePushTokens: prefs.getBool(_hidePushTokensKey),
       latestVersion: prefs.getString(_latestVersionKey) != null ? Version.parse(prefs.getString(_latestVersionKey)!) : null,
     );
     _lastState = newState;
@@ -56,7 +54,6 @@ class PreferenceSettingsRepository extends SettingsRepository {
         prefs.setString(_localePreferenceKey, SettingsState.encodeLocale(settings.localePreference)),
       if (_lastState?.useSystemLocale != settings.useSystemLocale) prefs.setBool(_useSystemLocaleKey, settings.useSystemLocale),
       if (_lastState?.verboseLogging != settings.verboseLogging) prefs.setBool(_enableLoggingKey, settings.verboseLogging),
-      if (_lastState?.hidePushTokens != settings.hidePushTokens) prefs.setBool(_hidePushTokensKey, settings.hidePushTokens),
       if (_lastState?.latestStartedVersion != settings.latestStartedVersion) prefs.setString(_latestVersionKey, settings.latestStartedVersion.toString()),
     ];
     await Future.wait(futures);

@@ -2,16 +2,15 @@ import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:edumfa_authenticator/widgets/global_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n/app_localizations.dart';
 import '../../model/tokens/push_token.dart';
 import '../../utils/globals.dart';
-import '../../utils/home_widget_utils.dart';
 import '../../utils/riverpod_providers.dart';
 import '../../widgets/push_request_listener.dart';
 import '../feedback_view/feedback_view.dart';
-import '../import_tokens_view/import_tokens_view.dart';
 import '../license_view/license_view.dart';
 import '../view_interface.dart';
 import 'settings_view_widgets/logging_menu.dart';
@@ -35,6 +34,7 @@ class SettingsView extends ConsumerView {
 
     return PushRequestListener(
       child: Scaffold(
+        drawer: const DrawerWidget(),
         appBar: AppBar(
           title: Text(
             AppLocalizations.of(context)!.settings,
@@ -87,21 +87,6 @@ class SettingsView extends ConsumerView {
                     ),
                     icon: const Icon(FluentIcons.chat_32_regular),
                   ),
-                  SettingsListTileButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, ImportTokensView.routeName);
-                    },
-                    title: Text(
-                      AppLocalizations.of(context)!.importTokens,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    icon: const RotatedBox(
-                      quarterTurns: 1,
-                      child: Icon(FluentIcons.arrow_enter_20_filled),
-                    ),
-                  )
                 ],
               ),
               const Divider(),
@@ -120,7 +105,6 @@ class SettingsView extends ConsumerView {
                     controlAffinity: ListTileControlAffinity.trailing,
                     onChanged: (dynamic value) {
                       EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: false);
-                      HomeWidgetUtils().setCurrentThemeMode(ThemeMode.light);
                     },
                   ),
                   RadioListTile(
@@ -135,7 +119,6 @@ class SettingsView extends ConsumerView {
                     controlAffinity: ListTileControlAffinity.trailing,
                     onChanged: (dynamic value) {
                       EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: true);
-                      HomeWidgetUtils().setCurrentThemeMode(ThemeMode.dark);
                     },
                   ),
                   RadioListTile(
@@ -148,7 +131,6 @@ class SettingsView extends ConsumerView {
                     controlAffinity: ListTileControlAffinity.trailing,
                     onChanged: (dynamic value) {
                       EasyDynamicTheme.of(context).changeTheme(dynamic: true, dark: false);
-                      HomeWidgetUtils().setCurrentThemeMode(ThemeMode.system);
                     },
                   ),
                 ],
@@ -261,28 +243,6 @@ class SettingsView extends ConsumerView {
                       onChanged: enablePushSettingsGroup ? (value) => ref.read(settingsProvider.notifier).setPolling(value) : null,
                     ),
                   ),
-                  ListTile(
-                    title: RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: AppLocalizations.of(context)!.hidePushTokens,
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                        ],
-                      ),
-                    ),
-                    subtitle: Text(
-                      AppLocalizations.of(context)!.hidePushTokensDescription,
-                      overflow: TextOverflow.fade,
-                    ),
-                    trailing: Switch(
-                      value: ref.watch(settingsProvider).hidePushTokens,
-                      onChanged: enablePushSettingsGroup && ref.watch(tokenProvider).hasOTPTokens
-                          ? (value) => ref.read(settingsProvider.notifier).setHidePushTokens(value)
-                          : null,
-                    ),
-                  )
                 ],
               ),
               const Divider(),

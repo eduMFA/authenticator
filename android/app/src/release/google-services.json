@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "838329625695",
-    "project_id": "privacyidea-4c8c1",
-    "storage_bucket": "privacyidea-4c8c1.appspot.com"
+    "project_number": "1025987636042",
+    "project_id": "edumfa-5b429",
+    "storage_bucket": "edumfa-5b429.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:838329625695:android:b2c30ebc37698bc3243fea",
+        "mobilesdk_app_id": "1:1025987636042:android:a51b973d4b4cd8e3316fb3",
         "android_client_info": {
-          "package_name": "it.netknights.piauthenticator"
+          "package_name": "io.edumfa.authenticator"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "838329625695-sb84hi21ds91m1afd7hta7rq5arr7ck9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCU_OYNBRAHPsgR4X7jlikxIozw6EwibH4"
+          "current_key": "AIzaSyCbT0s9c6-FSq9bfr4-glXvX8hDDJSxjug"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "838329625695-sb84hi21ds91m1afd7hta7rq5arr7ck9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

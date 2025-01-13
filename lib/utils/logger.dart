@@ -11,9 +11,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart' as printer;
 import 'package:mutex/mutex.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:privacyidea_authenticator/l10n/app_localizations.dart';
-import 'package:privacyidea_authenticator/utils/app_info_utils.dart';
-import 'package:privacyidea_authenticator/utils/pi_mailer.dart';
+import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/utils/app_info_utils.dart';
+import 'package:edumfa_authenticator/utils/pi_mailer.dart';
 
 import '../views/settings_view/settings_view_widgets/send_error_dialog.dart';
 import 'globals.dart';

@@ -1,14 +1,5 @@
 {
   "@@last_modified": "2023-08-07",
-  "patchNotesNewFeatures": "Nieuwe functies",
-  "patchNotesImprovements": "Verbeteringen",
-  "patchNotesBugFixes": "Bugfixes",
-  "patchNotesV4_3_0NewFeatures1": "Ondersteuning toegevoegd voor het importeren van tokens van Google, Aegis en 2FAS Authenticator. Meer importbronnen zullen in de toekomst worden toegevoegd.",
-  "patchNotesV4_3_0NewFeatures2": "Feedbackoptie toegevoegd aan de instellingen.",
-  "patchNotesV4_3_0NewFeatures3": "Push tokens kunnen nu verborgen worden in de tokenlijst.",
-  "patchNotesV4_3_0NewFeatures4": "Introducties zijn toegevoegd om nieuwe gebruikers op weg te helpen.",
-  "patchNotesV4_3_0NewFeatures5": "Je kunt nu naar tokens zoeken door op het vergrootglas in de rechterbovenhoek te tikken.",
-  "patchNotesV4_3_0NewFeatures6": "HomeWidget Token toegevoegd voor Android 12 en hoger.",
   "guide": "Handleiding",
   "@guide": {
     "description": "Button to open the guide screen."
@@ -131,6 +122,7 @@
       }
     }
   },
+  "tokens": "Token",
   "settings": "Instellingen",
   "@settings": {
     "description": "Button to open the settings page."
@@ -167,7 +159,7 @@
   "@synchronizePushTokens": {
     "description": "Title of synchronizing push tokens in settings."
   },
-  "synchronizesTokensWithServer": "Synchroniseert tokens met de privacyIDEA server.",
+  "synchronizesTokensWithServer": "Synchroniseert tokens met de eduMFA server.",
   "@synchronizesTokensWithServer": {
     "description": "Description of synchronizing push tokens in settings."
   },
@@ -209,7 +201,7 @@
       }
     }
   },
-  "errorSynchronizationNoNetworkConnection": "Token synchroniseren mislukt, privacyIDEA server kan niet worden bereikt.",
+  "errorSynchronizationNoNetworkConnection": "Token synchroniseren mislukt, eduMFA server kan niet worden bereikt.",
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
@@ -360,7 +352,7 @@
   "@onBoardingTitle1": {
     "placeholders": {
       "appName": {
-        "example": "privacyIDEA Authenticator"
+        "example": "eduMFA Authenticator"
       }
     }
   },
@@ -488,20 +480,14 @@
   "decryptErrorButtonSendError": "Fout verzenden",
   "decryptErrorButtonRetry": "Opnieuw proberen",
   "decryptErrorDeleteConfirmationContent": "Weet je zeker dat je de app-gegevens wilt verwijderen?",
-  "hidePushTokens": "Verberg push tokens",
-  "hidePushTokensDescription": "Verberg push tokens uit de token lijst. Hierdoor worden de tokens niet verwijderd en blijven ze zichtbaar op een apart scherm.",
   "settingsGroupGeneral": "Algemene informatie",
   "licensesAndVersion": "Licenties en versie",
   "privacyPolicy": "Privacybeleid",
-  "introScanQrCode": "Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de privacyIDEA tokens.",
-  "introAddTokenManually": "Als je geen QR-code wilt scannen, kun je tokens ook handmatig toevoegen.",
+  "introScanQrCode": "Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de eduMFA tokens.",
   "introTokenSwipe": "Veeg tokens naar links om beschikbare acties te zien.",
   "introEditToken": "Hier kun je de naam van het token bewerken en enkele details bekijken.",
   "introLockToken": "Om de beveiliging nog meer te verbeteren, kun je tokens vergrendelen.¨Dan kan het token alleen gebruikt worden na authenticatie.",
-  "introDragToken": "Reorganiseer je tokens door er een paar seconden op te drukken en het dan naar de gewenste positie te slepen.",
-  "introAddFolder": "Je kunt mappen maken om je tokens te organiseren.",
   "introPollForChallenges": "Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen.",
-  "introHidePushTokens": "Je push tokens zijn nu verborgen, maar je kunt ze nog steeds zien op het push token scherm.",
   "legacySigningErrorTitle": "Er is een fout opgetreden bij het gebruik van het verouderde token: {tokenLabel}",
   "@legacySigningErrorTitle": {
     "description": "Title of the error dialog that is shown when an error occurs while using a legacy token.",
@@ -515,16 +501,6 @@
   "@legacySigningErrorMessage": {
     "description": "Message of the error dialog that is shown when an error occurs while using a legacy token."
   },
-  "selectImportSource": "Selecteer importbron",
-  "selectImportType": "Hoe wilt u de tokens importeren?",
-  "importTokens": "Token importeren",
-  "selectFile": "Selecteer bestand",
-  "decrypt": "Decoderen",
-  "tokensAreEncrypted": "De tokens zijn gecodeerd. Voer het wachtwoord in om ze te decoderen.",
-  "tokensNotEncrypted": "De tokens zijn niet versleuteld en kunnen direct worden geïmporteerd.",
-  "tokensSuccessfullyDecrypted": "De tokens zijn succesvol gedecodeerd en kunnen nu worden geïmporteerd.",
-  "password": "Wachtwoord",
-  "wrongPassword": "Onjuist wachtwoord",
   "qrScan": "Scan",
   "enterLink": "Link invoeren",
   "invalidBackupFile": "Het geselecteerde bestand is geen geldige backup van {appName}.",
@@ -564,7 +540,7 @@
   "@requestInfo": {
     "placeholders": {
       "issuer": {
-        "example": "privacyIDEA"
+        "example": "eduMFA"
       },
       "account": {
         "example": "GitHub"

@@ -5,43 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "privacyIDEA Authenticator - release",
+            "name": "eduMFA Authenticator - release",
             "type": "dart",
             "request": "launch",
-            "program": "lib/mains/main_netknights.dart",
+            "program": "lib/main.dart",
             "args": [
                 "--flavor",
-                "netknights",
+                "edumfa",
                 "--target",
-                "lib/mains/main_netknights.dart",
+                "lib/main..dart",
                 "--release"
             ]
         },
         {
-            "name": "privacyIDEA Authenticator - debug",
+            "name": "eduMFA Authenticator - debug",
             "type": "dart",
             "request": "launch",
-            "program": "lib/mains/main_netknights.dart",
+            "program": "lib/main.dart",
             "args": [
                 "--flavor",
-                "netknights",
+                "edumfa",
                 "--target",
-                "lib/mains/main_netknights.dart",
+                "lib/main.dart",
                 "--debug"
             ]
-        },
-        {
-            "name": "privacyIDEA Authenticator - internal",
-            "type": "dart",
-            "request": "launch",
-            "program": "lib/mains/main_netknights.dart",
-            "args": [
-                "--flavor",
-                "netknights_debug",
-                "--target",
-                "lib/mains/main_netknights.dart",
-                "--release"
-            ]
-        },
+        }
     ]
 }

@@ -1,4 +1,4 @@
-# Vítejte v privacyIDEA autentikátoru.
+# Vítejte v eduMFA autentikátoru.
 
 + Tokeny z předchozí verze aplikace můžete importovat v `Nastavení` v sekci `Migrace`.
 
@@ -10,7 +10,7 @@
   Tokeny mohou být uzamčeny zámkem zařízení.
 
 
-# privacyIDEA Push Token:
+# eduMFA Push Token:
 
 + Pokud jsou používány push notification tokeny, čekající autentizace mohou být načteny gestem swipe dolů:
   ![Ruční načtení gestem swipe dolů](resource:res/gif/help_manual_poll.gif)

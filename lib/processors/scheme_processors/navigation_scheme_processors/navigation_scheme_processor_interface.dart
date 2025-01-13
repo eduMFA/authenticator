@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../utils/globals.dart';
 import '../../../utils/logger.dart';
 import '../scheme_processor_interface.dart';
-import 'home_widget_navigate_processor.dart';
 
 abstract class NavigationSchemeProcessor implements SchemeProcessor {
   const NavigationSchemeProcessor();
 
   static Set<NavigationSchemeProcessor> implementations = {
-    HomeWidgetNavigateProcessor(),
   };
 
   @override

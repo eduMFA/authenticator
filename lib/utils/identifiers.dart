@@ -1,10 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -21,8 +24,7 @@
 */
 
 // default email address for crash reports
-
-const defaultCrashReportRecipient = 'app-crash@netknights.it';
+const defaultCrashReportRecipient = 'edumfa-app-support@gwdg.de';
 
 // qr codes:
 const String URI_TYPE = 'URI_TYPE';

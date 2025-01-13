@@ -32,6 +32,6 @@ class QrScannerButton extends ConsumerWidget {
           });
         },
         tooltip: AppLocalizations.of(context)?.scanQrCode ?? '',
-        child: const Icon(Icons.qr_code_scanner_outlined),
+        child: const Icon(Icons.qr_code),
       );
 }

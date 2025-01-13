@@ -1,14 +1,5 @@
 {
   "@@last_modified": "2023-08-07",
-  "patchNotesNewFeatures": "Nuevas características",
-  "patchNotesImprovements": "Mejoras",
-  "patchNotesBugFixes": "Corrección de errores",
-  "patchNotesV4_3_0NewFeatures1": "Añadido soporte para importar tokens de Google, Aegis y 2FAS Authenticator. En el futuro se añadirán más fuentes de importación",
-  "patchNotesV4_3_0NewFeatures2": "Añadida opción de feedback a los ajustes",
-  "patchNotesV4_3_0NewFeatures3": "Los tokens push ahora se pueden ocultar de la lista de tokens",
-  "patchNotesV4_3_0NewFeatures4": "Se han añadido introducciones para ayudar a los nuevos usuarios a empezar",
-  "patchNotesV4_3_0NewFeatures5": "Ahora puedes buscar tokens tocando la lupa de la esquina superior derecha",
-  "patchNotesV4_3_0NewFeatures6": "Añadido Token HomeWidget para Android 12 y posteriores",
   "guide": "guía",
   "@guide": {
     "description": "Button to open the guide screen."
@@ -135,6 +126,7 @@
       }
     }
   },
+  "tokens": "Token",
   "settings": "Configuración",
   "@settings": {
     "description": "Button to open the settings page."
@@ -171,7 +163,7 @@
   "@synchronizePushTokens": {
     "description": "Title of synchronizing push tokens in settings."
   },
-  "synchronizesTokensWithServer": "Sinchronizar tokens con el privacyIDEA servidor.",
+  "synchronizesTokensWithServer": "Sinchronizar tokens con el eduMFA servidor.",
   "@synchronizesTokensWithServer": {
     "description": "Description of synchronizing push tokens in settings."
   },
@@ -213,7 +205,7 @@
       }
     }
   },
-  "errorSynchronizationNoNetworkConnection": "Error al sincronizar los tokens. No se ha podido acceder al servidor de PrivacyIDEA.",
+  "errorSynchronizationNoNetworkConnection": "Error al sincronizar los tokens. No se ha podido acceder al servidor de EduMFA.",
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
@@ -363,7 +355,7 @@
   "@onBoardingTitle1": {
     "placeholders": {
       "appName": {
-        "example": "privacyIDEA Authenticator"
+        "example": "eduMFA Authenticator"
       }
     }
   },
@@ -487,20 +479,14 @@
   "decryptErrorButtonSendError": "Enviar error",
   "decryptErrorButtonRetry": "Reintentar",
   "decryptErrorDeleteConfirmationContent": "¿Estás seguro de que quieres borrar los datos de la aplicación?",
-  "hidePushTokens": "Ocultar tokens push",
-  "hidePushTokensDescription": "Ocultar tokens push de la lista de tokens. Esto no borrará los tokens y seguirán siendo visibles en una pantalla aparte",
   "settingsGroupGeneral": "Información general",
   "licensesAndVersion": "Licencias y versión",
   "privacyPolicy": "Política de privacidad",
-  "introScanQrCode": "Puedes escanear códigos QR para añadir tokens.\nSoportamos todos los tokens comunes de Two-Factor-Authentication y también los tokens privacyIDEA",
-  "introAddTokenManually": "Si no quieres escanear un código QR, también puedes añadir tokens manualmente",
+  "introScanQrCode": "Puedes escanear códigos QR para añadir tokens.\nSoportamos todos los tokens comunes de Two-Factor-Authentication y también los tokens eduMFA",
   "introTokenSwipe": "Desliza los tokens hacia la izquierda para ver las acciones disponibles",
   "introEditToken": "Aquí puedes editar el nombre del token y ver algunos detalles",
   "introLockToken": "Para mejorar la seguridad aún más, puedes bloquear los tokens.\nEntonces el token sólo se puede utilizar después de la autenticación.",
-  "introDragToken": "Reorganiza tus tokens pulsándolo durante unos segundos y arrastrándolo a la posición deseada",
-  "introAddFolder": "Puedes crear carpetas\npara organizar tus tokens",
   "introPollForChallenges": "Puedes buscar nuevos retos arrastrando hacia abajo la lista de tokens",
-  "introHidePushTokens": "Tus push tokens están ahora ocultos.\nPero puedes seguir viéndolos en la pantalla de push tokens.",
   "legacySigningErrorTitle": "Se ha producido un error al utilizar el token obsoleto: {tokenLabel}",
   "@legacySigningErrorTitle": {
     "description": "Title of the error dialog that is shown when an error occurs while using a legacy token.",
@@ -514,16 +500,6 @@
   "@legacySigningErrorMessage": {
     "description": "Message of the error dialog that is shown when an error occurs while using a legacy token."
   },
-  "selectImportSource": "Seleccionar fuente de importación",
-  "selectImportType": "Jak chcete importovat žetony?",
-  "importTokens": "Importar token",
-  "selectFile": "Seleccionar archivo",
-  "decrypt": "Descifrar",
-  "tokensAreEncrypted": "Los tokens están encriptados. Por favor, introduce la contraseña para descifrarlos",
-  "tokensNotEncrypted": "Los tokens no están encriptados y se pueden importar directamente",
-  "tokensSuccessfullyDecrypted": "Los tokens se han descifrado correctamente y ya se pueden importar.",
-  "password": "Contraseña",
-  "wrongPassword": "Contraseña incorrecta",
   "qrScan": "Escanear",
   "enterLink": "Introducir enlace",
   "invalidBackupFile": "El archivo seleccionado no es una copia de seguridad válida de {appName}",
@@ -563,7 +539,7 @@
   "@requestInfo": {
     "placeholders": {
       "issuer": {
-        "example": "privacyIDEA"
+        "example": "eduMFA"
       },
       "account": {
         "example": "GitHub"

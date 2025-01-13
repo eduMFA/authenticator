@@ -16,41 +16,26 @@ import '../token_action.dart';
 
 class DefaultEditAction extends TokenAction {
   final Token token;
+
   const DefaultEditAction({required this.token, super.key});
 
   @override
-  CustomSlidableAction build(BuildContext context, WidgetRef ref) {
-    return CustomSlidableAction(
-        backgroundColor: Theme.of(context).extension<ActionTheme>()!.editColor,
-        foregroundColor: Theme.of(context).extension<ActionTheme>()!.foregroundColor,
-        onPressed: (context) async {
-          if (token.isLocked && await lockAuth(localizedReason: AppLocalizations.of(context)!.editLockedToken) == false) {
+  PopupMenuItem<String> build(BuildContext context, WidgetRef ref) {
+    return PopupMenuItem<String>(
+        value: 'edit',
+        child: Text(AppLocalizations.of(context)!.rename),
+        onTap: () async {
+          if (token.isLocked &&
+              await lockAuth(localizedReason: AppLocalizations.of(context)!.editLockedToken) == false) {
             return;
           }
           _showDialog();
-        },
-        child: FocusedItemAsOverlay(
-          tooltipWhenFocused: AppLocalizations.of(context)!.renameToken,
-          childIsMoving: true,
-          isFocused: ref.watch(introductionProvider).isConditionFulfilled(ref, Introduction.editToken),
-          onComplete: () => ref.read(introductionProvider.notifier).complete(Introduction.editToken),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Icon(Icons.edit),
-              Text(
-                AppLocalizations.of(context)!.rename,
-                overflow: TextOverflow.fade,
-                softWrap: false,
-              ),
-            ],
-          ),
-        ));
+        });
   }
 
   void _showDialog() {
-    TextEditingController nameInputController = TextEditingController(text: token.label);
+    TextEditingController nameInputController =
+        TextEditingController(text: token.label);
     showDialog(
         useRootNavigator: false,
         context: globalNavigatorKey.currentContext!,
@@ -66,7 +51,8 @@ class DefaultEditAction extends TokenAction {
               autofocus: true,
               controller: nameInputController,
               onChanged: (value) {},
-              decoration: InputDecoration(labelText: AppLocalizations.of(context)!.name),
+              decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.name),
               validator: (value) {
                 if (value!.isEmpty) {
                   return AppLocalizations.of(context)!.name;
@@ -92,7 +78,9 @@ class DefaultEditAction extends TokenAction {
                 onPressed: () {
                   final newLabel = nameInputController.text.trim();
                   if (newLabel.isEmpty) return;
-                  globalRef?.read(tokenProvider.notifier).updateToken(token, (p0) => p0.copyWith(label: newLabel));
+                  globalRef
+                      ?.read(tokenProvider.notifier)
+                      .updateToken(token, (p0) => p0.copyWith(label: newLabel));
 
                   Logger.info(
                     'Renamed token:',

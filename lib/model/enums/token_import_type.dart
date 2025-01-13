@@ -17,11 +17,4 @@ extension TokenImportTypeExtension on TokenImportType {
         const (TokenImportType.qrFile) => Icons.qr_code_2,
         const (TokenImportType.link) => Icons.link,
       };
-
-  String getButtonText(BuildContext context) => switch (this) {
-        const (TokenImportType.backupFile) => AppLocalizations.of(context)!.selectFile,
-        const (TokenImportType.qrScan) => AppLocalizations.of(context)!.scanQrCode,
-        const (TokenImportType.qrFile) => AppLocalizations.of(context)!.selectFile,
-        const (TokenImportType.link) => AppLocalizations.of(context)!.enterLink,
-      };
 }

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:privacyidea_authenticator/model/enums/introduction.dart';
-import 'package:privacyidea_authenticator/model/states/introduction_state.dart';
+import 'package:edumfa_authenticator/model/enums/introduction.dart';
+import 'package:edumfa_authenticator/model/states/introduction_state.dart';
 
 void main() {
   group('IntroductionState', () {

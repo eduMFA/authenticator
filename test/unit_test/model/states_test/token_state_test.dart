@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:privacyidea_authenticator/model/states/token_state.dart';
-import 'package:privacyidea_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/model/states/token_state.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
 import 'package:mockito/mockito.dart';
 
 // ignore: must_be_immutable

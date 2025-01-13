@@ -2,14 +2,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
 import 'package:mockito/mockito.dart';
-import 'package:privacyidea_authenticator/model/push_request.dart';
-import 'package:privacyidea_authenticator/model/push_request_queue.dart';
-import 'package:privacyidea_authenticator/model/tokens/push_token.dart';
-import 'package:privacyidea_authenticator/state_notifiers/push_request_notifier.dart';
-import 'package:privacyidea_authenticator/utils/firebase_utils.dart';
-import 'package:privacyidea_authenticator/utils/network_utils.dart';
-import 'package:privacyidea_authenticator/utils/push_provider.dart';
-import 'package:privacyidea_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/push_request_queue.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/state_notifiers/push_request_notifier.dart';
+import 'package:edumfa_authenticator/utils/firebase_utils.dart';
+import 'package:edumfa_authenticator/utils/network_utils.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 import 'package:mockito/annotations.dart';
 
 import 'push_request_notifier_test.mocks.dart';
@@ -27,7 +27,7 @@ class _MockPushProvider extends Mock implements PushProvider {
   }
 }
 
-@GenerateMocks([RsaUtils, PrivacyIdeaIOClient, FirebaseUtils])
+@GenerateMocks([RsaUtils, EduMFAIOClient, FirebaseUtils])
 void main() {
   _testPushRequestNotifier();
 }
@@ -41,7 +41,7 @@ void _testPushRequestNotifier() {
       final notifier = PushRequestNotifier(
         pushProvider: mockPushProvider,
         firebaseUtils: mockFirebaseUtils,
-        ioClient: MockPrivacyIdeaIOClient(),
+        ioClient: MockEduMFAIOClient(),
         rsaUtils: MockRsaUtils(),
       );
       final testProvider = StateNotifierProvider<PushRequestNotifier, PushRequest?>((ref) => notifier);
@@ -61,7 +61,7 @@ void _testPushRequestNotifier() {
     test('accept', () async {
       final container = ProviderContainer();
       final mockPushProvider = _MockPushProvider();
-      final mockIoClient = MockPrivacyIdeaIOClient();
+      final mockIoClient = MockEduMFAIOClient();
       final mockRsaUtils = MockRsaUtils();
       final mockFirebaseUtils = MockFirebaseUtils();
       final pr = PushRequest(
@@ -98,7 +98,7 @@ void _testPushRequestNotifier() {
     test('decline', () async {
       final container = ProviderContainer();
       final mockPushProvider = _MockPushProvider();
-      final mockIoClient = MockPrivacyIdeaIOClient();
+      final mockIoClient = MockEduMFAIOClient();
       final mockRsaUtils = MockRsaUtils();
       final mockFirebaseUtils = MockFirebaseUtils();
       final pr = PushRequest(

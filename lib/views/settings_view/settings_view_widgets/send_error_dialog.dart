@@ -32,7 +32,7 @@ class SendErrorDialog extends StatelessWidget {
                     child: Text(
                       AppLocalizations.of(context)!.showPrivacyPolicy,
                     ),
-                    onPressed: () => launchUrl(Uri.parse('https://netknights.it/en/privacy-statement/'))),
+                    onPressed: () => launchUrl(Uri.parse('https://edumfa.io/app-privacy/'))),
               ),
             ],
           ),

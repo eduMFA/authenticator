@@ -95,7 +95,7 @@ class PushToken extends Token {
         rolloutState = rolloutState ?? PushTokenRollOutState.rolloutNotStarted,
         knownPushRequests = knownPushRequests ?? CustomIntBuffer(),
         pushRequests = pushRequests ?? PushRequestQueue(),
-        super(type: TokenTypes.PIPUSH.asString);
+        super(type: TokenTypes.EDUMFA_PUSH.asString);
 
   @override
   bool sameValuesAs(Token other) {

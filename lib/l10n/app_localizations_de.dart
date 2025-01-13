@@ -7,33 +7,6 @@ class AppLocalizationsDe extends AppLocalizations {
   AppLocalizationsDe([String locale = 'de']) : super(locale);
 
   @override
-  String get patchNotesNewFeatures => 'Neue Funktionen';
-
-  @override
-  String get patchNotesImprovements => 'Verbesserungen';
-
-  @override
-  String get patchNotesBugFixes => 'Fehlerbehebungen';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures1 => 'Unterstützung für den Import von Token von Google, Aegis und 2FAS Authenticator hinzugefügt. Weitere Importquellen werden in Zukunft hinzugefügt.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures2 => 'Feedback-Option zu den Einstellungen hinzugefügt.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures3 => 'Push-Tokens können jetzt aus der Token-Liste ausgeblendet werden.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures4 => 'Es wurden Einführungen hinzugefügt, um neuen Benutzern den Einstieg zu erleichtern.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures5 => 'Sie können jetzt nach Token suchen, indem Sie auf die Lupe in der oberen rechten Ecke tippen.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures6 => 'Ab Android 12 kann für einen Token ein Widget auf dem Homescreen erstellt werden.';
-
-  @override
   String get accept => 'Akzeptieren';
 
   @override
@@ -119,6 +92,9 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get tokens => 'Token';
+
+  @override
   String get settings => 'Einstellungen';
 
   @override
@@ -146,7 +122,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get synchronizePushTokens => 'Synchronisiere Push Token';
 
   @override
-  String get synchronizesTokensWithServer => 'Synchronisiert Token mit dem privacyIDEA Server.';
+  String get synchronizesTokensWithServer => 'Synchronisiert Token mit dem eduMFA Server.';
 
   @override
   String get sync => 'Sync';
@@ -174,7 +150,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get errorSynchronizationNoNetworkConnection => 'Die Synchronisation ist fehlgeschlagen, da der privacyIDEA Server nicht erreicht werden konnte.';
+  String get errorSynchronizationNoNetworkConnection => 'Die Synchronisation ist fehlgeschlagen, da der eduMFA Server nicht erreicht werden konnte.';
 
   @override
   String errorRollOutNoConnectionToServer(Object name) {
@@ -495,12 +471,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get decryptErrorDeleteConfirmationContent => 'Sind Sie sicher, dass Sie die App Daten löschen möchten?';
 
   @override
-  String get hidePushTokens => 'Push-Token ausblenden';
-
-  @override
-  String get hidePushTokensDescription => 'Push-Token aus der Token-Liste ausblenden. Dadurch werden die Token nicht gelöscht und sind weiterhin auf einem separaten Bildschirm sichtbar.';
-
-  @override
   String get settingsGroupGeneral => 'Allgemeines';
 
   @override
@@ -510,10 +480,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get privacyPolicy => 'Datenschutzerklärung';
 
   @override
-  String get introScanQrCode => 'Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die privacyIDEA Token.';
-
-  @override
-  String get introAddTokenManually => 'Wenn Sie keinen QR-Code scannen möchten, können Sie Token auch manuell hinzufügen.';
+  String get introScanQrCode => 'Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die eduMFA Token.';
 
   @override
   String get introTokenSwipe => 'Wischen Sie Token nach links, um die verfügbaren Aktionen zu sehen.';
@@ -525,16 +492,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get introLockToken => 'Um die Sicherheit noch weiter zu erhöhen, können Sie Token sperren.\nDer Token kann dann erst nach der Authentifizierung verwendet werden.';
 
   @override
-  String get introDragToken => 'Reorganisieren Sie Ihre Token, indem Sie sie einige Sekunden lang drücken und dann an die gewünschte Position ziehen.';
-
-  @override
-  String get introAddFolder => 'Sie können Ordner erstellen, um Ihre Token zu organisieren.';
-
-  @override
   String get introPollForChallenges => 'Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen.';
-
-  @override
-  String get introHidePushTokens => 'Deine Push-Token sind jetzt versteckt.\nAber du kannst sie immer noch auf dem Bildschirm mit den Push-Token sehen.';
 
   @override
   String legacySigningErrorTitle(Object tokenLabel) {
@@ -543,36 +501,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get legacySigningErrorMessage => 'Der Token wurde in einer veralteten Version der App erstellt, was zu Problemen bei der Verwendung führen kann. Es wird empfohlen, einen neuen Push-Token zu erstellen, wenn das Problem weiterhin besteht!';
-
-  @override
-  String get selectImportSource => 'Importquelle auswählen';
-
-  @override
-  String get selectImportType => 'Wie wollen Sie die Token importieren?';
-
-  @override
-  String get importTokens => 'Token importieren';
-
-  @override
-  String get selectFile => 'Datei auswählen';
-
-  @override
-  String get decrypt => 'Entschlüsseln';
-
-  @override
-  String get tokensAreEncrypted => 'Die Token sind verschlüsselt. Bitte gib das Passwort ein, um sie zu entschlüsseln.';
-
-  @override
-  String get tokensNotEncrypted => 'Die Token sind unverschlüsselt und können direkt importiert werden.';
-
-  @override
-  String get tokensSuccessfullyDecrypted => 'Die Token wurden erfolgreich entschlüsselt, sie können nun importiert werden.';
-
-  @override
-  String get password => 'Passwort';
-
-  @override
-  String get wrongPassword => 'Falsches Passwort';
 
   @override
   String get qrScan => 'Scannen';

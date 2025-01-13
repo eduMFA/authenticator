@@ -7,33 +7,6 @@ class AppLocalizationsCs extends AppLocalizations {
   AppLocalizationsCs([String locale = 'cs']) : super(locale);
 
   @override
-  String get patchNotesNewFeatures => 'Nové funkce';
-
-  @override
-  String get patchNotesImprovements => 'Improvements';
-
-  @override
-  String get patchNotesBugFixes => 'Opravy chyb';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures1 => 'Přidána podpora pro import tokenů z Google, Aegis a 2FAS Authenticator. Další zdroje importu budou přidány v budoucnu.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures2 => 'Do nastavení byla přidána možnost zpětné vazby.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures3 => 'Tokeny Push lze nyní skrýt ze seznamu tokenů.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures4 => 'Byly přidány úvodní informace, které novým uživatelům usnadní začátky.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures5 => 'Žetony nyní můžete vyhledávat klepnutím na lupu v pravém horním rohu.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures6 => 'Přidán token HomeWidget pro systém Android 12 a novější.';
-
-  @override
   String get accept => 'Přijmout';
 
   @override
@@ -119,6 +92,9 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
+  String get tokens => 'Token';
+
+  @override
   String get settings => 'Nastavení';
 
   @override
@@ -146,7 +122,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get synchronizePushTokens => 'Synchronizace push tokenů';
 
   @override
-  String get synchronizesTokensWithServer => 'Synchronizovat tokeny se serverem privacyIDEA.';
+  String get synchronizesTokensWithServer => 'Synchronizovat tokeny se serverem eduMFA.';
 
   @override
   String get sync => 'Synchronizovat';
@@ -174,7 +150,7 @@ class AppLocalizationsCs extends AppLocalizations {
   }
 
   @override
-  String get errorSynchronizationNoNetworkConnection => 'Synchronizace tokenů selhala, připojení k serveru privacyIDEA se nezdařilo.';
+  String get errorSynchronizationNoNetworkConnection => 'Synchronizace tokenů selhala, připojení k serveru eduMFA se nezdařilo.';
 
   @override
   String errorRollOutNoConnectionToServer(Object name) {
@@ -495,12 +471,6 @@ class AppLocalizationsCs extends AppLocalizations {
   String get decryptErrorDeleteConfirmationContent => 'Jste si jisti, že chcete data aplikace odstranit?';
 
   @override
-  String get hidePushTokens => 'Skrýt push tokeny';
-
-  @override
-  String get hidePushTokensDescription => 'Skrýt push tokeny ze seznamu tokenů. Tím se tokeny neodstraní a budou stále viditelné na samostatné obrazovce.';
-
-  @override
   String get settingsGroupGeneral => 'Obecné informace';
 
   @override
@@ -510,10 +480,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get privacyPolicy => 'Zásady ochrany osobních údajů';
 
   @override
-  String get introScanQrCode => 'Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny privacyIDEA.';
-
-  @override
-  String get introAddTokenManually => 'Pokud nechcete skenovat QR kód, můžete tokeny přidávat také ručně.';
+  String get introScanQrCode => 'Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny eduMFA.';
 
   @override
   String get introTokenSwipe => 'Přejetím po tokenech doleva zobrazíte dostupné akce.';
@@ -525,16 +492,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get introLockToken => 'To improve security even more, you can lock tokens. Then the token can only be used after authentication.';
 
   @override
-  String get introDragToken => 'Reorganizujte tokeny tak, že je na několik sekund stisknete a poté je přetáhnete na požadované místo.';
-
-  @override
-  String get introAddFolder => 'Můžete vytvářet složky\npro uspořádání svých tokenů.';
-
-  @override
   String get introPollForChallenges => 'Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů.';
-
-  @override
-  String get introHidePushTokens => 'Vaše push tokeny jsou nyní skryté.\nNa obrazovce push tokenů je však stále vidíte.';
 
   @override
   String legacySigningErrorTitle(Object tokenLabel) {
@@ -543,36 +501,6 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get legacySigningErrorMessage => 'Token byl vytvořen v zastaralé verzi aplikace, což může vést k problémům při jeho používání.\nPokud problém přetrvává, doporučujeme vytvořit nový push token!';
-
-  @override
-  String get selectImportSource => 'Vyberte zdroj importu';
-
-  @override
-  String get selectImportType => 'Jak chcete importovat žetony?';
-
-  @override
-  String get importTokens => 'Importní token';
-
-  @override
-  String get selectFile => 'Vybrat soubor';
-
-  @override
-  String get decrypt => 'Dešifrovat';
-
-  @override
-  String get tokensAreEncrypted => 'Tokeny jsou zašifrované. Please enter the password to decrypt them.';
-
-  @override
-  String get tokensNotEncrypted => 'Tokeny nejsou šifrované a lze je importovat přímo.';
-
-  @override
-  String get tokensSuccessfullyDecrypted => 'Tokeny byly úspěšně dešifrovány a nyní je lze importovat.';
-
-  @override
-  String get password => 'Heslo';
-
-  @override
-  String get wrongPassword => 'Nesprávné heslo';
 
   @override
   String get qrScan => 'Skenování';

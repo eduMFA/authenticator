@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:privacyidea_authenticator/model/enums/algorithms.dart';
-import 'package:privacyidea_authenticator/model/enums/encodings.dart';
-import 'package:privacyidea_authenticator/model/tokens/hotp_token.dart';
-import 'package:privacyidea_authenticator/utils/crypto_utils.dart';
+import 'package:edumfa_authenticator/model/enums/algorithms.dart';
+import 'package:edumfa_authenticator/model/enums/encodings.dart';
+import 'package:edumfa_authenticator/model/tokens/hotp_token.dart';
+import 'package:edumfa_authenticator/utils/crypto_utils.dart';
 
 void main() {
   _testHotpToken();

@@ -2,10 +2,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
-import 'package:privacyidea_authenticator/model/states/token_folder_state.dart';
-import 'package:privacyidea_authenticator/model/token_folder.dart';
-import 'package:privacyidea_authenticator/interfaces/repo/token_folder_repository.dart';
-import 'package:privacyidea_authenticator/state_notifiers/token_folder_notifier.dart';
+import 'package:edumfa_authenticator/model/states/token_folder_state.dart';
+import 'package:edumfa_authenticator/model/token_folder.dart';
+import 'package:edumfa_authenticator/interfaces/repo/token_folder_repository.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_folder_notifier.dart';
 
 import 'token_folder_notifier_test.mocks.dart';
 

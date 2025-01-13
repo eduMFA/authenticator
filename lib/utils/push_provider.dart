@@ -1,8 +1,12 @@
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -48,10 +52,10 @@ class PushProvider {
   Timer? _pollTimer;
   PushRequestNotifier? pushSubscriber; // must be set before receiving push messages
   FirebaseUtils? firebaseUtils;
-  PrivacyIdeaIOClient _ioClient;
+  EduMFAIOClient _ioClient;
   RsaUtils _rsaUtils;
-  PushProvider._({PrivacyIdeaIOClient? ioClient, RsaUtils? rsaUtils})
-      : _ioClient = ioClient ?? const PrivacyIdeaIOClient(),
+  PushProvider._({EduMFAIOClient? ioClient, RsaUtils? rsaUtils})
+      : _ioClient = ioClient ?? const EduMFAIOClient(),
         _rsaUtils = rsaUtils ?? const RsaUtils();
 
   Future<void> initialize({required PushRequestNotifier pushSubscriber, required FirebaseUtils firebaseUtils}) async {
@@ -75,7 +79,7 @@ class PushProvider {
 
   factory PushProvider({
     bool? pollingEnabled,
-    PrivacyIdeaIOClient? ioClient,
+    EduMFAIOClient? ioClient,
     RsaUtils? rsaUtils,
   }) {
     if (instance == null) {
@@ -283,7 +287,7 @@ class PushProvider {
     try {
       response = instance != null
           ? await instance!._ioClient.doGet(url: token.url!, parameters: parameters, sslVerify: token.sslVerify)
-          : await const PrivacyIdeaIOClient().doGet(url: token.url!, parameters: parameters, sslVerify: token.sslVerify);
+          : await const EduMFAIOClient().doGet(url: token.url!, parameters: parameters, sslVerify: token.sslVerify);
     } catch (e) {
       globalRef?.read(statusMessageProvider.notifier).state = (
         AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorWhenPullingChallenges(token.serial),
@@ -352,7 +356,7 @@ class PushProvider {
   }
 
   /// This method attempts to update the fbToken for all PushTokens that can be
-  /// updated. I.e. all tokens that know the url of their respective privacyIDEA
+  /// updated. I.e. all tokens that know the url of their respective eduMFA
   /// server.
   /// If the fbToken is not provided, it will be fetched from the firebase instance.
   /// If the fbToken is not available, this method will return null.
@@ -401,7 +405,7 @@ class PushProvider {
       Response response = instance != null
           ? await instance!._ioClient.doPost(
               sslVerify: p.sslVerify, url: p.url!, body: {'new_fb_token': firebaseToken, 'serial': p.serial, 'timestamp': timestamp, 'signature': signature})
-          : await const PrivacyIdeaIOClient().doPost(
+          : await const EduMFAIOClient().doPost(
               sslVerify: p.sslVerify, url: p.url!, body: {'new_fb_token': firebaseToken, 'serial': p.serial, 'timestamp': timestamp, 'signature': signature});
 
       if (response.statusCode == 200) {

@@ -1,10 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
 /*
-  privacyIDEA Authenticator
+  This file is part of eduMFA Authenticator. eduMFA Authenticator is a fork of privacyIDEA Authenticator.
+  Copyright (c) 2024 eduMFA Project-Team
 
-  Authors: Timo Sturm <timo.sturm@netknights.it>
-           Frank Merkel <frank.merkel@netknights.it>
+  Previous authors by privacyIDEA project:
+  Timo Sturm <timo.sturm@netknights.it>
+  Frank Merkel <frank.merkel@netknights.it>
+
   Copyright (c) 2017-2023 NetKnights GmbH
 
   Licensed under the Apache License, Version 2.0 (the 'License');
@@ -31,7 +34,7 @@ clearLicenses() {
 }
 
 addAllLicenses() {
-  _addNewLicense('privacyIDEA Authenticator', _PI_AUTHENTICATOR_LICENSE);
+  _addNewLicense('eduMFA Authenticator', _AUTHENTICATOR_LICENSE);
   _addNewLicense('dart-hex', _DART_HEX_LICENSE);
   _addNewLicense('dart-base32', _DART_BASE32_LICENSE);
   _addNewLicense('otp', _DART_OTP_LICENSE);
@@ -251,7 +254,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ''';
-const String _PI_AUTHENTICATOR_LICENSE = '''
+const String _AUTHENTICATOR_LICENSE = '''
 
                                  Apache License
                            Version 2.0, January 2004

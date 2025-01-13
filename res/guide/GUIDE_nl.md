@@ -1,4 +1,4 @@
-# Welkom bij privacyIDEA Authenticator.
+# Welkom bij eduMFA Authenticator.
 
 + Het token van de vorige App versie kan worden geloaden via `Instellingen` in de `Migratie` sectie.
 
@@ -10,9 +10,9 @@
   Ook kan een token worden beschermd middels biometrische beveiliging.
 
 
-# privacyIDEA Push Token:
+# eduMFA Push Token:
 
-+ Wanneer privacyIDEA's push tokens worden gebruikt kunnen uitstaande vragen worden opgehaald door naar beneden te vegen.
++ Wanneer eduMFA's push tokens worden gebruikt kunnen uitstaande vragen worden opgehaald door naar beneden te vegen.
   ![Handmatig ophalen door naar beneden te vegen](resource:res/gif/help_manual_poll.gif)
 
 + Wanneer de app is geopend kan automatisch ophalen worden geactiveerd in de instellingen.

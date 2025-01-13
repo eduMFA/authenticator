@@ -7,33 +7,6 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get patchNotesNewFeatures => 'Nouvelles caractéristiques';
-
-  @override
-  String get patchNotesImprovements => 'Améliorations';
-
-  @override
-  String get patchNotesBugFixes => 'Bug fixes';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures1 => 'Ajout de la prise en charge de l\'importation de jetons depuis Google, Aegis et 2FAS Authenticator. D\'autres sources d\'importation seront ajoutées à l\'avenir.';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures2 => 'Ajout d\'une option de retour d\'information dans les paramètres';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures3 => 'Les jetons de poussée peuvent maintenant être cachés de la liste des jetons';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures4 => 'Des introductions ont été ajoutées pour aider les nouveaux utilisateurs à démarrer';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures5 => 'Vous pouvez désormais rechercher des jetons en appuyant sur la loupe dans le coin supérieur droit';
-
-  @override
-  String get patchNotesV4_3_0NewFeatures6 => 'Ajout du jeton HomeWidget pour Android 12 et les versions ultérieures';
-
-  @override
   String get accept => 'Accepter';
 
   @override
@@ -119,6 +92,9 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get tokens => 'Token';
+
+  @override
   String get settings => 'Paramètres';
 
   @override
@@ -146,7 +122,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get synchronizePushTokens => 'Synchoniser les jetons Push';
 
   @override
-  String get synchronizesTokensWithServer => 'Synchroniser les jetons Push avec le serveur privacyIDEA.';
+  String get synchronizesTokensWithServer => 'Synchroniser les jetons Push avec le serveur eduMFA.';
 
   @override
   String get sync => 'Synchroniser';
@@ -495,12 +471,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get decryptErrorDeleteConfirmationContent => 'Êtes-vous sûr de vouloir supprimer les données de l\'application ?';
 
   @override
-  String get hidePushTokens => 'Hide push tokens';
-
-  @override
-  String get hidePushTokensDescription => 'Masquer les jetons de poussée de la liste des jetons. Cela ne supprimera pas les jetons et ils seront toujours visibles sur un écran séparé';
-
-  @override
   String get settingsGroupGeneral => 'Généralités';
 
   @override
@@ -510,10 +480,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get privacyPolicy => 'Politique de confidentialité';
 
   @override
-  String get introScanQrCode => 'You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the privacyIDEA tokens.';
-
-  @override
-  String get introAddTokenManually => 'Si vous ne souhaitez pas scanner un code QR, vous pouvez également ajouter des jetons manuellement.';
+  String get introScanQrCode => 'You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.';
 
   @override
   String get introTokenSwipe => 'Balayez les tokens vers la gauche pour voir les actions disponibles';
@@ -525,16 +492,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get introLockToken => 'Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu\'après l\'authentification.';
 
   @override
-  String get introDragToken => 'Réorganisez vos jetons en appuyant dessus pendant quelques secondes, puis en les faisant glisser jusqu\'à la position souhaitée';
-
-  @override
-  String get introAddFolder => 'Vous pouvez créer des dossiers pour organiser vos jetons';
-
-  @override
   String get introPollForChallenges => 'Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas';
-
-  @override
-  String get introHidePushTokens => 'Vos jetons sont maintenant cachés, mais vous pouvez toujours les voir sur l\'écran des jetons';
 
   @override
   String legacySigningErrorTitle(Object tokenLabel) {
@@ -543,36 +501,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get legacySigningErrorMessage => 'Le token a été créé dans une version obsolète de l\'application, ce qui peut entraîner des problèmes d\'utilisation.\nIl est recommandé de créer un nouveau token push si le problème persiste !';
-
-  @override
-  String get selectImportSource => 'Sélectionner la source d\'importation';
-
-  @override
-  String get selectImportType => 'Comment voulez-vous importer les jetons ?';
-
-  @override
-  String get importTokens => 'Importer un jeton';
-
-  @override
-  String get selectFile => 'Sélectionner un fichier';
-
-  @override
-  String get decrypt => 'Décrypter';
-
-  @override
-  String get tokensAreEncrypted => 'Les jetons sont cryptés. Veuillez saisir le mot de passe pour les décrypter';
-
-  @override
-  String get tokensNotEncrypted => 'Les tokens ne sont pas cryptés, et peuvent être importés directement';
-
-  @override
-  String get tokensSuccessfullyDecrypted => 'Les tokens ont été décryptés avec succès, ils peuvent maintenant être importés.';
-
-  @override
-  String get password => 'Mot de passe';
-
-  @override
-  String get wrongPassword => 'Mot de passe incorrect';
 
   @override
   String get qrScan => 'Numériser';

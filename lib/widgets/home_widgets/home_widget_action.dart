@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:privacyidea_authenticator/utils/home_widget_utils.dart';
+import 'package:edumfa_authenticator/utils/home_widget_utils.dart';
 
 import '../../extensions/color_extension.dart';
 import 'interfaces/flutter_home_widget_base.dart';

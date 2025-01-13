@@ -5,10 +5,7 @@ import '../enums/token_types.dart';
 import '../extensions/enum_extension.dart';
 import '../mixins/sortable_mixin.dart';
 import '../token_origin.dart';
-import 'day_password_token.dart';
-import 'hotp_token.dart';
 import 'push_token.dart';
-import 'totp_token.dart';
 
 @immutable
 abstract class Token with SortableMixin {
@@ -32,20 +29,14 @@ abstract class Token with SortableMixin {
 
   factory Token.fromJson(Map<String, dynamic> json) {
     String type = json['type'];
-    if (TokenTypes.HOTP.isString(type)) return HOTPToken.fromJson(json);
-    if (TokenTypes.TOTP.isString(type)) return TOTPToken.fromJson(json);
-    if (TokenTypes.PIPUSH.isString(type)) return PushToken.fromJson(json);
-    if (TokenTypes.DAYPASSWORD.isString(type)) return DayPasswordToken.fromJson(json);
+    if (TokenTypes.EDUMFA_PUSH.isString(type)) return PushToken.fromJson(json);
     throw ArgumentError.value(json, 'json', 'Building the token type [$type] is not a supported right now.');
   }
   factory Token.fromUriMap(
     Map<String, dynamic> uriMap,
   ) {
     String type = uriMap[URI_TYPE];
-    if (TokenTypes.HOTP.isString(type)) return HOTPToken.fromUriMap(uriMap);
-    if (TokenTypes.TOTP.isString(type)) return TOTPToken.fromUriMap(uriMap);
-    if (TokenTypes.PIPUSH.isString(type)) return PushToken.fromUriMap(uriMap);
-    if (TokenTypes.DAYPASSWORD.isString(type)) return DayPasswordToken.fromUriMap(uriMap);
+    if (TokenTypes.EDUMFA_PUSH.isString(type)) return PushToken.fromUriMap(uriMap);
     throw ArgumentError.value(uriMap, 'uri', 'Building the token type [$type] is not a supported right now.');
   }
 
