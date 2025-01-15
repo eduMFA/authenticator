@@ -82,7 +82,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
         routes: {
           FeedbackView.routeName: (context) => const FeedbackView(),
           LicenseView.routeName: (context) => LicenseView(
-                appImage: _customization.appImage,
                 appName: _customization.appName,
                 websiteLink: _customization.websiteLink,
               ),
@@ -95,7 +94,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
           PushTokensView.routeName: (context) => const PushTokensView(),
           SettingsView.routeName: (context) => const SettingsView(),
           SplashScreen.routeName: (context) => SplashScreen(
-                appImage: _customization.appImage,
                 appName: _customization.appName,
               ),
           QRScannerView.routeName: (context) => const QRScannerView(),
