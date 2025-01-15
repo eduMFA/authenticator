@@ -75,7 +75,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get darkTheme => 'Dunkel';
 
   @override
-  String get systemTheme => 'Nutze Farbschema des Geräts';
+  String get autoTheme => 'Automatisch';
 
   @override
   String get enablePolling => 'Aktives Stellen von Push-Anfragen';

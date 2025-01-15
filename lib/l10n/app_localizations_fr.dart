@@ -75,7 +75,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get darkTheme => 'Thème sombre';
 
   @override
-  String get systemTheme => 'Utiliser le thème de l\'appareil';
+  String get autoTheme => 'Auto';
 
   @override
   String get enablePolling => 'Activer l\'interrogation du serveur.';

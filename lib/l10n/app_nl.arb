@@ -97,9 +97,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Gebruik thema van het apparaat",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Zoeken aanzetten",
   "@enablePolling": {

@@ -75,7 +75,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get darkTheme => 'Negro';
 
   @override
-  String get systemTheme => 'Utilizar el tema del teléfono';
+  String get autoTheme => 'Auto';
 
   @override
   String get enablePolling => 'Activar polling';

@@ -75,7 +75,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get darkTheme => 'Ciemny';
 
   @override
-  String get systemTheme => 'Motyw systemu';
+  String get autoTheme => 'Auto';
 
   @override
   String get enablePolling => 'Włącz autentykację przez wiadomość push.';

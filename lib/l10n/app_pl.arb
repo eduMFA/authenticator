@@ -98,9 +98,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Motyw systemu",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Włącz autentykację przez wiadomość push.",
   "@enablePolling": {

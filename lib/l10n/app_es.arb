@@ -101,9 +101,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Utilizar el tema del teléfono",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Activar polling",
   "@enablePolling": {

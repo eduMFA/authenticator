@@ -1,4 +1,6 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+import 'package:edumfa_authenticator/extensions/theme_extension.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/theme_menu.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -90,50 +92,14 @@ class SettingsView extends ConsumerView {
                 ],
               ),
               const Divider(),
-              SettingsGroup(
-                title: AppLocalizations.of(context)!.theme,
-                children: [
-                  RadioListTile(
-                    title: Text(
-                      AppLocalizations.of(context)!.lightTheme,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    value: ThemeMode.light,
-                    groupValue: EasyDynamicTheme.of(context).themeMode,
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    onChanged: (dynamic value) {
-                      EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: false);
-                    },
-                  ),
-                  RadioListTile(
-                    title: Text(
-                      AppLocalizations.of(context)!.darkTheme,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    value: ThemeMode.dark,
-                    groupValue: EasyDynamicTheme.of(context).themeMode,
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    onChanged: (dynamic value) {
-                      EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: true);
-                    },
-                  ),
-                  RadioListTile(
-                    title: Text(
-                      AppLocalizations.of(context)!.systemTheme,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    value: ThemeMode.system,
-                    groupValue: EasyDynamicTheme.of(context).themeMode,
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    onChanged: (dynamic value) {
-                      EasyDynamicTheme.of(context).changeTheme(dynamic: true, dark: false);
-                    },
-                  ),
-                ],
+              ListTile(
+                title: Text(AppLocalizations.of(context)!.theme),
+                subtitle: Text((EasyDynamicTheme.of(context).themeMode ?? ThemeMode.system).getName(context)),
+                onTap: () => showDialog(
+                  context: context,
+                  builder: (context) => const ThemeMenu(),
+                  useRootNavigator: false,
+                ),
               ),
               const Divider(),
               SettingsGroup(
@@ -172,7 +138,7 @@ class SettingsView extends ConsumerView {
                         );
                       }).toList(),
                       onChanged:
-                          ref.watch(settingsProvider).useSystemLocale ? null : (value) => ref.read(settingsProvider.notifier).setLocalePreference(value!),
+                      ref.watch(settingsProvider).useSystemLocale ? null : (value) => ref.read(settingsProvider.notifier).setLocalePreference(value!),
                     ),
                   ),
                 ],
@@ -193,13 +159,13 @@ class SettingsView extends ConsumerView {
                     trailing: ElevatedButton(
                       onPressed: enablePushSettingsGroup
                           ? () {
-                              showDialog(
-                                useRootNavigator: false,
-                                context: context,
-                                barrierDismissible: false,
-                                builder: (context) => const UpdateFirebaseTokenDialog(),
-                              );
-                            }
+                        showDialog(
+                          useRootNavigator: false,
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (context) => const UpdateFirebaseTokenDialog(),
+                        );
+                      }
                           : null,
                       child: Text(
                         AppLocalizations.of(context)!.sync,
@@ -222,12 +188,12 @@ class SettingsView extends ConsumerView {
                               padding: const EdgeInsets.only(left: 10),
                               child: unsupported.isNotEmpty && enrolledPushTokenList.isNotEmpty
                                   ? GestureDetector(
-                                      onTap: () {}, // () => _showPollingInfo(unsupported),
-                                      child: const Icon(
-                                        Icons.info_outline,
-                                        color: Colors.red,
-                                      ),
-                                    )
+                                onTap: () {}, // () => _showPollingInfo(unsupported),
+                                child: const Icon(
+                                  Icons.info_outline,
+                                  color: Colors.red,
+                                ),
+                              )
                                   : null,
                             ),
                           ),

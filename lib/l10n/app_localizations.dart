@@ -237,11 +237,11 @@ abstract class AppLocalizations {
   /// **'Dark'**
   String get darkTheme;
 
-  /// The systems theme.
+  /// The automatic theme applied by the system settings.
   ///
   /// In en, this message translates to:
-  /// **'Use device\'s theme'**
-  String get systemTheme;
+  /// **'Auto'**
+  String get autoTheme;
 
   /// Name of the setting switch that enables polling.
   ///

@@ -75,7 +75,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get darkTheme => 'Tmavý';
 
   @override
-  String get systemTheme => 'Použít nastavení systému';
+  String get autoTheme => 'Auto';
 
   @override
   String get enablePolling => 'Povolit polling';

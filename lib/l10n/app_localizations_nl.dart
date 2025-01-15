@@ -75,7 +75,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get darkTheme => 'Donker';
 
   @override
-  String get systemTheme => 'Gebruik thema van het apparaat';
+  String get autoTheme => 'Auto';
 
   @override
   String get enablePolling => 'Zoeken aanzetten';
