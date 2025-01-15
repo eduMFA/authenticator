@@ -36,7 +36,6 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-
     defaultConfig {
         applicationId "io.edumfa.authenticator"
         minSdkVersion 24
