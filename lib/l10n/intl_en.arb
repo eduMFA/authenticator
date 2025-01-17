@@ -1,18 +1,10 @@
 {
-  "@@last_modified": "2025-01-06",
-  "guide": "Anleitung",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
-  "retry": "Erneut versuchen",
-  "@retry": {
-    "description": "Label for e.g. a button. Something is tried to be done again."
-  },
-  "accept": "Akzeptieren",
+  "@@locale": "en",
+  "accept": "Accept",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."
   },
-  "decline": "Ablehnen",
+  "decline": "Decline",
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
@@ -20,43 +12,43 @@
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
-  "secretKey": "Geheimer Schlüssel",
+  "secretKey": "Secret key",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
   },
-  "rename": "Umbenennen",
+  "rename": "Rename",
   "@rename": {
     "description": "Label that describes renaming the token."
   },
-  "cancel": "Abbrechen",
+  "cancel": "Cancel",
   "@cancel": {
     "description": "Button to cancel an action."
   },
-  "delete": "Löschen",
+  "delete": "Delete",
   "@delete": {
     "description": "Label that describes deleting the token."
   },
-  "dismiss": "Schließen",
+  "dismiss": "Dismiss",
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
-  "addToken": "Token hinzufügen",
+  "addToken": "Add token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "QR-Code scannen",
+  "scanQrCode": "Scan QR-Code",
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
   },
-  "renameToken": "Token umbenennen",
+  "renameToken": "Rename token",
   "@renameToken": {
     "description": "Title of the dialog where a new name for a token can be entered."
   },
-  "confirmDeletion": "Löschen bestätigen",
+  "confirmDeletion": "Confirm deletion",
   "@confirmDeletion": {
     "description": "Title of the dialog where a token can be deleted."
   },
-  "confirmDeletionOf": "Sind Sie sicher dass Sie {name} löschen möchten?",
+  "confirmDeletionOf": "Are you sure you want to delete {name}?",
   "@confirmDeletionOf": {
     "description": "Asks for confirmation on deleting a token.",
     "placeholders": {
@@ -65,23 +57,23 @@
       }
     }
   },
-  "confirmTokenDeletionHint": "Unter Umständen können Sie sich nicht mehr einloggen, wenn Sie diesen Token löschen.\nBitte stellen Sie sicher, dass Sie sich ohne diesen Token in den dazugehörigen Account einloggen können.",
+  "confirmTokenDeletionHint": "You may no longer be able to log in if you delete this token.\nPlease make sure that you can log in to the associated account without this token.",
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "generatingPhonePart": "Generiere Telefonanteil",
+  "generatingPhonePart": "Generating phone part",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
   },
-  "phonePart": "Telefonanteil:",
+  "phonePart": "Phone part:",
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
   },
-  "tokens": "Token",
+  "tokens": "Tokens",
   "@tokens": {
     "description": "Button to open the tokens page."
   },
-  "settings": "Einstellungen",
+  "settings": "Settings",
   "@settings": {
     "description": "Button to open the settings page."
   },
@@ -89,35 +81,35 @@
   "@pushToken": {
     "description": "Title for the settings block concerning the push tokens."
   },
-  "theme": "Farbschema",
+  "theme": "Theme",
   "@theme": {
     "description": "Title of the setting group where the theme can be selected."
   },
-  "lightTheme": "Hell",
+  "lightTheme": "Light",
   "@lightTheme": {
     "description": "The light theme."
   },
-  "darkTheme": "Dunkel",
+  "darkTheme": "Dark",
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Nutze Farbschema des Geräts",
+  "systemTheme": "Use device's theme",
   "@systemTheme": {
     "description": "The systems theme."
   },
-  "enablePolling": "Aktives Stellen von Push-Anfragen",
+  "enablePolling": "Enable polling",
   "@enablePolling": {
     "description": "Name of the setting switch that enables polling."
   },
-  "requestPushChallengesPeriodically": "Fordert regelmäßig Push-Anfragen vom Server an. Aktivieren Sie diese Funktion, wenn Nachrichten ansonsten nicht erhalten werden.",
+  "requestPushChallengesPeriodically": "Request push challenges from the server periodically. Enable this if push challenges are not received normally.",
   "@requestPushChallengesPeriodically": {
     "description": "The description of the polling feature."
   },
-  "synchronizePushTokens": "Synchronisiere Push Token",
+  "synchronizePushTokens": "Synchronize push tokens",
   "@synchronizePushTokens": {
     "description": "Title of synchronizing push tokens in settings."
   },
-  "synchronizesTokensWithServer": "Synchronisiert Token mit dem eduMFA Server.",
+  "synchronizesTokensWithServer": "Synchronizes tokens with the eduMFA server.",
   "@synchronizesTokensWithServer": {
     "description": "Description of synchronizing push tokens in settings."
   },
@@ -125,23 +117,23 @@
   "@sync": {
     "description": "Text of button that is used to synchronize push tokens."
   },
-  "synchronizingTokens": "Synchronisiere Token.",
+  "synchronizingTokens": "Synchronizing tokens.",
   "@synchronizingTokens": {
     "description": "Title of the push synchronization dialog."
   },
-  "allTokensSynchronized": "Alle Token wurden synchronisiert.",
+  "allTokensSynchronized": "All tokens are synchronized.",
   "@allTokensSynchronized": {
     "description": "Content of the push synchronization dialog. Signaling the user that everything worked."
   },
-  "synchronizationFailed": "Synchronisation ist für die folgenden Token fehlgeschlagen:",
+  "synchronizationFailed": "Synchronization failed for the following tokens, please try again:",
   "@synchronizationFailed": {
     "description": "Headline for the list of tokens where the synchronization failed."
   },
-  "tokensDoNotSupportSynchronization": "Die folgenden Token unterstützen keine Synchronisation und müssen erneut ausgerollt werden:",
+  "tokensDoNotSupportSynchronization": "The following tokens do not support synchronization and must be rolled out again:",
   "@tokensDoNotSupportSynchronization": {
     "description": "Informs the user that the following tokens cannot be synchronized as they do not support that."
   },
-  "errorRollOutFailed": "Ausrollen von {name} ist fehlgeschlagen.",
+  "errorRollOutFailed": "Rolling out token {name} failed.",
   "@errorRollOutFailed": {
     "description": "Tells the user that the token could not be rolled out, because a network error occurred.",
     "placeholders": {
@@ -150,7 +142,7 @@
       }
     }
   },
-  "statusCode": "Statuscode: {statusCode}",
+  "statusCode": "Status code: {statusCode}",
   "@statusCode": {
     "description": "Tells the user the status code of the error.",
     "placeholders": {
@@ -159,11 +151,15 @@
       }
     }
   },
-  "errorSynchronizationNoNetworkConnection": "Die Synchronisation ist fehlgeschlagen, da der eduMFA Server nicht erreicht werden konnte.",
+  "errorSynchronizationNoNetworkConnection": "Synchronizing tokens failed, eduMFA server could not be reached.",
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
-  "errorRollOutUnknownError": "Ein unbekannter Fehler ist aufgetreten. Aurollen nicht möglich: {e}",
+  "errorRollOutNoConnectionToServer": "Rolling out token {name} failed, the server could not be reached.",
+  "@errorRollOutNoConnectionToServer": {
+    "description": "Tells the user that the roll-out failed because the server could not be reached."
+  },
+  "errorRollOutUnknownError": "An unknown error occurred. Roll-out not possible: {e}",
   "@errorRollOutUnknownError": {
     "description": "Tells the user that the roll-out failed because of an unknown error.",
     "placeholders": {
@@ -172,19 +168,19 @@
       }
     }
   },
-  "rollingOut": "Ausrollen",
+  "rollingOut": "Rolling out",
   "@rollingOut": {
     "description": "Label that tells the user that the token is being rolled out."
   },
-  "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten.",
+  "unexpectedError": "An unexpected error occurred.",
   "@unexpectedError": {
     "description": "Title of page report mode."
   },
-  "pollingFailed": "Abfrage fehlgeschlagen.",
+  "pollingFailed": "Polling failed.",
   "@pollingFailed": {
     "description": "Tells the user that the polling failed."
   },
-  "pollingFailedFor": "Abfrage für {serial} fehlgeschlagen.",
+  "pollingFailedFor": "Polling failed for {serial}",
   "@pollingFailedFor": {
     "description": "Tells the user that the polling failed.",
     "placeholders": {
@@ -193,175 +189,184 @@
       }
     }
   },
-  "noNetworkConnection": "Keine Netzwerkverbindung.",
+  "noNetworkConnection": "No network connection.",
   "@noNetworkConnection": {
     "description": "Tells the user that there is no network connection."
   },
-  "connectionFailed": "Verbindung fehlgeschlagen.",
+  "connectionFailed": "Connection failed.",
   "@connectionFailed": {
     "description": "Tells the user that the connection failed."
   },
-  "checkYourNetwork": "Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut.",
+  "checkYourNetwork": "Please check your network connection and try again.",
   "@checkYourNetwork": {
     "description": "Tells the user to check the network connection."
   },
-  "couldNotSignMessage": "Nachricht konnte nicht signiert werden.",
+  "couldNotSignMessage": "Could not sign message.",
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Nutze Systemsprache",
+  "useDeviceLocaleTitle": "Use device language",
   "@useDeviceLocaleTitle": {
     "description": "Title of the switch tile where using the devices language can be enabled."
   },
-  "useDeviceLocaleDescription": "Nutze Systemsprache, falls diese unterstützt wird. Anderenfalls nutze Englisch. ",
+  "useDeviceLocaleDescription": "Use device language if it is supported, otherwise default to english.",
   "@useDeviceLocaleDescription": {
     "description": "Description of the switch tile where using the devices language can be enabled."
   },
-  "language": "Sprache",
+  "language": "Language",
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Bitte authentifizieren Sie sich, um das Einmalpasswort anzuzeigen.",
+  "authenticateToShowOtp": "Please authenticate to show one time password.",
   "@authenticateToShowOtp": {
     "description": "Reason to authenticate when trying to view a one time password."
   },
-  "authenticateToUnLockToken": "Bitte authentifizieren Sie sich, um den Sperrstatus des Tokens zu ändern.",
+  "authenticateToUnLockToken": "Please authenticate to change the lock status of the token.",
   "@authenticateToUnLockToken": {
     "description": "Reason to authenticate when trying to lock or unlock a token."
   },
-  "biometricRequiredTitle": "Biometrie ist nicht eingerichtet",
+  "biometricRequiredTitle": "Biometrics not setup",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
   },
-  "biometricHint": "Authentifizierung wird benötigt",
+  "biometricHint": "Authentication required",
   "@biometricHint": {
     "description": "Hint message advising the user how to authenticate with biometrics. It is used on Android side. Maximum 60 characters."
   },
-  "biometricNotRecognized": "Biometrie wurde nicht erkannt, bitte versuchen Sie es erneut",
+  "biometricNotRecognized": "Not recognized. Try again.",
   "@biometricNotRecognized": {
     "description": "Message to let the user know that authentication was failed. It is used on Android side. Maximum 60 characters."
   },
-  "biometricSuccess": "Authentifizierung erfolgreich",
+  "biometricSuccess": "Authentication successful",
   "@biometricSuccess": {
     "description": "Message to let the user know that authentication was successful. It is used on Android side. Maximum 60 characters."
   },
-  "deviceCredentialsRequiredTitle": "Gerätepasswort ist nicht eingerichtet",
+  "deviceCredentialsRequiredTitle": "Device credentials not set up",
   "@deviceCredentialsRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up credentials authentication on their device. It is used on Android side. Maximum 60 characters."
   },
-  "deviceCredentialsSetupDescription": "Setzen Sie bitte ein Gerätepasswort in den Einstellungen",
+  "deviceCredentialsSetupDescription": "Setup device credentials in the device's settings",
   "@deviceCredentialsSetupDescription": {
     "description": "Message advising the user to go to the settings and configure device credentials on their device. It shows in a dialog on Android side."
   },
-  "signInTitle": "Authentifizierung wird benötigt",
+  "signInTitle": "Authentication required",
   "@signInTitle": {
     "description": "Message showed as a title in a dialog which indicates the user that they need to scan biometric to continue. It is used on Android side. Maximum 60 characters."
   },
-  "goToSettingsButton": "Gehe zu Einstellungen",
+  "goToSettingsButton": "Go to settings",
   "@goToSettingsButton": {
     "description": "Message showed on a button that the user can click to go to settings pages from the current dialog. It is used on both Android and iOS side. Maximum 30 characters."
   },
-  "goToSettingsDescription": "Authentifizierung durch Gerätepasswort oder Biometrie ist nicht eingerichtet. Bitte aktivieren Sie dies in den Geräteeinstellungen.",
+  "goToSettingsDescription": "Authentication by credentials or biometrics is not set up on your device. Please set it up in the device's settings.",
   "@goToSettingsDescription": {
     "description": "Message advising the user to go to the settings and configure device credentials or biometrics on their device."
   },
-  "lockOut": "Biometrie ist deaktiviert. Bitte sperren und entsperren Sie Ihren Bildschirm um diese zu aktivieren.",
+  "lockOut": "Biometric authentication is disabled. Please lock and unlock your screen to enable it.",
   "@lockOut": {
     "description": "Message advising the user to re-enable biometrics on their device. It shows in a dialog on iOS side."
   },
-  "authNotSupportedTitle": "Gerätepasswort oder Biometrie wird benötigt",
+  "authNotSupportedTitle": "Device credentials or biometrics required",
   "@authNotSupportedTitle": {
     "description": "Message shown as a dialog title that tells the user that device credentials or biometrics must be setup for this action."
   },
-  "authNotSupportedBody": "Diese Aktion erfordert, dass auf dem Gerät ein Passwort oder Biometrie eingerichtet ist.",
+  "authNotSupportedBody": "This action requires the device to be secured by credentials or biometrics.",
   "@authNotSupportedBody": {
     "description": "Message shown as a dialog body that tells the user that device credentials or biometrics must be setup for this action."
   },
-  "lock": "Sperren",
+  "lock": "Lock",
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Entsperren",
+  "unlock": "Unlock",
   "@unlock": {
     "description": "Description of button that unlocks a token."
   },
-  "noResultTitle": "Keine Token vorhanden.",
+  "noResultTitle": "No tokens stored yet.",
   "@noResultTitle": {
-    "description": "No tokens installed yet."
+    "description": "No tokens stored yet."
   },
-  "noResultText1": "Tippe auf das ",
+  "noResultText1": "Tap the ",
   "@noResultText1": {
     "description": "first no result text"
   },
-  "noResultText2": " Icon um loszulegen!",
+  "noResultText2": " button to get started!",
   "@noResultText2": {
     "description": "second no result text"
   },
-  "onBoardingText1": "Zwei-Faktor-Authentifizierung\neinfach gemacht",
-  "onBoardingTitle2": "Maximale Sicherheit",
-  "onBoardingText2": "Speichern Sie Ihre Token sicher auf diesem Gerät\nGeschützt durch Ihre biometrischen Daten",
-  "onBoardingTitle3": "Besuchen Sie uns auf Github",
-  "onBoardingText3": "Diese App ist Open Source",
-  "errorLogTitle": "Fehlerprotokoll",
-  "logMenu": "Log-Menü",
-  "showErrorLog": "Anzeigen",
-  "clearErrorLog": "Löschen",
-  "send": "Senden",
-  "sendErrorLogDescription": "Es wird eine vorgefertigte E-Mail erstellt.\nSie enthält Informationen über die App, den Fehler und das Gerät.\nSie können die E-Mail vor dem Senden bearbeiten.\nWie wir die Informationen verwenden, sehen Sie hier:",
+  "onBoardingText1": "Two-factor authentication\nmade easy",
+  "onBoardingTitle2": "Maximum Security",
+  "onBoardingText2": "Store tokens on your device securely\nProtected by your biometrics",
+  "onBoardingTitle3": "Visit us at Github",
+  "onBoardingText3": "This app is open source",
+  "errorLogTitle": "Error log",
+  "logMenu": "Log menu",
+  "showErrorLog": "Show",
+  "clearErrorLog": "Clear",
+  "send": "Send",
+  "sendErrorLogDescription": "A predefined email is created.\nIt contains information about the app, the error and the device.\nYou can edit the email before sending it.\nYou can see here how we use the information:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
-  "showPrivacyPolicy": "Datenschutzerklärung anzeigen",
-  "errorLogEmpty": "Das Fehlerprotokoll ist leer.",
-  "verboseLogging": "Ausführliche Protokollierung",
-  "errorLogCleared": "Fehlerprotokoll gelöscht.",
+  "showPrivacyPolicy": "Show privacy policy",
+  "errorLogEmpty": "The error log is empty.",
+  "verboseLogging": "Verbose logging",
+  "errorLogCleared": "Error log cleared.",
   "ok": "Ok",
-  "errorMailBody": "Die Fehlerprotokolldatei ist angehängt.\nSie können diesen Text durch zusätzliche Informationen über den Fehler ersetzen.",
+  "errorMailBody": "The error log file is attached.\nYou can replace this text with additional information about the error.",
   "@errorMailBody": {
     "description": "Message for email body"
   },
-  "showDetails": "Details anzeigen",
-  "open": "Öffnen",
-  "deleteLockedToken": "Bitte authentifizieren Sie sich, um den gesperrten Token zu löschen.",
-  "editLockedToken": "Bitte authentifizieren Sie sich, um den gesperrten Token zu bearbeiten.",
-  "retryRollout": "Erneut ausrollen",
-  "generatingRSAKeyPair": "Generiere RSA Schlüsselpaar",
+  "showDetails": "Show details",
+  "open": "Open",
+  "deleteLockedToken": "Please authenticate to delete the locked token.",
+  "editLockedToken": "Please authenticate to edit the locked token.",
+  "retryRollout": "Retry rollout",
+  "generatingRSAKeyPair": "Generating RSA key pair",
   "@generatingRSAKeyPair": {
     "description": "Message for the rollout process"
   },
-  "generatingRSAKeyPairFailed": "Generieren des RSA Schlüsselpaars fehlgeschlagen",
+  "generatingRSAKeyPairFailed": "Generating RSA key pair failed",
   "@generatingRSAKeyPairFailed": {
     "description": "Message for the rollout process"
   },
-  "sendingRSAPublicKey": "Sende öffentlichen RSA Schlüssel",
+  "sendingRSAPublicKey": "Sending public RSA key",
   "@sendingRSAPublicKey": {
     "description": "Message for the rollout process"
   },
-  "sendingRSAPublicKeyFailed": "Senden des öffentlichen RSA Schlüssels fehlgeschlagen",
+  "sendingRSAPublicKeyFailed": "Sending public RSA key failed",
   "@sendingRSAPublicKeyFailed": {
     "description": "Message for the rollout process"
   },
-  "parsingResponse": "Analysiere Antwort",
+  "parsingResponse": "Parsing response",
   "@parsingResponse": {
     "description": "Message for the rollout process"
   },
-  "parsingResponseFailed": "Analysieren der Antwort fehlgeschlagen",
-  "rolloutCompleted": "Ausrollen abgeschlossen",
-  "errorWhenPullingChallenges": "Fehler beim Abrufen der Authentifizierungsanfragen von {name}",
+  "parsingResponseFailed": "Parsing response failed",
+  "@parsingResponseFailed": {
+    "description": "Message for the rollout process"
+  },
+  "rolloutCompleted": "Rollout completed",
+  "@rolloutCompleted": {
+    "description": "Message for the rollout process"
+  },
+  "authToAcceptPushRequest": "Please authenticate to accept the push request.",
+  "authToDeclinePushRequest": "Please authenticate to decline the push request.",
+  "pushRequestParseError": "Push request could not be parsed.",
+  "errorRollOutSSLHandshakeFailed": "SSL handshake failed. Roll-out not possible.",
+  "@errorRollOutSSLHandshakeFailed": {
+    "description": "Tells the user that the roll-out failed because the SSL handshake failed."
+  },
+  "errorWhenPullingChallenges": "An error occured when polling for challenges of {name}",
   "@errorWhenPullingChallenges": {
+    "description": "errorWhenPullingChallenges",
     "placeholders": {
       "name": {
         "example": "PUSH1234A"
       }
     }
   },
-  "errorRollOutNoConnectionToServer": "Der Rollout von Token {name} ist fehlgeschlagen, der Server konnte nicht erreicht werden.",
-  "authToAcceptPushRequest": "Bitte authentifizieren Sie sich, um die Anfrage anzunehmen.",
-  "authToDeclinePushRequest": "Bitte authentifizieren Sie sich, um die Anfrage abzulehnen.",
-  "pushRequestParseError": "Die Push-Anfrage konnte nicht verarbeitet werden.",
-  "errorRollOutSSLHandshakeFailed": "SSL-Handshake fehlgeschlagen. Roll-out nicht möglich.",
-  "errorRollOutNotPossibleAnymore": "Das Ausrollen dieses Tokens ist nicht mehr möglich.",
-  "errorTokenExpired": "Der Token {name} ist abgelaufen.",
+  "errorRollOutNotPossibleAnymore": "Rolling out this Token is not possible anymore.",
+  "errorTokenExpired": "The token {name} has expired.",
   "@errorTokenExpired": {
     "placeholders": {
       "name": {
@@ -369,38 +374,39 @@
       }
     }
   },
-  "yes": "Ja",
-  "no": "Nein",
-  "butDiscardIt": "aber verwerfen",
-  "declineIt": "ablehnen",
-  "requestTriggerdByUserQuestion": "Wurde diese Anfrage von Ihnen ausgelöst?",
-  "grantCameraPermissionDialogTitle": "Kamera-Berechtigung erforderlich",
-  "grantCameraPermissionDialogContent": "Um QR-Codes zu scannen, benötigt die App Zugriff auf die Kamera.",
-  "grantCameraPermissionDialogPermanentlyDenied": "Sie haben die Berechtigung für den Kamerazugriff permanent verweigert. Bitte aktivieren Sie die Berechtigung in den Einstellungen ihres Smartphones.",
-  "grantCameraPermissionDialogButton": "Berechtigung erteilen",
-  "decryptErrorTitle": "Entschlüsselung fehlgeschlagen",
-  "decryptErrorContent": "Leider konnten Ihre Token nicht entschlüsselt werden. Das deutet darauf hin, dass der Verschlüsselungsschlüssel nicht mehr verfügbar ist. Sie können es erneut versuchen oder die App Daten löschen. Dabei werden alle Token aus der App geschlöscht.",
-  "decryptErrorButtonDelete": "Löschen.",
-  "decryptErrorButtonSendError": "Fehler senden",
-  "decryptErrorButtonRetry": "Wiederholen",
-  "decryptErrorDeleteConfirmationContent": "Sind Sie sicher, dass Sie die App Daten löschen möchten?",
-  "settingsGroupGeneral": "Allgemeines",
-  "licensesAndVersion": "Lizenzen und Version",
-  "privacyPolicy": "Datenschutzerklärung",
-  "introScanQrCode": "Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die eduMFA Token.",
-  "introEditToken": "Hier können Sie den Namen des Tokens bearbeiten und einige Details einsehen.",
-  "introLockToken": "Um die Sicherheit noch weiter zu erhöhen, können Sie Token sperren.\nDer Token kann dann erst nach der Authentifizierung verwendet werden.",
-  "introPollForChallenges": "Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen.",
-  "noMailAppTitle": "Keine Mail-App gefunden",
-  "noMailAppDescription": "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können.",
-  "authenticationRequest": "Authentifizierung",
-  "requestInfo": "Gesendet von {issuer} für Ihr Konto: \"{account}\"",
+  "yes": "Yes",
+  "no": "No",
+  "butDiscardIt": "but discard it",
+  "declineIt": "decline it",
+  "requestTriggerdByUserQuestion": "Was this request triggered by you?",
+  "grantCameraPermissionDialogTitle": "Camera permission is not granted",
+  "grantCameraPermissionDialogContent": "Please grant camera permission to scan QR codes.",
+  "grantCameraPermissionDialogPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in your Phone's settings.",
+  "grantCameraPermissionDialogButton": "Grant permission",
+  "decryptErrorTitle": "Decryption error",
+  "decryptErrorContent": "Unfortunately, the app was unable to decrypt your tokens. This indicates that the encryption key is broken. You can try again or delete the app data, which would delete the tokens in the app.",
+  "decryptErrorButtonDelete": "Delete",
+  "decryptErrorButtonSendError": "Send error",
+  "decryptErrorButtonRetry": "Retry",
+  "decryptErrorDeleteConfirmationContent": "Are you sure you want to delete the app data?",
+  "settingsGroupGeneral": "General",
+  "licensesAndVersion": "Licenses and version",
+  "privacyPolicy": "Privacy policy",
+  "introScanQrCode": "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.",
+  "introEditToken": "Here you can edit the token name and see some details.",
+  "introLockToken": "To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.",
+  "introPollForChallenges": "You can check for new challenges by dragging down the token list.",
+  "noMailAppTitle": "No mail app found",
+  "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
+  "authenticationRequest": "Authentication request",
+  "requestInfo": "Sent by {issuer} for your account: \"{account}\"",
   "@requestInfo": {
+    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
       },
-      "Konto": {
+      "account": {
         "example": "GitHub"
       }
     }

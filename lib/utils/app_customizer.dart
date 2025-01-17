@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'dart:math';
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 
@@ -540,18 +538,13 @@ class ApplicationCustomization {
 
   final String appName;
   final String websiteLink;
-  final Uint8List? appImageUint8List;
 
-  Image get appImage => appImageUint8List != null
-      ? Image.memory(appImageUint8List!)
-      : Image.asset('res/logo/app_logo_transparent.png');
   final ThemeCustomization lightTheme;
   final ThemeCustomization darkTheme;
 
   static const defaultCustomization = ApplicationCustomization(
     appName: 'eduMFA Authenticator',
     websiteLink: 'https://edumfa.io/',
-    appImageUint8List: null,
     lightTheme: ThemeCustomization.defaultLightTheme,
     darkTheme: ThemeCustomization.defaultDarkTheme,
   );
@@ -559,7 +552,6 @@ class ApplicationCustomization {
   const ApplicationCustomization({
     required this.appName,
     required this.websiteLink,
-    required this.appImageUint8List,
     required this.lightTheme,
     required this.darkTheme,
   });
@@ -567,8 +559,6 @@ class ApplicationCustomization {
   ApplicationCustomization copyWith({
     String? appName,
     String? websiteLink,
-    Uint8List? appIconUint8List,
-    Uint8List? appImageUint8List,
     ThemeCustomization? lightTheme,
     ThemeCustomization? darkTheme,
     Color? primaryColor,
@@ -576,7 +566,6 @@ class ApplicationCustomization {
       ApplicationCustomization(
         appName: appName ?? this.appName,
         websiteLink: websiteLink ?? this.websiteLink,
-        appImageUint8List: appImageUint8List ?? this.appImageUint8List,
         lightTheme: lightTheme ?? this.lightTheme,
         darkTheme: darkTheme ?? this.darkTheme,
       );
@@ -589,9 +578,6 @@ class ApplicationCustomization {
       defaultCustomization.copyWith(
         appName: json['appName'] as String,
         websiteLink: json['websiteLink'] as String,
-        appImageUint8List: json['appImageBASE64'] != null
-            ? base64Decode(json['appImageBASE64'] as String)
-            : null,
         lightTheme: ThemeCustomization.fromJson(
             json['lightTheme'] as Map<String, dynamic>),
         darkTheme: ThemeCustomization.fromJson(
@@ -602,7 +588,6 @@ class ApplicationCustomization {
     return <String, dynamic>{
       'appName': appName,
       'websiteLink': websiteLink,
-      'appImageBASE64': appImageUint8List != null ? base64Encode(appImageUint8List!) : null,
       'lightTheme': lightTheme.toJson(),
       'darkTheme': darkTheme.toJson(),
     };

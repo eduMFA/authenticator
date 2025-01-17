@@ -1,6 +1,5 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
-
-import '../../../l10n/app_localizations.dart';
 
 class NoTokenScreen extends StatelessWidget {
   const NoTokenScreen({super.key});
@@ -15,7 +14,7 @@ class NoTokenScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            AppLocalizations.of(context)!.noResultTitle,
+            S.of(context).noResultTitle,
             style: Theme.of(context).textTheme.headlineSmall,
             overflow: TextOverflow.fade,
             softWrap: false,
@@ -23,14 +22,14 @@ class NoTokenScreen extends StatelessWidget {
           Wrap(
             children: [
               Text(
-                AppLocalizations.of(context)!.noResultText1,
+                S.of(context).noResultText1,
                 style: Theme.of(context).textTheme.titleMedium,
                 overflow: TextOverflow.fade,
                 softWrap: false,
               ),
               const Icon(Icons.qr_code),
               Text(
-                AppLocalizations.of(context)!.noResultText2,
+                S.of(context).noResultText2,
                 style: Theme.of(context).textTheme.titleMedium,
                 overflow: TextOverflow.fade,
                 softWrap: false,

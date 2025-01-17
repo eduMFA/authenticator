@@ -1,7 +1,8 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mailer/flutter_mailer.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+
 import 'package:edumfa_authenticator/utils/view_utils.dart';
 import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
 import 'app_info_utils.dart';
@@ -36,8 +37,8 @@ class PiMailer {
       if (e.code == 'UNAVAILABLE') {
         showAsyncDialog(
           builder: (context) => DefaultDialog(
-            title: Text(AppLocalizations.of(context)!.noMailAppTitle),
-            content: Text(AppLocalizations.of(context)!.noMailAppDescription),
+            title: Text(S.of(context).noMailAppTitle),
+            content: Text(S.of(context).noMailAppDescription),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),

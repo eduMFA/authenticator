@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../widgets/push_request_listener.dart';
@@ -9,10 +10,9 @@ class LicenseView extends StatelessView {
   RouteSettings get routeSettings => const RouteSettings(name: routeName);
   static const String routeName = '/license';
   final String appName;
-  final Widget appImage;
   final String websiteLink;
 
-  const LicenseView({required this.appName, required this.websiteLink, required this.appImage, super.key});
+  const LicenseView({required this.appName, required this.websiteLink, super.key});
 
   @override
   Widget build(BuildContext context) => PushRequestListener(
@@ -22,7 +22,13 @@ class LicenseView extends StatelessView {
             applicationName: appName,
             applicationIcon: Padding(
               padding: const EdgeInsets.all(32),
-              child: appImage,
+              child: SvgPicture.asset(
+                'res/logo/app_image.svg',
+                colorFilter: ColorFilter.mode(
+                    Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+                    BlendMode.srcIn
+                ),
+              ),
             ),
             applicationLegalese: websiteLink,
             applicationVersion: platformInfo.data == null ? '' : '${platformInfo.data?.version}+${platformInfo.data?.buildNumber}',

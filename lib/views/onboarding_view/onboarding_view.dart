@@ -1,9 +1,9 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../l10n/app_localizations.dart';
 import '../../model/enums/introduction.dart';
 import '../../utils/riverpod_providers.dart';
 import '../../widgets/dot_indicator.dart';
@@ -78,19 +78,19 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                         if (_currentIndex == 0) {
                           return OnboardingPage(
                             title: widget.appName,
-                            subtitle: AppLocalizations.of(context)!.onBoardingText1,
+                            subtitle: S.of(context).onBoardingText1,
                           );
                         }
                         if (_currentIndex == 1) {
                           return OnboardingPage(
-                            title: AppLocalizations.of(context)!.onBoardingTitle2,
-                            subtitle: AppLocalizations.of(context)!.onBoardingText2,
+                            title: S.of(context).onBoardingTitle2,
+                            subtitle: S.of(context).onBoardingText2,
                           );
                         }
                         if (_currentIndex == 2) {
                           return OnboardingPage(
-                            title: AppLocalizations.of(context)!.onBoardingTitle3,
-                            subtitle: AppLocalizations.of(context)!.onBoardingText3,
+                            title: S.of(context).onBoardingTitle3,
+                            subtitle: S.of(context).onBoardingText3,
                             buttonTitle: 'GitHub',
                             onPressed: () async {
                               Uri uri = Uri.parse("https://github.com/edumfa/authenticator");
