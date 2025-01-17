@@ -5,13 +5,13 @@ import 'dart:io';
 import 'dart:isolate';
 import 'dart:math';
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart' as printer;
 import 'package:mutex/mutex.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/utils/app_info_utils.dart';
 import 'package:edumfa_authenticator/utils/pi_mailer.dart';
 
@@ -26,7 +26,7 @@ class Logger {
   static final Mutex _mutexWriteFile = Mutex();
   static Logger? _instance;
   static BuildContext? get _context => navigatorKey.currentContext;
-  static String get _mailBody => _context != null ? AppLocalizations.of(_context!)!.errorMailBody : 'Error Log File Attached';
+  static String get _mailBody => _context != null ? S.of(_context!).errorMailBody : 'Error Log File Attached';
   static printer.Logger print = printer.Logger(
     printer: printer.PrettyPrinter(
       methodCount: 0,
@@ -195,7 +195,7 @@ Device Parameters $deviceInfo""";
     globalSnackbarKey.currentState?.showSnackBar(
       SnackBar(
         content: Text(
-          _context != null ? AppLocalizations.of(_context!)!.errorLogCleared : 'Error Log Cleared',
+          _context != null ? S.of(_context!).errorLogCleared : 'Error Log Cleared',
           overflow: TextOverflow.fade,
           softWrap: false,
         ),
@@ -293,11 +293,11 @@ Device Parameters $deviceInfo""";
       globalSnackbarKey.currentState?.showSnackBar(
         SnackBar(
           content: Text(
-            _context != null ? AppLocalizations.of(_context!)!.unexpectedError : 'An unexpected error occurred.',
+            _context != null ? S.of(_context!).unexpectedError : 'An unexpected error occurred.',
           ),
           action: _context != null
               ? SnackBarAction(
-                  label: AppLocalizations.of(_context!)!.showDetails,
+                  label: S.of(_context!).showDetails,
                   onPressed: () {
                     _showDialog();
                   },
