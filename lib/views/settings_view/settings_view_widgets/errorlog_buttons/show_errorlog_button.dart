@@ -1,6 +1,6 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../l10n/app_localizations.dart';
 import '../../../../utils/logger.dart';
 import '../../../../widgets/dialog_widgets/default_dialog.dart';
 import '../send_error_dialog.dart';
@@ -12,7 +12,7 @@ class ShowErrorLogButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ErrorlogButton(
         onPressed: () => _pressShowErrorLog(context),
-        text: AppLocalizations.of(context)!.showErrorLog,
+        text: S.of(context).showErrorLog,
       );
 }
 
@@ -32,11 +32,11 @@ void _pressShowErrorLog(BuildContext context) {
       return Padding(
         padding: EdgeInsets.symmetric(horizontal: size.width * 0.04, vertical: size.height * 0.085),
         child: DefaultDialog(
-          title: Text(AppLocalizations.of(context)!.errorLogTitle),
+          title: Text(S.of(context).errorLogTitle),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text(AppLocalizations.of(context)!.dismiss),
+              child: Text(S.of(context).dismiss),
             )
           ],
           content: Scrollbar(

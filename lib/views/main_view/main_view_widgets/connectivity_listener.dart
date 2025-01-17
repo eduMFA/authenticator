@@ -1,8 +1,8 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../l10n/app_localizations.dart';
 import '../../../utils/logger.dart';
 import '../../../utils/riverpod_providers.dart';
 
@@ -18,7 +18,7 @@ class ConnectivityListener extends ConsumerWidget {
         if (newState.hasPushTokens) {
           if (!context.mounted) return;
           Logger.info("Connectivity changed: $connectivity");
-          ref.read(statusMessageProvider.notifier).state = (AppLocalizations.of(context)!.noNetworkConnection, null);
+          ref.read(statusMessageProvider.notifier).state = (S.of(context).noNetworkConnection, null);
         }
       });
     }

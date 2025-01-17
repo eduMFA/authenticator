@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:ui';
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:version/version.dart';
 
-import '../../l10n/app_localizations.dart';
 import '../../utils/identifiers.dart';
 
 /// This class contains all device specific settings. E.g., the language used, whether to show the guide on start, etc.
@@ -14,7 +14,7 @@ class SettingsState {
   static bool get _hideOtpsDefault => false;
   static bool get _enablePollDefault => false;
   static Set<String> get _crashReportRecipientsDefault => {defaultCrashReportRecipient};
-  static Locale get _localePreferenceDefault => AppLocalizations.supportedLocales
+  static Locale get _localePreferenceDefault => S.delegate.supportedLocales
       .firstWhere((locale) => locale.languageCode == (!kIsWeb ? Platform.localeName.substring(0, 2) : 'en'), orElse: () => const Locale('en'));
 
   static bool get _useSystemLocaleDefault => true;
@@ -28,7 +28,7 @@ class SettingsState {
   final Set<String> crashReportRecipients;
   final Locale localePreference;
   Locale get currentLocale => useSystemLocale
-      ? AppLocalizations.supportedLocales
+      ? S.delegate.supportedLocales
           .firstWhere((locale) => locale.languageCode == (!kIsWeb ? Platform.localeName.substring(0, 2) : 'en'), orElse: () => const Locale('en'))
       : localePreference;
   final bool useSystemLocale;

@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:app_links/app_links.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../l10n/app_localizations.dart';
 import '../model/mixins/sortable_mixin.dart';
 import '../model/push_request.dart';
 import '../model/states/introduction_state.dart';
@@ -156,7 +156,7 @@ final connectivityProvider = StreamProvider<List<ConnectivityResult>>(
           Logger.info("First connectivity check: $connectivity", name: 'connectivityProvider#initialCheck');
           final hasNoConnection = connectivity.contains(ConnectivityResult.none);
           if (hasNoConnection && newState.hasPushTokens && globalNavigatorKey.currentContext != null) {
-            ref.read(statusMessageProvider.notifier).state = (AppLocalizations.of(globalNavigatorKey.currentContext!)!.noNetworkConnection, null);
+            ref.read(statusMessageProvider.notifier).state = (S.of(globalNavigatorKey.currentContext!).noNetworkConnection, null);
           }
         });
       },

@@ -1,8 +1,8 @@
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:edumfa_authenticator/extensions/color_extension.dart';
 
-import '../../l10n/app_localizations.dart';
 import '../../model/tokens/push_token.dart';
 import '../../utils/globals.dart';
 import '../../utils/lock_auth.dart';
@@ -50,7 +50,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
             color: Colors.transparent,
             child: DefaultDialog(
               title: Text(
-                AppLocalizations.of(context)!.authenticationRequest,
+                S.of(context).authenticationRequest,
                 style: Theme.of(context).textTheme.titleLarge!,
                 textAlign: TextAlign.center,
               ),
@@ -59,7 +59,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.requestInfo(
+                    S.of(context).requestInfo(
                       widget.tokenWithPushRequest.issuer,
                       widget.tokenWithPushRequest.label,
                     ),
@@ -81,7 +81,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                     child: PressButton(
                       onPressed: () async {
                         if (widget.tokenWithPushRequest.isLocked &&
-                            await lockAuth(localizedReason: AppLocalizations.of(context)!.authToAcceptPushRequest) == false) {
+                            await lockAuth(localizedReason: S.of(context).authToAcceptPushRequest) == false) {
                               return;
                         }
                         globalRef?.read(pushRequestProvider.notifier).acceptPop(widget.tokenWithPushRequest);
@@ -93,7 +93,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            AppLocalizations.of(context)!.accept,
+                            S.of(context).accept,
                             style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
                             textAlign: TextAlign.center,
                             maxLines: 1,
@@ -113,7 +113,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                         style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
                         onPressed: () async {
                           if (widget.tokenWithPushRequest.isLocked &&
-                              await lockAuth(localizedReason: AppLocalizations.of(context)!.authToDeclinePushRequest) == false) {
+                              await lockAuth(localizedReason: S.of(context).authToDeclinePushRequest) == false) {
                             return;
                           }
                           dialogIsOpen = true;
@@ -126,7 +126,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              AppLocalizations.of(context)!.decline,
+                              S.of(context).decline,
                               style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
                               textAlign: TextAlign.center,
                             ),
@@ -147,7 +147,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
         final lineHeight = this.lineHeight;
         return DefaultDialog(
           title: Text(
-            AppLocalizations.of(context)!.authenticationRequest,
+            S.of(context).authenticationRequest,
             style: Theme.of(context).textTheme.titleLarge!,
             textAlign: TextAlign.center,
           ),
@@ -156,7 +156,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                AppLocalizations.of(context)!.requestTriggerdByUserQuestion,
+                S.of(context).requestTriggerdByUserQuestion,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
                 textAlign: TextAlign.center,
               ),
@@ -178,14 +178,14 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            AppLocalizations.of(context)!.yes,
+                            S.of(context).yes,
                             style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
                             textAlign: TextAlign.center,
                           ),
                           FittedBox(
                             fit: BoxFit.scaleDown,
                             child: Text(
-                              AppLocalizations.of(context)!.butDiscardIt,
+                              S.of(context).butDiscardIt,
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                     color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800),
                                   ),
@@ -212,12 +212,12 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            AppLocalizations.of(context)!.no,
+                            S.of(context).no,
                             style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
                             textAlign: TextAlign.center,
                           ),
                           Text(
-                            AppLocalizations.of(context)!.declineIt,
+                            S.of(context).declineIt,
                             style:
                                 Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800)),
                             textAlign: TextAlign.center,

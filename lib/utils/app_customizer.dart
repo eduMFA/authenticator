@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 
 class ApplicationCustomization {
@@ -32,51 +29,37 @@ class ApplicationCustomization {
 
   final String appName;
   final String websiteLink;
-  final Uint8List? appImageUint8List;
-
-  Image get appImage => appImageUint8List != null
-      ? Image.memory(appImageUint8List!)
-      : Image.asset('res/logo/app_logo_transparent.png');
 
   static const defaultCustomization = ApplicationCustomization(
     appName: 'eduMFA Authenticator',
     websiteLink: 'https://edumfa.io/',
-    appImageUint8List: null,
   );
 
   const ApplicationCustomization({
     required this.appName,
     required this.websiteLink,
-    required this.appImageUint8List,
   });
 
   ApplicationCustomization copyWith({
     String? appName,
     String? websiteLink,
-    Uint8List? appIconUint8List,
-    Uint8List? appImageUint8List,
     Color? primaryColor,
   }) =>
       ApplicationCustomization(
         appName: appName ?? this.appName,
         websiteLink: websiteLink ?? this.websiteLink,
-        appImageUint8List: appImageUint8List ?? this.appImageUint8List,
       );
 
   factory ApplicationCustomization.fromJson(Map<String, dynamic> json) =>
       defaultCustomization.copyWith(
         appName: json['appName'] as String,
         websiteLink: json['websiteLink'] as String,
-        appImageUint8List: json['appImageBASE64'] != null
-            ? base64Decode(json['appImageBASE64'] as String)
-            : null,
       );
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'appName': appName,
       'websiteLink': websiteLink,
-      'appImageBASE64': appImageUint8List != null ? base64Encode(appImageUint8List!) : null,
     };
   }
 }
