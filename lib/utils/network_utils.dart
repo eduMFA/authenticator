@@ -24,11 +24,11 @@
 
 import 'dart:io';
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 import 'package:http/io_client.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -58,8 +58,8 @@ class EduMFAIOClient {
         Logger.warning('SocketException while retrying', name: 'utils.dart#triggerNetworkAccessPermission');
         if (globalNavigatorKey.currentState?.context != null) {
           globalRef?.read(statusMessageProvider.notifier).state = (
-            AppLocalizations.of(await globalContext)!.connectionFailed,
-            AppLocalizations.of(await globalContext)!.checkYourNetwork,
+            S.of(await globalContext).connectionFailed,
+            S.of(await globalContext).checkYourNetwork,
           );
         }
         ioClient.close();
@@ -75,8 +75,8 @@ class EduMFAIOClient {
       ioClient.close();
       if (globalNavigatorKey.currentState?.context == null) return false;
       globalRef?.read(statusMessageProvider.notifier).state = (
-        AppLocalizations.of(await globalContext)!.connectionFailed,
-        AppLocalizations.of(await globalContext)!.checkYourNetwork,
+        S.of(await globalContext).connectionFailed,
+        S.of(await globalContext).checkYourNetwork,
       );
       return false;
     } finally {

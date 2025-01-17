@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +8,6 @@ import 'package:local_auth/local_auth.dart';
 import 'package:local_auth_android/local_auth_android.dart';
 import 'package:local_auth_darwin/local_auth_darwin.dart';
 
-import '../l10n/app_localizations.dart';
 import '../widgets/dialog_widgets/default_dialog.dart';
 import 'globals.dart';
 import 'logger.dart';
@@ -28,7 +28,7 @@ Future<bool> lockAuth({required String localizedReason}) async {
           title: ListTile(
             title: Center(
               child: Text(
-                AppLocalizations.of(context)!.authNotSupportedTitle,
+                S.of(context).authNotSupportedTitle,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
@@ -36,7 +36,7 @@ Future<bool> lockAuth({required String localizedReason}) async {
             trailing: const Icon(Icons.lock),
           ),
           content: Text(
-            AppLocalizations.of(context)!.authNotSupportedBody,
+            S.of(context).authNotSupportedBody,
           ),
         );
       },
@@ -45,23 +45,23 @@ Future<bool> lockAuth({required String localizedReason}) async {
   }
 
   AndroidAuthMessages androidAuthStrings = AndroidAuthMessages(
-    biometricRequiredTitle: AppLocalizations.of(globalNavigatorKey.currentContext!)!.biometricRequiredTitle,
-    biometricHint: AppLocalizations.of(globalNavigatorKey.currentContext!)!.biometricHint,
-    biometricNotRecognized: AppLocalizations.of(globalNavigatorKey.currentContext!)!.biometricNotRecognized,
-    biometricSuccess: AppLocalizations.of(globalNavigatorKey.currentContext!)!.biometricSuccess,
-    deviceCredentialsRequiredTitle: AppLocalizations.of(globalNavigatorKey.currentContext!)!.deviceCredentialsRequiredTitle,
-    deviceCredentialsSetupDescription: AppLocalizations.of(globalNavigatorKey.currentContext!)!.deviceCredentialsSetupDescription,
-    signInTitle: AppLocalizations.of(globalNavigatorKey.currentContext!)!.signInTitle,
-    goToSettingsButton: AppLocalizations.of(globalNavigatorKey.currentContext!)!.goToSettingsButton,
-    goToSettingsDescription: AppLocalizations.of(globalNavigatorKey.currentContext!)!.goToSettingsDescription,
-    cancelButton: AppLocalizations.of(globalNavigatorKey.currentContext!)!.cancel,
+    biometricRequiredTitle: S.of(globalNavigatorKey.currentContext!).biometricRequiredTitle,
+    biometricHint: S.of(globalNavigatorKey.currentContext!).biometricHint,
+    biometricNotRecognized: S.of(globalNavigatorKey.currentContext!).biometricNotRecognized,
+    biometricSuccess: S.of(globalNavigatorKey.currentContext!).biometricSuccess,
+    deviceCredentialsRequiredTitle: S.of(globalNavigatorKey.currentContext!).deviceCredentialsRequiredTitle,
+    deviceCredentialsSetupDescription: S.of(globalNavigatorKey.currentContext!).deviceCredentialsSetupDescription,
+    signInTitle: S.of(globalNavigatorKey.currentContext!).signInTitle,
+    goToSettingsButton: S.of(globalNavigatorKey.currentContext!).goToSettingsButton,
+    goToSettingsDescription: S.of(globalNavigatorKey.currentContext!).goToSettingsDescription,
+    cancelButton: S.of(globalNavigatorKey.currentContext!).cancel,
   );
 
   IOSAuthMessages iOSAuthStrings = IOSAuthMessages(
-    lockOut: AppLocalizations.of(globalNavigatorKey.currentContext!)!.lockOut,
-    goToSettingsButton: AppLocalizations.of(globalNavigatorKey.currentContext!)!.goToSettingsButton,
-    goToSettingsDescription: AppLocalizations.of(globalNavigatorKey.currentContext!)!.goToSettingsDescription,
-    cancelButton: AppLocalizations.of(globalNavigatorKey.currentContext!)!.cancel,
+    lockOut: S.of(globalNavigatorKey.currentContext!).lockOut,
+    goToSettingsButton: S.of(globalNavigatorKey.currentContext!).goToSettingsButton,
+    goToSettingsDescription: S.of(globalNavigatorKey.currentContext!).goToSettingsDescription,
+    cancelButton: S.of(globalNavigatorKey.currentContext!).cancel,
   );
 
   try {

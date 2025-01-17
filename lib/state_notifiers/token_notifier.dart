@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:base32/base32.dart';
 import 'package:collection/collection.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +15,6 @@ import 'package:pointycastle/asymmetric/api.dart';
 import '../model/enums/token_origin_source_type.dart';
 
 import '../interfaces/repo/token_repository.dart';
-import '../l10n/app_localizations.dart';
 import '../model/enums/push_token_rollout_state.dart';
 import '../model/push_request.dart';
 import '../model/states/token_state.dart';
@@ -197,7 +197,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
     await updatingTokens;
     log('showToken');
     updatingTokens = Future(() async {
-      final authenticated = await lockAuth(localizedReason: AppLocalizations.of(globalNavigatorKey.currentContext!)!.authenticateToShowOtp);
+      final authenticated = await lockAuth(localizedReason: S.of(globalNavigatorKey.currentContext!).authenticateToShowOtp);
       log('authenticated: $authenticated');
       if (!authenticated) return null;
       await loadingRepo;
@@ -364,8 +364,8 @@ class TokenNotifier extends StateNotifier<TokenState> {
 
       if (globalNavigatorKey.currentContext != null) {
         globalRef?.read(statusMessageProvider.notifier).state = (
-          AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorRollOutNotPossibleAnymore,
-          AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorTokenExpired(token.label),
+          S.of(globalNavigatorKey.currentContext!).errorRollOutNotPossibleAnymore,
+          S.of(globalNavigatorKey.currentContext!).errorTokenExpired(token.label),
         );
       }
       _removeToken(token);
@@ -443,15 +443,15 @@ class TokenNotifier extends StateNotifier<TokenState> {
         try {
           final message = response.body.isNotEmpty ? (json.decode(response.body)['result']?['error']?['message']) : '';
           globalRef?.read(statusMessageProvider.notifier).state = (
-            AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorRollOutFailed(token.label),
+            S.of(globalNavigatorKey.currentContext!).errorRollOutFailed(token.label),
             message,
           );
         } on FormatException {
           // Format Exception is thrown if the response body is not a valid json. This happens if the server is not reachable.
 
           globalRef?.read(statusMessageProvider.notifier).state = (
-            AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorRollOutFailed(token.label),
-            AppLocalizations.of(globalNavigatorKey.currentContext!)!.statusCode(response.statusCode)
+            S.of(globalNavigatorKey.currentContext!).errorRollOutFailed(token.label),
+            S.of(globalNavigatorKey.currentContext!).statusCode(response.statusCode)
           );
         }
 
@@ -463,19 +463,19 @@ class TokenNotifier extends StateNotifier<TokenState> {
       if (e is PlatformException && e.code == FIREBASE_TOKEN_ERROR_CODE || e is SocketException || e is TimeoutException || e is FirebaseException) {
         Logger.warning('Connection error: Roll out push token failed.', name: 'token_notifier.dart#rolloutPushToken', error: e, stackTrace: s);
         showMessage(
-          message: AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorRollOutNoConnectionToServer(token.label),
+          message: S.of(globalNavigatorKey.currentContext!).errorRollOutNoConnectionToServer(token.label),
           duration: const Duration(seconds: 3),
         );
       } else if (e is HandshakeException) {
         Logger.warning('SSL error: Roll out push token failed.', name: 'token_notifier.dart#rolloutPushToken', error: e, stackTrace: s);
         showMessage(
-          message: AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorRollOutSSLHandshakeFailed,
+          message: S.of(globalNavigatorKey.currentContext!).errorRollOutSSLHandshakeFailed,
           duration: const Duration(seconds: 3),
         );
       } else {
         if (globalNavigatorKey.currentContext != null) {
           showMessage(
-            message: AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorRollOutUnknownError(e),
+            message: S.of(globalNavigatorKey.currentContext!).errorRollOutUnknownError(e),
             duration: const Duration(seconds: 3),
           );
         }

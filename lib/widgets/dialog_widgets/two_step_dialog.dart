@@ -24,8 +24,8 @@
 import 'dart:typed_data';
 import 'dart:ui';
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/utils/crypto_utils.dart';
 import 'package:edumfa_authenticator/utils/utils.dart';
 import 'package:edumfa_authenticator/utils/view_utils.dart';
@@ -81,7 +81,7 @@ class GenerateTwoStepDialog extends StatelessWidget {
       child: DefaultDialog(
         scrollable: true,
         title: Text(
-          AppLocalizations.of(context)!.generatingPhonePart,
+          S.of(context).generatingPhonePart,
           overflow: TextOverflow.fade,
           softWrap: false,
         ),
@@ -112,7 +112,7 @@ class _TwoStepDialogState extends State<TwoStepDialog> {
         child: DefaultDialog(
           scrollable: true,
           title: Text(
-            AppLocalizations.of(context)!.phonePart,
+            S.of(context).phonePart,
             overflow: TextOverflow.fade,
             softWrap: false,
           ),
@@ -124,7 +124,7 @@ class _TwoStepDialogState extends State<TwoStepDialog> {
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
-                AppLocalizations.of(context)!.dismiss,
+                S.of(context).dismiss,
                 overflow: TextOverflow.fade,
                 softWrap: false,
               ),

@@ -1,4 +1,4 @@
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view.dart';
@@ -35,14 +35,14 @@ class DrawerWidget extends ConsumerWidget {
                 children: [
                   ListTile(
                     leading: const Icon(Icons.key),
-                    title: Text(AppLocalizations.of(context)!.tokens),
+                    title: Text(S.of(context).tokens),
                     onTap: () {
                       Navigator.pop(context);
                       Navigator.pushNamed(context, MainView.routeName);
                     },
                   ),
                   ListTile(
-                    title: Text(AppLocalizations.of(context)!.settings),
+                    title: Text(S.of(context).settings),
                     leading: const Icon(Icons.settings),
                     onTap: () {
                       Navigator.pop(context);
