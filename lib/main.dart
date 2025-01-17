@@ -20,9 +20,12 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
+import 'dart:io';
+
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
@@ -60,6 +63,22 @@ class EduMFAAuthenticator extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     globalRef = ref;
     final locale = ref.watch(settingsProvider).currentLocale;
+
+    if (Platform.isAndroid) {
+      final isTablet = MediaQuery.of(context).size.shortestSide > 600;
+
+      var preferredOrientations = <DeviceOrientation>[DeviceOrientation.portraitUp];
+      if (isTablet) {
+        preferredOrientations.addAll([
+          DeviceOrientation.portraitDown,
+          DeviceOrientation.landscapeLeft,
+          DeviceOrientation.landscapeRight,
+        ]);
+      }
+      SystemChrome.setPreferredOrientations(preferredOrientations);
+    }
+
+
     return LayoutBuilder(builder: (context, constraints) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(appConstraintsProvider.notifier).state = constraints;
@@ -88,7 +107,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
         routes: {
           FeedbackView.routeName: (context) => const FeedbackView(),
           LicenseView.routeName: (context) => LicenseView(
-                appImage: _customization.appImage,
                 appName: _customization.appName,
                 websiteLink: _customization.websiteLink,
               ),
@@ -101,7 +119,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
           PushTokensView.routeName: (context) => const PushTokensView(),
           SettingsView.routeName: (context) => const SettingsView(),
           SplashScreen.routeName: (context) => SplashScreen(
-                appImage: _customization.appImage,
                 appName: _customization.appName,
               ),
           QRScannerView.routeName: (context) => const QRScannerView(),
