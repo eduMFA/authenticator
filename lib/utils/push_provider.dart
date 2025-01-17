@@ -27,10 +27,10 @@ import 'dart:convert';
 
 import 'package:collection/collection.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:http/http.dart';
 
-import '../l10n/app_localizations.dart';
 import '../model/push_request.dart';
 import '../model/tokens/push_token.dart';
 import '../repo/secure_token_repository.dart';
@@ -143,7 +143,7 @@ class PushProvider {
       try {
         return _handleIncomingRequestForeground(data);
       } catch (e, s) {
-        final errorMessage = AppLocalizations.of(globalNavigatorKey.currentContext!)!.unexpectedError;
+        final errorMessage = S.of(globalNavigatorKey.currentContext!).unexpectedError;
         Logger.error(errorMessage, name: 'push_provider.dart#_foregroundHandler', error: e, stackTrace: s);
       }
     });
@@ -243,8 +243,8 @@ class PushProvider {
       if (isManually) {
         Logger.info('Tried to poll without any internet connection available.', name: 'push_provider.dart#pollForChallenges');
         globalRef?.read(statusMessageProvider.notifier).state = (
-          AppLocalizations.of(globalNavigatorKey.currentContext!)!.pollingFailed,
-          AppLocalizations.of(globalNavigatorKey.currentContext!)!.noNetworkConnection,
+          S.of(globalNavigatorKey.currentContext!).pollingFailed,
+          S.of(globalNavigatorKey.currentContext!).noNetworkConnection,
         );
       }
       return;
@@ -270,8 +270,8 @@ class PushProvider {
     String? signature = await rsaUtils.trySignWithToken(token, message);
     if (signature == null) {
       globalRef?.read(statusMessageProvider.notifier).state = (
-        AppLocalizations.of(globalNavigatorKey.currentContext!)!.pollingFailedFor(token.serial),
-        AppLocalizations.of(globalNavigatorKey.currentContext!)!.couldNotSignMessage,
+        S.of(globalNavigatorKey.currentContext!).pollingFailedFor(token.serial),
+        S.of(globalNavigatorKey.currentContext!).couldNotSignMessage,
       );
       Logger.warning('Polling push tokens failed because signing the message failed.', name: 'push_provider.dart#pollForChallenge');
       return;
@@ -290,7 +290,7 @@ class PushProvider {
           : await const EduMFAIOClient().doGet(url: token.url!, parameters: parameters, sslVerify: token.sslVerify);
     } catch (e) {
       globalRef?.read(statusMessageProvider.notifier).state = (
-        AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorWhenPullingChallenges(token.serial),
+        S.of(globalNavigatorKey.currentContext!).errorWhenPullingChallenges(token.serial),
         null,
       );
       return;
@@ -303,8 +303,8 @@ class PushProvider {
         } catch (_) {
           if (isManually) {
             globalRef?.read(statusMessageProvider.notifier).state = (
-              AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorWhenPullingChallenges(token.serial),
-              AppLocalizations.of(globalNavigatorKey.currentContext!)!.pushRequestParseError,
+              S.of(globalNavigatorKey.currentContext!).errorWhenPullingChallenges(token.serial),
+              S.of(globalNavigatorKey.currentContext!).pushRequestParseError,
             );
           }
           return;
@@ -317,8 +317,8 @@ class PushProvider {
         final error = getErrorMessageFromResponse(response);
         if (isManually) {
           globalRef?.read(statusMessageProvider.notifier).state = (
-            AppLocalizations.of(globalNavigatorKey.currentContext!)!.pollingFailedFor(token.serial),
-            error ?? AppLocalizations.of(globalNavigatorKey.currentContext!)!.statusCode(response.statusCode),
+            S.of(globalNavigatorKey.currentContext!).pollingFailedFor(token.serial),
+            error ?? S.of(globalNavigatorKey.currentContext!).statusCode(response.statusCode),
           );
         }
         Logger.warning('Polling push token failed with status code ${response.statusCode}',
@@ -329,8 +329,8 @@ class PushProvider {
         final error = getErrorMessageFromResponse(response);
         if (isManually) {
           globalRef?.read(statusMessageProvider.notifier).state = (
-            AppLocalizations.of(globalNavigatorKey.currentContext!)!.pollingFailedFor(token.serial),
-            error ?? AppLocalizations.of(globalNavigatorKey.currentContext!)!.statusCode(response.statusCode),
+            S.of(globalNavigatorKey.currentContext!).pollingFailedFor(token.serial),
+            error ?? S.of(globalNavigatorKey.currentContext!).statusCode(response.statusCode),
           );
         }
         return;

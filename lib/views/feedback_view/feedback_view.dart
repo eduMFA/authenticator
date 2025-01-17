@@ -1,6 +1,6 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../l10n/app_localizations.dart';
 import '../../utils/pi_mailer.dart';
 import '../../utils/view_utils.dart';
 import '../main_view/main_view.dart';
@@ -48,7 +48,7 @@ class _FeedbackViewState extends State<FeedbackView> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.feedback),
+          title: Text(S.of(context).feedback),
         ),
         body: Padding(
           padding: const EdgeInsets.all(14.0),
@@ -60,7 +60,7 @@ class _FeedbackViewState extends State<FeedbackView> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: Text(
-                    AppLocalizations.of(context)!.feedbackTitle,
+                    S.of(context).feedbackTitle,
                     style: Theme.of(context).textTheme.titleLarge,
                     textAlign: TextAlign.center,
                   ),
@@ -72,7 +72,7 @@ class _FeedbackViewState extends State<FeedbackView> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          AppLocalizations.of(context)!.feedbackDescription,
+                          S.of(context).feedbackDescription,
                           style: Theme.of(context).textTheme.titleMedium,
                           textAlign: TextAlign.justify,
                         ),
@@ -84,7 +84,7 @@ class _FeedbackViewState extends State<FeedbackView> {
                             border: const OutlineInputBorder(borderSide: BorderSide(width: 1.5)),
                             enabledBorder: const OutlineInputBorder(borderSide: BorderSide(width: 1.5)),
                             focusedBorder: const OutlineInputBorder(borderSide: BorderSide(width: 1.5)),
-                            labelText: AppLocalizations.of(context)!.feedback,
+                            labelText: S.of(context).feedback,
                           ),
                           maxLines: 5,
                         ),
@@ -94,16 +94,16 @@ class _FeedbackViewState extends State<FeedbackView> {
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: '${AppLocalizations.of(context)!.feedbackHint} ',
+                                text: '${S.of(context).feedbackHint} ',
                                 style: Theme.of(context).textTheme.bodySmall,
                               ),
-                              TextSpan(text: AppLocalizations.of(context)!.feedbackPrivacyPolicy1, style: Theme.of(context).textTheme.bodySmall),
+                              TextSpan(text: S.of(context).feedbackPrivacyPolicy1, style: Theme.of(context).textTheme.bodySmall),
                               TextSpan(
-                                text: AppLocalizations.of(context)!.feedbackPrivacyPolicy2,
+                                text: S.of(context).feedbackPrivacyPolicy2,
                                 style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.blue),
                                 recognizer: TapGestureRecognizer()..onTap = () => launchUrl(policyStatementUri),
                               ),
-                              TextSpan(text: AppLocalizations.of(context)!.feedbackPrivacyPolicy3, style: Theme.of(context).textTheme.bodySmall),
+                              TextSpan(text: S.of(context).feedbackPrivacyPolicy3, style: Theme.of(context).textTheme.bodySmall),
                             ],
                           ),
                         ),
@@ -123,7 +123,7 @@ class _FeedbackViewState extends State<FeedbackView> {
                           SizedBox(
                             width: 70,
                             child: Text(
-                              AppLocalizations.of(context)!.addSystemInfo,
+                              S.of(context).addSystemInfo,
                               textAlign: TextAlign.right,
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
@@ -157,13 +157,13 @@ class _FeedbackViewState extends State<FeedbackView> {
                         if (sended) {
                           showAsyncDialog(
                             builder: (context) => DefaultDialog(
-                              title: Text(AppLocalizations.of(context)!.feedbackSentTitle),
-                              content: Text(AppLocalizations.of(context)!.feedbackSentDescription),
+                              title: Text(S.of(context).feedbackSentTitle),
+                              content: Text(S.of(context).feedbackSentDescription),
                               actionsAlignment: MainAxisAlignment.center,
                               actions: [
                                 ElevatedButton(
                                     onPressed: () => Navigator.of(context).popUntil((route) => route.settings.name == MainView.routeName),
-                                    child: Text(AppLocalizations.of(context)!.ok))
+                                    child: Text(S.of(context).ok))
                               ],
                             ),
                             barrierDismissible: false,
@@ -173,7 +173,7 @@ class _FeedbackViewState extends State<FeedbackView> {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(AppLocalizations.of(context)!.send),
+                          Text(S.of(context).send),
                           const SizedBox(width: 8),
                           const Icon(Icons.mail_outline),
                         ],

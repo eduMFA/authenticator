@@ -25,12 +25,12 @@
 
 import 'dart:convert';
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:mutex/mutex.dart';
 import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/model/tokens/token.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -198,8 +198,8 @@ class SecureTokenRepository implements TokenRepository {
 Future<void> _decryptErrorDialog() => showAsyncDialog(
       barrierDismissible: false,
       builder: (context) => DefaultDialog(
-        title: Text(AppLocalizations.of(context)!.decryptErrorTitle),
-        content: Text(AppLocalizations.of(context)!.decryptErrorContent),
+        title: Text(S.of(context).decryptErrorTitle),
+        content: Text(S.of(context).decryptErrorContent),
         actions: [
           DefaultDialogButton(
             onPressed: () async {
@@ -211,12 +211,12 @@ Future<void> _decryptErrorDialog() => showAsyncDialog(
               }
             },
             child: Text(
-              AppLocalizations.of(context)!.decryptErrorButtonDelete,
+              S.of(context).decryptErrorButtonDelete,
               style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
           ),
           DefaultDialogButton(
-              child: Text(AppLocalizations.of(context)!.decryptErrorButtonSendError),
+              child: Text(S.of(context).decryptErrorButtonSendError),
               onPressed: () async {
                 Logger.info('Sending error report', name: 'storage_utils.dart#_decryptErrorDialog');
                 await showDialog(
@@ -247,7 +247,7 @@ Future<void> _decryptErrorDialog() => showAsyncDialog(
               Navigator.pop(context);
               globalRef?.read(tokenProvider.notifier).loadStateFromRepo();
             },
-            child: Text(AppLocalizations.of(context)!.decryptErrorButtonRetry),
+            child: Text(S.of(context).decryptErrorButtonRetry),
           ),
         ],
       ),
@@ -255,12 +255,12 @@ Future<void> _decryptErrorDialog() => showAsyncDialog(
 
 Future<bool?> _decryptErrorDeleteTokenConfirmationDialog() => showAsyncDialog<bool>(
       builder: (context) => DefaultDialog(
-        title: Text(AppLocalizations.of(context)!.decryptErrorTitle),
-        content: Text(AppLocalizations.of(context)!.decryptErrorDeleteConfirmationContent),
+        title: Text(S.of(context).decryptErrorTitle),
+        content: Text(S.of(context).decryptErrorDeleteConfirmationContent),
         actions: [
           DefaultDialogButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text(AppLocalizations.of(context)!.cancel),
+            child: Text(S.of(context).cancel),
           ),
           DefaultDialogButton(
             onPressed: () async {
@@ -273,7 +273,7 @@ Future<bool?> _decryptErrorDeleteTokenConfirmationDialog() => showAsyncDialog<bo
               await SecureTokenRepository._storage.deleteAll();
             },
             child: Text(
-              AppLocalizations.of(context)!.decryptErrorButtonDelete,
+              S.of(context).decryptErrorButtonDelete,
               style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
           ),

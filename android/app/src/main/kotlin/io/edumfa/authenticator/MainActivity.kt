@@ -1,33 +1,21 @@
 package io.edumfa.authenticator
 
-import android.R.id.input
-import android.appwidget.AppWidgetManager
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
-import android.content.res.Configuration
 import android.net.Uri
-import android.view.WindowManager
-import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterFragmentActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugins.GeneratedPluginRegistrant
-import java.io.InputStream
 import java.io.ObjectInputStream
-import java.net.URI
-
 
 class MainActivity : FlutterFragmentActivity() {
 
     private val channelName = "readValueFromFile"
 
-    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
-        GeneratedPluginRegistrant.registerWith(flutterEngine);
+    override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        GeneratedPluginRegistrant.registerWith(flutterEngine)
         // getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 
-        var channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, channelName)
+        val channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, channelName)
 
         channel.setMethodCallHandler { call, result ->
 

@@ -1,7 +1,7 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../l10n/app_localizations.dart';
 import '../../../../../model/tokens/token.dart';
 import '../../../../../utils/globals.dart';
 import '../../../../../utils/lock_auth.dart';
@@ -19,10 +19,10 @@ class DefaultEditAction extends TokenAction {
   PopupMenuItem<String> build(BuildContext context, WidgetRef ref) {
     return PopupMenuItem<String>(
         value: 'edit',
-        child: Text(AppLocalizations.of(context)!.rename),
+        child: Text(S.of(context).rename),
         onTap: () async {
           if (token.isLocked &&
-              await lockAuth(localizedReason: AppLocalizations.of(context)!.editLockedToken) == false) {
+              await lockAuth(localizedReason: S.of(context).editLockedToken) == false) {
             return;
           }
           _showDialog();
@@ -39,7 +39,7 @@ class DefaultEditAction extends TokenAction {
           return DefaultDialog(
             scrollable: true,
             title: Text(
-              AppLocalizations.of(context)!.renameToken,
+              S.of(context).renameToken,
               overflow: TextOverflow.fade,
               softWrap: false,
             ),
@@ -48,10 +48,10 @@ class DefaultEditAction extends TokenAction {
               controller: nameInputController,
               onChanged: (value) {},
               decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context)!.name),
+                  labelText: S.of(context).name),
               validator: (value) {
                 if (value!.isEmpty) {
-                  return AppLocalizations.of(context)!.name;
+                  return S.of(context).name;
                 }
                 return null;
               },
@@ -59,7 +59,7 @@ class DefaultEditAction extends TokenAction {
             actions: <Widget>[
               TextButton(
                 child: Text(
-                  AppLocalizations.of(context)!.cancel,
+                  S.of(context).cancel,
                   overflow: TextOverflow.fade,
                   softWrap: false,
                 ),
@@ -67,7 +67,7 @@ class DefaultEditAction extends TokenAction {
               ),
               TextButton(
                 child: Text(
-                  AppLocalizations.of(context)!.rename,
+                  S.of(context).rename,
                   overflow: TextOverflow.fade,
                   softWrap: false,
                 ),

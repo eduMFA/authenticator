@@ -1,6 +1,6 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import '../l10n/app_localizations.dart';
 import '../model/tokens/token.dart';
 import '../utils/lock_auth.dart';
 
@@ -20,7 +20,7 @@ class HideableWidgetTrailing extends StatelessWidget {
     return token.isLocked && isHiddenNotifier.value
         ? IconButton(
             onPressed: () async {
-              if (await lockAuth(localizedReason: AppLocalizations.of(context)!.authenticateToShowOtp)) {
+              if (await lockAuth(localizedReason: S.of(context).authenticateToShowOtp)) {
                 isHiddenNotifier.value = false;
               }
             },
