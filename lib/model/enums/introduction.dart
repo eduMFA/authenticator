@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../l10n/app_localizations.dart';
+import '../../generated/l10n.dart';
 import '../../utils/riverpod_providers.dart';
 import '../states/introduction_state.dart';
 
@@ -32,9 +32,9 @@ extension IntroductionExtension on Introduction {
 
   String hintText(BuildContext context) => switch (this) {
         Introduction.introductionScreen => '',
-        Introduction.scanQrCode => AppLocalizations.of(context)!.introScanQrCode,
-        Introduction.editToken => AppLocalizations.of(context)!.introEditToken,
-        Introduction.lockToken => AppLocalizations.of(context)!.introLockToken,
-        Introduction.pollForChallenges => AppLocalizations.of(context)!.introPollForChallenges,
+        Introduction.scanQrCode => S.of(context).introScanQrCode,
+        Introduction.editToken => S.of(context).introEditToken,
+        Introduction.lockToken => S.of(context).introLockToken,
+        Introduction.pollForChallenges => S.of(context).introPollForChallenges,
       };
 }

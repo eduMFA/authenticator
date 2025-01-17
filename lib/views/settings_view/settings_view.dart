@@ -1,11 +1,11 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:edumfa_authenticator/widgets/global_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../l10n/app_localizations.dart';
 import '../../model/tokens/push_token.dart';
 import '../../utils/globals.dart';
 import '../../utils/riverpod_providers.dart';
@@ -37,7 +37,7 @@ class SettingsView extends ConsumerView {
         drawer: const DrawerWidget(),
         appBar: AppBar(
           title: Text(
-            AppLocalizations.of(context)!.settings,
+            S.of(context).settings,
 
             overflow: TextOverflow.ellipsis, // maxLines: 2 only works like this.
             maxLines: 2, // Title can be shown on small screens too.
@@ -49,7 +49,7 @@ class SettingsView extends ConsumerView {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SettingsGroup(
-                title: AppLocalizations.of(context)!.settingsGroupGeneral,
+                title: S.of(context).settingsGroupGeneral,
                 children: [
                   SettingsListTileButton(
                     onPressed: () async {
@@ -58,7 +58,7 @@ class SettingsView extends ConsumerView {
                       }
                     },
                     title: Text(
-                      AppLocalizations.of(context)!.privacyPolicy,
+                      S.of(context).privacyPolicy,
                       style: Theme.of(context).textTheme.titleMedium,
                       overflow: TextOverflow.fade,
                       softWrap: false,
@@ -69,7 +69,7 @@ class SettingsView extends ConsumerView {
                       Navigator.pushNamed(context, LicenseView.routeName);
                     },
                     title: Text(
-                      AppLocalizations.of(context)!.licensesAndVersion,
+                      S.of(context).licensesAndVersion,
                       style: Theme.of(context).textTheme.titleMedium,
                       overflow: TextOverflow.fade,
                       softWrap: false,
@@ -91,11 +91,11 @@ class SettingsView extends ConsumerView {
               ),
               const Divider(),
               SettingsGroup(
-                title: AppLocalizations.of(context)!.theme,
+                title: S.of(context).theme,
                 children: [
                   RadioListTile(
                     title: Text(
-                      AppLocalizations.of(context)!.lightTheme,
+                      S.of(context).lightTheme,
                       style: Theme.of(context).textTheme.titleMedium,
                       overflow: TextOverflow.fade,
                       softWrap: false,
@@ -109,7 +109,7 @@ class SettingsView extends ConsumerView {
                   ),
                   RadioListTile(
                     title: Text(
-                      AppLocalizations.of(context)!.darkTheme,
+                      S.of(context).darkTheme,
                       style: Theme.of(context).textTheme.titleMedium,
                       overflow: TextOverflow.fade,
                       softWrap: false,
@@ -123,7 +123,7 @@ class SettingsView extends ConsumerView {
                   ),
                   RadioListTile(
                     title: Text(
-                      AppLocalizations.of(context)!.systemTheme,
+                      S.of(context).systemTheme,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     value: ThemeMode.system,
@@ -138,15 +138,15 @@ class SettingsView extends ConsumerView {
               const Divider(),
               SettingsGroup(
                 isActive: enablePushSettingsGroup,
-                title: AppLocalizations.of(context)!.pushToken,
+                title: S.of(context).pushToken,
                 children: [
                   ListTile(
                     title: Text(
-                      AppLocalizations.of(context)!.synchronizePushTokens,
+                      S.of(context).synchronizePushTokens,
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     subtitle: Text(
-                      AppLocalizations.of(context)!.synchronizesTokensWithServer,
+                      S.of(context).synchronizesTokensWithServer,
                       overflow: TextOverflow.fade,
                     ),
                     trailing: ElevatedButton(
@@ -161,7 +161,7 @@ class SettingsView extends ConsumerView {
                             }
                           : null,
                       child: Text(
-                        AppLocalizations.of(context)!.sync,
+                        S.of(context).sync,
                         overflow: TextOverflow.fade,
                         softWrap: false,
                       ),
@@ -172,7 +172,7 @@ class SettingsView extends ConsumerView {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: AppLocalizations.of(context)!.enablePolling,
+                            text: S.of(context).enablePolling,
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                           // Add clickable icon to inform user of unsupported push tokens (for polling)
@@ -194,7 +194,7 @@ class SettingsView extends ConsumerView {
                       ),
                     ),
                     subtitle: Text(
-                      AppLocalizations.of(context)!.requestPushChallengesPeriodically,
+                      S.of(context).requestPushChallengesPeriodically,
                       overflow: TextOverflow.fade,
                     ),
                     trailing: Switch(
@@ -206,11 +206,11 @@ class SettingsView extends ConsumerView {
               ),
               const Divider(),
               SettingsGroup(
-                title: AppLocalizations.of(context)!.errorLogTitle,
+                title: S.of(context).errorLogTitle,
                 children: [
                   ListTile(
                     title: Text(
-                      AppLocalizations.of(context)!.logMenu,
+                      S.of(context).logMenu,
                       style: Theme.of(context).textTheme.titleMedium,
                       overflow: TextOverflow.fade,
                       softWrap: false,
@@ -218,7 +218,7 @@ class SettingsView extends ConsumerView {
                     style: ListTileStyle.list,
                     trailing: ElevatedButton(
                       child: Text(
-                        AppLocalizations.of(context)!.open,
+                        S.of(context).open,
                         overflow: TextOverflow.fade,
                         softWrap: false,
                       ),
