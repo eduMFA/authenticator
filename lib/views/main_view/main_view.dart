@@ -1,3 +1,4 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
@@ -6,8 +7,6 @@ import 'package:edumfa_authenticator/views/view_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
-
-import '../../l10n/app_localizations.dart';
 
 class MainView extends ConsumerStatefulView {
   static const routeName = '/main';
@@ -59,12 +58,12 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
           NavigationDestination(
             icon: const Icon(Icons.home_outlined),
             selectedIcon: const Icon(Icons.home),
-            label: AppLocalizations.of(context)!.tokens,
+            label: S.of(context).tokens,
           ),
           NavigationDestination(
             icon: const Icon(Icons.settings_outlined),
             selectedIcon: const Icon(Icons.settings),
-            label: AppLocalizations.of(context)!.settings,
+            label: S.of(context).settings,
           ),
         ],
       ),
