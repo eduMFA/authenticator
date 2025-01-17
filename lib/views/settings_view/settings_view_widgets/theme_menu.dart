@@ -1,5 +1,5 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -12,12 +12,12 @@ class ThemeMenu extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: DefaultDialog(
         scrollable: true,
-        title: Text(AppLocalizations.of(context)!.theme),
+        title: Text(S.of(context).theme),
         content: Column(
           children: [
             RadioListTile(
               title: Text(
-                AppLocalizations.of(context)!.autoTheme,
+                S.of(context).autoTheme,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               value: ThemeMode.system,
@@ -28,7 +28,7 @@ class ThemeMenu extends StatelessWidget {
             ),
             RadioListTile(
               title: Text(
-                AppLocalizations.of(context)!.lightTheme,
+                S.of(context).lightTheme,
                 style: Theme.of(context).textTheme.titleMedium,
                 overflow: TextOverflow.fade,
                 softWrap: false,
@@ -41,7 +41,7 @@ class ThemeMenu extends StatelessWidget {
             ),
             RadioListTile(
               title: Text(
-                AppLocalizations.of(context)!.darkTheme,
+                S.of(context).darkTheme,
                 style: Theme.of(context).textTheme.titleMedium,
                 overflow: TextOverflow.fade,
                 softWrap: false,

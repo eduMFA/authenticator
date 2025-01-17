@@ -1,4 +1,4 @@
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 extension ThemeExtension on ThemeMode {
@@ -6,11 +6,11 @@ extension ThemeExtension on ThemeMode {
   String getName(BuildContext context) {
     switch (this) {
       case ThemeMode.system:
-        return AppLocalizations.of(context)!.autoTheme;
+        return S.of(context).autoTheme;
       case ThemeMode.light:
-        return AppLocalizations.of(context)!.lightTheme;
+        return S.of(context).lightTheme;
       case ThemeMode.dark:
-        return AppLocalizations.of(context)!.darkTheme;
+        return S.of(context).darkTheme;
     }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/extensions/theme_extension.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/theme_menu.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +93,7 @@ class SettingsView extends ConsumerView {
               ),
               const Divider(),
               ListTile(
-                title: Text(AppLocalizations.of(context)!.theme),
+                title: Text(S.of(context).theme),
                 subtitle: Text((EasyDynamicTheme.of(context).themeMode ?? ThemeMode.system).getName(context)),
                 onTap: () => showDialog(
                   context: context,

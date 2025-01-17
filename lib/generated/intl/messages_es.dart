@@ -259,8 +259,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sinchronizar tokens con el eduMFA servidor."),
         "synchronizingTokens": MessageLookupByLibrary.simpleMessage(
             "Sincronización de los tokens."),
-        "systemTheme": MessageLookupByLibrary.simpleMessage(
-            "Utilizar el tema del teléfono"),
         "theme": MessageLookupByLibrary.simpleMessage("Tema"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Las siguientes tokens no admiten la sincronización y deben volver a desplegarse:"),
