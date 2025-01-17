@@ -1,6 +1,6 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../l10n/app_localizations.dart';
 import '../../../../../model/enums/push_token_rollout_state.dart';
 import '../../../../../model/tokens/push_token.dart';
 import '../../../../../utils/globals.dart';
@@ -38,7 +38,7 @@ class RolloutFailedWidget extends StatelessWidget {
                 child: PressButton(
                   onPressed: () => globalRef?.read(tokenProvider.notifier).rolloutPushToken(token),
                   child: Text(
-                    AppLocalizations.of(context)!.retryRollout,
+                    S.of(context).retryRollout,
                     style: Theme.of(context).textTheme.bodyMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
@@ -52,7 +52,7 @@ class RolloutFailedWidget extends StatelessWidget {
                   style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
                   onPressed: () => _showDialog(),
                   child: Text(
-                    AppLocalizations.of(context)!.delete,
+                    S.of(context).delete,
                     style: Theme.of(context).textTheme.bodyMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
@@ -73,14 +73,14 @@ class RolloutFailedWidget extends StatelessWidget {
         return DefaultDialog(
           scrollable: true,
           title: Text(
-            AppLocalizations.of(context)!.confirmDeletion,
+            S.of(context).confirmDeletion,
           ),
-          content: Text(AppLocalizations.of(context)!.confirmDeletionOf(token.label)),
+          content: Text(S.of(context).confirmDeletionOf(token.label)),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
-                AppLocalizations.of(context)!.cancel,
+                S.of(context).cancel,
                 overflow: TextOverflow.fade,
                 softWrap: false,
               ),
@@ -91,7 +91,7 @@ class RolloutFailedWidget extends StatelessWidget {
                 Navigator.of(context).pop();
               },
               child: Text(
-                AppLocalizations.of(context)!.delete,
+                S.of(context).delete,
                 overflow: TextOverflow.fade,
                 softWrap: false,
               ),

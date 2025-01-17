@@ -21,8 +21,8 @@
   limitations under the License.
 */
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/view_utils.dart';
 
@@ -54,11 +54,11 @@ class _UpdateFirebaseTokenDialogState extends State<UpdateFirebaseTokenDialog> {
   Widget build(BuildContext context) {
     return DefaultDialog(
       scrollable: true,
-      title: Text(AppLocalizations.of(context)!.synchronizingTokens),
+      title: Text(S.of(context).synchronizingTokens),
       content: _content,
       actions: [
         TextButton(
-          child: Text(AppLocalizations.of(context)!.dismiss),
+          child: Text(S.of(context).dismiss),
           onPressed: () => Navigator.pop(context),
         ),
       ],
@@ -72,7 +72,7 @@ class _UpdateFirebaseTokenDialogState extends State<UpdateFirebaseTokenDialog> {
 
     final tuple = await PushProvider.updateFirebaseToken();
     if (tuple == null) {
-      showMessage(message: AppLocalizations.of(globalNavigatorKey.currentContext!)!.errorSynchronizationNoNetworkConnection);
+      showMessage(message: S.of(globalNavigatorKey.currentContext!).errorSynchronizationNoNetworkConnection);
       return;
     }
     late List<PushToken> tokenWithFailedUpdate;
@@ -82,14 +82,14 @@ class _UpdateFirebaseTokenDialogState extends State<UpdateFirebaseTokenDialog> {
     if (tokenWithFailedUpdate.isEmpty && tokenWithOutUrl.isEmpty) {
       if (!mounted) return;
       setState(() {
-        _content = Text(AppLocalizations.of(context)!.allTokensSynchronized);
+        _content = Text(S.of(context).allTokensSynchronized);
       });
     } else {
       List<Widget> children = [];
 
       if (tokenWithFailedUpdate.isNotEmpty) {
         children.add(
-          Text('${AppLocalizations.of(globalNavigatorKey.currentContext!)!.synchronizationFailed}\n'),
+          Text('${S.of(globalNavigatorKey.currentContext!).synchronizationFailed}\n'),
         );
         for (PushToken p in tokenWithFailedUpdate) {
           children.add(Text('• ${p.label}'));
@@ -101,7 +101,7 @@ class _UpdateFirebaseTokenDialogState extends State<UpdateFirebaseTokenDialog> {
           children.add(const Divider());
         }
 
-        children.add(Text(AppLocalizations.of(globalNavigatorKey.currentContext!)!.tokensDoNotSupportSynchronization));
+        children.add(Text(S.of(globalNavigatorKey.currentContext!).tokensDoNotSupportSynchronization));
         for (PushToken p in tokenWithOutUrl) {
           children.add(Text('• ${p.label}'));
         }

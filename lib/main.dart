@@ -20,10 +20,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 */
+import 'dart:io';
+
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
@@ -59,6 +63,22 @@ class EduMFAAuthenticator extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     globalRef = ref;
     final locale = ref.watch(settingsProvider).currentLocale;
+
+    if (Platform.isAndroid) {
+      final isTablet = MediaQuery.of(context).size.shortestSide > 600;
+
+      var preferredOrientations = <DeviceOrientation>[DeviceOrientation.portraitUp];
+      if (isTablet) {
+        preferredOrientations.addAll([
+          DeviceOrientation.portraitDown,
+          DeviceOrientation.landscapeLeft,
+          DeviceOrientation.landscapeRight,
+        ]);
+      }
+      SystemChrome.setPreferredOrientations(preferredOrientations);
+    }
+
+
     return LayoutBuilder(builder: (context, constraints) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(appConstraintsProvider.notifier).state = constraints;
@@ -70,8 +90,13 @@ class EduMFAAuthenticator extends ConsumerWidget {
         ),
         debugShowCheckedModeBanner: true,
         navigatorKey: globalNavigatorKey,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate
+        ],
+        supportedLocales: S.delegate.supportedLocales,
         locale: locale,
         title: _customization.appName,
         theme: _customization.generateLightTheme(),

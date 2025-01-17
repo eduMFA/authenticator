@@ -1,7 +1,7 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../l10n/app_localizations.dart';
 import '../../../../../model/tokens/token.dart';
 import '../../../../../utils/globals.dart';
 import '../../../../../utils/lock_auth.dart';
@@ -18,9 +18,9 @@ class DefaultDeleteAction extends TokenAction {
   PopupMenuItem<String> build(BuildContext context, WidgetRef ref) {
     return PopupMenuItem<String>(
         value: 'delete',
-        child: Text(AppLocalizations.of(context)!.delete),
+        child: Text(S.of(context).delete),
         onTap: () async {
-          if (token.isLocked && await lockAuth(localizedReason: AppLocalizations.of(context)?.deleteLockedToken ?? '') == false) {
+          if (token.isLocked && await lockAuth(localizedReason: S.of(context).deleteLockedToken) == false) {
             return;
           }
           _showDialog();
@@ -37,15 +37,15 @@ class DefaultDeleteAction extends TokenAction {
             return DefaultDialog(
               scrollable: true,
               title: Text(
-                AppLocalizations.of(context)!.confirmDeletion,
+                S.of(context).confirmDeletion,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Theme.of(context).colorScheme.error),
               ),
               content: Column(
                 children: [
-                  Text(AppLocalizations.of(context)!.confirmDeletionOf(token.label), style: Theme.of(context).textTheme.bodyMedium),
+                  Text(S.of(context).confirmDeletionOf(token.label), style: Theme.of(context).textTheme.bodyMedium),
                   const SizedBox(height: 8),
                   Text(
-                    AppLocalizations.of(context)!.confirmTokenDeletionHint,
+                    S.of(context).confirmTokenDeletionHint,
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
@@ -54,7 +54,7 @@ class DefaultDeleteAction extends TokenAction {
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(),
                   child: Text(
-                    AppLocalizations.of(context)!.cancel,
+                    S.of(context).cancel,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),
@@ -65,7 +65,7 @@ class DefaultDeleteAction extends TokenAction {
                     Navigator.of(context).pop();
                   },
                   child: Text(
-                    AppLocalizations.of(context)!.delete,
+                    S.of(context).delete,
                     style: TextStyle(color: Theme.of(context).colorScheme.error),
                     overflow: TextOverflow.fade,
                     softWrap: false,

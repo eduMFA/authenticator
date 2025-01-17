@@ -22,9 +22,9 @@
   limitations under the License.
 */
 
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
 import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
 import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog_button.dart';
@@ -63,24 +63,24 @@ class QRScannerView extends StatelessView {
           if (isGranted.connectionState != ConnectionState.done) return const SizedBox();
           if (isGranted.data == PermissionStatus.permanentlyDenied) {
             return DefaultDialog(
-              title: Text(AppLocalizations.of(context)!.grantCameraPermissionDialogTitle),
-              content: Text(AppLocalizations.of(context)!.grantCameraPermissionDialogPermanentlyDenied),
+              title: Text(S.of(context).grantCameraPermissionDialogTitle),
+              content: Text(S.of(context).grantCameraPermissionDialogPermanentlyDenied),
             );
           }
           if (isGranted.data != PermissionStatus.granted) {
             return DefaultDialog(
-              title: Text(AppLocalizations.of(context)!.grantCameraPermissionDialogTitle),
-              content: Text(AppLocalizations.of(context)!.grantCameraPermissionDialogContent),
+              title: Text(S.of(context).grantCameraPermissionDialogTitle),
+              content: Text(S.of(context).grantCameraPermissionDialogContent),
               actions: [
                 DefaultDialogButton(
-                  child: Text(AppLocalizations.of(context)!.grantCameraPermissionDialogButton),
+                  child: Text(S.of(context).grantCameraPermissionDialogButton),
                   onPressed: () {
                     //Trigger the permission to request it
                     Permission.camera.request();
                   },
                 ),
                 DefaultDialogButton(
-                  child: Text(AppLocalizations.of(context)!.cancel),
+                  child: Text(S.of(context).cancel),
                   onPressed: () {
                     Navigator.pop(context, null);
                   },
