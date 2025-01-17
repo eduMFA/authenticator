@@ -157,15 +157,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Idź do ustawień"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Ustawienia zabezpieczeń, bądź uwierzytelnianie biometryczne nie są skonfigurowane w twoim urządzeniu. Skonfiguruj je w ustawieniach urządzenia."),
-        "grantCameraPermissionDialogContent":
-            MessageLookupByLibrary.simpleMessage(
-                "Przyznaj uprawnienia kamery do skanowania kodów QR."),
-        "grantCameraPermissionDialogPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "Uprawnienia do aparatu zostały trwale zablokowane. Przyznaj uprawnienia aparatu w ustawieniach telefonu."),
-        "grantCameraPermissionDialogTitle":
-            MessageLookupByLibrary.simpleMessage(
-                "Uprawnienie do kamery nie zostało przyznane"),
         "introEditToken": MessageLookupByLibrary.simpleMessage(
             "Tutaj możesz edytować nazwę tokena i zobaczyć kilka szczegółów."),
         "introLockToken": MessageLookupByLibrary.simpleMessage(

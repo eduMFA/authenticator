@@ -1,4 +1,4 @@
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view_widgets/add_token_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -56,7 +56,7 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         floatingActionButton: FloatingActionButton(
-          tooltip: AppLocalizations.of(context)!.scanQrCode,
+          tooltip: S.of(context).scanQrCode,
           onPressed: () => showModalBottomSheet(
             context: context,
             isScrollControlled: true,

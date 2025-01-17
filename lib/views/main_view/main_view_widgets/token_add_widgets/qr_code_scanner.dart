@@ -1,4 +1,4 @@
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -31,7 +31,7 @@ class QrCodeScannerWidget extends StatelessWidget {
                   Icon(Icons.error),
                   SizedBox(height: 10),
                   Text(
-                    AppLocalizations.of(context)!.cameraPermissionPermanentlyDenied,
+                    S.of(context).cameraPermissionPermanentlyDenied,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
@@ -41,7 +41,7 @@ class QrCodeScannerWidget extends StatelessWidget {
                   SizedBox(height: 32),
                   ElevatedButton(
                     onPressed: () => openAppSettings(),
-                    child: Text(AppLocalizations.of(context)!.cameraPermissionPermanentlyDeniedButton),
+                    child: Text(S.of(context).cameraPermissionPermanentlyDeniedButton),
                   ),
                 ],
               ),

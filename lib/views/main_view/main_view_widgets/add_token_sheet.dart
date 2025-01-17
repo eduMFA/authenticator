@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:edumfa_authenticator/l10n/app_localizations.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_add_widgets/qr_code_scanner.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_add_widgets/upload_qr_code_button.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +63,7 @@ class _AddTokenSheetWidgetState extends State<AddTokenSheetWidget> with WidgetsB
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            AppLocalizations.of(context)!.addTokenTitle,
+            S.of(context).addTokenTitle,
             style: textTheme.headlineMedium!.copyWith(
                 fontWeight: FontWeight.bold
             ),
@@ -71,7 +71,7 @@ class _AddTokenSheetWidgetState extends State<AddTokenSheetWidget> with WidgetsB
           ),
           const SizedBox(height: 8),
           Text(
-            AppLocalizations.of(context)!.addTokenSubtitle,
+            S.of(context).addTokenSubtitle,
             style: textTheme.titleSmall,
             textAlign: TextAlign.center,
           ),
@@ -89,7 +89,7 @@ class _AddTokenSheetWidgetState extends State<AddTokenSheetWidget> with WidgetsB
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  AppLocalizations.of(context)!.or,
+                  S.of(context).or,
                   style: textTheme.labelLarge?.copyWith(
                     color: colorScheme.outline,
                     letterSpacing: 1.5,

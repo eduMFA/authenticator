@@ -1,8 +1,7 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-
-import '../../../../l10n/app_localizations.dart';
 
 typedef HandleBarcodeCallback = void Function(BarcodeCapture? barcodes);
 
@@ -38,7 +37,7 @@ class UploadQrCodeButton extends StatelessWidget {
         ),
       ),
       icon: const Icon(Icons.upload_file),
-      label: Text(AppLocalizations.of(context)!.uploadQrCodeButton),
+      label: Text(S.of(context).uploadQrCodeButton),
     ),
   );
 

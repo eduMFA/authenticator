@@ -70,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Autenticación correcta"),
         "butDiscardIt": MessageLookupByLibrary.simpleMessage("pero descártelo"),
+        "cameraPermissionPermanentlyDeniedButton":
+            MessageLookupByLibrary.simpleMessage("Conceder permiso"),
         "cancel": MessageLookupByLibrary.simpleMessage("Anular"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Compruebe su conexión de red e inténtelo de nuevo."),
@@ -156,16 +158,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ir a la configuración"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "La autenticación por credenciales o biométrica no está configurada en tu dispositivo. Por favor, configúrala en los ajustes del dispositivo."),
-        "grantCameraPermissionDialogButton":
-            MessageLookupByLibrary.simpleMessage("Conceder permiso"),
-        "grantCameraPermissionDialogContent": MessageLookupByLibrary.simpleMessage(
-            "Por favor, concede permiso a la cámara para escanear códigos QR"),
-        "grantCameraPermissionDialogPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "El permiso de cámara está denegado permanentemente. Concede el permiso de cámara en la configuración del teléfono"),
-        "grantCameraPermissionDialogTitle":
-            MessageLookupByLibrary.simpleMessage(
-                "El permiso de cámara no está concedido"),
         "introEditToken": MessageLookupByLibrary.simpleMessage(
             "Aquí puedes editar el nombre del token y ver algunos detalles"),
         "introLockToken": MessageLookupByLibrary.simpleMessage(
