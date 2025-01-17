@@ -1,7 +1,7 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../l10n/app_localizations.dart';
 import '../../../../../model/tokens/token.dart';
 import '../../../../../utils/lock_auth.dart';
 import '../../../../../utils/logger.dart';
@@ -17,9 +17,9 @@ class DefaultLockAction extends TokenAction {
   PopupMenuItem<String> build(BuildContext context, WidgetRef ref) {
     return PopupMenuItem<String>(
         value: 'lock',
-        child: token.isLocked ? Text(AppLocalizations.of(context)!.unlock) : Text(AppLocalizations.of(context)!.lock) ,
+        child: token.isLocked ? Text(S.of(context).unlock) : Text(S.of(context).lock) ,
         onTap: () async {
-          if (await lockAuth(localizedReason: AppLocalizations.of(context)!
+          if (await lockAuth(localizedReason: S.of(context)
               .authenticateToUnLockToken) == false) {
             return;
           }

@@ -1,70 +1,74 @@
 {
-  "@@last_modified": "2025-01-06",
-  "accept": "Accept",
+  "@@locale": "nl",
+  "guide": "Handleiding",
+  "@guide": {
+    "description": "Button to open the guide screen."
+  },
+  "accept": "Accepteren",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."
   },
-  "decline": "Decline",
+  "decline": "Weigeren",
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
-  "name": "Name",
+  "name": "Naam",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
-  "secretKey": "Secret key",
+  "secretKey": "Geheime sleutel",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
   },
-  "rename": "Rename",
+  "rename": "Wijzigen",
   "@rename": {
     "description": "Label that describes renaming the token."
   },
-  "cancel": "Cancel",
+  "cancel": "Annuleren",
   "@cancel": {
     "description": "Button to cancel an action."
   },
-  "delete": "Delete",
+  "delete": "Verwijderen",
   "@delete": {
     "description": "Label that describes deleting the token."
   },
-  "dismiss": "Dismiss",
+  "dismiss": "Sluiten",
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
-  "addToken": "Add token",
+  "addToken": "Token toevoegen",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Scan QR-Code",
+  "scanQrCode": null,
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
   },
-  "addTokenTitle": "Pair new Push Token",
+  "addTokenTitle": null,
   "@addTokenTitle": {
     "description": "The title of the token add screen."
   },
-  "addTokenSubtitle": "Point your camera at your screen to capture the QR code",
+  "addTokenSubtitle": null,
   "@addTokenSubtitle": {
     "description": "The subtitle of the token add screen."
   },
-  "or": "OR",
+  "or": null,
   "@or": {
     "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
   },
-  "uploadQrCodeButton": "Upload QR Code",
+  "uploadQrCodeButton": null,
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
   },
-  "renameToken": "Rename token",
+  "renameToken": "Hernoem token",
   "@renameToken": {
     "description": "Title of the dialog where a new name for a token can be entered."
   },
-  "confirmDeletion": "Confirm deletion",
+  "confirmDeletion": "Bevestig verwijderen",
   "@confirmDeletion": {
     "description": "Title of the dialog where a token can be deleted."
   },
-  "confirmDeletionOf": "Are you sure you want to delete {name}?",
+  "confirmDeletionOf": "Weet u zeker dat u {name} wilt verwijderen?",
   "@confirmDeletionOf": {
     "description": "Asks for confirmation on deleting a token.",
     "placeholders": {
@@ -73,23 +77,23 @@
       }
     }
   },
-  "confirmTokenDeletionHint": "You may no longer be able to log in if you delete this token.\nPlease make sure that you can log in to the associated account without this token.",
+  "confirmTokenDeletionHint": "U kunt mogelijk niet meer inloggen als u dit token verwijdert. Controleer of u zonder dit token kunt inloggen op het gekoppelde account.",
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "generatingPhonePart": "Generating phone part",
+  "generatingPhonePart": "Genereren telefoon gedeelte",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
   },
-  "phonePart": "Phone part:",
+  "phonePart": "Telefoon gedeelte:",
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
   },
-  "tokens": "Tokens",
+  "tokens": null,
   "@tokens": {
     "description": "Button to open the tokens page."
   },
-  "settings": "Settings",
+  "settings": "Instellingen",
   "@settings": {
     "description": "Button to open the settings page."
   },
@@ -97,59 +101,59 @@
   "@pushToken": {
     "description": "Title for the settings block concerning the push tokens."
   },
-  "theme": "Theme",
+  "theme": "Thema",
   "@theme": {
     "description": "Title of the setting group where the theme can be selected."
   },
-  "lightTheme": "Light",
+  "lightTheme": "Licht",
   "@lightTheme": {
     "description": "The light theme."
   },
-  "darkTheme": "Dark",
+  "darkTheme": "Donker",
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Use device's theme",
+  "systemTheme": "Gebruik thema van het apparaat",
   "@systemTheme": {
     "description": "The systems theme."
   },
-  "enablePolling": "Enable polling",
+  "enablePolling": "Zoeken aanzetten",
   "@enablePolling": {
     "description": "Name of the setting switch that enables polling."
   },
-  "requestPushChallengesPeriodically": "Request push challenges from the server periodically. Enable this if push challenges are not received normally.",
+  "requestPushChallengesPeriodically": "Activeer het zoeken naar berichten. Gebruik deze optie wanneer de push berichten niet worden ontvangen.",
   "@requestPushChallengesPeriodically": {
     "description": "The description of the polling feature."
   },
-  "synchronizePushTokens": "Synchronize push tokens",
+  "synchronizePushTokens": "Synchroniseer push tokens",
   "@synchronizePushTokens": {
     "description": "Title of synchronizing push tokens in settings."
   },
-  "synchronizesTokensWithServer": "Synchronizes tokens with the eduMFA server.",
+  "synchronizesTokensWithServer": "Synchroniseert tokens met de eduMFA server.",
   "@synchronizesTokensWithServer": {
     "description": "Description of synchronizing push tokens in settings."
   },
-  "sync": "Sync",
+  "sync": "Synchroniseer",
   "@sync": {
     "description": "Text of button that is used to synchronize push tokens."
   },
-  "synchronizingTokens": "Synchronizing tokens.",
+  "synchronizingTokens": "Tokens synchroniseren.",
   "@synchronizingTokens": {
     "description": "Title of the push synchronization dialog."
   },
-  "allTokensSynchronized": "All tokens are synchronized.",
+  "allTokensSynchronized": "Alle tokens zijn gesynchroniseerd.",
   "@allTokensSynchronized": {
     "description": "Content of the push synchronization dialog. Signaling the user that everything worked."
   },
-  "synchronizationFailed": "Synchronization failed for the following tokens, please try again:",
+  "synchronizationFailed": "Synchroniseren mislukt voor de volgende tokens, probeer het opnieuw:",
   "@synchronizationFailed": {
     "description": "Headline for the list of tokens where the synchronization failed."
   },
-  "tokensDoNotSupportSynchronization": "The following tokens do not support synchronization and must be rolled out again:",
+  "tokensDoNotSupportSynchronization": "Voor de volgende tokens wordt synchroniseren niet ondersteunt, ze moeten opnieuw worden aangeleverd:",
   "@tokensDoNotSupportSynchronization": {
     "description": "Informs the user that the following tokens cannot be synchronized as they do not support that."
   },
-  "errorRollOutFailed": "Rolling out token {name} failed.",
+  "errorRollOutFailed": "Uitrollen van token {name} mislukt.",
   "@errorRollOutFailed": {
     "description": "Tells the user that the token could not be rolled out, because a network error occurred.",
     "placeholders": {
@@ -158,7 +162,7 @@
       }
     }
   },
-  "statusCode": "Status code: {statusCode}",
+  "statusCode": "Statuscode: {statusCode}",
   "@statusCode": {
     "description": "Tells the user the status code of the error.",
     "placeholders": {
@@ -167,36 +171,33 @@
       }
     }
   },
-  "errorSynchronizationNoNetworkConnection": "Synchronizing tokens failed, eduMFA server could not be reached.",
+  "errorSynchronizationNoNetworkConnection": "Token synchroniseren mislukt, eduMFA server kan niet worden bereikt.",
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
-  "errorRollOutNoConnectionToServer": "Rolling out token {name} failed, the server could not be reached.",
-  "@errorRollOutNoConnectionToServer": {
-    "description": "Tells the user that the roll-out failed because the server could not be reached."
-  },
-  "errorRollOutUnknownError": "An unknown error occurred. Roll-out not possible: {e}",
+  "errorRollOutUnknownError": "Een onbekende fout heeft plaats gevonden. Uitrollen is niet mogelijk: {e}",
   "@errorRollOutUnknownError": {
     "description": "Tells the user that the roll-out failed because of an unknown error.",
+    "type": "text",
     "placeholders": {
       "e": {
         "example": "IllegalArgumentException on Line 5 ..."
       }
     }
   },
-  "rollingOut": "Rolling out",
+  "rollingOut": "Uitrollen",
   "@rollingOut": {
     "description": "Label that tells the user that the token is being rolled out."
   },
-  "unexpectedError": "An unexpected error occurred.",
+  "unexpectedError": "Er is een onverwachte fout opgetreden.",
   "@unexpectedError": {
     "description": "Title of page report mode."
   },
-  "pollingFailed": "Polling failed.",
+  "pollingFailed": "Vraag mislukt.",
   "@pollingFailed": {
     "description": "Tells the user that the polling failed."
   },
-  "pollingFailedFor": "Polling failed for {serial}",
+  "pollingFailedFor": "Query voor {serial} mislukt.",
   "@pollingFailedFor": {
     "description": "Tells the user that the polling failed.",
     "placeholders": {
@@ -205,184 +206,193 @@
       }
     }
   },
-  "noNetworkConnection": "No network connection.",
+  "noNetworkConnection": "Geen netwerkverbinding.",
   "@noNetworkConnection": {
     "description": "Tells the user that there is no network connection."
   },
-  "connectionFailed": "Connection failed.",
+  "connectionFailed": "Verbinding mislukt.",
   "@connectionFailed": {
     "description": "Tells the user that the connection failed."
   },
-  "checkYourNetwork": "Please check your network connection and try again.",
+  "checkYourNetwork": "Controleer je netwerkverbinding en probeer het opnieuw.",
   "@checkYourNetwork": {
     "description": "Tells the user to check the network connection."
   },
-  "couldNotSignMessage": "Could not sign message.",
+  "couldNotSignMessage": "Bericht niet kunnen ondertekenen.",
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Use device language",
+  "useDeviceLocaleTitle": "Gebruik de taal van het apparaat",
   "@useDeviceLocaleTitle": {
     "description": "Title of the switch tile where using the devices language can be enabled."
   },
-  "useDeviceLocaleDescription": "Use device language if it is supported, otherwise default to english.",
+  "useDeviceLocaleDescription": "Gebruik de taal van het apparaat wanneer het wordt ondersteund, val anders terug op Engels.",
   "@useDeviceLocaleDescription": {
     "description": "Description of the switch tile where using the devices language can be enabled."
   },
-  "language": "Language",
+  "language": "Taal",
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Please authenticate to show one time password.",
+  "authenticateToShowOtp": "Authenticeer om het eenmalige wachtwoord te tonen.",
   "@authenticateToShowOtp": {
     "description": "Reason to authenticate when trying to view a one time password."
   },
-  "authenticateToUnLockToken": "Please authenticate to change the lock status of the token.",
+  "authenticateToUnLockToken": "Authenticeer om de vergrendeling van de token te wijzigen.",
   "@authenticateToUnLockToken": {
     "description": "Reason to authenticate when trying to lock or unlock a token."
   },
-  "biometricRequiredTitle": "Biometrics not setup",
+  "biometricRequiredTitle": "Biometrie is niet ingesteld",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
   },
-  "biometricHint": "Authentication required",
+  "biometricHint": "Authenticatie vereist",
   "@biometricHint": {
     "description": "Hint message advising the user how to authenticate with biometrics. It is used on Android side. Maximum 60 characters."
   },
-  "biometricNotRecognized": "Not recognized. Try again.",
+  "biometricNotRecognized": "Niet herkend. Probeer opnieuw.",
   "@biometricNotRecognized": {
     "description": "Message to let the user know that authentication was failed. It is used on Android side. Maximum 60 characters."
   },
-  "biometricSuccess": "Authentication successful",
+  "biometricSuccess": "Authenticatie geslaagd",
   "@biometricSuccess": {
     "description": "Message to let the user know that authentication was successful. It is used on Android side. Maximum 60 characters."
   },
-  "deviceCredentialsRequiredTitle": "Device credentials not set up",
+  "deviceCredentialsRequiredTitle": "Inloggevens van het apparaat zijn niet ingesteld",
   "@deviceCredentialsRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up credentials authentication on their device. It is used on Android side. Maximum 60 characters."
   },
-  "deviceCredentialsSetupDescription": "Setup device credentials in the device's settings",
+  "deviceCredentialsSetupDescription": "Stel de inloggegevens in, bij de instellingen van het apparaat",
   "@deviceCredentialsSetupDescription": {
     "description": "Message advising the user to go to the settings and configure device credentials on their device. It shows in a dialog on Android side."
   },
-  "signInTitle": "Authentication required",
+  "signInTitle": "Authenticatie vereist",
   "@signInTitle": {
     "description": "Message showed as a title in a dialog which indicates the user that they need to scan biometric to continue. It is used on Android side. Maximum 60 characters."
   },
-  "goToSettingsButton": "Go to settings",
+  "goToSettingsButton": "Ga naar instellingen",
   "@goToSettingsButton": {
     "description": "Message showed on a button that the user can click to go to settings pages from the current dialog. It is used on both Android and iOS side. Maximum 30 characters."
   },
-  "goToSettingsDescription": "Authentication by credentials or biometrics is not set up on your device. Please set it up in the device's settings.",
+  "goToSettingsDescription": "Authenticatie via inloggegevens of biometrie is niet ingesteld. Stel het in bij de instellingen van het apparaat.",
   "@goToSettingsDescription": {
     "description": "Message advising the user to go to the settings and configure device credentials or biometrics on their device."
   },
-  "lockOut": "Biometric authentication is disabled. Please lock and unlock your screen to enable it.",
+  "lockOut": "Biometrische authenticatie staat uit. Vergrendel en ontgrendel het scherm om het aan te zetten.",
   "@lockOut": {
     "description": "Message advising the user to re-enable biometrics on their device. It shows in a dialog on iOS side."
   },
-  "authNotSupportedTitle": "Device credentials or biometrics required",
+  "authNotSupportedTitle": "Apparaat inloggevens of biometrie is vereist",
   "@authNotSupportedTitle": {
     "description": "Message shown as a dialog title that tells the user that device credentials or biometrics must be setup for this action."
   },
-  "authNotSupportedBody": "This action requires the device to be secured by credentials or biometrics.",
+  "authNotSupportedBody": "Deze actie vereist dat het apparaat is beveiligd met inlogggevens of biometrie.",
   "@authNotSupportedBody": {
     "description": "Message shown as a dialog body that tells the user that device credentials or biometrics must be setup for this action."
   },
-  "lock": "Lock",
+  "lock": "Vergrendel",
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Unlock",
+  "unlock": "Ontgrendel",
   "@unlock": {
     "description": "Description of button that unlocks a token."
   },
-  "noResultTitle": "No tokens stored yet.",
+  "noResultTitle": "Nog geen token opgeslagen.",
   "@noResultTitle": {
-    "description": "No tokens stored yet."
+    "description": "No tokens installed yet."
   },
-  "noResultText1": "Tap the ",
+  "noResultText1": "Tik op ",
   "@noResultText1": {
-    "description": "first no result text"
+    "description": "first noresult text"
   },
-  "noResultText2": " button to get started!",
+  "noResultText2": " de knop om te beginnen!",
   "@noResultText2": {
-    "description": "second no result text"
+    "description": "second noresult text"
   },
-  "onBoardingText1": "Two-factor authentication\nmade easy",
-  "onBoardingTitle2": "Maximum Security",
-  "onBoardingText2": "Store tokens on your device securely\nProtected by your biometrics",
-  "onBoardingTitle3": "Visit us at Github",
-  "onBoardingText3": "This app is open source",
-  "errorLogTitle": "Error log",
+  "onBoardingText1": "Twee-factoren authenticatie\nmakkelijk gemaakt",
+  "onBoardingTitle2": "Maximale Beveiliging",
+  "onBoardingText2": "Bewaar tokens op uw apparaat\nbeveiligd door uw biometrische gegevens",
+  "onBoardingTitle3": "Bezoek ons op Github",
+  "onBoardingText3": "Deze app is open source",
+  "errorLogTitle": "Foutenlogboek",
   "logMenu": "Log menu",
-  "showErrorLog": "Show",
-  "clearErrorLog": "Clear",
-  "send": "Send",
-  "sendErrorLogDescription": "A predefined email is created.\nIt contains information about the app, the error and the device.\nYou can edit the email before sending it.\nYou can see here how we use the information:",
+  "showErrorLog": "Weergeven",
+  "clearErrorLog": "Verwijderen",
+  "send": "verzenden",
+  "sendErrorLogDescription": "Er wordt een kant-en-klare e-mail gemaakt die informatie bevat over de app, de fout en het apparaat.\nJe kunt de e-mail bewerken voordat je hem verstuurt.\nJe kunt hier zien hoe we de informatie gebruiken:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
-  "showPrivacyPolicy": "Show privacy policy",
-  "errorLogEmpty": "The error log is empty.",
-  "verboseLogging": "Verbose logging",
-  "errorLogCleared": "Error log cleared.",
+  "showPrivacyPolicy": "Privacybeleid tonen",
+  "errorLogEmpty": "Het foutenlogboek is leeg.",
+  "verboseLogging": "Verbose loggen",
+  "errorLogCleared": "Foutenlogboek gewist.",
   "ok": "Ok",
-  "errorMailBody": "The error log file is attached.\nYou can replace this text with additional information about the error.",
+  "errorMailBody": "Het foutlogbestand is bijgevoegd.\nU kunt deze tekst vervangen door aanvullende informatie over de fout.",
   "@errorMailBody": {
     "description": "Message for email body"
   },
-  "showDetails": "Show details",
-  "open": "Open",
-  "deleteLockedToken": "Please authenticate to delete the locked token.",
-  "editLockedToken": "Please authenticate to edit the locked token.",
-  "retryRollout": "Retry rollout",
-  "generatingRSAKeyPair": "Generating RSA key pair",
+  "showDetails": "Details tonen",
+  "open": "Openen",
+  "deleteLockedToken": "Verifieer om het vergrendelde token te verwijderen.",
+  "editLockedToken": "Verifieer om het vergrendelde token te bewerken.",
+  "retryRollout": "Opnieuw uitrollen",
+  "generatingRSAKeyPair": "Genereren RSA sleutelpaar",
   "@generatingRSAKeyPair": {
     "description": "Message for the rollout process"
   },
-  "generatingRSAKeyPairFailed": "Generating RSA key pair failed",
+  "generatingRSAKeyPairFailed": "Genereren RSA sleutelpaar mislukt",
   "@generatingRSAKeyPairFailed": {
     "description": "Message for the rollout process"
   },
-  "sendingRSAPublicKey": "Sending public RSA key",
+  "sendingRSAPublicKey": "Versturen van de openbare RSA sleutel",
   "@sendingRSAPublicKey": {
     "description": "Message for the rollout process"
   },
-  "sendingRSAPublicKeyFailed": "Sending public RSA key failed",
+  "sendingRSAPublicKeyFailed": "Versturen van de openbare RSA sleutel mislukt",
   "@sendingRSAPublicKeyFailed": {
     "description": "Message for the rollout process"
   },
-  "parsingResponse": "Parsing response",
+  "parsingResponse": "Antwoord analyseren",
   "@parsingResponse": {
     "description": "Message for the rollout process"
   },
-  "parsingResponseFailed": "Parsing response failed",
+  "parsingResponseFailed": "Antwoord analyseren mislukt",
   "@parsingResponseFailed": {
     "description": "Message for the rollout process"
   },
-  "rolloutCompleted": "Rollout completed",
+  "rolloutCompleted": "Uitrollen voltooid",
   "@rolloutCompleted": {
     "description": "Message for the rollout process"
   },
-  "authToAcceptPushRequest": "Please authenticate to accept the push request.",
-  "authToDeclinePushRequest": "Please authenticate to decline the push request.",
-  "pushRequestParseError": "Push request could not be parsed.",
-  "errorRollOutSSLHandshakeFailed": "SSL handshake failed. Roll-out not possible.",
-  "@errorRollOutSSLHandshakeFailed": {
-    "description": "Tells the user that the roll-out failed because the SSL handshake failed."
+  "errorRollOutNoConnectionToServer": "Uitrollen mislukt. Geen verbinding met de server.",
+  "@errorRollOutNoConnectionToServer": {
+    "description": "Message for the rollout process"
   },
-  "errorWhenPullingChallenges": "An error occured when polling for challenges of {name}",
+  "authToAcceptPushRequest": "Authenticeer om de push aanvraag te accepteren.",
+  "@authToAcceptPushRequest": {
+    "description": "Message for the rollout process"
+  },
+  "authToDeclinePushRequest": "Authenticeer om de push aanvraag te weigeren.",
+  "@authToDeclinePushRequest": {
+    "description": "Message for the rollout process"
+  },
+  "pushRequestParseError": "Het pushverzoek kon niet worden verwerkt.",
+  "errorRollOutSSLHandshakeFailed": "SSL-handdruk mislukt. Uitrollen niet mogelijk.",
+  "@errorRollOutSSLHandshakeFailed": {
+    "description": "Message for the rollout process"
+  },
+  "errorWhenPullingChallenges": "Er is een fout opgetreden bij het zoeken naar uitdagingen van {name}",
   "@errorWhenPullingChallenges": {
-    "description": "errorWhenPullingChallenges",
     "placeholders": {
       "name": {
         "example": "PUSH1234A"
       }
     }
   },
-  "errorRollOutNotPossibleAnymore": "Rolling out this Token is not possible anymore.",
-  "errorTokenExpired": "The token {name} has expired.",
+  "errorRollOutNotPossibleAnymore": "Het uitrollen van dit token is niet meer mogelijk.",
+  "errorTokenExpired": "Het token {name} is verlopen.",
   "@errorTokenExpired": {
     "placeholders": {
       "name": {
@@ -390,45 +400,44 @@
       }
     }
   },
-  "yes": "Yes",
-  "no": "No",
-  "butDiscardIt": "but discard it",
-  "declineIt": "decline it",
-  "requestTriggerdByUserQuestion": "Was this request triggered by you?",
-  "cameraPermissionPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in the system settings.",
-  "cameraPermissionPermanentlyDeniedButton": "Grant permission",
-  "decryptErrorTitle": "Decryption error",
-  "decryptErrorContent": "Unfortunately, the app was unable to decrypt your tokens. This indicates that the encryption key is broken. You can try again or delete the app data, which would delete the tokens in the app.",
-  "decryptErrorButtonDelete": "Delete",
-  "decryptErrorButtonSendError": "Send error",
-  "decryptErrorButtonRetry": "Retry",
-  "decryptErrorDeleteConfirmationContent": "Are you sure you want to delete the app data?",
-  "settingsGroupGeneral": "General",
-  "licensesAndVersion": "Licenses and version",
-  "privacyPolicy": "Privacy policy",
-  "introScanQrCode": "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.",
-  "introEditToken": "Here you can edit the token name and see some details.",
-  "introLockToken": "To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.",
-  "introPollForChallenges": "You can check for new challenges by dragging down the token list.",
+  "yes": "Ja",
+  "no": "Nee",
+  "butDiscardIt": "maar verwijder",
+  "declineIt": "weigeren",
+  "requestTriggerdByUserQuestion": "Is dit verzoek door jou gedaan?",
+  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDeniedButton": "Toestemming verlenen",
+  "decryptErrorTitle": "Fout bij decoderen",
+  "decryptErrorContent": "Helaas heeft de app je tokens niet kunnen decoderen. Dit geeft aan dat de coderingssleutel is verbroken. U kunt het opnieuw proberen of de app-gegevens verwijderen, waardoor de tokens in de app worden verwijderd.",
+  "decryptErrorButtonDelete": "Verwijderen",
+  "decryptErrorButtonSendError": "Fout verzenden",
+  "decryptErrorButtonRetry": "Opnieuw proberen",
+  "decryptErrorDeleteConfirmationContent": "Weet je zeker dat je de app-gegevens wilt verwijderen?",
+  "settingsGroupGeneral": "Algemene informatie",
+  "licensesAndVersion": "Licenties en versie",
+  "privacyPolicy": "Privacybeleid",
+  "introScanQrCode": "Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de eduMFA tokens.",
+  "introEditToken": "Hier kun je de naam van het token bewerken en enkele details bekijken.",
+  "introLockToken": "Om de beveiliging nog meer te verbeteren, kun je tokens vergrendelen.¨Dan kan het token alleen gebruikt worden na authenticatie.",
+  "introPollForChallenges": "Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen.",
   "feedback": "Feedback",
-  "feedbackTitle": "Your feedback is always welcome!",
-  "feedbackDescription": "If you have any questions, suggestions or problems, please let us know.",
-  "feedbackHint": "A ready-made e-mail will open, which you can send to us. If desired, information about your device and the version of the application will be added. You can check and edit the email before sending it.",
-  "feedbackPrivacyPolicy1": "By sending the feedback you agree to our ",
-  "feedbackPrivacyPolicy2": "privacy policy",
+  "feedbackTitle": "Uw feedback is altijd welkom!",
+  "feedbackDescription": "Als je vragen, suggesties of problemen hebt, laat het ons dan weten.",
+  "feedbackHint": "Er wordt een kant-en-klare e-mail geopend die je naar ons kunt sturen. Indien gewenst wordt informatie over je apparaat en de versie van de applicatie toegevoegd. U kunt de e-mail controleren en bewerken voordat u deze verzendt.",
+  "feedbackPrivacyPolicy1": "Door feedback te sturen ga je akkoord met ons ",
+  "feedbackPrivacyPolicy2": "privacybeleid",
   "@feedbackPrivacyPolicy2": {
-    "description": "Taping on this should open the privacy policy."
+    "description": "Hierop tikken moet het privacybeleid openen."
   },
   "feedbackPrivacyPolicy3": ".",
-  "addSystemInfo": "Add system information",
-  "feedbackSentTitle": "Feedback sent",
-  "feedbackSentDescription": "Thank you very much for your help in making this application better!",
-  "noMailAppTitle": "No mail app found",
-  "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
-  "authenticationRequest": "Authentication request",
-  "requestInfo": "Sent by {issuer} for your account: \"{account}\"",
+  "addSystemInfo": "Systeeminformatie toevoegen",
+  "feedbackSentTitle": "Feedback verzonden",
+  "feedbackSentDescription": "Hartelijk dank voor je hulp om deze applicatie beter te maken!",
+  "noMailAppTitle": "Geen mail app gevonden",
+  "noMailAppDescription": "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden.",
+  "authenticationRequest": "Verificatieverzoek",
+  "requestInfo": "Verzonden door {issuer} voor uw account: \"{account}\"",
   "@requestInfo": {
-    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"

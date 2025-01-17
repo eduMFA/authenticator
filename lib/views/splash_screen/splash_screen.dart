@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../model/enums/introduction.dart';
 import '../../utils/app_info_utils.dart';
@@ -14,10 +15,9 @@ class SplashScreen extends ConsumerStatefulWidget {
   static Widget? _initialView;
   static bool didNavigated = false;
 
-  final Widget appImage;
   final String appName;
 
-  const SplashScreen({required this.appImage, required this.appName, super.key});
+  const SplashScreen({required this.appName, super.key});
 
   @override
   ConsumerState<SplashScreen> createState() => _SplashScreenState();
@@ -129,7 +129,13 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
           curve: Curves.easeOut,
           child: Padding(
             padding: const EdgeInsets.all(32.0),
-            child: widget.appImage,
+            child: SvgPicture.asset(
+              'res/logo/app_image.svg',
+              colorFilter: ColorFilter.mode(
+                  Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+                  BlendMode.srcIn
+              ),
+            ),
           ),
         ),
       ),

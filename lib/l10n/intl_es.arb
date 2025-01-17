@@ -1,50 +1,50 @@
 {
-  "@@last_modified": "2025-01-06",
-  "guide": "Assistant",
+  "@@locale": "es",
+  "guide": "guía",
   "@guide": {
     "description": "Button to open the guide screen."
   },
-  "retry": "Réessayer",
+  "retry": "Reintentar",
   "@retry": {
     "description": "Label for e.g. a button. Something is tried to be done again."
   },
-  "accept": "Accepter",
+  "accept": "Aceptar",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."
   },
-  "decline": "Refuser",
+  "decline": "Negar",
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
-  "name": "Nom",
+  "name": "Nombre",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
-  "secretKey": "Clé secrète",
+  "secretKey": "Clave secreta",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
   },
-  "rename": "Renommer",
+  "rename": "Renombrar",
   "@rename": {
     "description": "Label that describes renaming the token."
   },
-  "cancel": "Annuler",
+  "cancel": "Anular",
   "@cancel": {
     "description": "Button to cancel an action."
   },
-  "delete": "Supprimer",
+  "delete": "Borrar",
   "@delete": {
     "description": "Label that describes deleting the token."
   },
-  "dismiss": "Fermer",
+  "dismiss": "Desestimar",
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
-  "addToken": "Ajouter un jeton",
+  "addToken": "Añadir token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Numériser QR-Code",
+  "scanQrCode": "Escanear código QR",
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
   },
@@ -64,33 +64,32 @@
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
   },
-  "renameToken": "Renommer jeton",
+  "renameToken": "Renombrar token",
   "@renameToken": {
     "description": "Title of the dialog where a new name for a token can be entered."
   },
-  "confirmDeletion": "Confirmer suppression",
+  "confirmDeletion": "Confiem supresión",
   "@confirmDeletion": {
     "description": "Title of the dialog where a token can be deleted."
   },
-  "confirmDeletionOf": "Confirmer la suppression de {name}?",
+  "confirmDeletionOf": "¿Está seguro de que desea eliminar {name}?",
   "@confirmDeletionOf": {
     "description": "Asks for confirmation on deleting a token.",
-    "type": "text",
     "placeholders": {
       "name": {
         "example": "PUSH1234"
       }
     }
   },
-  "confirmTokenDeletionHint": "Il se peut que vous ne puissiez plus vous connecter si vous supprimez ce token.\nVeuillez vous assurer que vous pouvez vous connecter au compte associé sans ce token.",
+  "confirmTokenDeletionHint": "Es posible que ya no pueda iniciar sesión si elimina este token.\nAsegúrese de que puede iniciar sesión en la cuenta asociada sin este token.",
   "@confirmTokenDeletionHint": {
     "description": "Gives the user a hint about the consequences of deleting a token."
   },
-  "generatingPhonePart": "Générer la part du téléphone",
+  "generatingPhonePart": "Generar parte telefónico",
   "@generatingPhonePart": {
     "description": "Title of a dialog telling the user that the phone part gets generated right now."
   },
-  "phonePart": "Part du téléphone:",
+  "phonePart": "Pieza de teléfono:",
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
   },
@@ -98,77 +97,76 @@
   "@tokens": {
     "description": "Button to open the tokens page."
   },
-  "settings": "Paramètres",
+  "settings": "Configuración",
   "@settings": {
     "description": "Button to open the settings page."
   },
-  "pushToken": "Jeton de type Push",
+  "pushToken": "Push Token",
   "@pushToken": {
     "description": "Title for the settings block concerning the push tokens."
   },
-  "theme": "Thème",
+  "theme": "Tema",
   "@theme": {
     "description": "Title of the setting group where the theme can be selected."
   },
-  "lightTheme": "Thème lumineux",
+  "lightTheme": "Luminoso",
   "@lightTheme": {
     "description": "The light theme."
   },
-  "darkTheme": "Thème sombre",
+  "darkTheme": "Negro",
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Utiliser le thème de l'appareil",
+  "systemTheme": "Utilizar el tema del teléfono",
   "@systemTheme": {
     "description": "The systems theme."
   },
-  "enablePolling": "Activer l'interrogation du serveur.",
+  "enablePolling": "Activar polling",
   "@enablePolling": {
     "description": "Name of the setting switch that enables polling."
   },
-  "requestPushChallengesPeriodically": "Demander des challenges push depuis le serveur périodiquement. Activer cette fonction si les challenges push ne sont pas reçus normalement.",
+  "requestPushChallengesPeriodically": "Solicita retos push al servidor periódicamente. Habilite esta opción si los retos push no se reciben normalmente.",
   "@requestPushChallengesPeriodically": {
     "description": "The description of the polling feature."
   },
-  "synchronizePushTokens": "Synchoniser les jetons Push",
+  "synchronizePushTokens": "Sinchronizar push tokens",
   "@synchronizePushTokens": {
     "description": "Title of synchronizing push tokens in settings."
   },
-  "synchronizesTokensWithServer": "Synchroniser les jetons Push avec le serveur eduMFA.",
+  "synchronizesTokensWithServer": "Sinchronizar tokens con el eduMFA servidor.",
   "@synchronizesTokensWithServer": {
     "description": "Description of synchronizing push tokens in settings."
   },
-  "sync": "Synchroniser",
+  "sync": "Sinchronizar",
   "@sync": {
     "description": "Text of button that is used to synchronize push tokens."
   },
-  "synchronizingTokens": "Synchroniser les jetons.",
+  "synchronizingTokens": "Sincronización de los tokens.",
   "@synchronizingTokens": {
     "description": "Title of the push synchronization dialog."
   },
-  "allTokensSynchronized": "Tous les jetons ont été synchronisés.",
+  "allTokensSynchronized": "Todas los tokens están sincronizadas.",
   "@allTokensSynchronized": {
     "description": "Content of the push synchronization dialog. Signaling the user that everything worked."
   },
-  "synchronizationFailed": "La synchronisation a échoué pour ces jetons, veuillez reéssayer:",
+  "synchronizationFailed": "La sincronización ha fallado para los siguientes tokens, por favor inténtelo de nuevo:",
   "@synchronizationFailed": {
     "description": "Headline for the list of tokens where the synchronization failed."
   },
-  "tokensDoNotSupportSynchronization": "Ces jetons ne supportent pas la synchronisation et doivent être de nouveau générés:",
+  "tokensDoNotSupportSynchronization": "Las siguientes tokens no admiten la sincronización y deben volver a desplegarse:",
   "@tokensDoNotSupportSynchronization": {
     "description": "Informs the user that the following tokens cannot be synchronized as they do not support that."
   },
-  "errorRollOutFailed": "Le déploiement du jeton {name} a échoué.",
+  "errorRollOutFailed": "Error en la extracción de el token {name}.",
   "@errorRollOutFailed": {
     "description": "Tells the user that the token could not be rolled out, because a network error occurred.",
-    "type": "text",
     "placeholders": {
       "name": {
         "example": "PUSH1234A"
       }
     }
   },
-  "statusCode": "Code d'état : {statusCode}",
+  "statusCode": "Código de estado: {statusCode}",
   "@statusCode": {
     "description": "Tells the user the status code of the error.",
     "placeholders": {
@@ -177,33 +175,32 @@
       }
     }
   },
-  "errorSynchronizationNoNetworkConnection": "La synchronization a échoué car le serveur est injoignable.",
+  "errorSynchronizationNoNetworkConnection": "Error al sincronizar los tokens. No se ha podido acceder al servidor de EduMFA.",
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
-  "errorRollOutUnknownError": "Le déploiement a échoué suite à une erreur inconnue: {e}",
+  "errorRollOutUnknownError": null,
   "@errorRollOutUnknownError": {
     "description": "Tells the user that the roll-out failed because of an unknown error.",
-    "type": "text",
     "placeholders": {
       "e": {
         "example": "IllegalArgumentException on Line 5 ..."
       }
     }
   },
-  "rollingOut": "Déploiement en cours",
+  "rollingOut": "Despliegue",
   "@rollingOut": {
     "description": "Label that tells the user that the token is being rolled out."
   },
-  "unexpectedError": "Une erreur inattendue s'est produite.",
+  "unexpectedError": "Se ha producido un error inesperado.",
   "@unexpectedError": {
     "description": "Title of page report mode."
   },
-  "pollingFailed": "Échec de la requête.",
+  "pollingFailed": "Consulta fallida.",
   "@pollingFailed": {
     "description": "Tells the user that the polling failed."
   },
-  "pollingFailedFor": "Echec de la requête pour {serial}.",
+  "pollingFailedFor": "Fallo de sondeo para {serial}",
   "@pollingFailedFor": {
     "description": "Tells the user that the polling failed.",
     "placeholders": {
@@ -212,181 +209,180 @@
       }
     }
   },
-  "noNetworkConnection": "Pas de connexion au réseau.",
+  "noNetworkConnection": "No hay conexión a la red.",
   "@noNetworkConnection": {
     "description": "Tells the user that there is no network connection."
   },
-  "connectionFailed": "La connexion a échoué.",
+  "connectionFailed": "Conexión fallida.",
   "@connectionFailed": {
     "description": "Tells the user that the connection failed."
   },
-  "checkYourNetwork": "Veuillez vérifier votre connexion réseau et réessayer.",
+  "checkYourNetwork": "Compruebe su conexión de red e inténtelo de nuevo.",
   "@checkYourNetwork": {
     "description": "Tells the user to check the network connection."
   },
-  "couldNotSignMessage": "Impossible de signer le message.",
+  "couldNotSignMessage": "No se ha podido firmar el mensaje.",
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Utiliser la langue de l'appareil",
+  "useDeviceLocaleTitle": "Utiliza el idioma del teléfono",
   "@useDeviceLocaleTitle": {
     "description": "Title of the switch tile where using the devices language can be enabled."
   },
-  "useDeviceLocaleDescription": "Utilisez la langue de l'appareil si elle est prise en charge, sinon l'anglais par défaut.",
+  "useDeviceLocaleDescription": "Utilizar el idioma del dispositivo si está soportado, en caso contrario por defecto inglés.",
   "@useDeviceLocaleDescription": {
     "description": "Description of the switch tile where using the devices language can be enabled."
   },
-  "language": "Langue",
+  "language": null,
   "@language": {
-    "description": "Title of language setting group."
+    "description": "Título del grupo de configuración lingüística."
   },
-  "authenticateToShowOtp": "Veuillez vous authentifier pour afficher un mot de passe à usage unique.",
+  "authenticateToShowOtp": "Por favor, autentifíquese para mostrar la contraseña de una sola vez.",
   "@authenticateToShowOtp": {
     "description": "Reason to authenticate when trying to view a one time password."
   },
-  "authenticateToUnLockToken": "Veuillez vous authentifier pour modifier l'état de verrouillage du jeton.",
+  "authenticateToUnLockToken": "Por favor, autentifíquese para cambiar el estado de bloqueo del token.",
   "@authenticateToUnLockToken": {
     "description": "Reason to authenticate when trying to lock or unlock a token."
   },
-  "biometricRequiredTitle": "La biométrie n'est pas configurée",
+  "biometricRequiredTitle": "Biometría no configurada",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
   },
-  "biometricHint": "Authentification requise",
+  "biometricHint": "Autenticación necesaria",
   "@biometricHint": {
     "description": "Hint message advising the user how to authenticate with biometrics. It is used on Android side. Maximum 60 characters."
   },
-  "biometricNotRecognized": "Pas reconnu. Réessayer.",
+  "biometricNotRecognized": "No reconocido. Inténtelo de nuevo.",
   "@biometricNotRecognized": {
     "description": "Message to let the user know that authentication was failed. It is used on Android side. Maximum 60 characters."
   },
-  "biometricSuccess": "Authentification réussie",
+  "biometricSuccess": "Autenticación correcta",
   "@biometricSuccess": {
     "description": "Message to let the user know that authentication was successful. It is used on Android side. Maximum 60 characters."
   },
-  "deviceCredentialsRequiredTitle": "Les informations d'identification de l'appareil ne sont pas configurées",
+  "deviceCredentialsRequiredTitle": "No se han configurado las credenciales del dispositivo.",
   "@deviceCredentialsRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up credentials authentication on their device. It is used on Android side. Maximum 60 characters."
   },
-  "deviceCredentialsSetupDescription": "Configurer les informations d'identification de l'appareil dans les paramètres de l'appareil",
+  "deviceCredentialsSetupDescription": "Configurar las credenciales del dispositivo en los ajustes del dispositivo",
   "@deviceCredentialsSetupDescription": {
     "description": "Message advising the user to go to the settings and configure device credentials on their device. It shows in a dialog on Android side."
   },
-  "signInTitle": "Authentification requise",
+  "signInTitle": "Autenticación necesaria",
   "@signInTitle": {
     "description": "Message showed as a title in a dialog which indicates the user that they need to scan biometric to continue. It is used on Android side. Maximum 60 characters."
   },
-  "goToSettingsButton": "Aller aux paramètres",
+  "goToSettingsButton": "Ir a la configuración",
   "@goToSettingsButton": {
     "description": "Message showed on a button that the user can click to go to settings pages from the current dialog. It is used on both Android and iOS side. Maximum 30 characters."
   },
-  "goToSettingsDescription": "L'authentification par identifiants ou biométrie n'est pas configurée sur votre appareil. Veuillez le configurer dans les paramètres de l'appareil.",
+  "goToSettingsDescription": "La autenticación por credenciales o biométrica no está configurada en tu dispositivo. Por favor, configúrala en los ajustes del dispositivo.",
   "@goToSettingsDescription": {
     "description": "Message advising the user to go to the settings and configure device credentials or biometrics on their device."
   },
-  "lockOut": "L'authentification biométrique est désactivée. Veuillez verrouiller et déverrouiller votre écran pour l'activer.",
+  "lockOut": "La autenticación biométrica está desactivada. Bloquea y desbloquea la pantalla para activarla.",
   "@lockOut": {
     "description": "Message advising the user to re-enable biometrics on their device. It shows in a dialog on iOS side."
   },
-  "authNotSupportedTitle": "Informations d'identification de l'appareil ou données biométriques requises",
+  "authNotSupportedTitle": "Se requieren credenciales de dispositivo o datos biométricos",
   "@authNotSupportedTitle": {
     "description": "Message shown as a dialog title that tells the user that device credentials or biometrics must be setup for this action."
   },
-  "authNotSupportedBody": "Cette action nécessite que l'appareil soit sécurisé par des identifiants ou des données biométriques.",
+  "authNotSupportedBody": "Esta acción requiere que el dispositivo esté protegido mediante credenciales o datos biométricos.",
   "@authNotSupportedBody": {
     "description": "Message shown as a dialog body that tells the user that device credentials or biometrics must be setup for this action."
   },
-  "lock": "Bloquer",
+  "lock": "Cierre",
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Ouvrir",
+  "unlock": "Desbloquear",
   "@unlock": {
     "description": "Description of button that unlocks a token."
   },
-  "noResultTitle": "Aucun jeton n'est encore stocké.",
+  "noResultTitle": "Aún no hay tokens almacenadas.",
   "@noResultTitle": {
     "description": "No tokens stored yet."
   },
-  "noResultText1": "Appuyez sur le \n",
+  "noResultText1": "Indique el  ",
   "@noResultText1": {
-    "description": "first noresult text"
+    "description": "first no result text"
   },
-  "noResultText2": "bouton pour commencer!",
+  "noResultText2": " para empezar.",
   "@noResultText2": {
-    "description": "second noresult text"
+    "description": "second no result text"
   },
-  "onBoardingText1": "Authentification à deux facteurs\nrendue facile",
-  "onBoardingTitle2": "Sécurité Maximale",
-  "onBoardingText2": "Stockez les jetons sur votre \nappareil en toute sécurité\nProtégé par votre biométrie",
-  "onBoardingTitle3": "Rendez-nous visite sur Github",
-  "onBoardingText3": "Cette application est open source",
-  "errorLogTitle": "Journal d'erreur",
-  "logMenu": "Menu du journal",
-  "showErrorLog": "Afficher",
-  "clearErrorLog": "Effacer",
-  "send": "Envoyer",
-  "sendErrorLogDescription": "Un e-mail pré-rempli est créé.\nIl contient des informations sur l'application, l'erreur et le périphérique.\nVous pouvez modifier l'e-mail avant de l'envoyer.\nVous pouvez voir ici comment nous utilisons les informations:",
+  "onBoardingText1": "Autenticación de dos factores\nmuy fácil",
+  "onBoardingTitle2": "Máxima seguridad",
+  "onBoardingText2": "Almacena fichas de forma segura en tu teléfono.\nProtegido por tus datos biométricos.",
+  "onBoardingTitle3": "Visítenos en Github",
+  "onBoardingText3": "Esta aplicación es de código abierto",
+  "errorLogTitle": "Registro de errores",
+  "logMenu": "Menú de registro",
+  "showErrorLog": "Mostrar",
+  "clearErrorLog": "Borrar",
+  "send": "Enviar",
+  "sendErrorLogDescription": "Se crea un correo electrónico listo.\nContiene información sobre la app, el error y el dispositivo.\nPuedes editar el correo antes de enviarlo.\nAquí puede ver cómo utilizamos la información:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
-  "showPrivacyPolicy": "Afficher la déclaration de confidentialité",
-  "errorLogEmpty": "Le journal des erreurs est vide",
-  "verboseLogging": "Journalisation verbeuse",
-  "errorLogCleared": "Journal d'erreur nettoyé",
+  "showPrivacyPolicy": "Mostrar política de privacidad",
+  "errorLogEmpty": "El registro de errores está vacío",
+  "verboseLogging": "Registro detallado",
+  "errorLogCleared": "Registro de errores borrado",
   "ok": "Ok",
-  "errorMailBody": "Le fichier journal des erreurs est joint.\nVous pouvez remplacer ce texte par des informations supplémentaires sur l'erreur.",
+  "errorMailBody": "Se adjunta el archivo de registro de errores.\nPuede sustituir este texto por información adicional sobre el error.",
   "@errorMailBody": {
-    "description": "Message pour le corps du courriel"
+    "description": "Message for email body"
   },
-  "showDetails": "Afficher les détails",
-  "open": "Ouvrir",
-  "deleteLockedToken": "Veuillez vous authentifier pour supprimer le jeton verrouillé.",
-  "editLockedToken": "Veuillez vous authentifier pour modifier le jeton verrouillé.",
-  "retryRollout": "Réessayer le déploiement",
-  "generatingRSAKeyPair": "Génération de la paire de clés RSA",
+  "showDetails": "Mostrar detalles",
+  "open": "Abrir",
+  "deleteLockedToken": "Por favor, autentíquese para eliminar el token bloqueado.",
+  "editLockedToken": "Por favor, autentíquese para editar el token bloqueado.",
+  "retryRollout": "Reintentar despliegue",
+  "generatingRSAKeyPair": "Generando par de claves RSA",
   "@generatingRSAKeyPair": {
     "description": "Message for the rollout process"
   },
-  "generatingRSAKeyPairFailed": "La génération de la paire de clés RSA a échoué",
+  "generatingRSAKeyPairFailed": "Error al generar el par de claves RSA",
   "@generatingRSAKeyPairFailed": {
     "description": "Message for the rollout process"
   },
-  "sendingRSAPublicKey": "Envoi de la clé publique RSA",
+  "sendingRSAPublicKey": "Enviando clave pública RSA",
   "@sendingRSAPublicKey": {
     "description": "Message for the rollout process"
   },
-  "sendingRSAPublicKeyFailed": "L'envoi de la clé publique RSA a échoué",
+  "sendingRSAPublicKeyFailed": "Error al enviar la clave pública RSA",
   "@sendingRSAPublicKeyFailed": {
     "description": "Message for the rollout process"
   },
-  "parsingResponse": "Analyse de la réponse",
+  "parsingResponse": "Analizando la respuesta",
   "@parsingResponse": {
     "description": "Message for the rollout process"
   },
-  "parsingResponseFailed": "L'analyse de la réponse a échoué",
+  "parsingResponseFailed": "Error al analizar la respuesta",
   "@parsingResponseFailed": {
     "description": "Message for the rollout process"
   },
-  "rolloutCompleted": "Déploiement terminé",
+  "rolloutCompleted": "Despliegue completado",
   "@rolloutCompleted": {
     "description": "Message for the rollout process"
   },
   "errorRollOutNoConnectionToServer": "El despliegue del token {name} ha fallado, no se ha podido acceder al servidor.",
   "@errorRollOutNoConnectionToServer": {
-    "description": "Message for the rollout process"
+    "description": "Message for the rollout process",
+    "placeholders": {
+      "name": {
+        "example": "PUSH1234A"
+      }
+    }
   },
-  "authToAcceptPushRequest": "Veuillez vous authentifier pour accepter la demande de connexion.",
-  "@authToAcceptPushRequest": {
-    "description": "authToAcceptPushRequest"
-  },
-  "authToDeclinePushRequest": "Veuillez vous authentifier pour refuser la demande de connexion.",
-  "@authToDeclinePushRequest": {
-    "description": "authToDeclinePushRequest"
-  },
-  "pushRequestParseError": "La demande push n'a pas pu être traitée.",
-  "errorRollOutSSLHandshakeFailed": "Échec de la prise de contact SSL. Le déploiement n'est pas possible.",
-  "errorWhenPullingChallenges": "Une erreur s'est produite lors de l'interrogation des défis de {name}",
+  "authToAcceptPushRequest": "Por favor, autentifíquese para aceptar la solicitud push.",
+  "authToDeclinePushRequest": "Por favor, autentifíquese para rechazar la solicitud push.",
+  "pushRequestParseError": "No se ha podido procesar la solicitud push.",
+  "errorRollOutSSLHandshakeFailed": "Ha fallado el protocolo SSL. No es posible el despliegue.",
+  "errorWhenPullingChallenges": "Se ha producido un error al buscar retos de {name}",
   "@errorWhenPullingChallenges": {
     "placeholders": {
       "name": {
@@ -394,8 +390,8 @@
       }
     }
   },
-  "errorRollOutNotPossibleAnymore": "Le déploiement de ce jeton n'est plus possible.",
-  "errorTokenExpired": "Le jeton {name} a expiré.",
+  "errorRollOutNotPossibleAnymore": "El despliegue de este token ya no es posible.",
+  "errorTokenExpired": "El token {name} ha caducado.",
   "@errorTokenExpired": {
     "placeholders": {
       "name": {
@@ -403,50 +399,50 @@
       }
     }
   },
-  "yes": "Oui",
-  "no": "Non",
-  "butDiscardIt": "mais l'écarter",
-  "declineIt": "refuser",
-  "requestTriggerdByUserQuestion": "Cette demande a-t-elle été déclenchée par vous ?",
+  "yes": "Sí",
+  "no": "No",
+  "butDiscardIt": "pero descártelo",
+  "declineIt": "rechazar",
+  "requestTriggerdByUserQuestion": "¿Fue usted quien provocó esta petición?",
   "cameraPermissionPermanentlyDenied": null,
-  "cameraPermissionPermanentlyDeniedButton": "Accorder l'autorisation",
-  "decryptErrorTitle": "Erreur de décryptage",
-  "decryptErrorContent": "Malheureusement, l'application n'a pas pu décrypter vos jetons. Cela indique que la clé de cryptage est cassée. Vous pouvez réessayer ou supprimer les données de l'application, ce qui supprimera les jetons dans l'application.",
-  "decryptErrorButtonDelete": "Supprimer",
-  "decryptErrorButtonSendError": "Erreur d'envoi",
-  "decryptErrorButtonRetry": "Réessayer",
-  "decryptErrorDeleteConfirmationContent": "Êtes-vous sûr de vouloir supprimer les données de l'application ?",
-  "settingsGroupGeneral": "Généralités",
-  "licensesAndVersion": "Licences et version",
-  "privacyPolicy": "Politique de confidentialité",
-  "introScanQrCode": null,
-  "introEditToken": "Ici, vous pouvez modifier le nom du token et voir quelques détails",
-  "introLockToken": "Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu'après l'authentification.",
-  "introPollForChallenges": "Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas",
-  "feedback": "Retour d'information",
-  "feedbackTitle": "Vos commentaires sont toujours les bienvenus !",
-  "feedbackDescription": "Si vous avez des questions, des suggestions ou des problèmes, n'hésitez pas à nous en faire part",
-  "feedbackHint": "Un e-mail prêt à l'emploi s'ouvre, que vous pouvez nous envoyer. Si vous le souhaitez, des informations sur votre appareil et la version de l'application seront ajoutées. Vous pouvez vérifier et modifier l'e-mail avant de l'envoyer.",
-  "feedbackPrivacyPolicy1": "En envoyant le retour d'information, vous acceptez notre ",
-  "feedbackPrivacyPolicy2": "politique de confidentialité",
+  "cameraPermissionPermanentlyDeniedButton": "Conceder permiso",
+  "decryptErrorTitle": "Error de descifrado",
+  "decryptErrorContent": "Lamentablemente, la aplicación no ha podido descifrar tus tokens. Esto indica que la clave de cifrado está rota. Puedes volver a intentarlo o borrar los datos de la app, lo que eliminaría los tokens de la app.",
+  "decryptErrorButtonDelete": "Borrar",
+  "decryptErrorButtonSendError": "Enviar error",
+  "decryptErrorButtonRetry": "Reintentar",
+  "decryptErrorDeleteConfirmationContent": "¿Estás seguro de que quieres borrar los datos de la aplicación?",
+  "settingsGroupGeneral": "Información general",
+  "licensesAndVersion": "Licencias y versión",
+  "privacyPolicy": "Política de privacidad",
+  "introScanQrCode": "Puedes escanear códigos QR para añadir tokens.\nSoportamos todos los tokens comunes de Two-Factor-Authentication y también los tokens eduMFA",
+  "introEditToken": "Aquí puedes editar el nombre del token y ver algunos detalles",
+  "introLockToken": "Para mejorar la seguridad aún más, puedes bloquear los tokens.\nEntonces el token sólo se puede utilizar después de la autenticación.",
+  "introPollForChallenges": "Puedes buscar nuevos retos arrastrando hacia abajo la lista de tokens",
+  "feedback": "Comentarios",
+  "feedbackTitle": "¡Tus comentarios son siempre bienvenidos!",
+  "feedbackDescription": "Si tienes alguna pregunta, sugerencia o problema, háznoslo saber",
+  "feedbackHint": "Se abrirá un correo electrónico preparado que podrá enviarnos. Si lo desea, se añadirá información sobre su dispositivo y la versión de la aplicación. Puede comprobar y editar el correo electrónico antes de enviarlo.",
+  "feedbackPrivacyPolicy1": "Al enviar sus comentarios, acepta nuestra ",
+  "feedbackPrivacyPolicy2": "política de privacidad",
   "@feedbackPrivacyPolicy2": {
     "description": "Taping on this should open the privacy policy."
   },
   "feedbackPrivacyPolicy3": ".",
-  "addSystemInfo": "Ajouter des informations sur le système",
-  "feedbackSentTitle": "Retour d'information envoyé",
-  "feedbackSentDescription": "Merci beaucoup pour votre aide dans l'amélioration de cette application !",
-  "noMailAppTitle": "Aucune application de messagerie trouvée",
-  "noMailAppDescription": "Aucune application de messagerie n'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d'envoyer un message électronique.",
-  "authenticationRequest": "Authentification",
-  "requestInfo": "Envoyé par {issuer} pour votre compte : \"{account}\"",
+  "addSystemInfo": "Añadir información del sistema",
+  "feedbackSentTitle": "Comentarios enviados",
+  "feedbackSentDescription": "Muchas gracias por su ayuda para mejorar esta aplicación.",
+  "noMailAppTitle": "No hay aplicación de correo electrónico",
+  "noMailAppDescription": "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico.",
+  "authenticationRequest": "Autenticación",
+  "requestInfo": "Enviado por {issuer} para su cuenta: \"{account}\"",
   "@requestInfo": {
     "placeholders": {
       "issuer": {
-        "exemple": "eduMFA"
+        "example": "eduMFA"
       },
       "account": {
-        "exemple": "GitHub"
+        "example": "GitHub"
       }
     }
   }
