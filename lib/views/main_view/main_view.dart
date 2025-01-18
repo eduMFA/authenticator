@@ -1,18 +1,16 @@
+import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view_widgets/main_view_navigation_buttons/qr_scanner_button.dart';
 import 'package:edumfa_authenticator/widgets/global_drawer.dart';
 
-import '../../model/states/token_filter.dart';
 import '../../utils/logger.dart';
 import '../../utils/riverpod_providers.dart';
 import '../../widgets/push_request_listener.dart';
 import '../../widgets/status_bar.dart';
 import '../view_interface.dart';
-import 'main_view_widgets/app_bar_item.dart';
 import 'main_view_widgets/connectivity_listener.dart';
-import 'main_view_widgets/expandable_appbar.dart';
 import 'main_view_widgets/main_view_tokens_list.dart';
 import 'main_view_widgets/main_view_tokens_list_filtered.dart';
 
@@ -56,44 +54,24 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
         resizeToAvoidBottomInset: false,
         floatingActionButton: const QrScannerButton(),
         drawer: const DrawerWidget(),
-        body: ExpandableAppBar(
-          startExpand: hasFilter,
-          appBar: AppBar(
-              titleSpacing: 6,
-              title: Text(
-                widget.appName,
-                overflow: TextOverflow.ellipsis,
-                // maxLines: 2 only works like this.
-                maxLines: 2, // Title can be shown on small screens too.
-              ),
-              actions: [
-                hasFilter
-                    ? AppBarItem(
-                        onPressed: () {
-                          ref.read(tokenFilterProvider.notifier).state = null;
-                        },
-                        icon: const Icon(Icons.close),
-                      )
-                    : AppBarItem(
-                        onPressed: () {
-                          ref.read(tokenFilterProvider.notifier).state =
-                              TokenFilter(
-                            searchQuery: '',
-                          );
-                        },
-                        icon: const Icon(Icons.search),
-                      ),
-              ]),
-          body: ConnectivityListener(
-            child: StatusBar(
-              child: !hasFilter
-                  ? Stack(
-                      children: [
-                        MainViewTokensList(nestedScrollViewKey: globalKey),
-                      ],
-                    )
-                  : const MainViewTokensListFiltered(),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(70),
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.only(left: 20, right: 20, top: 10),
+              child: TokenSearchBar(),
             ),
+          ),
+        ),
+        body: ConnectivityListener(
+          child: StatusBar(
+            child: !hasFilter
+                ? Stack(
+                    children: [
+                      MainViewTokensList(nestedScrollViewKey: globalKey),
+                    ],
+                  )
+                : const MainViewTokensListFiltered(),
           ),
         ),
       ),
