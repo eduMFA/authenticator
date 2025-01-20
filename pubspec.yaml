@@ -79,6 +79,7 @@ dependencies:
   shared_preferences: ^2.3.5
 
   # UI
+  dynamic_color: ^1.7.0
   easy_dynamic_theme: ^2.3.1
   flutter_slidable: ^3.1.2
   cupertino_icons: ^1.0.8
