@@ -62,14 +62,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  app_minimizer:
-    dependency: "direct main"
-    description:
-      name: app_minimizer
-      sha256: "864dfbe8f9072ab7f94a433173ada5ebca6d8adb68b95ee906f464b8a3dd21a6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0+3"
   archive:
     dependency: transitive
     description:
