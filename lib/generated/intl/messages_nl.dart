@@ -44,8 +44,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Accepteren"),
-        "addSystemInfo":
-            MessageLookupByLibrary.simpleMessage("Systeeminformatie toevoegen"),
         "addToken": MessageLookupByLibrary.simpleMessage("Token toevoegen"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Alle tokens zijn gesynchroniseerd."),
@@ -132,22 +130,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Token synchroniseren mislukt, eduMFA server kan niet worden bereikt."),
         "errorTokenExpired": m4,
         "errorWhenPullingChallenges": m5,
-        "feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
-        "feedbackDescription": MessageLookupByLibrary.simpleMessage(
-            "Als je vragen, suggesties of problemen hebt, laat het ons dan weten."),
-        "feedbackHint": MessageLookupByLibrary.simpleMessage(
-            "Er wordt een kant-en-klare e-mail geopend die je naar ons kunt sturen. Indien gewenst wordt informatie over je apparaat en de versie van de applicatie toegevoegd. U kunt de e-mail controleren en bewerken voordat u deze verzendt."),
-        "feedbackPrivacyPolicy1": MessageLookupByLibrary.simpleMessage(
-            "Door feedback te sturen ga je akkoord met ons "),
-        "feedbackPrivacyPolicy2":
-            MessageLookupByLibrary.simpleMessage("privacybeleid"),
-        "feedbackPrivacyPolicy3": MessageLookupByLibrary.simpleMessage("."),
-        "feedbackSentDescription": MessageLookupByLibrary.simpleMessage(
-            "Hartelijk dank voor je hulp om deze applicatie beter te maken!"),
-        "feedbackSentTitle":
-            MessageLookupByLibrary.simpleMessage("Feedback verzonden"),
-        "feedbackTitle": MessageLookupByLibrary.simpleMessage(
-            "Uw feedback is altijd welkom!"),
         "generatingPhonePart":
             MessageLookupByLibrary.simpleMessage("Genereren telefoon gedeelte"),
         "generatingRSAKeyPair":

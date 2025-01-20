@@ -45,8 +45,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Accepter"),
-        "addSystemInfo": MessageLookupByLibrary.simpleMessage(
-            "Ajouter des informations sur le système"),
         "addToken": MessageLookupByLibrary.simpleMessage("Ajouter un jeton"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Tous les jetons ont été synchronisés."),
@@ -134,23 +132,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "La synchronization a échoué car le serveur est injoignable."),
         "errorTokenExpired": m4,
         "errorWhenPullingChallenges": m5,
-        "feedback":
-            MessageLookupByLibrary.simpleMessage("Retour d\'information"),
-        "feedbackDescription": MessageLookupByLibrary.simpleMessage(
-            "Si vous avez des questions, des suggestions ou des problèmes, n\'hésitez pas à nous en faire part"),
-        "feedbackHint": MessageLookupByLibrary.simpleMessage(
-            "Un e-mail prêt à l\'emploi s\'ouvre, que vous pouvez nous envoyer. Si vous le souhaitez, des informations sur votre appareil et la version de l\'application seront ajoutées. Vous pouvez vérifier et modifier l\'e-mail avant de l\'envoyer."),
-        "feedbackPrivacyPolicy1": MessageLookupByLibrary.simpleMessage(
-            "En envoyant le retour d\'information, vous acceptez notre "),
-        "feedbackPrivacyPolicy2": MessageLookupByLibrary.simpleMessage(
-            "politique de confidentialité"),
-        "feedbackPrivacyPolicy3": MessageLookupByLibrary.simpleMessage("."),
-        "feedbackSentDescription": MessageLookupByLibrary.simpleMessage(
-            "Merci beaucoup pour votre aide dans l\'amélioration de cette application !"),
-        "feedbackSentTitle": MessageLookupByLibrary.simpleMessage(
-            "Retour d\'information envoyé"),
-        "feedbackTitle": MessageLookupByLibrary.simpleMessage(
-            "Vos commentaires sont toujours les bienvenus !"),
         "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
             "Générer la part du téléphone"),
         "generatingRSAKeyPair": MessageLookupByLibrary.simpleMessage(
