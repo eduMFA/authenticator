@@ -1,6 +1,5 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -9,7 +8,6 @@ import '../../model/tokens/push_token.dart';
 import '../../utils/globals.dart';
 import '../../utils/riverpod_providers.dart';
 import '../../widgets/push_request_listener.dart';
-import '../feedback_view/feedback_view.dart';
 import '../license_view/license_view.dart';
 import '../view_interface.dart';
 import 'settings_view_widgets/logging_menu.dart';
@@ -72,19 +70,7 @@ class SettingsView extends ConsumerView {
                       overflow: TextOverflow.fade,
                       softWrap: false,
                     ),
-                  ),
-                  SettingsListTileButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, FeedbackView.routeName);
-                    },
-                    title: Text(
-                      'Feedback',
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    icon: const Icon(FluentIcons.chat_32_regular),
-                  ),
+                  )
                 ],
               ),
               const Divider(),

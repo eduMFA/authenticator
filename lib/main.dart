@@ -22,6 +22,7 @@
 */
 import 'dart:io';
 
+import 'package:dynamic_color/dynamic_color.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -39,8 +40,6 @@ import 'package:edumfa_authenticator/views/qr_scanner_view/qr_scanner_view.dart'
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/splash_screen/splash_screen.dart';
 import 'package:edumfa_authenticator/widgets/app_wrapper.dart';
-
-import 'views/feedback_view/feedback_view.dart';
 
 void main() async {
   Logger.init(
@@ -82,43 +81,68 @@ class EduMFAAuthenticator extends ConsumerWidget {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(appConstraintsProvider.notifier).state = constraints;
       });
-      return MaterialApp(
-        scrollBehavior: ScrollConfiguration.of(context).copyWith(
-          physics: const ClampingScrollPhysics(),
-          overscroll: false,
-        ),
-        debugShowCheckedModeBanner: true,
-        navigatorKey: globalNavigatorKey,
-        localizationsDelegates: [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate
-        ],
-        supportedLocales: S.delegate.supportedLocales,
-        locale: locale,
-        title: _customization.appName,
-        theme: _customization.generateLightTheme(),
-        darkTheme: _customization.generateDarkTheme(),
-        scaffoldMessengerKey: globalSnackbarKey, // <= this
-        themeMode: EasyDynamicTheme.of(context).themeMode,
-        initialRoute: SplashScreen.routeName,
-        routes: {
-          FeedbackView.routeName: (context) => const FeedbackView(),
-          LicenseView.routeName: (context) => LicenseView(
-                appName: _customization.appName,
-                websiteLink: _customization.websiteLink,
+      return DynamicColorBuilder(
+          builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+            ColorScheme lightColorScheme;
+            ColorScheme darkColorScheme;
+
+            //var brandColor = Color.fromRGBO(0, 255, 172, 1);
+
+            if (lightDynamic != null && darkDynamic != null) {
+              lightColorScheme = lightDynamic.harmonized();
+              //lightColorScheme = lightColorScheme.copyWith(secondary: brandColor);
+
+              darkColorScheme = darkDynamic.harmonized();
+              //darkColorScheme = darkColorScheme.copyWith(secondary: brandColor);
+            } else {
+              lightColorScheme = ColorScheme.light();
+              //lightColorScheme = ColorScheme.fromSeed(seedColor: brandColor);
+
+              darkColorScheme = ColorScheme.dark();
+              //darkColorScheme = ColorScheme.fromSeed(
+              //  seedColor: brandColor,
+              //  brightness: Brightness.dark,
+              //);
+            }
+
+            return MaterialApp(
+              scrollBehavior: ScrollConfiguration.of(context).copyWith(
+                physics: const ClampingScrollPhysics(),
+                overscroll: false,
               ),
-          MainView.routeName: (context) => MainView(),
-          OnboardingView.routeName: (context) => OnboardingView(
-                appName: _customization.appName,
-              ),
-          SettingsView.routeName: (context) => const SettingsView(),
-          SplashScreen.routeName: (context) => SplashScreen(
-                appName: _customization.appName,
-              ),
-          QRScannerView.routeName: (context) => const QRScannerView(),
-        },
+              debugShowCheckedModeBanner: true,
+              navigatorKey: globalNavigatorKey,
+              localizationsDelegates: [
+                S.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate
+              ],
+              supportedLocales: S.delegate.supportedLocales,
+              locale: locale,
+              title: _customization.appName,
+              theme: ThemeData(colorScheme: lightColorScheme),
+              darkTheme: ThemeData(colorScheme: darkColorScheme),
+              scaffoldMessengerKey: globalSnackbarKey, // <= this
+              themeMode: EasyDynamicTheme.of(context).themeMode,
+              initialRoute: SplashScreen.routeName,
+              routes: {
+                LicenseView.routeName: (context) => LicenseView(
+                  appName: _customization.appName,
+                  websiteLink: _customization.websiteLink,
+                ),
+                MainView.routeName: (context) => MainView(),
+                OnboardingView.routeName: (context) => OnboardingView(
+                  appName: _customization.appName,
+                ),
+                SettingsView.routeName: (context) => const SettingsView(),
+                SplashScreen.routeName: (context) => SplashScreen(
+                  appName: _customization.appName,
+                ),
+                QRScannerView.routeName: (context) => const QRScannerView(),
+              },
+            );
+          }
       );
     });
   }
