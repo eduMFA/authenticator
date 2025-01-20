@@ -1,9 +1,7 @@
-import 'package:edumfa_authenticator/model/states/token_filter.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/app_bar_item.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/connectivity_listener.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/expandable_appbar.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/main_view_navigation_buttons/qr_scanner_button.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_search_bar.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list_filtered.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
@@ -32,40 +30,25 @@ class _TokensViewState extends ConsumerState<TokensView> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       floatingActionButton: const QrScannerButton(),
-      body: ExpandableAppBar(
-        startExpand: hasFilter,
-        appBar: AppBar(
-            titleSpacing: 6,
-            centerTitle: true,
-            actions: [
-              hasFilter
-                  ? AppBarItem(
-                onPressed: () {
-                  ref.read(tokenFilterProvider.notifier).state = null;
-                },
-                icon: const Icon(Icons.close),
-              )
-                  : AppBarItem(
-                onPressed: () {
-                  ref.read(tokenFilterProvider.notifier).state =
-                      TokenFilter(
-                        searchQuery: '',
-                      );
-                },
-                icon: const Icon(Icons.search),
-              ),
-            ]),
-        body: ConnectivityListener(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(left: 20, right: 20, top: 10),
+            child: TokenSearchBar(),
+          ),
+        ),
+      ),
+      body: ConnectivityListener(
           child: StatusBar(
             child: !hasFilter
                 ? Stack(
-              children: [
-                TokensList(nestedScrollViewKey: globalKey),
-              ],
-            )
+                    children: [
+                      TokensList(nestedScrollViewKey: globalKey),
+                    ],
+                  )
                 : const TokensListFiltered(),
           ),
-        ),
       ),
     );
   }
