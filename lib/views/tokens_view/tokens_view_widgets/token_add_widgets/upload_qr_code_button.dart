@@ -21,13 +21,9 @@ class UploadQrCodeButton extends StatelessWidget {
         );
         if (image == null) return;
 
-        // TODO: Due to an issue .png files doesn't work rn
-
         final BarcodeCapture? barcodes = await controller.analyzeImage(
             image.path, formats: [BarcodeFormat.qrCode]
         );
-
-
         handleBarcodes(barcodes);
       },
       style: FilledButton.styleFrom(
@@ -40,5 +36,4 @@ class UploadQrCodeButton extends StatelessWidget {
       label: Text(S.of(context).uploadQrCodeButton),
     ),
   );
-
 }
