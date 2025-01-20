@@ -44,8 +44,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Přijmout"),
-        "addSystemInfo":
-            MessageLookupByLibrary.simpleMessage("Přidat systémové informace"),
         "addToken": MessageLookupByLibrary.simpleMessage("Přidat token"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Všechny tokeny jsou synchronizované."),
@@ -135,22 +133,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Synchronizace tokenů selhala, připojení k serveru eduMFA se nezdařilo."),
         "errorTokenExpired": m4,
         "errorWhenPullingChallenges": m5,
-        "feedback": MessageLookupByLibrary.simpleMessage("Zpětná vazba"),
-        "feedbackDescription": MessageLookupByLibrary.simpleMessage(
-            "Pokud máte nějaké dotazy, návrhy nebo problémy, dejte nám prosím vědět."),
-        "feedbackHint": MessageLookupByLibrary.simpleMessage(
-            "Otevře se připravený e-mail, který nám můžete zaslat. V případě potřeby budou doplněny informace o vašem zařízení a verzi aplikace. Před odesláním můžete e-mail zkontrolovat a upravit."),
-        "feedbackPrivacyPolicy1": MessageLookupByLibrary.simpleMessage(
-            "Odesláním zpětné vazby souhlasíte s našimi "),
-        "feedbackPrivacyPolicy2": MessageLookupByLibrary.simpleMessage(
-            "zásadami ochrany osobních údajů"),
-        "feedbackPrivacyPolicy3": MessageLookupByLibrary.simpleMessage("."),
-        "feedbackSentDescription": MessageLookupByLibrary.simpleMessage(
-            "Děkujeme vám za pomoc při vylepšování této aplikace!"),
-        "feedbackSentTitle":
-            MessageLookupByLibrary.simpleMessage("Zpětná vazba odeslána"),
-        "feedbackTitle": MessageLookupByLibrary.simpleMessage(
-            "Vaše zpětná vazba je vždy vítána!"),
         "generatingPhonePart":
             MessageLookupByLibrary.simpleMessage("Generování klientské části"),
         "generatingRSAKeyPair":

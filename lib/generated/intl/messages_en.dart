@@ -45,8 +45,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Accept"),
-        "addSystemInfo":
-            MessageLookupByLibrary.simpleMessage("Add system information"),
         "addToken": MessageLookupByLibrary.simpleMessage("Add token"),
         "addTokenSubtitle": MessageLookupByLibrary.simpleMessage(
             "Point your camera at your screen to capture the QR code"),
@@ -141,22 +139,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Synchronizing tokens failed, eduMFA server could not be reached."),
         "errorTokenExpired": m4,
         "errorWhenPullingChallenges": m5,
-        "feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
-        "feedbackDescription": MessageLookupByLibrary.simpleMessage(
-            "If you have any questions, suggestions or problems, please let us know."),
-        "feedbackHint": MessageLookupByLibrary.simpleMessage(
-            "A ready-made e-mail will open, which you can send to us. If desired, information about your device and the version of the application will be added. You can check and edit the email before sending it."),
-        "feedbackPrivacyPolicy1": MessageLookupByLibrary.simpleMessage(
-            "By sending the feedback you agree to our "),
-        "feedbackPrivacyPolicy2":
-            MessageLookupByLibrary.simpleMessage("privacy policy"),
-        "feedbackPrivacyPolicy3": MessageLookupByLibrary.simpleMessage("."),
-        "feedbackSentDescription": MessageLookupByLibrary.simpleMessage(
-            "Thank you very much for your help in making this application better!"),
-        "feedbackSentTitle":
-            MessageLookupByLibrary.simpleMessage("Feedback sent"),
-        "feedbackTitle": MessageLookupByLibrary.simpleMessage(
-            "Your feedback is always welcome!"),
         "generatingPhonePart":
             MessageLookupByLibrary.simpleMessage("Generating phone part"),
         "generatingRSAKeyPair":

@@ -45,8 +45,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Akzeptieren"),
-        "addSystemInfo":
-            MessageLookupByLibrary.simpleMessage("Systeminfos hinzufügen"),
         "addToken": MessageLookupByLibrary.simpleMessage("Token hinzufügen"),
         "addTokenSubtitle": MessageLookupByLibrary.simpleMessage(
             "Richten Sie Ihre Kamera auf Ihren Bildschirm, um den QR-Code zu scanne"),
@@ -143,22 +141,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Die Synchronisation ist fehlgeschlagen, da der eduMFA Server nicht erreicht werden konnte."),
         "errorTokenExpired": m4,
         "errorWhenPullingChallenges": m5,
-        "feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
-        "feedbackDescription": MessageLookupByLibrary.simpleMessage(
-            "Wenn Sie Fragen, Anregungen oder Probleme haben, lassen Sie es uns wissen."),
-        "feedbackHint": MessageLookupByLibrary.simpleMessage(
-            "Es öffnet sich eine vorgefertigte E-Mail, die Sie an uns senden können. Falls gewünscht, werden Informationen über Ihr Gerät und die Version der Anwendung hinzugefügt. Vor dem Versenden können Sie die E-Mail überprüfen und bearbeiten."),
-        "feedbackPrivacyPolicy1": MessageLookupByLibrary.simpleMessage(
-            "Mit dem Senden des Feedbacks stimmen Sie unserer "),
-        "feedbackPrivacyPolicy2":
-            MessageLookupByLibrary.simpleMessage("Datenschutzerklärung"),
-        "feedbackPrivacyPolicy3": MessageLookupByLibrary.simpleMessage(" zu."),
-        "feedbackSentDescription": MessageLookupByLibrary.simpleMessage(
-            "Vielen Dank für Ihre Hilfe bei der Verbesserung dieser App!"),
-        "feedbackSentTitle":
-            MessageLookupByLibrary.simpleMessage("Feedback gesendet"),
-        "feedbackTitle": MessageLookupByLibrary.simpleMessage(
-            "Ihr Feedback ist immer willkommen!"),
         "generatingPhonePart":
             MessageLookupByLibrary.simpleMessage("Generiere Telefonanteil"),
         "generatingRSAKeyPair":

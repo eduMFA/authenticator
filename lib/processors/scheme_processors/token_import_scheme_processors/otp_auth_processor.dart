@@ -1,11 +1,8 @@
-import 'dart:typed_data';
-
 import '../../../model/tokens/token.dart';
 import '../../../utils/identifiers.dart';
 import '../../../utils/logger.dart';
 import '../../../utils/supported_versions.dart';
 import '../../../utils/view_utils.dart';
-import '../../../widgets/dialog_widgets/two_step_dialog.dart';
 import 'token_import_scheme_processor_interface.dart';
 
 class OtpAuthProcessor extends TokenImportSchemeProcessor {
@@ -26,25 +23,6 @@ class OtpAuthProcessor extends TokenImportSchemeProcessor {
       //showMessage(message: '${e.message}\n Please inform the creator of this qr code about the problem.', duration: const Duration(seconds: 8));
 
       return [];
-    }
-    if (_is2StepURI(uri)) {
-      validateMap(uriMap, [URI_SECRET, URI_ITERATIONS, URI_OUTPUT_LENGTH_IN_BYTES, URI_SALT_LENGTH]);
-      final secret = uriMap[URI_SECRET] as Uint8List;
-      // Calculate the whole secret.
-      Uint8List? twoStepSecret;
-      while (twoStepSecret == null) {
-        twoStepSecret = (await showAsyncDialog<Uint8List>(
-          barrierDismissible: false,
-          builder: (context) => GenerateTwoStepDialog(
-            iterations: uriMap[URI_ITERATIONS],
-            keyLength: uriMap[URI_OUTPUT_LENGTH_IN_BYTES],
-            saltLength: uriMap[URI_SALT_LENGTH],
-            password: secret,
-          ),
-        ));
-        await Future.delayed(const Duration(milliseconds: 500));
-      }
-      uriMap[URI_SECRET] = twoStepSecret;
     }
     Token newToken;
     try {
@@ -171,8 +149,4 @@ String _parseIssuer(Uri uri) {
   }
 
   return issuer ?? '';
-}
-
-bool _is2StepURI(Uri uri) {
-  return uri.queryParameters['2step_salt'] != null || uri.queryParameters['2step_output'] != null || uri.queryParameters['2step_difficulty'] != null;
 }

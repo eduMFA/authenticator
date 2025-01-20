@@ -1,4 +1,5 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_widget_base.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
@@ -13,7 +14,6 @@ import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_widgets/token_widget_base.dart';
 
 import '../test/tests_app_wrapper.dart';
 import '../test/tests_app_wrapper.mocks.dart';
