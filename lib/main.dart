@@ -76,7 +76,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
       SystemChrome.setPreferredOrientations(preferredOrientations);
     }
 
-
     return LayoutBuilder(builder: (context, constraints) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(appConstraintsProvider.notifier).state = constraints;
