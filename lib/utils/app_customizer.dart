@@ -1,3 +1,4 @@
+import 'package:edumfa_authenticator/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
 class ApplicationCustomization {
@@ -29,37 +30,43 @@ class ApplicationCustomization {
 
   final String appName;
   final String websiteLink;
+  final Color brandColor;
 
   static const defaultCustomization = ApplicationCustomization(
     appName: 'eduMFA Authenticator',
     websiteLink: 'https://edumfa.io/',
+    brandColor: Color(0xFF768FFC),
   );
 
   const ApplicationCustomization({
     required this.appName,
     required this.websiteLink,
+    required this.brandColor,
   });
 
   ApplicationCustomization copyWith({
     String? appName,
     String? websiteLink,
-    Color? primaryColor,
+    Color? brandColor,
   }) =>
       ApplicationCustomization(
         appName: appName ?? this.appName,
         websiteLink: websiteLink ?? this.websiteLink,
+        brandColor: brandColor ?? this.brandColor,
       );
 
   factory ApplicationCustomization.fromJson(Map<String, dynamic> json) =>
       defaultCustomization.copyWith(
         appName: json['appName'] as String,
         websiteLink: json['websiteLink'] as String,
+        brandColor: Color(json['brandColor'] as int),
       );
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'appName': appName,
       'websiteLink': websiteLink,
+      'brandColor': brandColor.toInt,
     };
   }
 }

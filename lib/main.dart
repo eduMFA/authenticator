@@ -86,8 +86,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
             ColorScheme lightColorScheme;
             ColorScheme darkColorScheme;
 
-            //var brandColor = Color.fromRGBO(0, 255, 172, 1);
-
             if (lightDynamic != null && darkDynamic != null) {
               lightColorScheme = lightDynamic.harmonized();
               //lightColorScheme = lightColorScheme.copyWith(secondary: brandColor);
@@ -95,14 +93,12 @@ class EduMFAAuthenticator extends ConsumerWidget {
               darkColorScheme = darkDynamic.harmonized();
               //darkColorScheme = darkColorScheme.copyWith(secondary: brandColor);
             } else {
-              lightColorScheme = ColorScheme.light();
-              //lightColorScheme = ColorScheme.fromSeed(seedColor: brandColor);
+              lightColorScheme = ColorScheme.fromSeed(seedColor: _customization.brandColor);
 
-              darkColorScheme = ColorScheme.dark();
-              //darkColorScheme = ColorScheme.fromSeed(
-              //  seedColor: brandColor,
-              //  brightness: Brightness.dark,
-              //);
+              darkColorScheme = ColorScheme.fromSeed(
+                seedColor: _customization.brandColor,
+                brightness: Brightness.dark,
+              );
             }
 
             return MaterialApp(
