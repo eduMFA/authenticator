@@ -150,6 +150,47 @@ class S {
     );
   }
 
+  /// `Pair new Push Token`
+  String get addTokenTitle {
+    return Intl.message(
+      'Pair new Push Token',
+      name: 'addTokenTitle',
+      desc: 'The title of the token add screen.',
+      args: [],
+    );
+  }
+
+  /// `Point your camera at your screen to capture the QR code`
+  String get addTokenSubtitle {
+    return Intl.message(
+      'Point your camera at your screen to capture the QR code',
+      name: 'addTokenSubtitle',
+      desc: 'The subtitle of the token add screen.',
+      args: [],
+    );
+  }
+
+  /// `OR`
+  String get or {
+    return Intl.message(
+      'OR',
+      name: 'or',
+      desc:
+          'This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file.',
+      args: [],
+    );
+  }
+
+  /// `Upload QR Code`
+  String get uploadQrCodeButton {
+    return Intl.message(
+      'Upload QR Code',
+      name: 'uploadQrCodeButton',
+      desc: 'The button in the token add view to upload QR codes as an image.',
+      args: [],
+    );
+  }
+
   /// `Rename token`
   String get renameToken {
     return Intl.message(
@@ -1153,41 +1194,21 @@ class S {
     );
   }
 
-  /// `Camera permission is not granted`
-  String get grantCameraPermissionDialogTitle {
+  /// `Camera permission is permanently denied. Please grant camera permission in the system settings.`
+  String get cameraPermissionPermanentlyDenied {
     return Intl.message(
-      'Camera permission is not granted',
-      name: 'grantCameraPermissionDialogTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please grant camera permission to scan QR codes.`
-  String get grantCameraPermissionDialogContent {
-    return Intl.message(
-      'Please grant camera permission to scan QR codes.',
-      name: 'grantCameraPermissionDialogContent',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Camera permission is permanently denied. Please grant camera permission in your Phone's settings.`
-  String get grantCameraPermissionDialogPermanentlyDenied {
-    return Intl.message(
-      'Camera permission is permanently denied. Please grant camera permission in your Phone\'s settings.',
-      name: 'grantCameraPermissionDialogPermanentlyDenied',
+      'Camera permission is permanently denied. Please grant camera permission in the system settings.',
+      name: 'cameraPermissionPermanentlyDenied',
       desc: '',
       args: [],
     );
   }
 
   /// `Grant permission`
-  String get grantCameraPermissionDialogButton {
+  String get cameraPermissionPermanentlyDeniedButton {
     return Intl.message(
       'Grant permission',
-      name: 'grantCameraPermissionDialogButton',
+      name: 'cameraPermissionPermanentlyDeniedButton',
       desc: '',
       args: [],
     );

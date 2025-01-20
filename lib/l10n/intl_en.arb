@@ -40,6 +40,22 @@
   "@scanQrCode": {
     "description": "The button to scan otpauth qr-codes."
   },
+  "addTokenTitle": "Pair new Push Token",
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": "Point your camera at your screen to capture the QR code",
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": "OR",
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": "Upload QR Code",
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
+  },
   "renameToken": "Rename token",
   "@renameToken": {
     "description": "Title of the dialog where a new name for a token can be entered."
@@ -379,10 +395,8 @@
   "butDiscardIt": "but discard it",
   "declineIt": "decline it",
   "requestTriggerdByUserQuestion": "Was this request triggered by you?",
-  "grantCameraPermissionDialogTitle": "Camera permission is not granted",
-  "grantCameraPermissionDialogContent": "Please grant camera permission to scan QR codes.",
-  "grantCameraPermissionDialogPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in your Phone's settings.",
-  "grantCameraPermissionDialogButton": "Grant permission",
+  "cameraPermissionPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in the system settings.",
+  "cameraPermissionPermanentlyDeniedButton": "Grant permission",
   "decryptErrorTitle": "Decryption error",
   "decryptErrorContent": "Unfortunately, the app was unable to decrypt your tokens. This indicates that the encryption key is broken. You can try again or delete the app data, which would delete the tokens in the app.",
   "decryptErrorButtonDelete": "Delete",

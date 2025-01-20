@@ -46,6 +46,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Accept"),
         "addToken": MessageLookupByLibrary.simpleMessage("Add token"),
+        "addTokenSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Point your camera at your screen to capture the QR code"),
+        "addTokenTitle":
+            MessageLookupByLibrary.simpleMessage("Pair new Push Token"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "All tokens are synchronized."),
         "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
@@ -71,6 +75,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Authentication successful"),
         "butDiscardIt": MessageLookupByLibrary.simpleMessage("but discard it"),
+        "cameraPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
+            "Camera permission is permanently denied. Please grant camera permission in the system settings."),
+        "cameraPermissionPermanentlyDeniedButton":
+            MessageLookupByLibrary.simpleMessage("Grant permission"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Please check your network connection and try again."),
@@ -141,17 +149,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Go to settings"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authentication by credentials or biometrics is not set up on your device. Please set it up in the device\'s settings."),
-        "grantCameraPermissionDialogButton":
-            MessageLookupByLibrary.simpleMessage("Grant permission"),
-        "grantCameraPermissionDialogContent":
-            MessageLookupByLibrary.simpleMessage(
-                "Please grant camera permission to scan QR codes."),
-        "grantCameraPermissionDialogPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "Camera permission is permanently denied. Please grant camera permission in your Phone\'s settings."),
-        "grantCameraPermissionDialogTitle":
-            MessageLookupByLibrary.simpleMessage(
-                "Camera permission is not granted"),
         "introEditToken": MessageLookupByLibrary.simpleMessage(
             "Here you can edit the token name and see some details."),
         "introLockToken": MessageLookupByLibrary.simpleMessage(
@@ -193,6 +190,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Visit us at Github"),
         "open": MessageLookupByLibrary.simpleMessage("Open"),
+        "or": MessageLookupByLibrary.simpleMessage("OR"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Parsing response"),
         "parsingResponseFailed":
@@ -252,6 +250,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "An unexpected error occurred."),
         "unlock": MessageLookupByLibrary.simpleMessage("Unlock"),
+        "uploadQrCodeButton":
+            MessageLookupByLibrary.simpleMessage("Upload QR Code"),
         "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
             "Use device language if it is supported, otherwise default to english."),
         "useDeviceLocaleTitle":
