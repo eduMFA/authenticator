@@ -44,8 +44,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Potwierdzam"),
-        "addSystemInfo":
-            MessageLookupByLibrary.simpleMessage("Dodaj informacje systemowe"),
         "addToken": MessageLookupByLibrary.simpleMessage("Dodaj token"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Wszystkie tokeny są zsynchronizowane."),
@@ -131,22 +129,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Synchronizacja tokenów push nieudana, ponieważ serwer eduMFA jest nieosiągalny."),
         "errorTokenExpired": m4,
         "errorWhenPullingChallenges": m5,
-        "feedback": MessageLookupByLibrary.simpleMessage("Informacje zwrotne"),
-        "feedbackDescription": MessageLookupByLibrary.simpleMessage(
-            "Jeśli masz jakieś pytania, sugestie lub problemy, daj nam znać."),
-        "feedbackHint": MessageLookupByLibrary.simpleMessage(
-            "Otworzy się gotowa wiadomość e-mail, którą możesz do nas wysłać. W razie potrzeby dodane zostaną informacje o urządzeniu i wersji aplikacji. Możesz sprawdzić i edytować wiadomość e-mail przed jej wysłaniem."),
-        "feedbackPrivacyPolicy1": MessageLookupByLibrary.simpleMessage(
-            "Wysyłając opinię, zgadzasz się z naszą "),
-        "feedbackPrivacyPolicy2":
-            MessageLookupByLibrary.simpleMessage("polityką prywatności"),
-        "feedbackPrivacyPolicy3": MessageLookupByLibrary.simpleMessage("."),
-        "feedbackSentDescription": MessageLookupByLibrary.simpleMessage(
-            "Dziękujemy bardzo za pomoc w ulepszeniu tej aplikacji!"),
-        "feedbackSentTitle":
-            MessageLookupByLibrary.simpleMessage("Opinia została wysłana"),
-        "feedbackTitle": MessageLookupByLibrary.simpleMessage(
-            "Twoja opinia jest zawsze mile widziana!"),
         "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
             "Generowanie sekretu po stronie telefonu..."),
         "generatingRSAKeyPair":

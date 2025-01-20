@@ -1,37 +1,38 @@
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_search_bar.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view.dart';
+import 'package:edumfa_authenticator/views/view_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/main_view_navigation_buttons/qr_scanner_button.dart';
-import 'package:edumfa_authenticator/widgets/global_drawer.dart';
-
-import '../../utils/logger.dart';
-import '../../utils/riverpod_providers.dart';
-import '../../widgets/push_request_listener.dart';
-import '../../widgets/status_bar.dart';
-import '../view_interface.dart';
-import 'main_view_widgets/connectivity_listener.dart';
-import 'main_view_widgets/main_view_tokens_list.dart';
-import 'main_view_widgets/main_view_tokens_list_filtered.dart';
-
-export 'package:edumfa_authenticator/views/main_view/main_view.dart';
 
 class MainView extends ConsumerStatefulView {
-  static const routeName = '/mainView';
+  static const routeName = '/main';
 
   @override
   RouteSettings get routeSettings => const RouteSettings(name: routeName);
 
-  final String appName;
-
-  const MainView({required this.appName, super.key});
+  const MainView({super.key});
 
   @override
   ConsumerState<MainView> createState() => _MainViewState();
 }
 
 class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
-  final globalKey = GlobalKey<NestedScrollViewState>();
+  int _selectedIndex = 0;
+
+  final List<Widget> _views = [
+    TokensView(),
+    SettingsView(),
+  ];
+
+  void _onDestinationSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   void onAppResume() {
@@ -48,32 +49,23 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
 
   @override
   Widget build(BuildContext context) {
-    final hasFilter = ref.watch(tokenFilterProvider) != null;
-    return PushRequestListener(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        floatingActionButton: const QrScannerButton(),
-        drawer: const DrawerWidget(),
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(70),
-          child: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.only(left: 20, right: 20, top: 10),
-              child: TokenSearchBar(),
-            ),
+    return Scaffold(
+      body: _views[_selectedIndex],
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: _onDestinationSelected,
+        destinations: [
+          NavigationDestination(
+            icon: const Icon(Icons.home_outlined),
+            selectedIcon: const Icon(Icons.home),
+            label: S.of(context).tokens,
           ),
-        ),
-        body: ConnectivityListener(
-          child: StatusBar(
-            child: !hasFilter
-                ? Stack(
-                    children: [
-                      MainViewTokensList(nestedScrollViewKey: globalKey),
-                    ],
-                  )
-                : const MainViewTokensListFiltered(),
+          NavigationDestination(
+            icon: const Icon(Icons.settings_outlined),
+            selectedIcon: const Icon(Icons.settings),
+            label: S.of(context).settings,
           ),
-        ),
+        ],
       ),
     );
   }
