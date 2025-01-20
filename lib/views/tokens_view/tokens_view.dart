@@ -1,9 +1,10 @@
+import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/model/states/token_filter.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/add_token_sheet.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/app_bar_item.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/connectivity_listener.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/expandable_appbar.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/main_view_navigation_buttons/qr_scanner_button.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list_filtered.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
@@ -31,7 +32,21 @@ class _TokensViewState extends ConsumerState<TokensView> {
     final hasFilter = ref.watch(tokenFilterProvider) != null;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      floatingActionButton: const QrScannerButton(),
+      floatingActionButton: FloatingActionButton(
+        tooltip: S.of(context).scanQrCode,
+        onPressed: () => showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          showDragHandle: true,
+          builder: (context) => AddTokenSheetWidget(),
+        ).then((qrCode) {
+          if (!context.mounted) return;
+          if (qrCode == null) return;
+          //if (qrCode == false) qrCode = null;
+          ref.read(tokenProvider.notifier).handleQrCodeUri(qrCode?.rawValue!);
+        }),
+        child: Icon(Icons.qr_code),
+      ),
       body: ExpandableAppBar(
         startExpand: hasFilter,
         appBar: AppBar(

@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:edumfa_authenticator/generated/l10n.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_add_widgets/qr_code_scanner.dart';
-import 'package:edumfa_authenticator/views/main_view/main_view_widgets/token_add_widgets/upload_qr_code_button.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_add_widgets/qr_code_scanner.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_add_widgets/upload_qr_code_button.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
