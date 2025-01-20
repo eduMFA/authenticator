@@ -35,7 +35,6 @@ import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/views/license_view/license_view.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view.dart';
 import 'package:edumfa_authenticator/views/onboarding_view/onboarding_view.dart';
-import 'package:edumfa_authenticator/views/push_token_view/push_tokens_view.dart';
 import 'package:edumfa_authenticator/views/qr_scanner_view/qr_scanner_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/splash_screen/splash_screen.dart';
@@ -113,7 +112,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
           OnboardingView.routeName: (context) => OnboardingView(
                 appName: _customization.appName,
               ),
-          PushTokensView.routeName: (context) => const PushTokensView(),
           SettingsView.routeName: (context) => const SettingsView(),
           SplashScreen.routeName: (context) => SplashScreen(
                 appName: _customization.appName,
