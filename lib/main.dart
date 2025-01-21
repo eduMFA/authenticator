@@ -125,7 +125,7 @@ class EduMFAAuthenticator extends ConsumerWidget {
                   appName: _customization.appName,
                   websiteLink: _customization.websiteLink,
                 ),
-                MainView.routeName: (context) => MainView(),
+                MainView.routeName: (context) => const MainView(),
                 OnboardingView.routeName: (context) => OnboardingView(
                   appName: _customization.appName,
                 ),

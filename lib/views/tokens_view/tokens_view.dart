@@ -38,14 +38,14 @@ class _TokensViewState extends ConsumerState<TokensView> {
           context: context,
           isScrollControlled: true,
           showDragHandle: true,
-          builder: (context) => AddTokenSheetWidget(),
+          builder: (context) => const AddTokenSheetWidget(),
         ).then((qrCode) {
           if (!context.mounted) return;
           if (qrCode == null) return;
           //if (qrCode == false) qrCode = null;
           ref.read(tokenProvider.notifier).handleQrCodeUri(qrCode?.rawValue!);
         }),
-        child: Icon(Icons.qr_code),
+        child: const Icon(Icons.qr_code),
       ),
       body: ExpandableAppBar(
         startExpand: hasFilter,

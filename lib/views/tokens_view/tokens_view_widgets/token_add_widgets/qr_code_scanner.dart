@@ -23,22 +23,22 @@ class QrCodeScannerWidget extends StatelessWidget {
         fit: BoxFit.fitWidth,
         errorBuilder: (context, error) {
           return Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.error),
-                  SizedBox(height: 10),
+                  const Icon(Icons.error),
+                  const SizedBox(height: 10),
                   Text(
                     S.of(context).cameraPermissionPermanentlyDenied,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   ElevatedButton(
                     onPressed: () => openAppSettings(),
                     child: Text(S.of(context).cameraPermissionPermanentlyDeniedButton),
