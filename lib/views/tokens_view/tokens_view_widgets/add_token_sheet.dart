@@ -1,19 +1,21 @@
 import 'dart:async';
 
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_add_widgets/qr_code_scanner.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_add_widgets/upload_qr_code_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
-class AddTokenSheetWidget extends StatefulWidget {
+class AddTokenSheetWidget extends ConsumerStatefulWidget {
   const AddTokenSheetWidget({super.key});
 
   @override
-  State<StatefulWidget> createState() => _AddTokenSheetWidgetState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _AddTokenSheetWidgetState();
 }
 
-class _AddTokenSheetWidgetState extends State<AddTokenSheetWidget> with WidgetsBindingObserver {
+class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with WidgetsBindingObserver {
   final MobileScannerController controller = MobileScannerController(
     autoStart: false,
     formats: [BarcodeFormat.qrCode],
@@ -23,7 +25,8 @@ class _AddTokenSheetWidgetState extends State<AddTokenSheetWidget> with WidgetsB
 
   void _handleBarcode(BarcodeCapture? barcodes) {
     if (!mounted) return;
-    Navigator.pop(context, barcodes != null ? barcodes.barcodes.firstOrNull : false);
+    Navigator.pop(context);
+    ref.read(tokenProvider.notifier).handleQrCodeUri(barcodes?.barcodes.firstOrNull?.rawValue);
   }
 
   @override

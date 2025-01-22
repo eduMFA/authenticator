@@ -39,12 +39,7 @@ class _TokensViewState extends ConsumerState<TokensView> {
           isScrollControlled: true,
           showDragHandle: true,
           builder: (context) => const AddTokenSheetWidget(),
-        ).then((qrCode) {
-          if (!context.mounted) return;
-          if (qrCode == null) return;
-          //if (qrCode == false) qrCode = null;
-          ref.read(tokenProvider.notifier).handleQrCodeUri(qrCode?.rawValue!);
-        }),
+        ),
         child: const Icon(Icons.qr_code),
       ),
       body: ExpandableAppBar(
