@@ -36,10 +36,6 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Scan QR-Code",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
-  },
   "addTokenTitle": "Pair new Push Token",
   "@addTokenTitle": {
     "description": "The title of the token add screen."

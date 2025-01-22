@@ -44,10 +44,6 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Naskenovat QR kód",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
-  },
   "addTokenTitle": null,
   "@addTokenTitle": {
     "description": "The title of the token add screen."

@@ -214,7 +214,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "rollingOut": MessageLookupByLibrary.simpleMessage("Rolling out"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Rollout completed"),
-        "scanQrCode": MessageLookupByLibrary.simpleMessage("Scan QR-Code"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Secret key"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(

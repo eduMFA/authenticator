@@ -210,7 +210,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "rollingOut": MessageLookupByLibrary.simpleMessage("Registrace"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Zavedení dokončeno"),
-        "scanQrCode": MessageLookupByLibrary.simpleMessage("Naskenovat QR kód"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Tajný klíč"),
         "send": MessageLookupByLibrary.simpleMessage("Odeslat"),
         "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(

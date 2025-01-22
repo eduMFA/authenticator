@@ -31,15 +31,15 @@ class _TokensViewState extends ConsumerState<TokensView> {
     final hasFilter = ref.watch(tokenFilterProvider) != null;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      floatingActionButton: FloatingActionButton(
-        tooltip: S.of(context).scanQrCode,
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text(S.of(context).addToken),
+        icon: const Icon(Icons.add),
         onPressed: () => showModalBottomSheet(
           context: context,
           isScrollControlled: true,
           showDragHandle: true,
           builder: (context) => const AddTokenSheetWidget(),
         ),
-        child: const Icon(Icons.qr_code),
       ),
       body: ExpandableAppBar(
         startExpand: hasFilter,

@@ -140,16 +140,6 @@ class S {
     );
   }
 
-  /// `Scan QR-Code`
-  String get scanQrCode {
-    return Intl.message(
-      'Scan QR-Code',
-      name: 'scanQrCode',
-      desc: 'The button to scan otpauth qr-codes.',
-      args: [],
-    );
-  }
-
   /// `Pair new Push Token`
   String get addTokenTitle {
     return Intl.message(
