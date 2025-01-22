@@ -21,11 +21,20 @@ class TokensView extends ConsumerStatefulView {
   const TokensView({super.key});
 
   @override
-  ConsumerState<TokensView> createState() => _TokensViewState();
+  ConsumerState<TokensView> createState() => TokensViewState();
 }
 
-class _TokensViewState extends ConsumerState<TokensView> {
+class TokensViewState extends ConsumerState<TokensView> {
   final globalKey = GlobalKey<NestedScrollViewState>();
+
+  void showAddTokenSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (context) => const AddTokenSheetWidget(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +43,7 @@ class _TokensViewState extends ConsumerState<TokensView> {
       resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
         tooltip: S.of(context).scanQrCode,
-        onPressed: () => showModalBottomSheet(
-          context: context,
-          isScrollControlled: true,
-          showDragHandle: true,
-          builder: (context) => const AddTokenSheetWidget(),
-        ),
+        onPressed: () => showAddTokenSheet(context),
         child: const Icon(Icons.qr_code),
       ),
       body: ExpandableAppBar(
