@@ -5,11 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:edumfa_authenticator/main.dart';
-import 'package:edumfa_authenticator/model/enums/introduction.dart';
 import 'package:edumfa_authenticator/model/enums/token_types.dart';
-import 'package:edumfa_authenticator/model/states/introduction_state.dart';
 import 'package:edumfa_authenticator/model/states/settings_state.dart';
-import 'package:edumfa_authenticator/state_notifiers/completed_introduction_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:edumfa_authenticator/utils/app_customizer.dart';
@@ -22,7 +19,6 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   late final MockSettingsRepository mockSettingsRepository;
   late final MockTokenRepository mockTokenRepository;
-  late final MockIntroductionRepository mockIntroductionRepository;
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
     when(mockSettingsRepository.loadSettings()).thenAnswer((_) async => SettingsState(useSystemLocale: false, localePreference: const Locale('en')));
@@ -31,9 +27,6 @@ void main() {
     when(mockTokenRepository.loadTokens()).thenAnswer((_) async => []);
     when(mockTokenRepository.saveOrReplaceTokens(any)).thenAnswer((_) async => []);
     when(mockTokenRepository.deleteTokens(any)).thenAnswer((_) async => []);
-    mockIntroductionRepository = MockIntroductionRepository();
-    final introductions = {...Introduction.values}..remove(Introduction.introductionScreen);
-    when(mockIntroductionRepository.loadCompletedIntroductions()).thenAnswer((_) async => IntroductionState(completedIntroductions: introductions));
   });
   testWidgets(
     'Add Tokens Test',
@@ -42,7 +35,6 @@ void main() {
         overrides: [
           settingsProvider.overrideWith((ref) => SettingsNotifier(repository: mockSettingsRepository)),
           tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
-          introductionProvider.overrideWith((ref) => InrtroductionNotifier(repository: mockIntroductionRepository)),
         ],
         child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
       ));

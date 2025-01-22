@@ -9,13 +9,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../model/mixins/sortable_mixin.dart';
 import '../model/push_request.dart';
-import '../model/states/introduction_state.dart';
 import '../model/states/settings_state.dart';
 import '../model/states/token_filter.dart';
 import '../model/states/token_state.dart';
-import '../repo/preference_introduction_repository.dart';
 import '../repo/preference_settings_repository.dart';
-import '../state_notifiers/completed_introduction_notifier.dart';
 import '../state_notifiers/deeplink_notifier.dart';
 import '../state_notifiers/push_request_notifier.dart';
 import '../state_notifiers/settings_notifier.dart';
@@ -169,13 +166,6 @@ final statusMessageProvider = StateProvider<(String, String?)?>(
   (ref) {
     Logger.info("New statusMessageProvider created", name: 'statusMessageProvider');
     return null;
-  },
-);
-
-final introductionProvider = StateNotifierProvider<InrtroductionNotifier, IntroductionState>(
-  (ref) {
-    Logger.info("New introductionProvider created", name: 'introductionProvider');
-    return InrtroductionNotifier(repository: PreferenceIntroductionRepository());
   },
 );
 

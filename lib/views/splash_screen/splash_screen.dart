@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../model/enums/introduction.dart';
 import '../../utils/app_info_utils.dart';
 import '../../utils/logger.dart';
 import '../../utils/riverpod_providers.dart';
@@ -56,7 +55,6 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
           Future.delayed(_splashScreenDuration),
           ref.read(settingsProvider.notifier).loadingRepo,
           ref.read(tokenProvider.notifier).loadingRepo,
-          ref.read(introductionProvider.notifier).loadingRepo,
           AppInfoUtils.init(),
         ],
         eagerError: true,
@@ -96,8 +94,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   }
 
   void _pushReplace() {
-    final isFirstRun = ref.read(introductionProvider).isConditionFulfilled(ref, Introduction.introductionScreen) && ref.read(settingsProvider).isFirstRun;
-    final ViewWidget nextView = isFirstRun ? OnboardingView(appName: widget.appName) : const MainView();
+    final ViewWidget nextView = ref.read(settingsProvider).isFirstRun ? OnboardingView(appName: widget.appName) : const MainView();
     final routeBuilder = SplashScreen._initialView == null
         ? PageRouteBuilder(
             pageBuilder: (_, __, ___) => nextView,
