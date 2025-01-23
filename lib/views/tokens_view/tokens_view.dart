@@ -39,7 +39,7 @@ class _TokensViewState extends ConsumerState<TokensView> {
           builder: (context) => const AddTokenSheetWidget(),
         ),
       ),
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: SafeArea(
           child: Padding(

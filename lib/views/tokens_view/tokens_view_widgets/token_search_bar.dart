@@ -52,7 +52,7 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 200),
           child: _searchFocusNode.hasFocus || ref.read(tokenFilterProvider.notifier).state != null
-              ? Center(child: Icon(Icons.search))
+              ? const Center(child: Icon(Icons.search))
               : SvgPicture.asset(
             'res/logo/app_icon.svg',
             width: 32,
@@ -73,12 +73,12 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
                       _searchController.clear();
                       ref.read(tokenFilterProvider.notifier).state = null;
                     },
-                    icon: Icon(Icons.close)
+                    icon: const Icon(Icons.close)
                   )
-                : SizedBox()
+                : const SizedBox()
         )
       ],
-      constraints: BoxConstraints(minHeight: double.infinity),
+      constraints: const BoxConstraints(minHeight: double.infinity),
       elevation: WidgetStateProperty.all<double>(0),
     );
   }
