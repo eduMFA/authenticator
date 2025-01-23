@@ -54,12 +54,6 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
     _saveToRepo();
   }
 
-  set hideOTPs(bool value) {
-    Logger.info('Hide OTPs set to $value', name: 'settings_notifier.dart#setHideOTPs');
-    state = state.copyWith(hideOpts: value);
-    _saveToRepo();
-  }
-
   void setLocalePreference(Locale locale) {
     Logger.info('Locale set to $locale', name: 'settings_notifier.dart#setLocalePreference');
     state = state.copyWith(localePreference: locale);
