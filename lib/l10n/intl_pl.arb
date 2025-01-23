@@ -1,9 +1,5 @@
 {
   "@@locale": "pl",
-  "guide": "Przewodnik",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
   "accept": "Potwierdzam",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."

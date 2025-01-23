@@ -60,12 +60,6 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
     _saveToRepo();
   }
 
-  set showGuideOnStart(bool value) {
-    Logger.info('Show guide on start set to $value', name: 'settings_notifier.dart#setShowGuideOnStart');
-    state = state.copyWith(showGuideOnStart: value);
-    _saveToRepo();
-  }
-
   void setLocalePreference(Locale locale) {
     Logger.info('Locale set to $locale', name: 'settings_notifier.dart#setLocalePreference');
     state = state.copyWith(localePreference: locale);

@@ -129,8 +129,6 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - res/logo/
-    - res/guide/
-    - res/gif/
     - res/lottie/
     - res/rive/
     - launcher_icons/edumfa/

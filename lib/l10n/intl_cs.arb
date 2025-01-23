@@ -1,9 +1,5 @@
 {
   "@@locale": "cs",
-  "guide": "Průvodce",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
   "retry": "Zkusit znovu",
   "@retry": {
     "description": "Label for e.g. a button. Something is tried to be done again."
