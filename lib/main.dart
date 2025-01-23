@@ -100,10 +100,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
             }
 
             return MaterialApp(
-              scrollBehavior: ScrollConfiguration.of(context).copyWith(
-                physics: const ClampingScrollPhysics(),
-                overscroll: false,
-              ),
               debugShowCheckedModeBanner: true,
               navigatorKey: globalNavigatorKey,
               localizationsDelegates: [

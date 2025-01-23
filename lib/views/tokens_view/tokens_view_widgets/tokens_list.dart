@@ -1,102 +1,67 @@
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/no_token_screen.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/poll_loading_indicator.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widgets/push_token_widget.dart';
+import 'package:edumfa_authenticator/widgets/conditional_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-import '../../../model/mixins/sortable_mixin.dart';
-import '../../../utils/riverpod_providers.dart';
-import '../../../widgets/deactivateable_refresh_indicator.dart';
-import '../../../widgets/drag_item_scroller.dart';
-import 'drag_target_divider.dart';
-import 'no_token_screen.dart';
-import 'poll_loading_indicator.dart';
-import 'sortable_widget_builder.dart';
-
 class TokensList extends ConsumerStatefulWidget {
-  final GlobalKey<NestedScrollViewState> nestedScrollViewKey;
-
-  const TokensList({super.key, required this.nestedScrollViewKey});
+  const TokensList({super.key});
 
   @override
   ConsumerState<TokensList> createState() => _TokensListState();
 }
 
 class _TokensListState extends ConsumerState<TokensList> {
-  final listViewKey = GlobalKey();
-  final scrollController = ScrollController();
 
-  Duration? lastTimeStamp;
 
   @override
   Widget build(BuildContext context) {
     final tokenState = ref.watch(tokenProvider);
-    final allowToRefresh = tokenState.hasPushTokens;
-    final draggingSortable = ref.watch(draggingSortableProvider);
+    final allowToRefresh = tokenState.hasPushTokens && ref.watch(tokenFilterProvider) == null;
 
-    final tokens = tokenState.tokens;
+    if (tokenState.tokens.isEmpty) return const NoTokenScreen();
 
-    return Stack(
-      children: [
-        if (tokens.isEmpty) const NoTokenScreen(),
-        DeactivateableRefreshIndicator(
-          allowToRefresh: allowToRefresh,
-          onRefresh: () async => PollLoadingIndicator.pollForChallenges(context),
-          child: SlidableAutoCloseBehavior(
-            child: DragItemScroller(
-              listViewKey: listViewKey,
-              itemIsDragged: draggingSortable != null,
-              scrollController: scrollController,
-              child: CustomScrollView(
-                key: listViewKey,
-                physics: allowToRefresh ? const AlwaysScrollableScrollPhysics(parent: ClampingScrollPhysics()) : const BouncingScrollPhysics(),
-                controller: scrollController,
-                slivers: [
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: Column(
-                      children: [
-                        Column(
-                            children: [
-                              ..._buildSortableWidgets(tokens, draggingSortable),
-                            ],
-                        ),
-                        ...(draggingSortable != null)
-                            ? [
-                                const DragTargetDivider(nextSortable: null, isLastDivider: true, bottomPaddingIfLast: 80),
-                                const Expanded(
-                                  child: Opacity(
-                                      opacity: 0,
-                                      child: DragTargetDivider(nextSortable: null, isLastDivider: true, bottomPaddingIfLast: 80)),
-                                )
-                              ]
-                            : [const SizedBox(height: 80)]
-                      ],
-                    ),
-                  ),
-                ],
+    return ConditionalRefreshIndicator(
+      allowToRefresh: allowToRefresh,
+      onRefresh: () async => PollLoadingIndicator.pollForChallenges(context),
+      child: SlidableAutoCloseBehavior(
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: CustomScrollView(
+            physics: allowToRefresh ? const AlwaysScrollableScrollPhysics() : const BouncingScrollPhysics(),
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: [
+                    ..._mapTokensToWidgets(tokenState.tokens),
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 
-  List<Widget> _buildSortableWidgets(List<SortableMixin> sortables, SortableMixin? draggingSortable) {
+  List<Widget> _mapTokensToWidgets(List<Token> tokens) {
+    final filter = ref.watch(tokenFilterProvider);
+    var filteredTokens = tokens;
+    if (filter != null) filteredTokens = filter.filterTokens(ref.watch(tokenProvider).tokens);
+
     List<Widget> widgets = [];
-    if (sortables.isEmpty) return [];
-    sortables.sort((a, b) => a.compareTo(b));
-    for (var i = 0; i < sortables.length; i++) {
-      final isFirst = i == 0;
-      final isDraggingTheCurrent = draggingSortable == sortables[i];
-      // 1. Add a divider if the current sortable is not the one which is dragged
-      // 2. Dont add a divider if the current sortable is the first
-      // 3. Dont add a divider if the previous sortable was an expanded folder
-      // 4. Ignore 2. and 3. if there is a sortable that is dragged
-      //           1                     2                     3                         4
-      if (!isDraggingTheCurrent && (!isFirst || draggingSortable != null)) {
-        widgets.add(DragTargetDivider(nextSortable: sortables[i]));
+    //tokens.sort((a, b) => a.compareTo(b));
+    for (var i = 0; i < filteredTokens.length; i++) {
+      widgets.add(PushTokenWidget(filteredTokens[i] as PushToken));
+      if (i != filteredTokens.length - 1) {
+        widgets.add(const Divider(indent: 10, endIndent: 10));
       }
-      widgets.add(SortableWidgetBuilder.fromSortable(sortables[i]));
     }
 
     return widgets;

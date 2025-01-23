@@ -82,8 +82,7 @@ class PushToken extends Token {
     PushTokenRollOutState? rolloutState,
     PushRequestQueue? pushRequests,
     CustomIntBuffer? knownPushRequests,
-    String? type, // just for @JsonSerializable(): type of PushToken is always TokenTypes.PIPUSH
-    super.sortIndex,
+    String? type, // just for @JsonSerializable(): type of PushToken is always TokenTypes.EDUMFA_PUSH
     super.tokenImage,
     super.pin,
     super.isLocked,
@@ -125,7 +124,6 @@ class PushToken extends Token {
     bool? sslVerify,
     String? enrollmentCredentials,
     Uri? url,
-    int? sortIndex,
     String? publicServerKey,
     String? publicTokenKey,
     String? privateTokenKey,
@@ -148,7 +146,6 @@ class PushToken extends Token {
       sslVerify: sslVerify ?? this.sslVerify,
       enrollmentCredentials: enrollmentCredentials ?? this.enrollmentCredentials,
       url: url ?? this.url,
-      sortIndex: sortIndex ?? this.sortIndex,
       publicServerKey: publicServerKey ?? this.publicServerKey,
       publicTokenKey: publicTokenKey ?? this.publicTokenKey,
       privateTokenKey: privateTokenKey ?? this.privateTokenKey,

@@ -210,7 +210,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Déploiement en cours"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Déploiement terminé"),
-        "scanQrCode": MessageLookupByLibrary.simpleMessage("Numériser QR-Code"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Clé secrète"),
         "send": MessageLookupByLibrary.simpleMessage("Envoyer"),
         "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(

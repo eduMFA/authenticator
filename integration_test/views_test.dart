@@ -6,8 +6,6 @@ import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:pointycastle/asymmetric/api.dart';
 import 'package:edumfa_authenticator/main.dart';
-import 'package:edumfa_authenticator/model/enums/introduction.dart';
-import 'package:edumfa_authenticator/model/states/introduction_state.dart';
 import 'package:edumfa_authenticator/model/states/settings_state.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
@@ -27,7 +25,6 @@ void main() {
   late final MockRsaUtils mockRsaUtils;
   late final MockFirebaseUtils mockFirebaseUtils;
   late final MockEduMFAIOClient mockIOClient;
-  late final MockIntroductionRepository mockIntroductionRepository;
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
     when(mockSettingsRepository.loadSettings()).thenAnswer((_) async =>
@@ -50,9 +47,6 @@ void main() {
       body: anyNamed('body'),
       sslVerify: anyNamed('sslVerify'),
     )).thenAnswer((_) => Future.value(Response('{"detail": {"public_key": "publicKey"}}', 200)));
-    mockIntroductionRepository = MockIntroductionRepository();
-    final introductions = {...Introduction.values}..remove(Introduction.introductionScreen);
-    when(mockIntroductionRepository.loadCompletedIntroductions()).thenAnswer((_) async => IntroductionState(completedIntroductions: introductions));
   });
 
   testWidgets('Views Test', (tester) async {

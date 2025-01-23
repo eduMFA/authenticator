@@ -1,9 +1,5 @@
 {
   "@@locale": "pl",
-  "guide": "Przewodnik",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
   "accept": "Potwierdzam",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."
@@ -39,10 +35,6 @@
   "addToken": "Dodaj token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
-  },
-  "scanQrCode": "Zeskanuj kod QR",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
   },
   "addTokenTitle": null,
   "@addTokenTitle": {
