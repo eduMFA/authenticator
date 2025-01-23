@@ -293,6 +293,10 @@
   "@unlock": {
     "description": "Description of button that unlocks a token."
   },
+  "search": "Suchen",
+  "@search": {
+    "description": "Placeholder text for search bar."
+  },
   "noResultTitle": "Keine Token vorhanden.",
   "@noResultTitle": {
     "description": "No tokens installed yet."

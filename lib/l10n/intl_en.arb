@@ -293,6 +293,10 @@
   "@unlock": {
     "description": "Description of button that unlocks a token."
   },
+  "search": "Search",
+  "@search": {
+    "description": "Placeholder text for search bar."
+  },
   "noResultTitle": "No tokens stored yet.",
   "@noResultTitle": {
     "description": "No tokens stored yet."
