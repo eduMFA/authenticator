@@ -29,6 +29,7 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
 
   @override
   Widget build(BuildContext context) {
+    var tokenFilter = ref.read(tokenFilterProvider.notifier).state;
     return SearchBar(
       key: _searchBarKey,
       controller: _searchController,
@@ -46,12 +47,13 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
         ref.read(tokenFilterProvider.notifier).state = _searchController.text.isEmpty
             ? null
             : TokenFilter(searchQuery: value);
+        setState(() {});
       },
       leading: SizedBox(
         width: 50,
         child: AnimatedSwitcher(
           duration: const Duration(milliseconds: 200),
-          child: _searchFocusNode.hasFocus || ref.read(tokenFilterProvider.notifier).state != null
+          child: _searchFocusNode.hasFocus || tokenFilter != null
               ? const Center(child: Icon(Icons.search))
               : SvgPicture.asset(
             'res/logo/app_icon.svg',
@@ -67,11 +69,12 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
       trailing: [
         AnimatedSwitcher(
             duration: const Duration(milliseconds: 200),
-            child: _searchController.value.text.isNotEmpty
+            child: tokenFilter?.searchQuery.isNotEmpty ?? false
                 ? IconButton(
                     onPressed: () {
                       _searchController.clear();
                       ref.read(tokenFilterProvider.notifier).state = null;
+                      setState(() {});
                     },
                     icon: const Icon(Icons.close)
                   )
