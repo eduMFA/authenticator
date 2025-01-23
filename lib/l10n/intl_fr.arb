@@ -1,9 +1,5 @@
 {
   "@@locale": "fr",
-  "guide": "Assistant",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
   "retry": "Réessayer",
   "@retry": {
     "description": "Label for e.g. a button. Something is tried to be done again."
@@ -44,9 +40,21 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Numériser QR-Code",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
+  "addTokenTitle": null,
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": null,
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": null,
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": null,
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
   },
   "renameToken": "Renommer jeton",
   "@renameToken": {
@@ -392,10 +400,8 @@
   "butDiscardIt": "mais l'écarter",
   "declineIt": "refuser",
   "requestTriggerdByUserQuestion": "Cette demande a-t-elle été déclenchée par vous ?",
-  "grantCameraPermissionDialogTitle": "L'autorisation de la caméra n'est pas accordée",
-  "grantCameraPermissionDialogContent": "Veuillez accorder à la caméra l'autorisation de scanner les codes QR",
-  "grantCameraPermissionDialogPermanentlyDenied": "L'autorisation de l'appareil photo est refusée de manière permanente. Veuillez accorder l'autorisation à l'appareil photo dans les paramètres de votre téléphone.",
-  "grantCameraPermissionDialogButton": "Accorder l'autorisation",
+  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDeniedButton": "Accorder l'autorisation",
   "decryptErrorTitle": "Erreur de décryptage",
   "decryptErrorContent": "Malheureusement, l'application n'a pas pu décrypter vos jetons. Cela indique que la clé de cryptage est cassée. Vous pouvez réessayer ou supprimer les données de l'application, ce qui supprimera les jetons dans l'application.",
   "decryptErrorButtonDelete": "Supprimer",
@@ -409,19 +415,6 @@
   "introEditToken": "Ici, vous pouvez modifier le nom du token et voir quelques détails",
   "introLockToken": "Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu'après l'authentification.",
   "introPollForChallenges": "Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas",
-  "feedback": "Retour d'information",
-  "feedbackTitle": "Vos commentaires sont toujours les bienvenus !",
-  "feedbackDescription": "Si vous avez des questions, des suggestions ou des problèmes, n'hésitez pas à nous en faire part",
-  "feedbackHint": "Un e-mail prêt à l'emploi s'ouvre, que vous pouvez nous envoyer. Si vous le souhaitez, des informations sur votre appareil et la version de l'application seront ajoutées. Vous pouvez vérifier et modifier l'e-mail avant de l'envoyer.",
-  "feedbackPrivacyPolicy1": "En envoyant le retour d'information, vous acceptez notre ",
-  "feedbackPrivacyPolicy2": "politique de confidentialité",
-  "@feedbackPrivacyPolicy2": {
-    "description": "Taping on this should open the privacy policy."
-  },
-  "feedbackPrivacyPolicy3": ".",
-  "addSystemInfo": "Ajouter des informations sur le système",
-  "feedbackSentTitle": "Retour d'information envoyé",
-  "feedbackSentDescription": "Merci beaucoup pour votre aide dans l'amélioration de cette application !",
   "noMailAppTitle": "Aucune application de messagerie trouvée",
   "noMailAppDescription": "Aucune application de messagerie n'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d'envoyer un message électronique.",
   "authenticationRequest": "Authentification",

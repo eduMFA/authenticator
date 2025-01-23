@@ -2,17 +2,14 @@ import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/extensions/theme_extension.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/theme_menu.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:edumfa_authenticator/widgets/global_drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../model/tokens/push_token.dart';
 import '../../utils/globals.dart';
 import '../../utils/riverpod_providers.dart';
 import '../../widgets/push_request_listener.dart';
-import '../feedback_view/feedback_view.dart';
 import '../license_view/license_view.dart';
 import '../view_interface.dart';
 import 'settings_view_widgets/logging_menu.dart';
@@ -36,7 +33,6 @@ class SettingsView extends ConsumerView {
 
     return PushRequestListener(
       child: Scaffold(
-        drawer: const DrawerWidget(),
         appBar: AppBar(
           title: Text(
             S.of(context).settings,
@@ -76,19 +72,7 @@ class SettingsView extends ConsumerView {
                       overflow: TextOverflow.fade,
                       softWrap: false,
                     ),
-                  ),
-                  SettingsListTileButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, FeedbackView.routeName);
-                    },
-                    title: Text(
-                      'Feedback',
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    icon: const Icon(FluentIcons.chat_32_regular),
-                  ),
+                  )
                 ],
               ),
               const Divider(),
@@ -138,7 +122,7 @@ class SettingsView extends ConsumerView {
                         );
                       }).toList(),
                       onChanged:
-                      ref.watch(settingsProvider).useSystemLocale ? null : (value) => ref.read(settingsProvider.notifier).setLocalePreference(value!),
+                          ref.watch(settingsProvider).useSystemLocale ? null : (value) => ref.read(settingsProvider.notifier).setLocalePreference(value!),
                     ),
                   ),
                 ],
@@ -159,13 +143,13 @@ class SettingsView extends ConsumerView {
                     trailing: ElevatedButton(
                       onPressed: enablePushSettingsGroup
                           ? () {
-                        showDialog(
-                          useRootNavigator: false,
-                          context: context,
-                          barrierDismissible: false,
-                          builder: (context) => const UpdateFirebaseTokenDialog(),
-                        );
-                      }
+                              showDialog(
+                                useRootNavigator: false,
+                                context: context,
+                                barrierDismissible: false,
+                                builder: (context) => const UpdateFirebaseTokenDialog(),
+                              );
+                            }
                           : null,
                       child: Text(
                         S.of(context).sync,
@@ -188,12 +172,12 @@ class SettingsView extends ConsumerView {
                               padding: const EdgeInsets.only(left: 10),
                               child: unsupported.isNotEmpty && enrolledPushTokenList.isNotEmpty
                                   ? GestureDetector(
-                                onTap: () {}, // () => _showPollingInfo(unsupported),
-                                child: const Icon(
-                                  Icons.info_outline,
-                                  color: Colors.red,
-                                ),
-                              )
+                                      onTap: () {}, // () => _showPollingInfo(unsupported),
+                                      child: const Icon(
+                                        Icons.info_outline,
+                                        color: Colors.red,
+                                      ),
+                                    )
                                   : null,
                             ),
                           ),

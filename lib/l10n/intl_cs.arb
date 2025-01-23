@@ -1,9 +1,5 @@
 {
   "@@locale": "cs",
-  "guide": "Průvodce",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
   "retry": "Zkusit znovu",
   "@retry": {
     "description": "Label for e.g. a button. Something is tried to be done again."
@@ -44,9 +40,21 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Naskenovat QR kód",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
+  "addTokenTitle": null,
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": null,
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": null,
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": null,
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
   },
   "renameToken": "Přejmenovat token",
   "@renameToken": {
@@ -391,10 +399,8 @@
   "butDiscardIt": "ale zahodit jej",
   "declineIt": "odmítnout jej ",
   "requestTriggerdByUserQuestion": "Byl tento požadavek vyvolán vámi?",
-  "grantCameraPermissionDialogTitle": "Camera permission is not granted",
-  "grantCameraPermissionDialogContent": "Please grant camera permission to scan QR codes.",
-  "grantCameraPermissionDialogPermanentlyDenied": "Oprávnění kamery je trvale odepřeno. Udělte prosím oprávnění fotoaparátu v nastavení telefonu.",
-  "grantCameraPermissionDialogButton": "Udělit oprávnění",
+  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDeniedButton": "Udělit oprávnění",
   "decryptErrorTitle": "Chyba dešifrování",
   "decryptErrorContent": "Bohužel se aplikaci nepodařilo dešifrovat vaše tokeny. To znamená, že šifrovací klíč je poškozen. Můžete to zkusit znovu nebo odstranit data aplikace, čímž by došlo k odstranění tokenů v aplikaci.",
   "decryptErrorButtonDelete": "Odstranit",
@@ -408,19 +414,6 @@
   "introEditToken": "Zde můžete upravit název tokenu a zobrazit některé podrobnosti.",
   "introLockToken": "To improve security even more, you can lock tokens. Then the token can only be used after authentication.",
   "introPollForChallenges": "Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů.",
-  "feedback": "Zpětná vazba",
-  "feedbackTitle": "Vaše zpětná vazba je vždy vítána!",
-  "feedbackDescription": "Pokud máte nějaké dotazy, návrhy nebo problémy, dejte nám prosím vědět.",
-  "feedbackHint": "Otevře se připravený e-mail, který nám můžete zaslat. V případě potřeby budou doplněny informace o vašem zařízení a verzi aplikace. Před odesláním můžete e-mail zkontrolovat a upravit.",
-  "feedbackPrivacyPolicy1": "Odesláním zpětné vazby souhlasíte s našimi ",
-  "feedbackPrivacyPolicy2": "zásadami ochrany osobních údajů",
-  "@feedbackPrivacyPolicy2": {
-    "description": "Taping on this should open the privacy policy."
-  },
-  "feedbackPrivacyPolicy3": ".",
-  "addSystemInfo": "Přidat systémové informace",
-  "feedbackSentTitle": "Zpětná vazba odeslána",
-  "feedbackSentDescription": "Děkujeme vám za pomoc při vylepšování této aplikace!",
   "noMailAppTitle": "Není nainstalována žádná e-mailová aplikace",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Žádost o ověření",

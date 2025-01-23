@@ -1,9 +1,5 @@
 {
   "@@locale": "de",
-  "guide": "Anleitung",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
   "retry": "Erneut versuchen",
   "@retry": {
     "description": "Label for e.g. a button. Something is tried to be done again."
@@ -44,9 +40,21 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "QR-Code scannen",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
+  "addTokenTitle": "Neuen Push-Token verknüpfen",
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": "Richten Sie Ihre Kamera auf Ihren Bildschirm, um den QR-Code zu scanne",
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": "ODER",
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": "QR Code hochladen",
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
   },
   "renameToken": "Token umbenennen",
   "@renameToken": {
@@ -374,10 +382,8 @@
   "butDiscardIt": "aber verwerfen",
   "declineIt": "ablehnen",
   "requestTriggerdByUserQuestion": "Wurde diese Anfrage von Ihnen ausgelöst?",
-  "grantCameraPermissionDialogTitle": "Kamera-Berechtigung erforderlich",
-  "grantCameraPermissionDialogContent": "Um QR-Codes zu scannen, benötigt die App Zugriff auf die Kamera.",
-  "grantCameraPermissionDialogPermanentlyDenied": "Sie haben die Berechtigung für den Kamerazugriff permanent verweigert. Bitte aktivieren Sie die Berechtigung in den Einstellungen ihres Smartphones.",
-  "grantCameraPermissionDialogButton": "Berechtigung erteilen",
+  "cameraPermissionPermanentlyDenied": "Die Kamera-Berechtigung ist dauerhaft entzogen. Bitte erlauben Sie die Kamera-Berechtigung in den Systemeinstellungen.",
+  "cameraPermissionPermanentlyDeniedButton": "Berechtigung erteilen",
   "decryptErrorTitle": "Entschlüsselung fehlgeschlagen",
   "decryptErrorContent": "Leider konnten Ihre Token nicht entschlüsselt werden. Das deutet darauf hin, dass der Verschlüsselungsschlüssel nicht mehr verfügbar ist. Sie können es erneut versuchen oder die App Daten löschen. Dabei werden alle Token aus der App geschlöscht.",
   "decryptErrorButtonDelete": "Löschen.",
@@ -391,19 +397,6 @@
   "introEditToken": "Hier können Sie den Namen des Tokens bearbeiten und einige Details einsehen.",
   "introLockToken": "Um die Sicherheit noch weiter zu erhöhen, können Sie Token sperren.\nDer Token kann dann erst nach der Authentifizierung verwendet werden.",
   "introPollForChallenges": "Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen.",
-  "feedback": "Feedback",
-  "feedbackTitle": "Ihr Feedback ist immer willkommen!",
-  "feedbackDescription": "Wenn Sie Fragen, Anregungen oder Probleme haben, lassen Sie es uns wissen.",
-  "feedbackHint": "Es öffnet sich eine vorgefertigte E-Mail, die Sie an uns senden können. Falls gewünscht, werden Informationen über Ihr Gerät und die Version der Anwendung hinzugefügt. Vor dem Versenden können Sie die E-Mail überprüfen und bearbeiten.",
-  "feedbackPrivacyPolicy1": "Mit dem Senden des Feedbacks stimmen Sie unserer ",
-  "feedbackPrivacyPolicy2": "Datenschutzerklärung",
-  "@feedbackPrivacyPolicy2": {
-    "description": "Tapping on this should open the privacy policy."
-  },
-  "feedbackPrivacyPolicy3": " zu.",
-  "addSystemInfo": "Systeminfos hinzufügen",
-  "feedbackSentTitle": "Feedback gesendet",
-  "feedbackSentDescription": "Vielen Dank für Ihre Hilfe bei der Verbesserung dieser App!",
   "noMailAppTitle": "Keine Mail-App gefunden",
   "noMailAppDescription": "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können.",
   "authenticationRequest": "Authentifizierung",

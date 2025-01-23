@@ -51,5 +51,3 @@ The first one is `lib/l10n/app_en.arb` that contains the (default) english trans
 }
 ```
 where the part `Password \"{otpValue}\" copied to clipboard.` must be translated. Special signs such as `\"` and parameters such as `{otpValue}` must not be changed but can be rearranged to fit the translation.
-
-The second file that must be translated is `res/guide/GUIDE_en.md`, which must also be copied and the suffix must also be changed, e.g., to `GUIDE_fr.md`. Words that reference the app, such as `Settings`, should be changed in accordance. For links, e.g., `![Manually polling by swiping down](resource:res/gif/help_manual_poll.gif)`, only the text part must be changed. In this case `Manually polling by swiping down`.

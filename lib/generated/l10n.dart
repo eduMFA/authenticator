@@ -140,12 +140,43 @@ class S {
     );
   }
 
-  /// `Scan QR-Code`
-  String get scanQrCode {
+  /// `Pair new Push Token`
+  String get addTokenTitle {
     return Intl.message(
-      'Scan QR-Code',
-      name: 'scanQrCode',
-      desc: 'The button to scan otpauth qr-codes.',
+      'Pair new Push Token',
+      name: 'addTokenTitle',
+      desc: 'The title of the token add screen.',
+      args: [],
+    );
+  }
+
+  /// `Point your camera at your screen to capture the QR code`
+  String get addTokenSubtitle {
+    return Intl.message(
+      'Point your camera at your screen to capture the QR code',
+      name: 'addTokenSubtitle',
+      desc: 'The subtitle of the token add screen.',
+      args: [],
+    );
+  }
+
+  /// `OR`
+  String get or {
+    return Intl.message(
+      'OR',
+      name: 'or',
+      desc:
+          'This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file.',
+      args: [],
+    );
+  }
+
+  /// `Upload QR Code`
+  String get uploadQrCodeButton {
+    return Intl.message(
+      'Upload QR Code',
+      name: 'uploadQrCodeButton',
+      desc: 'The button in the token add view to upload QR codes as an image.',
       args: [],
     );
   }
@@ -1153,41 +1184,21 @@ class S {
     );
   }
 
-  /// `Camera permission is not granted`
-  String get grantCameraPermissionDialogTitle {
+  /// `Camera permission is permanently denied. Please grant camera permission in the system settings.`
+  String get cameraPermissionPermanentlyDenied {
     return Intl.message(
-      'Camera permission is not granted',
-      name: 'grantCameraPermissionDialogTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please grant camera permission to scan QR codes.`
-  String get grantCameraPermissionDialogContent {
-    return Intl.message(
-      'Please grant camera permission to scan QR codes.',
-      name: 'grantCameraPermissionDialogContent',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Camera permission is permanently denied. Please grant camera permission in your Phone's settings.`
-  String get grantCameraPermissionDialogPermanentlyDenied {
-    return Intl.message(
-      'Camera permission is permanently denied. Please grant camera permission in your Phone\'s settings.',
-      name: 'grantCameraPermissionDialogPermanentlyDenied',
+      'Camera permission is permanently denied. Please grant camera permission in the system settings.',
+      name: 'cameraPermissionPermanentlyDenied',
       desc: '',
       args: [],
     );
   }
 
   /// `Grant permission`
-  String get grantCameraPermissionDialogButton {
+  String get cameraPermissionPermanentlyDeniedButton {
     return Intl.message(
       'Grant permission',
-      name: 'grantCameraPermissionDialogButton',
+      name: 'cameraPermissionPermanentlyDeniedButton',
       desc: '',
       args: [],
     );
@@ -1318,106 +1329,6 @@ class S {
     return Intl.message(
       'You can check for new challenges by dragging down the token list.',
       name: 'introPollForChallenges',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Feedback`
-  String get feedback {
-    return Intl.message(
-      'Feedback',
-      name: 'feedback',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your feedback is always welcome!`
-  String get feedbackTitle {
-    return Intl.message(
-      'Your feedback is always welcome!',
-      name: 'feedbackTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `If you have any questions, suggestions or problems, please let us know.`
-  String get feedbackDescription {
-    return Intl.message(
-      'If you have any questions, suggestions or problems, please let us know.',
-      name: 'feedbackDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `A ready-made e-mail will open, which you can send to us. If desired, information about your device and the version of the application will be added. You can check and edit the email before sending it.`
-  String get feedbackHint {
-    return Intl.message(
-      'A ready-made e-mail will open, which you can send to us. If desired, information about your device and the version of the application will be added. You can check and edit the email before sending it.',
-      name: 'feedbackHint',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `By sending the feedback you agree to our `
-  String get feedbackPrivacyPolicy1 {
-    return Intl.message(
-      'By sending the feedback you agree to our ',
-      name: 'feedbackPrivacyPolicy1',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `privacy policy`
-  String get feedbackPrivacyPolicy2 {
-    return Intl.message(
-      'privacy policy',
-      name: 'feedbackPrivacyPolicy2',
-      desc: 'Taping on this should open the privacy policy.',
-      args: [],
-    );
-  }
-
-  /// `.`
-  String get feedbackPrivacyPolicy3 {
-    return Intl.message(
-      '.',
-      name: 'feedbackPrivacyPolicy3',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add system information`
-  String get addSystemInfo {
-    return Intl.message(
-      'Add system information',
-      name: 'addSystemInfo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Feedback sent`
-  String get feedbackSentTitle {
-    return Intl.message(
-      'Feedback sent',
-      name: 'feedbackSentTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Thank you very much for your help in making this application better!`
-  String get feedbackSentDescription {
-    return Intl.message(
-      'Thank you very much for your help in making this application better!',
-      name: 'feedbackSentDescription',
       desc: '',
       args: [],
     );

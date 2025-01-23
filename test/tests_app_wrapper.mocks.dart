@@ -6,14 +6,10 @@
 import 'dart:async' as _i7;
 import 'dart:typed_data' as _i15;
 
-import 'package:edumfa_authenticator/interfaces/repo/introduction_repository.dart'
-    as _i19;
 import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart'
     as _i9;
 import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart'
     as _i6;
-import 'package:edumfa_authenticator/model/states/introduction_state.dart'
-    as _i5;
 import 'package:edumfa_authenticator/model/states/settings_state.dart' as _i2;
 import 'package:edumfa_authenticator/model/tokens/push_token.dart' as _i16;
 import 'package:edumfa_authenticator/model/tokens/token.dart' as _i8;
@@ -83,17 +79,6 @@ class _FakeAsymmetricKeyPair_4<B extends _i4.PublicKey,
         V extends _i4.PrivateKey> extends _i1.SmartFake
     implements _i4.AsymmetricKeyPair<B, V> {
   _FakeAsymmetricKeyPair_4(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeIntroductionState_5 extends _i1.SmartFake
-    implements _i5.IntroductionState {
-  _FakeIntroductionState_5(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -587,47 +572,4 @@ class MockFirebaseUtils extends _i1.Mock implements _i17.FirebaseUtils {
         returnValue: _i7.Future<String?>.value(),
         returnValueForMissingStub: _i7.Future<String?>.value(),
       ) as _i7.Future<String?>);
-}
-
-/// A class which mocks [IntroductionRepository].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockIntroductionRepository extends _i1.Mock
-    implements _i19.IntroductionRepository {
-  @override
-  _i7.Future<bool> saveCompletedIntroductions(
-          _i5.IntroductionState? introductions) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #saveCompletedIntroductions,
-          [introductions],
-        ),
-        returnValue: _i7.Future<bool>.value(false),
-        returnValueForMissingStub: _i7.Future<bool>.value(false),
-      ) as _i7.Future<bool>);
-
-  @override
-  _i7.Future<_i5.IntroductionState> loadCompletedIntroductions() =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #loadCompletedIntroductions,
-          [],
-        ),
-        returnValue:
-            _i7.Future<_i5.IntroductionState>.value(_FakeIntroductionState_5(
-          this,
-          Invocation.method(
-            #loadCompletedIntroductions,
-            [],
-          ),
-        )),
-        returnValueForMissingStub:
-            _i7.Future<_i5.IntroductionState>.value(_FakeIntroductionState_5(
-          this,
-          Invocation.method(
-            #loadCompletedIntroductions,
-            [],
-          ),
-        )),
-      ) as _i7.Future<_i5.IntroductionState>);
 }

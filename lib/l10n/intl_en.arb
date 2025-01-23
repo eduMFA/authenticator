@@ -36,9 +36,21 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Scan QR-Code",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
+  "addTokenTitle": "Pair new Push Token",
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": "Point your camera at your screen to capture the QR code",
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": "OR",
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": "Upload QR Code",
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
   },
   "renameToken": "Rename token",
   "@renameToken": {
@@ -379,10 +391,8 @@
   "butDiscardIt": "but discard it",
   "declineIt": "decline it",
   "requestTriggerdByUserQuestion": "Was this request triggered by you?",
-  "grantCameraPermissionDialogTitle": "Camera permission is not granted",
-  "grantCameraPermissionDialogContent": "Please grant camera permission to scan QR codes.",
-  "grantCameraPermissionDialogPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in your Phone's settings.",
-  "grantCameraPermissionDialogButton": "Grant permission",
+  "cameraPermissionPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in the system settings.",
+  "cameraPermissionPermanentlyDeniedButton": "Grant permission",
   "decryptErrorTitle": "Decryption error",
   "decryptErrorContent": "Unfortunately, the app was unable to decrypt your tokens. This indicates that the encryption key is broken. You can try again or delete the app data, which would delete the tokens in the app.",
   "decryptErrorButtonDelete": "Delete",
@@ -396,19 +406,6 @@
   "introEditToken": "Here you can edit the token name and see some details.",
   "introLockToken": "To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.",
   "introPollForChallenges": "You can check for new challenges by dragging down the token list.",
-  "feedback": "Feedback",
-  "feedbackTitle": "Your feedback is always welcome!",
-  "feedbackDescription": "If you have any questions, suggestions or problems, please let us know.",
-  "feedbackHint": "A ready-made e-mail will open, which you can send to us. If desired, information about your device and the version of the application will be added. You can check and edit the email before sending it.",
-  "feedbackPrivacyPolicy1": "By sending the feedback you agree to our ",
-  "feedbackPrivacyPolicy2": "privacy policy",
-  "@feedbackPrivacyPolicy2": {
-    "description": "Taping on this should open the privacy policy."
-  },
-  "feedbackPrivacyPolicy3": ".",
-  "addSystemInfo": "Add system information",
-  "feedbackSentTitle": "Feedback sent",
-  "feedbackSentDescription": "Thank you very much for your help in making this application better!",
   "noMailAppTitle": "No mail app found",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Authentication request",

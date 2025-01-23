@@ -44,8 +44,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accept": MessageLookupByLibrary.simpleMessage("Accepteren"),
-        "addSystemInfo":
-            MessageLookupByLibrary.simpleMessage("Systeeminformatie toevoegen"),
         "addToken": MessageLookupByLibrary.simpleMessage("Token toevoegen"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Alle tokens zijn gesynchroniseerd."),
@@ -72,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Authenticatie geslaagd"),
         "butDiscardIt": MessageLookupByLibrary.simpleMessage("maar verwijder"),
+        "cameraPermissionPermanentlyDeniedButton":
+            MessageLookupByLibrary.simpleMessage("Toestemming verlenen"),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuleren"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Controleer je netwerkverbinding en probeer het opnieuw."),
@@ -132,22 +132,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Token synchroniseren mislukt, eduMFA server kan niet worden bereikt."),
         "errorTokenExpired": m4,
         "errorWhenPullingChallenges": m5,
-        "feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
-        "feedbackDescription": MessageLookupByLibrary.simpleMessage(
-            "Als je vragen, suggesties of problemen hebt, laat het ons dan weten."),
-        "feedbackHint": MessageLookupByLibrary.simpleMessage(
-            "Er wordt een kant-en-klare e-mail geopend die je naar ons kunt sturen. Indien gewenst wordt informatie over je apparaat en de versie van de applicatie toegevoegd. U kunt de e-mail controleren en bewerken voordat u deze verzendt."),
-        "feedbackPrivacyPolicy1": MessageLookupByLibrary.simpleMessage(
-            "Door feedback te sturen ga je akkoord met ons "),
-        "feedbackPrivacyPolicy2":
-            MessageLookupByLibrary.simpleMessage("privacybeleid"),
-        "feedbackPrivacyPolicy3": MessageLookupByLibrary.simpleMessage("."),
-        "feedbackSentDescription": MessageLookupByLibrary.simpleMessage(
-            "Hartelijk dank voor je hulp om deze applicatie beter te maken!"),
-        "feedbackSentTitle":
-            MessageLookupByLibrary.simpleMessage("Feedback verzonden"),
-        "feedbackTitle": MessageLookupByLibrary.simpleMessage(
-            "Uw feedback is altijd welkom!"),
         "generatingPhonePart":
             MessageLookupByLibrary.simpleMessage("Genereren telefoon gedeelte"),
         "generatingRSAKeyPair":
@@ -158,17 +142,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ga naar instellingen"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authenticatie via inloggegevens of biometrie is niet ingesteld. Stel het in bij de instellingen van het apparaat."),
-        "grantCameraPermissionDialogButton":
-            MessageLookupByLibrary.simpleMessage("Toestemming verlenen"),
-        "grantCameraPermissionDialogContent":
-            MessageLookupByLibrary.simpleMessage(
-                "Geef de camera toestemming om QR-codes te scannen."),
-        "grantCameraPermissionDialogPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "Cameratoestemming is permanent geweigerd. Geef de camera toestemming in de instellingen van uw telefoon."),
-        "grantCameraPermissionDialogTitle":
-            MessageLookupByLibrary.simpleMessage(
-                "Cameratoestemming is niet verleend"),
         "introEditToken": MessageLookupByLibrary.simpleMessage(
             "Hier kun je de naam van het token bewerken en enkele details bekijken."),
         "introLockToken": MessageLookupByLibrary.simpleMessage(
