@@ -24,8 +24,8 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
   int _selectedIndex = 0;
 
   final List<Widget> _views = [
-    TokensView(),
-    SettingsView(),
+    const TokensView(),
+    const SettingsView(),
   ];
 
   void _onDestinationSelected(int index) {

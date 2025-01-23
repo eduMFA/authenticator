@@ -23,10 +23,10 @@ class TokenState {
         lastlyUpdatedTokens = lastlyUpdatedTokens ?? List<Token>.from(tokens) {
     _sort(this.tokens);
   }
-  TokenState repaceList({List<Token>? tokens}) => TokenState(tokens: tokens ?? this.tokens);
+  TokenState replaceList({List<Token>? tokens}) => TokenState(tokens: tokens ?? this.tokens);
 
-  Map<Token, Token?> tokensWithSameSectet(List<Token> tokens) {
-    final tokensWithSameSectet = <Token, Token?>{};
+  Map<Token, Token?> tokensWithSameSecret(List<Token> tokens) {
+    final tokensWithSameSecret = <Token, Token?>{};
     final stateTokens = this.tokens;
     List<PushToken> pushTokens = tokens.whereType<PushToken>().toList();
     Map<(String?, String?, String?), PushToken> statePushTokens = {
@@ -34,14 +34,14 @@ class TokenState {
     };
 
     for (var pushToken in pushTokens) {
-      tokensWithSameSectet[pushToken] = statePushTokens[(pushToken.publicServerKey, pushToken.privateTokenKey, pushToken.publicTokenKey)];
+      tokensWithSameSecret[pushToken] = statePushTokens[(pushToken.publicServerKey, pushToken.privateTokenKey, pushToken.publicTokenKey)];
     }
 
-    return tokensWithSameSectet;
+    return tokensWithSameSecret;
   }
 
   static void _sort(List<Token> tokens) {
-    tokens.sort((a, b) => (a.sortIndex ?? double.infinity).compareTo(b.sortIndex ?? double.infinity));
+    tokens.sort((a, b) => (a.label).compareTo(b.label));
   }
 
   T? currentOf<T extends Token>(T token) => tokens.firstWhereOrNull((element) => element.id == token.id) as T?;

@@ -28,12 +28,12 @@ import 'package:flutter/foundation.dart';
 /// This method removes all licenses from the LicenseRegistry.
 /// It can be used for testing purposes, if one wishes to inspect a specifically
 /// added license.
-clearLicenses() {
+void clearLicenses() {
   // ignore: invalid_use_of_visible_for_testing_member
   LicenseRegistry.reset();
 }
 
-addAllLicenses() {
+void addAllLicenses() {
   _addNewLicense('eduMFA Authenticator', _AUTHENTICATOR_LICENSE);
   _addNewLicense('dart-hex', _DART_HEX_LICENSE);
   _addNewLicense('dart-base32', _DART_BASE32_LICENSE);
@@ -54,7 +54,7 @@ addAllLicenses() {
   _addNewLicense('dart-mutex', _DART_MUTEX_LICENSE);
 }
 
-_addNewLicense(String packageName, String licenseText) {
+void _addNewLicense(String packageName, String licenseText) {
   LicenseRegistry.addLicense(() async* {
     yield LicenseEntryWithLineBreaks(<String>[packageName], licenseText);
   });

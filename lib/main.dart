@@ -36,7 +36,6 @@ import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/views/license_view/license_view.dart';
 import 'package:edumfa_authenticator/views/main_view/main_view.dart';
 import 'package:edumfa_authenticator/views/onboarding_view/onboarding_view.dart';
-import 'package:edumfa_authenticator/views/qr_scanner_view/qr_scanner_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/splash_screen/splash_screen.dart';
 import 'package:edumfa_authenticator/widgets/app_wrapper.dart';
@@ -76,7 +75,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
       SystemChrome.setPreferredOrientations(preferredOrientations);
     }
 
-
     return LayoutBuilder(builder: (context, constraints) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(appConstraintsProvider.notifier).state = constraints;
@@ -86,8 +84,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
             ColorScheme lightColorScheme;
             ColorScheme darkColorScheme;
 
-            //var brandColor = Color.fromRGBO(0, 255, 172, 1);
-
             if (lightDynamic != null && darkDynamic != null) {
               lightColorScheme = lightDynamic.harmonized();
               //lightColorScheme = lightColorScheme.copyWith(secondary: brandColor);
@@ -95,21 +91,15 @@ class EduMFAAuthenticator extends ConsumerWidget {
               darkColorScheme = darkDynamic.harmonized();
               //darkColorScheme = darkColorScheme.copyWith(secondary: brandColor);
             } else {
-              lightColorScheme = ColorScheme.light();
-              //lightColorScheme = ColorScheme.fromSeed(seedColor: brandColor);
+              lightColorScheme = ColorScheme.fromSeed(seedColor: _customization.brandColor);
 
-              darkColorScheme = ColorScheme.dark();
-              //darkColorScheme = ColorScheme.fromSeed(
-              //  seedColor: brandColor,
-              //  brightness: Brightness.dark,
-              //);
+              darkColorScheme = ColorScheme.fromSeed(
+                seedColor: _customization.brandColor,
+                brightness: Brightness.dark,
+              );
             }
 
             return MaterialApp(
-              scrollBehavior: ScrollConfiguration.of(context).copyWith(
-                physics: const ClampingScrollPhysics(),
-                overscroll: false,
-              ),
               debugShowCheckedModeBanner: true,
               navigatorKey: globalNavigatorKey,
               localizationsDelegates: [
@@ -131,7 +121,7 @@ class EduMFAAuthenticator extends ConsumerWidget {
                   appName: _customization.appName,
                   websiteLink: _customization.websiteLink,
                 ),
-                MainView.routeName: (context) => MainView(),
+                MainView.routeName: (context) => const MainView(),
                 OnboardingView.routeName: (context) => OnboardingView(
                   appName: _customization.appName,
                 ),
@@ -139,7 +129,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
                 SplashScreen.routeName: (context) => SplashScreen(
                   appName: _customization.appName,
                 ),
-                QRScannerView.routeName: (context) => const QRScannerView(),
               },
             );
           }

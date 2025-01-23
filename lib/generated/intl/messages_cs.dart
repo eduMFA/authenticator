@@ -70,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Přihlášení bylo úspěšné"),
         "butDiscardIt": MessageLookupByLibrary.simpleMessage("ale zahodit jej"),
+        "cameraPermissionPermanentlyDeniedButton":
+            MessageLookupByLibrary.simpleMessage("Udělit oprávnění"),
         "cancel": MessageLookupByLibrary.simpleMessage("Zrušit"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Zkontrolujte prosím síťové připojení a zkuste to znovu."),
@@ -141,17 +143,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Otevřít nastavení"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Není nastaveno přihlášení zámkem zařízení ani biometrické ověření. Aktivujte je v nastavení zařízení."),
-        "grantCameraPermissionDialogButton":
-            MessageLookupByLibrary.simpleMessage("Udělit oprávnění"),
-        "grantCameraPermissionDialogContent":
-            MessageLookupByLibrary.simpleMessage(
-                "Please grant camera permission to scan QR codes."),
-        "grantCameraPermissionDialogPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "Oprávnění kamery je trvale odepřeno. Udělte prosím oprávnění fotoaparátu v nastavení telefonu."),
-        "grantCameraPermissionDialogTitle":
-            MessageLookupByLibrary.simpleMessage(
-                "Camera permission is not granted"),
         "introEditToken": MessageLookupByLibrary.simpleMessage(
             "Zde můžete upravit název tokenu a zobrazit některé podrobnosti."),
         "introLockToken": MessageLookupByLibrary.simpleMessage(
@@ -219,7 +210,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "rollingOut": MessageLookupByLibrary.simpleMessage("Registrace"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Zavedení dokončeno"),
-        "scanQrCode": MessageLookupByLibrary.simpleMessage("Naskenovat QR kód"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Tajný klíč"),
         "send": MessageLookupByLibrary.simpleMessage("Odeslat"),
         "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(

@@ -13,7 +13,6 @@ import 'settings_notifier_test.mocks.dart';
 final _state = SettingsState(
   isFirstRun: false,
   hideOpts: false,
-  showGuideOnStart: true,
   localePreference: const Locale('en'),
   useSystemLocale: true,
   enablePolling: true,
@@ -36,7 +35,6 @@ void _testSettingsNotifier() {
             initialState: SettingsState(
               isFirstRun: true,
               hideOpts: true,
-              showGuideOnStart: false,
               localePreference: const Locale('de'),
               useSystemLocale: false,
               enablePolling: false,

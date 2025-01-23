@@ -46,7 +46,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
     final question = widget.tokenWithPushRequest.pushRequests.peek()?.question;
     return isHandled
         ? const SizedBox()
-        : Container(
+        : ColoredBox(
             color: Colors.transparent,
             child: DefaultDialog(
               title: Text(

@@ -70,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Authenticatie geslaagd"),
         "butDiscardIt": MessageLookupByLibrary.simpleMessage("maar verwijder"),
+        "cameraPermissionPermanentlyDeniedButton":
+            MessageLookupByLibrary.simpleMessage("Toestemming verlenen"),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuleren"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Controleer je netwerkverbinding en probeer het opnieuw."),
@@ -140,17 +142,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ga naar instellingen"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authenticatie via inloggegevens of biometrie is niet ingesteld. Stel het in bij de instellingen van het apparaat."),
-        "grantCameraPermissionDialogButton":
-            MessageLookupByLibrary.simpleMessage("Toestemming verlenen"),
-        "grantCameraPermissionDialogContent":
-            MessageLookupByLibrary.simpleMessage(
-                "Geef de camera toestemming om QR-codes te scannen."),
-        "grantCameraPermissionDialogPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "Cameratoestemming is permanent geweigerd. Geef de camera toestemming in de instellingen van uw telefoon."),
-        "grantCameraPermissionDialogTitle":
-            MessageLookupByLibrary.simpleMessage(
-                "Cameratoestemming is niet verleend"),
         "introEditToken": MessageLookupByLibrary.simpleMessage(
             "Hier kun je de naam van het token bewerken en enkele details bekijken."),
         "introLockToken": MessageLookupByLibrary.simpleMessage(

@@ -56,6 +56,8 @@
 	<string>Use face id to prevent unauthorized access to tokens.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Network access is required to roll out push tokens.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Library access is required to add QR codes from your photos.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>

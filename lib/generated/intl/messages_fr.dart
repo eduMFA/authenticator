@@ -71,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Authentification réussie"),
         "butDiscardIt": MessageLookupByLibrary.simpleMessage("mais l\'écarter"),
+        "cameraPermissionPermanentlyDeniedButton":
+            MessageLookupByLibrary.simpleMessage("Accorder l\'autorisation"),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Veuillez vérifier votre connexion réseau et réessayer."),
@@ -142,16 +144,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Aller aux paramètres"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "L\'authentification par identifiants ou biométrie n\'est pas configurée sur votre appareil. Veuillez le configurer dans les paramètres de l\'appareil."),
-        "grantCameraPermissionDialogButton":
-            MessageLookupByLibrary.simpleMessage("Accorder l\'autorisation"),
-        "grantCameraPermissionDialogContent": MessageLookupByLibrary.simpleMessage(
-            "Veuillez accorder à la caméra l\'autorisation de scanner les codes QR"),
-        "grantCameraPermissionDialogPermanentlyDenied":
-            MessageLookupByLibrary.simpleMessage(
-                "L\'autorisation de l\'appareil photo est refusée de manière permanente. Veuillez accorder l\'autorisation à l\'appareil photo dans les paramètres de votre téléphone."),
-        "grantCameraPermissionDialogTitle":
-            MessageLookupByLibrary.simpleMessage(
-                "L\'autorisation de la caméra n\'est pas accordée"),
         "introEditToken": MessageLookupByLibrary.simpleMessage(
             "Ici, vous pouvez modifier le nom du token et voir quelques détails"),
         "introLockToken": MessageLookupByLibrary.simpleMessage(
@@ -218,7 +210,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Déploiement en cours"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Déploiement terminé"),
-        "scanQrCode": MessageLookupByLibrary.simpleMessage("Numériser QR-Code"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Clé secrète"),
         "send": MessageLookupByLibrary.simpleMessage("Envoyer"),
         "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(

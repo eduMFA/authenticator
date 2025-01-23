@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import '../../utils/identifiers.dart';
 import '../enums/token_types.dart';
 import '../extensions/enum_extension.dart';
-import '../mixins/sortable_mixin.dart';
 import '../token_origin.dart';
 import 'push_token.dart';
 
 @immutable
-abstract class Token with SortableMixin {
+abstract class Token {
   final String tokenVersion = 'v1.0.0'; // The version of this token, this is used for serialization.
   final String label; // the name of the token, it cannot be uses as an identifier
   final String issuer; // The issuer of this token, currently unused.
@@ -18,8 +17,6 @@ abstract class Token with SortableMixin {
   final bool isHidden;
   Duration get showDuration;
   final String? tokenImage;
-  @override
-  final int? sortIndex;
 
   final TokenOriginData? origin;
 
@@ -45,7 +42,6 @@ abstract class Token with SortableMixin {
     required this.id,
     required this.type,
     this.tokenImage,
-    this.sortIndex,
     this.origin,
     bool? pin,
     bool? isLocked,
@@ -67,7 +63,6 @@ abstract class Token with SortableMixin {
         other.type == type;
   }
 
-  @override
   Token copyWith({
     String? label,
     String? issuer,
@@ -76,7 +71,6 @@ abstract class Token with SortableMixin {
     bool? isHidden,
     bool? pin,
     String? tokenImage,
-    int? sortIndex,
     TokenOriginData? origin,
   });
 
@@ -98,7 +92,6 @@ abstract class Token with SortableMixin {
         'isHidden: $isHidden, '
         'tokenImage: $tokenImage, '
         'type: $type, '
-        'sortIndex: $sortIndex, '
         'origin: $origin, ';
   }
 }
