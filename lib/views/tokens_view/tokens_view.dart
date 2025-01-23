@@ -7,6 +7,7 @@ import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/expan
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list_filtered.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
+import 'package:edumfa_authenticator/widgets/conditional_floating_action_button.dart';
 import 'package:edumfa_authenticator/widgets/status_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,9 +32,10 @@ class _TokensViewState extends ConsumerState<TokensView> {
     final hasFilter = ref.watch(tokenFilterProvider) != null;
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      floatingActionButton: FloatingActionButton.extended(
-        label: Text(S.of(context).addToken),
-        icon: const Icon(Icons.add),
+      floatingActionButton: ConditionalFloatingActionButton(
+        isExtended: ref.watch(tokenProvider).tokens.isEmpty,
+        label: S.of(context).addToken,
+        icon: Icons.add,
         onPressed: () => showModalBottomSheet(
           context: context,
           isScrollControlled: true,
