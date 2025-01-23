@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DeactivateableRefreshIndicator extends StatelessWidget {
+class ConditionalRefreshIndicator extends StatelessWidget {
   final Widget child;
   final bool allowToRefresh;
   final Future<void> Function() onRefresh;
 
-  const DeactivateableRefreshIndicator({
+  const ConditionalRefreshIndicator({
     super.key,
     required this.child,
     required this.allowToRefresh,

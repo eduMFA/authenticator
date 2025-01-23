@@ -24,7 +24,7 @@ void _testTokenState() {
     });
     test('repaceList', () {
       final state = TokenState(tokens: [_TokenMock(id: 'id')]);
-      final newState = state.repaceList(tokens: [_TokenMock(id: 'idCopy')]);
+      final newState = state.replaceList(tokens: [_TokenMock(id: 'idCopy')]);
       expect((state.tokens.first as _TokenMock).id, 'id');
       expect((newState.tokens.first as _TokenMock).id, 'idCopy');
     });

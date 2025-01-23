@@ -10,30 +10,24 @@ class TokenWidgetTile extends ConsumerWidget {
   final List<String> subtitles;
   final Widget? leading;
   final Widget? trailing;
-  final Function()? onTap;
   final bool tokenIsLocked;
   final String? tokenImage;
 
-  final bool isPreview;
 
   const TokenWidgetTile({
     this.leading,
     this.title,
     this.subtitles = const [],
     this.trailing,
-    this.onTap,
     this.tokenIsLocked = false,
     this.tokenImage,
-    this.isPreview = false,
     super.key,
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) => ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-        horizontalTitleGap: isPreview ? 0 : 8,
         leading: (leading != null) ? leading! : null,
-        onTap: onTap,
         title: FittedBox(
           fit: BoxFit.scaleDown,
           alignment: Alignment.topLeft,

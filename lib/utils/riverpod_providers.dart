@@ -7,7 +7,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../model/mixins/sortable_mixin.dart';
 import '../model/push_request.dart';
 import '../model/states/settings_state.dart';
 import '../model/states/token_filter.dart';
@@ -132,14 +131,6 @@ final appStateProvider = StateProvider<AppLifecycleState?>(
     return null;
   },
   name: 'appStateProvider',
-);
-
-final draggingSortableProvider = StateProvider<SortableMixin?>(
-  (ref) {
-    Logger.info("New draggingSortableProvider created", name: 'draggingSortableProvider');
-    return null;
-  },
-  name: 'draggingSortableProvider',
 );
 
 final tokenFilterProvider = StateProvider<TokenFilter?>((ref) => null);

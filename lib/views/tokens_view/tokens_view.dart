@@ -5,7 +5,6 @@ import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/add_t
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/connectivity_listener.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/expandable_appbar.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/tokens_list_filtered.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
 import 'package:edumfa_authenticator/widgets/conditional_floating_action_button.dart';
 import 'package:edumfa_authenticator/widgets/status_bar.dart';
@@ -25,7 +24,6 @@ class TokensView extends ConsumerStatefulView {
 }
 
 class _TokensViewState extends ConsumerState<TokensView> {
-  final globalKey = GlobalKey<NestedScrollViewState>();
 
   @override
   Widget build(BuildContext context) {
@@ -65,15 +63,9 @@ class _TokensViewState extends ConsumerState<TokensView> {
               ),
             ],
         ),
-        body: ConnectivityListener(
+        body: const ConnectivityListener(
           child: StatusBar(
-            child: !hasFilter
-                ? Stack(
-              children: [
-                TokensList(nestedScrollViewKey: globalKey),
-              ],
-            )
-                : const TokensListFiltered(),
+            child: TokensList(),
           ),
         ),
       ),

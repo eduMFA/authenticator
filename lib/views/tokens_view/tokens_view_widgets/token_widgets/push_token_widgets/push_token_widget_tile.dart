@@ -1,12 +1,11 @@
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_delete_action.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_edit_action.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_lock_action.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_widget_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import '../../../../../model/tokens/push_token.dart';
-import '../token_widget_tile.dart';
 
 class PushTokenWidgetTile extends ConsumerWidget {
   final PushToken token;
@@ -21,7 +20,7 @@ class PushTokenWidgetTile extends ConsumerWidget {
       DefaultEditAction(token: token, key: Key('${token.id}editAction')),
     ];
 
-    if ((token.pin == false)) {
+    if (!token.pin) {
       menuEntries.add(
         DefaultLockAction(token: token, key: Key('${token.id}lockAction')),
       );
@@ -33,9 +32,7 @@ class PushTokenWidgetTile extends ConsumerWidget {
         tokenImage: token.tokenImage,
         title: Text(
           token.label.isNotEmpty ? token.label : token.serial,
-          style: const TextStyle(
-            fontSize: 18,
-          ),
+          style: Theme.of(context).textTheme.titleMedium,
           overflow: TextOverflow.ellipsis,
           maxLines: 2,
         ),
@@ -45,6 +42,7 @@ class PushTokenWidgetTile extends ConsumerWidget {
         trailing: PopupMenuButton<String>(
           onSelected: (value) {},
           itemBuilder: (context) => menuEntries.map((e) => e.build(context, ref)).toList(),
-        ));
+        ),
+    );
   }
 }

@@ -39,7 +39,6 @@ void _testPushToken() {
       pushRequests: PushRequestQueue(),
       knownPushRequests: CustomIntBuffer(),
       type: 'type',
-      sortIndex: 0,
       tokenImage: 'example.png',
       isLocked: true,
       pin: true,
@@ -61,7 +60,6 @@ void _testPushToken() {
       expect(pushToken.pushRequests, PushRequestQueue());
       expect(pushToken.knownPushRequests.list, CustomIntBuffer().list);
       expect(pushToken.type, 'EDUMFA_PUSH');
-      expect(pushToken.sortIndex, 0);
       expect(pushToken.tokenImage, 'example.png');
       expect(pushToken.isLocked, true);
       expect(pushToken.pin, true);
@@ -83,7 +81,6 @@ void _testPushToken() {
         rolloutState: PushTokenRollOutState.rolloutComplete,
         pushRequests: PushRequestQueue()..add(pr),
         knownPushRequests: CustomIntBuffer()..put(0),
-        sortIndex: 1,
         tokenImage: 'exampleCopy.png',
         isLocked: false,
         pin: false,
@@ -103,7 +100,6 @@ void _testPushToken() {
       expect(copy.rolloutState, PushTokenRollOutState.rolloutComplete);
       expect(copy.pushRequests.list, [pr]);
       expect(copy.knownPushRequests.list, [0]);
-      expect(copy.sortIndex, 1);
       expect(copy.tokenImage, 'exampleCopy.png');
       expect(copy.isLocked, false);
       expect(copy.pin, false);
@@ -126,7 +122,6 @@ void _testPushToken() {
         pushRequests: PushRequestQueue(),
         knownPushRequests: CustomIntBuffer(),
         type: 'type',
-        sortIndex: 0,
         tokenImage: 'example.png',
         isLocked: true,
         pin: true,
@@ -152,7 +147,6 @@ void _testPushToken() {
         pushRequests: PushRequestQueue()..add(pr),
         knownPushRequests: CustomIntBuffer()..put(0),
         type: 'type',
-        sortIndex: 0,
         tokenImage: 'example.png',
         isLocked: true,
         pin: true,
@@ -179,7 +173,6 @@ void _testPushToken() {
         pushRequests: PushRequestQueue()..add(pr),
         knownPushRequests: CustomIntBuffer()..put(0),
         type: 'type',
-        sortIndex: 0,
         tokenImage: 'example.png',
         isLocked: true,
         pin: true,
@@ -194,7 +187,6 @@ void _testPushToken() {
         "isLocked": true,
         "pin": true,
         "tokenImage": "example.png",
-        "sortIndex": 0,
         "type": "type",
         "expirationDate": "2017-09-07T17:30:00.000",
         "serial": "serial",
@@ -216,7 +208,6 @@ void _testPushToken() {
       expect(token.isLocked, true);
       expect(token.pin, true);
       expect(token.tokenImage, 'example.png');
-      expect(token.sortIndex, 0);
       expect(token.type, 'EDUMFA_PUSH');
       expect(token.expirationDate.toString(), DateTime(2017, 9, 7, 17, 30).toString());
       expect(token.serial, 'serial');
@@ -242,7 +233,6 @@ void _testPushToken() {
         "isLocked": true,
         "isHidden": false,
         "tokenImage": "example.png",
-        "sortIndex": 0,
         "origin": null,
         "type": "EDUMFA_PUSH",
         "expirationDate": "2017-09-07T17:30:00.000",

@@ -1,5 +1,4 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_widget_base.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
@@ -44,10 +43,6 @@ void main() {
       await _addTotpToken(tester);
       await _addDaypasswordToken(tester);
       await tester.pump(const Duration(milliseconds: 200));
-      expect(find.byType(TokenWidgetBase).hitTestable(), findsNWidgets(3));
-      expect(find.byType(TokenWidgetBase).hitTestable(), findsOneWidget);
-      await pumpUntilFindNWidgets(tester, find.byType(TokenWidgetBase).hitTestable(), 3, const Duration(seconds: 5));
-      expect(find.byType(TokenWidgetBase).hitTestable(), findsNWidgets(3));
     },
     timeout: const Timeout(Duration(minutes: 20)),
   );

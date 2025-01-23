@@ -87,7 +87,6 @@ void _testTokenNotifier() {
         pin: false,
         tokenImage: null,
         type: 'EDUMFA_PUSH',
-        sortIndex: null,
         serial: 'PIPU0006BF18',
         sslVerify: false,
         enrollmentCredentials: 'ae60d4744ac5384515574b85f538c6a4e0c7bc82',
@@ -168,7 +167,6 @@ void _testTokenNotifier() {
       expect(pushToken.type, pushTokenShouldBe.type);
       expect(pushToken.pin, pushTokenShouldBe.pin);
       expect(pushToken.tokenImage, pushTokenShouldBe.tokenImage);
-      expect(pushToken.sortIndex, pushTokenShouldBe.sortIndex);
       expect(pushToken.sslVerify, pushTokenShouldBe.sslVerify);
     });
     test('addPushRequestToToken', () async {
