@@ -1,9 +1,5 @@
 {
   "@@locale": "es",
-  "guide": "guía",
-  "@guide": {
-    "description": "Button to open the guide screen."
-  },
   "retry": "Reintentar",
   "@retry": {
     "description": "Label for e.g. a button. Something is tried to be done again."
@@ -44,9 +40,21 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "scanQrCode": "Escanear código QR",
-  "@scanQrCode": {
-    "description": "The button to scan otpauth qr-codes."
+  "addTokenTitle": null,
+  "@addTokenTitle": {
+    "description": "The title of the token add screen."
+  },
+  "addTokenSubtitle": null,
+  "@addTokenSubtitle": {
+    "description": "The subtitle of the token add screen."
+  },
+  "or": null,
+  "@or": {
+    "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
+  },
+  "uploadQrCodeButton": null,
+  "@uploadQrCodeButton": {
+    "description": "The button in the token add view to upload QR codes as an image."
   },
   "renameToken": "Renombrar token",
   "@renameToken": {
@@ -376,10 +384,8 @@
   "butDiscardIt": "pero descártelo",
   "declineIt": "rechazar",
   "requestTriggerdByUserQuestion": "¿Fue usted quien provocó esta petición?",
-  "grantCameraPermissionDialogTitle": "El permiso de cámara no está concedido",
-  "grantCameraPermissionDialogContent": "Por favor, concede permiso a la cámara para escanear códigos QR",
-  "grantCameraPermissionDialogPermanentlyDenied": "El permiso de cámara está denegado permanentemente. Concede el permiso de cámara en la configuración del teléfono",
-  "grantCameraPermissionDialogButton": "Conceder permiso",
+  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDeniedButton": "Conceder permiso",
   "decryptErrorTitle": "Error de descifrado",
   "decryptErrorContent": "Lamentablemente, la aplicación no ha podido descifrar tus tokens. Esto indica que la clave de cifrado está rota. Puedes volver a intentarlo o borrar los datos de la app, lo que eliminaría los tokens de la app.",
   "decryptErrorButtonDelete": "Borrar",
@@ -393,19 +399,6 @@
   "introEditToken": "Aquí puedes editar el nombre del token y ver algunos detalles",
   "introLockToken": "Para mejorar la seguridad aún más, puedes bloquear los tokens.\nEntonces el token sólo se puede utilizar después de la autenticación.",
   "introPollForChallenges": "Puedes buscar nuevos retos arrastrando hacia abajo la lista de tokens",
-  "feedback": "Comentarios",
-  "feedbackTitle": "¡Tus comentarios son siempre bienvenidos!",
-  "feedbackDescription": "Si tienes alguna pregunta, sugerencia o problema, háznoslo saber",
-  "feedbackHint": "Se abrirá un correo electrónico preparado que podrá enviarnos. Si lo desea, se añadirá información sobre su dispositivo y la versión de la aplicación. Puede comprobar y editar el correo electrónico antes de enviarlo.",
-  "feedbackPrivacyPolicy1": "Al enviar sus comentarios, acepta nuestra ",
-  "feedbackPrivacyPolicy2": "política de privacidad",
-  "@feedbackPrivacyPolicy2": {
-    "description": "Taping on this should open the privacy policy."
-  },
-  "feedbackPrivacyPolicy3": ".",
-  "addSystemInfo": "Añadir información del sistema",
-  "feedbackSentTitle": "Comentarios enviados",
-  "feedbackSentDescription": "Muchas gracias por su ayuda para mejorar esta aplicación.",
   "noMailAppTitle": "No hay aplicación de correo electrónico",
   "noMailAppDescription": "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico.",
   "authenticationRequest": "Autenticación",

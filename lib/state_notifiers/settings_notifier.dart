@@ -52,18 +52,6 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
     _saveToRepo();
   }
 
-  set hideOTPs(bool value) {
-    Logger.info('Hide OTPs set to $value', name: 'settings_notifier.dart#setHideOTPs');
-    state = state.copyWith(hideOpts: value);
-    _saveToRepo();
-  }
-
-  set showGuideOnStart(bool value) {
-    Logger.info('Show guide on start set to $value', name: 'settings_notifier.dart#setShowGuideOnStart');
-    state = state.copyWith(showGuideOnStart: value);
-    _saveToRepo();
-  }
-
   void enablePolling() {
     Logger.info('Polling set to true', name: 'settings_notifier.dart#enablePolling');
     state = state.copyWith(enablePolling: true);

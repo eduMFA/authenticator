@@ -2,3 +2,10 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
+    - prefer_const_constructors
+    - always_declare_return_types
+    - use_decorated_box
+    - use_colored_box
+    # - always_use_package_imports
+    # - always_put_required_named_parameters_first
+    # - always_specify_types

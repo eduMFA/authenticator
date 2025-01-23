@@ -87,7 +87,6 @@ void _testTokenNotifier() {
         pin: false,
         tokenImage: null,
         type: 'EDUMFA_PUSH',
-        sortIndex: null,
         serial: 'PIPU0006BF18',
         sslVerify: false,
         enrollmentCredentials: 'ae60d4744ac5384515574b85f538c6a4e0c7bc82',
@@ -102,8 +101,6 @@ void _testTokenNotifier() {
       final after = <Token>[
         pushTokenShouldBe,
       ];
-      const otpAuth =
-          'edumfa-push://edumfa-push/PIPU0006BF18?url=https%3A//192.168.178.30/ttype/push&ttl=10&issuer=eduMFA&enrollment_credential=ae60d4744ac5384515574b85f538c6a4e0c7bc82&v=1&serial=PIPU0006BF18&sslverify=0';
 
       when(mockFirebaseUtils.getFBToken()).thenAnswer((_) async => 'fbToken');
       when(mockRepo.loadTokens()).thenAnswer((_) async => []);
@@ -130,7 +127,22 @@ void _testTokenNotifier() {
 
       final notifier = TokenNotifier(repository: mockRepo, rsaUtils: mockRsaUtils, ioClient: mockIOClient, firebaseUtils: mockFirebaseUtils);
       final testProvider = StateNotifierProvider<TokenNotifier, TokenState>((ref) => notifier);
-      await notifier.handleQrCode(otpAuth);
+      await notifier.handleQrCodeUri(
+          Uri(
+              scheme: 'edumfa-push',
+              host: 'edumfa-push',
+              path: 'PIPU0006BF18',
+              queryParameters: {
+                'url': 'https://192.168.178.30/ttype/push',
+                'ttl': "10",
+                'issuer': 'eduMFA',
+                'enrollment_credential': 'ae60d4744ac5384515574b85f538c6a4e0c7bc82',
+                'v': "1",
+                'serial': 'PIPU0006BF18',
+                'sslverify': ""
+              }
+          ).toString()
+      );
       final tokenState = container.read(testProvider);
       expect(tokenState, isNotNull);
       expect(tokenState.tokens, after);
@@ -155,7 +167,6 @@ void _testTokenNotifier() {
       expect(pushToken.type, pushTokenShouldBe.type);
       expect(pushToken.pin, pushTokenShouldBe.pin);
       expect(pushToken.tokenImage, pushTokenShouldBe.tokenImage);
-      expect(pushToken.sortIndex, pushTokenShouldBe.sortIndex);
       expect(pushToken.sslVerify, pushTokenShouldBe.sslVerify);
     });
     test('addPushRequestToToken', () async {

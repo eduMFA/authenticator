@@ -11,7 +11,6 @@ import 'settings_notifier_test.mocks.dart';
 final _state = SettingsState(
   isFirstRun: false,
   hideOpts: false,
-  showGuideOnStart: true,
   enablePolling: true,
   verboseLogging: false,
   crashReportRecipients: {'someone'},
@@ -32,7 +31,6 @@ void _testSettingsNotifier() {
             initialState: SettingsState(
               isFirstRun: true,
               hideOpts: true,
-              showGuideOnStart: false,
               enablePolling: false,
               verboseLogging: true,
               crashReportRecipients: {'someone'},
