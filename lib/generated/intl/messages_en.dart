@@ -157,7 +157,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can check for new challenges by dragging down the token list."),
         "introScanQrCode": MessageLookupByLibrary.simpleMessage(
             "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens."),
-        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licenses and version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
@@ -251,10 +250,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unlock": MessageLookupByLibrary.simpleMessage("Unlock"),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("Upload QR Code"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Use device language if it is supported, otherwise default to english."),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Use device language"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Verbose logging"),
         "yes": MessageLookupByLibrary.simpleMessage("Yes")

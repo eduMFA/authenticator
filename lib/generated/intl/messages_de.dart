@@ -159,7 +159,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen."),
         "introScanQrCode": MessageLookupByLibrary.simpleMessage(
             "Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die eduMFA Token."),
-        "language": MessageLookupByLibrary.simpleMessage("Sprache"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Lizenzen und Version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Hell"),
@@ -256,10 +255,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unlock": MessageLookupByLibrary.simpleMessage("Entsperren"),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("QR Code hochladen"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Nutze Systemsprache, falls diese unterstützt wird. Anderenfalls nutze Englisch. "),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Nutze Systemsprache"),
         "verboseLogging": MessageLookupByLibrary.simpleMessage(
             "Ausführliche Protokollierung"),
         "yes": MessageLookupByLibrary.simpleMessage("Ja")

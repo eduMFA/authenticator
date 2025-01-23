@@ -150,7 +150,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu\'après l\'authentification."),
         "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
             "Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas"),
-        "language": MessageLookupByLibrary.simpleMessage("Langue"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licences et version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Thème lumineux"),
@@ -246,10 +245,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Une erreur inattendue s\'est produite."),
         "unlock": MessageLookupByLibrary.simpleMessage("Ouvrir"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Utilisez la langue de l\'appareil si elle est prise en charge, sinon l\'anglais par défaut."),
-        "useDeviceLocaleTitle": MessageLookupByLibrary.simpleMessage(
-            "Utiliser la langue de l\'appareil"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Journalisation verbeuse"),
         "yes": MessageLookupByLibrary.simpleMessage("Oui")

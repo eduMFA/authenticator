@@ -151,7 +151,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů."),
         "introScanQrCode": MessageLookupByLibrary.simpleMessage(
             "Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny eduMFA."),
-        "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licence a verze"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Světlý"),
@@ -246,10 +245,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError":
             MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba."),
         "unlock": MessageLookupByLibrary.simpleMessage("Odemknout"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Použít jazyk zařízení, pokud je podporován, případně angličtinu."),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Použít jazyk zařízení"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Zevrubné protokolování"),
         "yes": MessageLookupByLibrary.simpleMessage("Ano")
