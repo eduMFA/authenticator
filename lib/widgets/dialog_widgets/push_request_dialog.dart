@@ -1,7 +1,5 @@
-
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:edumfa_authenticator/extensions/color_extension.dart';
 
 import '../../model/tokens/push_token.dart';
 import '../../utils/globals.dart';
@@ -20,7 +18,6 @@ class PushRequestDialog extends StatefulWidget {
 }
 
 class _PushRequestDialogState extends State<PushRequestDialog> {
-  static const titleScale = 1.35;
   double get lineHeight => Theme.of(context).textTheme.titleLarge?.fontSize ?? 16;
 
   bool isHandled = false;
@@ -44,194 +41,197 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   Widget build(BuildContext context) {
     final lineHeight = this.lineHeight;
     final question = widget.tokenWithPushRequest.pushRequests.peek()?.question;
-    return isHandled
-        ? const SizedBox()
-        : ColoredBox(
-            color: Colors.transparent,
-            child: DefaultDialog(
-              title: Text(
-                S.of(context).authenticationRequest,
-                style: Theme.of(context).textTheme.titleLarge!,
-                textAlign: TextAlign.center,
+    if (isHandled) return const SizedBox();
+    return ColoredBox(
+      color: Colors.transparent,
+      child: DefaultDialog(
+        title: Text(
+          S.of(context).authenticationRequest,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              S.of(context).requestInfo(
+                widget.tokenWithPushRequest.issuer,
+                widget.tokenWithPushRequest.label,
               ),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(
-                    S.of(context).requestInfo(
-                      widget.tokenWithPushRequest.issuer,
-                      widget.tokenWithPushRequest.label,
-                    ),
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: lineHeight),
-                  if (question != null) ...[
-                    Text(
-                      question,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: lineHeight),
-                  ],
-                  SizedBox(
-                    // Accept button
-                    height: lineHeight * titleScale + 16,
-                    child: PressButton(
-                      onPressed: () async {
-                        if (widget.tokenWithPushRequest.isLocked &&
-                            await lockAuth(localizedReason: S.of(context).authToAcceptPushRequest) == false) {
-                              return;
-                        }
-                        globalRef?.read(pushRequestProvider.notifier).acceptPop(widget.tokenWithPushRequest);
-                        if (mounted) setState(() => isHandled = true);
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            S.of(context).accept,
-                            style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                          ),
-                          const Icon(
-                            Icons.check_outlined,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: lineHeight * 0.5),
-                  SizedBox(
-                    // Decline button
-                    height: lineHeight * titleScale + 16,
-                    child: PressButton(
-                        style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
-                        onPressed: () async {
-                          if (widget.tokenWithPushRequest.isLocked &&
-                              await lockAuth(localizedReason: S.of(context).authToDeclinePushRequest) == false) {
-                            return;
-                          }
-                          dialogIsOpen = true;
-                          await _showConfirmationDialog(widget.tokenWithPushRequest);
-                          dialogIsOpen = false;
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              S.of(context).decline,
-                              style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                              textAlign: TextAlign.center,
-                            ),
-                            const Icon(Icons.close_outlined),
-                          ],
-                        )),
-                  ),
-                ],
-              ),
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
             ),
-          );
-  }
-
-  Future<void> _showConfirmationDialog(PushToken token) => showDialog(
-      useRootNavigator: false,
-      context: globalNavigatorKey.currentContext!,
-      builder: (BuildContext context) {
-        final lineHeight = this.lineHeight;
-        return DefaultDialog(
-          title: Text(
-            S.of(context).authenticationRequest,
-            style: Theme.of(context).textTheme.titleLarge!,
-            textAlign: TextAlign.center,
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+            SizedBox(height: lineHeight),
+            if (question != null) ...[
               Text(
-                S.of(context).requestTriggerdByUserQuestion,
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
+                question,
+                style: Theme.of(context).textTheme.bodyLarge,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: lineHeight),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const Expanded(child: SizedBox()),
-                  Expanded(
-                    flex: 6,
-                    child: PressButton(
-                      onPressed: () {
-                        globalRef?.read(pushRequestProvider.notifier).declinePop(token);
-                        Navigator.of(context).pop();
-                        if (mounted) setState(() => isHandled = true);
-                      },
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            S.of(context).yes,
-                            style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                            textAlign: TextAlign.center,
-                          ),
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              S.of(context).butDiscardIt,
-                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800),
-                                  ),
-                              textAlign: TextAlign.center,
-                              softWrap: false,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const Expanded(flex: 2, child: SizedBox()),
-                  Expanded(
-                    flex: 6,
-                    child: PressButton(
-                      style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
-                      onPressed: () {
-                        //TODO: Notify issuer
-                        globalRef?.read(pushRequestProvider.notifier).declinePop(token);
-                        Navigator.of(context).pop();
-                        if (mounted) setState(() => isHandled = true);
-                      },
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            S.of(context).no,
-                            style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-                            textAlign: TextAlign.center,
-                          ),
-                          Text(
-                            S.of(context).declineIt,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800)),
-                            textAlign: TextAlign.center,
-                            softWrap: false,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const Expanded(child: SizedBox()),
-                ],
-              ),
             ],
-          ),
-        );
-      });
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              spacing: 15,
+              children: [
+                Expanded(  // Accept button
+                  flex: 1,
+                  child: PressButton(
+                    style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.green.shade300)),
+                    onPressed: () async => await _handleAction(false),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          S.of(context).accept,
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.green.shade900),
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                        ),
+                        Icon(
+                          Icons.check,
+                          color: Colors.green.shade900,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded( // Decline button
+                  flex: 1,
+                  child: PressButton(
+                      style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.red.shade200)),
+                      onPressed: () async => await _handleAction(false),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            S.of(context).decline,
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.red.shade900),
+                            textAlign: TextAlign.center,
+                          ),
+                          Icon(
+                            Icons.close_outlined,
+                            color: Colors.red.shade900,
+                          ),
+                        ],
+                      )),
+                ),
+              ],
+            )
+
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _handleAction(bool success) async {
+    final localizedReason = success ? S.of(context).authToAcceptPushRequest : S.of(context).authToDeclinePushRequest;
+    if (widget.tokenWithPushRequest.isLocked && !await lockAuth(localizedReason: localizedReason)) return;
+    success
+        ? globalRef?.read(pushRequestProvider.notifier).acceptPop(widget.tokenWithPushRequest)
+        : globalRef?.read(pushRequestProvider.notifier).declinePop(widget.tokenWithPushRequest);
+
+    // dialogIsOpen = true;
+    // await _showConfirmationDialog(widget.tokenWithPushRequest);
+    // dialogIsOpen = false;
+
+    if (mounted) setState(() => isHandled = true);
+  }
+
+  //Future<void> _showConfirmationDialog(PushToken token) => showDialog(
+  //    useRootNavigator: false,
+  //    context: globalNavigatorKey.currentContext!,
+  //    builder: (BuildContext context) {
+  //      final lineHeight = this.lineHeight;
+  //      return DefaultDialog(
+  //        title: Text(
+  //          S.of(context).authenticationRequest,
+  //          style: Theme.of(context).textTheme.titleLarge!,
+  //          textAlign: TextAlign.center,
+  //        ),
+  //        content: Column(
+  //          mainAxisSize: MainAxisSize.min,
+  //          crossAxisAlignment: CrossAxisAlignment.stretch,
+  //          children: [
+  //            Text(
+  //              S.of(context).requestTriggerdByUserQuestion,
+  //              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
+  //              textAlign: TextAlign.center,
+  //            ),
+  //            SizedBox(height: lineHeight),
+  //            Row(
+  //              mainAxisSize: MainAxisSize.max,
+  //              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //              children: [
+  //                const Expanded(child: SizedBox()),
+  //                Expanded(
+  //                  flex: 6,
+  //                  child: PressButton(
+  //                    onPressed: () {
+  //                      globalRef?.read(pushRequestProvider.notifier).declinePop(token);
+  //                      Navigator.of(context).pop();
+  //                      if (mounted) setState(() => isHandled = true);
+  //                    },
+  //                    child: Column(
+  //                      mainAxisSize: MainAxisSize.min,
+  //                      children: [
+  //                        Text(
+  //                          S.of(context).yes,
+  //                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
+  //                          textAlign: TextAlign.center,
+  //                        ),
+  //                        FittedBox(
+  //                          fit: BoxFit.scaleDown,
+  //                          child: Text(
+  //                            S.of(context).butDiscardIt,
+  //                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+  //                                  color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800),
+  //                                ),
+  //                            textAlign: TextAlign.center,
+  //                            softWrap: false,
+  //                          ),
+  //                        ),
+  //                      ],
+  //                    ),
+  //                  ),
+  //                ),
+  //                const Expanded(flex: 2, child: SizedBox()),
+  //                Expanded(
+  //                  flex: 6,
+  //                  child: PressButton(
+  //                    style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
+  //                    onPressed: () {
+  //                      //TODO: Notify issuer
+  //                      globalRef?.read(pushRequestProvider.notifier).declinePop(token);
+  //                      Navigator.of(context).pop();
+  //                      if (mounted) setState(() => isHandled = true);
+  //                    },
+  //                    child: Column(
+  //                      mainAxisSize: MainAxisSize.min,
+  //                      children: [
+  //                        Text(
+  //                          S.of(context).no,
+  //                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
+  //                          textAlign: TextAlign.center,
+  //                        ),
+  //                        Text(
+  //                          S.of(context).declineIt,
+  //                          style:
+  //                              Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800)),
+  //                          textAlign: TextAlign.center,
+  //                          softWrap: false,
+  //                        ),
+  //                      ],
+  //                    ),
+  //                  ),
+  //                ),
+  //                const Expanded(child: SizedBox()),
+  //              ],
+  //            ),
+  //          ],
+  //        ),
+  //      );
+  //    });
 }
