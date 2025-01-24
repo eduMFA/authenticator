@@ -16,7 +16,6 @@ import '../state_notifiers/deeplink_notifier.dart';
 import '../state_notifiers/push_request_notifier.dart';
 import '../state_notifiers/settings_notifier.dart';
 import '../state_notifiers/token_notifier.dart';
-import 'app_customizer.dart';
 import 'globals.dart';
 import 'logger.dart';
 import 'push_provider.dart';
@@ -166,6 +165,3 @@ final appConstraintsProvider = StateProvider<BoxConstraints?>(
     return null;
   },
 );
-
-/// Only used for the app customizer
-final applicationCustomizerProvider = StateProvider<ApplicationCustomization>((ref) => ApplicationCustomization.defaultCustomization);

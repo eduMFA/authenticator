@@ -28,7 +28,6 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 
@@ -55,18 +54,6 @@ String splitPeriodically(String str, int period) {
   }
 
   return result.trim();
-}
-
-// / This implementation is taken from the library
-// / [foundation](https://api.flutter.dev/flutter/foundation/describeEnum.html).
-// / That library sadly depends on [dart.ui] and thus cannot be used in tests.
-// / Therefore, only using this code enables us to use this library ([utils.dart])
-// / in tests.
-String enumAsString(Enum enumEntry) {
-  final String description = enumEntry.toString();
-  final int indexOfDot = description.indexOf('.');
-  assert(indexOfDot != -1 && indexOfDot < description.length - 1);
-  return description.substring(indexOfDot + 1);
 }
 
 /// If permission is already given, this function does nothing
@@ -109,5 +96,3 @@ Size textSizeOf(String text, TextStyle style, {int? maxLines = 1, double minWidt
     ..layout(minWidth: minWidth, maxWidth: maxWidth);
   return textPainter.size;
 }
-
-Future<String> getPackageName() async => (await PackageInfo.fromPlatform()).packageName.replaceAll('.debug', '');
