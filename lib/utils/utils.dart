@@ -96,3 +96,7 @@ Size textSizeOf(String text, TextStyle style, {int? maxLines = 1, double minWidt
     ..layout(minWidth: minWidth, maxWidth: maxWidth);
   return textPainter.size;
 }
+
+bool isTablet(BuildContext context) {
+  return MediaQuery.of(context).size.shortestSide > 600;
+}

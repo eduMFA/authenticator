@@ -25,6 +25,8 @@ import 'dart:io';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -61,11 +63,9 @@ class EduMFAAuthenticator extends ConsumerWidget {
     globalRef = ref;
     final locale = ref.watch(settingsProvider).currentLocale;
 
-    if (Platform.isAndroid) {
-      final isTablet = MediaQuery.of(context).size.shortestSide > 600;
-
+    if (!kIsWeb && Platform.isAndroid) {
       var preferredOrientations = <DeviceOrientation>[DeviceOrientation.portraitUp];
-      if (isTablet) {
+      if (isTablet(context)) {
         preferredOrientations.addAll([
           DeviceOrientation.portraitDown,
           DeviceOrientation.landscapeLeft,
