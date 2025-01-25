@@ -81,22 +81,18 @@ class EduMFAAuthenticator extends ConsumerWidget {
       });
       return DynamicColorBuilder(
           builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
-            ColorScheme lightColorScheme;
-            ColorScheme darkColorScheme;
+            ThemeData lightTheme;
+            ThemeData darkTheme;
 
             if (lightDynamic != null && darkDynamic != null) {
-              lightColorScheme = lightDynamic.harmonized();
-              //lightColorScheme = lightColorScheme.copyWith(secondary: brandColor);
-
-              darkColorScheme = darkDynamic.harmonized();
-              //darkColorScheme = darkColorScheme.copyWith(secondary: brandColor);
+              lightTheme = ThemeData(colorScheme: lightDynamic.harmonized());
+              darkTheme = ThemeData(colorScheme: darkDynamic.harmonized());
             } else {
-              lightColorScheme = ColorScheme.fromSeed(seedColor: _customization.brandColor);
-
-              darkColorScheme = ColorScheme.fromSeed(
+              lightTheme = ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: _customization.brandColor));
+              darkTheme = ThemeData(colorScheme: ColorScheme.fromSeed(
                 seedColor: _customization.brandColor,
                 brightness: Brightness.dark,
-              );
+              ));
             }
 
             return MaterialApp(
@@ -111,8 +107,8 @@ class EduMFAAuthenticator extends ConsumerWidget {
               supportedLocales: S.delegate.supportedLocales,
               locale: locale,
               title: _customization.appName,
-              theme: ThemeData(colorScheme: lightColorScheme),
-              darkTheme: ThemeData(colorScheme: darkColorScheme),
+              theme: lightTheme,
+              darkTheme: darkTheme,
               scaffoldMessengerKey: globalSnackbarKey, // <= this
               themeMode: EasyDynamicTheme.of(context).themeMode,
               initialRoute: SplashScreen.routeName,
