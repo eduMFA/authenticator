@@ -25,6 +25,7 @@ import 'dart:io';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/color_scheme_utils.dart';
 import 'package:edumfa_authenticator/utils/utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -81,19 +82,15 @@ class EduMFAAuthenticator extends ConsumerWidget {
       });
       return DynamicColorBuilder(
           builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
-            ThemeData lightTheme;
-            ThemeData darkTheme;
-
-            if (lightDynamic != null && darkDynamic != null) {
-              lightTheme = ThemeData(colorScheme: lightDynamic.harmonized());
-              darkTheme = ThemeData(colorScheme: darkDynamic.harmonized());
-            } else {
-              lightTheme = ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: _customization.brandColor));
-              darkTheme = ThemeData(colorScheme: ColorScheme.fromSeed(
-                seedColor: _customization.brandColor,
-                brightness: Brightness.dark,
-              ));
-            }
+            ThemeData lightTheme = ThemeData(colorScheme: generateColorScheme(
+                lightDynamic?.primary,
+                _customization.brandColor
+            ));
+            ThemeData darkTheme = ThemeData(colorScheme: generateColorScheme(
+                darkDynamic?.primary,
+                _customization.brandColor,
+                Brightness.dark
+            ));
 
             return MaterialApp(
               debugShowCheckedModeBanner: true,
