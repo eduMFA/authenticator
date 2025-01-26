@@ -15,6 +15,8 @@ class ConditionalFloatingActionButton extends StatelessWidget {
         onPressed: onPressed,
       )
       : FloatingActionButton(
-        onPressed: onPressed, child: Icon(icon)
+        onPressed: onPressed,
+        tooltip: label,
+        child: Icon(icon)
       );
 }
