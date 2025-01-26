@@ -1,5 +1,6 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/add_token_sheet.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/connectivity_listener.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_search_bar.dart';
@@ -29,7 +30,7 @@ class _TokensViewState extends ConsumerState<TokensView> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       floatingActionButton: ConditionalFloatingActionButton(
-        isExtended: ref.watch(tokenProvider).tokens.isEmpty,
+        isExtended: ref.watch(tokenProvider).tokens.isEmpty || isTablet(context),
         label: S.of(context).addToken,
         icon: Icons.add,
         onPressed: () => showModalBottomSheet(
