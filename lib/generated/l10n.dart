@@ -539,28 +539,6 @@ class S {
     );
   }
 
-  /// `Use device language`
-  String get useDeviceLocaleTitle {
-    return Intl.message(
-      'Use device language',
-      name: 'useDeviceLocaleTitle',
-      desc:
-          'Title of the switch tile where using the devices language can be enabled.',
-      args: [],
-    );
-  }
-
-  /// `Use device language if it is supported, otherwise default to english.`
-  String get useDeviceLocaleDescription {
-    return Intl.message(
-      'Use device language if it is supported, otherwise default to english.',
-      name: 'useDeviceLocaleDescription',
-      desc:
-          'Description of the switch tile where using the devices language can be enabled.',
-      args: [],
-    );
-  }
-
   /// `Language`
   String get language {
     return Intl.message(

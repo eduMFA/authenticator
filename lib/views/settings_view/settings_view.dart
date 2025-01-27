@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:device_info_plus/device_info_plus.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../model/tokens/push_token.dart';
@@ -24,6 +29,15 @@ class SettingsView extends ConsumerView {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tokens = ref.watch(tokenProvider).tokens;
+    bool showLanguageSettings = true;
+    if (!kIsWeb && Platform.isAndroid) {
+      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+      deviceInfo.androidInfo.then((value) => {
+        if (value.version.sdkInt < 33) {
+          showLanguageSettings = false
+        }
+      });
+    }
     final enrolledPushTokenList = tokens.whereType<PushToken>().where((e) => e.isRolledOut).toList();
     final unsupported = enrolledPushTokenList.where((e) => e.url == null).toList();
     final enablePushSettingsGroup = enrolledPushTokenList.isNotEmpty;
@@ -32,7 +46,6 @@ class SettingsView extends ConsumerView {
       appBar: AppBar(
         title: Text(
           S.of(context).settings,
-
           overflow: TextOverflow.ellipsis, // maxLines: 2 only works like this.
           maxLines: 2, // Title can be shown on small screens too.
         ),
@@ -118,47 +131,18 @@ class SettingsView extends ConsumerView {
               ],
             ),
             const Divider(),
-            SettingsGroup(
-              title: S.of(context).language,
-              children: [
-                SwitchListTile(
-                    title: Text(
-                      S.of(context).useDeviceLocaleTitle,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    subtitle: Text(
-                      S.of(context).useDeviceLocaleDescription,
-                      overflow: TextOverflow.fade,
-                    ),
-                    value: ref.watch(settingsProvider).useSystemLocale,
-                    onChanged: (value) => ref.read(settingsProvider.notifier).setUseSystemLocale(value)),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: DropdownButton<Locale>(
-                    disabledHint: Text(
-                      '${ref.watch(settingsProvider).currentLocale}',
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.grey),
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    isExpanded: true,
-                    value: ref.watch(settingsProvider).currentLocale,
-                    items: S.delegate.supportedLocales.map<DropdownMenuItem<Locale>>((Locale itemLocale) {
-                      return DropdownMenuItem<Locale>(
-                        value: itemLocale,
-                        child: Text(
-                          '$itemLocale',
-                          overflow: TextOverflow.fade,
-                          softWrap: false,
-                        ),
-                      );
-                    }).toList(),
-                    onChanged:
-                        ref.watch(settingsProvider).useSystemLocale ? null : (value) => ref.read(settingsProvider.notifier).setLocalePreference(value!),
-                  ),
+            if (showLanguageSettings) ...[
+              ListTile(
+                title: Text(
+                  S.of(context).language,
+                  style: Theme.of(context).textTheme.titleMedium,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
                 ),
-              ],
-            ),
+                onTap: () => openAppSettings(),
+              ),
+              const Divider(),
+            ],
             SettingsGroup(
               isActive: enablePushSettingsGroup,
               title: S.of(context).pushToken,
@@ -175,13 +159,13 @@ class SettingsView extends ConsumerView {
                   trailing: ElevatedButton(
                     onPressed: enablePushSettingsGroup
                         ? () {
-                            showDialog(
-                              useRootNavigator: false,
-                              context: context,
-                              barrierDismissible: false,
-                              builder: (context) => const UpdateFirebaseTokenDialog(),
-                            );
-                          }
+                      showDialog(
+                        useRootNavigator: false,
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (context) => const UpdateFirebaseTokenDialog(),
+                      );
+                    }
                         : null,
                     child: Text(
                       S.of(context).sync,
@@ -204,12 +188,12 @@ class SettingsView extends ConsumerView {
                             padding: const EdgeInsets.only(left: 10),
                             child: unsupported.isNotEmpty && enrolledPushTokenList.isNotEmpty
                                 ? GestureDetector(
-                                    onTap: () {}, // () => _showPollingInfo(unsupported),
-                                    child: const Icon(
-                                      Icons.info_outline,
-                                      color: Colors.red,
-                                    ),
-                                  )
+                              onTap: () {}, // () => _showPollingInfo(unsupported),
+                              child: const Icon(
+                                Icons.info_outline,
+                                color: Colors.red,
+                              ),
+                            )
                                 : null,
                           ),
                         ),

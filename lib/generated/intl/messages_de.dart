@@ -257,10 +257,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unlock": MessageLookupByLibrary.simpleMessage("Entsperren"),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("QR Code hochladen"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Nutze Systemsprache, falls diese unterstützt wird. Anderenfalls nutze Englisch. "),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Nutze Systemsprache"),
         "verboseLogging": MessageLookupByLibrary.simpleMessage(
             "Ausführliche Protokollierung"),
         "yes": MessageLookupByLibrary.simpleMessage("Ja")

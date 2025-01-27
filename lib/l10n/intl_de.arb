@@ -217,14 +217,6 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Nutze Systemsprache",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Nutze Systemsprache, falls diese unterstützt wird. Anderenfalls nutze Englisch. ",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
-  },
   "language": "Sprache",
   "@language": {
     "description": "Title of language setting group."

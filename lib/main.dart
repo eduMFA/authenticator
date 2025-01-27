@@ -62,7 +62,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     globalRef = ref;
-    final locale = ref.watch(settingsProvider).currentLocale;
 
     if (!kIsWeb && Platform.isAndroid) {
       var preferredOrientations = <DeviceOrientation>[DeviceOrientation.portraitUp];
@@ -102,7 +101,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
                 GlobalCupertinoLocalizations.delegate
               ],
               supportedLocales: S.delegate.supportedLocales,
-              locale: locale,
               title: _customization.appName,
               theme: lightTheme,
               darkTheme: darkTheme,

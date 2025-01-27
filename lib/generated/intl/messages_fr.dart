@@ -246,10 +246,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Une erreur inattendue s\'est produite."),
         "unlock": MessageLookupByLibrary.simpleMessage("Ouvrir"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Utilisez la langue de l\'appareil si elle est prise en charge, sinon l\'anglais par défaut."),
-        "useDeviceLocaleTitle": MessageLookupByLibrary.simpleMessage(
-            "Utiliser la langue de l\'appareil"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Journalisation verbeuse"),
         "yes": MessageLookupByLibrary.simpleMessage("Oui")

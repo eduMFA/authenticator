@@ -252,10 +252,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unlock": MessageLookupByLibrary.simpleMessage("Unlock"),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("Upload QR Code"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Use device language if it is supported, otherwise default to english."),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Use device language"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Verbose logging"),
         "yes": MessageLookupByLibrary.simpleMessage("Yes")
