@@ -7,7 +7,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../model/tokens/push_token.dart';
 import '../../utils/globals.dart';
 import '../../utils/riverpod_providers.dart';
-import '../../widgets/push_request_listener.dart';
 import '../license_view/license_view.dart';
 import '../view_interface.dart';
 import 'settings_view_widgets/logging_menu.dart';
@@ -29,11 +28,10 @@ class SettingsView extends ConsumerView {
     final unsupported = enrolledPushTokenList.where((e) => e.url == null).toList();
     final enablePushSettingsGroup = enrolledPushTokenList.isNotEmpty;
 
-    return PushRequestListener(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            S.of(context).settings,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          S.of(context).settings,
 
             overflow: TextOverflow.ellipsis, // maxLines: 2 only works like this.
             maxLines: 2, // Title can be shown on small screens too.

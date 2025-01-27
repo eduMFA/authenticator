@@ -711,6 +711,16 @@ class S {
     );
   }
 
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: 'Placeholder text for search bar.',
+      args: [],
+    );
+  }
+
   /// `No tokens stored yet.`
   String get noResultTitle {
     return Intl.message(
