@@ -79,7 +79,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                   flex: 1,
                   child: PressButton(
                     style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.green.shade300)),
-                    onPressed: () async => await _handleAction(false),
+                    onPressed: () async => await _handleAction(true),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
