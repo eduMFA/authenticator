@@ -85,6 +85,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                       children: [
                         Text(
                           S.of(context).accept,
+                          
                           style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.green.shade900),
                           textAlign: TextAlign.center,
                           maxLines: 1,
