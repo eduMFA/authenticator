@@ -37,10 +37,13 @@ class _TokensListState extends ConsumerState<TokensList> {
             slivers: [
               SliverFillRemaining(
                 hasScrollBody: false,
-                child: Column(
-                  children: [
-                    ..._mapTokensToWidgets(tokenState.tokens),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: Column(
+                    children: [
+                      ..._mapTokensToWidgets(tokenState.tokens),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -59,9 +62,6 @@ class _TokensListState extends ConsumerState<TokensList> {
     //tokens.sort((a, b) => a.compareTo(b));
     for (var i = 0; i < filteredTokens.length; i++) {
       widgets.add(PushTokenWidget(filteredTokens[i] as PushToken));
-      if (i != filteredTokens.length - 1) {
-        widgets.add(const Divider(indent: 10, endIndent: 10));
-      }
     }
 
     return widgets;

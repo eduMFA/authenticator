@@ -6,57 +6,42 @@ import 'package:http/http.dart' as http;
 final disableCopyOtpProvider = StateProvider<bool>((ref) => false);
 
 class TokenWidgetTile extends ConsumerWidget {
-  final Widget? title;
-  final List<String> subtitles;
-  final Widget? leading;
+  final Widget title;
+  final String? subtitle;
   final Widget? trailing;
-  final bool tokenIsLocked;
   final String? tokenImage;
+  final VoidCallback? onLongPress;
 
 
   const TokenWidgetTile({
-    this.leading,
-    this.title,
-    this.subtitles = const [],
+    required this.title,
+    this.subtitle,
     this.trailing,
-    this.tokenIsLocked = false,
     this.tokenImage,
+    this.onLongPress,
     super.key,
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) => ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-        leading: (leading != null) ? leading! : null,
-        title: FittedBox(
-          fit: BoxFit.scaleDown,
-          alignment: Alignment.topLeft,
-          child: title,
+  Widget build(BuildContext context, WidgetRef ref) => Padding(
+    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+    child: ListTile(
+          leading: (tokenImage != null) ? TokenImage(tokenImage: tokenImage) : null,
+          title: title,
+          subtitle: subtitle != null
+              ? Text(
+                subtitle!,
+                overflow: TextOverflow.fade,
+                softWrap: false,
+              )
+              : const SizedBox(),
+          trailing: trailing ?? const SizedBox(),
+          onLongPress: onLongPress,
+          tileColor: Theme.of(context).colorScheme.surfaceContainer,
+          textColor: Theme.of(context).colorScheme.onSecondaryContainer,
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
         ),
-        subtitle: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TokenImage(tokenImage: tokenImage),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  for (var line in subtitles)
-                    Text(
-                      line,
-                      style: Theme.of(context).listTileTheme.subtitleTextStyle,
-                      textAlign: TextAlign.left,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                ],
-              ),
-            ),
-          ],
-        ),
-        trailing: trailing ?? const SizedBox(),
-      );
+  );
 }
 
 final tokenImages = <String?, Uint8List?>{};
