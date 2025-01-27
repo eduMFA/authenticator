@@ -37,8 +37,8 @@ class PushTokenWidgetTile extends ConsumerWidget {
         trailing: PopupMenuButton<String>(
           onSelected: (value) {},
           itemBuilder: (context) => menuEntries.map((e) => e.build(context, ref)).toList(),
-        subtitle: (token.issuer.isNotEmpty) ? token.issuer : null,
         ),
+        subtitle: (token.issuer.isNotEmpty) ? token.issuer : null,
     );
   }
 }
