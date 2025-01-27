@@ -539,6 +539,16 @@ class S {
     );
   }
 
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: 'Title of language setting group.',
+      args: [],
+    );
+  }
+
   /// `Please authenticate to show one time password.`
   String get authenticateToShowOtp {
     return Intl.message(

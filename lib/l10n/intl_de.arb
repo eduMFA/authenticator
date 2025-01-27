@@ -217,6 +217,10 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
+  "language": "Sprache",
+  "@language": {
+    "description": "Title of language setting group."
+  },
   "authenticateToShowOtp": "Bitte authentifizieren Sie sich, um das Einmalpasswort anzuzeigen.",
   "@authenticateToShowOtp": {
     "description": "Reason to authenticate when trying to view a one time password."

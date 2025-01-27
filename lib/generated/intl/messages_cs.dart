@@ -151,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů."),
         "introScanQrCode": MessageLookupByLibrary.simpleMessage(
             "Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny eduMFA."),
+        "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licence a verze"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Světlý"),

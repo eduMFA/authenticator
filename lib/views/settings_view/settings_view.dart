@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:device_info_plus/device_info_plus.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../model/tokens/push_token.dart';
@@ -24,6 +29,15 @@ class SettingsView extends ConsumerView {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tokens = ref.watch(tokenProvider).tokens;
+    bool showLanguageSettings = true;
+    if (!kIsWeb && Platform.isAndroid) {
+      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+      deviceInfo.androidInfo.then((value) => {
+        if (value.version.sdkInt < 33) {
+          showLanguageSettings = false
+        }
+      });
+    }
     final enrolledPushTokenList = tokens.whereType<PushToken>().where((e) => e.isRolledOut).toList();
     final unsupported = enrolledPushTokenList.where((e) => e.url == null).toList();
     final enablePushSettingsGroup = enrolledPushTokenList.isNotEmpty;
@@ -117,6 +131,18 @@ class SettingsView extends ConsumerView {
               ],
             ),
             const Divider(),
+            if (showLanguageSettings) ...[
+              ListTile(
+                title: Text(
+                  S.of(context).language,
+                  style: Theme.of(context).textTheme.titleMedium,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                ),
+                onTap: () => openAppSettings(),
+              ),
+              const Divider(),
+            ],
             SettingsGroup(
               isActive: enablePushSettingsGroup,
               title: S.of(context).pushToken,

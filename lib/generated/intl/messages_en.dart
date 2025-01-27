@@ -157,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "You can check for new challenges by dragging down the token list."),
         "introScanQrCode": MessageLookupByLibrary.simpleMessage(
             "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens."),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licenses and version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),

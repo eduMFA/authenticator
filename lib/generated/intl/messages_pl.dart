@@ -147,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Możesz sprawdzić nowe wyzwania, przeciągając listę tokenów w dół."),
         "introScanQrCode": MessageLookupByLibrary.simpleMessage(
             "Możesz skanować kody QR, aby dodawać tokeny. Obsługujemy każdy popularny token uwierzytelniania dwuskładnikowego, a także tokeny eduMFA."),
+        "language": MessageLookupByLibrary.simpleMessage("Język"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licencje i wersja"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Jasny"),

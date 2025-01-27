@@ -150,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu\'après l\'authentification."),
         "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
             "Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas"),
+        "language": MessageLookupByLibrary.simpleMessage("Langue"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licences et version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Thème lumineux"),
