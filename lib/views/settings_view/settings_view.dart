@@ -32,189 +32,187 @@ class SettingsView extends ConsumerView {
       appBar: AppBar(
         title: Text(
           S.of(context).settings,
-
-            overflow: TextOverflow.ellipsis, // maxLines: 2 only works like this.
-            maxLines: 2, // Title can be shown on small screens too.
-          ),
+          overflow: TextOverflow.ellipsis, // maxLines: 2 only works like this.
+          maxLines: 2, // Title can be shown on small screens too.
         ),
-        body: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SettingsGroup(
-                title: S.of(context).settingsGroupGeneral,
-                children: [
-                  SettingsListTileButton(
-                    onPressed: () async {
-                      if (!await launchUrl(policyStatementUri)) {
-                        throw Exception('Could not launch $policyStatementUri');
-                      }
-                    },
-                    title: Text(
-                      S.of(context).privacyPolicy,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SettingsGroup(
+              title: S.of(context).settingsGroupGeneral,
+              children: [
+                SettingsListTileButton(
+                  onPressed: () async {
+                    if (!await launchUrl(policyStatementUri)) {
+                      throw Exception('Could not launch $policyStatementUri');
+                    }
+                  },
+                  title: Text(
+                    S.of(context).privacyPolicy,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
-                  SettingsListTileButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, LicenseView.routeName);
-                    },
-                    title: Text(
-                      S.of(context).licensesAndVersion,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                  )
-                ],
-              ),
-              const Divider(),
-              SettingsGroup(
-                title: S.of(context).theme,
-                children: [
-                  RadioListTile(
-                    title: Text(
-                      S.of(context).lightTheme,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    value: ThemeMode.light,
-                    groupValue: EasyDynamicTheme.of(context).themeMode,
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    onChanged: (dynamic value) {
-                      EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: false);
-                    },
+                ),
+                SettingsListTileButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, LicenseView.routeName);
+                  },
+                  title: Text(
+                    S.of(context).licensesAndVersion,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
-                  RadioListTile(
-                    title: Text(
-                      S.of(context).darkTheme,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    value: ThemeMode.dark,
-                    groupValue: EasyDynamicTheme.of(context).themeMode,
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    onChanged: (dynamic value) {
-                      EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: true);
-                    },
+                )
+              ],
+            ),
+            const Divider(),
+            SettingsGroup(
+              title: S.of(context).theme,
+              children: [
+                RadioListTile(
+                  title: Text(
+                    S.of(context).lightTheme,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
-                  RadioListTile(
-                    title: Text(
-                      S.of(context).systemTheme,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    value: ThemeMode.system,
-                    groupValue: EasyDynamicTheme.of(context).themeMode,
-                    controlAffinity: ListTileControlAffinity.trailing,
-                    onChanged: (dynamic value) {
-                      EasyDynamicTheme.of(context).changeTheme(dynamic: true, dark: false);
-                    },
+                  value: ThemeMode.light,
+                  groupValue: EasyDynamicTheme.of(context).themeMode,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                  onChanged: (dynamic value) {
+                    EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: false);
+                  },
+                ),
+                RadioListTile(
+                  title: Text(
+                    S.of(context).darkTheme,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
                   ),
-                ],
-              ),
-              const Divider(),
-              SettingsGroup(
-                isActive: enablePushSettingsGroup,
-                title: S.of(context).pushToken,
-                children: [
-                  ListTile(
-                    title: Text(
-                      S.of(context).synchronizePushTokens,
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    subtitle: Text(
-                      S.of(context).synchronizesTokensWithServer,
-                      overflow: TextOverflow.fade,
-                    ),
-                    trailing: ElevatedButton(
-                      onPressed: enablePushSettingsGroup
-                          ? () {
-                              showDialog(
-                                useRootNavigator: false,
-                                context: context,
-                                barrierDismissible: false,
-                                builder: (context) => const UpdateFirebaseTokenDialog(),
-                              );
-                            }
-                          : null,
-                      child: Text(
-                        S.of(context).sync,
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
-                      ),
-                    ),
+                  value: ThemeMode.dark,
+                  groupValue: EasyDynamicTheme.of(context).themeMode,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                  onChanged: (dynamic value) {
+                    EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: true);
+                  },
+                ),
+                RadioListTile(
+                  title: Text(
+                    S.of(context).systemTheme,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
-                  ListTile(
-                    title: RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: S.of(context).enablePolling,
-                            style: Theme.of(context).textTheme.titleMedium,
-                          ),
-                          // Add clickable icon to inform user of unsupported push tokens (for polling)
-                          WidgetSpan(
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: unsupported.isNotEmpty && enrolledPushTokenList.isNotEmpty
-                                  ? GestureDetector(
-                                      onTap: () {}, // () => _showPollingInfo(unsupported),
-                                      child: const Icon(
-                                        Icons.info_outline,
-                                        color: Colors.red,
-                                      ),
-                                    )
-                                  : null,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    subtitle: Text(
-                      S.of(context).requestPushChallengesPeriodically,
-                      overflow: TextOverflow.fade,
-                    ),
-                    trailing: Switch(
-                      value: ref.watch(settingsProvider).enablePolling,
-                      onChanged: enablePushSettingsGroup ? (value) => ref.read(settingsProvider.notifier).setPolling(value) : null,
-                    ),
+                  value: ThemeMode.system,
+                  groupValue: EasyDynamicTheme.of(context).themeMode,
+                  controlAffinity: ListTileControlAffinity.trailing,
+                  onChanged: (dynamic value) {
+                    EasyDynamicTheme.of(context).changeTheme(dynamic: true, dark: false);
+                  },
+                ),
+              ],
+            ),
+            const Divider(),
+            SettingsGroup(
+              isActive: enablePushSettingsGroup,
+              title: S.of(context).pushToken,
+              children: [
+                ListTile(
+                  title: Text(
+                    S.of(context).synchronizePushTokens,
+                    style: Theme.of(context).textTheme.titleMedium,
                   ),
-                ],
-              ),
-              const Divider(),
-              SettingsGroup(
-                title: S.of(context).errorLogTitle,
-                children: [
-                  ListTile(
-                    title: Text(
-                      S.of(context).logMenu,
-                      style: Theme.of(context).textTheme.titleMedium,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    style: ListTileStyle.list,
-                    trailing: ElevatedButton(
-                      child: Text(
-                        S.of(context).open,
-                        overflow: TextOverflow.fade,
-                        softWrap: false,
-                      ),
-                      onPressed: () => showDialog(
-                        context: context,
-                        builder: (context) => const LoggingMenu(),
+                  subtitle: Text(
+                    S.of(context).synchronizesTokensWithServer,
+                    overflow: TextOverflow.fade,
+                  ),
+                  trailing: ElevatedButton(
+                    onPressed: enablePushSettingsGroup
+                        ? () {
+                      showDialog(
                         useRootNavigator: false,
-                      ),
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (context) => const UpdateFirebaseTokenDialog(),
+                      );
+                    }
+                        : null,
+                    child: Text(
+                      S.of(context).sync,
+                      overflow: TextOverflow.fade,
+                      softWrap: false,
                     ),
                   ),
-                ],
-              ),
-            ],
-          ),
+                ),
+                ListTile(
+                  title: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: S.of(context).enablePolling,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        // Add clickable icon to inform user of unsupported push tokens (for polling)
+                        WidgetSpan(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: unsupported.isNotEmpty && enrolledPushTokenList.isNotEmpty
+                                ? GestureDetector(
+                              onTap: () {}, // () => _showPollingInfo(unsupported),
+                              child: const Icon(
+                                Icons.info_outline,
+                                color: Colors.red,
+                              ),
+                            )
+                                : null,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  subtitle: Text(
+                    S.of(context).requestPushChallengesPeriodically,
+                    overflow: TextOverflow.fade,
+                  ),
+                  trailing: Switch(
+                    value: ref.watch(settingsProvider).enablePolling,
+                    onChanged: enablePushSettingsGroup ? (value) => ref.read(settingsProvider.notifier).setPolling(value) : null,
+                  ),
+                ),
+              ],
+            ),
+            const Divider(),
+            SettingsGroup(
+              title: S.of(context).errorLogTitle,
+              children: [
+                ListTile(
+                  title: Text(
+                    S.of(context).logMenu,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    overflow: TextOverflow.fade,
+                    softWrap: false,
+                  ),
+                  style: ListTileStyle.list,
+                  trailing: ElevatedButton(
+                    child: Text(
+                      S.of(context).open,
+                      overflow: TextOverflow.fade,
+                      softWrap: false,
+                    ),
+                    onPressed: () => showDialog(
+                      context: context,
+                      builder: (context) => const LoggingMenu(),
+                      useRootNavigator: false,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
