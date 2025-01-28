@@ -23,15 +23,11 @@ class DefaultDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+        filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
         child: AlertDialog(
           actionsAlignment: actionsAlignment ?? MainAxisAlignment.end,
           scrollable: scrollable ?? false,
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          actionsPadding: const EdgeInsets.symmetric(horizontal: 8),
-          buttonPadding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
           insetPadding: const EdgeInsets.fromLTRB(16, 32, 16, 12),
-          titlePadding: const EdgeInsets.all(12),
           contentPadding: const EdgeInsets.all(16),
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

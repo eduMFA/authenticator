@@ -244,10 +244,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError":
             MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba."),
         "unlock": MessageLookupByLibrary.simpleMessage("Odemknout"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Použít jazyk zařízení, pokud je podporován, případně angličtinu."),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Použít jazyk zařízení"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Zevrubné protokolování"),
         "yes": MessageLookupByLibrary.simpleMessage("Ano")

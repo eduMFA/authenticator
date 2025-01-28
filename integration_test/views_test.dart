@@ -28,7 +28,7 @@ void main() {
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
     when(mockSettingsRepository.loadSettings()).thenAnswer((_) async =>
-        SettingsState(isFirstRun: false, useSystemLocale: false, localePreference: const Locale('en'), latestVersion: Version(999, 999, 999)));
+        SettingsState(isFirstRun: false, latestVersion: Version(999, 999, 999)));
     when(mockSettingsRepository.saveSettings(any)).thenAnswer((_) async => true);
     mockTokenRepository = MockTokenRepository();
     when(mockTokenRepository.loadTokens()).thenAnswer((_) async => []);
@@ -94,7 +94,6 @@ Future<void> _settingsViewTest(WidgetTester tester) async {
   await tester.pumpAndSettle();
   expect(find.text(S.current.settings), findsOneWidget);
   expect(find.text(S.current.theme), findsOneWidget);
-  expect(find.text(S.current.language), findsOneWidget);
   expect(find.text(S.current.errorLogTitle), findsOneWidget);
   expect(find.byType(SettingsGroup), findsNWidgets(5));
   globalRef!.read(tokenProvider.notifier).handleQrCodeUri(

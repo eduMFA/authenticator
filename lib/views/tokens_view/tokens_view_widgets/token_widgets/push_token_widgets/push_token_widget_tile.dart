@@ -28,21 +28,17 @@ class PushTokenWidgetTile extends ConsumerWidget {
 
     return TokenWidgetTile(
         key: Key('${token.hashCode}TokenWidgetTile'),
-        tokenIsLocked: token.isLocked,
         tokenImage: token.tokenImage,
         title: Text(
           token.label.isNotEmpty ? token.label : token.serial,
           style: Theme.of(context).textTheme.titleMedium,
           overflow: TextOverflow.ellipsis,
-          maxLines: 2,
         ),
-        subtitles: [
-          if (token.issuer.isNotEmpty) token.issuer,
-        ],
         trailing: PopupMenuButton<String>(
           onSelected: (value) {},
           itemBuilder: (context) => menuEntries.map((e) => e.build(context, ref)).toList(),
         ),
+        subtitle: (token.issuer.isNotEmpty) ? token.issuer : null,
     );
   }
 }

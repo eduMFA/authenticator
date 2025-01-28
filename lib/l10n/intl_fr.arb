@@ -220,14 +220,6 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Utiliser la langue de l'appareil",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Utilisez la langue de l'appareil si elle est prise en charge, sinon l'anglais par défaut.",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
-  },
   "language": "Langue",
   "@language": {
     "description": "Title of language setting group."
@@ -295,6 +287,10 @@
   "unlock": "Ouvrir",
   "@unlock": {
     "description": "Description of button that unlocks a token."
+  },
+  "search": null,
+  "@search": {
+    "description": "Placeholder text for search bar."
   },
   "noResultTitle": "Aucun jeton n'est encore stocké.",
   "@noResultTitle": {

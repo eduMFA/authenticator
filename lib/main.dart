@@ -25,6 +25,9 @@ import 'dart:io';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/color_scheme_utils.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -59,13 +62,10 @@ class EduMFAAuthenticator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     globalRef = ref;
-    final locale = ref.watch(settingsProvider).currentLocale;
 
-    if (Platform.isAndroid) {
-      final isTablet = MediaQuery.of(context).size.shortestSide > 600;
-
+    if (!kIsWeb && Platform.isAndroid) {
       var preferredOrientations = <DeviceOrientation>[DeviceOrientation.portraitUp];
-      if (isTablet) {
+      if (isTablet(context)) {
         preferredOrientations.addAll([
           DeviceOrientation.portraitDown,
           DeviceOrientation.landscapeLeft,
@@ -81,23 +81,15 @@ class EduMFAAuthenticator extends ConsumerWidget {
       });
       return DynamicColorBuilder(
           builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
-            ColorScheme lightColorScheme;
-            ColorScheme darkColorScheme;
-
-            if (lightDynamic != null && darkDynamic != null) {
-              lightColorScheme = lightDynamic.harmonized();
-              //lightColorScheme = lightColorScheme.copyWith(secondary: brandColor);
-
-              darkColorScheme = darkDynamic.harmonized();
-              //darkColorScheme = darkColorScheme.copyWith(secondary: brandColor);
-            } else {
-              lightColorScheme = ColorScheme.fromSeed(seedColor: _customization.brandColor);
-
-              darkColorScheme = ColorScheme.fromSeed(
-                seedColor: _customization.brandColor,
-                brightness: Brightness.dark,
-              );
-            }
+            ThemeData lightTheme = ThemeData(colorScheme: generateColorScheme(
+                lightDynamic?.primary,
+                _customization.brandColor
+            ));
+            ThemeData darkTheme = ThemeData(colorScheme: generateColorScheme(
+                darkDynamic?.primary,
+                _customization.brandColor,
+                Brightness.dark
+            ));
 
             return MaterialApp(
               debugShowCheckedModeBanner: true,
@@ -109,10 +101,9 @@ class EduMFAAuthenticator extends ConsumerWidget {
                 GlobalCupertinoLocalizations.delegate
               ],
               supportedLocales: S.delegate.supportedLocales,
-              locale: locale,
               title: _customization.appName,
-              theme: ThemeData(colorScheme: lightColorScheme),
-              darkTheme: ThemeData(colorScheme: darkColorScheme),
+              theme: lightTheme,
+              darkTheme: darkTheme,
               scaffoldMessengerKey: globalSnackbarKey, // <= this
               themeMode: EasyDynamicTheme.of(context).themeMode,
               initialRoute: SplashScreen.routeName,
