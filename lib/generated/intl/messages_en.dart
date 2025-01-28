@@ -66,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please authenticate to change the lock status of the token."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Authentication request"),
+        "autoTheme": MessageLookupByLibrary.simpleMessage("Auto"),
         "biometricHint":
             MessageLookupByLibrary.simpleMessage("Authentication required"),
         "biometricNotRecognized":
@@ -241,8 +242,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchronizes tokens with the eduMFA server."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Synchronizing tokens."),
-        "systemTheme":
-            MessageLookupByLibrary.simpleMessage("Use device\'s theme"),
         "theme": MessageLookupByLibrary.simpleMessage("Theme"),
         "tokens": MessageLookupByLibrary.simpleMessage("Tokens"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(

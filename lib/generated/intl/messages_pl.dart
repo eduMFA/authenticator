@@ -234,7 +234,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchronizuje tokeny push z serwerem eduMFA."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Synchronizacja tokenów."),
-        "systemTheme": MessageLookupByLibrary.simpleMessage("Motyw systemu"),
         "theme": MessageLookupByLibrary.simpleMessage("Motyw"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Następujące tokeny nie wspierają synchronizacji i muszą zostać wdrożone od nowa:"),

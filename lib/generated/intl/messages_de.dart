@@ -66,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bitte authentifizieren Sie sich, um den Sperrstatus des Tokens zu ändern."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Authentifizierung"),
+        "autoTheme": MessageLookupByLibrary.simpleMessage("Automatisch"),
         "biometricHint": MessageLookupByLibrary.simpleMessage(
             "Authentifizierung wird benötigt"),
         "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
@@ -246,8 +247,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchronisiert Token mit dem eduMFA Server."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Synchronisiere Token."),
-        "systemTheme":
-            MessageLookupByLibrary.simpleMessage("Nutze Farbschema des Geräts"),
         "theme": MessageLookupByLibrary.simpleMessage("Farbschema"),
         "tokens": MessageLookupByLibrary.simpleMessage("Token"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(

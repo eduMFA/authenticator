@@ -303,12 +303,12 @@ class S {
     );
   }
 
-  /// `Use device's theme`
-  String get systemTheme {
+  /// `Auto`
+  String get autoTheme {
     return Intl.message(
-      'Use device\'s theme',
-      name: 'systemTheme',
-      desc: 'The systems theme.',
+      'Auto',
+      name: 'autoTheme',
+      desc: 'The automatic theme applied by the system settings.',
       args: [],
     );
   }

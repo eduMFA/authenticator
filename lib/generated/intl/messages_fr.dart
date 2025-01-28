@@ -238,8 +238,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchroniser les jetons Push avec le serveur eduMFA."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Synchroniser les jetons."),
-        "systemTheme": MessageLookupByLibrary.simpleMessage(
-            "Utiliser le thème de l\'appareil"),
         "theme": MessageLookupByLibrary.simpleMessage("Thème"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Ces jetons ne supportent pas la synchronisation et doivent être de nouveau générés:"),

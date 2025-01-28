@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+import 'package:edumfa_authenticator/extensions/theme_extension.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/theme_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -85,50 +87,14 @@ class SettingsView extends ConsumerView {
               ],
             ),
             const Divider(),
-            SettingsGroup(
-              title: S.of(context).theme,
-              children: [
-                RadioListTile(
-                  title: Text(
-                    S.of(context).lightTheme,
-                    style: Theme.of(context).textTheme.titleMedium,
-                    overflow: TextOverflow.fade,
-                    softWrap: false,
-                  ),
-                  value: ThemeMode.light,
-                  groupValue: EasyDynamicTheme.of(context).themeMode,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                  onChanged: (dynamic value) {
-                    EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: false);
-                  },
-                ),
-                RadioListTile(
-                  title: Text(
-                    S.of(context).darkTheme,
-                    style: Theme.of(context).textTheme.titleMedium,
-                    overflow: TextOverflow.fade,
-                    softWrap: false,
-                  ),
-                  value: ThemeMode.dark,
-                  groupValue: EasyDynamicTheme.of(context).themeMode,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                  onChanged: (dynamic value) {
-                    EasyDynamicTheme.of(context).changeTheme(dynamic: false, dark: true);
-                  },
-                ),
-                RadioListTile(
-                  title: Text(
-                    S.of(context).systemTheme,
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  value: ThemeMode.system,
-                  groupValue: EasyDynamicTheme.of(context).themeMode,
-                  controlAffinity: ListTileControlAffinity.trailing,
-                  onChanged: (dynamic value) {
-                    EasyDynamicTheme.of(context).changeTheme(dynamic: true, dark: false);
-                  },
-                ),
-              ],
+            ListTile(
+              title: Text(S.of(context).theme),
+              subtitle: Text((EasyDynamicTheme.of(context).themeMode ?? ThemeMode.system).getName(context)),
+              onTap: () => showDialog(
+                context: context,
+                builder: (context) => const ThemeMenu(),
+                useRootNavigator: false,
+              ),
             ),
             const Divider(),
             if (showLanguageSettings) ...[

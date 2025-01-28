@@ -110,9 +110,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Utiliser le thème de l'appareil",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Activer l'interrogation du serveur.",
   "@enablePolling": {
