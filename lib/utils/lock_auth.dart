@@ -8,10 +8,10 @@ import 'package:local_auth/local_auth.dart';
 import 'package:local_auth_android/local_auth_android.dart';
 import 'package:local_auth_darwin/local_auth_darwin.dart';
 
-import '../widgets/dialog_widgets/default_dialog.dart';
-import 'globals.dart';
-import 'logger.dart';
-import 'view_utils.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/view_utils.dart';
 
 bool authenticationInProgress = false;
 
@@ -29,7 +29,7 @@ Future<bool> lockAuth({required String localizedReason}) async {
             title: Center(
               child: Text(
                 S.of(context).authNotSupportedTitle,
-                style: Theme.of(context).textTheme.titleLarge,
+                style: TextTheme.of(context).titleLarge,
               ),
             ),
             leading: const Icon(Icons.lock),

@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'push_request.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
 
 part 'push_request_queue.g.dart';
 

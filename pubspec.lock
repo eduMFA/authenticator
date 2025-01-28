@@ -549,14 +549,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
-  flutter_slidable:
-    dependency: "direct main"
-    description:
-      name: flutter_slidable
-      sha256: ab7dbb16f783307c9d7762ede2593ce32c220ba2ba0fd540a3db8e9a3acba71a
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.0.0"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -909,10 +901,10 @@ packages:
     dependency: "direct main"
     description:
       name: mobile_scanner
-      sha256: "1779bf862cfcf7a142117e707e2230624d42f153ddf51f4cc9f5ba455a2dd01e"
+      sha256: f2f76d06a7ad28ccd6cae34f45c9507782e8939094017bc8d8c778b1acdad15b
       url: "https://pub.dev"
     source: hosted
-    version: "7.0.0-beta.4"
+    version: "7.0.0-beta.5"
   mockito:
     dependency: "direct dev"
     description:
@@ -1173,10 +1165,10 @@ packages:
     dependency: transitive
     description:
       name: shared_preferences_android
-      sha256: "986dc7b7d14f38064bfa85ace28df1f1a66d4fba32e4b1079d4ea537d9541b01"
+      sha256: "650584dcc0a39856f369782874e562efd002a9c94aec032412c9eb81419cce1f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.3"
+    version: "2.4.4"
   shared_preferences_foundation:
     dependency: transitive
     description:
@@ -1578,10 +1570,10 @@ packages:
     dependency: transitive
     description:
       name: win32
-      sha256: "154360849a56b7b67331c21f09a386562d88903f90a1099c5987afc1912e1f29"
+      sha256: daf97c9d80197ed7b619040e86c8ab9a9dad285e7671ee7390f9180cc828a51e
       url: "https://pub.dev"
     source: hosted
-    version: "5.10.0"
+    version: "5.10.1"
   win32_registry:
     dependency: transitive
     description:

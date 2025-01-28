@@ -32,7 +32,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -48,21 +47,17 @@ void main() async {
       navigatorKey: globalNavigatorKey,
       appRunner: () async {
         WidgetsFlutterBinding.ensureInitialized();
-        runApp(AppWrapper(child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization)));
+        runApp(const AppWrapper(child: EduMFAAuthenticator()));
       });
 }
 
 class EduMFAAuthenticator extends ConsumerWidget {
-  static ApplicationCustomization? currentCustomization;
-  final ApplicationCustomization _customization;
-  EduMFAAuthenticator({required ApplicationCustomization customization, super.key}) : _customization = customization {
-    // ignore: prefer_initializing_formals
-    EduMFAAuthenticator.currentCustomization = customization;
-  }
+
+  const EduMFAAuthenticator({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     globalRef = ref;
-    final locale = ref.watch(settingsProvider).currentLocale;
 
     if (!kIsWeb && Platform.isAndroid) {
       var preferredOrientations = <DeviceOrientation>[DeviceOrientation.portraitUp];
@@ -84,11 +79,11 @@ class EduMFAAuthenticator extends ConsumerWidget {
           builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
             ThemeData lightTheme = ThemeData(colorScheme: generateColorScheme(
                 lightDynamic?.primary,
-                _customization.brandColor
+                brandColor
             ));
             ThemeData darkTheme = ThemeData(colorScheme: generateColorScheme(
                 darkDynamic?.primary,
-                _customization.brandColor,
+                brandColor,
                 Brightness.dark
             ));
             final navigationRailThemeData = NavigationRailThemeData(
@@ -112,26 +107,18 @@ class EduMFAAuthenticator extends ConsumerWidget {
                 GlobalCupertinoLocalizations.delegate
               ],
               supportedLocales: S.delegate.supportedLocales,
-              locale: locale,
-              title: _customization.appName,
+              title: appName,
               theme: lightTheme,
               darkTheme: darkTheme,
               scaffoldMessengerKey: globalSnackbarKey, // <= this
               themeMode: EasyDynamicTheme.of(context).themeMode,
               initialRoute: SplashScreen.routeName,
               routes: {
-                LicenseView.routeName: (context) => LicenseView(
-                  appName: _customization.appName,
-                  websiteLink: _customization.websiteLink,
-                ),
+                LicenseView.routeName: (context) => const LicenseView(),
                 MainView.routeName: (context) => const MainView(),
-                OnboardingView.routeName: (context) => OnboardingView(
-                  appName: _customization.appName,
-                ),
+                OnboardingView.routeName: (context) => const OnboardingView(),
                 SettingsView.routeName: (context) => const SettingsView(),
-                SplashScreen.routeName: (context) => SplashScreen(
-                  appName: _customization.appName,
-                ),
+                SplashScreen.routeName: (context) => const SplashScreen(),
               },
             );
           }

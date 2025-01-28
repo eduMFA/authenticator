@@ -1,9 +1,9 @@
-import '../../../model/tokens/token.dart';
-import '../../../utils/identifiers.dart';
-import '../../../utils/logger.dart';
-import '../../../utils/supported_versions.dart';
-import '../../../utils/view_utils.dart';
-import 'token_import_scheme_processor_interface.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/supported_versions.dart';
+import 'package:edumfa_authenticator/utils/view_utils.dart';
+import 'package:edumfa_authenticator/processors/scheme_processors/token_import_scheme_processors/token_import_scheme_processor_interface.dart';
 
 class OtpAuthProcessor extends TokenImportSchemeProcessor {
   const OtpAuthProcessor();

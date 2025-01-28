@@ -2,13 +2,13 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../model/tokens/token.dart';
-import '../../../../../utils/globals.dart';
-import '../../../../../utils/lock_auth.dart';
-import '../../../../../utils/logger.dart';
-import '../../../../../utils/riverpod_providers.dart';
-import '../../../../../widgets/dialog_widgets/default_dialog.dart';
-import '../token_action.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/lock_auth.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_action.dart';
 
 class DefaultEditAction extends TokenAction {
   final Token token;

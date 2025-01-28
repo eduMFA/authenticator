@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../generated/l10n.dart';
+import 'package:edumfa_authenticator/generated/l10n.dart';
 
 enum PushTokenRollOutState {
   rolloutNotStarted,

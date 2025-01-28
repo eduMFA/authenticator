@@ -2,11 +2,11 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../utils/riverpod_providers.dart';
-import '../../../widgets/dialog_widgets/default_dialog.dart';
-import 'errorlog_buttons/delete_errorlog_button.dart';
-import 'errorlog_buttons/send_errorlog_button.dart';
-import 'errorlog_buttons/show_errorlog_button.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/errorlog_buttons/delete_errorlog_button.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/errorlog_buttons/send_errorlog_button.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/errorlog_buttons/show_errorlog_button.dart';
 
 class LoggingMenu extends ConsumerWidget {
   const LoggingMenu({super.key});
@@ -21,7 +21,7 @@ class LoggingMenu extends ConsumerWidget {
         scrollable: true,
         title: Text(
           S.of(context).logMenu,
-          style: Theme.of(context).listTileTheme.titleTextStyle,
+          style: ListTileTheme.of(context).titleTextStyle,
         ),
         content: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -30,7 +30,7 @@ class LoggingMenu extends ConsumerWidget {
             ListTile(
               title: Text(
                 S.of(context).verboseLogging,
-                style: Theme.of(context).textTheme.titleMedium,
+                style: TextTheme.of(context).titleMedium,
                 textAlign: TextAlign.center,
               ),
               contentPadding: const EdgeInsets.all(0),

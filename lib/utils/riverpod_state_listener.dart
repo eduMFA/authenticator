@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../model/states/token_state.dart';
-import '../processors/scheme_processors/navigation_scheme_processors/navigation_scheme_processor_interface.dart';
-import '../state_notifiers/deeplink_notifier.dart';
-import '../state_notifiers/token_notifier.dart';
+import 'package:edumfa_authenticator/model/states/token_state.dart';
+import 'package:edumfa_authenticator/processors/scheme_processors/navigation_scheme_processors/navigation_scheme_processor_interface.dart';
+import 'package:edumfa_authenticator/state_notifiers/deeplink_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 
 abstract class StateNotifierProviderListener<T extends StateNotifier<S>, S> {
   final StateNotifierProvider<T, S> provider;

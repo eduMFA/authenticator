@@ -303,12 +303,12 @@ class S {
     );
   }
 
-  /// `Use device's theme`
-  String get systemTheme {
+  /// `Auto`
+  String get autoTheme {
     return Intl.message(
-      'Use device\'s theme',
-      name: 'systemTheme',
-      desc: 'The systems theme.',
+      'Auto',
+      name: 'autoTheme',
+      desc: 'The automatic theme applied by the system settings.',
       args: [],
     );
   }
@@ -535,28 +535,6 @@ class S {
       'Could not sign message.',
       name: 'couldNotSignMessage',
       desc: 'Tells the user that the message could not be signed.',
-      args: [],
-    );
-  }
-
-  /// `Use device language`
-  String get useDeviceLocaleTitle {
-    return Intl.message(
-      'Use device language',
-      name: 'useDeviceLocaleTitle',
-      desc:
-          'Title of the switch tile where using the devices language can be enabled.',
-      args: [],
-    );
-  }
-
-  /// `Use device language if it is supported, otherwise default to english.`
-  String get useDeviceLocaleDescription {
-    return Intl.message(
-      'Use device language if it is supported, otherwise default to english.',
-      name: 'useDeviceLocaleDescription',
-      desc:
-          'Description of the switch tile where using the devices language can be enabled.',
       args: [],
     );
   }

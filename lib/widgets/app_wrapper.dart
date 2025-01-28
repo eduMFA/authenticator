@@ -5,7 +5,7 @@ import 'package:edumfa_authenticator/widgets/app_wrappers/state_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'app_wrappers/single_touch_recognizer.dart';
+import 'package:edumfa_authenticator/widgets/app_wrappers/single_touch_recognizer.dart';
 
 class AppWrapper extends StatelessWidget {
   final Widget child;

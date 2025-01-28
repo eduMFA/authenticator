@@ -56,61 +56,60 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Container(
       constraints: const BoxConstraints(minHeight: 0),
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            S.of(context).addTokenTitle,
-            style: textTheme.headlineMedium!.copyWith(
-                fontWeight: FontWeight.bold
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 8),
-          Text(
-            S.of(context).addTokenSubtitle,
-            style: textTheme.titleSmall,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 24),
-          QrCodeScannerWidget(controller: controller),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Expanded(
-                child: Divider(
-                  color: colorScheme.outlineVariant,
-                  thickness: 1,
-                ),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              S.of(context).addTokenTitle,
+              style: TextTheme.of(context).headlineMedium?.copyWith(
+                  fontWeight: FontWeight.bold
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  S.of(context).or,
-                  style: textTheme.labelLarge?.copyWith(
-                    color: colorScheme.outline,
-                    letterSpacing: 1.5,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              S.of(context).addTokenSubtitle,
+              style: TextTheme.of(context).titleSmall,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 24),
+            QrCodeScannerWidget(controller: controller),
+            const SizedBox(height: 24),
+            Row(
+              children: [
+                Expanded(
+                  child: Divider(
+                    color: ColorScheme.of(context).outlineVariant,
+                    thickness: 1,
                   ),
                 ),
-              ),
-              Expanded(
-                child: Divider(
-                  color: colorScheme.outlineVariant,
-                  thickness: 1,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    S.of(context).or,
+                    style: TextTheme.of(context).labelLarge?.copyWith(
+                      color: ColorScheme.of(context).outline,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 24),
-          UploadQrCodeButton(controller: controller, handleBarcodes: _handleBarcode),
-          const SizedBox(height: 24),
-        ],
+                Expanded(
+                  child: Divider(
+                    color: ColorScheme.of(context).outlineVariant,
+                    thickness: 1,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            UploadQrCodeButton(controller: controller, handleBarcodes: _handleBarcode),
+            const SizedBox(height: 24),
+          ],
+        ),
       ),
     );
   }

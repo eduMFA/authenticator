@@ -231,18 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sinchronizar tokens con el eduMFA servidor."),
         "synchronizingTokens": MessageLookupByLibrary.simpleMessage(
             "Sincronización de los tokens."),
-        "systemTheme": MessageLookupByLibrary.simpleMessage(
-            "Utilizar el tema del teléfono"),
         "theme": MessageLookupByLibrary.simpleMessage("Tema"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Las siguientes tokens no admiten la sincronización y deben volver a desplegarse:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Se ha producido un error inesperado."),
         "unlock": MessageLookupByLibrary.simpleMessage("Desbloquear"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Utilizar el idioma del dispositivo si está soportado, en caso contrario por defecto inglés."),
-        "useDeviceLocaleTitle": MessageLookupByLibrary.simpleMessage(
-            "Utiliza el idioma del teléfono"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Registro detallado"),
         "yes": MessageLookupByLibrary.simpleMessage("Sí")

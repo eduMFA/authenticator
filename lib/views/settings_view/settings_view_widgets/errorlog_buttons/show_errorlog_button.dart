@@ -1,10 +1,10 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/logger.dart';
-import '../../../../widgets/dialog_widgets/default_dialog.dart';
-import '../send_error_dialog.dart';
-import 'errorlog_button.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/send_error_dialog.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/errorlog_buttons/errorlog_button.dart';
 
 class ShowErrorLogButton extends StatelessWidget {
   const ShowErrorLogButton({super.key});

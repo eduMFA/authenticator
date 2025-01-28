@@ -106,9 +106,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Motyw systemu",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Włącz autentykację przez wiadomość push.",
   "@enablePolling": {
@@ -215,14 +215,6 @@
   "couldNotSignMessage": "Nie można podpisać wiadomości.",
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
-  },
-  "useDeviceLocaleTitle": "Użyj języka urządzenia.",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Użyj języka urządzenia, jeśli jest wspierany. W innym wypadku zostanie ustawiony domyślny język angielski.",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
   },
   "language": "Język",
   "@language": {

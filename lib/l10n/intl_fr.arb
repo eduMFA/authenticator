@@ -110,9 +110,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Utiliser le thème de l'appareil",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Activer l'interrogation du serveur.",
   "@enablePolling": {
@@ -219,14 +219,6 @@
   "couldNotSignMessage": "Impossible de signer le message.",
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
-  },
-  "useDeviceLocaleTitle": "Utiliser la langue de l'appareil",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Utilisez la langue de l'appareil si elle est prise en charge, sinon l'anglais par défaut.",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
   },
   "language": "Langue",
   "@language": {
