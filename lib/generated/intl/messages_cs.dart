@@ -238,18 +238,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchronizovat tokeny se serverem eduMFA."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Tokeny se synchronizují."),
-        "systemTheme":
-            MessageLookupByLibrary.simpleMessage("Použít nastavení systému"),
         "theme": MessageLookupByLibrary.simpleMessage("Vzhled"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Následující tokeny nepodporují synchronizaci a musí být znovu zaregistrovány:"),
         "unexpectedError":
             MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba."),
         "unlock": MessageLookupByLibrary.simpleMessage("Odemknout"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Použít jazyk zařízení, pokud je podporován, případně angličtinu."),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Použít jazyk zařízení"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Zevrubné protokolování"),
         "yes": MessageLookupByLibrary.simpleMessage("Ano")

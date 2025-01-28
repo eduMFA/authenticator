@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../utils/identifiers.dart';
-import '../utils/logger.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
 
 part 'push_request.g.dart';
 

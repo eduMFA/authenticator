@@ -1,33 +1,19 @@
-import 'dart:io';
-import 'dart:ui';
-
-import 'package:edumfa_authenticator/generated/l10n.dart';
-import 'package:flutter/foundation.dart';
 import 'package:version/version.dart';
 
-import '../../utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
 
 /// This class contains all device specific settings.
 class SettingsState {
   static bool get _isFirstRunDefault => true;
   static bool get _enablePollDefault => false;
   static Set<String> get _crashReportRecipientsDefault => {defaultCrashReportRecipient};
-  static Locale get _localePreferenceDefault => S.delegate.supportedLocales
-      .firstWhere((locale) => locale.languageCode == (!kIsWeb ? Platform.localeName.substring(0, 2) : 'en'), orElse: () => const Locale('en'));
 
-  static bool get _useSystemLocaleDefault => true;
   static bool get _enableLoggingDefault => false;
   static Version get _latestVersionDefault => Version.parse('0.0.0');
 
   final bool isFirstRun;
   final bool enablePolling;
   final Set<String> crashReportRecipients;
-  final Locale localePreference;
-  Locale get currentLocale => useSystemLocale
-      ? S.delegate.supportedLocales
-          .firstWhere((locale) => locale.languageCode == (!kIsWeb ? Platform.localeName.substring(0, 2) : 'en'), orElse: () => const Locale('en'))
-      : localePreference;
-  final bool useSystemLocale;
   final bool verboseLogging;
   final Version latestStartedVersion;
 
@@ -36,15 +22,11 @@ class SettingsState {
     bool? hideOpts,
     bool? enablePolling,
     Set<String>? crashReportRecipients,
-    Locale? localePreference,
-    bool? useSystemLocale,
     bool? verboseLogging,
     Version? latestVersion,
   })  : isFirstRun = isFirstRun ?? _isFirstRunDefault,
         enablePolling = enablePolling ?? _enablePollDefault,
         crashReportRecipients = crashReportRecipients ?? _crashReportRecipientsDefault,
-        localePreference = localePreference ?? _localePreferenceDefault,
-        useSystemLocale = useSystemLocale ?? _useSystemLocaleDefault,
         verboseLogging = verboseLogging ?? _enableLoggingDefault,
         latestStartedVersion = latestVersion ?? _latestVersionDefault;
 
@@ -53,8 +35,6 @@ class SettingsState {
     bool? hideOpts,
     bool? enablePolling,
     Set<String>? crashReportRecipients,
-    Locale? localePreference,
-    bool? useSystemLocale,
     bool? verboseLogging,
     Version? latestStartedVersion,
   }) {
@@ -62,8 +42,6 @@ class SettingsState {
       isFirstRun: isFirstRun ?? this.isFirstRun,
       enablePolling: enablePolling ?? this.enablePolling,
       crashReportRecipients: crashReportRecipients ?? this.crashReportRecipients,
-      localePreference: localePreference ?? this.localePreference,
-      useSystemLocale: useSystemLocale ?? this.useSystemLocale,
       verboseLogging: verboseLogging ?? this.verboseLogging,
       latestVersion: latestStartedVersion ?? this.latestStartedVersion,
     );
@@ -71,11 +49,7 @@ class SettingsState {
 
   @override
   String toString() => 'SettingsState(isFirstRun: $isFirstRun, enablePolling: $enablePolling, '
-      'crashReportRecipients: $crashReportRecipients, localePreference: $localePreference, useSystemLocale: $useSystemLocale, verboseLogging: $verboseLogging)';
-
-  static String encodeLocale(Locale locale) {
-    return '${locale.languageCode}#${locale.countryCode}';
-  }
+      'crashReportRecipients: $crashReportRecipients, verboseLogging: $verboseLogging)';
 
   @override
   // ignore: hash_and_equals
@@ -86,13 +60,6 @@ class SettingsState {
         other.isFirstRun == isFirstRun &&
         other.enablePolling == enablePolling &&
         other.crashReportRecipients.toString() == crashReportRecipients.toString() &&
-        other.localePreference.toString() == localePreference.toString() &&
-        other.useSystemLocale == useSystemLocale &&
         other.verboseLogging == verboseLogging;
-  }
-
-  static Locale decodeLocale(String str) {
-    var split = str.split('#');
-    return split[1] == 'null' ? Locale(split[0]) : Locale(split[0], split[1]);
   }
 }

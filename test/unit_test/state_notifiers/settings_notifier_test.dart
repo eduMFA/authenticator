@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -13,8 +11,6 @@ import 'settings_notifier_test.mocks.dart';
 final _state = SettingsState(
   isFirstRun: false,
   hideOpts: false,
-  localePreference: const Locale('en'),
-  useSystemLocale: true,
   enablePolling: true,
   verboseLogging: false,
   crashReportRecipients: {'someone'},
@@ -35,8 +31,6 @@ void _testSettingsNotifier() {
             initialState: SettingsState(
               isFirstRun: true,
               hideOpts: true,
-              localePreference: const Locale('de'),
-              useSystemLocale: false,
               enablePolling: false,
               verboseLogging: true,
               crashReportRecipients: {'someone'},
@@ -64,46 +58,6 @@ void _testSettingsNotifier() {
           ));
       final notifier = container.read(testProvider.notifier);
       notifier.addCrashReportRecipient('anotherOne');
-      Future.delayed(const Duration(milliseconds: 1000)).then((value) {
-        final state = container.read(testProvider);
-        expect(state, isNotNull);
-        expect(state, copyWithSettings);
-        verify(mockRepo.saveSettings(copyWithSettings)).called(1);
-      });
-    });
-    test('setLocalePreference', () {
-      final container = ProviderContainer();
-      final copyWithSettings = _state.copyWith(
-        localePreference: const Locale('en'),
-      );
-      when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
-      when(mockRepo.saveSettings(copyWithSettings)).thenAnswer((_) async => true);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
-            initialState: _state,
-            repository: mockRepo,
-          ));
-      final notifier = container.read(testProvider.notifier);
-      notifier.setLocalePreference(const Locale('en'));
-      Future.delayed(const Duration(milliseconds: 1000)).then((value) {
-        final state = container.read(testProvider);
-        expect(state, isNotNull);
-        expect(state, copyWithSettings);
-        verify(mockRepo.saveSettings(copyWithSettings)).called(1);
-      });
-    });
-    test('setUseSystemLocale', () {
-      final container = ProviderContainer();
-      final copyWithSettings = _state.copyWith(
-        useSystemLocale: !_state.useSystemLocale,
-      );
-      when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
-      when(mockRepo.saveSettings(copyWithSettings)).thenAnswer((_) async => true);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
-            initialState: _state,
-            repository: mockRepo,
-          ));
-      final notifier = container.read(testProvider.notifier);
-      notifier.setUseSystemLocale(!_state.useSystemLocale);
       Future.delayed(const Duration(milliseconds: 1000)).then((value) {
         final state = container.read(testProvider);
         expect(state, isNotNull);

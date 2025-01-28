@@ -38,11 +38,6 @@ const String URI_ISSUER = 'URI_ISSUER';
 const String URI_PIN = 'URI_PIN';
 const String URI_IMAGE = 'URI_IMAGE';
 
-// 2 step:
-const String URI_SALT_LENGTH = 'URI_SALT_LENGTH';
-const String URI_OUTPUT_LENGTH_IN_BYTES = 'URI_OUTPUT_LENGTH_IN_BYTES';
-const String URI_ITERATIONS = 'URI_ITERATIONS';
-
 // push token:
 const String URI_SERIAL = 'URI_SERIAL';
 const String URI_ROLLOUT_URL = 'URI_ROLLOUT_URL';
@@ -64,12 +59,3 @@ const String PUSH_REQUEST_QUESTION = 'question'; // 4.
 const String PUSH_REQUEST_TITLE = 'title'; // 5.
 const String PUSH_REQUEST_SSL_VERIFY = 'sslverify'; // 6.
 const String PUSH_REQUEST_SIGNATURE = 'signature'; // 7.
-
-bool validateMap(Map<String, dynamic> map, List<String> keys) {
-  for (String key in keys) {
-    if (!map.containsKey(key)) {
-      return false;
-    }
-  }
-  return true;
-}

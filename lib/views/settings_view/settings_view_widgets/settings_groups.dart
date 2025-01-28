@@ -37,7 +37,6 @@ class SettingsGroup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -45,7 +44,9 @@ class SettingsGroup extends StatelessWidget {
           dense: true,
           leading: Text(
             _title,
-            style: theme.textTheme.titleLarge?.copyWith(color: _isActive ? null : Colors.grey),
+            style: TextTheme.of(context).titleLarge?.copyWith(
+                color: _isActive ? null : Colors.grey
+            ),
             overflow: TextOverflow.fade,
             softWrap: false,
           ),

@@ -1,18 +1,18 @@
+import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-import '../../widgets/push_request_listener.dart';
-import '../view_interface.dart';
+import 'package:edumfa_authenticator/widgets/push_request_listener.dart';
+import 'package:edumfa_authenticator/views/view_interface.dart';
 
 class LicenseView extends StatelessView {
+  static const String routeName = '/license';
+
+  const LicenseView({super.key});
+
   @override
   RouteSettings get routeSettings => const RouteSettings(name: routeName);
-  static const String routeName = '/license';
-  final String appName;
-  final String websiteLink;
-
-  const LicenseView({required this.appName, required this.websiteLink, super.key});
 
   @override
   Widget build(BuildContext context) => PushRequestListener(
@@ -30,7 +30,7 @@ class LicenseView extends StatelessView {
                 ),
               ),
             ),
-            applicationLegalese: websiteLink,
+            applicationLegalese: websiteUri.toString(),
             applicationVersion: platformInfo.data == null ? '' : '${platformInfo.data?.version}+${platformInfo.data?.buildNumber}',
           ),
         ),

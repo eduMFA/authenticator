@@ -5,8 +5,8 @@ import 'package:flutter_mailer/flutter_mailer.dart';
 
 import 'package:edumfa_authenticator/utils/view_utils.dart';
 import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
-import 'app_info_utils.dart';
-import 'logger.dart';
+import 'package:edumfa_authenticator/utils/app_info_utils.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
 
 class PiMailer {
   static String get _mailRecipient => 'edumfa-app-support@gwdg.de';

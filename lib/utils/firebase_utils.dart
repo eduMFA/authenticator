@@ -3,10 +3,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../repo/secure_token_repository.dart';
-import 'globals.dart';
-import 'identifiers.dart';
-import 'logger.dart';
+import 'package:edumfa_authenticator/repo/secure_token_repository.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
 
 class FirebaseUtils {
   static FirebaseUtils? _instance;

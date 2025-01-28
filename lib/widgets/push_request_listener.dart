@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../utils/riverpod_providers.dart';
-import '../utils/push_provider.dart';
-import 'dialog_widgets/push_request_dialog.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/push_request_dialog.dart';
 
 class PushRequestListener extends ConsumerStatefulWidget {
   final Widget child;

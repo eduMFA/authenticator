@@ -1,12 +1,12 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../model/enums/push_token_rollout_state.dart';
-import '../../../../../model/tokens/push_token.dart';
-import '../../../../../utils/globals.dart';
-import '../../../../../utils/riverpod_providers.dart';
-import '../../../../../widgets/dialog_widgets/default_dialog.dart';
-import '../../../../../widgets/press_button.dart';
+import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/widgets/press_button.dart';
 
 class RolloutFailedWidget extends StatelessWidget {
   final PushToken token;
@@ -25,7 +25,7 @@ class RolloutFailedWidget extends StatelessWidget {
             child: FittedBox(
               child: Text(
                 token.rolloutState.rolloutMsg(context),
-                style: Theme.of(context).textTheme.titleMedium,
+                style: TextTheme.of(context).titleMedium,
                 textAlign: TextAlign.center,
               ),
             ),
@@ -39,7 +39,7 @@ class RolloutFailedWidget extends StatelessWidget {
                   onPressed: () => globalRef?.read(tokenProvider.notifier).rolloutPushToken(token),
                   child: Text(
                     S.of(context).retryRollout,
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: TextTheme.of(context).bodyMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),
@@ -49,11 +49,11 @@ class RolloutFailedWidget extends StatelessWidget {
               SizedBox(
                 width: width * 0.35,
                 child: PressButton(
-                  style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
+                  style: ButtonStyle(backgroundColor: WidgetStateProperty.all(ColorScheme.of(context).errorContainer)),
                   onPressed: () => _showDialog(),
                   child: Text(
                     S.of(context).delete,
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: TextTheme.of(context).bodyMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),

@@ -36,9 +36,9 @@ import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/utils/view_utils.dart';
 
-import '../views/settings_view/settings_view_widgets/send_error_dialog.dart';
-import '../widgets/dialog_widgets/default_dialog.dart';
-import '../widgets/dialog_widgets/default_dialog_button.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/send_error_dialog.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog_button.dart';
 
 // TODO How to test the behavior of this class?
 class SecureTokenRepository implements TokenRepository {
@@ -212,7 +212,7 @@ Future<void> _decryptErrorDialog() => showAsyncDialog(
             },
             child: Text(
               S.of(context).decryptErrorButtonDelete,
-              style: TextStyle(color: Theme.of(context).colorScheme.error),
+              style: TextStyle(color: ColorScheme.of(context).error),
             ),
           ),
           DefaultDialogButton(
@@ -274,7 +274,7 @@ Future<bool?> _decryptErrorDeleteTokenConfirmationDialog() => showAsyncDialog<bo
             },
             child: Text(
               S.of(context).decryptErrorButtonDelete,
-              style: TextStyle(color: Theme.of(context).colorScheme.error),
+              style: TextStyle(color: ColorScheme.of(context).error),
             ),
           ),
         ],

@@ -1,15 +1,13 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:version/version.dart';
 
-import '../interfaces/repo/settings_repository.dart';
-import '../model/states/settings_state.dart';
+import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart';
+import 'package:edumfa_authenticator/model/states/settings_state.dart';
 
 class PreferenceSettingsRepository extends SettingsRepository {
   static const String _isFirstRunKey = 'KEY_IS_FIRST_RUN';
   static const String _prefEnablePoll = 'KEY_ENABLE_POLLING';
   static const String _crashReportRecipientsKey = 'KEY_CRASH_REPORT_RECIPIENTS'; // TODO Use this if the server supports it
-  static const String _localePreferenceKey = 'KEY_LOCALE_PREFERENCE';
-  static const String _useSystemLocaleKey = 'KEY_USE_SYSTEM_LOCALE';
   static const String _enableLoggingKey = 'KEY_VERBOSE_LOGGING';
   static const String _latestVersionKey = 'KEY_LATEST_VERSION';
 
@@ -27,8 +25,6 @@ class PreferenceSettingsRepository extends SettingsRepository {
       isFirstRun: prefs.getBool(_isFirstRunKey),
       enablePolling: prefs.getBool(_prefEnablePoll),
       crashReportRecipients: prefs.getStringList(_crashReportRecipientsKey)?.toSet(),
-      localePreference: prefs.getString(_localePreferenceKey) != null ? SettingsState.decodeLocale(prefs.getString(_localePreferenceKey)!) : null,
-      useSystemLocale: prefs.getBool(_useSystemLocaleKey),
       verboseLogging: prefs.getBool(_enableLoggingKey),
       latestVersion: prefs.getString(_latestVersionKey) != null ? Version.parse(prefs.getString(_latestVersionKey)!) : null,
     );
@@ -44,9 +40,6 @@ class PreferenceSettingsRepository extends SettingsRepository {
       if (_lastState?.enablePolling != settings.enablePolling) prefs.setBool(_prefEnablePoll, settings.enablePolling),
       if (_lastState?.crashReportRecipients != settings.crashReportRecipients)
         prefs.setStringList(_crashReportRecipientsKey, settings.crashReportRecipients.toList()),
-      if (_lastState?.localePreference != settings.localePreference)
-        prefs.setString(_localePreferenceKey, SettingsState.encodeLocale(settings.localePreference)),
-      if (_lastState?.useSystemLocale != settings.useSystemLocale) prefs.setBool(_useSystemLocaleKey, settings.useSystemLocale),
       if (_lastState?.verboseLogging != settings.verboseLogging) prefs.setBool(_enableLoggingKey, settings.verboseLogging),
       if (_lastState?.latestStartedVersion != settings.latestStartedVersion) prefs.setString(_latestVersionKey, settings.latestStartedVersion.toString()),
     ];

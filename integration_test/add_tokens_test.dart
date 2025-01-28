@@ -5,10 +5,8 @@ import 'package:integration_test/integration_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:edumfa_authenticator/main.dart';
 import 'package:edumfa_authenticator/model/enums/token_types.dart';
-import 'package:edumfa_authenticator/model/states/settings_state.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
-import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 
 import '../test/tests_app_wrapper.dart';
@@ -20,7 +18,6 @@ void main() {
   late final MockTokenRepository mockTokenRepository;
   setUp(() {
     mockSettingsRepository = MockSettingsRepository();
-    when(mockSettingsRepository.loadSettings()).thenAnswer((_) async => SettingsState(useSystemLocale: false, localePreference: const Locale('en')));
     when(mockSettingsRepository.saveSettings(any)).thenAnswer((_) async => true);
     mockTokenRepository = MockTokenRepository();
     when(mockTokenRepository.loadTokens()).thenAnswer((_) async => []);
@@ -35,7 +32,7 @@ void main() {
           settingsProvider.overrideWith((ref) => SettingsNotifier(repository: mockSettingsRepository)),
           tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
         ],
-        child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+        child: const EduMFAAuthenticator(),
       ));
 
       await _introToMainView(tester);

@@ -66,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bitte authentifizieren Sie sich, um den Sperrstatus des Tokens zu ändern."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Authentifizierung"),
+        "autoTheme": MessageLookupByLibrary.simpleMessage("Automatisch"),
         "biometricHint": MessageLookupByLibrary.simpleMessage(
             "Authentifizierung wird benötigt"),
         "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
@@ -218,6 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "rollingOut": MessageLookupByLibrary.simpleMessage("Ausrollen"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Ausrollen abgeschlossen"),
+        "search": MessageLookupByLibrary.simpleMessage("Suchen"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Geheimer Schlüssel"),
         "send": MessageLookupByLibrary.simpleMessage("Senden"),
         "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(
@@ -245,8 +247,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchronisiert Token mit dem eduMFA Server."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Synchronisiere Token."),
-        "systemTheme":
-            MessageLookupByLibrary.simpleMessage("Nutze Farbschema des Geräts"),
         "theme": MessageLookupByLibrary.simpleMessage("Farbschema"),
         "tokens": MessageLookupByLibrary.simpleMessage("Token"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
@@ -256,10 +256,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unlock": MessageLookupByLibrary.simpleMessage("Entsperren"),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("QR Code hochladen"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Nutze Systemsprache, falls diese unterstützt wird. Anderenfalls nutze Englisch. "),
-        "useDeviceLocaleTitle":
-            MessageLookupByLibrary.simpleMessage("Nutze Systemsprache"),
         "verboseLogging": MessageLookupByLibrary.simpleMessage(
             "Ausführliche Protokollierung"),
         "yes": MessageLookupByLibrary.simpleMessage("Ja")

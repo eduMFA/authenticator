@@ -25,11 +25,13 @@ import 'dart:io';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/color_scheme_utils.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -45,27 +47,21 @@ void main() async {
       navigatorKey: globalNavigatorKey,
       appRunner: () async {
         WidgetsFlutterBinding.ensureInitialized();
-        runApp(AppWrapper(child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization)));
+        runApp(const AppWrapper(child: EduMFAAuthenticator()));
       });
 }
 
 class EduMFAAuthenticator extends ConsumerWidget {
-  static ApplicationCustomization? currentCustomization;
-  final ApplicationCustomization _customization;
-  EduMFAAuthenticator({required ApplicationCustomization customization, super.key}) : _customization = customization {
-    // ignore: prefer_initializing_formals
-    EduMFAAuthenticator.currentCustomization = customization;
-  }
+
+  const EduMFAAuthenticator({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     globalRef = ref;
-    final locale = ref.watch(settingsProvider).currentLocale;
 
-    if (Platform.isAndroid) {
-      final isTablet = MediaQuery.of(context).size.shortestSide > 600;
-
+    if (!kIsWeb && Platform.isAndroid) {
       var preferredOrientations = <DeviceOrientation>[DeviceOrientation.portraitUp];
-      if (isTablet) {
+      if (isTablet(context)) {
         preferredOrientations.addAll([
           DeviceOrientation.portraitDown,
           DeviceOrientation.landscapeLeft,
@@ -81,23 +77,15 @@ class EduMFAAuthenticator extends ConsumerWidget {
       });
       return DynamicColorBuilder(
           builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
-            ColorScheme lightColorScheme;
-            ColorScheme darkColorScheme;
-
-            if (lightDynamic != null && darkDynamic != null) {
-              lightColorScheme = lightDynamic.harmonized();
-              //lightColorScheme = lightColorScheme.copyWith(secondary: brandColor);
-
-              darkColorScheme = darkDynamic.harmonized();
-              //darkColorScheme = darkColorScheme.copyWith(secondary: brandColor);
-            } else {
-              lightColorScheme = ColorScheme.fromSeed(seedColor: _customization.brandColor);
-
-              darkColorScheme = ColorScheme.fromSeed(
-                seedColor: _customization.brandColor,
-                brightness: Brightness.dark,
-              );
-            }
+            ThemeData lightTheme = ThemeData(colorScheme: generateColorScheme(
+                lightDynamic?.primary,
+                brandColor
+            ));
+            ThemeData darkTheme = ThemeData(colorScheme: generateColorScheme(
+                darkDynamic?.primary,
+                brandColor,
+                Brightness.dark
+            ));
 
             return MaterialApp(
               debugShowCheckedModeBanner: true,
@@ -109,26 +97,18 @@ class EduMFAAuthenticator extends ConsumerWidget {
                 GlobalCupertinoLocalizations.delegate
               ],
               supportedLocales: S.delegate.supportedLocales,
-              locale: locale,
-              title: _customization.appName,
-              theme: ThemeData(colorScheme: lightColorScheme),
-              darkTheme: ThemeData(colorScheme: darkColorScheme),
+              title: appName,
+              theme: lightTheme,
+              darkTheme: darkTheme,
               scaffoldMessengerKey: globalSnackbarKey, // <= this
               themeMode: EasyDynamicTheme.of(context).themeMode,
               initialRoute: SplashScreen.routeName,
               routes: {
-                LicenseView.routeName: (context) => LicenseView(
-                  appName: _customization.appName,
-                  websiteLink: _customization.websiteLink,
-                ),
+                LicenseView.routeName: (context) => const LicenseView(),
                 MainView.routeName: (context) => const MainView(),
-                OnboardingView.routeName: (context) => OnboardingView(
-                  appName: _customization.appName,
-                ),
+                OnboardingView.routeName: (context) => const OnboardingView(),
                 SettingsView.routeName: (context) => const SettingsView(),
-                SplashScreen.routeName: (context) => SplashScreen(
-                  appName: _customization.appName,
-                ),
+                SplashScreen.routeName: (context) => const SplashScreen(),
               },
             );
           }

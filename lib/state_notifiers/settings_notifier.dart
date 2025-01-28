@@ -1,12 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:version/version.dart';
 
-import '../interfaces/repo/settings_repository.dart';
-import '../model/states/settings_state.dart';
-import '../utils/logger.dart';
-import '../utils/push_provider.dart';
+import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart';
+import 'package:edumfa_authenticator/model/states/settings_state.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
 
 /// This class provies access to the device specific settings.
 /// It also ensures that the settings are saved to the device.
@@ -54,18 +52,6 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
     _saveToRepo();
   }
 
-  void setLocalePreference(Locale locale) {
-    Logger.info('Locale set to $locale', name: 'settings_notifier.dart#setLocalePreference');
-    state = state.copyWith(localePreference: locale);
-    _saveToRepo();
-  }
-
-  void setUseSystemLocale(bool value) {
-    Logger.info('Use system locale set to $value', name: 'settings_notifier.dart#setUseSystemLocale');
-    state = state.copyWith(useSystemLocale: value);
-    _saveToRepo();
-  }
-
   void enablePolling() {
     Logger.info('Polling set to true', name: 'settings_notifier.dart#enablePolling');
     state = state.copyWith(enablePolling: true);
@@ -81,12 +67,6 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
   void setPolling(bool value) {
     Logger.info('Polling set to $value', name: 'settings_notifier.dart#setPolling');
     state = state.copyWith(enablePolling: value);
-    _saveToRepo();
-  }
-
-  void setLocale(Locale locale) {
-    Logger.info('Locale set to $locale', name: 'settings_notifier.dart#setLocale');
-    state = state.copyWith(localePreference: locale);
     _saveToRepo();
   }
 

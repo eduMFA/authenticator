@@ -105,9 +105,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Use device's theme",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": "Auto",
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Enable polling",
   "@enablePolling": {
@@ -217,14 +217,6 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "useDeviceLocaleTitle": "Use device language",
-  "@useDeviceLocaleTitle": {
-    "description": "Title of the switch tile where using the devices language can be enabled."
-  },
-  "useDeviceLocaleDescription": "Use device language if it is supported, otherwise default to english.",
-  "@useDeviceLocaleDescription": {
-    "description": "Description of the switch tile where using the devices language can be enabled."
-  },
   "language": "Language",
   "@language": {
     "description": "Title of language setting group."
@@ -292,6 +284,10 @@
   "unlock": "Unlock",
   "@unlock": {
     "description": "Description of button that unlocks a token."
+  },
+  "search": "Search",
+  "@search": {
+    "description": "Placeholder text for search bar."
   },
   "noResultTitle": "No tokens stored yet.",
   "@noResultTitle": {

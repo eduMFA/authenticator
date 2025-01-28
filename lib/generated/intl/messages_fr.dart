@@ -238,18 +238,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchroniser les jetons Push avec le serveur eduMFA."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Synchroniser les jetons."),
-        "systemTheme": MessageLookupByLibrary.simpleMessage(
-            "Utiliser le thème de l\'appareil"),
         "theme": MessageLookupByLibrary.simpleMessage("Thème"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Ces jetons ne supportent pas la synchronisation et doivent être de nouveau générés:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Une erreur inattendue s\'est produite."),
         "unlock": MessageLookupByLibrary.simpleMessage("Ouvrir"),
-        "useDeviceLocaleDescription": MessageLookupByLibrary.simpleMessage(
-            "Utilisez la langue de l\'appareil si elle est prise en charge, sinon l\'anglais par défaut."),
-        "useDeviceLocaleTitle": MessageLookupByLibrary.simpleMessage(
-            "Utiliser la langue de l\'appareil"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Journalisation verbeuse"),
         "yes": MessageLookupByLibrary.simpleMessage("Oui")

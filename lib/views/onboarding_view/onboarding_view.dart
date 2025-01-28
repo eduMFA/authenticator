@@ -1,14 +1,15 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../utils/riverpod_providers.dart';
-import '../../widgets/dot_indicator.dart';
-import '../main_view/main_view.dart';
-import '../view_interface.dart';
-import 'onboading_view_widgets/onboarding_page.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/widgets/dot_indicator.dart';
+import 'package:edumfa_authenticator/views/main_view/main_view.dart';
+import 'package:edumfa_authenticator/views/view_interface.dart';
+import 'package:edumfa_authenticator/views/onboarding_view/onboading_view_widgets/onboarding_page.dart';
 
 class LottieFiles {
   final String lottieFile;
@@ -30,12 +31,11 @@ List<LottieFiles> lottieFiles = [
 
 class OnboardingView extends ConsumerStatefulView {
   static const String routeName = '/onboarding';
+
+  const OnboardingView({super.key});
+
   @override
   RouteSettings get routeSettings => const RouteSettings(name: routeName);
-
-  final String appName;
-
-  const OnboardingView({required this.appName, super.key});
 
   @override
   ConsumerState<OnboardingView> createState() => _OnboardingViewState();
@@ -76,7 +76,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                       itemBuilder: (BuildContext context, int index) {
                         if (_currentIndex == 0) {
                           return OnboardingPage(
-                            title: widget.appName,
+                            title: appName,
                             subtitle: S.of(context).onBoardingText1,
                           );
                         }
@@ -91,12 +91,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                             title: S.of(context).onBoardingTitle3,
                             subtitle: S.of(context).onBoardingText3,
                             buttonTitle: 'GitHub',
-                            onPressed: () async {
-                              Uri uri = Uri.parse("https://github.com/edumfa/authenticator");
-                              if (!await launchUrl(uri)) {
-                                throw Exception('Could not launch $uri');
-                              }
-                            },
+                            onPressed: () => launchUrl(githubUri),
                           );
                         }
 
@@ -135,7 +130,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
               curve: Curves.ease,
             );
           },
-          backgroundColor: Theme.of(context).colorScheme.surface,
+          backgroundColor: ColorScheme.of(context).surface,
           child: Icon(
             Icons.arrow_forward_ios_outlined,
             color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black,

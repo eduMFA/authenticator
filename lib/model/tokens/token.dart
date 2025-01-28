@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/identifiers.dart';
-import '../enums/token_types.dart';
-import '../extensions/enum_extension.dart';
-import '../token_origin.dart';
-import 'push_token.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/model/enums/token_types.dart';
+import 'package:edumfa_authenticator/model/extensions/enum_extension.dart';
+import 'package:edumfa_authenticator/model/token_origin.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
 
 @immutable
 abstract class Token {
