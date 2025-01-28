@@ -91,12 +91,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                             title: S.of(context).onBoardingTitle3,
                             subtitle: S.of(context).onBoardingText3,
                             buttonTitle: 'GitHub',
-                            onPressed: () async {
-                              Uri uri = Uri.parse("https://github.com/edumfa/authenticator");
-                              if (!await launchUrl(uri)) {
-                                throw Exception('Could not launch $uri');
-                              }
-                            },
+                            onPressed: () => launchUrl(githubUri),
                           );
                         }
 
