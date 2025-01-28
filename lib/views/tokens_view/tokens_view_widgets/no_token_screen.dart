@@ -15,7 +15,7 @@ class NoTokenScreen extends StatelessWidget {
             children: [
               Text(
                 S.of(context).noResultTitle,
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: TextTheme.of(context).headlineSmall,
                 overflow: TextOverflow.fade,
                 softWrap: false,
               ),
@@ -23,14 +23,14 @@ class NoTokenScreen extends StatelessWidget {
                 children: [
                   Text(
                     S.of(context).noResultText1,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: TextTheme.of(context).titleMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),
                   const Icon(Icons.add),
                   Text(
                     S.of(context).noResultText2,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: TextTheme.of(context).titleMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   )

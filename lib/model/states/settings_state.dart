@@ -1,6 +1,6 @@
 import 'package:version/version.dart';
 
-import '../../utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
 
 /// This class contains all device specific settings.
 class SettingsState {

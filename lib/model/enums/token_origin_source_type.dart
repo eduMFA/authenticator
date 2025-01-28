@@ -1,6 +1,6 @@
-import '../../main.dart';
-import '../token_origin.dart';
-import '../tokens/token.dart';
+import 'package:edumfa_authenticator/main.dart';
+import 'package:edumfa_authenticator/model/token_origin.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
 
 enum TokenOriginSourceType {
   backupFile,

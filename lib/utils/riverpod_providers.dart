@@ -7,19 +7,19 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../model/push_request.dart';
-import '../model/states/settings_state.dart';
-import '../model/states/token_filter.dart';
-import '../model/states/token_state.dart';
-import '../repo/preference_settings_repository.dart';
-import '../state_notifiers/deeplink_notifier.dart';
-import '../state_notifiers/push_request_notifier.dart';
-import '../state_notifiers/settings_notifier.dart';
-import '../state_notifiers/token_notifier.dart';
-import 'globals.dart';
-import 'logger.dart';
-import 'push_provider.dart';
-import 'riverpod_state_listener.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/states/settings_state.dart';
+import 'package:edumfa_authenticator/model/states/token_filter.dart';
+import 'package:edumfa_authenticator/model/states/token_state.dart';
+import 'package:edumfa_authenticator/repo/preference_settings_repository.dart';
+import 'package:edumfa_authenticator/state_notifiers/deeplink_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/push_request_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
+import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
+import 'package:edumfa_authenticator/utils/riverpod_state_listener.dart';
 
 // Never use globalRef to .watch() a provider. only use it to .read() a provider
 // Otherwise the whole app will rebuild on every state change of the provider

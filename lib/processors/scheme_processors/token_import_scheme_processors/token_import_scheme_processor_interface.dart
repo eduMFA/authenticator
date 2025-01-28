@@ -1,6 +1,6 @@
-import '../../../model/tokens/token.dart';
-import '../scheme_processor_interface.dart';
-import 'otp_auth_processor.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/processors/scheme_processors/scheme_processor_interface.dart';
+import 'package:edumfa_authenticator/processors/scheme_processors/token_import_scheme_processors/otp_auth_processor.dart';
 
 abstract class TokenImportSchemeProcessor implements SchemeProcessor {
   const TokenImportSchemeProcessor();

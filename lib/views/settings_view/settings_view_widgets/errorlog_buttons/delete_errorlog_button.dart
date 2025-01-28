@@ -1,8 +1,8 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../utils/logger.dart';
-import 'errorlog_button.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/errorlog_buttons/errorlog_button.dart';
 
 class DeleteErrorlogButton extends StatelessWidget {
   const DeleteErrorlogButton({super.key});

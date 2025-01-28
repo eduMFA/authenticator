@@ -37,8 +37,8 @@ class TokenWidgetTile extends ConsumerWidget {
               : const SizedBox(),
           trailing: trailing ?? const SizedBox(),
           onLongPress: onLongPress,
-          tileColor: Theme.of(context).colorScheme.surfaceContainer,
-          textColor: Theme.of(context).colorScheme.onSecondaryContainer,
+          tileColor: ColorScheme.of(context).surfaceContainer,
+          textColor: ColorScheme.of(context).onSecondaryContainer,
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
         ),
   );

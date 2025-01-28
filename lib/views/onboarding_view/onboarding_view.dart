@@ -4,11 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../utils/riverpod_providers.dart';
-import '../../widgets/dot_indicator.dart';
-import '../main_view/main_view.dart';
-import '../view_interface.dart';
-import 'onboading_view_widgets/onboarding_page.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/widgets/dot_indicator.dart';
+import 'package:edumfa_authenticator/views/main_view/main_view.dart';
+import 'package:edumfa_authenticator/views/view_interface.dart';
+import 'package:edumfa_authenticator/views/onboarding_view/onboading_view_widgets/onboarding_page.dart';
 
 class LottieFiles {
   final String lottieFile;
@@ -135,7 +135,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
               curve: Curves.ease,
             );
           },
-          backgroundColor: Theme.of(context).colorScheme.surface,
+          backgroundColor: ColorScheme.of(context).surface,
           child: Icon(
             Icons.arrow_forward_ios_outlined,
             color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black,

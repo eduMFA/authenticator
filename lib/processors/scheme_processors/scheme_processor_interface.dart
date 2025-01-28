@@ -1,4 +1,4 @@
-import 'token_import_scheme_processors/token_import_scheme_processor_interface.dart';
+import 'package:edumfa_authenticator/processors/scheme_processors/token_import_scheme_processors/token_import_scheme_processor_interface.dart';
 
 abstract class SchemeProcessor {
   const SchemeProcessor();

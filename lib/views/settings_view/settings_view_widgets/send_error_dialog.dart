@@ -2,8 +2,8 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../utils/logger.dart';
-import '../../../widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
 
 class SendErrorDialog extends StatelessWidget {
   const SendErrorDialog({super.key});

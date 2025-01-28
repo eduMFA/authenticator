@@ -31,7 +31,7 @@ class PushTokenWidgetTile extends ConsumerWidget {
         tokenImage: token.tokenImage,
         title: Text(
           token.label.isNotEmpty ? token.label : token.serial,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: TextTheme.of(context).titleMedium,
           overflow: TextOverflow.ellipsis,
         ),
         trailing: PopupMenuButton<String>(

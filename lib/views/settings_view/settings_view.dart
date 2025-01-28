@@ -11,15 +11,15 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../model/tokens/push_token.dart';
-import '../../utils/globals.dart';
-import '../../utils/riverpod_providers.dart';
-import '../license_view/license_view.dart';
-import '../view_interface.dart';
-import 'settings_view_widgets/logging_menu.dart';
-import 'settings_view_widgets/settings_groups.dart';
-import 'settings_view_widgets/settings_list_tile_button.dart';
-import 'settings_view_widgets/update_firebase_token_dialog.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/views/license_view/license_view.dart';
+import 'package:edumfa_authenticator/views/view_interface.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/logging_menu.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/settings_groups.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/settings_list_tile_button.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/update_firebase_token_dialog.dart';
 
 class SettingsView extends ConsumerView {
   @override
@@ -68,7 +68,7 @@ class SettingsView extends ConsumerView {
                   },
                   title: Text(
                     S.of(context).privacyPolicy,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: TextTheme.of(context).titleMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),
@@ -79,7 +79,7 @@ class SettingsView extends ConsumerView {
                   },
                   title: Text(
                     S.of(context).licensesAndVersion,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: TextTheme.of(context).titleMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),
@@ -101,7 +101,7 @@ class SettingsView extends ConsumerView {
               ListTile(
                 title: Text(
                   S.of(context).language,
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: TextTheme.of(context).titleMedium,
                   overflow: TextOverflow.fade,
                   softWrap: false,
                 ),
@@ -116,7 +116,7 @@ class SettingsView extends ConsumerView {
                 ListTile(
                   title: Text(
                     S.of(context).synchronizePushTokens,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: TextTheme.of(context).titleMedium,
                   ),
                   subtitle: Text(
                     S.of(context).synchronizesTokensWithServer,
@@ -146,7 +146,7 @@ class SettingsView extends ConsumerView {
                       children: [
                         TextSpan(
                           text: S.of(context).enablePolling,
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: TextTheme.of(context).titleMedium,
                         ),
                         // Add clickable icon to inform user of unsupported push tokens (for polling)
                         WidgetSpan(
@@ -184,7 +184,7 @@ class SettingsView extends ConsumerView {
                 ListTile(
                   title: Text(
                     S.of(context).logMenu,
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: TextTheme.of(context).titleMedium,
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),

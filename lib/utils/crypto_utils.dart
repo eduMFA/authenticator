@@ -31,7 +31,7 @@ import 'package:flutter/foundation.dart';
 import 'package:hex/hex.dart' as hex_converter;
 import 'package:pointycastle/export.dart';
 
-import '../model/enums/encodings.dart';
+import 'package:edumfa_authenticator/model/enums/encodings.dart';
 
 Future<Uint8List> pbkdf2({required Uint8List salt, required int iterations, required int keyLength, required Uint8List password}) async {
   ArgumentError.checkNotNull(salt);

@@ -2,12 +2,12 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../../model/tokens/token.dart';
-import '../../../../../utils/globals.dart';
-import '../../../../../utils/lock_auth.dart';
-import '../../../../../utils/riverpod_providers.dart';
-import '../../../../../widgets/dialog_widgets/default_dialog.dart';
-import '../token_action.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/lock_auth.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_action.dart';
 
 class DefaultDeleteAction extends TokenAction {
   final Token token;
@@ -38,15 +38,20 @@ class DefaultDeleteAction extends TokenAction {
               scrollable: true,
               title: Text(
                 S.of(context).confirmDeletion,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Theme.of(context).colorScheme.error),
+                style: TextTheme.of(context).titleLarge?.copyWith(
+                    color: ColorScheme.of(context).error
+                ),
               ),
               content: Column(
                 children: [
-                  Text(S.of(context).confirmDeletionOf(token.label), style: Theme.of(context).textTheme.bodyMedium),
+                  Text(
+                      S.of(context).confirmDeletionOf(token.label),
+                      style: TextTheme.of(context).bodyMedium
+                  ),
                   const SizedBox(height: 8),
                   Text(
                     S.of(context).confirmTokenDeletionHint,
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: TextTheme.of(context).bodySmall,
                   ),
                 ],
               ),
@@ -66,7 +71,7 @@ class DefaultDeleteAction extends TokenAction {
                   },
                   child: Text(
                     S.of(context).delete,
-                    style: TextStyle(color: Theme.of(context).colorScheme.error),
+                    style: TextStyle(color: ColorScheme.of(context).error),
                     overflow: TextOverflow.fade,
                     softWrap: false,
                   ),

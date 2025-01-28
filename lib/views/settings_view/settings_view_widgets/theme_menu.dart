@@ -18,7 +18,7 @@ class ThemeMenu extends StatelessWidget {
             RadioListTile(
               title: Text(
                 S.of(context).autoTheme,
-                style: Theme.of(context).textTheme.titleMedium,
+                style: TextTheme.of(context).titleMedium,
               ),
               value: ThemeMode.system,
               groupValue: EasyDynamicTheme.of(context).themeMode,
@@ -29,7 +29,7 @@ class ThemeMenu extends StatelessWidget {
             RadioListTile(
               title: Text(
                 S.of(context).lightTheme,
-                style: Theme.of(context).textTheme.titleMedium,
+                style: TextTheme.of(context).titleMedium,
                 overflow: TextOverflow.fade,
                 softWrap: false,
               ),
@@ -42,7 +42,7 @@ class ThemeMenu extends StatelessWidget {
             RadioListTile(
               title: Text(
                 S.of(context).darkTheme,
-                style: Theme.of(context).textTheme.titleMedium,
+                style: TextTheme.of(context).titleMedium,
                 overflow: TextOverflow.fade,
                 softWrap: false,
               ),

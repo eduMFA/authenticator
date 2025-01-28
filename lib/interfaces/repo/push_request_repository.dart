@@ -1,4 +1,4 @@
-import '../../model/push_request.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
 
 abstract class PushRequestRepository {
   Future<bool> saveOrReplacePushRequests(List<PushRequest> pushRequests);

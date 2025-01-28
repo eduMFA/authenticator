@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../utils/app_info_utils.dart';
-import '../../utils/logger.dart';
-import '../../utils/riverpod_providers.dart';
-import '../main_view/main_view.dart';
-import '../onboarding_view/onboarding_view.dart';
-import '../view_interface.dart';
+import 'package:edumfa_authenticator/utils/app_info_utils.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/views/main_view/main_view.dart';
+import 'package:edumfa_authenticator/views/onboarding_view/onboarding_view.dart';
+import 'package:edumfa_authenticator/views/view_interface.dart';
 
 class SplashScreen extends ConsumerStatefulWidget {
   static const routeName = '/';

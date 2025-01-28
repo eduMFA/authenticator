@@ -3,16 +3,16 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:pointycastle/asymmetric/api.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../utils/custom_int_buffer.dart';
-import '../../utils/identifiers.dart';
-import '../../utils/rsa_utils.dart';
-import '../enums/push_token_rollout_state.dart';
-import '../enums/token_types.dart';
-import '../extensions/enum_extension.dart';
-import '../push_request.dart';
-import '../push_request_queue.dart';
-import '../token_origin.dart';
-import 'token.dart';
+import 'package:edumfa_authenticator/utils/custom_int_buffer.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
+import 'package:edumfa_authenticator/model/enums/token_types.dart';
+import 'package:edumfa_authenticator/model/extensions/enum_extension.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/push_request_queue.dart';
+import 'package:edumfa_authenticator/model/token_origin.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
 
 part 'push_token.g.dart';
 

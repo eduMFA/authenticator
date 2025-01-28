@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:version/version.dart';
 
-import '../interfaces/repo/settings_repository.dart';
-import '../model/states/settings_state.dart';
-import '../utils/logger.dart';
-import '../utils/push_provider.dart';
+import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart';
+import 'package:edumfa_authenticator/model/states/settings_state.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
 
 /// This class provies access to the device specific settings.
 /// It also ensures that the settings are saved to the device.
