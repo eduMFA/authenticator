@@ -1,4 +1,5 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lottie/lottie.dart';
@@ -30,12 +31,11 @@ List<LottieFiles> lottieFiles = [
 
 class OnboardingView extends ConsumerStatefulView {
   static const String routeName = '/onboarding';
+
+  const OnboardingView({super.key});
+
   @override
   RouteSettings get routeSettings => const RouteSettings(name: routeName);
-
-  final String appName;
-
-  const OnboardingView({required this.appName, super.key});
 
   @override
   ConsumerState<OnboardingView> createState() => _OnboardingViewState();
@@ -76,7 +76,7 @@ class _OnboardingViewState extends ConsumerState<OnboardingView> {
                       itemBuilder: (BuildContext context, int index) {
                         if (_currentIndex == 0) {
                           return OnboardingPage(
-                            title: widget.appName,
+                            title: appName,
                             subtitle: S.of(context).onBoardingText1,
                           );
                         }

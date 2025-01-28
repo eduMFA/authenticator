@@ -14,9 +14,7 @@ class SplashScreen extends ConsumerStatefulWidget {
   static Widget? _initialView;
   static bool didNavigated = false;
 
-  final String appName;
-
-  const SplashScreen({required this.appName, super.key});
+  const SplashScreen({super.key});
 
   @override
   ConsumerState<SplashScreen> createState() => _SplashScreenState();
@@ -94,7 +92,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   }
 
   void _pushReplace() {
-    final ViewWidget nextView = ref.read(settingsProvider).isFirstRun ? OnboardingView(appName: widget.appName) : const MainView();
+    final ViewWidget nextView = ref.read(settingsProvider).isFirstRun ? const OnboardingView() : const MainView();
     final routeBuilder = SplashScreen._initialView == null
         ? PageRouteBuilder(
             pageBuilder: (_, __, ___) => nextView,

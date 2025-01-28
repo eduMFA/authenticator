@@ -1,4 +1,5 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart';
@@ -9,7 +10,6 @@ import 'package:edumfa_authenticator/main.dart';
 import 'package:edumfa_authenticator/model/states/settings_state.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
-import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/settings_groups.dart';
@@ -60,7 +60,7 @@ void main() {
               ioClient: mockIOClient,
             )),
       ],
-      child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+      child: const EduMFAAuthenticator(),
     ));
 
     await _licensesViewTest(tester);
@@ -82,8 +82,8 @@ Future<void> _licensesViewTest(WidgetTester tester) async {
   await pumpUntilFindNWidgets(tester, find.byIcon(Icons.info_outline), 1, const Duration(seconds: 20));
   await tester.tap(find.byIcon(Icons.info_outline));
   await tester.pumpAndSettle();
-  expect(find.text(ApplicationCustomization.defaultCustomization.appName), findsOneWidget);
-  expect(find.text(ApplicationCustomization.defaultCustomization.websiteLink), findsOneWidget);
+  expect(find.text(appName), findsOneWidget);
+  expect(find.text(websiteUri.toString()), findsOneWidget);
   expect(find.byType(Icon), findsOneWidget);
   expect(find.byType(LicensePage), findsOneWidget);
 }
