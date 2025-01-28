@@ -7,7 +7,6 @@ import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token
 import 'package:edumfa_authenticator/widgets/conditional_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 
 class TokensList extends ConsumerStatefulWidget {
   const TokensList({super.key});
@@ -29,25 +28,23 @@ class _TokensListState extends ConsumerState<TokensList> {
     return ConditionalRefreshIndicator(
       allowToRefresh: allowToRefresh,
       onRefresh: () async => PollLoadingIndicator.pollForChallenges(context),
-      child: SlidableAutoCloseBehavior(
-        child: Padding(
-          padding: const EdgeInsets.all(5),
-          child: CustomScrollView(
-            physics: allowToRefresh ? const AlwaysScrollableScrollPhysics() : const BouncingScrollPhysics(),
-            slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 25),
-                  child: Column(
-                    children: [
-                      ..._mapTokensToWidgets(tokenState.tokens),
-                    ],
-                  ),
+      child: Padding(
+        padding: const EdgeInsets.all(5),
+        child: CustomScrollView(
+          physics: allowToRefresh ? const AlwaysScrollableScrollPhysics() : const BouncingScrollPhysics(),
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 25),
+                child: Column(
+                  children: [
+                    ..._mapTokensToWidgets(tokenState.tokens),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
