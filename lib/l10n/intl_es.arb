@@ -383,11 +383,6 @@
       }
     }
   },
-  "yes": "Sí",
-  "no": "No",
-  "butDiscardIt": "pero descártelo",
-  "declineIt": "rechazar",
-  "requestTriggerdByUserQuestion": "¿Fue usted quien provocó esta petición?",
   "cameraPermissionPermanentlyDenied": null,
   "cameraPermissionPermanentlyDeniedButton": "Conceder permiso",
   "decryptErrorTitle": "Error de descifrado",
@@ -399,10 +394,6 @@
   "settingsGroupGeneral": "Información general",
   "licensesAndVersion": "Licencias y versión",
   "privacyPolicy": "Política de privacidad",
-  "introScanQrCode": "Puedes escanear códigos QR para añadir tokens.\nSoportamos todos los tokens comunes de Two-Factor-Authentication y también los tokens eduMFA",
-  "introEditToken": "Aquí puedes editar el nombre del token y ver algunos detalles",
-  "introLockToken": "Para mejorar la seguridad aún más, puedes bloquear los tokens.\nEntonces el token sólo se puede utilizar después de la autenticación.",
-  "introPollForChallenges": "Puedes buscar nuevos retos arrastrando hacia abajo la lista de tokens",
   "noMailAppTitle": "No hay aplicación de correo electrónico",
   "noMailAppDescription": "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico.",
   "authenticationRequest": "Autenticación",

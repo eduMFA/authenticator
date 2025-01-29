@@ -1112,56 +1112,6 @@ class S {
     );
   }
 
-  /// `Yes`
-  String get yes {
-    return Intl.message(
-      'Yes',
-      name: 'yes',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No`
-  String get no {
-    return Intl.message(
-      'No',
-      name: 'no',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `but discard it`
-  String get butDiscardIt {
-    return Intl.message(
-      'but discard it',
-      name: 'butDiscardIt',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `decline it`
-  String get declineIt {
-    return Intl.message(
-      'decline it',
-      name: 'declineIt',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Was this request triggered by you?`
-  String get requestTriggerdByUserQuestion {
-    return Intl.message(
-      'Was this request triggered by you?',
-      name: 'requestTriggerdByUserQuestion',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Camera permission is permanently denied. Please grant camera permission in the system settings.`
   String get cameraPermissionPermanentlyDenied {
     return Intl.message(
@@ -1267,46 +1217,6 @@ class S {
     return Intl.message(
       'Privacy policy',
       name: 'privacyPolicy',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.`
-  String get introScanQrCode {
-    return Intl.message(
-      'You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.',
-      name: 'introScanQrCode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Here you can edit the token name and see some details.`
-  String get introEditToken {
-    return Intl.message(
-      'Here you can edit the token name and see some details.',
-      name: 'introEditToken',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.`
-  String get introLockToken {
-    return Intl.message(
-      'To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.',
-      name: 'introLockToken',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `You can check for new challenges by dragging down the token list.`
-  String get introPollForChallenges {
-    return Intl.message(
-      'You can check for new challenges by dragging down the token list.',
-      name: 'introPollForChallenges',
       desc: '',
       args: [],
     );

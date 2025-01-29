@@ -384,11 +384,7 @@
       }
     }
   },
-  "yes": "Ja",
-  "no": "Nee",
   "butDiscardIt": "maar verwijder",
-  "declineIt": "weigeren",
-  "requestTriggerdByUserQuestion": "Is dit verzoek door jou gedaan?",
   "cameraPermissionPermanentlyDenied": null,
   "cameraPermissionPermanentlyDeniedButton": "Toestemming verlenen",
   "decryptErrorTitle": "Fout bij decoderen",
@@ -400,10 +396,6 @@
   "settingsGroupGeneral": "Algemene informatie",
   "licensesAndVersion": "Licenties en versie",
   "privacyPolicy": "Privacybeleid",
-  "introScanQrCode": "Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de eduMFA tokens.",
-  "introEditToken": "Hier kun je de naam van het token bewerken en enkele details bekijken.",
-  "introLockToken": "Om de beveiliging nog meer te verbeteren, kun je tokens vergrendelen.¨Dan kan het token alleen gebruikt worden na authenticatie.",
-  "introPollForChallenges": "Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen.",
   "noMailAppTitle": "Geen mail app gevonden",
   "noMailAppDescription": "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden.",
   "authenticationRequest": "Verificatieverzoek",

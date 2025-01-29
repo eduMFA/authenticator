@@ -67,7 +67,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Biometrie is niet ingesteld"),
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Authenticatie geslaagd"),
-        "butDiscardIt": MessageLookupByLibrary.simpleMessage("maar verwijder"),
         "cameraPermissionPermanentlyDeniedButton":
             MessageLookupByLibrary.simpleMessage("Toestemming verlenen"),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuleren"),
@@ -85,7 +84,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bericht niet kunnen ondertekenen."),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Donker"),
         "decline": MessageLookupByLibrary.simpleMessage("Weigeren"),
-        "declineIt": MessageLookupByLibrary.simpleMessage("weigeren"),
         "decryptErrorButtonDelete":
             MessageLookupByLibrary.simpleMessage("Verwijderen"),
         "decryptErrorButtonRetry":
@@ -140,14 +138,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ga naar instellingen"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authenticatie via inloggegevens of biometrie is niet ingesteld. Stel het in bij de instellingen van het apparaat."),
-        "introEditToken": MessageLookupByLibrary.simpleMessage(
-            "Hier kun je de naam van het token bewerken en enkele details bekijken."),
-        "introLockToken": MessageLookupByLibrary.simpleMessage(
-            "Om de beveiliging nog meer te verbeteren, kun je tokens vergrendelen.¨Dan kan het token alleen gebruikt worden na authenticatie."),
-        "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
-            "Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen."),
-        "introScanQrCode": MessageLookupByLibrary.simpleMessage(
-            "Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de eduMFA tokens."),
         "language": MessageLookupByLibrary.simpleMessage("Taal"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licenties en versie"),
@@ -157,7 +147,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometrische authenticatie staat uit. Vergrendel en ontgrendel het scherm om het aan te zetten."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Log menu"),
         "name": MessageLookupByLibrary.simpleMessage("Naam"),
-        "no": MessageLookupByLibrary.simpleMessage("Nee"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden."),
         "noMailAppTitle":
@@ -197,8 +186,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Activeer het zoeken naar berichten. Gebruik deze optie wanneer de push berichten niet worden ontvangen."),
-        "requestTriggerdByUserQuestion": MessageLookupByLibrary.simpleMessage(
-            "Is dit verzoek door jou gedaan?"),
         "retryRollout":
             MessageLookupByLibrary.simpleMessage("Opnieuw uitrollen"),
         "rollingOut": MessageLookupByLibrary.simpleMessage("Uitrollen"),
@@ -237,8 +224,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Er is een onverwachte fout opgetreden."),
         "unlock": MessageLookupByLibrary.simpleMessage("Ontgrendel"),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Verbose loggen"),
-        "yes": MessageLookupByLibrary.simpleMessage("Ja")
+        "verboseLogging": MessageLookupByLibrary.simpleMessage("Verbose loggen")
       };
 }

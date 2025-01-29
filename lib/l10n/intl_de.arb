@@ -369,11 +369,6 @@
       }
     }
   },
-  "yes": "Ja",
-  "no": "Nein",
-  "butDiscardIt": "aber verwerfen",
-  "declineIt": "ablehnen",
-  "requestTriggerdByUserQuestion": "Wurde diese Anfrage von Ihnen ausgelöst?",
   "cameraPermissionPermanentlyDenied": "Die Kamera-Berechtigung ist dauerhaft entzogen. Bitte erlauben Sie die Kamera-Berechtigung in den Systemeinstellungen.",
   "cameraPermissionPermanentlyDeniedButton": "Berechtigung erteilen",
   "decryptErrorTitle": "Entschlüsselung fehlgeschlagen",
@@ -385,10 +380,6 @@
   "settingsGroupGeneral": "Allgemeines",
   "licensesAndVersion": "Lizenzen und Version",
   "privacyPolicy": "Datenschutzerklärung",
-  "introScanQrCode": "Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die eduMFA Token.",
-  "introEditToken": "Hier können Sie den Namen des Tokens bearbeiten und einige Details einsehen.",
-  "introLockToken": "Um die Sicherheit noch weiter zu erhöhen, können Sie Token sperren.\nDer Token kann dann erst nach der Authentifizierung verwendet werden.",
-  "introPollForChallenges": "Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen.",
   "noMailAppTitle": "Keine Mail-App gefunden",
   "noMailAppDescription": "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können.",
   "authenticationRequest": "Authentifizierung",

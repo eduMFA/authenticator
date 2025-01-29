@@ -73,7 +73,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Biometrics not setup"),
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Authentication successful"),
-        "butDiscardIt": MessageLookupByLibrary.simpleMessage("but discard it"),
         "cameraPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
             "Camera permission is permanently denied. Please grant camera permission in the system settings."),
         "cameraPermissionPermanentlyDeniedButton":
@@ -93,7 +92,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Could not sign message."),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dark"),
         "decline": MessageLookupByLibrary.simpleMessage("Decline"),
-        "declineIt": MessageLookupByLibrary.simpleMessage("decline it"),
         "decryptErrorButtonDelete":
             MessageLookupByLibrary.simpleMessage("Delete"),
         "decryptErrorButtonRetry":
@@ -148,14 +146,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Go to settings"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authentication by credentials or biometrics is not set up on your device. Please set it up in the device\'s settings."),
-        "introEditToken": MessageLookupByLibrary.simpleMessage(
-            "Here you can edit the token name and see some details."),
-        "introLockToken": MessageLookupByLibrary.simpleMessage(
-            "To improve security even more, you can lock tokens.\nThen the token can only be used after authentication."),
-        "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
-            "You can check for new challenges by dragging down the token list."),
-        "introScanQrCode": MessageLookupByLibrary.simpleMessage(
-            "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens."),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licenses and version"),
@@ -165,7 +155,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometric authentication is disabled. Please lock and unlock your screen to enable it."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Log menu"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
-        "no": MessageLookupByLibrary.simpleMessage("No"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message."),
         "noMailAppTitle":
@@ -207,8 +196,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Request push challenges from the server periodically. Enable this if push challenges are not received normally."),
-        "requestTriggerdByUserQuestion": MessageLookupByLibrary.simpleMessage(
-            "Was this request triggered by you?"),
         "retryRollout": MessageLookupByLibrary.simpleMessage("Retry rollout"),
         "rollingOut": MessageLookupByLibrary.simpleMessage("Rolling out"),
         "rolloutCompleted":
@@ -250,7 +237,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("Upload QR Code"),
         "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Verbose logging"),
-        "yes": MessageLookupByLibrary.simpleMessage("Yes")
+            MessageLookupByLibrary.simpleMessage("Verbose logging")
       };
 }
