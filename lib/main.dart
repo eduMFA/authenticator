@@ -27,6 +27,7 @@ import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/utils/color_scheme_utils.dart';
 import 'package:edumfa_authenticator/utils/utils.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/about_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/appearance_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/push_token_view.dart';
 import 'package:flutter/foundation.dart';
@@ -106,6 +107,7 @@ class EduMFAAuthenticator extends ConsumerWidget {
               themeMode: EasyDynamicTheme.of(context).themeMode,
               initialRoute: SplashScreen.routeName,
               routes: {
+                AboutSettingsView.routeName: (context) => const AboutSettingsView(),
                 AppearanceSettingsView.routeName: (context) => const AppearanceSettingsView(),
                 LicenseView.routeName: (context) => const LicenseView(),
                 MainView.routeName: (context) => const MainView(),

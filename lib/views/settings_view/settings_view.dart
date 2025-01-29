@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/views/license_view/license_view.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/about_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/appearance_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/logging_menu.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/push_token_view.dart';
@@ -65,7 +66,7 @@ class SettingsView extends ConsumerView {
             SettingsTile(
               icon: Icons.info_outline,
               title: 'About',
-              onTap: () => null,
+              onTap: () => Navigator.pushNamed(context, AboutSettingsView.routeName),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -93,69 +94,66 @@ class SettingsView extends ConsumerView {
     );
 
     return Scaffold(
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SettingsGroup(
-              title: S.of(context).settingsGroupGeneral,
-              children: [
-                SettingsListTileButton(
-                  onPressed: () async {
-                    if (!await launchUrl(policyStatementUri)) {
-                      throw Exception('Could not launch $policyStatementUri');
-                    }
-                  },
-                  title: Text(
-                    S.of(context).privacyPolicy,
-                    style: TextTheme.of(context).titleMedium,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SettingsGroup(
+            title: S.of(context).settingsGroupGeneral,
+            children: [
+              SettingsListTileButton(
+                onPressed: () async {
+                  if (!await launchUrl(policyStatementUri)) {
+                    throw Exception('Could not launch $policyStatementUri');
+                  }
+                },
+                title: Text(
+                  S.of(context).privacyPolicy,
+                  style: TextTheme.of(context).titleMedium,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                ),
+              ),
+              SettingsListTileButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, LicenseView.routeName);
+                },
+                title: Text(
+                  S.of(context).licensesAndVersion,
+                  style: TextTheme.of(context).titleMedium,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                ),
+              )
+            ],
+          ),
+          const Divider(),
+          SettingsGroup(
+            title: S.of(context).errorLogTitle,
+            children: [
+              ListTile(
+                title: Text(
+                  S.of(context).logMenu,
+                  style: TextTheme.of(context).titleMedium,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                ),
+                style: ListTileStyle.list,
+                trailing: ElevatedButton(
+                  child: Text(
+                    S.of(context).open,
                     overflow: TextOverflow.fade,
                     softWrap: false,
+                  ),
+                  onPressed: () => showDialog(
+                    context: context,
+                    builder: (context) => const LoggingMenu(),
+                    useRootNavigator: false,
                   ),
                 ),
-                SettingsListTileButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LicenseView.routeName);
-                  },
-                  title: Text(
-                    S.of(context).licensesAndVersion,
-                    style: TextTheme.of(context).titleMedium,
-                    overflow: TextOverflow.fade,
-                    softWrap: false,
-                  ),
-                )
-              ],
-            ),
-            const Divider(),
-            SettingsGroup(
-              title: S.of(context).errorLogTitle,
-              children: [
-                ListTile(
-                  title: Text(
-                    S.of(context).logMenu,
-                    style: TextTheme.of(context).titleMedium,
-                    overflow: TextOverflow.fade,
-                    softWrap: false,
-                  ),
-                  style: ListTileStyle.list,
-                  trailing: ElevatedButton(
-                    child: Text(
-                      S.of(context).open,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    onPressed: () => showDialog(
-                      context: context,
-                      builder: (context) => const LoggingMenu(),
-                      useRootNavigator: false,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
