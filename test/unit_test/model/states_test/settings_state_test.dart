@@ -9,7 +9,6 @@ void _testSettingsState() {
   group('SettingsState', () {
     final state = SettingsState(
       isFirstRun: true,
-      hideOpts: true,
       enablePolling: true,
       crashReportRecipients: {'test'},
       verboseLogging: true,
@@ -23,7 +22,6 @@ void _testSettingsState() {
     test('copyWith', () {
       final newState = state.copyWith(
         isFirstRun: false,
-        hideOpts: false,
         enablePolling: false,
         crashReportRecipients: {'test2'},
         verboseLogging: false,

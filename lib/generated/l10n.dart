@@ -549,16 +549,6 @@ class S {
     );
   }
 
-  /// `Please authenticate to show one time password.`
-  String get authenticateToShowOtp {
-    return Intl.message(
-      'Please authenticate to show one time password.',
-      name: 'authenticateToShowOtp',
-      desc: 'Reason to authenticate when trying to view a one time password.',
-      args: [],
-    );
-  }
-
   /// `Please authenticate to change the lock status of the token.`
   String get authenticateToUnLockToken {
     return Intl.message(

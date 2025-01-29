@@ -56,8 +56,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Veuillez vous authentifier pour accepter la demande de connexion."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Veuillez vous authentifier pour refuser la demande de connexion."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Veuillez vous authentifier pour afficher un mot de passe à usage unique."),
         "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
             "Veuillez vous authentifier pour modifier l\'état de verrouillage du jeton."),
         "authenticationRequest":

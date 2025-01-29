@@ -53,8 +53,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Por favor, autentifíquese para aceptar la solicitud push."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Por favor, autentifíquese para rechazar la solicitud push."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Por favor, autentifíquese para mostrar la contraseña de una sola vez."),
         "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
             "Por favor, autentifíquese para cambiar el estado de bloqueo del token."),
         "authenticationRequest":

@@ -224,10 +224,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Pro zobrazení jednorázového kódu se přihlaste.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
-  },
   "authenticateToUnLockToken": "Pro změnu uzamčení tokenu se přihlaste.",
   "@authenticateToUnLockToken": {
     "description": "Reason to authenticate when trying to lock or unlock a token."

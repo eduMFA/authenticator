@@ -55,8 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pro přijetí požadavku na push notifikaci se přihlaste."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Pro odmítnutí požadavku na push notifikaci se přihlaste."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Pro zobrazení jednorázového kódu se přihlaste."),
         "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
             "Pro změnu uzamčení tokenu se přihlaste."),
         "authenticationRequest":

@@ -218,10 +218,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Authenticeer om het eenmalige wachtwoord te tonen.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
-  },
   "authenticateToUnLockToken": "Authenticeer om de vergrendeling van de token te wijzigen.",
   "@authenticateToUnLockToken": {
     "description": "Reason to authenticate when trying to lock or unlock a token."

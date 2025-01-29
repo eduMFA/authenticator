@@ -55,8 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Authenticeer om de push aanvraag te accepteren."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Authenticeer om de push aanvraag te weigeren."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Authenticeer om het eenmalige wachtwoord te tonen."),
         "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
             "Authenticeer om de vergrendeling van de token te wijzigen."),
         "authenticationRequest":

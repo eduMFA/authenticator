@@ -28,8 +28,7 @@ class DefaultLockAction extends TokenAction {
               name: 'token_widgets.dart#_changeLockStatus');
 
           globalRef?.read(tokenProvider.notifier).updateToken(token, (p0) =>
-              p0.copyWith(
-                  isLocked: !token.isLocked, isHidden: !token.isLocked));
+              p0.copyWith(isLocked: !token.isLocked));
         });
   }
 }

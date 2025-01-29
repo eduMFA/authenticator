@@ -55,8 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Uwierzytelnij, aby zaakceptować żądanie push."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Uwierzytelnij, aby odrzucić żądanie push."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Zweryfikuj tożsamość, by pokazać hasło jednorazowe."),
         "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
             "Zweryfikuj tożsamość, aby odblokować / zablokować token."),
         "authenticationRequest":

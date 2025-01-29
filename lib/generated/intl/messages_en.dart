@@ -60,8 +60,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please authenticate to accept the push request."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Please authenticate to decline the push request."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Please authenticate to show one time password."),
         "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
             "Please authenticate to change the lock status of the token."),
         "authenticationRequest":
