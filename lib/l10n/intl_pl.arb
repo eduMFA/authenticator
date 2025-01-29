@@ -220,10 +220,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Zweryfikuj tożsamość, by pokazać hasło jednorazowe.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
-  },
   "authenticateToUnLockToken": "Zweryfikuj tożsamość, aby odblokować / zablokować token.",
   "@authenticateToUnLockToken": {
     "description": "Reason to authenticate when trying to lock or unlock a token."
@@ -384,11 +380,7 @@
       }
     }
   },
-  "yes": "Tak",
-  "no": "Nie",
   "butDiscardIt": "ale odrzucić go",
-  "declineIt": "odrzuć go",
-  "requestTriggerdByUserQuestion": "Czy ta prośba została wywołana przez Ciebie?",
   "cameraPermissionPermanentlyDenied": null,
   "cameraPermissionPermanentlyDeniedButton": null,
   "decryptErrorTitle": null,
@@ -400,10 +392,6 @@
   "settingsGroupGeneral": "Informacje ogólne",
   "licensesAndVersion": "Licencje i wersja",
   "privacyPolicy": "Polityka prywatności",
-  "introScanQrCode": "Możesz skanować kody QR, aby dodawać tokeny. Obsługujemy każdy popularny token uwierzytelniania dwuskładnikowego, a także tokeny eduMFA.",
-  "introEditToken": "Tutaj możesz edytować nazwę tokena i zobaczyć kilka szczegółów.",
-  "introLockToken": "Aby jeszcze bardziej zwiększyć bezpieczeństwo, możesz zablokować tokeny. Wtedy token może być używany tylko po uwierzytelnieniu.",
-  "introPollForChallenges": "Możesz sprawdzić nowe wyzwania, przeciągając listę tokenów w dół.",
   "noMailAppTitle": "Nie znaleziono aplikacji pocztowej",
   "noMailAppDescription": "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail",
   "authenticationRequest": "Żądanie uwierzytelnienia",

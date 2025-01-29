@@ -14,8 +14,6 @@ abstract class Token {
   final String id; // this is the identifier of the token
   final bool pin;
   final bool isLocked;
-  final bool isHidden;
-  Duration get showDuration;
   final String? tokenImage;
 
   final TokenOriginData? origin;
@@ -45,10 +43,8 @@ abstract class Token {
     this.origin,
     bool? pin,
     bool? isLocked,
-    bool? isHidden,
   })  : // when pin is true isLocked is also true otherwise it's the value of isLocked if it is null it's false
         isLocked = pin != null && pin ? true : isLocked ?? false,
-        isHidden = (pin != null && pin ? true : isLocked ?? false) == false ? false : isHidden ?? false,
         pin = pin ?? false;
 
   /// If the type and the id are the same the tokens it is the same token (== operator).
@@ -68,7 +64,6 @@ abstract class Token {
     String? issuer,
     String? id,
     bool? isLocked,
-    bool? isHidden,
     bool? pin,
     String? tokenImage,
     TokenOriginData? origin,
@@ -89,7 +84,6 @@ abstract class Token {
         'id: $id, '
         'pin: $pin, '
         'isLocked: $isLocked, '
-        'isHidden: $isHidden, '
         'tokenImage: $tokenImage, '
         'type: $type, '
         'origin: $origin, ';

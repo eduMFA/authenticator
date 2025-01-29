@@ -221,10 +221,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Please authenticate to show one time password.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
-  },
   "authenticateToUnLockToken": "Please authenticate to change the lock status of the token.",
   "@authenticateToUnLockToken": {
     "description": "Reason to authenticate when trying to lock or unlock a token."
@@ -382,11 +378,6 @@
       }
     }
   },
-  "yes": "Yes",
-  "no": "No",
-  "butDiscardIt": "but discard it",
-  "declineIt": "decline it",
-  "requestTriggerdByUserQuestion": "Was this request triggered by you?",
   "cameraPermissionPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in the system settings.",
   "cameraPermissionPermanentlyDeniedButton": "Grant permission",
   "decryptErrorTitle": "Decryption error",
@@ -398,10 +389,6 @@
   "settingsGroupGeneral": "General",
   "licensesAndVersion": "Licenses and version",
   "privacyPolicy": "Privacy policy",
-  "introScanQrCode": "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.",
-  "introEditToken": "Here you can edit the token name and see some details.",
-  "introLockToken": "To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.",
-  "introPollForChallenges": "You can check for new challenges by dragging down the token list.",
   "noMailAppTitle": "No mail app found",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Authentication request",

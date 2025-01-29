@@ -35,7 +35,6 @@ PushToken _$PushTokenFromJson(Map<String, dynamic> json) => PushToken(
       tokenImage: json['tokenImage'] as String?,
       pin: json['pin'] as bool?,
       isLocked: json['isLocked'] as bool?,
-      isHidden: json['isHidden'] as bool?,
       origin: json['origin'] == null
           ? null
           : TokenOriginData.fromJson(json['origin'] as Map<String, dynamic>),
@@ -47,7 +46,6 @@ Map<String, dynamic> _$PushTokenToJson(PushToken instance) => <String, dynamic>{
       'id': instance.id,
       'pin': instance.pin,
       'isLocked': instance.isLocked,
-      'isHidden': instance.isHidden,
       'tokenImage': instance.tokenImage,
       'origin': instance.origin,
       'type': instance.type,
