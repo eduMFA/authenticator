@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
 import 'package:edumfa_authenticator/model/tokens/push_token.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widgets/push_token_widget_tile.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widgets/rollout_failed_widget.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widgets/rollout_widget.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widget_tile.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/rollout_failed_widget.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/rollout_widget.dart';
 import 'package:flutter/material.dart';
 
 

@@ -2,7 +2,7 @@ import 'package:edumfa_authenticator/model/tokens/push_token.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/no_token_screen.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/poll_loading_indicator.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widgets/push_token_widget.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widget.dart';
 import 'package:edumfa_authenticator/widgets/conditional_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
