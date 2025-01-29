@@ -24,15 +24,6 @@ class TokensView extends ConsumerStatefulView {
 
 class TokensViewState extends ConsumerState<TokensView> {
 
-  void showAddTokenSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      showDragHandle: true,
-      builder: (context) => const AddTokenSheetWidget(),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +48,15 @@ class TokensViewState extends ConsumerState<TokensView> {
           child: TokensList(),
         ),
       ),
+    );
+  }
+
+  void showAddTokenSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (context) => const AddTokenSheetWidget(),
     );
   }
 }
