@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Neuen Push-Token verknüpfen"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Alle Token wurden synchronisiert."),
+        "appearance": MessageLookupByLibrary.simpleMessage("Erscheinungsbild"),
         "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
             "Diese Aktion erfordert, dass auf dem Gerät ein Passwort oder Biometrie eingerichtet ist."),
         "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(

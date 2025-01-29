@@ -89,6 +89,10 @@
   "@settings": {
     "description": "Button to open the settings page."
   },
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
+  },
   "pushToken": "Push Token",
   "@pushToken": {
     "description": "Title for the settings block concerning the push tokens."

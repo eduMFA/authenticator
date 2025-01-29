@@ -18,7 +18,7 @@ class AppearanceSettingsView extends StatelessView {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Appearance'),
+        title: Text(S.of(context).appearance),
       ),
       body: SingleChildScrollView(
         child: Column(

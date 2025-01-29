@@ -263,6 +263,16 @@ class S {
     );
   }
 
+  /// `Appearance`
+  String get appearance {
+    return Intl.message(
+      'Appearance',
+      name: 'appearance',
+      desc: 'Title of the setting group where the theme can be selected.',
+      args: [],
+    );
+  }
+
   /// `Push Token`
   String get pushToken {
     return Intl.message(

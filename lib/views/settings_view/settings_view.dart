@@ -47,7 +47,7 @@ class SettingsView extends ConsumerView {
           children: [
             SettingsTile(
               icon: Icons.remove_red_eye_outlined,
-              title: 'Appearance',
+              title: S.of(context).appearance,
               onTap: () => Navigator.pushNamed(context, AppearanceSettingsView.routeName),
             ),
             SettingsTile(
