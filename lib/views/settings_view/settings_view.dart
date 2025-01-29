@@ -27,6 +27,7 @@ class SettingsView extends ConsumerView {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Per-App language setting is only available for iOS and Android 13+
     bool showLanguageSettings = true;
     if (!kIsWeb && Platform.isAndroid) {
       DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
