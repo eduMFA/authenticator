@@ -15,9 +15,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:edumfa_authenticator/utils/app_info_utils.dart';
 import 'package:edumfa_authenticator/utils/pi_mailer.dart';
 
-import '../views/settings_view/settings_view_widgets/send_error_dialog.dart';
-import 'globals.dart';
-import 'riverpod_providers.dart';
+import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/send_error_dialog.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 
 final provider = Provider<int>((ref) => 0);
 

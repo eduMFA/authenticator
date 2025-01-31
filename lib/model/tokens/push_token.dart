@@ -3,16 +3,16 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:pointycastle/asymmetric/api.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../utils/custom_int_buffer.dart';
-import '../../utils/identifiers.dart';
-import '../../utils/rsa_utils.dart';
-import '../enums/push_token_rollout_state.dart';
-import '../enums/token_types.dart';
-import '../extensions/enum_extension.dart';
-import '../push_request.dart';
-import '../push_request_queue.dart';
-import '../token_origin.dart';
-import 'token.dart';
+import 'package:edumfa_authenticator/utils/custom_int_buffer.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
+import 'package:edumfa_authenticator/model/enums/token_types.dart';
+import 'package:edumfa_authenticator/model/extensions/enum_extension.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/push_request_queue.dart';
+import 'package:edumfa_authenticator/model/token_origin.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
 
 part 'push_token.g.dart';
 
@@ -21,9 +21,6 @@ class PushToken extends Token {
   static RsaUtils rsaParser = const RsaUtils();
   final DateTime? expirationDate;
   final String serial;
-
-  @override
-  Duration get showDuration => Duration.zero;
 
   // Roll out
   final bool sslVerify;
@@ -86,7 +83,6 @@ class PushToken extends Token {
     super.tokenImage,
     super.pin,
     super.isLocked,
-    super.isHidden,
     super.origin,
   })  : isRolledOut = isRolledOut ?? false,
         sslVerify = sslVerify ?? false,
@@ -120,7 +116,6 @@ class PushToken extends Token {
     PushRequestQueue? pushRequests,
     bool? pin,
     bool? isLocked,
-    bool? isHidden,
     bool? sslVerify,
     String? enrollmentCredentials,
     Uri? url,
@@ -142,7 +137,6 @@ class PushToken extends Token {
       pushRequests: pushRequests ?? this.pushRequests,
       pin: pin ?? this.pin,
       isLocked: isLocked ?? this.isLocked,
-      isHidden: isHidden ?? this.isHidden,
       sslVerify: sslVerify ?? this.sslVerify,
       enrollmentCredentials: enrollmentCredentials ?? this.enrollmentCredentials,
       url: url ?? this.url,
@@ -211,7 +205,7 @@ class PushToken extends Token {
       PushTokenRollOutState.parsingResponse || PushTokenRollOutState.parsingResponseFailed => PushTokenRollOutState.parsingResponseFailed,
       PushTokenRollOutState.rolloutComplete => PushTokenRollOutState.rolloutComplete,
     };
-    return newToken.copyWith(rolloutState: currentRolloutState, isHidden: true);
+    return newToken.copyWith(rolloutState: currentRolloutState);
   }
 
   Map<String, dynamic> toJson() => _$PushTokenToJson(this);

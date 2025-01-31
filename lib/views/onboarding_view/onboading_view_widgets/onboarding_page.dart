@@ -24,7 +24,7 @@ class OnboardingPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 27.0,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).textTheme.titleMedium?.color,
+                  color: TextTheme.of(context).titleMedium?.color,
                 ),
               ),
             ),
@@ -39,7 +39,7 @@ class OnboardingPage extends StatelessWidget {
                   subtitle,
                   style: TextStyle(
                     fontSize: 17.0,
-                    color: Theme.of(context).textTheme.titleMedium?.color,
+                    color: TextTheme.of(context).titleMedium?.color,
                   ),
                   textAlign: TextAlign.center,
                 ),

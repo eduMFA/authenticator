@@ -38,4 +38,8 @@ Future<GlobalKey<NavigatorState>> _getContextedGlobalNavigatorKey() async {
   }
 }
 
+final appName = 'eduMFA Authenticator';
+final brandColor = const Color(0xFF768FFC);
+final websiteUri = Uri.parse("https://edumfa.io/");
 final policyStatementUri = Uri.parse("https://edumfa.io/app-privacy");
+final githubUri = Uri.parse("https://github.com/eduMFA/authenticator");

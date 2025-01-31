@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/globals.dart';
-import '../../../utils/logger.dart';
-import '../scheme_processor_interface.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/processors/scheme_processors/scheme_processor_interface.dart';
 
 abstract class NavigationSchemeProcessor implements SchemeProcessor {
   const NavigationSchemeProcessor();

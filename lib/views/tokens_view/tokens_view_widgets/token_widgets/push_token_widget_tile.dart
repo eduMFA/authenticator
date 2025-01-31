@@ -1,47 +1,60 @@
+import 'dart:typed_data';
+
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_delete_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_edit_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_lock_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_action.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 
-final disableCopyOtpProvider = StateProvider<bool>((ref) => false);
+class PushTokenWidgetTile extends ConsumerWidget {
+  final PushToken token;
 
-class TokenWidgetTile extends ConsumerWidget {
-  final Widget title;
-  final String? subtitle;
-  final Widget? trailing;
-  final String? tokenImage;
-  final VoidCallback? onLongPress;
-
-
-  const TokenWidgetTile({
-    required this.title,
-    this.subtitle,
-    this.trailing,
-    this.tokenImage,
-    this.onLongPress,
-    super.key,
-  });
+  const PushTokenWidgetTile(this.token, {super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) => Padding(
-    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-    child: ListTile(
-          leading: (tokenImage != null) ? TokenImage(tokenImage: tokenImage) : null,
-          title: title,
-          subtitle: subtitle != null
-              ? Text(
-                subtitle!,
+  Widget build(BuildContext context, WidgetRef ref) {
+
+    final List<TokenAction> menuEntries = [
+      DefaultDeleteAction(token: token, key: Key('${token.id}deleteAction')),
+      DefaultEditAction(token: token, key: Key('${token.id}editAction')),
+    ];
+
+    if (!token.pin) {
+      menuEntries.add(
+        DefaultLockAction(token: token, key: Key('${token.id}lockAction')),
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+      child: ListTile(
+        key: Key('${token.hashCode}TokenWidgetTile'),
+        leading: (token.tokenImage != null) ? TokenImage(tokenImage: token.tokenImage) : null,
+        title: Text(
+          token.label.isNotEmpty ? token.label : token.serial,
+          style: TextTheme.of(context).titleMedium,
+          overflow: TextOverflow.ellipsis,
+        ),
+        subtitle: (token.issuer.isNotEmpty)
+            ? Text(
+                token.issuer,
                 overflow: TextOverflow.fade,
                 softWrap: false,
-              )
-              : const SizedBox(),
-          trailing: trailing ?? const SizedBox(),
-          onLongPress: onLongPress,
-          tileColor: Theme.of(context).colorScheme.surfaceContainer,
-          textColor: Theme.of(context).colorScheme.onSecondaryContainer,
-          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
+            )
+            : null,
+        trailing: PopupMenuButton<String>(
+          onSelected: (value) {},
+          itemBuilder: (context) => menuEntries.map((e) => e.build(context, ref)).toList(),
         ),
-  );
+        tileColor: ColorScheme.of(context).surfaceContainer,
+        textColor: ColorScheme.of(context).onSecondaryContainer,
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
+      ),
+    );
+  }
 }
 
 final tokenImages = <String?, Uint8List?>{};
@@ -151,6 +164,7 @@ class _TokenImageState extends State<TokenImage> {
                   width: 32,
                   child: CircularProgressIndicator(),
                 ),
-          ))
+          ),
+      )
       : const SizedBox();
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'globals.dart';
-import 'logger.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
 
 /// Shows a snackbar message to the user for a given `Duration`.
 void showMessage({

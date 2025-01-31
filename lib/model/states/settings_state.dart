@@ -1,6 +1,6 @@
 import 'package:version/version.dart';
 
-import '../../utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
 
 /// This class contains all device specific settings.
 class SettingsState {
@@ -19,7 +19,6 @@ class SettingsState {
 
   SettingsState({
     bool? isFirstRun,
-    bool? hideOpts,
     bool? enablePolling,
     Set<String>? crashReportRecipients,
     bool? verboseLogging,
@@ -32,7 +31,6 @@ class SettingsState {
 
   SettingsState copyWith({
     bool? isFirstRun,
-    bool? hideOpts,
     bool? enablePolling,
     Set<String>? crashReportRecipients,
     bool? verboseLogging,

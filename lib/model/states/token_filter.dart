@@ -1,5 +1,5 @@
-import '../tokens/push_token.dart';
-import '../tokens/token.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
 
 class TokenFilter {
   String searchQuery;

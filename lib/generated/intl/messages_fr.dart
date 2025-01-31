@@ -56,8 +56,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Veuillez vous authentifier pour accepter la demande de connexion."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Veuillez vous authentifier pour refuser la demande de connexion."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Veuillez vous authentifier pour afficher un mot de passe à usage unique."),
         "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
             "Veuillez vous authentifier pour modifier l\'état de verrouillage du jeton."),
         "authenticationRequest":
@@ -70,7 +68,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "La biométrie n\'est pas configurée"),
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Authentification réussie"),
-        "butDiscardIt": MessageLookupByLibrary.simpleMessage("mais l\'écarter"),
         "cameraPermissionPermanentlyDeniedButton":
             MessageLookupByLibrary.simpleMessage("Accorder l\'autorisation"),
         "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
@@ -88,7 +85,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Impossible de signer le message."),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Thème sombre"),
         "decline": MessageLookupByLibrary.simpleMessage("Refuser"),
-        "declineIt": MessageLookupByLibrary.simpleMessage("refuser"),
         "decryptErrorButtonDelete":
             MessageLookupByLibrary.simpleMessage("Supprimer"),
         "decryptErrorButtonRetry":
@@ -144,12 +140,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Aller aux paramètres"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "L\'authentification par identifiants ou biométrie n\'est pas configurée sur votre appareil. Veuillez le configurer dans les paramètres de l\'appareil."),
-        "introEditToken": MessageLookupByLibrary.simpleMessage(
-            "Ici, vous pouvez modifier le nom du token et voir quelques détails"),
-        "introLockToken": MessageLookupByLibrary.simpleMessage(
-            "Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu\'après l\'authentification."),
-        "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
-            "Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas"),
         "language": MessageLookupByLibrary.simpleMessage("Langue"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licences et version"),
@@ -159,7 +149,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "L\'authentification biométrique est désactivée. Veuillez verrouiller et déverrouiller votre écran pour l\'activer."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Menu du journal"),
         "name": MessageLookupByLibrary.simpleMessage("Nom"),
-        "no": MessageLookupByLibrary.simpleMessage("Non"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Aucune application de messagerie n\'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d\'envoyer un message électronique."),
         "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
@@ -202,8 +191,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Demander des challenges push depuis le serveur périodiquement. Activer cette fonction si les challenges push ne sont pas reçus normalement."),
-        "requestTriggerdByUserQuestion": MessageLookupByLibrary.simpleMessage(
-            "Cette demande a-t-elle été déclenchée par vous ?"),
         "retryRollout":
             MessageLookupByLibrary.simpleMessage("Réessayer le déploiement"),
         "rollingOut":
@@ -238,8 +225,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Synchroniser les jetons Push avec le serveur eduMFA."),
         "synchronizingTokens":
             MessageLookupByLibrary.simpleMessage("Synchroniser les jetons."),
-        "systemTheme": MessageLookupByLibrary.simpleMessage(
-            "Utiliser le thème de l\'appareil"),
         "theme": MessageLookupByLibrary.simpleMessage("Thème"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Ces jetons ne supportent pas la synchronisation et doivent être de nouveau générés:"),
@@ -247,7 +232,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Une erreur inattendue s\'est produite."),
         "unlock": MessageLookupByLibrary.simpleMessage("Ouvrir"),
         "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Journalisation verbeuse"),
-        "yes": MessageLookupByLibrary.simpleMessage("Oui")
+            MessageLookupByLibrary.simpleMessage("Journalisation verbeuse")
       };
 }

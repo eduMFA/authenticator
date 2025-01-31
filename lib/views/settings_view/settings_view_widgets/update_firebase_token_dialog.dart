@@ -26,10 +26,10 @@ import 'package:flutter/material.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/view_utils.dart';
 
-import '../../../model/tokens/push_token.dart';
-import '../../../utils/globals.dart';
-import '../../../utils/push_provider.dart';
-import '../../../widgets/dialog_widgets/default_dialog.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
 
 class UpdateFirebaseTokenDialog extends StatefulWidget {
   const UpdateFirebaseTokenDialog({super.key});

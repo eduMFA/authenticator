@@ -3,8 +3,8 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../utils/logger.dart';
-import '../../../utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 
 class ConnectivityListener extends ConsumerWidget {
   final Widget child;

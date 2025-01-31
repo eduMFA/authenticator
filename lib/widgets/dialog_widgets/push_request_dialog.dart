@@ -1,12 +1,12 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-import '../../model/tokens/push_token.dart';
-import '../../utils/globals.dart';
-import '../../utils/lock_auth.dart';
-import '../../utils/riverpod_providers.dart';
-import '../press_button.dart';
-import 'default_dialog.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/lock_auth.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/widgets/press_button.dart';
+import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
 
 class PushRequestDialog extends StatefulWidget {
   final PushToken tokenWithPushRequest;
@@ -18,7 +18,7 @@ class PushRequestDialog extends StatefulWidget {
 }
 
 class _PushRequestDialogState extends State<PushRequestDialog> {
-  double get lineHeight => Theme.of(context).textTheme.titleLarge?.fontSize ?? 16;
+  double get lineHeight => TextTheme.of(context).titleLarge?.fontSize ?? 16;
 
   bool isHandled = false;
   bool dialogIsOpen = false;
@@ -47,7 +47,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
       child: DefaultDialog(
         title: Text(
           S.of(context).authenticationRequest,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+          style: TextTheme.of(context).titleLarge?.copyWith(fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
         content: Column(
@@ -59,14 +59,14 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                 widget.tokenWithPushRequest.issuer,
                 widget.tokenWithPushRequest.label,
               ),
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: TextTheme.of(context).bodyLarge,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: lineHeight),
             if (question != null) ...[
               Text(
                 question,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: TextTheme.of(context).bodyLarge,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: lineHeight),
@@ -86,7 +86,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                         Text(
                           S.of(context).accept,
                           
-                          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.green.shade900),
+                          style: TextTheme.of(context).titleMedium?.copyWith(color: Colors.green.shade900),
                           textAlign: TextAlign.center,
                           maxLines: 1,
                         ),
@@ -108,7 +108,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
                         children: [
                           Text(
                             S.of(context).decline,
-                            style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.red.shade900),
+                            style: TextTheme.of(context).titleMedium?.copyWith(color: Colors.red.shade900),
                             textAlign: TextAlign.center,
                           ),
                           Icon(
@@ -149,7 +149,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   //      return DefaultDialog(
   //        title: Text(
   //          S.of(context).authenticationRequest,
-  //          style: Theme.of(context).textTheme.titleLarge!,
+  //          style: TextTheme.of(context).titleLarge!,
   //          textAlign: TextAlign.center,
   //        ),
   //        content: Column(
@@ -158,7 +158,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   //          children: [
   //            Text(
   //              S.of(context).requestTriggerdByUserQuestion,
-  //              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: Theme.of(context).textTheme.titleMedium?.fontSize),
+  //              style: TextTheme.of(context).bodyLarge?.copyWith(fontSize: TextTheme.of(context).titleMedium?.fontSize),
   //              textAlign: TextAlign.center,
   //            ),
   //            SizedBox(height: lineHeight),
@@ -180,15 +180,15 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   //                      children: [
   //                        Text(
   //                          S.of(context).yes,
-  //                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
+  //                          style: TextTheme.of(context).bodyLarge?.copyWith(color: ColorScheme.of(context).onPrimary),
   //                          textAlign: TextAlign.center,
   //                        ),
   //                        FittedBox(
   //                          fit: BoxFit.scaleDown,
   //                          child: Text(
   //                            S.of(context).butDiscardIt,
-  //                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-  //                                  color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800),
+  //                            style: TextTheme.of(context).bodySmall?.copyWith(
+  //                                  color: ColorScheme.of(context).onPrimary.mixWith(Colors.grey.shade800),
   //                                ),
   //                            textAlign: TextAlign.center,
   //                            softWrap: false,
@@ -202,7 +202,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   //                Expanded(
   //                  flex: 6,
   //                  child: PressButton(
-  //                    style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Theme.of(context).colorScheme.errorContainer)),
+  //                    style: ButtonStyle(backgroundColor: WidgetStateProperty.all(ColorScheme.of(context).errorContainer)),
   //                    onPressed: () {
   //                      //TODO: Notify issuer
   //                      globalRef?.read(pushRequestProvider.notifier).declinePop(token);
@@ -214,13 +214,13 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   //                      children: [
   //                        Text(
   //                          S.of(context).no,
-  //                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
+  //                          style: TextTheme.of(context).bodyLarge?.copyWith(color: ColorScheme.of(context).onPrimary),
   //                          textAlign: TextAlign.center,
   //                        ),
   //                        Text(
   //                          S.of(context).declineIt,
   //                          style:
-  //                              Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.onPrimary.mixWith(Colors.grey.shade800)),
+  //                              TextTheme.of(context).bodySmall?.copyWith(color: ColorScheme.of(context).onPrimary.mixWith(Colors.grey.shade800)),
   //                          textAlign: TextAlign.center,
   //                          softWrap: false,
   //                        ),

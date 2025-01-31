@@ -7,7 +7,6 @@ import 'package:edumfa_authenticator/main.dart';
 import 'package:edumfa_authenticator/model/enums/token_types.dart';
 import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
-import 'package:edumfa_authenticator/utils/app_customizer.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 
 import '../test/tests_app_wrapper.dart';
@@ -33,7 +32,7 @@ void main() {
           settingsProvider.overrideWith((ref) => SettingsNotifier(repository: mockSettingsRepository)),
           tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
         ],
-        child: EduMFAAuthenticator(customization: ApplicationCustomization.defaultCustomization),
+        child: const EduMFAAuthenticator(),
       ));
 
       await _introToMainView(tester);

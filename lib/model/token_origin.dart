@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'enums/token_origin_source_type.dart';
+import 'package:edumfa_authenticator/model/enums/token_origin_source_type.dart';
 
 part 'token_origin.g.dart';
 

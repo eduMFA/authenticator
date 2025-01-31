@@ -31,17 +31,17 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:http/http.dart';
 
-import '../model/push_request.dart';
-import '../model/tokens/push_token.dart';
-import '../repo/secure_token_repository.dart';
-import '../state_notifiers/push_request_notifier.dart';
-import 'firebase_utils.dart';
-import 'globals.dart';
-import 'logger.dart';
-import 'network_utils.dart';
-import 'riverpod_providers.dart';
-import 'rsa_utils.dart';
-import 'utils.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/repo/secure_token_repository.dart';
+import 'package:edumfa_authenticator/state_notifiers/push_request_notifier.dart';
+import 'package:edumfa_authenticator/utils/firebase_utils.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/network_utils.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
 
 /// This class bundles all logic that is needed to handle incomig PushRequests, e.g.,
 /// firebase, polling, notifications.

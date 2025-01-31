@@ -12,26 +12,25 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 import 'package:pointycastle/asymmetric/api.dart';
-import '../model/enums/token_origin_source_type.dart';
+import 'package:edumfa_authenticator/model/enums/token_origin_source_type.dart';
 
-import '../interfaces/repo/token_repository.dart';
-import '../model/enums/push_token_rollout_state.dart';
-import '../model/push_request.dart';
-import '../model/states/token_state.dart';
-import '../model/tokens/push_token.dart';
-import '../model/tokens/token.dart';
-import '../processors/scheme_processors/token_import_scheme_processors/token_import_scheme_processor_interface.dart';
-import '../repo/secure_token_repository.dart';
-import '../utils/firebase_utils.dart';
-import '../utils/globals.dart';
-import '../utils/identifiers.dart';
-import '../utils/lock_auth.dart';
-import '../utils/logger.dart';
-import '../utils/network_utils.dart';
-import '../utils/riverpod_providers.dart';
-import '../utils/rsa_utils.dart';
-import '../utils/utils.dart';
-import '../utils/view_utils.dart';
+import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart';
+import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
+import 'package:edumfa_authenticator/model/push_request.dart';
+import 'package:edumfa_authenticator/model/states/token_state.dart';
+import 'package:edumfa_authenticator/model/tokens/push_token.dart';
+import 'package:edumfa_authenticator/model/tokens/token.dart';
+import 'package:edumfa_authenticator/processors/scheme_processors/token_import_scheme_processors/token_import_scheme_processor_interface.dart';
+import 'package:edumfa_authenticator/repo/secure_token_repository.dart';
+import 'package:edumfa_authenticator/utils/firebase_utils.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
+import 'package:edumfa_authenticator/utils/identifiers.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/network_utils.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/rsa_utils.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
+import 'package:edumfa_authenticator/utils/view_utils.dart';
 
 class TokenNotifier extends StateNotifier<TokenState> {
   static final Map<String, Timer> _timers = {};
@@ -181,48 +180,6 @@ class TokenNotifier extends StateNotifier<TokenState> {
       return updatedTokens;
     });
     return (await updatingTokens)?.whereType<T>().toList() ?? [];
-  }
-
-  Future<void> hideToken(Token token) async {
-    await updatingTokens;
-    updatingTokens = Future(() async {
-      await loadingRepo;
-      token = state.currentOf(token)?.copyWith(isHidden: true) ?? token.copyWith(isHidden: true);
-      return await _replaceTokens([token]);
-    });
-    await updatingTokens;
-  }
-
-  Future<bool> showToken(Token token) async {
-    await updatingTokens;
-    log('showToken');
-    updatingTokens = Future(() async {
-      final authenticated = await lockAuth(localizedReason: S.of(globalNavigatorKey.currentContext!).authenticateToShowOtp);
-      log('authenticated: $authenticated');
-      if (!authenticated) return null;
-      await loadingRepo;
-      token = state.currentOf(token)?.copyWith(isHidden: false) ?? token.copyWith(isHidden: false);
-      log('token: $token');
-      return _addOrReplaceTokens([token]);
-    });
-    final authenticated = (await updatingTokens)?.isNotEmpty ?? false;
-    log('authenticated_2: $authenticated');
-    _timers[token.id]?.cancel();
-    _timers[token.id] = Timer(token.showDuration, () async {
-      log('hideToken');
-      await hideToken(token);
-      log('hideToken_2');
-    });
-    return authenticated;
-  }
-
-  Future<bool> showTokenById(String tokenId) async {
-    await updatingTokens;
-    final token = getTokenFromId(tokenId);
-    if (token != null) {
-      return await showToken(token);
-    }
-    return false;
   }
 
   Future<void> addOrReplaceToken(Token token) async {

@@ -3,8 +3,8 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../utils/riverpod_providers.dart';
-import '../utils/utils.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
 
 class StatusBar extends ConsumerStatefulWidget {
   final Widget child;
@@ -140,8 +140,8 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
     }
 
     final maxWidth = MediaQuery.of(context).size.width - margin * 2 - padding * 2;
-    final statusTextStyle = Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.white) ?? const TextStyle();
-    final statusSubTextStyle = Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.white) ?? const TextStyle();
+    final statusTextStyle = TextTheme.of(context).bodyLarge?.copyWith(color: Colors.white) ?? const TextStyle();
+    final statusSubTextStyle = TextTheme.of(context).bodySmall?.copyWith(color: Colors.white) ?? const TextStyle();
     final statusTextHeight = textSizeOf(widget.statusText, statusTextStyle, maxWidth: maxWidth).height;
     final statusSubTextHeight = widget.statusSubText != null ? textSizeOf(widget.statusSubText!, statusSubTextStyle, maxWidth: maxWidth).height : 0;
     return AnimatedPositioned(
@@ -181,7 +181,7 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(padding),
-                    color: Theme.of(context).colorScheme.error,
+                    color: ColorScheme.of(context).error,
                   ),
                   padding: const EdgeInsets.all(padding),
                   child: SizedBox(
@@ -211,7 +211,7 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
                       margin: const EdgeInsets.symmetric(horizontal: padding / 3 * 2),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(1.5),
-                        color: Theme.of(context).colorScheme.primary,
+                        color: ColorScheme.of(context).primary,
                       ),
                       height: 3,
                       width: autoDismissAnimation.value * (maxWidth + padding / 3 * 2),

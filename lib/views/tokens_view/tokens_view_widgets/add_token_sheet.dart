@@ -56,9 +56,6 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
-
     return Container(
       constraints: const BoxConstraints(minHeight: 0),
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -68,7 +65,7 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
           children: [
             Text(
               S.of(context).addTokenTitle,
-              style: textTheme.headlineMedium!.copyWith(
+              style: TextTheme.of(context).headlineMedium?.copyWith(
                   fontWeight: FontWeight.bold
               ),
               textAlign: TextAlign.center,
@@ -76,7 +73,7 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
             const SizedBox(height: 8),
             Text(
               S.of(context).addTokenSubtitle,
-              style: textTheme.titleSmall,
+              style: TextTheme.of(context).titleSmall,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 24),
@@ -86,7 +83,7 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
               children: [
                 Expanded(
                   child: Divider(
-                    color: colorScheme.outlineVariant,
+                    color: ColorScheme.of(context).outlineVariant,
                     thickness: 1,
                   ),
                 ),
@@ -94,15 +91,15 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
                     S.of(context).or,
-                    style: textTheme.labelLarge?.copyWith(
-                      color: colorScheme.outline,
+                    style: TextTheme.of(context).labelLarge?.copyWith(
+                      color: ColorScheme.of(context).outline,
                       letterSpacing: 1.5,
                     ),
                   ),
                 ),
                 Expanded(
                   child: Divider(
-                    color: colorScheme.outlineVariant,
+                    color: ColorScheme.of(context).outlineVariant,
                     thickness: 1,
                   ),
                 ),

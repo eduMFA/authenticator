@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/logger.dart';
-import '../../../utils/push_provider.dart';
+import 'package:edumfa_authenticator/utils/logger.dart';
+import 'package:edumfa_authenticator/utils/push_provider.dart';
 
 /// This widget is polling for challenges and closes itself when the polling is done.
 class PollLoadingIndicator extends StatelessWidget {
@@ -39,7 +39,7 @@ class PollLoadingIndicator extends StatelessWidget {
             borderRadius: BorderRadius.circular(99),
             boxShadow: [
               BoxShadow(
-                color: Theme.of(context).shadowColor.withAlpha(77),  // 30%
+                color: Theme.of(context).shadowColor.withValues(alpha: 0.3),
                 blurRadius: 2,
                 offset: const Offset(0, 2),
               ),

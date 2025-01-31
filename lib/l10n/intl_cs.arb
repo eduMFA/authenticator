@@ -110,9 +110,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Použít nastavení systému",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Povolit polling",
   "@enablePolling": {
@@ -223,10 +223,6 @@
   "language": "Jazyk",
   "@language": {
     "description": "Title of language setting group."
-  },
-  "authenticateToShowOtp": "Pro zobrazení jednorázového kódu se přihlaste.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
   },
   "authenticateToUnLockToken": "Pro změnu uzamčení tokenu se přihlaste.",
   "@authenticateToUnLockToken": {
@@ -390,11 +386,6 @@
       }
     }
   },
-  "yes": "Ano",
-  "no": "Ne",
-  "butDiscardIt": "ale zahodit jej",
-  "declineIt": "odmítnout jej ",
-  "requestTriggerdByUserQuestion": "Byl tento požadavek vyvolán vámi?",
   "cameraPermissionPermanentlyDenied": null,
   "cameraPermissionPermanentlyDeniedButton": "Udělit oprávnění",
   "decryptErrorTitle": "Chyba dešifrování",
@@ -406,10 +397,6 @@
   "settingsGroupGeneral": "Obecné informace",
   "licensesAndVersion": "Licence a verze",
   "privacyPolicy": "Zásady ochrany osobních údajů",
-  "introScanQrCode": "Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny eduMFA.",
-  "introEditToken": "Zde můžete upravit název tokenu a zobrazit některé podrobnosti.",
-  "introLockToken": "To improve security even more, you can lock tokens. Then the token can only be used after authentication.",
-  "introPollForChallenges": "Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů.",
   "noMailAppTitle": "Není nainstalována žádná e-mailová aplikace",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Žádost o ověření",

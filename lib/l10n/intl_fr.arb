@@ -110,9 +110,9 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "systemTheme": "Utiliser le thème de l'appareil",
-  "@systemTheme": {
-    "description": "The systems theme."
+  "autoTheme": null,
+  "@autoTheme": {
+    "description": "The automatic theme applied by the system settings."
   },
   "enablePolling": "Activer l'interrogation du serveur.",
   "@enablePolling": {
@@ -223,10 +223,6 @@
   "language": "Langue",
   "@language": {
     "description": "Title of language setting group."
-  },
-  "authenticateToShowOtp": "Veuillez vous authentifier pour afficher un mot de passe à usage unique.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
   },
   "authenticateToUnLockToken": "Veuillez vous authentifier pour modifier l'état de verrouillage du jeton.",
   "@authenticateToUnLockToken": {
@@ -391,11 +387,7 @@
       }
     }
   },
-  "yes": "Oui",
-  "no": "Non",
   "butDiscardIt": "mais l'écarter",
-  "declineIt": "refuser",
-  "requestTriggerdByUserQuestion": "Cette demande a-t-elle été déclenchée par vous ?",
   "cameraPermissionPermanentlyDenied": null,
   "cameraPermissionPermanentlyDeniedButton": "Accorder l'autorisation",
   "decryptErrorTitle": "Erreur de décryptage",
@@ -407,10 +399,6 @@
   "settingsGroupGeneral": "Généralités",
   "licensesAndVersion": "Licences et version",
   "privacyPolicy": "Politique de confidentialité",
-  "introScanQrCode": null,
-  "introEditToken": "Ici, vous pouvez modifier le nom du token et voir quelques détails",
-  "introLockToken": "Pour améliorer encore la sécurité, vous pouvez verrouiller les tokens. Le token ne peut alors être utilisé qu'après l'authentification.",
-  "introPollForChallenges": "Vous pouvez vérifier la présence de nouveaux défis en faisant glisser la liste des jetons vers le bas",
   "noMailAppTitle": "Aucune application de messagerie trouvée",
   "noMailAppDescription": "Aucune application de messagerie n'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d'envoyer un message électronique.",
   "authenticationRequest": "Authentification",
