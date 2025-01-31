@@ -78,7 +78,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Abbrechen"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Löschen"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Löschen bestätigen"),
         "confirmDeletionOf": m0,
@@ -121,8 +120,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fehlerprotokoll gelöscht."),
         "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
             "Das Fehlerprotokoll ist leer."),
-        "errorLogTitle":
-            MessageLookupByLibrary.simpleMessage("Fehlerprotokoll"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Die Fehlerprotokolldatei ist angehängt.\nSie können diesen Text durch zusätzliche Informationen über den Fehler ersetzen."),
         "errorRollOutFailed": m1,
@@ -156,7 +153,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sperren eines Tokens mit biometrischer Authentifizierung."),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "Biometrie ist deaktiviert. Bitte sperren und entsperren Sie Ihren Bildschirm um diese zu aktivieren."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Log-Menü"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "nameFieldEmpty":
             MessageLookupByLibrary.simpleMessage("Name darf nicht leer sein"),
@@ -182,7 +178,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Maximale Sicherheit"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Besuchen Sie uns auf Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Öffnen"),
         "or": MessageLookupByLibrary.simpleMessage("ODER"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Analysiere Antwort"),
@@ -220,7 +215,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsGroupGeneral":
             MessageLookupByLibrary.simpleMessage("Allgemeines"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Details anzeigen"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Anzeigen"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Datenschutzerklärung anzeigen"),
         "signInTitle": MessageLookupByLibrary.simpleMessage(
@@ -242,8 +236,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Ein unerwarteter Fehler ist aufgetreten."),
         "uploadQrCodeButton":
-            MessageLookupByLibrary.simpleMessage("QR Code hochladen"),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Ausführliche Protokollierung")
+            MessageLookupByLibrary.simpleMessage("QR Code hochladen")
       };
 }

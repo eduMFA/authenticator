@@ -801,46 +801,6 @@ class S {
     );
   }
 
-  /// `Error log`
-  String get errorLogTitle {
-    return Intl.message(
-      'Error log',
-      name: 'errorLogTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Log menu`
-  String get logMenu {
-    return Intl.message(
-      'Log menu',
-      name: 'logMenu',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Show`
-  String get showErrorLog {
-    return Intl.message(
-      'Show',
-      name: 'showErrorLog',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Clear`
-  String get clearErrorLog {
-    return Intl.message(
-      'Clear',
-      name: 'clearErrorLog',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Send`
   String get send {
     return Intl.message(
@@ -881,16 +841,6 @@ class S {
     );
   }
 
-  /// `Verbose logging`
-  String get verboseLogging {
-    return Intl.message(
-      'Verbose logging',
-      name: 'verboseLogging',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Error log cleared.`
   String get errorLogCleared {
     return Intl.message(
@@ -926,16 +876,6 @@ class S {
     return Intl.message(
       'Show details',
       name: 'showDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Open`
-  String get open {
-    return Intl.message(
-      'Open',
-      name: 'open',
       desc: '',
       args: [],
     );

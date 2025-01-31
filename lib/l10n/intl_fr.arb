@@ -305,10 +305,6 @@
   "onBoardingText2": "Stockez les jetons sur votre \nappareil en toute sécurité\nProtégé par votre biométrie",
   "onBoardingTitle3": "Rendez-nous visite sur Github",
   "onBoardingText3": "Cette application est open source",
-  "errorLogTitle": "Journal d'erreur",
-  "logMenu": "Menu du journal",
-  "showErrorLog": "Afficher",
-  "clearErrorLog": "Effacer",
   "send": "Envoyer",
   "sendErrorLogDescription": "Un e-mail pré-rempli est créé.\nIl contient des informations sur l'application, l'erreur et le périphérique.\nVous pouvez modifier l'e-mail avant de l'envoyer.\nVous pouvez voir ici comment nous utilisons les informations:",
   "@sendErrorLogDescription": {
@@ -316,7 +312,6 @@
   },
   "showPrivacyPolicy": "Afficher la déclaration de confidentialité",
   "errorLogEmpty": "Le journal des erreurs est vide",
-  "verboseLogging": "Journalisation verbeuse",
   "errorLogCleared": "Journal d'erreur nettoyé",
   "ok": "Ok",
   "errorMailBody": "Le fichier journal des erreurs est joint.\nVous pouvez remplacer ce texte par des informations supplémentaires sur l'erreur.",
@@ -324,7 +319,6 @@
     "description": "Message pour le corps du courriel"
   },
   "showDetails": "Afficher les détails",
-  "open": "Ouvrir",
   "deleteLockedToken": "Veuillez vous authentifier pour supprimer le jeton verrouillé.",
   "editLockedToken": "Veuillez vous authentifier pour modifier le jeton verrouillé.",
   "retryRollout": "Réessayer le déploiement",

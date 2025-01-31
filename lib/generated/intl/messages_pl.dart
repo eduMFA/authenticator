@@ -68,7 +68,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Anuluj"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Sprawdź połączenie sieciowe i spróbuj ponownie."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Usuń"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Potwierdź usunięcie"),
         "confirmDeletionOf": m0,
@@ -107,8 +106,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Dziennik błędów wyczyszczony."),
         "errorLogEmpty":
             MessageLookupByLibrary.simpleMessage("Dziennik błędów jest pusty"),
-        "errorLogTitle":
-            MessageLookupByLibrary.simpleMessage("Dziennik błędów"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie."),
         "errorRollOutFailed": m1,
@@ -140,7 +137,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "lock": MessageLookupByLibrary.simpleMessage("Zablokuj"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "Uwierzytelnianie biometryczne jest wyłączone. Zablokuj i odblokuj ponownie ekran, żeby je włączyć."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Menu dziennika"),
         "name": MessageLookupByLibrary.simpleMessage("Nazwa"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail"),
@@ -164,7 +160,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Maksymalne Bezpieczeństwo"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Odwiedź nas na Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Otwórz"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Analizowanie odpowiedzi"),
         "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
@@ -199,7 +194,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsGroupGeneral":
             MessageLookupByLibrary.simpleMessage("Informacje ogólne"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Pokaż szczegóły"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Wyświetl"),
         "showPrivacyPolicy":
             MessageLookupByLibrary.simpleMessage("Pokaż politykę prywatności"),
         "signInTitle":
@@ -217,9 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "theme": MessageLookupByLibrary.simpleMessage("Motyw"),
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Następujące tokeny nie wspierają synchronizacji i muszą zostać wdrożone od nowa:"),
-        "unexpectedError": MessageLookupByLibrary.simpleMessage(
-            "Wystąpił nieoczekiwany błąd."),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Wyczerpujące rejestrowanie")
+        "unexpectedError":
+            MessageLookupByLibrary.simpleMessage("Wystąpił nieoczekiwany błąd.")
       };
 }

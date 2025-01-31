@@ -305,10 +305,6 @@
   "onBoardingText2": "Uložte tokeny do svého zařízení\nchráněné biometrickým ověřením",
   "onBoardingTitle3": "Navštivte náš profil Github",
   "onBoardingText3": "Tuto aplikaci má open source",
-  "errorLogTitle": "Protokol chyb",
-  "logMenu": "Nabídka protokolu",
-  "showErrorLog": "Zobrazit",
-  "clearErrorLog": "Vymazat",
   "send": "Odeslat",
   "sendErrorLogDescription": "Vytvoří se připravený e-mail.\nObsahuje informace o aplikaci, chybě a zařízení.\nPřed odesláním můžete e-mail upravit.\nZde se můžete podívat, jak informace používáme:",
   "@sendErrorLogDescription": {
@@ -316,7 +312,6 @@
   },
   "showPrivacyPolicy": "Zobrazit zásady ochrany osobních údajů",
   "errorLogEmpty": "Protokol chyb je prázdný.",
-  "verboseLogging": "Zevrubné protokolování",
   "errorLogCleared": "Protokol chyb vymazán.",
   "ok": "Ok",
   "errorMailBody": "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě.",
@@ -324,7 +319,6 @@
     "description": "Message for email body"
   },
   "showDetails": "Zobrazit podrobnosti",
-  "open": "Otevřít",
   "deleteLockedToken": "Prosím, autentifikujte se pro smazání uzamčeného tokenu.",
   "editLockedToken": "Prosím, autentifikujte se pro úpravu uzamčeného tokenu.",
   "retryRollout": "Zkusit znovu",
