@@ -104,7 +104,7 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
     final newLabel = _textFieldController.text.trim();
     if (newLabel.isEmpty) return;
     globalRef?.read(tokenProvider.notifier).updateToken(
-        widget.token, (p0) => p0.copyWith(label: newLabel, isLocked: isLocked, isHidden: isLocked)
+        widget.token, (p0) => p0.copyWith(label: newLabel, isLocked: isLocked)
     );
 
     Logger.info(
