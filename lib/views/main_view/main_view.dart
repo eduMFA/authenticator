@@ -71,6 +71,15 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                         .map((item) => item.toRailDestination()).toList(),
                     labelType: NavigationRailLabelType.all,
                     groupAlignment: 0,
+                    leading: SizedBox(
+                      height: 56,  // 56 is the default for FAB
+                      child: _selectedIndex == 0
+                          ? FloatingActionButton(
+                              tooltip: S.of(context).addToken,
+                              child: const Icon(Icons.add),
+                              onPressed: () => _tokensViewKey.currentState!.showAddTokenSheet(_tokensViewKey.currentContext!)
+                          ) : null,
+                    ),
                   ),
                   Expanded(
                     child: ColoredBox(

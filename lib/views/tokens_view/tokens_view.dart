@@ -29,12 +29,13 @@ class TokensViewState extends ConsumerState<TokensView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      floatingActionButton: ConditionalFloatingActionButton(
-        isExtended: ref.watch(tokenProvider).tokens.isEmpty || isTablet(context),
-        label: S.of(context).addToken,
-        icon: Icons.add,
-        onPressed: () => showAddTokenSheet(context),
-      ),
+      floatingActionButton: !isTablet(context)
+          ? ConditionalFloatingActionButton(
+            isExtended: ref.watch(tokenProvider).tokens.isEmpty,
+            label: S.of(context).addToken,
+            icon: Icons.add,
+            onPressed: () => showAddTokenSheet(context),
+          ) : null,
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: SafeArea(
