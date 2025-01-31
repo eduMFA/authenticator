@@ -16,6 +16,10 @@
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
+  "nameFieldEmpty": null,
+  "@nameFieldEmpty": {
+    "description": "Error message when the name field is empty."
+  },
   "secretKey": "Geheime sleutel",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."

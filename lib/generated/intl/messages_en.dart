@@ -156,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometric authentication is disabled. Please lock and unlock your screen to enable it."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Log menu"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "nameFieldEmpty":
+            MessageLookupByLibrary.simpleMessage("Name can\'t be empty"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message."),
         "noMailAppTitle":

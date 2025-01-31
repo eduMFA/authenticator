@@ -158,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometrie ist deaktiviert. Bitte sperren und entsperren Sie Ihren Bildschirm um diese zu aktivieren."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Log-Menü"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
+        "nameFieldEmpty":
+            MessageLookupByLibrary.simpleMessage("Name darf nicht leer sein"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können."),
         "noMailAppTitle":

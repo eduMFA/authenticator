@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `Name can't be empty`
+  String get nameFieldEmpty {
+    return Intl.message(
+      'Name can\'t be empty',
+      name: 'nameFieldEmpty',
+      desc: 'Error message when the name field is empty.',
+      args: [],
+    );
+  }
+
   /// `Secret key`
   String get secretKey {
     return Intl.message(

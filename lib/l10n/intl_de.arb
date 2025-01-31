@@ -20,6 +20,10 @@
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
+  "nameFieldEmpty": "Name darf nicht leer sein",
+  "@nameFieldEmpty": {
+    "description": "Error message when the name field is empty."
+  },
   "secretKey": "Geheimer Schlüssel",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."

@@ -22,13 +22,8 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
   late final TextEditingController _textFieldController = TextEditingController(text: widget.token.label);
   late int _currentLength = _textFieldController.text.length;
   late bool isLocked = widget.token.isLocked;
+  late bool _isNameFieldValid = widget.token.label.isNotEmpty;
   bool _hasChanged = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _textFieldController.addListener(_updateCurrentLength);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +48,12 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
               controller: _textFieldController,
               focusNode: _focusNode,
               decoration: InputDecoration(
+                errorText: _isNameFieldValid ? null : S.of(context).nameFieldEmpty,
                 border: const OutlineInputBorder(),
                 labelText: S.of(context).name,
                 counterText: "$_currentLength/${TokenEditSheet.maxTokenLength}",
               ),
+              onChanged: _updateNameTextField,
               maxLength: TokenEditSheet.maxTokenLength,
               onTapOutside: (event) => _focusNode.unfocus(),
             ),
@@ -175,9 +172,10 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
             );
   }
 
-  void _updateCurrentLength() {
+  void _updateNameTextField(String text) {
+    _isNameFieldValid = text.isNotEmpty;
     setState(() {
-      _currentLength = _textFieldController.text.length;
+      _currentLength = text.length;
       _hasChanged = hasChanged();
     });
   }
@@ -186,7 +184,6 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
   void dispose() {
     _focusNode.dispose();
     _textFieldController.dispose();
-    _textFieldController.removeListener(_updateCurrentLength);
     super.dispose();
   }
 }
