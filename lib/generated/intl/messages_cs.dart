@@ -55,8 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pro přijetí požadavku na push notifikaci se přihlaste."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Pro odmítnutí požadavku na push notifikaci se přihlaste."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Pro změnu uzamčení tokenu se přihlaste."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Žádost o ověření"),
         "biometricHint":
@@ -185,9 +183,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "Požadavek na odeslání se nepodařilo zpracovat."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push notifikace"),
-        "rename": MessageLookupByLibrary.simpleMessage("Přejmenovat"),
-        "renameToken":
-            MessageLookupByLibrary.simpleMessage("Přejmenovat token"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Periodicky získávat výzvy ze serveru. Povolte pokud nefunguje příjem push notifikací."),
@@ -228,7 +223,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Následující tokeny nepodporují synchronizaci a musí být znovu zaregistrovány:"),
         "unexpectedError":
             MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Odemknout"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Zevrubné protokolování")
       };

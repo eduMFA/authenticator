@@ -44,10 +44,8 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-                "Edit Token",
-                textAlign: TextAlign.left,
-                style: TextTheme.of(context)
-                    .headlineMedium!
+                S.of(context).editToken,
+                style: TextTheme.of(context).headlineSmall!
                     .copyWith(fontWeight: FontWeight.bold)
             ),
             const SizedBox(height: 25),
@@ -64,8 +62,8 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
             ),
             const SizedBox(height: 5),
             ListTile(
-              title: Text('Locked'),
-              subtitle: Text("If the token is locked..."),
+              title: Text(S.of(context).lock),
+              subtitle: Text(S.of(context).lockDescription),
               trailing: Switch(
                   value: isLocked,
                   onChanged: (value) {
@@ -89,7 +87,7 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
                 ),
                 FilledButton(
                     onPressed: _hasChanged ? saveToken : null,
-                    child: Text("Save Changes")
+                    child: Text(S.of(context).saveChanges)
                 ),
               ],
             ),

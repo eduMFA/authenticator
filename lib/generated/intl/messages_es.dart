@@ -53,8 +53,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Por favor, autentifíquese para aceptar la solicitud push."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Por favor, autentifíquese para rechazar la solicitud push."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Por favor, autentifíquese para cambiar el estado de bloqueo del token."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Autenticación"),
         "biometricHint":
@@ -179,8 +177,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "No se ha podido procesar la solicitud push."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-        "rename": MessageLookupByLibrary.simpleMessage("Renombrar"),
-        "renameToken": MessageLookupByLibrary.simpleMessage("Renombrar token"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Solicita retos push al servidor periódicamente. Habilite esta opción si los retos push no se reciben normalmente."),
@@ -221,7 +217,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Las siguientes tokens no admiten la sincronización y deben volver a desplegarse:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Se ha producido un error inesperado."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Desbloquear"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Registro detallado")
       };

@@ -60,8 +60,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please authenticate to accept the push request."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Please authenticate to decline the push request."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Please authenticate to change the lock status of the token."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Authentication request"),
         "autoTheme": MessageLookupByLibrary.simpleMessage("Auto"),
@@ -116,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dismiss": MessageLookupByLibrary.simpleMessage("Dismiss"),
         "editLockedToken": MessageLookupByLibrary.simpleMessage(
             "Please authenticate to edit the locked token."),
+        "editToken": MessageLookupByLibrary.simpleMessage("Edit Token"),
         "enablePolling": MessageLookupByLibrary.simpleMessage("Enable polling"),
         "errorLogCleared":
             MessageLookupByLibrary.simpleMessage("Error log cleared."),
@@ -151,6 +150,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Licenses and version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
         "lock": MessageLookupByLibrary.simpleMessage("Lock"),
+        "lockDescription": MessageLookupByLibrary.simpleMessage(
+            "Lock a token with biometric authentication."),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "Biometric authentication is disabled. Please lock and unlock your screen to enable it."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Log menu"),
@@ -191,8 +192,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "Push request could not be parsed."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-        "rename": MessageLookupByLibrary.simpleMessage("Rename"),
-        "renameToken": MessageLookupByLibrary.simpleMessage("Rename token"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Request push challenges from the server periodically. Enable this if push challenges are not received normally."),
@@ -200,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "rollingOut": MessageLookupByLibrary.simpleMessage("Rolling out"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Rollout completed"),
+        "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Secret key"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
@@ -233,7 +233,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "The following tokens do not support synchronization and must be rolled out again:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "An unexpected error occurred."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Unlock"),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("Upload QR Code"),
         "verboseLogging":

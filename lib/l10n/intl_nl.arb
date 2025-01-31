@@ -8,6 +8,10 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
+  "editToken": null,
+  "@editToken": {
+    "description": "Title of the edit token sheet."
+  },
   "name": "Naam",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
@@ -16,10 +20,6 @@
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
   },
-  "rename": "Wijzigen",
-  "@rename": {
-    "description": "Label that describes renaming the token."
-  },
   "cancel": "Annuleren",
   "@cancel": {
     "description": "Button to cancel an action."
@@ -27,6 +27,10 @@
   "delete": "Verwijderen",
   "@delete": {
     "description": "Label that describes deleting the token."
+  },
+  "saveChanges": null,
+  "@saveChanges": {
+    "description": "Label that describes saving changes to a token."
   },
   "dismiss": "Sluiten",
   "@dismiss": {
@@ -51,10 +55,6 @@
   "uploadQrCodeButton": null,
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
-  },
-  "renameToken": "Hernoem token",
-  "@renameToken": {
-    "description": "Title of the dialog where a new name for a token can be entered."
   },
   "confirmDeletion": "Bevestig verwijderen",
   "@confirmDeletion": {
@@ -218,10 +218,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToUnLockToken": "Authenticeer om de vergrendeling van de token te wijzigen.",
-  "@authenticateToUnLockToken": {
-    "description": "Reason to authenticate when trying to lock or unlock a token."
-  },
   "biometricRequiredTitle": "Biometrie is niet ingesteld",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
@@ -274,9 +270,9 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Ontgrendel",
-  "@unlock": {
-    "description": "Description of button that unlocks a token."
+  "lockDescription": null,
+  "@lockDescription": {
+    "description": "Description of the lock option when editing a token."
   },
   "search": null,
   "@search": {

@@ -12,6 +12,10 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
+  "editToken": null,
+  "@editToken": {
+    "description": "Title of the edit token sheet."
+  },
   "name": "Název",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
@@ -20,10 +24,6 @@
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
   },
-  "rename": "Přejmenovat",
-  "@rename": {
-    "description": "Label that describes renaming the token."
-  },
   "cancel": "Zrušit",
   "@cancel": {
     "description": "Button to cancel an action."
@@ -31,6 +31,10 @@
   "delete": "Smazat",
   "@delete": {
     "description": "Label that describes deleting the token."
+  },
+  "saveChanges": null,
+  "@saveChanges": {
+    "description": "Label that describes saving changes to a token."
   },
   "dismiss": "Zavřít",
   "@dismiss": {
@@ -55,10 +59,6 @@
   "uploadQrCodeButton": null,
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
-  },
-  "renameToken": "Přejmenovat token",
-  "@renameToken": {
-    "description": "Title of the dialog where a new name for a token can be entered."
   },
   "confirmDeletion": "Potvrdit smazání",
   "@confirmDeletion": {
@@ -224,10 +224,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToUnLockToken": "Pro změnu uzamčení tokenu se přihlaste.",
-  "@authenticateToUnLockToken": {
-    "description": "Reason to authenticate when trying to lock or unlock a token."
-  },
   "biometricRequiredTitle": "Biometrické ověření není nastaveno",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
@@ -280,9 +276,9 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Odemknout",
-  "@unlock": {
-    "description": "Description of button that unlocks a token."
+  "lockDescription": null,
+  "@lockDescription": {
+    "description": "Description of the lock option when editing a token."
   },
   "search": null,
   "@search": {

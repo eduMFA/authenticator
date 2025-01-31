@@ -56,8 +56,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Veuillez vous authentifier pour accepter la demande de connexion."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Veuillez vous authentifier pour refuser la demande de connexion."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Veuillez vous authentifier pour modifier l\'état de verrouillage du jeton."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Authentification"),
         "biometricHint":
@@ -186,8 +184,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "La demande push n\'a pas pu être traitée."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Jeton de type Push"),
-        "rename": MessageLookupByLibrary.simpleMessage("Renommer"),
-        "renameToken": MessageLookupByLibrary.simpleMessage("Renommer jeton"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Demander des challenges push depuis le serveur périodiquement. Activer cette fonction si les challenges push ne sont pas reçus normalement."),
@@ -230,7 +226,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ces jetons ne supportent pas la synchronisation et doivent être de nouveau générés:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Une erreur inattendue s\'est produite."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Ouvrir"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Journalisation verbeuse")
       };
