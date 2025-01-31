@@ -100,7 +100,7 @@ class _TokenEditSheetState extends State<TokenEditSheet> {
   }
 
   void saveToken() async {
-    if (widget.token.isLocked && await lockAuth(localizedReason: S.of(context).deleteLockedToken) == false) return;
+    if (widget.token.isLocked && await lockAuth(localizedReason: S.of(context).editLockedToken) == false) return;
     final newLabel = _textFieldController.text.trim();
     if (newLabel.isEmpty) return;
     globalRef?.read(tokenProvider.notifier).updateToken(
