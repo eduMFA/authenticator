@@ -77,7 +77,7 @@ dependencies:
   flutterlifecyclehooks: ^5.0.0
 
   # Storage
-  shared_preferences: ^2.4.0
+  shared_preferences: ^2.5.1
 
   # UI
   cupertino_icons: ^1.0.8
