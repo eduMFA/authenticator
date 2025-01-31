@@ -8,17 +8,21 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
+  "editToken": null,
+  "@editToken": {
+    "description": "Title of the edit token sheet."
+  },
   "name": "Naam",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
+  "nameFieldEmpty": null,
+  "@nameFieldEmpty": {
+    "description": "Error message when the name field is empty."
+  },
   "secretKey": "Geheime sleutel",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
-  },
-  "rename": "Wijzigen",
-  "@rename": {
-    "description": "Label that describes renaming the token."
   },
   "cancel": "Annuleren",
   "@cancel": {
@@ -27,6 +31,10 @@
   "delete": "Verwijderen",
   "@delete": {
     "description": "Label that describes deleting the token."
+  },
+  "saveChanges": null,
+  "@saveChanges": {
+    "description": "Label that describes saving changes to a token."
   },
   "dismiss": "Sluiten",
   "@dismiss": {
@@ -51,10 +59,6 @@
   "uploadQrCodeButton": null,
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
-  },
-  "renameToken": "Hernoem token",
-  "@renameToken": {
-    "description": "Title of the dialog where a new name for a token can be entered."
   },
   "confirmDeletion": "Bevestig verwijderen",
   "@confirmDeletion": {
@@ -218,14 +222,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Authenticeer om het eenmalige wachtwoord te tonen.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
-  },
-  "authenticateToUnLockToken": "Authenticeer om de vergrendeling van de token te wijzigen.",
-  "@authenticateToUnLockToken": {
-    "description": "Reason to authenticate when trying to lock or unlock a token."
-  },
   "biometricRequiredTitle": "Biometrie is niet ingesteld",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
@@ -278,9 +274,9 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Ontgrendel",
-  "@unlock": {
-    "description": "Description of button that unlocks a token."
+  "lockDescription": null,
+  "@lockDescription": {
+    "description": "Description of the lock option when editing a token."
   },
   "search": null,
   "@search": {
@@ -388,11 +384,7 @@
       }
     }
   },
-  "yes": "Ja",
-  "no": "Nee",
   "butDiscardIt": "maar verwijder",
-  "declineIt": "weigeren",
-  "requestTriggerdByUserQuestion": "Is dit verzoek door jou gedaan?",
   "cameraPermissionPermanentlyDenied": null,
   "cameraPermissionPermanentlyDeniedButton": "Toestemming verlenen",
   "decryptErrorTitle": "Fout bij decoderen",
@@ -404,10 +396,6 @@
   "settingsGroupGeneral": "Algemene informatie",
   "licensesAndVersion": "Licenties en versie",
   "privacyPolicy": "Privacybeleid",
-  "introScanQrCode": "Je kunt QR-codes scannen om tokens toe te voegen.We ondersteunen alle gangbare Two-Factor-Authenticatie tokens en ook de eduMFA tokens.",
-  "introEditToken": "Hier kun je de naam van het token bewerken en enkele details bekijken.",
-  "introLockToken": "Om de beveiliging nog meer te verbeteren, kun je tokens vergrendelen.¨Dan kan het token alleen gebruikt worden na authenticatie.",
-  "introPollForChallenges": "Je kunt controleren of er nieuwe uitdagingen zijn door de lijst met tokens naar beneden te slepen.",
   "noMailAppTitle": "Geen mail app gevonden",
   "noMailAppDescription": "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden.",
   "authenticationRequest": "Verificatieverzoek",

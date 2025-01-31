@@ -8,17 +8,21 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
+  "editToken": "Edit Token",
+  "@editToken": {
+    "description": "Title of the edit token sheet."
+  },
   "name": "Name",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
+  "nameFieldEmpty": "Name can't be empty",
+  "@nameFieldEmpty": {
+    "description": "Error message when the name field is empty."
+  },
   "secretKey": "Secret key",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
-  },
-  "rename": "Rename",
-  "@rename": {
-    "description": "Label that describes renaming the token."
   },
   "cancel": "Cancel",
   "@cancel": {
@@ -27,6 +31,10 @@
   "delete": "Delete",
   "@delete": {
     "description": "Label that describes deleting the token."
+  },
+  "saveChanges": "Save Changes",
+  "@saveChanges": {
+    "description": "Label that describes saving changes to a token."
   },
   "dismiss": "Dismiss",
   "@dismiss": {
@@ -51,10 +59,6 @@
   "uploadQrCodeButton": "Upload QR Code",
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
-  },
-  "renameToken": "Rename token",
-  "@renameToken": {
-    "description": "Title of the dialog where a new name for a token can be entered."
   },
   "confirmDeletion": "Confirm deletion",
   "@confirmDeletion": {
@@ -221,14 +225,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Please authenticate to show one time password.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
-  },
-  "authenticateToUnLockToken": "Please authenticate to change the lock status of the token.",
-  "@authenticateToUnLockToken": {
-    "description": "Reason to authenticate when trying to lock or unlock a token."
-  },
   "biometricRequiredTitle": "Biometrics not setup",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
@@ -281,9 +277,9 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Unlock",
-  "@unlock": {
-    "description": "Description of button that unlocks a token."
+  "lockDescription": "Lock a token with biometric authentication.",
+  "@lockDescription": {
+    "description": "Description of the lock option when editing a token."
   },
   "search": "Search",
   "@search": {
@@ -382,11 +378,6 @@
       }
     }
   },
-  "yes": "Yes",
-  "no": "No",
-  "butDiscardIt": "but discard it",
-  "declineIt": "decline it",
-  "requestTriggerdByUserQuestion": "Was this request triggered by you?",
   "cameraPermissionPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in the system settings.",
   "cameraPermissionPermanentlyDeniedButton": "Grant permission",
   "decryptErrorTitle": "Decryption error",
@@ -398,10 +389,6 @@
   "settingsGroupGeneral": "General",
   "licensesAndVersion": "Licenses and version",
   "privacyPolicy": "Privacy policy",
-  "introScanQrCode": "You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.",
-  "introEditToken": "Here you can edit the token name and see some details.",
-  "introLockToken": "To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.",
-  "introPollForChallenges": "You can check for new challenges by dragging down the token list.",
   "noMailAppTitle": "No mail app found",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Authentication request",

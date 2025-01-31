@@ -231,7 +231,6 @@ void _testPushToken() {
         "id": "id",
         "pin": true,
         "isLocked": true,
-        "isHidden": false,
         "tokenImage": "example.png",
         "origin": null,
         "type": "EDUMFA_PUSH",

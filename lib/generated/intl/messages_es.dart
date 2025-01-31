@@ -53,10 +53,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Por favor, autentifíquese para aceptar la solicitud push."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Por favor, autentifíquese para rechazar la solicitud push."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Por favor, autentifíquese para mostrar la contraseña de una sola vez."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Por favor, autentifíquese para cambiar el estado de bloqueo del token."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Autenticación"),
         "biometricHint":
@@ -67,7 +63,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Biometría no configurada"),
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Autenticación correcta"),
-        "butDiscardIt": MessageLookupByLibrary.simpleMessage("pero descártelo"),
         "cameraPermissionPermanentlyDeniedButton":
             MessageLookupByLibrary.simpleMessage("Conceder permiso"),
         "cancel": MessageLookupByLibrary.simpleMessage("Anular"),
@@ -85,7 +80,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "No se ha podido firmar el mensaje."),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Negro"),
         "decline": MessageLookupByLibrary.simpleMessage("Negar"),
-        "declineIt": MessageLookupByLibrary.simpleMessage("rechazar"),
         "decryptErrorButtonDelete":
             MessageLookupByLibrary.simpleMessage("Borrar"),
         "decryptErrorButtonRetry":
@@ -140,14 +134,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ir a la configuración"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "La autenticación por credenciales o biométrica no está configurada en tu dispositivo. Por favor, configúrala en los ajustes del dispositivo."),
-        "introEditToken": MessageLookupByLibrary.simpleMessage(
-            "Aquí puedes editar el nombre del token y ver algunos detalles"),
-        "introLockToken": MessageLookupByLibrary.simpleMessage(
-            "Para mejorar la seguridad aún más, puedes bloquear los tokens.\nEntonces el token sólo se puede utilizar después de la autenticación."),
-        "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
-            "Puedes buscar nuevos retos arrastrando hacia abajo la lista de tokens"),
-        "introScanQrCode": MessageLookupByLibrary.simpleMessage(
-            "Puedes escanear códigos QR para añadir tokens.\nSoportamos todos los tokens comunes de Two-Factor-Authentication y también los tokens eduMFA"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licencias y versión"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Luminoso"),
@@ -156,7 +142,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "La autenticación biométrica está desactivada. Bloquea y desbloquea la pantalla para activarla."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Menú de registro"),
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
-        "no": MessageLookupByLibrary.simpleMessage("No"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico."),
         "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
@@ -192,13 +177,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "No se ha podido procesar la solicitud push."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-        "rename": MessageLookupByLibrary.simpleMessage("Renombrar"),
-        "renameToken": MessageLookupByLibrary.simpleMessage("Renombrar token"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Solicita retos push al servidor periódicamente. Habilite esta opción si los retos push no se reciben normalmente."),
-        "requestTriggerdByUserQuestion": MessageLookupByLibrary.simpleMessage(
-            "¿Fue usted quien provocó esta petición?"),
         "retryRollout":
             MessageLookupByLibrary.simpleMessage("Reintentar despliegue"),
         "rollingOut": MessageLookupByLibrary.simpleMessage("Despliegue"),
@@ -236,9 +217,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Las siguientes tokens no admiten la sincronización y deben volver a desplegarse:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Se ha producido un error inesperado."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Desbloquear"),
         "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Registro detallado"),
-        "yes": MessageLookupByLibrary.simpleMessage("Sí")
+            MessageLookupByLibrary.simpleMessage("Registro detallado")
       };
 }

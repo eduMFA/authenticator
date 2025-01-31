@@ -60,10 +60,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Bitte authentifizieren Sie sich, um die Anfrage anzunehmen."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Bitte authentifizieren Sie sich, um die Anfrage abzulehnen."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Bitte authentifizieren Sie sich, um das Einmalpasswort anzuzeigen."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Bitte authentifizieren Sie sich, um den Sperrstatus des Tokens zu ändern."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Authentifizierung"),
         "autoTheme": MessageLookupByLibrary.simpleMessage("Automatisch"),
@@ -75,7 +71,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometrie ist nicht eingerichtet"),
         "biometricSuccess": MessageLookupByLibrary.simpleMessage(
             "Authentifizierung erfolgreich"),
-        "butDiscardIt": MessageLookupByLibrary.simpleMessage("aber verwerfen"),
         "cameraPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
             "Die Kamera-Berechtigung ist dauerhaft entzogen. Bitte erlauben Sie die Kamera-Berechtigung in den Systemeinstellungen."),
         "cameraPermissionPermanentlyDeniedButton":
@@ -95,7 +90,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nachricht konnte nicht signiert werden."),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dunkel"),
         "decline": MessageLookupByLibrary.simpleMessage("Ablehnen"),
-        "declineIt": MessageLookupByLibrary.simpleMessage("ablehnen"),
         "decryptErrorButtonDelete":
             MessageLookupByLibrary.simpleMessage("Löschen."),
         "decryptErrorButtonRetry":
@@ -120,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "dismiss": MessageLookupByLibrary.simpleMessage("Schließen"),
         "editLockedToken": MessageLookupByLibrary.simpleMessage(
             "Bitte authentifizieren Sie sich, um den gesperrten Token zu bearbeiten."),
+        "editToken": MessageLookupByLibrary.simpleMessage("Token Bearbeiten"),
         "enablePolling": MessageLookupByLibrary.simpleMessage(
             "Aktives Stellen von Push-Anfragen"),
         "errorLogCleared":
@@ -152,24 +147,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Gehe zu Einstellungen"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authentifizierung durch Gerätepasswort oder Biometrie ist nicht eingerichtet. Bitte aktivieren Sie dies in den Geräteeinstellungen."),
-        "introEditToken": MessageLookupByLibrary.simpleMessage(
-            "Hier können Sie den Namen des Tokens bearbeiten und einige Details einsehen."),
-        "introLockToken": MessageLookupByLibrary.simpleMessage(
-            "Um die Sicherheit noch weiter zu erhöhen, können Sie Token sperren.\nDer Token kann dann erst nach der Authentifizierung verwendet werden."),
-        "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
-            "Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen."),
-        "introScanQrCode": MessageLookupByLibrary.simpleMessage(
-            "Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die eduMFA Token."),
         "language": MessageLookupByLibrary.simpleMessage("Sprache"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Lizenzen und Version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Hell"),
         "lock": MessageLookupByLibrary.simpleMessage("Sperren"),
+        "lockDescription": MessageLookupByLibrary.simpleMessage(
+            "Sperren eines Tokens mit biometrischer Authentifizierung."),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "Biometrie ist deaktiviert. Bitte sperren und entsperren Sie Ihren Bildschirm um diese zu aktivieren."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Log-Menü"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
-        "no": MessageLookupByLibrary.simpleMessage("Nein"),
+        "nameFieldEmpty":
+            MessageLookupByLibrary.simpleMessage("Name darf nicht leer sein"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können."),
         "noMailAppTitle":
@@ -207,18 +197,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "Die Push-Anfrage konnte nicht verarbeitet werden."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-        "rename": MessageLookupByLibrary.simpleMessage("Umbenennen"),
-        "renameToken": MessageLookupByLibrary.simpleMessage("Token umbenennen"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Fordert regelmäßig Push-Anfragen vom Server an. Aktivieren Sie diese Funktion, wenn Nachrichten ansonsten nicht erhalten werden."),
-        "requestTriggerdByUserQuestion": MessageLookupByLibrary.simpleMessage(
-            "Wurde diese Anfrage von Ihnen ausgelöst?"),
         "retryRollout":
             MessageLookupByLibrary.simpleMessage("Erneut ausrollen"),
         "rollingOut": MessageLookupByLibrary.simpleMessage("Ausrollen"),
         "rolloutCompleted":
             MessageLookupByLibrary.simpleMessage("Ausrollen abgeschlossen"),
+        "saveChanges":
+            MessageLookupByLibrary.simpleMessage("Änderungen speichern"),
         "search": MessageLookupByLibrary.simpleMessage("Suchen"),
         "secretKey": MessageLookupByLibrary.simpleMessage("Geheimer Schlüssel"),
         "send": MessageLookupByLibrary.simpleMessage("Senden"),
@@ -253,11 +241,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Die folgenden Token unterstützen keine Synchronisation und müssen erneut ausgerollt werden:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Ein unerwarteter Fehler ist aufgetreten."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Entsperren"),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("QR Code hochladen"),
-        "verboseLogging": MessageLookupByLibrary.simpleMessage(
-            "Ausführliche Protokollierung"),
-        "yes": MessageLookupByLibrary.simpleMessage("Ja")
+        "verboseLogging":
+            MessageLookupByLibrary.simpleMessage("Ausführliche Protokollierung")
       };
 }
