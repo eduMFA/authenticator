@@ -70,6 +70,16 @@ class S {
     );
   }
 
+  /// `Edit Token`
+  String get editToken {
+    return Intl.message(
+      'Edit Token',
+      name: 'editToken',
+      desc: 'Title of the edit token sheet.',
+      args: [],
+    );
+  }
+
   /// `Name`
   String get name {
     return Intl.message(
@@ -80,22 +90,22 @@ class S {
     );
   }
 
+  /// `Name can't be empty`
+  String get nameFieldEmpty {
+    return Intl.message(
+      'Name can\'t be empty',
+      name: 'nameFieldEmpty',
+      desc: 'Error message when the name field is empty.',
+      args: [],
+    );
+  }
+
   /// `Secret key`
   String get secretKey {
     return Intl.message(
       'Secret key',
       name: 'secretKey',
       desc: 'Describes the field where the tokens secret should be entered.',
-      args: [],
-    );
-  }
-
-  /// `Rename`
-  String get rename {
-    return Intl.message(
-      'Rename',
-      name: 'rename',
-      desc: 'Label that describes renaming the token.',
       args: [],
     );
   }
@@ -116,6 +126,16 @@ class S {
       'Delete',
       name: 'delete',
       desc: 'Label that describes deleting the token.',
+      args: [],
+    );
+  }
+
+  /// `Save Changes`
+  String get saveChanges {
+    return Intl.message(
+      'Save Changes',
+      name: 'saveChanges',
+      desc: 'Label that describes saving changes to a token.',
       args: [],
     );
   }
@@ -177,16 +197,6 @@ class S {
       'Upload QR Code',
       name: 'uploadQrCodeButton',
       desc: 'The button in the token add view to upload QR codes as an image.',
-      args: [],
-    );
-  }
-
-  /// `Rename token`
-  String get renameToken {
-    return Intl.message(
-      'Rename token',
-      name: 'renameToken',
-      desc: 'Title of the dialog where a new name for a token can be entered.',
       args: [],
     );
   }
@@ -549,16 +559,6 @@ class S {
     );
   }
 
-  /// `Please authenticate to change the lock status of the token.`
-  String get authenticateToUnLockToken {
-    return Intl.message(
-      'Please authenticate to change the lock status of the token.',
-      name: 'authenticateToUnLockToken',
-      desc: 'Reason to authenticate when trying to lock or unlock a token.',
-      args: [],
-    );
-  }
-
   /// `Biometrics not setup`
   String get biometricRequiredTitle {
     return Intl.message(
@@ -701,12 +701,12 @@ class S {
     );
   }
 
-  /// `Unlock`
-  String get unlock {
+  /// `Lock a token with biometric authentication.`
+  String get lockDescription {
     return Intl.message(
-      'Unlock',
-      name: 'unlock',
-      desc: 'Description of button that unlocks a token.',
+      'Lock a token with biometric authentication.',
+      name: 'lockDescription',
+      desc: 'Description of the lock option when editing a token.',
       args: [],
     );
   }

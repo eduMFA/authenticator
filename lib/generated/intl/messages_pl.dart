@@ -55,8 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Uwierzytelnij, aby zaakceptować żądanie push."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Uwierzytelnij, aby odrzucić żądanie push."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Zweryfikuj tożsamość, aby odblokować / zablokować token."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Żądanie uwierzytelnienia"),
         "biometricHint":
@@ -181,9 +179,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "Żądanie push nie mogło zostać przetworzone."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push token"),
-        "rename": MessageLookupByLibrary.simpleMessage("Zmień nazwę"),
-        "renameToken":
-            MessageLookupByLibrary.simpleMessage("Zmień nazwę tokenu"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Wysyłaj zapytanie o push challenge cyklicznie. Włącz, jeśli push nie przychodzi normalnie."),
@@ -224,7 +219,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Następujące tokeny nie wspierają synchronizacji i muszą zostać wdrożone od nowa:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Wystąpił nieoczekiwany błąd."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Odblokuj"),
         "verboseLogging":
             MessageLookupByLibrary.simpleMessage("Wyczerpujące rejestrowanie")
       };

@@ -12,17 +12,21 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
+  "editToken": null,
+  "@editToken": {
+    "description": "Title of the edit token sheet."
+  },
   "name": "Nom",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
+  "nameFieldEmpty": null,
+  "@nameFieldEmpty": {
+    "description": "Error message when the name field is empty."
+  },
   "secretKey": "Clé secrète",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
-  },
-  "rename": "Renommer",
-  "@rename": {
-    "description": "Label that describes renaming the token."
   },
   "cancel": "Annuler",
   "@cancel": {
@@ -31,6 +35,10 @@
   "delete": "Supprimer",
   "@delete": {
     "description": "Label that describes deleting the token."
+  },
+  "saveChanges": null,
+  "@saveChanges": {
+    "description": "Label that describes saving changes to a token."
   },
   "dismiss": "Fermer",
   "@dismiss": {
@@ -55,10 +63,6 @@
   "uploadQrCodeButton": null,
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
-  },
-  "renameToken": "Renommer jeton",
-  "@renameToken": {
-    "description": "Title of the dialog where a new name for a token can be entered."
   },
   "confirmDeletion": "Confirmer suppression",
   "@confirmDeletion": {
@@ -224,10 +228,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToUnLockToken": "Veuillez vous authentifier pour modifier l'état de verrouillage du jeton.",
-  "@authenticateToUnLockToken": {
-    "description": "Reason to authenticate when trying to lock or unlock a token."
-  },
   "biometricRequiredTitle": "La biométrie n'est pas configurée",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
@@ -280,9 +280,9 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Ouvrir",
-  "@unlock": {
-    "description": "Description of button that unlocks a token."
+  "lockDescription": null,
+  "@lockDescription": {
+    "description": "Description of the lock option when editing a token."
   },
   "search": null,
   "@search": {

@@ -55,8 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Authenticeer om de push aanvraag te accepteren."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Authenticeer om de push aanvraag te weigeren."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Authenticeer om de vergrendeling van de token te wijzigen."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Verificatieverzoek"),
         "biometricHint":
@@ -181,8 +179,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "Het pushverzoek kon niet worden verwerkt."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-        "rename": MessageLookupByLibrary.simpleMessage("Wijzigen"),
-        "renameToken": MessageLookupByLibrary.simpleMessage("Hernoem token"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Activeer het zoeken naar berichten. Gebruik deze optie wanneer de push berichten niet worden ontvangen."),
@@ -223,7 +219,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Voor de volgende tokens wordt synchroniseren niet ondersteunt, ze moeten opnieuw worden aangeleverd:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Er is een onverwachte fout opgetreden."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Ontgrendel"),
         "verboseLogging": MessageLookupByLibrary.simpleMessage("Verbose loggen")
       };
 }
