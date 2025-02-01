@@ -40,6 +40,10 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
+  "next": null,
+  "@next": {
+    "description": "Text of a button that goes to the next page."
+  },
   "addToken": "Dodaj token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."

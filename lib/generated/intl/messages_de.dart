@@ -160,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "nameFieldEmpty":
             MessageLookupByLibrary.simpleMessage("Name darf nicht leer sein"),
+        "next": MessageLookupByLibrary.simpleMessage("Weiter"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können."),
         "noMailAppTitle":

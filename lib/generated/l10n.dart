@@ -150,6 +150,16 @@ class S {
     );
   }
 
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: 'Text of a button that goes to the next page.',
+      args: [],
+    );
+  }
+
   /// `Add token`
   String get addToken {
     return Intl.message(
