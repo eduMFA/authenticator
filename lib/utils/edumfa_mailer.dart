@@ -8,7 +8,7 @@ import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart'
 import 'package:edumfa_authenticator/utils/app_info_utils.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 
-class PiMailer {
+class EduMFAMailer {
   static String get _mailRecipient => 'edumfa-app-support@gwdg.de';
   static String _mailSubject(String? subject, String? subjectPrefix, bool subjectAppVersion) {
     String mailSubject = subjectPrefix != null ? '[$subjectPrefix] ' : '';
@@ -49,10 +49,10 @@ class PiMailer {
         );
         return false;
       }
-      Logger.error('Was not able to send the Email', error: e, stackTrace: stackTrace, name: 'pi_mailer.dart#sendMail');
+      Logger.error('Was not able to send the Email', error: e, stackTrace: stackTrace, name: 'edumfa_mailer.dart#sendMail');
       return false;
     } catch (e, stackTrace) {
-      Logger.error('Was not able to send the Email', error: e, stackTrace: stackTrace, name: 'pi_mailer.dart#sendMail');
+      Logger.error('Was not able to send the Email', error: e, stackTrace: stackTrace, name: 'edumfa_mailer.dart#sendMail');
       return false;
     }
     return true;
