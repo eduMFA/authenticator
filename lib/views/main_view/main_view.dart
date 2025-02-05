@@ -8,6 +8,7 @@ import 'package:edumfa_authenticator/widgets/push_request_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
+import 'package:quick_actions/quick_actions.dart';
 
 class MainView extends ConsumerStatefulView {
   static const routeName = '/main';
@@ -22,17 +23,23 @@ class MainView extends ConsumerStatefulView {
 }
 
 class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
+  final _tokensViewKey = GlobalKey<TokensViewState>();
+  late final List<Widget> _views;
   int _selectedIndex = 0;
 
-  final List<Widget> _views = [
-    const TokensView(),
-    const SettingsView(),
-  ];
+  @override
+  void initState() {
+    _views = [
+      TokensView(key: _tokensViewKey),
+      const SettingsView(),
+    ];
+    super.initState();
+  }
 
-  void _onDestinationSelected(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _registerQuickActions();
   }
 
   @override
@@ -60,16 +67,47 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
             NavigationDestination(
               icon: const Icon(Icons.home_outlined),
               selectedIcon: const Icon(Icons.home),
-              label: S.of(context).tokens,
+              label: S
+                  .of(context)
+                  .tokens,
             ),
             NavigationDestination(
               icon: const Icon(Icons.settings_outlined),
               selectedIcon: const Icon(Icons.settings),
-              label: S.of(context).settings,
+              label: S
+                  .of(context)
+                  .settings,
             ),
           ],
         ),
       ),
     );
+  }
+
+  void _onDestinationSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  void _registerQuickActions() {
+    const quickActions = QuickActions();
+    quickActions.initialize((String type) {
+      if (type != 'add_token') return;
+      if (_selectedIndex != 0) {
+        setState(() {
+          _selectedIndex = 0;
+        });
+      }
+      Navigator.of(context).popUntil((route) => route.isFirst);
+      Future.delayed(const Duration(seconds: 1), () {
+        if (_tokensViewKey.currentState == null || _tokensViewKey.currentContext == null) return;
+        if (!ModalRoute.of(_tokensViewKey.currentContext!)!.isCurrent) return;
+        _tokensViewKey.currentState!.showAddTokenSheet(_tokensViewKey.currentContext!);
+      });
+    });
+    quickActions.setShortcutItems(<ShortcutItem>[
+      ShortcutItem(type: 'add_token', localizedTitle: S.of(context).addToken, icon: 'add_icon'),
+    ]);
   }
 }

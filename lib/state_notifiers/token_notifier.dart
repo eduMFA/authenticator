@@ -25,7 +25,6 @@ import 'package:edumfa_authenticator/repo/secure_token_repository.dart';
 import 'package:edumfa_authenticator/utils/firebase_utils.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/identifiers.dart';
-import 'package:edumfa_authenticator/utils/lock_auth.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/network_utils.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
@@ -181,48 +180,6 @@ class TokenNotifier extends StateNotifier<TokenState> {
       return updatedTokens;
     });
     return (await updatingTokens)?.whereType<T>().toList() ?? [];
-  }
-
-  Future<void> hideToken(Token token) async {
-    await updatingTokens;
-    updatingTokens = Future(() async {
-      await loadingRepo;
-      token = state.currentOf(token)?.copyWith(isHidden: true) ?? token.copyWith(isHidden: true);
-      return await _replaceTokens([token]);
-    });
-    await updatingTokens;
-  }
-
-  Future<bool> showToken(Token token) async {
-    await updatingTokens;
-    log('showToken');
-    updatingTokens = Future(() async {
-      final authenticated = await lockAuth(localizedReason: S.of(globalNavigatorKey.currentContext!).authenticateToShowOtp);
-      log('authenticated: $authenticated');
-      if (!authenticated) return null;
-      await loadingRepo;
-      token = state.currentOf(token)?.copyWith(isHidden: false) ?? token.copyWith(isHidden: false);
-      log('token: $token');
-      return _addOrReplaceTokens([token]);
-    });
-    final authenticated = (await updatingTokens)?.isNotEmpty ?? false;
-    log('authenticated_2: $authenticated');
-    _timers[token.id]?.cancel();
-    _timers[token.id] = Timer(token.showDuration, () async {
-      log('hideToken');
-      await hideToken(token);
-      log('hideToken_2');
-    });
-    return authenticated;
-  }
-
-  Future<bool> showTokenById(String tokenId) async {
-    await updatingTokens;
-    final token = getTokenFromId(tokenId);
-    if (token != null) {
-      return await showToken(token);
-    }
-    return false;
   }
 
   Future<void> addOrReplaceToken(Token token) async {

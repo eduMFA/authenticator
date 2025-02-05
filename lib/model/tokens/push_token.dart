@@ -22,9 +22,6 @@ class PushToken extends Token {
   final DateTime? expirationDate;
   final String serial;
 
-  @override
-  Duration get showDuration => Duration.zero;
-
   // Roll out
   final bool sslVerify;
   final String? enrollmentCredentials;
@@ -86,7 +83,6 @@ class PushToken extends Token {
     super.tokenImage,
     super.pin,
     super.isLocked,
-    super.isHidden,
     super.origin,
   })  : isRolledOut = isRolledOut ?? false,
         sslVerify = sslVerify ?? false,
@@ -120,7 +116,6 @@ class PushToken extends Token {
     PushRequestQueue? pushRequests,
     bool? pin,
     bool? isLocked,
-    bool? isHidden,
     bool? sslVerify,
     String? enrollmentCredentials,
     Uri? url,
@@ -142,7 +137,6 @@ class PushToken extends Token {
       pushRequests: pushRequests ?? this.pushRequests,
       pin: pin ?? this.pin,
       isLocked: isLocked ?? this.isLocked,
-      isHidden: isHidden ?? this.isHidden,
       sslVerify: sslVerify ?? this.sslVerify,
       enrollmentCredentials: enrollmentCredentials ?? this.enrollmentCredentials,
       url: url ?? this.url,
@@ -211,7 +205,7 @@ class PushToken extends Token {
       PushTokenRollOutState.parsingResponse || PushTokenRollOutState.parsingResponseFailed => PushTokenRollOutState.parsingResponseFailed,
       PushTokenRollOutState.rolloutComplete => PushTokenRollOutState.rolloutComplete,
     };
-    return newToken.copyWith(rolloutState: currentRolloutState, isHidden: true);
+    return newToken.copyWith(rolloutState: currentRolloutState);
   }
 
   Map<String, dynamic> toJson() => _$PushTokenToJson(this);

@@ -19,10 +19,10 @@ class TokensView extends ConsumerStatefulView {
   const TokensView({super.key});
 
   @override
-  ConsumerState<TokensView> createState() => _TokensViewState();
+  ConsumerState<TokensView> createState() => TokensViewState();
 }
 
-class _TokensViewState extends ConsumerState<TokensView> {
+class TokensViewState extends ConsumerState<TokensView> {
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +32,7 @@ class _TokensViewState extends ConsumerState<TokensView> {
         isExtended: ref.watch(tokenProvider).tokens.isEmpty,
         label: S.of(context).addToken,
         icon: Icons.add,
-        onPressed: () => showModalBottomSheet(
-          context: context,
-          isScrollControlled: true,
-          showDragHandle: true,
-          builder: (context) => const AddTokenSheetWidget(),
-        ),
+        onPressed: () => showAddTokenSheet(context),
       ),
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(70),
@@ -53,6 +48,15 @@ class _TokensViewState extends ConsumerState<TokensView> {
           child: TokensList(),
         ),
       ),
+    );
+  }
+
+  void showAddTokenSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (context) => const AddTokenSheetWidget(),
     );
   }
 }

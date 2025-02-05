@@ -70,6 +70,16 @@ class S {
     );
   }
 
+  /// `Edit Token`
+  String get editToken {
+    return Intl.message(
+      'Edit Token',
+      name: 'editToken',
+      desc: 'Title of the edit token sheet.',
+      args: [],
+    );
+  }
+
   /// `Name`
   String get name {
     return Intl.message(
@@ -80,22 +90,22 @@ class S {
     );
   }
 
+  /// `Name can't be empty`
+  String get nameFieldEmpty {
+    return Intl.message(
+      'Name can\'t be empty',
+      name: 'nameFieldEmpty',
+      desc: 'Error message when the name field is empty.',
+      args: [],
+    );
+  }
+
   /// `Secret key`
   String get secretKey {
     return Intl.message(
       'Secret key',
       name: 'secretKey',
       desc: 'Describes the field where the tokens secret should be entered.',
-      args: [],
-    );
-  }
-
-  /// `Rename`
-  String get rename {
-    return Intl.message(
-      'Rename',
-      name: 'rename',
-      desc: 'Label that describes renaming the token.',
       args: [],
     );
   }
@@ -120,12 +130,32 @@ class S {
     );
   }
 
+  /// `Save Changes`
+  String get saveChanges {
+    return Intl.message(
+      'Save Changes',
+      name: 'saveChanges',
+      desc: 'Label that describes saving changes to a token.',
+      args: [],
+    );
+  }
+
   /// `Dismiss`
   String get dismiss {
     return Intl.message(
       'Dismiss',
       name: 'dismiss',
       desc: 'Text of a button that closes a dialog.',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: 'Text of a button that goes to the next page.',
       args: [],
     );
   }
@@ -177,16 +207,6 @@ class S {
       'Upload QR Code',
       name: 'uploadQrCodeButton',
       desc: 'The button in the token add view to upload QR codes as an image.',
-      args: [],
-    );
-  }
-
-  /// `Rename token`
-  String get renameToken {
-    return Intl.message(
-      'Rename token',
-      name: 'renameToken',
-      desc: 'Title of the dialog where a new name for a token can be entered.',
       args: [],
     );
   }
@@ -559,26 +579,6 @@ class S {
     );
   }
 
-  /// `Please authenticate to show one time password.`
-  String get authenticateToShowOtp {
-    return Intl.message(
-      'Please authenticate to show one time password.',
-      name: 'authenticateToShowOtp',
-      desc: 'Reason to authenticate when trying to view a one time password.',
-      args: [],
-    );
-  }
-
-  /// `Please authenticate to change the lock status of the token.`
-  String get authenticateToUnLockToken {
-    return Intl.message(
-      'Please authenticate to change the lock status of the token.',
-      name: 'authenticateToUnLockToken',
-      desc: 'Reason to authenticate when trying to lock or unlock a token.',
-      args: [],
-    );
-  }
-
   /// `Biometrics not setup`
   String get biometricRequiredTitle {
     return Intl.message(
@@ -721,12 +721,12 @@ class S {
     );
   }
 
-  /// `Unlock`
-  String get unlock {
+  /// `Lock a token with biometric authentication.`
+  String get lockDescription {
     return Intl.message(
-      'Unlock',
-      name: 'unlock',
-      desc: 'Description of button that unlocks a token.',
+      'Lock a token with biometric authentication.',
+      name: 'lockDescription',
+      desc: 'Description of the lock option when editing a token.',
       args: [],
     );
   }
@@ -1132,56 +1132,6 @@ class S {
     );
   }
 
-  /// `Yes`
-  String get yes {
-    return Intl.message(
-      'Yes',
-      name: 'yes',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `No`
-  String get no {
-    return Intl.message(
-      'No',
-      name: 'no',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `but discard it`
-  String get butDiscardIt {
-    return Intl.message(
-      'but discard it',
-      name: 'butDiscardIt',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `decline it`
-  String get declineIt {
-    return Intl.message(
-      'decline it',
-      name: 'declineIt',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Was this request triggered by you?`
-  String get requestTriggerdByUserQuestion {
-    return Intl.message(
-      'Was this request triggered by you?',
-      name: 'requestTriggerdByUserQuestion',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Camera permission is permanently denied. Please grant camera permission in the system settings.`
   String get cameraPermissionPermanentlyDenied {
     return Intl.message(
@@ -1287,46 +1237,6 @@ class S {
     return Intl.message(
       'Privacy policy',
       name: 'privacyPolicy',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.`
-  String get introScanQrCode {
-    return Intl.message(
-      'You can scan QR codes to add tokens.\nWe support every common Two-Factor-Authentication token and also the eduMFA tokens.',
-      name: 'introScanQrCode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Here you can edit the token name and see some details.`
-  String get introEditToken {
-    return Intl.message(
-      'Here you can edit the token name and see some details.',
-      name: 'introEditToken',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.`
-  String get introLockToken {
-    return Intl.message(
-      'To improve security even more, you can lock tokens.\nThen the token can only be used after authentication.',
-      name: 'introLockToken',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `You can check for new challenges by dragging down the token list.`
-  String get introPollForChallenges {
-    return Intl.message(
-      'You can check for new challenges by dragging down the token list.',
-      name: 'introPollForChallenges',
       desc: '',
       args: [],
     );

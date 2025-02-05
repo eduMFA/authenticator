@@ -12,17 +12,21 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
+  "editToken": "Token Bearbeiten",
+  "@editToken": {
+    "description": "Title of the edit token sheet."
+  },
   "name": "Name",
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
+  "nameFieldEmpty": "Name darf nicht leer sein",
+  "@nameFieldEmpty": {
+    "description": "Error message when the name field is empty."
+  },
   "secretKey": "Geheimer Schlüssel",
   "@secretKey": {
     "description": "Describes the field where the tokens secret should be entered."
-  },
-  "rename": "Umbenennen",
-  "@rename": {
-    "description": "Label that describes renaming the token."
   },
   "cancel": "Abbrechen",
   "@cancel": {
@@ -32,9 +36,17 @@
   "@delete": {
     "description": "Label that describes deleting the token."
   },
+  "saveChanges": "Änderungen speichern",
+  "@saveChanges": {
+    "description": "Label that describes saving changes to a token."
+  },
   "dismiss": "Schließen",
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
+  },
+  "next": "Weiter",
+  "@next": {
+    "description": "Text of a button that goes to the next page."
   },
   "addToken": "Token hinzufügen",
   "@addToken": {
@@ -55,10 +67,6 @@
   "uploadQrCodeButton": "QR Code hochladen",
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
-  },
-  "renameToken": "Token umbenennen",
-  "@renameToken": {
-    "description": "Title of the dialog where a new name for a token can be entered."
   },
   "confirmDeletion": "Löschen bestätigen",
   "@confirmDeletion": {
@@ -225,14 +233,6 @@
   "@language": {
     "description": "Title of language setting group."
   },
-  "authenticateToShowOtp": "Bitte authentifizieren Sie sich, um das Einmalpasswort anzuzeigen.",
-  "@authenticateToShowOtp": {
-    "description": "Reason to authenticate when trying to view a one time password."
-  },
-  "authenticateToUnLockToken": "Bitte authentifizieren Sie sich, um den Sperrstatus des Tokens zu ändern.",
-  "@authenticateToUnLockToken": {
-    "description": "Reason to authenticate when trying to lock or unlock a token."
-  },
   "biometricRequiredTitle": "Biometrie ist nicht eingerichtet",
   "@biometricRequiredTitle": {
     "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
@@ -285,9 +285,9 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "unlock": "Entsperren",
-  "@unlock": {
-    "description": "Description of button that unlocks a token."
+  "lockDescription": "Sperren eines Tokens mit biometrischer Authentifizierung.",
+  "@lockDescription": {
+    "description": "Description of the lock option when editing a token."
   },
   "search": "Suchen",
   "@search": {
@@ -377,11 +377,6 @@
       }
     }
   },
-  "yes": "Ja",
-  "no": "Nein",
-  "butDiscardIt": "aber verwerfen",
-  "declineIt": "ablehnen",
-  "requestTriggerdByUserQuestion": "Wurde diese Anfrage von Ihnen ausgelöst?",
   "cameraPermissionPermanentlyDenied": "Die Kamera-Berechtigung ist dauerhaft entzogen. Bitte erlauben Sie die Kamera-Berechtigung in den Systemeinstellungen.",
   "cameraPermissionPermanentlyDeniedButton": "Berechtigung erteilen",
   "decryptErrorTitle": "Entschlüsselung fehlgeschlagen",
@@ -393,10 +388,6 @@
   "settingsGroupGeneral": "Allgemeines",
   "licensesAndVersion": "Lizenzen und Version",
   "privacyPolicy": "Datenschutzerklärung",
-  "introScanQrCode": "Sie können QR-Codes scannen, um Token hinzuzufügen.\nWir unterstützen alle gängigen Two-Factor-Authentication Token und auch die eduMFA Token.",
-  "introEditToken": "Hier können Sie den Namen des Tokens bearbeiten und einige Details einsehen.",
-  "introLockToken": "Um die Sicherheit noch weiter zu erhöhen, können Sie Token sperren.\nDer Token kann dann erst nach der Authentifizierung verwendet werden.",
-  "introPollForChallenges": "Sie können neue Push-Anmeldungen abfragen, indem Sie die Liste der Token nach unten ziehen.",
   "noMailAppTitle": "Keine Mail-App gefunden",
   "noMailAppDescription": "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können.",
   "authenticationRequest": "Authentifizierung",

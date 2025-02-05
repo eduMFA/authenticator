@@ -1,10 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:edumfa_authenticator/model/tokens/push_token.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_delete_action.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_edit_action.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/default_token_actions/default_lock_action.dart';
-import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_action.dart';
+import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/token_edit_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
@@ -16,17 +13,6 @@ class PushTokenWidgetTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
-    final List<TokenAction> menuEntries = [
-      DefaultDeleteAction(token: token, key: Key('${token.id}deleteAction')),
-      DefaultEditAction(token: token, key: Key('${token.id}editAction')),
-    ];
-
-    if (!token.pin) {
-      menuEntries.add(
-        DefaultLockAction(token: token, key: Key('${token.id}lockAction')),
-      );
-    }
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
@@ -45,9 +31,10 @@ class PushTokenWidgetTile extends ConsumerWidget {
                 softWrap: false,
             )
             : null,
-        trailing: PopupMenuButton<String>(
-          onSelected: (value) {},
-          itemBuilder: (context) => menuEntries.map((e) => e.build(context, ref)).toList(),
+        onLongPress: () => _showEditModal(context, token),
+        trailing: IconButton(
+          icon: const Icon(Icons.edit),
+          onPressed: () => _showEditModal(context, token),
         ),
         tileColor: ColorScheme.of(context).surfaceContainer,
         textColor: ColorScheme.of(context).onSecondaryContainer,
@@ -55,6 +42,15 @@ class PushTokenWidgetTile extends ConsumerWidget {
       ),
     );
   }
+}
+
+void _showEditModal(BuildContext context, PushToken token) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    showDragHandle: true,
+    builder: (context) => TokenEditSheet(token: token),
+  );
 }
 
 final tokenImages = <String?, Uint8List?>{};

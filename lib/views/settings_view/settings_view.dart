@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/app_info_utils.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/views/license_view/license_view.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/about_view.dart';
@@ -14,7 +15,6 @@ import 'package:edumfa_authenticator/views/view_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -28,17 +28,6 @@ class SettingsView extends ConsumerView {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Per-App language setting is only available for iOS and Android 13+
-    bool showLanguageSettings = true;
-    if (!kIsWeb && Platform.isAndroid) {
-      DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-      deviceInfo.androidInfo.then((value) => {
-        if (value.version.sdkInt < 33) {
-          showLanguageSettings = false
-        }
-      });
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).settings),
@@ -56,7 +45,7 @@ class SettingsView extends ConsumerView {
               title: S.of(context).pushToken,
               onTap: () => Navigator.pushNamed(context, PushTokenSettingsView.routeName),
             ),
-            if (showLanguageSettings) ...[
+            if (showLanguageSettings()) ...[
               SettingsTile(
                 icon: Icons.language,
                 title: S.of(context).language,
@@ -156,5 +145,13 @@ class SettingsView extends ConsumerView {
         ],
       ),
     );
+  }
+
+  // Per-App language setting is only available for iOS and Android 13+ (API Level 33+)
+  bool showLanguageSettings() {
+    if (kIsWeb) return false;
+    if (Platform.isIOS) return true;
+    if (Platform.isAndroid) return AppInfoUtils.androidInfo!.version.sdkInt >= 33;
+    return false;
   }
 }

@@ -55,10 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Uwierzytelnij, aby zaakceptować żądanie push."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Uwierzytelnij, aby odrzucić żądanie push."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Zweryfikuj tożsamość, by pokazać hasło jednorazowe."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Zweryfikuj tożsamość, aby odblokować / zablokować token."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Żądanie uwierzytelnienia"),
         "biometricHint":
@@ -69,7 +65,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Uwierzytelnianie biometryczne nie jest skonfigurowane."),
         "biometricSuccess": MessageLookupByLibrary.simpleMessage(
             "Autentykacja zakończona sukcesem!"),
-        "butDiscardIt": MessageLookupByLibrary.simpleMessage("ale odrzucić go"),
         "cancel": MessageLookupByLibrary.simpleMessage("Anuluj"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Sprawdź połączenie sieciowe i spróbuj ponownie."),
@@ -85,7 +80,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Nie można podpisać wiadomości."),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Ciemny"),
         "decline": MessageLookupByLibrary.simpleMessage("Odrzucam"),
-        "declineIt": MessageLookupByLibrary.simpleMessage("odrzuć go"),
         "decryptErrorButtonDelete":
             MessageLookupByLibrary.simpleMessage("Usuń"),
         "decryptErrorButtonRetry":
@@ -139,14 +133,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Idź do ustawień"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Ustawienia zabezpieczeń, bądź uwierzytelnianie biometryczne nie są skonfigurowane w twoim urządzeniu. Skonfiguruj je w ustawieniach urządzenia."),
-        "introEditToken": MessageLookupByLibrary.simpleMessage(
-            "Tutaj możesz edytować nazwę tokena i zobaczyć kilka szczegółów."),
-        "introLockToken": MessageLookupByLibrary.simpleMessage(
-            "Aby jeszcze bardziej zwiększyć bezpieczeństwo, możesz zablokować tokeny. Wtedy token może być używany tylko po uwierzytelnieniu."),
-        "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
-            "Możesz sprawdzić nowe wyzwania, przeciągając listę tokenów w dół."),
-        "introScanQrCode": MessageLookupByLibrary.simpleMessage(
-            "Możesz skanować kody QR, aby dodawać tokeny. Obsługujemy każdy popularny token uwierzytelniania dwuskładnikowego, a także tokeny eduMFA."),
         "language": MessageLookupByLibrary.simpleMessage("Język"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licencje i wersja"),
@@ -156,7 +142,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Uwierzytelnianie biometryczne jest wyłączone. Zablokuj i odblokuj ponownie ekran, żeby je włączyć."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Menu dziennika"),
         "name": MessageLookupByLibrary.simpleMessage("Nazwa"),
-        "no": MessageLookupByLibrary.simpleMessage("Nie"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail"),
         "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
@@ -194,14 +179,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "Żądanie push nie mogło zostać przetworzone."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push token"),
-        "rename": MessageLookupByLibrary.simpleMessage("Zmień nazwę"),
-        "renameToken":
-            MessageLookupByLibrary.simpleMessage("Zmień nazwę tokenu"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Wysyłaj zapytanie o push challenge cyklicznie. Włącz, jeśli push nie przychodzi normalnie."),
-        "requestTriggerdByUserQuestion": MessageLookupByLibrary.simpleMessage(
-            "Czy ta prośba została wywołana przez Ciebie?"),
         "retryRollout":
             MessageLookupByLibrary.simpleMessage("Ponowne uruchomienie"),
         "rollingOut": MessageLookupByLibrary.simpleMessage("Wdrażanie"),
@@ -239,9 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Następujące tokeny nie wspierają synchronizacji i muszą zostać wdrożone od nowa:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Wystąpił nieoczekiwany błąd."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Odblokuj"),
         "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Wyczerpujące rejestrowanie"),
-        "yes": MessageLookupByLibrary.simpleMessage("Tak")
+            MessageLookupByLibrary.simpleMessage("Wyczerpujące rejestrowanie")
       };
 }

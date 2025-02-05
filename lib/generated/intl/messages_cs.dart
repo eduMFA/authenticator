@@ -55,10 +55,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Pro přijetí požadavku na push notifikaci se přihlaste."),
         "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
             "Pro odmítnutí požadavku na push notifikaci se přihlaste."),
-        "authenticateToShowOtp": MessageLookupByLibrary.simpleMessage(
-            "Pro zobrazení jednorázového kódu se přihlaste."),
-        "authenticateToUnLockToken": MessageLookupByLibrary.simpleMessage(
-            "Pro změnu uzamčení tokenu se přihlaste."),
         "authenticationRequest":
             MessageLookupByLibrary.simpleMessage("Žádost o ověření"),
         "biometricHint":
@@ -69,7 +65,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometrické ověření není nastaveno"),
         "biometricSuccess":
             MessageLookupByLibrary.simpleMessage("Přihlášení bylo úspěšné"),
-        "butDiscardIt": MessageLookupByLibrary.simpleMessage("ale zahodit jej"),
         "cameraPermissionPermanentlyDeniedButton":
             MessageLookupByLibrary.simpleMessage("Udělit oprávnění"),
         "cancel": MessageLookupByLibrary.simpleMessage("Zrušit"),
@@ -87,7 +82,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Zprávu se nepodařilo podepsat."),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Tmavý"),
         "decline": MessageLookupByLibrary.simpleMessage("Odmítnout"),
-        "declineIt": MessageLookupByLibrary.simpleMessage("odmítnout jej "),
         "decryptErrorButtonDelete":
             MessageLookupByLibrary.simpleMessage("Odstranit"),
         "decryptErrorButtonRetry":
@@ -143,14 +137,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Otevřít nastavení"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Není nastaveno přihlášení zámkem zařízení ani biometrické ověření. Aktivujte je v nastavení zařízení."),
-        "introEditToken": MessageLookupByLibrary.simpleMessage(
-            "Zde můžete upravit název tokenu a zobrazit některé podrobnosti."),
-        "introLockToken": MessageLookupByLibrary.simpleMessage(
-            "To improve security even more, you can lock tokens. Then the token can only be used after authentication."),
-        "introPollForChallenges": MessageLookupByLibrary.simpleMessage(
-            "Můžete zkontrolovat nové výzvy přetažením seznamu tokenů dolů."),
-        "introScanQrCode": MessageLookupByLibrary.simpleMessage(
-            "Podporujeme všechny běžné dvoufaktorové autentizační tokeny a také tokeny eduMFA."),
         "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
         "licensesAndVersion":
             MessageLookupByLibrary.simpleMessage("Licence a verze"),
@@ -160,7 +146,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometrické ověření je deaktivováno. Pro aktivaci zamkněte a znovu odemkněte obrazovku/zařízení."),
         "logMenu": MessageLookupByLibrary.simpleMessage("Nabídka protokolu"),
         "name": MessageLookupByLibrary.simpleMessage("Název"),
-        "no": MessageLookupByLibrary.simpleMessage("Ne"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message."),
         "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
@@ -198,14 +183,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
             "Požadavek na odeslání se nepodařilo zpracovat."),
         "pushToken": MessageLookupByLibrary.simpleMessage("Push notifikace"),
-        "rename": MessageLookupByLibrary.simpleMessage("Přejmenovat"),
-        "renameToken":
-            MessageLookupByLibrary.simpleMessage("Přejmenovat token"),
         "requestInfo": m7,
         "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
             "Periodicky získávat výzvy ze serveru. Povolte pokud nefunguje příjem push notifikací."),
-        "requestTriggerdByUserQuestion": MessageLookupByLibrary.simpleMessage(
-            "Byl tento požadavek vyvolán vámi?"),
         "retryRollout": MessageLookupByLibrary.simpleMessage("Zkusit znovu"),
         "rollingOut": MessageLookupByLibrary.simpleMessage("Registrace"),
         "rolloutCompleted":
@@ -243,9 +223,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Následující tokeny nepodporují synchronizaci a musí být znovu zaregistrovány:"),
         "unexpectedError":
             MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba."),
-        "unlock": MessageLookupByLibrary.simpleMessage("Odemknout"),
         "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Zevrubné protokolování"),
-        "yes": MessageLookupByLibrary.simpleMessage("Ano")
+            MessageLookupByLibrary.simpleMessage("Zevrubné protokolování")
       };
 }

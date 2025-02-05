@@ -13,7 +13,7 @@ import 'package:logger/logger.dart' as printer;
 import 'package:mutex/mutex.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:edumfa_authenticator/utils/app_info_utils.dart';
-import 'package:edumfa_authenticator/utils/pi_mailer.dart';
+import 'package:edumfa_authenticator/utils/edumfa_mailer.dart';
 
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/send_error_dialog.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
@@ -174,14 +174,14 @@ class Logger {
     if (!file.existsSync() || file.lengthSync() == 0) {
       return Future.value(false);
     }
-    String deviceInfo = AppInfoUtils.deviceInfoString;
+    String deviceInfo = AppInfoUtils.systemInfoString;
 
     final completeMailBody = """$_mailBody
 ---------------------------------------------------------
 
 Device Parameters $deviceInfo""";
 
-    return PiMailer.sendMail(subject: _lastError, body: completeMailBody, attachments: [_fullPath!]);
+    return EduMFAMailer.sendMail(subject: _lastError, body: completeMailBody, attachments: [_fullPath!]);
   }
 
   static void clearErrorLog() {
