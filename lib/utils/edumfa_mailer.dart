@@ -1,4 +1,5 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mailer/flutter_mailer.dart';
@@ -12,8 +13,7 @@ class EduMFAMailer {
   static String get _mailRecipient => 'edumfa-app-support@gwdg.de';
   static String _mailSubject(String? subject, String? subjectPrefix, bool subjectAppVersion) {
     String mailSubject = subjectPrefix != null ? '[$subjectPrefix] ' : '';
-    if (subjectAppVersion) mailSubject += '(${AppInfoUtils.currentVersionString}+${AppInfoUtils.currentBuildNumber}) ';
-    mailSubject += AppInfoUtils.appName;
+    if (subjectAppVersion) mailSubject += '{$appName} (${AppInfoUtils.appVersion}) ';
     if (subject != null) mailSubject += ' >>> $subject';
     return mailSubject;
   }
