@@ -310,10 +310,6 @@
   "onBoardingText2": "Almacena fichas de forma segura en tu teléfono.\nProtegido por tus datos biométricos.",
   "onBoardingTitle3": "Visítenos en Github",
   "onBoardingText3": "Esta aplicación es de código abierto",
-  "errorLogTitle": "Registro de errores",
-  "logMenu": "Menú de registro",
-  "showErrorLog": "Mostrar",
-  "clearErrorLog": "Borrar",
   "send": "Enviar",
   "sendErrorLogDescription": "Se crea un correo electrónico listo.\nContiene información sobre la app, el error y el dispositivo.\nPuedes editar el correo antes de enviarlo.\nAquí puede ver cómo utilizamos la información:",
   "@sendErrorLogDescription": {
@@ -321,7 +317,6 @@
   },
   "showPrivacyPolicy": "Mostrar política de privacidad",
   "errorLogEmpty": "El registro de errores está vacío",
-  "verboseLogging": "Registro detallado",
   "errorLogCleared": "Registro de errores borrado",
   "ok": "Ok",
   "errorMailBody": "Se adjunta el archivo de registro de errores.\nPuede sustituir este texto por información adicional sobre el error.",
@@ -329,7 +324,6 @@
     "description": "Message for email body"
   },
   "showDetails": "Mostrar detalles",
-  "open": "Abrir",
   "deleteLockedToken": "Por favor, autentíquese para eliminar el token bloqueado.",
   "editLockedToken": "Por favor, autentíquese para editar el token bloqueado.",
   "retryRollout": "Reintentar despliegue",

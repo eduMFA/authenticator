@@ -310,10 +310,6 @@
   "onBoardingText2": "Speichern Sie Ihre Token sicher auf diesem Gerät\nGeschützt durch Ihre biometrischen Daten",
   "onBoardingTitle3": "Besuchen Sie uns auf Github",
   "onBoardingText3": "Diese App ist Open Source",
-  "errorLogTitle": "Fehlerprotokoll",
-  "logMenu": "Log-Menü",
-  "showErrorLog": "Anzeigen",
-  "clearErrorLog": "Löschen",
   "send": "Senden",
   "sendErrorLogDescription": "Es wird eine vorgefertigte E-Mail erstellt.\nSie enthält Informationen über die App, den Fehler und das Gerät.\nSie können die E-Mail vor dem Senden bearbeiten.\nWie wir die Informationen verwenden, sehen Sie hier:",
   "@sendErrorLogDescription": {
@@ -321,7 +317,6 @@
   },
   "showPrivacyPolicy": "Datenschutzerklärung anzeigen",
   "errorLogEmpty": "Das Fehlerprotokoll ist leer.",
-  "verboseLogging": "Ausführliche Protokollierung",
   "errorLogCleared": "Fehlerprotokoll gelöscht.",
   "ok": "Ok",
   "errorMailBody": "Die Fehlerprotokolldatei ist angehängt.\nSie können diesen Text durch zusätzliche Informationen über den Fehler ersetzen.",
@@ -329,7 +324,6 @@
     "description": "Message for email body"
   },
   "showDetails": "Details anzeigen",
-  "open": "Öffnen",
   "deleteLockedToken": "Bitte authentifizieren Sie sich, um den gesperrten Token zu löschen.",
   "editLockedToken": "Bitte authentifizieren Sie sich, um den gesperrten Token zu bearbeiten.",
   "retryRollout": "Erneut ausrollen",

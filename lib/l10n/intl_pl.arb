@@ -309,10 +309,6 @@
   "onBoardingText2": "Przechowuj tokeny w swoim urządzeniu\nzabezpieczone biometrycznie",
   "onBoardingTitle3": "Odwiedź nas na Github",
   "onBoardingText3": "Ta aplikacja jest w open source",
-  "errorLogTitle": "Dziennik błędów",
-  "logMenu": "Menu dziennika",
-  "showErrorLog": "Wyświetl",
-  "clearErrorLog": "Usuń",
   "send": "Wyślij",
   "sendErrorLogDescription": "Tworzona jest gotowa wiadomość e-mail zawierająca informacje o aplikacji, błędzie i urządzeniu.\nMożesz edytować wiadomość e-mail przed jej wysłaniem.\nTutaj można zobaczyć, w jaki sposób wykorzystujemy te informacje:",
   "@sendErrorLogDescription": {
@@ -320,7 +316,6 @@
   },
   "showPrivacyPolicy": "Pokaż politykę prywatności",
   "errorLogEmpty": "Dziennik błędów jest pusty",
-  "verboseLogging": "Wyczerpujące rejestrowanie",
   "errorLogCleared": "Dziennik błędów wyczyszczony.",
   "ok": "Ok",
   "errorMailBody": "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie.",
@@ -328,7 +323,6 @@
     "description": "Message for email body"
   },
   "showDetails": "Pokaż szczegóły",
-  "open": "Otwórz",
   "deleteLockedToken": "Uwierzytelnij, aby usunąć zablokowany token.",
   "editLockedToken": "Aby edytować zablokowany token, należy się uwierzytelnić.",
   "retryRollout": "Ponowne uruchomienie",

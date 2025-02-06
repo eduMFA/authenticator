@@ -71,7 +71,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Veuillez vérifier votre connexion réseau et réessayer."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Effacer"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Confirmer suppression"),
         "confirmDeletionOf": m0,
@@ -112,8 +111,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Journal d\'erreur nettoyé"),
         "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
             "Le journal des erreurs est vide"),
-        "errorLogTitle":
-            MessageLookupByLibrary.simpleMessage("Journal d\'erreur"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Le fichier journal des erreurs est joint.\nVous pouvez remplacer ce texte par des informations supplémentaires sur l\'erreur."),
         "errorRollOutFailed": m1,
@@ -143,7 +140,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "lock": MessageLookupByLibrary.simpleMessage("Bloquer"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "L\'authentification biométrique est désactivée. Veuillez verrouiller et déverrouiller votre écran pour l\'activer."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Menu du journal"),
         "name": MessageLookupByLibrary.simpleMessage("Nom"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Aucune application de messagerie n\'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d\'envoyer un message électronique."),
@@ -168,7 +164,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sécurité Maximale"),
         "onBoardingTitle3": MessageLookupByLibrary.simpleMessage(
             "Rendez-nous visite sur Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Ouvrir"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Analyse de la réponse"),
         "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
@@ -202,7 +197,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "settings": MessageLookupByLibrary.simpleMessage("Paramètres"),
         "showDetails":
             MessageLookupByLibrary.simpleMessage("Afficher les détails"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Afficher"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Afficher la déclaration de confidentialité"),
         "signInTitle":
@@ -221,8 +215,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Ces jetons ne supportent pas la synchronisation et doivent être de nouveau générés:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
-            "Une erreur inattendue s\'est produite."),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Journalisation verbeuse")
+            "Une erreur inattendue s\'est produite.")
       };
 }

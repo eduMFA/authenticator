@@ -68,7 +68,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Anular"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Compruebe su conexión de red e inténtelo de nuevo."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Borrar"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Confiem supresión"),
         "confirmDeletionOf": m0,
@@ -109,8 +108,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Registro de errores borrado"),
         "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
             "El registro de errores está vacío"),
-        "errorLogTitle":
-            MessageLookupByLibrary.simpleMessage("Registro de errores"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Se adjunta el archivo de registro de errores.\nPuede sustituir este texto por información adicional sobre el error."),
         "errorRollOutFailed": m1,
@@ -138,7 +135,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "lock": MessageLookupByLibrary.simpleMessage("Cierre"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "La autenticación biométrica está desactivada. Bloquea y desbloquea la pantalla para activarla."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Menú de registro"),
         "name": MessageLookupByLibrary.simpleMessage("Nombre"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico."),
@@ -161,7 +157,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Máxima seguridad"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Visítenos en Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Abrir"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Analizando la respuesta"),
         "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
@@ -193,7 +188,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error al enviar la clave pública RSA"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuración"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Mostrar detalles"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Mostrar"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Mostrar política de privacidad"),
         "signInTitle":
@@ -212,8 +206,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Las siguientes tokens no admiten la sincronización y deben volver a desplegarse:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
-            "Se ha producido un error inesperado."),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Registro detallado")
+            "Se ha producido un error inesperado.")
       };
 }
