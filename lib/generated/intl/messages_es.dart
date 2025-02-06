@@ -104,10 +104,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Por favor, autentíquese para editar el token bloqueado."),
         "enablePolling":
             MessageLookupByLibrary.simpleMessage("Activar polling"),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Registro de errores borrado"),
-        "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
-            "El registro de errores está vacío"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Se adjunta el archivo de registro de errores.\nPuede sustituir este texto por información adicional sobre el error."),
         "errorRollOutFailed": m1,
@@ -148,7 +144,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "noResultText2": MessageLookupByLibrary.simpleMessage(" para empezar."),
         "noResultTitle": MessageLookupByLibrary.simpleMessage(
             "Aún no hay tokens almacenadas."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Autenticación de dos factores\nmuy fácil"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(

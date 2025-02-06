@@ -315,9 +315,6 @@
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Zobrazit zásady ochrany osobních údajů",
-  "errorLogEmpty": "Protokol chyb je prázdný.",
-  "errorLogCleared": "Protokol chyb vymazán.",
-  "ok": "Ok",
   "errorMailBody": "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě.",
   "@errorMailBody": {
     "description": "Message for email body"

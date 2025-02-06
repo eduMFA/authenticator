@@ -107,10 +107,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Veuillez vous authentifier pour modifier le jeton verrouillé."),
         "enablePolling": MessageLookupByLibrary.simpleMessage(
             "Activer l\'interrogation du serveur."),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Journal d\'erreur nettoyé"),
-        "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
-            "Le journal des erreurs est vide"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Le fichier journal des erreurs est joint.\nVous pouvez remplacer ce texte par des informations supplémentaires sur l\'erreur."),
         "errorRollOutFailed": m1,
@@ -155,7 +151,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("bouton pour commencer!"),
         "noResultTitle": MessageLookupByLibrary.simpleMessage(
             "Aucun jeton n\'est encore stocké."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Authentification à deux facteurs\nrendue facile"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(

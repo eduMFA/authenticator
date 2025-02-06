@@ -312,9 +312,6 @@
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Datenschutzerklärung anzeigen",
-  "errorLogEmpty": "Das Fehlerprotokoll ist leer.",
-  "errorLogCleared": "Fehlerprotokoll gelöscht.",
-  "ok": "Ok",
   "errorMailBody": "Die Fehlerprotokolldatei ist angehängt.\nSie können diesen Text durch zusätzliche Informationen über den Fehler ersetzen.",
   "@errorMailBody": {
     "description": "Message for email body"

@@ -102,10 +102,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Aby edytować zablokowany token, należy się uwierzytelnić."),
         "enablePolling": MessageLookupByLibrary.simpleMessage(
             "Włącz autentykację przez wiadomość push."),
-        "errorLogCleared": MessageLookupByLibrary.simpleMessage(
-            "Dziennik błędów wyczyszczony."),
-        "errorLogEmpty":
-            MessageLookupByLibrary.simpleMessage("Dziennik błędów jest pusty"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie."),
         "errorRollOutFailed": m1,
@@ -149,7 +145,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" przycisku, żeby zacząć!"),
         "noResultTitle": MessageLookupByLibrary.simpleMessage(
             "Nie zainstalowano jeszcze żadnego tokenu."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Uwierzytelnianie dwuskładnikowe\nuczynione prostym"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(

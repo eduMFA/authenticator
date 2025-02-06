@@ -312,9 +312,6 @@
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Mostrar política de privacidad",
-  "errorLogEmpty": "El registro de errores está vacío",
-  "errorLogCleared": "Registro de errores borrado",
-  "ok": "Ok",
   "errorMailBody": "Se adjunta el archivo de registro de errores.\nPuede sustituir este texto por información adicional sobre el error.",
   "@errorMailBody": {
     "description": "Message for email body"

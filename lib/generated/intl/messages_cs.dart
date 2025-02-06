@@ -107,10 +107,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Prosím, autentifikujte se pro úpravu uzamčeného tokenu."),
         "enablePolling":
             MessageLookupByLibrary.simpleMessage("Povolit polling"),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Protokol chyb vymazán."),
-        "errorLogEmpty":
-            MessageLookupByLibrary.simpleMessage("Protokol chyb je prázdný."),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě."),
         "errorRollOutFailed": m1,
@@ -155,7 +151,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" a začněte s používáním."),
         "noResultTitle": MessageLookupByLibrary.simpleMessage(
             "Nejsou nainstalovány žádné tokeny."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "vícefázové ověření\nusnadněno"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(

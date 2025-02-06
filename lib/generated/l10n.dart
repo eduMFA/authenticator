@@ -841,36 +841,6 @@ class S {
     );
   }
 
-  /// `The error log is empty.`
-  String get errorLogEmpty {
-    return Intl.message(
-      'The error log is empty.',
-      name: 'errorLogEmpty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Error log cleared.`
-  String get errorLogCleared {
-    return Intl.message(
-      'Error log cleared.',
-      name: 'errorLogCleared',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Ok`
-  String get ok {
-    return Intl.message(
-      'Ok',
-      name: 'ok',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `The error log file is attached.\nYou can replace this text with additional information about the error.`
   String get errorMailBody {
     return Intl.message(

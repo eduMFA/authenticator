@@ -116,10 +116,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "editToken": MessageLookupByLibrary.simpleMessage("Token Bearbeiten"),
         "enablePolling": MessageLookupByLibrary.simpleMessage(
             "Aktives Stellen von Push-Anfragen"),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Fehlerprotokoll gelöscht."),
-        "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
-            "Das Fehlerprotokoll ist leer."),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Die Fehlerprotokolldatei ist angehängt.\nSie können diesen Text durch zusätzliche Informationen über den Fehler ersetzen."),
         "errorRollOutFailed": m1,
@@ -168,7 +164,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" Icon um loszulegen!"),
         "noResultTitle":
             MessageLookupByLibrary.simpleMessage("Keine Token vorhanden."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Zwei-Faktor-Authentifizierung\neinfach gemacht"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(

@@ -115,10 +115,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please authenticate to edit the locked token."),
         "editToken": MessageLookupByLibrary.simpleMessage("Edit Token"),
         "enablePolling": MessageLookupByLibrary.simpleMessage("Enable polling"),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Error log cleared."),
-        "errorLogEmpty":
-            MessageLookupByLibrary.simpleMessage("The error log is empty."),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "The error log file is attached.\nYou can replace this text with additional information about the error."),
         "errorRollOutFailed": m1,
@@ -167,7 +163,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" button to get started!"),
         "noResultTitle":
             MessageLookupByLibrary.simpleMessage("No tokens stored yet."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Two-factor authentication\nmade easy"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(

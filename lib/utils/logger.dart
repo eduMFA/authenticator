@@ -184,25 +184,6 @@ Device Parameters $deviceInfo""";
     return EduMFAMailer.sendMail(subject: _lastError, body: completeMailBody, attachments: [_fullPath!]);
   }
 
-  static void clearErrorLog() {
-    instance._clearLog();
-  }
-
-  Future<void> _clearLog() async {
-    final directory = await getApplicationDocumentsDirectory();
-    final file = File('${directory.path}/$_filename');
-    await file.writeAsString('', mode: FileMode.write);
-    globalSnackbarKey.currentState?.showSnackBar(
-      SnackBar(
-        content: Text(
-          _context != null ? S.of(_context!).errorLogCleared : 'Error Log Cleared',
-          overflow: TextOverflow.fade,
-          softWrap: false,
-        ),
-      ),
-    );
-  }
-
   /*----------- SETUPS -----------*/
 
   Future<void> _setupLogger() async {

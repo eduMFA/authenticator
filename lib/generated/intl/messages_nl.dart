@@ -106,10 +106,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Verifieer om het vergrendelde token te bewerken."),
         "enablePolling":
             MessageLookupByLibrary.simpleMessage("Zoeken aanzetten"),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Foutenlogboek gewist."),
-        "errorLogEmpty":
-            MessageLookupByLibrary.simpleMessage("Het foutenlogboek is leeg."),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Het foutlogbestand is bijgevoegd.\nU kunt deze tekst vervangen door aanvullende informatie over de fout."),
         "errorRollOutFailed": m1,
@@ -153,7 +149,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" de knop om te beginnen!"),
         "noResultTitle":
             MessageLookupByLibrary.simpleMessage("Nog geen token opgeslagen."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Twee-factoren authenticatie\nmakkelijk gemaakt"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(

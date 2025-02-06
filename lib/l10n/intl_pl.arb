@@ -311,9 +311,6 @@
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Pokaż politykę prywatności",
-  "errorLogEmpty": "Dziennik błędów jest pusty",
-  "errorLogCleared": "Dziennik błędów wyczyszczony.",
-  "ok": "Ok",
   "errorMailBody": "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie.",
   "@errorMailBody": {
     "description": "Message for email body"
