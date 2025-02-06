@@ -70,7 +70,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Zrušit"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Zkontrolujte prosím síťové připojení a zkuste to znovu."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Vymazat"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Potvrdit smazání"),
         "confirmDeletionOf": m0,
@@ -112,7 +111,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Protokol chyb vymazán."),
         "errorLogEmpty":
             MessageLookupByLibrary.simpleMessage("Protokol chyb je prázdný."),
-        "errorLogTitle": MessageLookupByLibrary.simpleMessage("Protokol chyb"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě."),
         "errorRollOutFailed": m1,
@@ -144,7 +142,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "lock": MessageLookupByLibrary.simpleMessage("Zamknout"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "Biometrické ověření je deaktivováno. Pro aktivaci zamkněte a znovu odemkněte obrazovku/zařízení."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Nabídka protokolu"),
         "name": MessageLookupByLibrary.simpleMessage("Název"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message."),
@@ -169,7 +166,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Maximální Bezpečnost"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Navštivte náš profil Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Otevřít"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Rozbor odpovědi"),
         "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
@@ -203,7 +199,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Obecné informace"),
         "showDetails":
             MessageLookupByLibrary.simpleMessage("Zobrazit podrobnosti"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Zobrazit"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Zobrazit zásady ochrany osobních údajů"),
         "signInTitle":
@@ -222,8 +217,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Následující tokeny nepodporují synchronizaci a musí být znovu zaregistrovány:"),
         "unexpectedError":
-            MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba."),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Zevrubné protokolování")
+            MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba.")
       };
 }

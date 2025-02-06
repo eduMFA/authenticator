@@ -16,7 +16,6 @@ import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/views/license_view/license_view.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
-import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/logging_menu.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/settings_groups.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/settings_list_tile_button.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view_widgets/update_firebase_token_dialog.dart';
@@ -164,33 +163,6 @@ class SettingsView extends ConsumerView {
                   trailing: Switch(
                     value: ref.watch(settingsProvider).enablePolling,
                     onChanged: enablePushSettingsGroup ? (value) => ref.read(settingsProvider.notifier).setPolling(value) : null,
-                  ),
-                ),
-              ],
-            ),
-            const Divider(),
-            SettingsGroup(
-              title: S.of(context).errorLogTitle,
-              children: [
-                ListTile(
-                  title: Text(
-                    S.of(context).logMenu,
-                    style: TextTheme.of(context).titleMedium,
-                    overflow: TextOverflow.fade,
-                    softWrap: false,
-                  ),
-                  style: ListTileStyle.list,
-                  trailing: ElevatedButton(
-                    child: Text(
-                      S.of(context).open,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    onPressed: () => showDialog(
-                      context: context,
-                      builder: (context) => const LoggingMenu(),
-                      useRootNavigator: false,
-                    ),
                   ),
                 ),
               ],

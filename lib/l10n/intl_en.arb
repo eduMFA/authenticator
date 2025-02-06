@@ -306,10 +306,6 @@
   "onBoardingText2": "Store tokens on your device securely\nProtected by your biometrics",
   "onBoardingTitle3": "Visit us at Github",
   "onBoardingText3": "This app is open source",
-  "errorLogTitle": "Error log",
-  "logMenu": "Log menu",
-  "showErrorLog": "Show",
-  "clearErrorLog": "Clear",
   "send": "Send",
   "sendErrorLogDescription": "A predefined email is created.\nIt contains information about the app, the error and the device.\nYou can edit the email before sending it.\nYou can see here how we use the information:",
   "@sendErrorLogDescription": {
@@ -317,7 +313,6 @@
   },
   "showPrivacyPolicy": "Show privacy policy",
   "errorLogEmpty": "The error log is empty.",
-  "verboseLogging": "Verbose logging",
   "errorLogCleared": "Error log cleared.",
   "ok": "Ok",
   "errorMailBody": "The error log file is attached.\nYou can replace this text with additional information about the error.",
@@ -325,7 +320,6 @@
     "description": "Message for email body"
   },
   "showDetails": "Show details",
-  "open": "Open",
   "deleteLockedToken": "Please authenticate to delete the locked token.",
   "editLockedToken": "Please authenticate to edit the locked token.",
   "retryRollout": "Retry rollout",

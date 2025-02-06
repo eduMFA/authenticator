@@ -94,7 +94,6 @@ Future<void> _settingsViewTest(WidgetTester tester) async {
   await tester.pumpAndSettle();
   expect(find.text(S.current.settings), findsOneWidget);
   expect(find.text(S.current.theme), findsOneWidget);
-  expect(find.text(S.current.errorLogTitle), findsOneWidget);
   expect(find.byType(SettingsGroup), findsNWidgets(5));
   globalRef!.read(tokenProvider.notifier).handleQrCodeUri(
     Uri(
