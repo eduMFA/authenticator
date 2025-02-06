@@ -385,9 +385,26 @@
   "decryptErrorButtonSendError": "Fehler senden",
   "decryptErrorButtonRetry": "Wiederholen",
   "decryptErrorDeleteConfirmationContent": "Sind Sie sicher, dass Sie die App Daten löschen möchten?",
-  "settingsGroupGeneral": "Allgemeines",
-  "licensesAndVersion": "Lizenzen und Version",
+  "licenses": "Open Source Lizenzen",
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": "App Version",
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Datenschutzerklärung",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": "Webseite",
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": "GitHub",
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "Keine Mail-App gefunden",
   "noMailAppDescription": "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können.",
   "authenticationRequest": "Authentifizierung",

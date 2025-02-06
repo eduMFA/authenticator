@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SettingsTile extends StatelessWidget {
-  final IconData icon;
   final String title;
+  final IconData? icon;
+  final String? iconSvgAsset;
   final Widget? titleIcon;
   final String? subtitle;
   final VoidCallback? onTap;
@@ -11,8 +13,9 @@ class SettingsTile extends StatelessWidget {
 
   const SettingsTile({
     super.key,
-    required this.icon,
     required this.title,
+    this.icon,
+    this.iconSvgAsset,
     this.titleIcon,
     this.onTap,
     this.subtitle,
@@ -22,15 +25,37 @@ class SettingsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget? leading;
+    if (iconSvgAsset != null) {
+      leading = SvgPicture.asset(
+        iconSvgAsset!,
+        height: IconTheme.of(context).size,
+        colorFilter: ColorFilter.mode(
+            ColorScheme.of(context).primary,
+            BlendMode.srcIn
+        ),
+      );
+    }
+    else if (icon != null) {
+      leading = Icon(icon, color: ColorScheme.of(context).primary);
+    }
+
     return ListTile(
-      leading: Icon(icon, color: ColorScheme.of(context).primary),
+      leading: leading,
       title: Row(
         children: [
           Text(title),
           if (titleIcon != null) titleIcon!,
         ],
       ),
-      subtitle: subtitle != null ? Text(subtitle!) : null,
+      subtitle: subtitle != null
+          ? Text(
+              subtitle!,
+              style: TextTheme.of(context).labelMedium?.copyWith(
+                  color: Colors.grey.shade500
+              ),
+          )
+          : null,
       onTap: onTap,
       trailing: trailing ??
           (isLink == true

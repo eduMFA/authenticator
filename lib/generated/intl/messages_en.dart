@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pair new Push Token"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "All tokens are synchronized."),
+        "appVersion": MessageLookupByLibrary.simpleMessage("App Version"),
         "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
         "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
             "This action requires the device to be secured by credentials or biometrics."),
@@ -142,13 +143,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Generating RSA key pair"),
         "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
             "Generating RSA key pair failed"),
+        "github": MessageLookupByLibrary.simpleMessage("GitHub"),
         "goToSettingsButton":
             MessageLookupByLibrary.simpleMessage("Go to settings"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authentication by credentials or biometrics is not set up on your device. Please set it up in the device\'s settings."),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Licenses and version"),
+        "licenses":
+            MessageLookupByLibrary.simpleMessage("Open Source Licenses"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
         "lock": MessageLookupByLibrary.simpleMessage("Lock"),
         "lockDescription": MessageLookupByLibrary.simpleMessage(
@@ -214,7 +216,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Sending public RSA key failed"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "settingsGroupGeneral": MessageLookupByLibrary.simpleMessage("General"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Show details"),
         "showErrorLog": MessageLookupByLibrary.simpleMessage("Show"),
         "showPrivacyPolicy":
@@ -240,6 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("Upload QR Code"),
         "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Verbose logging")
+            MessageLookupByLibrary.simpleMessage("Verbose logging"),
+        "website": MessageLookupByLibrary.simpleMessage("Website")
       };
 }

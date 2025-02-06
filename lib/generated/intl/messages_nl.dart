@@ -137,8 +137,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authenticatie via inloggegevens of biometrie is niet ingesteld. Stel het in bij de instellingen van het apparaat."),
         "language": MessageLookupByLibrary.simpleMessage("Taal"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Licenties en versie"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Licht"),
         "lock": MessageLookupByLibrary.simpleMessage("Vergrendel"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
@@ -196,8 +194,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Versturen van de openbare RSA sleutel mislukt"),
         "settings": MessageLookupByLibrary.simpleMessage("Instellingen"),
-        "settingsGroupGeneral":
-            MessageLookupByLibrary.simpleMessage("Algemene informatie"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Details tonen"),
         "showErrorLog": MessageLookupByLibrary.simpleMessage("Weergeven"),
         "showPrivacyPolicy":
