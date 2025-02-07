@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Neuen Push-Token verknüpfen"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Alle Token wurden synchronisiert."),
+        "appVersion": MessageLookupByLibrary.simpleMessage("App Version"),
+        "appearance": MessageLookupByLibrary.simpleMessage("Erscheinungsbild"),
         "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
             "Diese Aktion erfordert, dass auf dem Gerät ein Passwort oder Biometrie eingerichtet ist."),
         "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
@@ -136,13 +138,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Generiere RSA Schlüsselpaar"),
         "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
             "Generieren des RSA Schlüsselpaars fehlgeschlagen"),
+        "github": MessageLookupByLibrary.simpleMessage("GitHub"),
         "goToSettingsButton":
             MessageLookupByLibrary.simpleMessage("Gehe zu Einstellungen"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authentifizierung durch Gerätepasswort oder Biometrie ist nicht eingerichtet. Bitte aktivieren Sie dies in den Geräteeinstellungen."),
         "language": MessageLookupByLibrary.simpleMessage("Sprache"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Lizenzen und Version"),
+        "licenses":
+            MessageLookupByLibrary.simpleMessage("Open Source Lizenzen"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Hell"),
         "lock": MessageLookupByLibrary.simpleMessage("Sperren"),
         "lockDescription": MessageLookupByLibrary.simpleMessage(
@@ -208,8 +211,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Senden des öffentlichen RSA Schlüssels fehlgeschlagen"),
         "settings": MessageLookupByLibrary.simpleMessage("Einstellungen"),
-        "settingsGroupGeneral":
-            MessageLookupByLibrary.simpleMessage("Allgemeines"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Details anzeigen"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Datenschutzerklärung anzeigen"),
@@ -232,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
             "Ein unerwarteter Fehler ist aufgetreten."),
         "uploadQrCodeButton":
-            MessageLookupByLibrary.simpleMessage("QR Code hochladen")
+            MessageLookupByLibrary.simpleMessage("QR Code hochladen"),
+        "website": MessageLookupByLibrary.simpleMessage("Webseite")
       };
 }

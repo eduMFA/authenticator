@@ -283,6 +283,16 @@ class S {
     );
   }
 
+  /// `Appearance`
+  String get appearance {
+    return Intl.message(
+      'Appearance',
+      name: 'appearance',
+      desc: 'Title of the setting group where the theme can be selected.',
+      args: [],
+    );
+  }
+
   /// `Push Token`
   String get pushToken {
     return Intl.message(
@@ -1112,22 +1122,22 @@ class S {
     );
   }
 
-  /// `General`
-  String get settingsGroupGeneral {
+  /// `Open Source Licenses`
+  String get licenses {
     return Intl.message(
-      'General',
-      name: 'settingsGroupGeneral',
-      desc: '',
+      'Open Source Licenses',
+      name: 'licenses',
+      desc: 'Button to open the licenses page',
       args: [],
     );
   }
 
-  /// `Licenses and version`
-  String get licensesAndVersion {
+  /// `App Version`
+  String get appVersion {
     return Intl.message(
-      'Licenses and version',
-      name: 'licensesAndVersion',
-      desc: '',
+      'App Version',
+      name: 'appVersion',
+      desc: 'App version info in the About page',
       args: [],
     );
   }
@@ -1137,7 +1147,27 @@ class S {
     return Intl.message(
       'Privacy policy',
       name: 'privacyPolicy',
-      desc: '',
+      desc: 'Button to open the privacy policy',
+      args: [],
+    );
+  }
+
+  /// `Website`
+  String get website {
+    return Intl.message(
+      'Website',
+      name: 'website',
+      desc: 'Button to open the website',
+      args: [],
+    );
+  }
+
+  /// `GitHub`
+  String get github {
+    return Intl.message(
+      'GitHub',
+      name: 'github',
+      desc: 'Button to open the GitHub page',
       args: [],
     );
   }

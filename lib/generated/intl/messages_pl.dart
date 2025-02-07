@@ -127,8 +127,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Ustawienia zabezpieczeń, bądź uwierzytelnianie biometryczne nie są skonfigurowane w twoim urządzeniu. Skonfiguruj je w ustawieniach urządzenia."),
         "language": MessageLookupByLibrary.simpleMessage("Język"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Licencje i wersja"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Jasny"),
         "lock": MessageLookupByLibrary.simpleMessage("Zablokuj"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
@@ -186,8 +184,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Wysyłanie publicznego klucza RSA nieudane"),
         "settings": MessageLookupByLibrary.simpleMessage("Ustawienia"),
-        "settingsGroupGeneral":
-            MessageLookupByLibrary.simpleMessage("Informacje ogólne"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Pokaż szczegóły"),
         "showPrivacyPolicy":
             MessageLookupByLibrary.simpleMessage("Pokaż politykę prywatności"),

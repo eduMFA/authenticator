@@ -132,8 +132,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Není nastaveno přihlášení zámkem zařízení ani biometrické ověření. Aktivujte je v nastavení zařízení."),
         "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Licence a verze"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Světlý"),
         "lock": MessageLookupByLibrary.simpleMessage("Zamknout"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
@@ -190,8 +188,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Nepodařilo se odeslat veřejný klíč RSA"),
         "settings": MessageLookupByLibrary.simpleMessage("Nastavení"),
-        "settingsGroupGeneral":
-            MessageLookupByLibrary.simpleMessage("Obecné informace"),
         "showDetails":
             MessageLookupByLibrary.simpleMessage("Zobrazit podrobnosti"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(

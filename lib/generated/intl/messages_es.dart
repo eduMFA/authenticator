@@ -127,8 +127,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ir a la configuración"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "La autenticación por credenciales o biométrica no está configurada en tu dispositivo. Por favor, configúrala en los ajustes del dispositivo."),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Licencias y versión"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Luminoso"),
         "lock": MessageLookupByLibrary.simpleMessage("Cierre"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
@@ -184,8 +182,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Error al enviar la clave pública RSA"),
         "settings": MessageLookupByLibrary.simpleMessage("Configuración"),
-        "settingsGroupGeneral":
-            MessageLookupByLibrary.simpleMessage("Información general"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Mostrar detalles"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Mostrar política de privacidad"),

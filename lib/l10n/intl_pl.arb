@@ -98,6 +98,10 @@
   "@settings": {
     "description": "Button to open the settings page."
   },
+  "appearance": null,
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
+  },
   "pushToken": "Push token",
   "@pushToken": {
     "description": "Title for the settings block concerning the push tokens."
@@ -384,9 +388,26 @@
   "decryptErrorButtonSendError": "Wyślij błąd",
   "decryptErrorButtonRetry": "Ponów próbę",
   "decryptErrorDeleteConfirmationContent": "Czy na pewno chcesz usunąć dane aplikacji?",
-  "settingsGroupGeneral": "Informacje ogólne",
-  "licensesAndVersion": "Licencje i wersja",
+  "licenses": null,
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": null,
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Polityka prywatności",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": null,
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": null,
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "Nie znaleziono aplikacji pocztowej",
   "noMailAppDescription": "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail",
   "authenticationRequest": "Żądanie uwierzytelnienia",

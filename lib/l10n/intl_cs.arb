@@ -102,6 +102,10 @@
   "@settings": {
     "description": "Button to open the settings page."
   },
+  "appearance": null,
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
+  },
   "pushToken": "Push notifikace",
   "@pushToken": {
     "description": "Title for the settings block concerning the push tokens."
@@ -389,9 +393,26 @@
   "decryptErrorButtonSendError": "Odeslat chybu",
   "decryptErrorButtonRetry": "Opakování",
   "decryptErrorDeleteConfirmationContent": "Jste si jisti, že chcete data aplikace odstranit?",
-  "settingsGroupGeneral": "Obecné informace",
-  "licensesAndVersion": "Licence a verze",
+  "licenses": null,
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": null,
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Zásady ochrany osobních údajů",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": null,
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": null,
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "Není nainstalována žádná e-mailová aplikace",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Žádost o ověření",
