@@ -33,12 +33,14 @@ class _TokensListState extends ConsumerState<TokensList> {
       allowToRefresh: allowToRefresh,
       onRefresh: () async => PollLoadingIndicator.pollForChallenges(context),
       child: Padding(
-        padding: const EdgeInsets.all(5),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.only(top: 25),
-          child: Column(
-            children: tokenWidgets,
-          ),
+        padding: const EdgeInsets.only(top: 20, right: 10, left: 10),
+        child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 400,
+              mainAxisExtent: 80,
+            ),
+            itemCount: tokenWidgets.length,
+            itemBuilder: (_, index) => tokenWidgets[index],
         ),
       ),
     );

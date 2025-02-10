@@ -1,9 +1,11 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
+import 'package:edumfa_authenticator/widgets/navigation_item.dart';
 import 'package:edumfa_authenticator/widgets/push_request_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -59,30 +61,65 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
   Widget build(BuildContext context) {
     return PushRequestListener(
       child: Scaffold(
-        body: _views[_selectedIndex],
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: _selectedIndex,
-          onDestinationSelected: _onDestinationSelected,
-          destinations: [
-            NavigationDestination(
-              icon: const Icon(Icons.home_outlined),
-              selectedIcon: const Icon(Icons.home),
-              label: S
-                  .of(context)
-                  .tokens,
-            ),
-            NavigationDestination(
-              icon: const Icon(Icons.settings_outlined),
-              selectedIcon: const Icon(Icons.settings),
-              label: S
-                  .of(context)
-                  .settings,
-            ),
-          ],
-        ),
+        body: isTablet(context)
+            ? Row(
+                children: <Widget>[
+                  NavigationRail(
+                    selectedIndex: _selectedIndex,
+                    onDestinationSelected: _onDestinationSelected,
+                    destinations: _getNavigationItems(context)
+                        .map((item) => item.toRailDestination()).toList(),
+                    labelType: NavigationRailLabelType.all,
+                    groupAlignment: 0,
+                    leading: SizedBox(
+                      height: 56,  // 56 is the default for FAB
+                      child: _selectedIndex == 0
+                          ? FloatingActionButton(
+                              tooltip: S.of(context).addToken,
+                              child: const Icon(Icons.add),
+                              onPressed: () => _tokensViewKey.currentState!.showAddTokenSheet(_tokensViewKey.currentContext!)
+                          ) : null,
+                    ),
+                  ),
+                  Expanded(
+                    child: ColoredBox(
+                      color: Colors.black,
+                      child: SafeArea(
+                        bottom: false,
+                        child: ClipRRect(
+                            borderRadius: const BorderRadius.vertical(top: Radius.circular(16.0)),
+                            child: _views[_selectedIndex],
+                        ),
+                      ),
+                    )
+                  ),
+                ],
+            )
+            : _views[_selectedIndex],
+        bottomNavigationBar: !isTablet(context)
+            ? NavigationBar(
+                selectedIndex: _selectedIndex,
+                onDestinationSelected: _onDestinationSelected,
+                destinations: _getNavigationItems(context)
+                    .map((item) => item.toDestination()).toList(),
+            )
+            : null,
       ),
     );
   }
+
+  List<NavigationItem> _getNavigationItems(BuildContext context) => [
+    NavigationItem(
+      icon: Icons.home_outlined,
+      selectedIcon: Icons.home,
+      label: S.of(context).tokens,
+    ),
+    NavigationItem(
+      icon: Icons.settings_outlined,
+      selectedIcon: Icons.settings,
+      label: S.of(context).settings,
+    ),
+  ];
 
   void _onDestinationSelected(int index) {
     setState(() {

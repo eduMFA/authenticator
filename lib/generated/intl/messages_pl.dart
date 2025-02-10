@@ -43,166 +43,228 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "accept": MessageLookupByLibrary.simpleMessage("Potwierdzam"),
-        "addToken": MessageLookupByLibrary.simpleMessage("Dodaj token"),
-        "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
-            "Wszystkie tokeny są zsynchronizowane."),
-        "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
-            "To działanie wymaga skonfigurowania ustawień zabezpieczeń albo uwierzytelniania biometrycznego."),
-        "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
-            "Skonfigurowane ustawienia zabezpieczeń albo uwierzytelnianie biometryczne jest wymagane."),
-        "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
-            "Uwierzytelnij, aby zaakceptować żądanie push."),
-        "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
-            "Uwierzytelnij, aby odrzucić żądanie push."),
-        "authenticationRequest":
-            MessageLookupByLibrary.simpleMessage("Żądanie uwierzytelnienia"),
-        "biometricHint":
-            MessageLookupByLibrary.simpleMessage("Wymagana autentykacja"),
-        "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-            "Nie rozpoznano. Spróbuj ponownie."),
-        "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-            "Uwierzytelnianie biometryczne nie jest skonfigurowane."),
-        "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-            "Autentykacja zakończona sukcesem!"),
-        "cancel": MessageLookupByLibrary.simpleMessage("Anuluj"),
-        "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
-            "Sprawdź połączenie sieciowe i spróbuj ponownie."),
-        "confirmDeletion":
-            MessageLookupByLibrary.simpleMessage("Potwierdź usunięcie"),
-        "confirmDeletionOf": m0,
-        "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
-            "Usunięcie tego tokenu może uniemożliwić zalogowanie się. Upewnij się, że możesz zalogować się na powiązane konto bez tego tokenu."),
-        "connectionFailed": MessageLookupByLibrary.simpleMessage(
-            "Połączenie nie powiodło się."),
-        "couldNotSignMessage": MessageLookupByLibrary.simpleMessage(
-            "Nie można podpisać wiadomości."),
-        "darkTheme": MessageLookupByLibrary.simpleMessage("Ciemny"),
-        "decline": MessageLookupByLibrary.simpleMessage("Odrzucam"),
-        "decryptErrorButtonDelete":
-            MessageLookupByLibrary.simpleMessage("Usuń"),
-        "decryptErrorButtonRetry":
-            MessageLookupByLibrary.simpleMessage("Ponów próbę"),
-        "decryptErrorButtonSendError":
-            MessageLookupByLibrary.simpleMessage("Wyślij błąd"),
-        "decryptErrorContent": MessageLookupByLibrary.simpleMessage(
-            "Niestety, aplikacja nie była w stanie odszyfrować tokenów. Oznacza to, że klucz szyfrowania jest uszkodzony. Możesz spróbować ponownie lub usunąć dane aplikacji, co spowoduje usunięcie tokenów w aplikacji."),
-        "decryptErrorDeleteConfirmationContent":
-            MessageLookupByLibrary.simpleMessage(
-                "Czy na pewno chcesz usunąć dane aplikacji?"),
-        "delete": MessageLookupByLibrary.simpleMessage("Usuń"),
-        "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
-            "Uwierzytelnij, aby usunąć zablokowany token."),
-        "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-            "Ustawienia zabezpieczeń urządzenia nie zostały skonfigurowane."),
-        "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-            "Skonfiguruj ustawienia zabezpieczeń w ustawieniach urządzenia."),
-        "dismiss": MessageLookupByLibrary.simpleMessage("Odrzuć"),
-        "editLockedToken": MessageLookupByLibrary.simpleMessage(
-            "Aby edytować zablokowany token, należy się uwierzytelnić."),
-        "enablePolling": MessageLookupByLibrary.simpleMessage(
-            "Włącz autentykację przez wiadomość push."),
-        "errorMailBody": MessageLookupByLibrary.simpleMessage(
-            "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie."),
-        "errorRollOutFailed": m1,
-        "errorRollOutNoConnectionToServer": m2,
-        "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
-            "Wstać z łóżka tego tokena nie jest już możliwe."),
-        "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
-            "Uścisk dłoni SSL nie powiódł się. Rozwijanie nie jest możliwe."),
-        "errorRollOutUnknownError": m3,
-        "errorSynchronizationNoNetworkConnection":
-            MessageLookupByLibrary.simpleMessage(
-                "Synchronizacja tokenów push nieudana, ponieważ serwer eduMFA jest nieosiągalny."),
-        "errorTokenExpired": m4,
-        "errorWhenPullingChallenges": m5,
-        "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
-            "Generowanie sekretu po stronie telefonu..."),
-        "generatingRSAKeyPair":
-            MessageLookupByLibrary.simpleMessage("Generowanie pary kluczy RSA"),
-        "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
-            "Generowanie pary kluczy RSA nieudane"),
-        "goToSettingsButton":
-            MessageLookupByLibrary.simpleMessage("Idź do ustawień"),
-        "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-            "Ustawienia zabezpieczeń, bądź uwierzytelnianie biometryczne nie są skonfigurowane w twoim urządzeniu. Skonfiguruj je w ustawieniach urządzenia."),
-        "language": MessageLookupByLibrary.simpleMessage("Język"),
-        "lightTheme": MessageLookupByLibrary.simpleMessage("Jasny"),
-        "lock": MessageLookupByLibrary.simpleMessage("Zablokuj"),
-        "lockOut": MessageLookupByLibrary.simpleMessage(
-            "Uwierzytelnianie biometryczne jest wyłączone. Zablokuj i odblokuj ponownie ekran, żeby je włączyć."),
-        "name": MessageLookupByLibrary.simpleMessage("Nazwa"),
-        "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
-            "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail"),
-        "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
-            "Nie znaleziono aplikacji pocztowej"),
-        "noNetworkConnection":
-            MessageLookupByLibrary.simpleMessage("Brak połączenia sieciowego."),
-        "noResultText1": MessageLookupByLibrary.simpleMessage("Dotknij "),
-        "noResultText2":
-            MessageLookupByLibrary.simpleMessage(" przycisku, żeby zacząć!"),
-        "noResultTitle": MessageLookupByLibrary.simpleMessage(
-            "Nie zainstalowano jeszcze żadnego tokenu."),
-        "onBoardingText1": MessageLookupByLibrary.simpleMessage(
-            "Uwierzytelnianie dwuskładnikowe\nuczynione prostym"),
-        "onBoardingText2": MessageLookupByLibrary.simpleMessage(
-            "Przechowuj tokeny w swoim urządzeniu\nzabezpieczone biometrycznie"),
-        "onBoardingText3": MessageLookupByLibrary.simpleMessage(
-            "Ta aplikacja jest w open source"),
-        "onBoardingTitle2":
-            MessageLookupByLibrary.simpleMessage("Maksymalne Bezpieczeństwo"),
-        "onBoardingTitle3":
-            MessageLookupByLibrary.simpleMessage("Odwiedź nas na Github"),
-        "parsingResponse":
-            MessageLookupByLibrary.simpleMessage("Analizowanie odpowiedzi"),
-        "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
-            "Analizowanie odpowiedzi nieudane"),
-        "phonePart":
-            MessageLookupByLibrary.simpleMessage("Sekret po stronie telefonu:"),
-        "pollingFailed":
-            MessageLookupByLibrary.simpleMessage("Zapytanie nie powiodło się."),
-        "pollingFailedFor": m6,
-        "privacyPolicy":
-            MessageLookupByLibrary.simpleMessage("Polityka prywatności"),
-        "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
-            "Żądanie push nie mogło zostać przetworzone."),
-        "pushToken": MessageLookupByLibrary.simpleMessage("Push token"),
-        "requestInfo": m7,
-        "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
-            "Wysyłaj zapytanie o push challenge cyklicznie. Włącz, jeśli push nie przychodzi normalnie."),
-        "retryRollout":
-            MessageLookupByLibrary.simpleMessage("Ponowne uruchomienie"),
-        "rollingOut": MessageLookupByLibrary.simpleMessage("Wdrażanie"),
-        "rolloutCompleted":
-            MessageLookupByLibrary.simpleMessage("Wdrożenie zakończone"),
-        "secretKey": MessageLookupByLibrary.simpleMessage("Tajny klucz"),
-        "send": MessageLookupByLibrary.simpleMessage("Wyślij"),
-        "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(
-            "Tworzona jest gotowa wiadomość e-mail zawierająca informacje o aplikacji, błędzie i urządzeniu.\nMożesz edytować wiadomość e-mail przed jej wysłaniem.\nTutaj można zobaczyć, w jaki sposób wykorzystujemy te informacje:"),
-        "sendingRSAPublicKey": MessageLookupByLibrary.simpleMessage(
-            "Wysyłanie publicznego klucza RSA"),
-        "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
-            "Wysyłanie publicznego klucza RSA nieudane"),
-        "settings": MessageLookupByLibrary.simpleMessage("Ustawienia"),
-        "showDetails": MessageLookupByLibrary.simpleMessage("Pokaż szczegóły"),
-        "showPrivacyPolicy":
-            MessageLookupByLibrary.simpleMessage("Pokaż politykę prywatności"),
-        "signInTitle":
-            MessageLookupByLibrary.simpleMessage("Wymagana autentykacja"),
-        "statusCode": m8,
-        "sync": MessageLookupByLibrary.simpleMessage("Synchronizuj"),
-        "synchronizationFailed": MessageLookupByLibrary.simpleMessage(
-            "Synchronizacja dla poniższych tokenów się nie udała, spróbuj ponownie:"),
-        "synchronizePushTokens":
-            MessageLookupByLibrary.simpleMessage("Synchronizuj tokeny push."),
-        "synchronizesTokensWithServer": MessageLookupByLibrary.simpleMessage(
-            "Synchronizuje tokeny push z serwerem eduMFA."),
-        "synchronizingTokens":
-            MessageLookupByLibrary.simpleMessage("Synchronizacja tokenów."),
-        "theme": MessageLookupByLibrary.simpleMessage("Motyw"),
-        "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
-            "Następujące tokeny nie wspierają synchronizacji i muszą zostać wdrożone od nowa:"),
-        "unexpectedError":
-            MessageLookupByLibrary.simpleMessage("Wystąpił nieoczekiwany błąd.")
-      };
+    "accept": MessageLookupByLibrary.simpleMessage("Potwierdzam"),
+    "addToken": MessageLookupByLibrary.simpleMessage("Dodaj token"),
+    "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
+      "Wszystkie tokeny są zsynchronizowane.",
+    ),
+    "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
+      "To działanie wymaga skonfigurowania ustawień zabezpieczeń albo uwierzytelniania biometrycznego.",
+    ),
+    "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
+      "Skonfigurowane ustawienia zabezpieczeń albo uwierzytelnianie biometryczne jest wymagane.",
+    ),
+    "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
+      "Uwierzytelnij, aby zaakceptować żądanie push.",
+    ),
+    "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
+      "Uwierzytelnij, aby odrzucić żądanie push.",
+    ),
+    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
+      "Żądanie uwierzytelnienia",
+    ),
+    "biometricHint": MessageLookupByLibrary.simpleMessage(
+      "Wymagana autentykacja",
+    ),
+    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
+      "Nie rozpoznano. Spróbuj ponownie.",
+    ),
+    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
+      "Uwierzytelnianie biometryczne nie jest skonfigurowane.",
+    ),
+    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
+      "Autentykacja zakończona sukcesem!",
+    ),
+    "cancel": MessageLookupByLibrary.simpleMessage("Anuluj"),
+    "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
+      "Sprawdź połączenie sieciowe i spróbuj ponownie.",
+    ),
+    "confirmDeletion": MessageLookupByLibrary.simpleMessage(
+      "Potwierdź usunięcie",
+    ),
+    "confirmDeletionOf": m0,
+    "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
+      "Usunięcie tego tokenu może uniemożliwić zalogowanie się. Upewnij się, że możesz zalogować się na powiązane konto bez tego tokenu.",
+    ),
+    "connectionFailed": MessageLookupByLibrary.simpleMessage(
+      "Połączenie nie powiodło się.",
+    ),
+    "couldNotSignMessage": MessageLookupByLibrary.simpleMessage(
+      "Nie można podpisać wiadomości.",
+    ),
+    "darkTheme": MessageLookupByLibrary.simpleMessage("Ciemny"),
+    "decline": MessageLookupByLibrary.simpleMessage("Odrzucam"),
+    "decryptErrorButtonDelete": MessageLookupByLibrary.simpleMessage("Usuń"),
+    "decryptErrorButtonRetry": MessageLookupByLibrary.simpleMessage(
+      "Ponów próbę",
+    ),
+    "decryptErrorButtonSendError": MessageLookupByLibrary.simpleMessage(
+      "Wyślij błąd",
+    ),
+    "decryptErrorContent": MessageLookupByLibrary.simpleMessage(
+      "Niestety, aplikacja nie była w stanie odszyfrować tokenów. Oznacza to, że klucz szyfrowania jest uszkodzony. Możesz spróbować ponownie lub usunąć dane aplikacji, co spowoduje usunięcie tokenów w aplikacji.",
+    ),
+    "decryptErrorDeleteConfirmationContent":
+        MessageLookupByLibrary.simpleMessage(
+          "Czy na pewno chcesz usunąć dane aplikacji?",
+        ),
+    "delete": MessageLookupByLibrary.simpleMessage("Usuń"),
+    "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
+      "Uwierzytelnij, aby usunąć zablokowany token.",
+    ),
+    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
+      "Ustawienia zabezpieczeń urządzenia nie zostały skonfigurowane.",
+    ),
+    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
+      "Skonfiguruj ustawienia zabezpieczeń w ustawieniach urządzenia.",
+    ),
+    "dismiss": MessageLookupByLibrary.simpleMessage("Odrzuć"),
+    "editLockedToken": MessageLookupByLibrary.simpleMessage(
+      "Aby edytować zablokowany token, należy się uwierzytelnić.",
+    ),
+    "enablePolling": MessageLookupByLibrary.simpleMessage(
+      "Włącz autentykację przez wiadomość push.",
+    ),
+    "errorMailBody": MessageLookupByLibrary.simpleMessage(
+      "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie.",
+    ),
+    "errorRollOutFailed": m1,
+    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
+      "Wstać z łóżka tego tokena nie jest już możliwe.",
+    ),
+    "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
+      "Uścisk dłoni SSL nie powiódł się. Rozwijanie nie jest możliwe.",
+    ),
+    "errorRollOutUnknownError": m3,
+    "errorSynchronizationNoNetworkConnection": MessageLookupByLibrary.simpleMessage(
+      "Synchronizacja tokenów push nieudana, ponieważ serwer eduMFA jest nieosiągalny.",
+    ),
+    "errorTokenExpired": m4,
+    "errorWhenPullingChallenges": m5,
+    "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
+      "Generowanie sekretu po stronie telefonu...",
+    ),
+    "generatingRSAKeyPair": MessageLookupByLibrary.simpleMessage(
+      "Generowanie pary kluczy RSA",
+    ),
+    "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
+      "Generowanie pary kluczy RSA nieudane",
+    ),
+    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
+      "Idź do ustawień",
+    ),
+    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
+      "Ustawienia zabezpieczeń, bądź uwierzytelnianie biometryczne nie są skonfigurowane w twoim urządzeniu. Skonfiguruj je w ustawieniach urządzenia.",
+    ),
+    "language": MessageLookupByLibrary.simpleMessage("Język"),
+    "lightTheme": MessageLookupByLibrary.simpleMessage("Jasny"),
+    "lock": MessageLookupByLibrary.simpleMessage("Zablokuj"),
+    "lockOut": MessageLookupByLibrary.simpleMessage(
+      "Uwierzytelnianie biometryczne jest wyłączone. Zablokuj i odblokuj ponownie ekran, żeby je włączyć.",
+    ),
+    "name": MessageLookupByLibrary.simpleMessage("Nazwa"),
+    "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
+      "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail",
+    ),
+    "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
+      "Nie znaleziono aplikacji pocztowej",
+    ),
+    "noNetworkConnection": MessageLookupByLibrary.simpleMessage(
+      "Brak połączenia sieciowego.",
+    ),
+    "noResultText1": MessageLookupByLibrary.simpleMessage("Dotknij "),
+    "noResultText2": MessageLookupByLibrary.simpleMessage(
+      " przycisku, żeby zacząć!",
+    ),
+    "noResultTitle": MessageLookupByLibrary.simpleMessage(
+      "Nie zainstalowano jeszcze żadnego tokenu.",
+    ),
+    "onBoardingText1": MessageLookupByLibrary.simpleMessage(
+      "Uwierzytelnianie dwuskładnikowe\nuczynione prostym",
+    ),
+    "onBoardingText2": MessageLookupByLibrary.simpleMessage(
+      "Przechowuj tokeny w swoim urządzeniu\nzabezpieczone biometrycznie",
+    ),
+    "onBoardingText3": MessageLookupByLibrary.simpleMessage(
+      "Ta aplikacja jest w open source",
+    ),
+    "onBoardingTitle2": MessageLookupByLibrary.simpleMessage(
+      "Maksymalne Bezpieczeństwo",
+    ),
+    "onBoardingTitle3": MessageLookupByLibrary.simpleMessage(
+      "Odwiedź nas na Github",
+    ),
+    "parsingResponse": MessageLookupByLibrary.simpleMessage(
+      "Analizowanie odpowiedzi",
+    ),
+    "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
+      "Analizowanie odpowiedzi nieudane",
+    ),
+    "phonePart": MessageLookupByLibrary.simpleMessage(
+      "Sekret po stronie telefonu:",
+    ),
+    "pollingFailed": MessageLookupByLibrary.simpleMessage(
+      "Zapytanie nie powiodło się.",
+    ),
+    "pollingFailedFor": m6,
+    "privacyPolicy": MessageLookupByLibrary.simpleMessage(
+      "Polityka prywatności",
+    ),
+    "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
+      "Żądanie push nie mogło zostać przetworzone.",
+    ),
+    "pushToken": MessageLookupByLibrary.simpleMessage("Push token"),
+    "requestInfo": m7,
+    "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
+      "Wysyłaj zapytanie o push challenge cyklicznie. Włącz, jeśli push nie przychodzi normalnie.",
+    ),
+    "retryRollout": MessageLookupByLibrary.simpleMessage(
+      "Ponowne uruchomienie",
+    ),
+    "rollingOut": MessageLookupByLibrary.simpleMessage("Wdrażanie"),
+    "rolloutCompleted": MessageLookupByLibrary.simpleMessage(
+      "Wdrożenie zakończone",
+    ),
+    "secretKey": MessageLookupByLibrary.simpleMessage("Tajny klucz"),
+    "send": MessageLookupByLibrary.simpleMessage("Wyślij"),
+    "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(
+      "Tworzona jest gotowa wiadomość e-mail zawierająca informacje o aplikacji, błędzie i urządzeniu.\nMożesz edytować wiadomość e-mail przed jej wysłaniem.\nTutaj można zobaczyć, w jaki sposób wykorzystujemy te informacje:",
+    ),
+    "sendingRSAPublicKey": MessageLookupByLibrary.simpleMessage(
+      "Wysyłanie publicznego klucza RSA",
+    ),
+    "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
+      "Wysyłanie publicznego klucza RSA nieudane",
+    ),
+    "settings": MessageLookupByLibrary.simpleMessage("Ustawienia"),
+    "showDetails": MessageLookupByLibrary.simpleMessage("Pokaż szczegóły"),
+    "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
+      "Pokaż politykę prywatności",
+    ),
+    "signInTitle": MessageLookupByLibrary.simpleMessage(
+      "Wymagana autentykacja",
+    ),
+    "statusCode": m8,
+    "sync": MessageLookupByLibrary.simpleMessage("Synchronizuj"),
+    "synchronizationFailed": MessageLookupByLibrary.simpleMessage(
+      "Synchronizacja dla poniższych tokenów się nie udała, spróbuj ponownie:",
+    ),
+    "synchronizePushTokens": MessageLookupByLibrary.simpleMessage(
+      "Synchronizuj tokeny push.",
+    ),
+    "synchronizesTokensWithServer": MessageLookupByLibrary.simpleMessage(
+      "Synchronizuje tokeny push z serwerem eduMFA.",
+    ),
+    "synchronizingTokens": MessageLookupByLibrary.simpleMessage(
+      "Synchronizacja tokenów.",
+    ),
+    "theme": MessageLookupByLibrary.simpleMessage("Motyw"),
+    "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
+      "Następujące tokeny nie wspierają synchronizacji i muszą zostać wdrożone od nowa:",
+    ),
+    "unexpectedError": MessageLookupByLibrary.simpleMessage(
+      "Wystąpił nieoczekiwany błąd.",
+    ),
+  };
 }

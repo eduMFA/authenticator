@@ -89,6 +89,16 @@ class EduMFAAuthenticator extends ConsumerWidget {
                 brandColor,
                 Brightness.dark
             ));
+            final navigationRailThemeData = NavigationRailThemeData(
+                backgroundColor: Colors.black,
+                unselectedLabelTextStyle: TextStyle(color: darkTheme.colorScheme.onSurface),
+                selectedLabelTextStyle: TextStyle(color: darkTheme.colorScheme.onSurface),
+                selectedIconTheme: darkTheme.iconTheme,
+                unselectedIconTheme: darkTheme.iconTheme,
+                indicatorColor: darkTheme.colorScheme.secondaryContainer
+            );
+            lightTheme = lightTheme.copyWith(navigationRailTheme: navigationRailThemeData);
+            darkTheme = darkTheme.copyWith(navigationRailTheme: navigationRailThemeData);
 
             return MaterialApp(
               debugShowCheckedModeBanner: true,

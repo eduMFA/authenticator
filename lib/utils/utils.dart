@@ -98,5 +98,5 @@ Size textSizeOf(String text, TextStyle style, {int? maxLines = 1, double minWidt
 }
 
 bool isTablet(BuildContext context) {
-  return MediaQuery.of(context).size.shortestSide > 600;
+  return MediaQuery.of(context).size.width > 700;
 }
