@@ -97,6 +97,10 @@
   "@settings": {
     "description": "Button to open the settings page."
   },
+  "noSettingsSelected": "Select a setting",
+  "@noSettingsSelected": {
+    "description": "Message when no setting is selected on tablets."
+  },
   "appearance": "Appearance",
   "@appearance": {
     "description": "Title of the setting group where the theme can be selected."

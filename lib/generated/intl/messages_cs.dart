@@ -43,171 +43,226 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "accept": MessageLookupByLibrary.simpleMessage("Přijmout"),
-        "addToken": MessageLookupByLibrary.simpleMessage("Přidat token"),
-        "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
-            "Všechny tokeny jsou synchronizované."),
-        "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
-            "Tato akce vyžaduje, aby bylo zařízení chráněno zámkem zařízení nebo biometrickým ověřením."),
-        "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
-            "Vyžadován zámek zařízení nebo biometrické ověření"),
-        "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
-            "Pro přijetí požadavku na push notifikaci se přihlaste."),
-        "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
-            "Pro odmítnutí požadavku na push notifikaci se přihlaste."),
-        "authenticationRequest":
-            MessageLookupByLibrary.simpleMessage("Žádost o ověření"),
-        "biometricHint":
-            MessageLookupByLibrary.simpleMessage("Vyžadováno přihlášení"),
-        "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-            "Ověření se nezdařilo. Zkuste to znovu."),
-        "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-            "Biometrické ověření není nastaveno"),
-        "biometricSuccess":
-            MessageLookupByLibrary.simpleMessage("Přihlášení bylo úspěšné"),
-        "cameraPermissionPermanentlyDeniedButton":
-            MessageLookupByLibrary.simpleMessage("Udělit oprávnění"),
-        "cancel": MessageLookupByLibrary.simpleMessage("Zrušit"),
-        "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
-            "Zkontrolujte prosím síťové připojení a zkuste to znovu."),
-        "confirmDeletion":
-            MessageLookupByLibrary.simpleMessage("Potvrdit smazání"),
-        "confirmDeletionOf": m0,
-        "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
-            "Pokud tento token odstraníte, nebude již možné se přihlásit.\nProsím, ujistěte se, že se můžete přihlásit k přidruženému účtu bez tohoto tokenu."),
-        "connectionFailed":
-            MessageLookupByLibrary.simpleMessage("Připojení se nezdařilo."),
-        "couldNotSignMessage": MessageLookupByLibrary.simpleMessage(
-            "Zprávu se nepodařilo podepsat."),
-        "darkTheme": MessageLookupByLibrary.simpleMessage("Tmavý"),
-        "decline": MessageLookupByLibrary.simpleMessage("Odmítnout"),
-        "decryptErrorButtonDelete":
-            MessageLookupByLibrary.simpleMessage("Odstranit"),
-        "decryptErrorButtonRetry":
-            MessageLookupByLibrary.simpleMessage("Opakování"),
-        "decryptErrorButtonSendError":
-            MessageLookupByLibrary.simpleMessage("Odeslat chybu"),
-        "decryptErrorContent": MessageLookupByLibrary.simpleMessage(
-            "Bohužel se aplikaci nepodařilo dešifrovat vaše tokeny. To znamená, že šifrovací klíč je poškozen. Můžete to zkusit znovu nebo odstranit data aplikace, čímž by došlo k odstranění tokenů v aplikaci."),
-        "decryptErrorDeleteConfirmationContent":
-            MessageLookupByLibrary.simpleMessage(
-                "Jste si jisti, že chcete data aplikace odstranit?"),
-        "decryptErrorTitle":
-            MessageLookupByLibrary.simpleMessage("Chyba dešifrování"),
-        "delete": MessageLookupByLibrary.simpleMessage("Smazat"),
-        "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
-            "Prosím, autentifikujte se pro smazání uzamčeného tokenu."),
-        "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-            "Není nastaven zámek zařízení"),
-        "deviceCredentialsSetupDescription":
-            MessageLookupByLibrary.simpleMessage(
-                "Nastave zámek zařízení v nastavení zařízení"),
-        "dismiss": MessageLookupByLibrary.simpleMessage("Zavřít"),
-        "editLockedToken": MessageLookupByLibrary.simpleMessage(
-            "Prosím, autentifikujte se pro úpravu uzamčeného tokenu."),
-        "enablePolling":
-            MessageLookupByLibrary.simpleMessage("Povolit polling"),
-        "errorMailBody": MessageLookupByLibrary.simpleMessage(
-            "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě."),
-        "errorRollOutFailed": m1,
-        "errorRollOutNoConnectionToServer": m2,
-        "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
-            "Roll-out tohoto tokenu již není možný."),
-        "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
-            "SSL handshake se nezdařil. Roll-out není možný."),
-        "errorRollOutUnknownError": m3,
-        "errorSynchronizationNoNetworkConnection":
-            MessageLookupByLibrary.simpleMessage(
-                "Synchronizace tokenů selhala, připojení k serveru eduMFA se nezdařilo."),
-        "errorTokenExpired": m4,
-        "errorWhenPullingChallenges": m5,
-        "generatingPhonePart":
-            MessageLookupByLibrary.simpleMessage("Generování klientské části"),
-        "generatingRSAKeyPair":
-            MessageLookupByLibrary.simpleMessage("Generování párů klíčů RSA"),
-        "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
-            "Generování páru klíčů RSA se nezdařilo"),
-        "goToSettingsButton":
-            MessageLookupByLibrary.simpleMessage("Otevřít nastavení"),
-        "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-            "Není nastaveno přihlášení zámkem zařízení ani biometrické ověření. Aktivujte je v nastavení zařízení."),
-        "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
-        "lightTheme": MessageLookupByLibrary.simpleMessage("Světlý"),
-        "lock": MessageLookupByLibrary.simpleMessage("Zamknout"),
-        "lockOut": MessageLookupByLibrary.simpleMessage(
-            "Biometrické ověření je deaktivováno. Pro aktivaci zamkněte a znovu odemkněte obrazovku/zařízení."),
-        "name": MessageLookupByLibrary.simpleMessage("Název"),
-        "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
-            "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message."),
-        "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
-            "Není nainstalována žádná e-mailová aplikace"),
-        "noNetworkConnection":
-            MessageLookupByLibrary.simpleMessage("Žádné připojení k síti."),
-        "noResultText1":
-            MessageLookupByLibrary.simpleMessage("stiskněte tlačítko "),
-        "noResultText2":
-            MessageLookupByLibrary.simpleMessage(" a začněte s používáním."),
-        "noResultTitle": MessageLookupByLibrary.simpleMessage(
-            "Nejsou nainstalovány žádné tokeny."),
-        "onBoardingText1": MessageLookupByLibrary.simpleMessage(
-            "vícefázové ověření\nusnadněno"),
-        "onBoardingText2": MessageLookupByLibrary.simpleMessage(
-            "Uložte tokeny do svého zařízení\nchráněné biometrickým ověřením"),
-        "onBoardingText3": MessageLookupByLibrary.simpleMessage(
-            "Tuto aplikaci má open source"),
-        "onBoardingTitle2":
-            MessageLookupByLibrary.simpleMessage("Maximální Bezpečnost"),
-        "onBoardingTitle3":
-            MessageLookupByLibrary.simpleMessage("Navštivte náš profil Github"),
-        "parsingResponse":
-            MessageLookupByLibrary.simpleMessage("Rozbor odpovědi"),
-        "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
-            "Parsování odpovědi se nezdařilo"),
-        "phonePart": MessageLookupByLibrary.simpleMessage("Klientská část:"),
-        "pollingFailed":
-            MessageLookupByLibrary.simpleMessage("Dotaz se nezdařil."),
-        "pollingFailedFor": m6,
-        "privacyPolicy": MessageLookupByLibrary.simpleMessage(
-            "Zásady ochrany osobních údajů"),
-        "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
-            "Požadavek na odeslání se nepodařilo zpracovat."),
-        "pushToken": MessageLookupByLibrary.simpleMessage("Push notifikace"),
-        "requestInfo": m7,
-        "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
-            "Periodicky získávat výzvy ze serveru. Povolte pokud nefunguje příjem push notifikací."),
-        "retryRollout": MessageLookupByLibrary.simpleMessage("Zkusit znovu"),
-        "rollingOut": MessageLookupByLibrary.simpleMessage("Registrace"),
-        "rolloutCompleted":
-            MessageLookupByLibrary.simpleMessage("Zavedení dokončeno"),
-        "secretKey": MessageLookupByLibrary.simpleMessage("Tajný klíč"),
-        "send": MessageLookupByLibrary.simpleMessage("Odeslat"),
-        "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(
-            "Vytvoří se připravený e-mail.\nObsahuje informace o aplikaci, chybě a zařízení.\nPřed odesláním můžete e-mail upravit.\nZde se můžete podívat, jak informace používáme:"),
-        "sendingRSAPublicKey": MessageLookupByLibrary.simpleMessage(
-            "Odeslání veřejného klíče RSA"),
-        "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
-            "Nepodařilo se odeslat veřejný klíč RSA"),
-        "settings": MessageLookupByLibrary.simpleMessage("Nastavení"),
-        "showDetails":
-            MessageLookupByLibrary.simpleMessage("Zobrazit podrobnosti"),
-        "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
-            "Zobrazit zásady ochrany osobních údajů"),
-        "signInTitle":
-            MessageLookupByLibrary.simpleMessage("Vyžadováno přihlášení"),
-        "statusCode": m8,
-        "sync": MessageLookupByLibrary.simpleMessage("Synchronizovat"),
-        "synchronizationFailed": MessageLookupByLibrary.simpleMessage(
-            "Synchronizace následujících tokenů selhala, zkuste to znovu:"),
-        "synchronizePushTokens":
-            MessageLookupByLibrary.simpleMessage("Synchronizace push tokenů"),
-        "synchronizesTokensWithServer": MessageLookupByLibrary.simpleMessage(
-            "Synchronizovat tokeny se serverem eduMFA."),
-        "synchronizingTokens":
-            MessageLookupByLibrary.simpleMessage("Tokeny se synchronizují."),
-        "theme": MessageLookupByLibrary.simpleMessage("Vzhled"),
-        "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
-            "Následující tokeny nepodporují synchronizaci a musí být znovu zaregistrovány:"),
-        "unexpectedError":
-            MessageLookupByLibrary.simpleMessage("Nastala neočekávaná chyba.")
-      };
+    "accept": MessageLookupByLibrary.simpleMessage("Přijmout"),
+    "addToken": MessageLookupByLibrary.simpleMessage("Přidat token"),
+    "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
+      "Všechny tokeny jsou synchronizované.",
+    ),
+    "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
+      "Tato akce vyžaduje, aby bylo zařízení chráněno zámkem zařízení nebo biometrickým ověřením.",
+    ),
+    "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
+      "Vyžadován zámek zařízení nebo biometrické ověření",
+    ),
+    "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
+      "Pro přijetí požadavku na push notifikaci se přihlaste.",
+    ),
+    "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
+      "Pro odmítnutí požadavku na push notifikaci se přihlaste.",
+    ),
+    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
+      "Žádost o ověření",
+    ),
+    "biometricHint": MessageLookupByLibrary.simpleMessage(
+      "Vyžadováno přihlášení",
+    ),
+    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
+      "Ověření se nezdařilo. Zkuste to znovu.",
+    ),
+    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
+      "Biometrické ověření není nastaveno",
+    ),
+    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
+      "Přihlášení bylo úspěšné",
+    ),
+    "cameraPermissionPermanentlyDeniedButton":
+        MessageLookupByLibrary.simpleMessage("Udělit oprávnění"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Zrušit"),
+    "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
+      "Zkontrolujte prosím síťové připojení a zkuste to znovu.",
+    ),
+    "confirmDeletion": MessageLookupByLibrary.simpleMessage("Potvrdit smazání"),
+    "confirmDeletionOf": m0,
+    "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
+      "Pokud tento token odstraníte, nebude již možné se přihlásit.\nProsím, ujistěte se, že se můžete přihlásit k přidruženému účtu bez tohoto tokenu.",
+    ),
+    "connectionFailed": MessageLookupByLibrary.simpleMessage(
+      "Připojení se nezdařilo.",
+    ),
+    "couldNotSignMessage": MessageLookupByLibrary.simpleMessage(
+      "Zprávu se nepodařilo podepsat.",
+    ),
+    "darkTheme": MessageLookupByLibrary.simpleMessage("Tmavý"),
+    "decline": MessageLookupByLibrary.simpleMessage("Odmítnout"),
+    "decryptErrorButtonDelete": MessageLookupByLibrary.simpleMessage(
+      "Odstranit",
+    ),
+    "decryptErrorButtonRetry": MessageLookupByLibrary.simpleMessage(
+      "Opakování",
+    ),
+    "decryptErrorButtonSendError": MessageLookupByLibrary.simpleMessage(
+      "Odeslat chybu",
+    ),
+    "decryptErrorContent": MessageLookupByLibrary.simpleMessage(
+      "Bohužel se aplikaci nepodařilo dešifrovat vaše tokeny. To znamená, že šifrovací klíč je poškozen. Můžete to zkusit znovu nebo odstranit data aplikace, čímž by došlo k odstranění tokenů v aplikaci.",
+    ),
+    "decryptErrorDeleteConfirmationContent":
+        MessageLookupByLibrary.simpleMessage(
+          "Jste si jisti, že chcete data aplikace odstranit?",
+        ),
+    "decryptErrorTitle": MessageLookupByLibrary.simpleMessage(
+      "Chyba dešifrování",
+    ),
+    "delete": MessageLookupByLibrary.simpleMessage("Smazat"),
+    "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
+      "Prosím, autentifikujte se pro smazání uzamčeného tokenu.",
+    ),
+    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
+      "Není nastaven zámek zařízení",
+    ),
+    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
+      "Nastave zámek zařízení v nastavení zařízení",
+    ),
+    "dismiss": MessageLookupByLibrary.simpleMessage("Zavřít"),
+    "editLockedToken": MessageLookupByLibrary.simpleMessage(
+      "Prosím, autentifikujte se pro úpravu uzamčeného tokenu.",
+    ),
+    "enablePolling": MessageLookupByLibrary.simpleMessage("Povolit polling"),
+    "errorMailBody": MessageLookupByLibrary.simpleMessage(
+      "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě.",
+    ),
+    "errorRollOutFailed": m1,
+    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
+      "Roll-out tohoto tokenu již není možný.",
+    ),
+    "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
+      "SSL handshake se nezdařil. Roll-out není možný.",
+    ),
+    "errorRollOutUnknownError": m3,
+    "errorSynchronizationNoNetworkConnection":
+        MessageLookupByLibrary.simpleMessage(
+          "Synchronizace tokenů selhala, připojení k serveru eduMFA se nezdařilo.",
+        ),
+    "errorTokenExpired": m4,
+    "errorWhenPullingChallenges": m5,
+    "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
+      "Generování klientské části",
+    ),
+    "generatingRSAKeyPair": MessageLookupByLibrary.simpleMessage(
+      "Generování párů klíčů RSA",
+    ),
+    "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
+      "Generování páru klíčů RSA se nezdařilo",
+    ),
+    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
+      "Otevřít nastavení",
+    ),
+    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
+      "Není nastaveno přihlášení zámkem zařízení ani biometrické ověření. Aktivujte je v nastavení zařízení.",
+    ),
+    "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
+    "lightTheme": MessageLookupByLibrary.simpleMessage("Světlý"),
+    "lock": MessageLookupByLibrary.simpleMessage("Zamknout"),
+    "lockOut": MessageLookupByLibrary.simpleMessage(
+      "Biometrické ověření je deaktivováno. Pro aktivaci zamkněte a znovu odemkněte obrazovku/zařízení.",
+    ),
+    "name": MessageLookupByLibrary.simpleMessage("Název"),
+    "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
+      "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
+    ),
+    "noMailAppTitle": MessageLookupByLibrary.simpleMessage(
+      "Není nainstalována žádná e-mailová aplikace",
+    ),
+    "noNetworkConnection": MessageLookupByLibrary.simpleMessage(
+      "Žádné připojení k síti.",
+    ),
+    "noResultText1": MessageLookupByLibrary.simpleMessage(
+      "stiskněte tlačítko ",
+    ),
+    "noResultText2": MessageLookupByLibrary.simpleMessage(
+      " a začněte s používáním.",
+    ),
+    "noResultTitle": MessageLookupByLibrary.simpleMessage(
+      "Nejsou nainstalovány žádné tokeny.",
+    ),
+    "onBoardingText1": MessageLookupByLibrary.simpleMessage(
+      "vícefázové ověření\nusnadněno",
+    ),
+    "onBoardingText2": MessageLookupByLibrary.simpleMessage(
+      "Uložte tokeny do svého zařízení\nchráněné biometrickým ověřením",
+    ),
+    "onBoardingText3": MessageLookupByLibrary.simpleMessage(
+      "Tuto aplikaci má open source",
+    ),
+    "onBoardingTitle2": MessageLookupByLibrary.simpleMessage(
+      "Maximální Bezpečnost",
+    ),
+    "onBoardingTitle3": MessageLookupByLibrary.simpleMessage(
+      "Navštivte náš profil Github",
+    ),
+    "parsingResponse": MessageLookupByLibrary.simpleMessage("Rozbor odpovědi"),
+    "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
+      "Parsování odpovědi se nezdařilo",
+    ),
+    "phonePart": MessageLookupByLibrary.simpleMessage("Klientská část:"),
+    "pollingFailed": MessageLookupByLibrary.simpleMessage("Dotaz se nezdařil."),
+    "pollingFailedFor": m6,
+    "privacyPolicy": MessageLookupByLibrary.simpleMessage(
+      "Zásady ochrany osobních údajů",
+    ),
+    "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
+      "Požadavek na odeslání se nepodařilo zpracovat.",
+    ),
+    "pushToken": MessageLookupByLibrary.simpleMessage("Push notifikace"),
+    "requestInfo": m7,
+    "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
+      "Periodicky získávat výzvy ze serveru. Povolte pokud nefunguje příjem push notifikací.",
+    ),
+    "retryRollout": MessageLookupByLibrary.simpleMessage("Zkusit znovu"),
+    "rollingOut": MessageLookupByLibrary.simpleMessage("Registrace"),
+    "rolloutCompleted": MessageLookupByLibrary.simpleMessage(
+      "Zavedení dokončeno",
+    ),
+    "secretKey": MessageLookupByLibrary.simpleMessage("Tajný klíč"),
+    "send": MessageLookupByLibrary.simpleMessage("Odeslat"),
+    "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(
+      "Vytvoří se připravený e-mail.\nObsahuje informace o aplikaci, chybě a zařízení.\nPřed odesláním můžete e-mail upravit.\nZde se můžete podívat, jak informace používáme:",
+    ),
+    "sendingRSAPublicKey": MessageLookupByLibrary.simpleMessage(
+      "Odeslání veřejného klíče RSA",
+    ),
+    "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
+      "Nepodařilo se odeslat veřejný klíč RSA",
+    ),
+    "settings": MessageLookupByLibrary.simpleMessage("Nastavení"),
+    "showDetails": MessageLookupByLibrary.simpleMessage("Zobrazit podrobnosti"),
+    "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
+      "Zobrazit zásady ochrany osobních údajů",
+    ),
+    "signInTitle": MessageLookupByLibrary.simpleMessage(
+      "Vyžadováno přihlášení",
+    ),
+    "statusCode": m8,
+    "sync": MessageLookupByLibrary.simpleMessage("Synchronizovat"),
+    "synchronizationFailed": MessageLookupByLibrary.simpleMessage(
+      "Synchronizace následujících tokenů selhala, zkuste to znovu:",
+    ),
+    "synchronizePushTokens": MessageLookupByLibrary.simpleMessage(
+      "Synchronizace push tokenů",
+    ),
+    "synchronizesTokensWithServer": MessageLookupByLibrary.simpleMessage(
+      "Synchronizovat tokeny se serverem eduMFA.",
+    ),
+    "synchronizingTokens": MessageLookupByLibrary.simpleMessage(
+      "Tokeny se synchronizují.",
+    ),
+    "theme": MessageLookupByLibrary.simpleMessage("Vzhled"),
+    "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
+      "Následující tokeny nepodporují synchronizaci a musí být znovu zaregistrovány:",
+    ),
+    "unexpectedError": MessageLookupByLibrary.simpleMessage(
+      "Nastala neočekávaná chyba.",
+    ),
+  };
 }
