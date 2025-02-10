@@ -4,6 +4,7 @@ import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 
 class TokenSearchBar extends ConsumerStatefulWidget {
   const TokenSearchBar({super.key});
@@ -43,6 +44,7 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
           _searchFocusNode.unfocus();
         }
       },
+      onTap: () async => await Haptics.vibrate(HapticsType.soft),
       onChanged: (value) {
         ref.read(tokenFilterProvider.notifier).state = _searchController.text.isEmpty
             ? null

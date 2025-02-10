@@ -7,6 +7,7 @@ import 'package:edumfa_authenticator/utils/lock_auth.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/widgets/press_button.dart';
 import 'package:edumfa_authenticator/widgets/dialog_widgets/default_dialog.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 
 class PushRequestDialog extends StatefulWidget {
   final PushToken tokenWithPushRequest;
@@ -133,6 +134,8 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
     success
         ? globalRef?.read(pushRequestProvider.notifier).acceptPop(widget.tokenWithPushRequest)
         : globalRef?.read(pushRequestProvider.notifier).declinePop(widget.tokenWithPushRequest);
+
+    await Haptics.vibrate(HapticsType.success);
 
     // dialogIsOpen = true;
     // await _showConfirmationDialog(widget.tokenWithPushRequest);

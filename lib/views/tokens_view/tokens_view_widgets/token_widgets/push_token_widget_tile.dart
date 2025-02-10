@@ -5,6 +5,7 @@ import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token
 import 'package:edumfa_authenticator/widgets/squircle_clipper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:http/http.dart' as http;
 
 class PushTokenWidgetTile extends ConsumerWidget {
@@ -32,10 +33,11 @@ class PushTokenWidgetTile extends ConsumerWidget {
                 softWrap: false,
             )
             : null,
-        onLongPress: () => _showEditModal(context, token),
+        onLongPress: () async => await _showEditModal(context, token),
+        enableFeedback: false,
         trailing: IconButton(
           icon: const Icon(Icons.edit),
-          onPressed: () => _showEditModal(context, token),
+          onPressed: () async => await _showEditModal(context, token),
         ),
         tileColor: ColorScheme.of(context).surfaceContainer,
         textColor: ColorScheme.of(context).onSecondaryContainer,
@@ -45,7 +47,9 @@ class PushTokenWidgetTile extends ConsumerWidget {
   }
 }
 
-void _showEditModal(BuildContext context, PushToken token) {
+Future<void> _showEditModal(BuildContext context, PushToken token) async {
+  await Haptics.vibrate(HapticsType.rigid);
+  if (!context.mounted) return;
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,

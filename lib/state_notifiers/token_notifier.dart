@@ -10,6 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:http/http.dart';
 import 'package:pointycastle/asymmetric/api.dart';
 import 'package:edumfa_authenticator/model/enums/token_origin_source_type.dart';
@@ -346,6 +347,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
       } catch (e, s) {
         Logger.error('Error while generating RSA key pair.', name: 'token_notifier.dart#rolloutPushToken', error: e, stackTrace: s);
         token = await updateToken(token, (p0) => p0.copyWith(rolloutState: PushTokenRollOutState.generatingRSAKeyPairFailed)) ?? token;
+        await Haptics.vibrate(HapticsType.error);
         return false;
       }
     }
@@ -356,6 +358,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
       if (await _ioClient.triggerNetworkAccessPermission(url: token.url!, sslVerify: token.sslVerify) == false) {
         Logger.warning('Network access permission for token "${token.id}" failed.', name: 'token_notifier.dart#rolloutPushToken');
         updateToken(token, (p0) => p0.copyWith(rolloutState: PushTokenRollOutState.sendRSAPublicKeyFailed));
+        await Haptics.vibrate(HapticsType.error);
         return false;
       }
       Logger.warning('Network access permission for token "${token.id}" successful.', name: 'token_notifier.dart#rolloutPushToken');
@@ -385,10 +388,12 @@ class TokenNotifier extends StateNotifier<TokenState> {
 
           Logger.warning('Error while parsing RSA public key.', name: 'token_notifier.dart#rolloutPushToken', error: e, stackTrace: s);
           token = await updateToken(token, (p0) => p0.copyWith(rolloutState: PushTokenRollOutState.parsingResponseFailed)) ?? token;
+          await Haptics.vibrate(HapticsType.error);
           return false;
         }
         Logger.info('Roll out successful', name: 'token_notifier.dart#rolloutPushToken');
         token = await updateToken(token, (p0) => p0.copyWith(isRolledOut: true, rolloutState: PushTokenRollOutState.rolloutComplete)) ?? token;
+        await Haptics.vibrate(HapticsType.success);
         checkNotificationPermission();
 
         return true;
@@ -413,10 +418,12 @@ class TokenNotifier extends StateNotifier<TokenState> {
         }
 
         token = await updateToken(token, (p0) => p0.copyWith(rolloutState: PushTokenRollOutState.sendRSAPublicKeyFailed)) ?? token;
+        await Haptics.vibrate(HapticsType.error);
         return false;
       }
     } catch (e, s) {
       token = await updateToken(token, (p0) => p0.copyWith(rolloutState: PushTokenRollOutState.sendRSAPublicKeyFailed)) ?? token;
+      await Haptics.vibrate(HapticsType.error);
       if (e is PlatformException && e.code == FIREBASE_TOKEN_ERROR_CODE || e is SocketException || e is TimeoutException || e is FirebaseException) {
         Logger.warning('Connection error: Roll out push token failed.', name: 'token_notifier.dart#rolloutPushToken', error: e, stackTrace: s);
         showMessage(
@@ -453,6 +460,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
   Future<void> handleQrCodeUri(String? qrCodeUri) async {
     if (qrCodeUri == null) {
       showMessage(message: 'The provided image doesn\'t contain a QR code.', duration: const Duration(seconds: 3));
+      await Haptics.vibrate(HapticsType.error);
       return;
     }
 
@@ -461,6 +469,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
       uri = Uri.parse(qrCodeUri);
     } catch (_) {
       showMessage(message: 'The scanned QR code is not a valid URI.', duration: const Duration(seconds: 3));
+      await Haptics.vibrate(HapticsType.error);
       return;
     }
     List<Token> tokens = await _tokensFromUri(uri);

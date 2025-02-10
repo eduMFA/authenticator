@@ -10,6 +10,7 @@ import 'package:edumfa_authenticator/widgets/push_request_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutterlifecyclehooks/flutterlifecyclehooks.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:quick_actions/quick_actions.dart';
 
 class MainView extends ConsumerStatefulView {
@@ -77,7 +78,7 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                           ? FloatingActionButton(
                               tooltip: S.of(context).addToken,
                               child: const Icon(Icons.add),
-                              onPressed: () => _tokensViewKey.currentState!.showAddTokenSheet(_tokensViewKey.currentContext!)
+                              onPressed: () async => await _tokensViewKey.currentState!.showAddTokenSheet(_tokensViewKey.currentContext!)
                           ) : null,
                     ),
                   ),
@@ -121,7 +122,8 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
     ),
   ];
 
-  void _onDestinationSelected(int index) {
+  Future<void> _onDestinationSelected(int index) async {
+    await Haptics.vibrate(HapticsType.selection);
     setState(() {
       _selectedIndex = index;
     });
