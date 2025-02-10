@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pair new Push Token"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "All tokens are synchronized."),
+        "appVersion": MessageLookupByLibrary.simpleMessage("App Version"),
+        "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
         "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
             "This action requires the device to be secured by credentials or biometrics."),
         "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
@@ -78,7 +80,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Please check your network connection and try again."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Clear"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Confirm deletion"),
         "confirmDeletionOf": m0,
@@ -116,11 +117,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please authenticate to edit the locked token."),
         "editToken": MessageLookupByLibrary.simpleMessage("Edit Token"),
         "enablePolling": MessageLookupByLibrary.simpleMessage("Enable polling"),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Error log cleared."),
-        "errorLogEmpty":
-            MessageLookupByLibrary.simpleMessage("The error log is empty."),
-        "errorLogTitle": MessageLookupByLibrary.simpleMessage("Error log"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "The error log file is attached.\nYou can replace this text with additional information about the error."),
         "errorRollOutFailed": m1,
@@ -141,23 +137,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Generating RSA key pair"),
         "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
             "Generating RSA key pair failed"),
+        "github": MessageLookupByLibrary.simpleMessage("GitHub"),
         "goToSettingsButton":
             MessageLookupByLibrary.simpleMessage("Go to settings"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authentication by credentials or biometrics is not set up on your device. Please set it up in the device\'s settings."),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Licenses and version"),
+        "licenses":
+            MessageLookupByLibrary.simpleMessage("Open Source Licenses"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
         "lock": MessageLookupByLibrary.simpleMessage("Lock"),
         "lockDescription": MessageLookupByLibrary.simpleMessage(
             "Lock a token with biometric authentication."),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "Biometric authentication is disabled. Please lock and unlock your screen to enable it."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Log menu"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "nameFieldEmpty":
             MessageLookupByLibrary.simpleMessage("Name can\'t be empty"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message."),
         "noMailAppTitle":
@@ -169,7 +166,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" button to get started!"),
         "noResultTitle":
             MessageLookupByLibrary.simpleMessage("No tokens stored yet."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Two-factor authentication\nmade easy"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(
@@ -180,7 +176,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Maximum Security"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Visit us at Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Open"),
         "or": MessageLookupByLibrary.simpleMessage("OR"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Parsing response"),
@@ -212,9 +207,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Sending public RSA key failed"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "settingsGroupGeneral": MessageLookupByLibrary.simpleMessage("General"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Show details"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Show"),
         "showPrivacyPolicy":
             MessageLookupByLibrary.simpleMessage("Show privacy policy"),
         "signInTitle":
@@ -237,7 +230,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "An unexpected error occurred."),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("Upload QR Code"),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Verbose logging")
+        "website": MessageLookupByLibrary.simpleMessage("Website")
       };
 }

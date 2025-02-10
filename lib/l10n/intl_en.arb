@@ -40,6 +40,10 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
+  "next": "Next",
+  "@next": {
+    "description": "Text of a button that goes to the next page."
+  },
   "addToken": "Add token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
@@ -92,6 +96,10 @@
   "settings": "Settings",
   "@settings": {
     "description": "Button to open the settings page."
+  },
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
   },
   "pushToken": "Push Token",
   "@pushToken": {
@@ -302,26 +310,17 @@
   "onBoardingText2": "Store tokens on your device securely\nProtected by your biometrics",
   "onBoardingTitle3": "Visit us at Github",
   "onBoardingText3": "This app is open source",
-  "errorLogTitle": "Error log",
-  "logMenu": "Log menu",
-  "showErrorLog": "Show",
-  "clearErrorLog": "Clear",
   "send": "Send",
   "sendErrorLogDescription": "A predefined email is created.\nIt contains information about the app, the error and the device.\nYou can edit the email before sending it.\nYou can see here how we use the information:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Show privacy policy",
-  "errorLogEmpty": "The error log is empty.",
-  "verboseLogging": "Verbose logging",
-  "errorLogCleared": "Error log cleared.",
-  "ok": "Ok",
   "errorMailBody": "The error log file is attached.\nYou can replace this text with additional information about the error.",
   "@errorMailBody": {
     "description": "Message for email body"
   },
   "showDetails": "Show details",
-  "open": "Open",
   "deleteLockedToken": "Please authenticate to delete the locked token.",
   "editLockedToken": "Please authenticate to edit the locked token.",
   "retryRollout": "Retry rollout",
@@ -386,9 +385,26 @@
   "decryptErrorButtonSendError": "Send error",
   "decryptErrorButtonRetry": "Retry",
   "decryptErrorDeleteConfirmationContent": "Are you sure you want to delete the app data?",
-  "settingsGroupGeneral": "General",
-  "licensesAndVersion": "Licenses and version",
+  "licenses": "Open Source Licenses",
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": "App Version",
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Privacy policy",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": "Website",
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": "GitHub",
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "No mail app found",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Authentication request",

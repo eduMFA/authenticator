@@ -14,7 +14,7 @@ publish_to: none
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 6.0.0+3
+version: 6.0.0+600005
 # version: major.minor.build          + 2x major|2x minor|3x build
 # version: version number             + build number (optional)
 # android: build-name                 + versionCode
@@ -22,7 +22,7 @@ version: 6.0.0+3
 
 environment:
   sdk: ^3.6.0
-  flutter: 3.27.3
+  flutter: 3.27.4
 
 dependencies:
   flutter:
@@ -31,30 +31,30 @@ dependencies:
     sdk: flutter
 
   # Cryptography
-  asn1lib: ^1.5.8
+  asn1lib: ^1.5.9
   base32: ^2.1.3
   hex: ^0.2.0
   mutex: ^3.1.0
   pointycastle: ^3.9.1
 
   # Device Info
-  device_info_plus: ^11.2.2
-  package_info_plus: ^8.1.4
+  device_info_plus: ^11.3.0
+  package_info_plus: ^8.2.1
 
   # Firebase
-  firebase_core: ^3.10.1
-  firebase_messaging: ^15.2.1
+  firebase_core: ^3.11.0
+  firebase_messaging: ^15.2.2
 
   # Image and Media
   flutter_svg: ^2.0.17
   image: ^4.5.2
   image_picker: ^1.1.2
   lottie: ^3.3.1
-  mobile_scanner: ^7.0.0-beta.5
+  mobile_scanner: ^7.0.0-beta.6
 
   # Networking and URI
   app_links: ^6.3.3
-  connectivity_plus: ^6.1.2
+  connectivity_plus: ^6.1.3
   flutter_mailer: ^2.1.2
   http: ^1.3.0
   url_launcher: ^6.3.1

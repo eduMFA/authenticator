@@ -44,6 +44,10 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
+  "next": null,
+  "@next": {
+    "description": "Text of a button that goes to the next page."
+  },
   "addToken": "Přidat token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
@@ -97,6 +101,10 @@
   "settings": "Nastavení",
   "@settings": {
     "description": "Button to open the settings page."
+  },
+  "appearance": null,
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
   },
   "pushToken": "Push notifikace",
   "@pushToken": {
@@ -305,26 +313,17 @@
   "onBoardingText2": "Uložte tokeny do svého zařízení\nchráněné biometrickým ověřením",
   "onBoardingTitle3": "Navštivte náš profil Github",
   "onBoardingText3": "Tuto aplikaci má open source",
-  "errorLogTitle": "Protokol chyb",
-  "logMenu": "Nabídka protokolu",
-  "showErrorLog": "Zobrazit",
-  "clearErrorLog": "Vymazat",
   "send": "Odeslat",
   "sendErrorLogDescription": "Vytvoří se připravený e-mail.\nObsahuje informace o aplikaci, chybě a zařízení.\nPřed odesláním můžete e-mail upravit.\nZde se můžete podívat, jak informace používáme:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Zobrazit zásady ochrany osobních údajů",
-  "errorLogEmpty": "Protokol chyb je prázdný.",
-  "verboseLogging": "Zevrubné protokolování",
-  "errorLogCleared": "Protokol chyb vymazán.",
-  "ok": "Ok",
   "errorMailBody": "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě.",
   "@errorMailBody": {
     "description": "Message for email body"
   },
   "showDetails": "Zobrazit podrobnosti",
-  "open": "Otevřít",
   "deleteLockedToken": "Prosím, autentifikujte se pro smazání uzamčeného tokenu.",
   "editLockedToken": "Prosím, autentifikujte se pro úpravu uzamčeného tokenu.",
   "retryRollout": "Zkusit znovu",
@@ -394,9 +393,26 @@
   "decryptErrorButtonSendError": "Odeslat chybu",
   "decryptErrorButtonRetry": "Opakování",
   "decryptErrorDeleteConfirmationContent": "Jste si jisti, že chcete data aplikace odstranit?",
-  "settingsGroupGeneral": "Obecné informace",
-  "licensesAndVersion": "Licence a verze",
+  "licenses": null,
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": null,
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Zásady ochrany osobních údajů",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": null,
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": null,
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "Není nainstalována žádná e-mailová aplikace",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
   "authenticationRequest": "Žádost o ověření",

@@ -56,26 +56,4 @@ class SendErrorDialog extends StatelessWidget {
       );
 }
 
-class NoLogDialog extends StatelessWidget {
-  const NoLogDialog({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return DefaultDialog(
-      scrollable: true,
-      title: Text(
-        S.of(context).errorLogEmpty,
-      ),
-      actions: [
-        TextButton(
-          child: Text(
-            S.of(context).ok,
-            overflow: TextOverflow.fade,
-            softWrap: false,
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ],
-    );
-  }
-}

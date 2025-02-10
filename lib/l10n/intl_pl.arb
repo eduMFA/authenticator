@@ -40,6 +40,10 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
+  "next": null,
+  "@next": {
+    "description": "Text of a button that goes to the next page."
+  },
   "addToken": "Dodaj token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
@@ -93,6 +97,10 @@
   "settings": "Ustawienia",
   "@settings": {
     "description": "Button to open the settings page."
+  },
+  "appearance": null,
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
   },
   "pushToken": "Push token",
   "@pushToken": {
@@ -301,26 +309,17 @@
   "onBoardingText2": "Przechowuj tokeny w swoim urządzeniu\nzabezpieczone biometrycznie",
   "onBoardingTitle3": "Odwiedź nas na Github",
   "onBoardingText3": "Ta aplikacja jest w open source",
-  "errorLogTitle": "Dziennik błędów",
-  "logMenu": "Menu dziennika",
-  "showErrorLog": "Wyświetl",
-  "clearErrorLog": "Usuń",
   "send": "Wyślij",
   "sendErrorLogDescription": "Tworzona jest gotowa wiadomość e-mail zawierająca informacje o aplikacji, błędzie i urządzeniu.\nMożesz edytować wiadomość e-mail przed jej wysłaniem.\nTutaj można zobaczyć, w jaki sposób wykorzystujemy te informacje:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Pokaż politykę prywatności",
-  "errorLogEmpty": "Dziennik błędów jest pusty",
-  "verboseLogging": "Wyczerpujące rejestrowanie",
-  "errorLogCleared": "Dziennik błędów wyczyszczony.",
-  "ok": "Ok",
   "errorMailBody": "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie.",
   "@errorMailBody": {
     "description": "Message for email body"
   },
   "showDetails": "Pokaż szczegóły",
-  "open": "Otwórz",
   "deleteLockedToken": "Uwierzytelnij, aby usunąć zablokowany token.",
   "editLockedToken": "Aby edytować zablokowany token, należy się uwierzytelnić.",
   "retryRollout": "Ponowne uruchomienie",
@@ -389,9 +388,26 @@
   "decryptErrorButtonSendError": "Wyślij błąd",
   "decryptErrorButtonRetry": "Ponów próbę",
   "decryptErrorDeleteConfirmationContent": "Czy na pewno chcesz usunąć dane aplikacji?",
-  "settingsGroupGeneral": "Informacje ogólne",
-  "licensesAndVersion": "Licencje i wersja",
+  "licenses": null,
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": null,
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Polityka prywatności",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": null,
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": null,
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "Nie znaleziono aplikacji pocztowej",
   "noMailAppDescription": "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail",
   "authenticationRequest": "Żądanie uwierzytelnienia",

@@ -71,7 +71,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Veuillez vérifier votre connexion réseau et réessayer."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Effacer"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Confirmer suppression"),
         "confirmDeletionOf": m0,
@@ -108,12 +107,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Veuillez vous authentifier pour modifier le jeton verrouillé."),
         "enablePolling": MessageLookupByLibrary.simpleMessage(
             "Activer l\'interrogation du serveur."),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Journal d\'erreur nettoyé"),
-        "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
-            "Le journal des erreurs est vide"),
-        "errorLogTitle":
-            MessageLookupByLibrary.simpleMessage("Journal d\'erreur"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Le fichier journal des erreurs est joint.\nVous pouvez remplacer ce texte par des informations supplémentaires sur l\'erreur."),
         "errorRollOutFailed": m1,
@@ -139,13 +132,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "L\'authentification par identifiants ou biométrie n\'est pas configurée sur votre appareil. Veuillez le configurer dans les paramètres de l\'appareil."),
         "language": MessageLookupByLibrary.simpleMessage("Langue"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Licences et version"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Thème lumineux"),
         "lock": MessageLookupByLibrary.simpleMessage("Bloquer"),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "L\'authentification biométrique est désactivée. Veuillez verrouiller et déverrouiller votre écran pour l\'activer."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Menu du journal"),
         "name": MessageLookupByLibrary.simpleMessage("Nom"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Aucune application de messagerie n\'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d\'envoyer un message électronique."),
@@ -159,7 +149,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("bouton pour commencer!"),
         "noResultTitle": MessageLookupByLibrary.simpleMessage(
             "Aucun jeton n\'est encore stocké."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Authentification à deux facteurs\nrendue facile"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(
@@ -170,7 +159,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sécurité Maximale"),
         "onBoardingTitle3": MessageLookupByLibrary.simpleMessage(
             "Rendez-nous visite sur Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Ouvrir"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Analyse de la réponse"),
         "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
@@ -202,11 +190,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "L\'envoi de la clé publique RSA a échoué"),
         "settings": MessageLookupByLibrary.simpleMessage("Paramètres"),
-        "settingsGroupGeneral":
-            MessageLookupByLibrary.simpleMessage("Généralités"),
         "showDetails":
             MessageLookupByLibrary.simpleMessage("Afficher les détails"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Afficher"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Afficher la déclaration de confidentialité"),
         "signInTitle":
@@ -225,8 +210,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
             "Ces jetons ne supportent pas la synchronisation et doivent être de nouveau générés:"),
         "unexpectedError": MessageLookupByLibrary.simpleMessage(
-            "Une erreur inattendue s\'est produite."),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Journalisation verbeuse")
+            "Une erreur inattendue s\'est produite.")
       };
 }

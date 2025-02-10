@@ -40,6 +40,10 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
+  "next": null,
+  "@next": {
+    "description": "Text of a button that goes to the next page."
+  },
   "addToken": "Token toevoegen",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
@@ -92,6 +96,10 @@
   "settings": "Instellingen",
   "@settings": {
     "description": "Button to open the settings page."
+  },
+  "appearance": null,
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
   },
   "pushToken": "Push Token",
   "@pushToken": {
@@ -299,26 +307,17 @@
   "onBoardingText2": "Bewaar tokens op uw apparaat\nbeveiligd door uw biometrische gegevens",
   "onBoardingTitle3": "Bezoek ons op Github",
   "onBoardingText3": "Deze app is open source",
-  "errorLogTitle": "Foutenlogboek",
-  "logMenu": "Log menu",
-  "showErrorLog": "Weergeven",
-  "clearErrorLog": "Verwijderen",
   "send": "verzenden",
   "sendErrorLogDescription": "Er wordt een kant-en-klare e-mail gemaakt die informatie bevat over de app, de fout en het apparaat.\nJe kunt de e-mail bewerken voordat je hem verstuurt.\nJe kunt hier zien hoe we de informatie gebruiken:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Privacybeleid tonen",
-  "errorLogEmpty": "Het foutenlogboek is leeg.",
-  "verboseLogging": "Verbose loggen",
-  "errorLogCleared": "Foutenlogboek gewist.",
-  "ok": "Ok",
   "errorMailBody": "Het foutlogbestand is bijgevoegd.\nU kunt deze tekst vervangen door aanvullende informatie over de fout.",
   "@errorMailBody": {
     "description": "Message for email body"
   },
   "showDetails": "Details tonen",
-  "open": "Openen",
   "deleteLockedToken": "Verifieer om het vergrendelde token te verwijderen.",
   "editLockedToken": "Verifieer om het vergrendelde token te bewerken.",
   "retryRollout": "Opnieuw uitrollen",
@@ -393,9 +392,26 @@
   "decryptErrorButtonSendError": "Fout verzenden",
   "decryptErrorButtonRetry": "Opnieuw proberen",
   "decryptErrorDeleteConfirmationContent": "Weet je zeker dat je de app-gegevens wilt verwijderen?",
-  "settingsGroupGeneral": "Algemene informatie",
-  "licensesAndVersion": "Licenties en versie",
+  "licenses": null,
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": null,
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Privacybeleid",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": null,
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": null,
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "Geen mail app gevonden",
   "noMailAppDescription": "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden.",
   "authenticationRequest": "Verificatieverzoek",

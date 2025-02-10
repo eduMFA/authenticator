@@ -54,7 +54,6 @@ Future<void> _introToMainView(WidgetTester tester) async {
   await tester.pump(const Duration(milliseconds: 2000));
   await tester.tap(finder);
   await tester.pump(const Duration(milliseconds: 2000));
-  finder = find.text(S.current.ok);
   await pumpUntilFindNWidgets(tester, finder, 1, const Duration(seconds: 10));
   await tester.tap(finder);
   await tester.pump(const Duration(milliseconds: 1000));

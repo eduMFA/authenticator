@@ -150,6 +150,16 @@ class S {
     );
   }
 
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: 'Text of a button that goes to the next page.',
+      args: [],
+    );
+  }
+
   /// `Add token`
   String get addToken {
     return Intl.message(
@@ -269,6 +279,16 @@ class S {
       'Settings',
       name: 'settings',
       desc: 'Button to open the settings page.',
+      args: [],
+    );
+  }
+
+  /// `Appearance`
+  String get appearance {
+    return Intl.message(
+      'Appearance',
+      name: 'appearance',
+      desc: 'Title of the setting group where the theme can be selected.',
       args: [],
     );
   }
@@ -801,46 +821,6 @@ class S {
     );
   }
 
-  /// `Error log`
-  String get errorLogTitle {
-    return Intl.message(
-      'Error log',
-      name: 'errorLogTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Log menu`
-  String get logMenu {
-    return Intl.message(
-      'Log menu',
-      name: 'logMenu',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Show`
-  String get showErrorLog {
-    return Intl.message(
-      'Show',
-      name: 'showErrorLog',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Clear`
-  String get clearErrorLog {
-    return Intl.message(
-      'Clear',
-      name: 'clearErrorLog',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Send`
   String get send {
     return Intl.message(
@@ -871,46 +851,6 @@ class S {
     );
   }
 
-  /// `The error log is empty.`
-  String get errorLogEmpty {
-    return Intl.message(
-      'The error log is empty.',
-      name: 'errorLogEmpty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Verbose logging`
-  String get verboseLogging {
-    return Intl.message(
-      'Verbose logging',
-      name: 'verboseLogging',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Error log cleared.`
-  String get errorLogCleared {
-    return Intl.message(
-      'Error log cleared.',
-      name: 'errorLogCleared',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Ok`
-  String get ok {
-    return Intl.message(
-      'Ok',
-      name: 'ok',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `The error log file is attached.\nYou can replace this text with additional information about the error.`
   String get errorMailBody {
     return Intl.message(
@@ -926,16 +866,6 @@ class S {
     return Intl.message(
       'Show details',
       name: 'showDetails',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Open`
-  String get open {
-    return Intl.message(
-      'Open',
-      name: 'open',
       desc: '',
       args: [],
     );
@@ -1192,22 +1122,22 @@ class S {
     );
   }
 
-  /// `General`
-  String get settingsGroupGeneral {
+  /// `Open Source Licenses`
+  String get licenses {
     return Intl.message(
-      'General',
-      name: 'settingsGroupGeneral',
-      desc: '',
+      'Open Source Licenses',
+      name: 'licenses',
+      desc: 'Button to open the licenses page',
       args: [],
     );
   }
 
-  /// `Licenses and version`
-  String get licensesAndVersion {
+  /// `App Version`
+  String get appVersion {
     return Intl.message(
-      'Licenses and version',
-      name: 'licensesAndVersion',
-      desc: '',
+      'App Version',
+      name: 'appVersion',
+      desc: 'App version info in the About page',
       args: [],
     );
   }
@@ -1217,7 +1147,27 @@ class S {
     return Intl.message(
       'Privacy policy',
       name: 'privacyPolicy',
-      desc: '',
+      desc: 'Button to open the privacy policy',
+      args: [],
+    );
+  }
+
+  /// `Website`
+  String get website {
+    return Intl.message(
+      'Website',
+      name: 'website',
+      desc: 'Button to open the website',
+      args: [],
+    );
+  }
+
+  /// `GitHub`
+  String get github {
+    return Intl.message(
+      'GitHub',
+      name: 'github',
+      desc: 'Button to open the GitHub page',
       args: [],
     );
   }

@@ -44,6 +44,10 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
+  "next": null,
+  "@next": {
+    "description": "Text of a button that goes to the next page."
+  },
   "addToken": "Añadir token",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
@@ -96,6 +100,10 @@
   "settings": "Configuración",
   "@settings": {
     "description": "Button to open the settings page."
+  },
+  "appearance": null,
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
   },
   "pushToken": "Push Token",
   "@pushToken": {
@@ -302,26 +310,17 @@
   "onBoardingText2": "Almacena fichas de forma segura en tu teléfono.\nProtegido por tus datos biométricos.",
   "onBoardingTitle3": "Visítenos en Github",
   "onBoardingText3": "Esta aplicación es de código abierto",
-  "errorLogTitle": "Registro de errores",
-  "logMenu": "Menú de registro",
-  "showErrorLog": "Mostrar",
-  "clearErrorLog": "Borrar",
   "send": "Enviar",
   "sendErrorLogDescription": "Se crea un correo electrónico listo.\nContiene información sobre la app, el error y el dispositivo.\nPuedes editar el correo antes de enviarlo.\nAquí puede ver cómo utilizamos la información:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Mostrar política de privacidad",
-  "errorLogEmpty": "El registro de errores está vacío",
-  "verboseLogging": "Registro detallado",
-  "errorLogCleared": "Registro de errores borrado",
-  "ok": "Ok",
   "errorMailBody": "Se adjunta el archivo de registro de errores.\nPuede sustituir este texto por información adicional sobre el error.",
   "@errorMailBody": {
     "description": "Message for email body"
   },
   "showDetails": "Mostrar detalles",
-  "open": "Abrir",
   "deleteLockedToken": "Por favor, autentíquese para eliminar el token bloqueado.",
   "editLockedToken": "Por favor, autentíquese para editar el token bloqueado.",
   "retryRollout": "Reintentar despliegue",
@@ -391,9 +390,26 @@
   "decryptErrorButtonSendError": "Enviar error",
   "decryptErrorButtonRetry": "Reintentar",
   "decryptErrorDeleteConfirmationContent": "¿Estás seguro de que quieres borrar los datos de la aplicación?",
-  "settingsGroupGeneral": "Información general",
-  "licensesAndVersion": "Licencias y versión",
+  "licenses": null,
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": null,
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Política de privacidad",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": null,
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": null,
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "No hay aplicación de correo electrónico",
   "noMailAppDescription": "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico.",
   "authenticationRequest": "Autenticación",

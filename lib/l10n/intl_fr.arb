@@ -44,6 +44,10 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
+  "next": null,
+  "@next": {
+    "description": "Text of a button that goes to the next page."
+  },
   "addToken": "Ajouter un jeton",
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
@@ -97,6 +101,10 @@
   "settings": "Paramètres",
   "@settings": {
     "description": "Button to open the settings page."
+  },
+  "appearance": null,
+  "@appearance": {
+    "description": "Title of the setting group where the theme can be selected."
   },
   "pushToken": "Jeton de type Push",
   "@pushToken": {
@@ -305,26 +313,17 @@
   "onBoardingText2": "Stockez les jetons sur votre \nappareil en toute sécurité\nProtégé par votre biométrie",
   "onBoardingTitle3": "Rendez-nous visite sur Github",
   "onBoardingText3": "Cette application est open source",
-  "errorLogTitle": "Journal d'erreur",
-  "logMenu": "Menu du journal",
-  "showErrorLog": "Afficher",
-  "clearErrorLog": "Effacer",
   "send": "Envoyer",
   "sendErrorLogDescription": "Un e-mail pré-rempli est créé.\nIl contient des informations sur l'application, l'erreur et le périphérique.\nVous pouvez modifier l'e-mail avant de l'envoyer.\nVous pouvez voir ici comment nous utilisons les informations:",
   "@sendErrorLogDescription": {
     "description": "Explanation for the user what he will send."
   },
   "showPrivacyPolicy": "Afficher la déclaration de confidentialité",
-  "errorLogEmpty": "Le journal des erreurs est vide",
-  "verboseLogging": "Journalisation verbeuse",
-  "errorLogCleared": "Journal d'erreur nettoyé",
-  "ok": "Ok",
   "errorMailBody": "Le fichier journal des erreurs est joint.\nVous pouvez remplacer ce texte par des informations supplémentaires sur l'erreur.",
   "@errorMailBody": {
     "description": "Message pour le corps du courriel"
   },
   "showDetails": "Afficher les détails",
-  "open": "Ouvrir",
   "deleteLockedToken": "Veuillez vous authentifier pour supprimer le jeton verrouillé.",
   "editLockedToken": "Veuillez vous authentifier pour modifier le jeton verrouillé.",
   "retryRollout": "Réessayer le déploiement",
@@ -396,9 +395,26 @@
   "decryptErrorButtonSendError": "Erreur d'envoi",
   "decryptErrorButtonRetry": "Réessayer",
   "decryptErrorDeleteConfirmationContent": "Êtes-vous sûr de vouloir supprimer les données de l'application ?",
-  "settingsGroupGeneral": "Généralités",
-  "licensesAndVersion": "Licences et version",
+  "licenses": null,
+  "@licenses": {
+    "description": "Button to open the licenses page"
+  },
+  "appVersion": null,
+  "@appVersion": {
+    "description": "App version info in the About page"
+  },
   "privacyPolicy": "Politique de confidentialité",
+  "@privacyPolicy": {
+    "description": "Button to open the privacy policy"
+  },
+  "website": null,
+  "@website": {
+    "description": "Button to open the website"
+  },
+  "github": null,
+  "@github": {
+    "description": "Button to open the GitHub page"
+  },
   "noMailAppTitle": "Aucune application de messagerie trouvée",
   "noMailAppDescription": "Aucune application de messagerie n'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d'envoyer un message électronique.",
   "authenticationRequest": "Authentification",

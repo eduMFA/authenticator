@@ -52,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Neuen Push-Token verknüpfen"),
         "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
             "Alle Token wurden synchronisiert."),
+        "appVersion": MessageLookupByLibrary.simpleMessage("App Version"),
+        "appearance": MessageLookupByLibrary.simpleMessage("Erscheinungsbild"),
         "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
             "Diese Aktion erfordert, dass auf dem Gerät ein Passwort oder Biometrie eingerichtet ist."),
         "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
@@ -78,7 +80,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Abbrechen"),
         "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
             "Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut."),
-        "clearErrorLog": MessageLookupByLibrary.simpleMessage("Löschen"),
         "confirmDeletion":
             MessageLookupByLibrary.simpleMessage("Löschen bestätigen"),
         "confirmDeletionOf": m0,
@@ -117,12 +118,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "editToken": MessageLookupByLibrary.simpleMessage("Token Bearbeiten"),
         "enablePolling": MessageLookupByLibrary.simpleMessage(
             "Aktives Stellen von Push-Anfragen"),
-        "errorLogCleared":
-            MessageLookupByLibrary.simpleMessage("Fehlerprotokoll gelöscht."),
-        "errorLogEmpty": MessageLookupByLibrary.simpleMessage(
-            "Das Fehlerprotokoll ist leer."),
-        "errorLogTitle":
-            MessageLookupByLibrary.simpleMessage("Fehlerprotokoll"),
         "errorMailBody": MessageLookupByLibrary.simpleMessage(
             "Die Fehlerprotokolldatei ist angehängt.\nSie können diesen Text durch zusätzliche Informationen über den Fehler ersetzen."),
         "errorRollOutFailed": m1,
@@ -143,23 +138,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Generiere RSA Schlüsselpaar"),
         "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
             "Generieren des RSA Schlüsselpaars fehlgeschlagen"),
+        "github": MessageLookupByLibrary.simpleMessage("GitHub"),
         "goToSettingsButton":
             MessageLookupByLibrary.simpleMessage("Gehe zu Einstellungen"),
         "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
             "Authentifizierung durch Gerätepasswort oder Biometrie ist nicht eingerichtet. Bitte aktivieren Sie dies in den Geräteeinstellungen."),
         "language": MessageLookupByLibrary.simpleMessage("Sprache"),
-        "licensesAndVersion":
-            MessageLookupByLibrary.simpleMessage("Lizenzen und Version"),
+        "licenses":
+            MessageLookupByLibrary.simpleMessage("Open Source Lizenzen"),
         "lightTheme": MessageLookupByLibrary.simpleMessage("Hell"),
         "lock": MessageLookupByLibrary.simpleMessage("Sperren"),
         "lockDescription": MessageLookupByLibrary.simpleMessage(
             "Sperren eines Tokens mit biometrischer Authentifizierung."),
         "lockOut": MessageLookupByLibrary.simpleMessage(
             "Biometrie ist deaktiviert. Bitte sperren und entsperren Sie Ihren Bildschirm um diese zu aktivieren."),
-        "logMenu": MessageLookupByLibrary.simpleMessage("Log-Menü"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "nameFieldEmpty":
             MessageLookupByLibrary.simpleMessage("Name darf nicht leer sein"),
+        "next": MessageLookupByLibrary.simpleMessage("Weiter"),
         "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
             "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können."),
         "noMailAppTitle":
@@ -171,7 +167,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" Icon um loszulegen!"),
         "noResultTitle":
             MessageLookupByLibrary.simpleMessage("Keine Token vorhanden."),
-        "ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "onBoardingText1": MessageLookupByLibrary.simpleMessage(
             "Zwei-Faktor-Authentifizierung\neinfach gemacht"),
         "onBoardingText2": MessageLookupByLibrary.simpleMessage(
@@ -182,7 +177,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Maximale Sicherheit"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Besuchen Sie uns auf Github"),
-        "open": MessageLookupByLibrary.simpleMessage("Öffnen"),
         "or": MessageLookupByLibrary.simpleMessage("ODER"),
         "parsingResponse":
             MessageLookupByLibrary.simpleMessage("Analysiere Antwort"),
@@ -217,10 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendingRSAPublicKeyFailed": MessageLookupByLibrary.simpleMessage(
             "Senden des öffentlichen RSA Schlüssels fehlgeschlagen"),
         "settings": MessageLookupByLibrary.simpleMessage("Einstellungen"),
-        "settingsGroupGeneral":
-            MessageLookupByLibrary.simpleMessage("Allgemeines"),
         "showDetails": MessageLookupByLibrary.simpleMessage("Details anzeigen"),
-        "showErrorLog": MessageLookupByLibrary.simpleMessage("Anzeigen"),
         "showPrivacyPolicy": MessageLookupByLibrary.simpleMessage(
             "Datenschutzerklärung anzeigen"),
         "signInTitle": MessageLookupByLibrary.simpleMessage(
@@ -243,7 +234,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ein unerwarteter Fehler ist aufgetreten."),
         "uploadQrCodeButton":
             MessageLookupByLibrary.simpleMessage("QR Code hochladen"),
-        "verboseLogging":
-            MessageLookupByLibrary.simpleMessage("Ausführliche Protokollierung")
+        "website": MessageLookupByLibrary.simpleMessage("Webseite")
       };
 }
