@@ -393,7 +393,9 @@ class TokenNotifier extends StateNotifier<TokenState> {
         }
         Logger.info('Roll out successful', name: 'token_notifier.dart#rolloutPushToken');
         token = await updateToken(token, (p0) => p0.copyWith(isRolledOut: true, rolloutState: PushTokenRollOutState.rolloutComplete)) ?? token;
-        await Haptics.vibrate(HapticsType.success);
+        if (!isRunningTests()) {
+          await Haptics.vibrate(HapticsType.success);
+        }
         checkNotificationPermission();
 
         return true;
