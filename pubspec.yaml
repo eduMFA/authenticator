@@ -21,8 +21,8 @@ version: 6.0.0+600005
 # iOS    : CFBundleShortVersionString + CFBundleVersion
 
 environment:
-  sdk: ^3.6.0
-  flutter: 3.27.4
+  sdk: ^3.7.0
+  flutter: 3.29.0
 
 dependencies:
   flutter:
@@ -77,7 +77,7 @@ dependencies:
   flutterlifecyclehooks: ^5.0.0
 
   # Storage
-  shared_preferences: ^2.5.1
+  shared_preferences: ^2.5.2
 
   # UI
   cupertino_icons: ^1.0.8
@@ -87,7 +87,7 @@ dependencies:
   path_provider: ^2.1.5
 
   # Utilities
-  collection: ^1.19.0
+  collection: ^1.19.1
   intl: ^0.19.0
   logger: ^2.5.0
   quick_actions: ^1.1.0
@@ -103,8 +103,8 @@ dev_dependencies:
     sdk: flutter
 
   # Code Generation
-  build_runner: ^2.4.13
-  json_serializable: ^6.9.0
+  build_runner: ^2.4.15
+  json_serializable: ^6.9.4
 
   # Linting and Mocking
   flutter_lints: ^5.0.0
