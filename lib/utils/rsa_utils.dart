@@ -235,7 +235,7 @@ class RsaUtils {
 
     final pair = keyGen.generateKeyPair();
 
-    return AsymmetricKeyPair<RSAPublicKey, RSAPrivateKey>(pair.publicKey as RSAPublicKey, pair.privateKey as RSAPrivateKey);
+    return AsymmetricKeyPair<RSAPublicKey, RSAPrivateKey>(pair.publicKey, pair.privateKey);
   }
 
   String createBase32Signature(RSAPrivateKey privateKey, Uint8List dataToSign) {
