@@ -1152,6 +1152,16 @@ class S {
     );
   }
 
+  /// `Feedback`
+  String get feedback {
+    return Intl.message(
+      'Feedback',
+      name: 'feedback',
+      desc: 'Feedback button in the about page',
+      args: [],
+    );
+  }
+
   /// `Privacy policy`
   String get privacyPolicy {
     return Intl.message(

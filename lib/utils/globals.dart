@@ -42,4 +42,5 @@ final appName = 'eduMFA Authenticator';
 final brandColor = const Color(0xFF768FFC);
 final websiteUri = Uri.parse("https://edumfa.io/");
 final policyStatementUri = Uri.parse("https://edumfa.io/app-privacy");
+final feedbackUrl = Uri.parse("https://edumfa.io/app-feedback");
 final githubUri = Uri.parse("https://github.com/eduMFA/authenticator");

@@ -163,6 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "errorTokenExpired": m4,
     "errorWhenPullingChallenges": m5,
+    "feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Generiere Telefonanteil",
     ),
