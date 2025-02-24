@@ -1,9 +1,5 @@
 {
-  "@@locale": "es",
-  "retry": "Reintentar",
-  "@retry": {
-    "description": "Label for e.g. a button. Something is tried to be done again."
-  },
+  "@@locale": "es-ES",
   "accept": "Aceptar",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."
@@ -12,7 +8,7 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
-  "editToken": null,
+  "editToken": "Edit Token",
   "@editToken": {
     "description": "Title of the edit token sheet."
   },
@@ -20,7 +16,7 @@
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
-  "nameFieldEmpty": null,
+  "nameFieldEmpty": "Name can't be empty",
   "@nameFieldEmpty": {
     "description": "Error message when the name field is empty."
   },
@@ -36,7 +32,7 @@
   "@delete": {
     "description": "Label that describes deleting the token."
   },
-  "saveChanges": null,
+  "saveChanges": "Save Changes",
   "@saveChanges": {
     "description": "Label that describes saving changes to a token."
   },
@@ -44,7 +40,7 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
-  "next": null,
+  "next": "Next",
   "@next": {
     "description": "Text of a button that goes to the next page."
   },
@@ -52,19 +48,19 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "addTokenTitle": null,
+  "addTokenTitle": "Pair new Push Token",
   "@addTokenTitle": {
     "description": "The title of the token add screen."
   },
-  "addTokenSubtitle": null,
+  "addTokenSubtitle": "Point your camera at your screen to capture the QR code",
   "@addTokenSubtitle": {
     "description": "The subtitle of the token add screen."
   },
-  "or": null,
+  "or": "OR",
   "@or": {
     "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
   },
-  "uploadQrCodeButton": null,
+  "uploadQrCodeButton": "Upload QR Code",
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
   },
@@ -93,7 +89,7 @@
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
   },
-  "tokens": null,
+  "tokens": "Tokens",
   "@tokens": {
     "description": "Button to open the tokens page."
   },
@@ -101,11 +97,11 @@
   "@settings": {
     "description": "Button to open the settings page."
   },
-  "noSettingsSelected": null,
+  "noSettingsSelected": "Select a setting",
   "@noSettingsSelected": {
     "description": "Message when no setting is selected on tablets."
   },
-  "appearance": null,
+  "appearance": "Appearance",
   "@appearance": {
     "description": "Title of the setting group where the theme can be selected."
   },
@@ -125,7 +121,7 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "autoTheme": null,
+  "autoTheme": "Auto",
   "@autoTheme": {
     "description": "The automatic theme applied by the system settings."
   },
@@ -187,7 +183,11 @@
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
-  "errorRollOutUnknownError": null,
+  "errorRollOutNoConnectionToServer": "El despliegue del token {name} ha fallado, no se ha podido acceder al servidor.",
+  "@errorRollOutNoConnectionToServer": {
+    "description": "Tells the user that the roll-out failed because the server could not be reached."
+  },
+  "errorRollOutUnknownError": "An unknown error occurred. Roll-out not possible: {e}",
   "@errorRollOutUnknownError": {
     "description": "Tells the user that the roll-out failed because of an unknown error.",
     "placeholders": {
@@ -233,9 +233,9 @@
   "@couldNotSignMessage": {
     "description": "Tells the user that the message could not be signed."
   },
-  "language": null,
+  "language": "Language",
   "@language": {
-    "description": "Título del grupo de configuración lingüística."
+    "description": "Title of language setting group."
   },
   "biometricRequiredTitle": "Biometría no configurada",
   "@biometricRequiredTitle": {
@@ -289,11 +289,11 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "lockDescription": null,
+  "lockDescription": "Lock a token with biometric authentication.",
   "@lockDescription": {
     "description": "Description of the lock option when editing a token."
   },
-  "search": null,
+  "search": "Search",
   "@search": {
     "description": "Placeholder text for search bar."
   },
@@ -356,21 +356,16 @@
   "@rolloutCompleted": {
     "description": "Message for the rollout process"
   },
-  "errorRollOutNoConnectionToServer": "El despliegue del token {name} ha fallado, no se ha podido acceder al servidor.",
-  "@errorRollOutNoConnectionToServer": {
-    "description": "Message for the rollout process",
-    "placeholders": {
-      "name": {
-        "example": "PUSH1234A"
-      }
-    }
-  },
   "authToAcceptPushRequest": "Por favor, autentifíquese para aceptar la solicitud push.",
   "authToDeclinePushRequest": "Por favor, autentifíquese para rechazar la solicitud push.",
   "pushRequestParseError": "No se ha podido procesar la solicitud push.",
   "errorRollOutSSLHandshakeFailed": "Ha fallado el protocolo SSL. No es posible el despliegue.",
+  "@errorRollOutSSLHandshakeFailed": {
+    "description": "Tells the user that the roll-out failed because the SSL handshake failed."
+  },
   "errorWhenPullingChallenges": "Se ha producido un error al buscar retos de {name}",
   "@errorWhenPullingChallenges": {
+    "description": "errorWhenPullingChallenges",
     "placeholders": {
       "name": {
         "example": "PUSH1234A"
@@ -386,7 +381,7 @@
       }
     }
   },
-  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in the system settings.",
   "cameraPermissionPermanentlyDeniedButton": "Conceder permiso",
   "decryptErrorTitle": "Error de descifrado",
   "decryptErrorContent": "Lamentablemente, la aplicación no ha podido descifrar tus tokens. Esto indica que la clave de cifrado está rota. Puedes volver a intentarlo o borrar los datos de la app, lo que eliminaría los tokens de la app.",
@@ -394,11 +389,11 @@
   "decryptErrorButtonSendError": "Enviar error",
   "decryptErrorButtonRetry": "Reintentar",
   "decryptErrorDeleteConfirmationContent": "¿Estás seguro de que quieres borrar los datos de la aplicación?",
-  "licenses": null,
+  "licenses": "Open Source Licenses",
   "@licenses": {
     "description": "Button to open the licenses page"
   },
-  "appVersion": null,
+  "appVersion": "App Version",
   "@appVersion": {
     "description": "App version info in the About page"
   },
@@ -406,11 +401,11 @@
   "@privacyPolicy": {
     "description": "Button to open the privacy policy"
   },
-  "website": null,
+  "website": "Website",
   "@website": {
     "description": "Button to open the website"
   },
-  "github": null,
+  "github": "GitHub",
   "@github": {
     "description": "Button to open the GitHub page"
   },
@@ -419,6 +414,7 @@
   "authenticationRequest": "Autenticación",
   "requestInfo": "Enviado por {issuer} para su cuenta: \"{account}\"",
   "@requestInfo": {
+    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
