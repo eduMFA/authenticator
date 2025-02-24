@@ -1,9 +1,5 @@
 {
   "@@locale": "de",
-  "retry": "Erneut versuchen",
-  "@retry": {
-    "description": "Label for e.g. a button. Something is tried to be done again."
-  },
   "accept": "Akzeptieren",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."
@@ -187,6 +183,10 @@
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
+  "errorRollOutNoConnectionToServer": "Der Rollout von Token {name} ist fehlgeschlagen, der Server konnte nicht erreicht werden.",
+  "@errorRollOutNoConnectionToServer": {
+    "description": "Tells the user that the roll-out failed because the server could not be reached."
+  },
   "errorRollOutUnknownError": "Ein unbekannter Fehler ist aufgetreten. Aurollen nicht möglich: {e}",
   "@errorRollOutUnknownError": {
     "description": "Tells the user that the roll-out failed because of an unknown error.",
@@ -299,7 +299,7 @@
   },
   "noResultTitle": "Keine Token vorhanden.",
   "@noResultTitle": {
-    "description": "No tokens installed yet."
+    "description": "No tokens stored yet."
   },
   "noResultText1": "Tippe auf das ",
   "@noResultText1": {
@@ -349,20 +349,29 @@
     "description": "Message for the rollout process"
   },
   "parsingResponseFailed": "Analysieren der Antwort fehlgeschlagen",
+  "@parsingResponseFailed": {
+    "description": "Message for the rollout process"
+  },
   "rolloutCompleted": "Ausrollen abgeschlossen",
+  "@rolloutCompleted": {
+    "description": "Message for the rollout process"
+  },
+  "authToAcceptPushRequest": "Bitte authentifizieren Sie sich, um die Anfrage anzunehmen.",
+  "authToDeclinePushRequest": "Bitte authentifizieren Sie sich, um die Anfrage abzulehnen.",
+  "pushRequestParseError": "Die Push-Anfrage konnte nicht verarbeitet werden.",
+  "errorRollOutSSLHandshakeFailed": "SSL-Handshake fehlgeschlagen. Roll-out nicht möglich.",
+  "@errorRollOutSSLHandshakeFailed": {
+    "description": "Tells the user that the roll-out failed because the SSL handshake failed."
+  },
   "errorWhenPullingChallenges": "Fehler beim Abrufen der Authentifizierungsanfragen von {name}",
   "@errorWhenPullingChallenges": {
+    "description": "errorWhenPullingChallenges",
     "placeholders": {
       "name": {
         "example": "PUSH1234A"
       }
     }
   },
-  "errorRollOutNoConnectionToServer": "Der Rollout von Token {name} ist fehlgeschlagen, der Server konnte nicht erreicht werden.",
-  "authToAcceptPushRequest": "Bitte authentifizieren Sie sich, um die Anfrage anzunehmen.",
-  "authToDeclinePushRequest": "Bitte authentifizieren Sie sich, um die Anfrage abzulehnen.",
-  "pushRequestParseError": "Die Push-Anfrage konnte nicht verarbeitet werden.",
-  "errorRollOutSSLHandshakeFailed": "SSL-Handshake fehlgeschlagen. Roll-out nicht möglich.",
   "errorRollOutNotPossibleAnymore": "Das Ausrollen dieses Tokens ist nicht mehr möglich.",
   "errorTokenExpired": "Der Token {name} ist abgelaufen.",
   "@errorTokenExpired": {
@@ -405,11 +414,12 @@
   "authenticationRequest": "Authentifizierung",
   "requestInfo": "Gesendet von {issuer} für Ihr Konto: \"{account}\"",
   "@requestInfo": {
+    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
       },
-      "Konto": {
+      "account": {
         "example": "GitHub"
       }
     }
