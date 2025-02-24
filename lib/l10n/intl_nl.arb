@@ -8,7 +8,7 @@
   "@decline": {
     "description": "Label for e.g. a button. Something gets declined by the user."
   },
-  "editToken": null,
+  "editToken": "Edit Token",
   "@editToken": {
     "description": "Title of the edit token sheet."
   },
@@ -16,7 +16,7 @@
   "@name": {
     "description": "Describes the field where the tokens name should be entered."
   },
-  "nameFieldEmpty": null,
+  "nameFieldEmpty": "Name can't be empty",
   "@nameFieldEmpty": {
     "description": "Error message when the name field is empty."
   },
@@ -32,7 +32,7 @@
   "@delete": {
     "description": "Label that describes deleting the token."
   },
-  "saveChanges": null,
+  "saveChanges": "Save Changes",
   "@saveChanges": {
     "description": "Label that describes saving changes to a token."
   },
@@ -40,7 +40,7 @@
   "@dismiss": {
     "description": "Text of a button that closes a dialog."
   },
-  "next": null,
+  "next": "Next",
   "@next": {
     "description": "Text of a button that goes to the next page."
   },
@@ -48,19 +48,19 @@
   "@addToken": {
     "description": "The button to open the screen to add tokens by hand."
   },
-  "addTokenTitle": null,
+  "addTokenTitle": "Pair new Push Token",
   "@addTokenTitle": {
     "description": "The title of the token add screen."
   },
-  "addTokenSubtitle": null,
+  "addTokenSubtitle": "Point your camera at your screen to capture the QR code",
   "@addTokenSubtitle": {
     "description": "The subtitle of the token add screen."
   },
-  "or": null,
+  "or": "OR",
   "@or": {
     "description": "This is shown as a splitter between the option to add a new token by either scanning a QR code OR uploading one as a file."
   },
-  "uploadQrCodeButton": null,
+  "uploadQrCodeButton": "Upload QR Code",
   "@uploadQrCodeButton": {
     "description": "The button in the token add view to upload QR codes as an image."
   },
@@ -89,7 +89,7 @@
   "@phonePart": {
     "description": "Title of a dialog telling the user that the phone was generated, and it is shown to the user."
   },
-  "tokens": null,
+  "tokens": "Tokens",
   "@tokens": {
     "description": "Button to open the tokens page."
   },
@@ -97,11 +97,11 @@
   "@settings": {
     "description": "Button to open the settings page."
   },
-  "noSettingsSelected": null,
+  "noSettingsSelected": "Select a setting",
   "@noSettingsSelected": {
     "description": "Message when no setting is selected on tablets."
   },
-  "appearance": null,
+  "appearance": "Appearance",
   "@appearance": {
     "description": "Title of the setting group where the theme can be selected."
   },
@@ -121,7 +121,7 @@
   "@darkTheme": {
     "description": "The dark theme."
   },
-  "autoTheme": null,
+  "autoTheme": "Auto",
   "@autoTheme": {
     "description": "The automatic theme applied by the system settings."
   },
@@ -183,10 +183,13 @@
   "@errorSynchronizationNoNetworkConnection": {
     "description": "Tells the user that synchronizing the push tokens failed because the server could not be reached."
   },
+  "errorRollOutNoConnectionToServer": "Uitrollen mislukt. Geen verbinding met de server.",
+  "@errorRollOutNoConnectionToServer": {
+    "description": "Tells the user that the roll-out failed because the server could not be reached."
+  },
   "errorRollOutUnknownError": "Een onbekende fout heeft plaats gevonden. Uitrollen is niet mogelijk: {e}",
   "@errorRollOutUnknownError": {
     "description": "Tells the user that the roll-out failed because of an unknown error.",
-    "type": "text",
     "placeholders": {
       "e": {
         "example": "IllegalArgumentException on Line 5 ..."
@@ -286,25 +289,25 @@
   "@lock": {
     "description": "Description of button that locks a token."
   },
-  "lockDescription": null,
+  "lockDescription": "Lock a token with biometric authentication.",
   "@lockDescription": {
     "description": "Description of the lock option when editing a token."
   },
-  "search": null,
+  "search": "Search",
   "@search": {
     "description": "Placeholder text for search bar."
   },
   "noResultTitle": "Nog geen token opgeslagen.",
   "@noResultTitle": {
-    "description": "No tokens installed yet."
+    "description": "No tokens stored yet."
   },
   "noResultText1": "Tik op ",
   "@noResultText1": {
-    "description": "first noresult text"
+    "description": "first no result text"
   },
   "noResultText2": " de knop om te beginnen!",
   "@noResultText2": {
-    "description": "second noresult text"
+    "description": "second no result text"
   },
   "onBoardingText1": "Twee-factoren authenticatie\nmakkelijk gemaakt",
   "onBoardingTitle2": "Maximale Beveiliging",
@@ -353,25 +356,16 @@
   "@rolloutCompleted": {
     "description": "Message for the rollout process"
   },
-  "errorRollOutNoConnectionToServer": "Uitrollen mislukt. Geen verbinding met de server.",
-  "@errorRollOutNoConnectionToServer": {
-    "description": "Message for the rollout process"
-  },
   "authToAcceptPushRequest": "Authenticeer om de push aanvraag te accepteren.",
-  "@authToAcceptPushRequest": {
-    "description": "Message for the rollout process"
-  },
   "authToDeclinePushRequest": "Authenticeer om de push aanvraag te weigeren.",
-  "@authToDeclinePushRequest": {
-    "description": "Message for the rollout process"
-  },
   "pushRequestParseError": "Het pushverzoek kon niet worden verwerkt.",
   "errorRollOutSSLHandshakeFailed": "SSL-handdruk mislukt. Uitrollen niet mogelijk.",
   "@errorRollOutSSLHandshakeFailed": {
-    "description": "Message for the rollout process"
+    "description": "Tells the user that the roll-out failed because the SSL handshake failed."
   },
   "errorWhenPullingChallenges": "Er is een fout opgetreden bij het zoeken naar uitdagingen van {name}",
   "@errorWhenPullingChallenges": {
+    "description": "errorWhenPullingChallenges",
     "placeholders": {
       "name": {
         "example": "PUSH1234A"
@@ -387,8 +381,7 @@
       }
     }
   },
-  "butDiscardIt": "maar verwijder",
-  "cameraPermissionPermanentlyDenied": null,
+  "cameraPermissionPermanentlyDenied": "Camera permission is permanently denied. Please grant camera permission in the system settings.",
   "cameraPermissionPermanentlyDeniedButton": "Toestemming verlenen",
   "decryptErrorTitle": "Fout bij decoderen",
   "decryptErrorContent": "Helaas heeft de app je tokens niet kunnen decoderen. Dit geeft aan dat de coderingssleutel is verbroken. U kunt het opnieuw proberen of de app-gegevens verwijderen, waardoor de tokens in de app worden verwijderd.",
@@ -396,11 +389,11 @@
   "decryptErrorButtonSendError": "Fout verzenden",
   "decryptErrorButtonRetry": "Opnieuw proberen",
   "decryptErrorDeleteConfirmationContent": "Weet je zeker dat je de app-gegevens wilt verwijderen?",
-  "licenses": null,
+  "licenses": "Open Source Licenses",
   "@licenses": {
     "description": "Button to open the licenses page"
   },
-  "appVersion": null,
+  "appVersion": "App Version",
   "@appVersion": {
     "description": "App version info in the About page"
   },
@@ -408,11 +401,11 @@
   "@privacyPolicy": {
     "description": "Button to open the privacy policy"
   },
-  "website": null,
+  "website": "Website",
   "@website": {
     "description": "Button to open the website"
   },
-  "github": null,
+  "github": "GitHub",
   "@github": {
     "description": "Button to open the GitHub page"
   },
@@ -421,6 +414,7 @@
   "authenticationRequest": "Verificatieverzoek",
   "requestInfo": "Verzonden door {issuer} voor uw account: \"{account}\"",
   "@requestInfo": {
+    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
