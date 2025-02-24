@@ -1,5 +1,5 @@
 {
-  "@@locale": "es-ES",
+  "@@locale": "es",
   "accept": "Aceptar",
   "@accept": {
     "description": "Label for e.g. a button. Something gets accepted by the user."
