@@ -38,19 +38,19 @@ dependencies:
   pointycastle: ^4.0.0
 
   # Device Info
-  device_info_plus: ^11.3.0
-  package_info_plus: ^8.2.1
+  device_info_plus: ^11.3.2
+  package_info_plus: ^8.3.0
 
   # Firebase
-  firebase_core: ^3.12.0
-  firebase_messaging: ^15.2.3
+  firebase_core: ^3.12.1
+  firebase_messaging: ^15.2.4
 
   # Image and Media
   flutter_svg: ^2.0.17
-  image: ^4.5.2
+  image: ^4.5.3
   image_picker: ^1.1.2
   lottie: ^3.3.1
-  mobile_scanner: ^7.0.0-beta.6
+  mobile_scanner: ^7.0.0-beta.7
 
   # Networking and URI
   app_links: ^6.4.0
