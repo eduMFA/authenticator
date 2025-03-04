@@ -34,6 +34,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
@@ -78,8 +79,12 @@ class EduMFAAuthenticator extends ConsumerWidget {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ref.read(appConstraintsProvider.notifier).state = constraints;
       });
-      return DynamicColorBuilder(
-          builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
+      return PlatformProvider(
+        settings: PlatformSettingsData(
+          iosUsesMaterialWidgets: true
+        ),
+        builder: (context) => DynamicColorBuilder(
+          builder: (lightDynamic, darkDynamic) {
             ThemeData lightTheme = ThemeData(colorScheme: generateColorScheme(
                 lightDynamic?.primary,
                 brandColor
@@ -100,34 +105,39 @@ class EduMFAAuthenticator extends ConsumerWidget {
             lightTheme = lightTheme.copyWith(navigationRailTheme: navigationRailThemeData);
             darkTheme = darkTheme.copyWith(navigationRailTheme: navigationRailThemeData);
 
-            return MaterialApp(
-              debugShowCheckedModeBanner: true,
-              navigatorKey: globalNavigatorKey,
-              localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate
-              ],
-              supportedLocales: S.delegate.supportedLocales,
-              title: appName,
-              theme: lightTheme,
-              darkTheme: darkTheme,
-              scaffoldMessengerKey: globalSnackbarKey, // <= this
+            return PlatformTheme(
               themeMode: EasyDynamicTheme.of(context).themeMode,
-              initialRoute: SplashScreen.routeName,
-              routes: {
-                AboutSettingsView.routeName: (context) => const AboutSettingsView(),
-                AppearanceSettingsView.routeName: (context) => const AppearanceSettingsView(),
-                LicenseView.routeName: (context) => const LicenseView(),
-                MainView.routeName: (context) => const MainView(),
-                OnboardingView.routeName: (context) => const OnboardingView(),
-                PushTokenSettingsView.routeName: (context) => const PushTokenSettingsView(),
-                SettingsView.routeName: (context) => const SettingsView(),
-                SplashScreen.routeName: (context) => const SplashScreen(),
-              },
+              materialLightTheme: lightTheme,
+              materialDarkTheme: darkTheme,
+              builder: (context) => PlatformApp(
+                debugShowCheckedModeBanner: true,
+                navigatorKey: globalNavigatorKey,
+                localizationsDelegates: [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate
+                ],
+                supportedLocales: S.delegate.supportedLocales,
+                title: appName,
+                initialRoute: SplashScreen.routeName,
+                routes: {
+                  AboutSettingsView.routeName: (context) => const AboutSettingsView(),
+                  AppearanceSettingsView.routeName: (context) => const AppearanceSettingsView(),
+                  LicenseView.routeName: (context) => const LicenseView(),
+                  MainView.routeName: (context) => const MainView(),
+                  OnboardingView.routeName: (context) => const OnboardingView(),
+                  PushTokenSettingsView.routeName: (context) => const PushTokenSettingsView(),
+                  SettingsView.routeName: (context) => const SettingsView(),
+                  SplashScreen.routeName: (context) => const SplashScreen(),
+                },
+                material: (_, __) => MaterialAppData(
+                    scaffoldMessengerKey: globalSnackbarKey
+                ),
+              ),
             );
-          }
+          },
+        ),
       );
     });
   }
