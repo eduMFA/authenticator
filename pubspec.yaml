@@ -50,7 +50,7 @@ dependencies:
   image: ^4.5.3
   image_picker: ^1.1.2
   lottie: ^3.3.1
-  mobile_scanner: ^7.0.0-beta.7
+  mobile_scanner: ^7.0.0-beta.8
 
   # Networking and URI
   app_links: ^6.4.0
@@ -65,7 +65,7 @@ dependencies:
   # Security and Authentication
   flutter_secure_storage: ^9.2.4
   local_auth: ^2.3.0
-  local_auth_android: ^1.0.46
+  local_auth_android: ^1.0.47
   local_auth_darwin: ^1.4.3
   permission_handler: ^11.4.0
 
