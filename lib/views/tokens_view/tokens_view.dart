@@ -77,12 +77,22 @@ class TokensViewState extends ConsumerState<TokensView> {
   Future<void> showAddTokenSheet(BuildContext context) async {
     await Haptics.vibrate(HapticsType.rigid);
     if (!context.mounted) return;
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      showDragHandle: true,
-      builder: (context) => const AddTokenSheetWidget(),
-    );
+    if (isMaterial(context)) {
+      showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        showDragHandle: true,
+        builder: (context) => const AddTokenSheetWidget(),
+      );
+    } else {
+      showCupertinoSheet(
+          context: context,
+          pageBuilder: (_) => const CupertinoPageScaffold(
+              child: AddTokenSheetWidget(),
+          ),
+      );
+    }
+
     }
 
 }
