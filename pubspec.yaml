@@ -60,7 +60,7 @@ dependencies:
   url_launcher: ^6.3.1
 
   # Notifications
-  flutter_local_notifications: ^18.0.1
+  flutter_local_notifications: ^19.0.0
 
   # Security and Authentication
   flutter_secure_storage: ^9.2.4
