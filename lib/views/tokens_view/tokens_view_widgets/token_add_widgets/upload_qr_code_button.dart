@@ -1,5 +1,7 @@
 import 'package:edumfa_authenticator/generated/l10n.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
@@ -14,7 +16,15 @@ class UploadQrCodeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SizedBox(
     width: double.infinity,
-    child: FilledButton.icon(
+    child: PlatformElevatedButton(
+      material: (_, platform) => MaterialElevatedButtonData(
+        style: FilledButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
       onPressed: () async {
         final XFile? image = await ImagePicker().pickImage(
           source: ImageSource.gallery,
@@ -26,14 +36,18 @@ class UploadQrCodeButton extends StatelessWidget {
         );
         handleBarcodes(barcodes);
       },
-      style: FilledButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        spacing: 10.0,
+        children: [
+          PlatformWidget(
+            material: (_, __) => const Icon(Icons.upload_file),
+            cupertino: (_, __) => const Icon(CupertinoIcons.arrow_up_doc),
+          ),
+          Text(S.of(context).uploadQrCodeButton)
+        ],
       ),
-      icon: const Icon(Icons.upload_file),
-      label: Text(S.of(context).uploadQrCodeButton),
+
     ),
   );
 }
