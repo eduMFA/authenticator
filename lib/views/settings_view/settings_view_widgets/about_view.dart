@@ -30,7 +30,7 @@ class AboutSettingsView extends StatelessView {
               title: S.of(context).feedback,
               isLink: true,
               onTap: () => launchUrl(feedbackUrl.replace(
-                  queryParameters: {"systemInfo": AppInfoUtils.systemInfoString}
+                  queryParameters: {"ed_Systeminfo": AppInfoUtils.systemInfoString}
               )),
             ),
             SettingsTile(
