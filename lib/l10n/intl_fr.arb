@@ -407,6 +407,10 @@
   "@appVersion": {
     "description": "App version info in the About page"
   },
+  "feedback": null,
+  "@feedback": {
+    "description": "Feedback button in the about page"
+  },
   "privacyPolicy": "Politique de confidentialité",
   "@privacyPolicy": {
     "description": "Button to open the privacy policy"

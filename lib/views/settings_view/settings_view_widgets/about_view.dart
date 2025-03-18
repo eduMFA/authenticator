@@ -26,6 +26,14 @@ class AboutSettingsView extends StatelessView {
         child: Column(
           children: [
             SettingsTile(
+              icon: Icons.feedback,
+              title: S.of(context).feedback,
+              isLink: true,
+              onTap: () => launchUrl(feedbackUrl.replace(
+                  queryParameters: {"ed_Systeminfo": AppInfoUtils.systemInfoString}
+              )),
+            ),
+            SettingsTile(
               icon: Icons.policy,
               title: S.of(context).privacyPolicy,
               isLink: true,
