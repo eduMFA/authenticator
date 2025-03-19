@@ -101,7 +101,6 @@ class EduMFAAuthenticator extends ConsumerWidget {
             darkTheme = darkTheme.copyWith(navigationRailTheme: navigationRailThemeData);
 
             return MaterialApp(
-              debugShowCheckedModeBanner: true,
               navigatorKey: globalNavigatorKey,
               localizationsDelegates: [
                 S.delegate,
