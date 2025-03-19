@@ -89,7 +89,6 @@ class SecureTokenRepository implements TokenRepository {
 
   /// Returns a list of all tokens that are saved in the secure storage of
   /// this device.
-  /// If [loadLegacy] is set to true, will attempt to load old android and ios tokens.
   @override
   Future<List<Token>> loadTokens() async {
     late Map<String, String> keyValueMap;

@@ -183,15 +183,6 @@ class TokenNotifier extends StateNotifier<TokenState> {
     return (await updatingTokens)?.whereType<T>().toList() ?? [];
   }
 
-  Future<void> addOrReplaceToken(Token token) async {
-    await updatingTokens;
-    updatingTokens = Future(() async {
-      await loadingRepo;
-      return _addOrReplaceTokens([token]);
-    });
-    await updatingTokens;
-  }
-
   Future<void> addOrReplaceTokens(List<Token> updatedTokens) async {
     await updatingTokens;
     updatingTokens = Future(() async {
