@@ -1,5 +1,6 @@
 import 'package:edumfa_authenticator/model/tokens/push_token.dart';
 import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
+import 'package:edumfa_authenticator/utils/utils.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/no_token_screen.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/poll_loading_indicator.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view_widgets/token_widgets/push_token_widget.dart';
@@ -35,8 +36,8 @@ class _TokensListState extends ConsumerState<TokensList> {
       child: Padding(
         padding: const EdgeInsets.only(top: 20, right: 10, left: 10),
         child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 400,
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: isTablet(context) ? 400 : 600,
               mainAxisExtent: 80,
             ),
             itemCount: tokenWidgets.length,
