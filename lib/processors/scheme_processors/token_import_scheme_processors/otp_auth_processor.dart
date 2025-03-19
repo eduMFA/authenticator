@@ -37,13 +37,13 @@ class OtpAuthProcessor extends TokenImportSchemeProcessor {
 }
 
 Map<String, dynamic> _parseEduMFAPushToken(Uri uri) {
-  // otpauth://pipush/LABELTEXT?
+  // edumfa-push://edumfa/EDUP0024385F?
   // url=https://edumfa.io/enroll/this/token
   // &ttl=120
   // &issuer=eduMFA
   // &enrollment_credential=9311ee50678983c0f29d3d843f86e39405e2b427
   // &v=1
-  // &serial=PIPU0006EF87
+  // &serial=EDUP0024385F
   // &sslverify=1
 
   Map<String, dynamic> uriMap = {};

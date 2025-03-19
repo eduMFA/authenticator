@@ -97,8 +97,8 @@ Future<void> _settingsViewTest(WidgetTester tester) async {
   expect(find.byType(SettingsGroup), findsNWidgets(5));
   globalRef!.read(tokenProvider.notifier).handleQrCodeUri(
     Uri(
-        scheme: 'otpauth',
-        host: 'pipush',
+        scheme: 'edumfa-push',
+        host: 'edumfa',
         path: 'label',
         queryParameters: {
           'url': 'https://example.com',
