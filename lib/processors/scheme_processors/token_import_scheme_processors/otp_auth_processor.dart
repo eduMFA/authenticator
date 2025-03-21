@@ -1,3 +1,5 @@
+import 'package:edumfa_authenticator/model/enums/token_types.dart';
+import 'package:edumfa_authenticator/model/extensions/enum_extension.dart';
 import 'package:edumfa_authenticator/model/tokens/token.dart';
 import 'package:edumfa_authenticator/utils/identifiers.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
@@ -48,7 +50,7 @@ Map<String, dynamic> _parseEduMFAPushToken(Uri uri) {
 
   Map<String, dynamic> uriMap = {};
 
-  uriMap[URI_TYPE] = "EDUMFA_PUSH";
+  uriMap[URI_TYPE] = TokenTypes.EDUMFA_PUSH.asString;
 
   // If we do not support the version of this piauth url, we can stop here.
   String? pushVersionAsString = uri.queryParameters['v'];

@@ -26,6 +26,7 @@ abstract class Token {
     if (TokenTypes.EDUMFA_PUSH.isString(type)) return PushToken.fromJson(json);
     throw ArgumentError.value(json, 'json', 'Building the token type [$type] is not a supported right now.');
   }
+
   factory Token.fromUriMap(
     Map<String, dynamic> uriMap,
   ) {
