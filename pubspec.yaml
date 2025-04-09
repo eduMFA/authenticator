@@ -67,7 +67,7 @@ dependencies:
   local_auth: ^2.3.0
   local_auth_android: ^1.0.48
   local_auth_darwin: ^1.4.3
-  permission_handler: ^11.4.0
+  permission_handler: ^12.0.0
 
   # Serialization
   json_annotation: ^4.9.0
