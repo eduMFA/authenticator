@@ -152,7 +152,7 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
           });
         }
       },
-      top: isFirstFrame ? -statusTextHeight - statusSubTextHeight - 10 : 30,
+      top: isFirstFrame ? -statusTextHeight - statusSubTextHeight - 100 : 0,
       left: margin,
       right: margin,
       curve: Curves.easeOut,
@@ -176,49 +176,51 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
               }
             },
             key: const Key('statusbarOverlay'),
-            child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(padding),
-                    color: ColorScheme.of(context).error,
-                  ),
-                  padding: const EdgeInsets.all(padding),
-                  child: SizedBox(
-                    width: maxWidth,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          widget.statusText,
-                          style: statusTextStyle,
-                          textAlign: TextAlign.center,
-                        ),
-                        if (widget.statusSubText != null)
+            child: SafeArea(
+              child: Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(padding),
+                      color: ColorScheme.of(context).error,
+                    ),
+                    padding: const EdgeInsets.all(padding),
+                    child: SizedBox(
+                      width: maxWidth,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
                           Text(
-                            widget.statusSubText!,
-                            style: statusSubTextStyle,
+                            widget.statusText,
+                            style: statusTextStyle,
                             textAlign: TextAlign.center,
                           ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: AlignmentDirectional.topStart,
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: padding / 3 * 2),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(1.5),
-                        color: ColorScheme.of(context).primary,
+                          if (widget.statusSubText != null)
+                            Text(
+                              widget.statusSubText!,
+                              style: statusSubTextStyle,
+                              textAlign: TextAlign.center,
+                            ),
+                        ],
                       ),
-                      height: 3,
-                      width: autoDismissAnimation.value * (maxWidth + padding / 3 * 2),
                     ),
                   ),
-                )
-              ],
+                  Positioned.fill(
+                    child: Align(
+                      alignment: AlignmentDirectional.topStart,
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: padding / 3 * 2),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(1.5),
+                          color: ColorScheme.of(context).primary,
+                        ),
+                        height: 3,
+                        width: autoDismissAnimation.value * (maxWidth + padding / 3 * 2),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
