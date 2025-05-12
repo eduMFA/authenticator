@@ -15,9 +15,8 @@ class AddTokenSheetWidget extends ConsumerStatefulWidget {
   ConsumerState<ConsumerStatefulWidget> createState() => _AddTokenSheetWidgetState();
 }
 
-class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with WidgetsBindingObserver {
+class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> {
   final MobileScannerController controller = MobileScannerController(
-    autoStart: false,
     formats: [BarcodeFormat.qrCode],
   );
 
@@ -32,26 +31,7 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
     _subscription = controller.barcodes.listen(_handleBarcode);
-    unawaited(controller.start());
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (!controller.value.hasCameraPermission) return;
-
-    switch (state) {
-      case AppLifecycleState.resumed:
-        _subscription = controller.barcodes.listen(_handleBarcode);
-        unawaited(controller.start());
-      case AppLifecycleState.inactive:
-        unawaited(_subscription?.cancel());
-        _subscription = null;
-        unawaited(controller.stop());
-      default:
-        return;
-    }
   }
 
   @override
@@ -116,8 +96,6 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> with 
 
   @override
   Future<void> dispose() async {
-    WidgetsBinding.instance.removeObserver(this);
-    unawaited(_subscription?.cancel());
     _subscription = null;
     super.dispose();
     await controller.dispose();
