@@ -10,7 +10,7 @@ import 'package:edumfa_authenticator/utils/app_info_utils.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 
 class EduMFAMailer {
-  static String get _mailRecipient => 'edumfa-app-support@gwdg.de';
+  static String get _mailRecipient => 'edumfa-support@listserv.dfn.de';
   static String _mailSubject(String? subject, String? subjectPrefix, bool subjectAppVersion) {
     String mailSubject = subjectPrefix != null ? '[$subjectPrefix] ' : '';
     if (subjectAppVersion) mailSubject += '{$appName} (${AppInfoUtils.appVersion}) ';

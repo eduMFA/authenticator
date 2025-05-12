@@ -24,7 +24,7 @@
 */
 
 // default email address for crash reports
-const defaultCrashReportRecipient = 'edumfa-app-support@gwdg.de';
+const defaultCrashReportRecipient = 'edumfa-support@listserv.dfn.de';
 
 // qr codes:
 const String URI_TYPE = 'URI_TYPE';
