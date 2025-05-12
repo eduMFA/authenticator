@@ -170,6 +170,7 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
             }
           },
           child: Dismissible(
+            direction: DismissDirection.up,
             onDismissed: (direction) {
               if (mounted) {
                 onDismissed(direction);
