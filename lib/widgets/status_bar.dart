@@ -140,7 +140,7 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
     }
 
     final maxWidth = MediaQuery.of(context).size.width - margin * 2 - padding * 2;
-    final statusTextStyle = TextTheme.of(context).bodyLarge?.copyWith(color: Colors.white) ?? const TextStyle();
+    final statusTextStyle = TextTheme.of(context).titleMedium?.copyWith(color: Colors.white, fontWeight: FontWeight.bold) ?? const TextStyle();
     final statusSubTextStyle = TextTheme.of(context).bodySmall?.copyWith(color: Colors.white) ?? const TextStyle();
     final statusTextHeight = textSizeOf(widget.statusText, statusTextStyle, maxWidth: maxWidth).height;
     final statusSubTextHeight = widget.statusSubText != null ? textSizeOf(widget.statusSubText!, statusSubTextStyle, maxWidth: maxWidth).height : 0;
@@ -183,7 +183,7 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(padding),
-                      color: ColorScheme.of(context).error,
+                      color: ColorScheme.of(context).errorContainer,
                     ),
                     padding: const EdgeInsets.all(padding),
                     child: SizedBox(
@@ -213,7 +213,7 @@ class _StatusBarOverlayEntryState extends State<StatusBarOverlayEntry> with Sing
                         margin: const EdgeInsets.symmetric(horizontal: padding / 3 * 2),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(1.5),
-                          color: ColorScheme.of(context).primary,
+                          color: ColorScheme.of(context).error,
                         ),
                         height: 3,
                         width: autoDismissAnimation.value * (maxWidth + padding / 3 * 2),
