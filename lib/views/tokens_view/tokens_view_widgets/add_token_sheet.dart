@@ -24,6 +24,7 @@ class _AddTokenSheetWidgetState extends ConsumerState<AddTokenSheetWidget> {
 
   void _handleBarcode(BarcodeCapture? barcodes) {
     if (!mounted) return;
+    _subscription?.cancel();
     Navigator.pop(context);
     ref.read(tokenProvider.notifier).handleQrCodeUri(barcodes?.barcodes.firstOrNull?.rawValue);
   }
