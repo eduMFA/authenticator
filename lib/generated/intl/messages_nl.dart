@@ -20,24 +20,24 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'nl';
 
-  static String m0(name) => "Weet u zeker dat u ${name} wilt verwijderen?";
+  static String m0(issuer, account) =>
+      "Verzonden door ${issuer} voor uw account: \"${account}\"";
 
-  static String m1(name) => "Uitrollen van token ${name} mislukt.";
+  static String m1(name) => "Weet u zeker dat u ${name} wilt verwijderen?";
 
-  static String m2(name) => "Uitrollen mislukt. Geen verbinding met de server.";
+  static String m2(name) => "Uitrollen van token ${name} mislukt.";
 
-  static String m3(e) =>
+  static String m3(name) => "Uitrollen mislukt. Geen verbinding met de server.";
+
+  static String m4(e) =>
       "Een onbekende fout heeft plaats gevonden. Uitrollen is niet mogelijk: ${e}";
 
-  static String m4(name) => "Het token ${name} is verlopen.";
+  static String m5(name) => "Het token ${name} is verlopen.";
 
-  static String m5(name) =>
+  static String m6(name) =>
       "Er is een fout opgetreden bij het zoeken naar uitdagingen van ${name}";
 
-  static String m6(serial) => "Query voor ${serial} mislukt.";
-
-  static String m7(issuer, account) =>
-      "Verzonden door ${issuer} voor uw account: \"${account}\"";
+  static String m7(serial) => "Query voor ${serial} mislukt.";
 
   static String m8(statusCode) => "Statuscode: ${statusCode}";
 
@@ -54,14 +54,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
       "Apparaat inloggevens of biometrie is vereist",
     ),
+    "authRequest": MessageLookupByLibrary.simpleMessage("Verificatieverzoek"),
+    "authRequestInfo": m0,
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Authenticeer om de push aanvraag te accepteren.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Authenticeer om de push aanvraag te weigeren.",
-    ),
-    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
-      "Verificatieverzoek",
     ),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Authenticatie vereist",
@@ -84,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmDeletion": MessageLookupByLibrary.simpleMessage(
       "Bevestig verwijderen",
     ),
-    "confirmDeletionOf": m0,
+    "confirmDeletionOf": m1,
     "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
       "U kunt mogelijk niet meer inloggen als u dit token verwijdert. Controleer of u zonder dit token kunt inloggen op het gekoppelde account.",
     ),
@@ -133,21 +132,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "Het foutlogbestand is bijgevoegd.\nU kunt deze tekst vervangen door aanvullende informatie over de fout.",
     ),
-    "errorRollOutFailed": m1,
-    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutFailed": m2,
+    "errorRollOutNoConnectionToServer": m3,
     "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
       "Het uitrollen van dit token is niet meer mogelijk.",
     ),
     "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
       "SSL-handdruk mislukt. Uitrollen niet mogelijk.",
     ),
-    "errorRollOutUnknownError": m3,
+    "errorRollOutUnknownError": m4,
     "errorSynchronizationNoNetworkConnection":
         MessageLookupByLibrary.simpleMessage(
           "Token synchroniseren mislukt, eduMFA server kan niet worden bereikt.",
         ),
-    "errorTokenExpired": m4,
-    "errorWhenPullingChallenges": m5,
+    "errorTokenExpired": m5,
+    "errorWhenPullingChallenges": m6,
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Genereren telefoon gedeelte",
     ),
@@ -209,13 +208,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phonePart": MessageLookupByLibrary.simpleMessage("Telefoon gedeelte:"),
     "pollingFailed": MessageLookupByLibrary.simpleMessage("Vraag mislukt."),
-    "pollingFailedFor": m6,
+    "pollingFailedFor": m7,
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacybeleid"),
     "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
       "Het pushverzoek kon niet worden verwerkt.",
     ),
     "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-    "requestInfo": m7,
     "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
       "Activeer het zoeken naar berichten. Gebruik deze optie wanneer de push berichten niet worden ontvangen.",
     ),

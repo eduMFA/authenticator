@@ -15,7 +15,6 @@ void _testPushToken() {
   group('Push Token creation/method', () {
     final pr = PushRequest(
       title: 'title',
-      question: 'question',
       uri: Uri.parse('http://www.example.com'),
       nonce: 'nonce',
       sslVerify: false,

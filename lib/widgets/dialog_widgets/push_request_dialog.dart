@@ -41,13 +41,12 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   @override
   Widget build(BuildContext context) {
     final lineHeight = this.lineHeight;
-    final question = widget.tokenWithPushRequest.pushRequests.peek()?.question;
     if (isHandled) return const SizedBox();
     return ColoredBox(
       color: Colors.transparent,
       child: DefaultDialog(
         title: Text(
-          S.of(context).authenticationRequest,
+          S.of(context).authRequest,
           style: TextTheme.of(context).titleLarge?.copyWith(fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
@@ -56,7 +55,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              S.of(context).requestInfo(
+              S.of(context).authRequestInfo(
                 widget.tokenWithPushRequest.issuer,
                 widget.tokenWithPushRequest.label,
               ),
@@ -64,14 +63,12 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: lineHeight),
-            if (question != null) ...[
-              Text(
-                question,
-                style: TextTheme.of(context).bodyLarge,
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: lineHeight),
-            ],
+            Text(
+              S.of(context).authRequestQuestion,
+              style: TextTheme.of(context).bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: lineHeight),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               spacing: 15,
@@ -151,7 +148,7 @@ class _PushRequestDialogState extends State<PushRequestDialog> {
   //      final lineHeight = this.lineHeight;
   //      return DefaultDialog(
   //        title: Text(
-  //          S.of(context).authenticationRequest,
+  //          S.of(context).authRequest,
   //          style: TextTheme.of(context).titleLarge!,
   //          textAlign: TextAlign.center,
   //        ),

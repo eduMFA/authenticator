@@ -418,9 +418,13 @@
   },
   "noMailAppTitle": "Nie znaleziono aplikacji pocztowej",
   "noMailAppDescription": "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail",
-  "authenticationRequest": "Żądanie uwierzytelnienia",
-  "requestInfo": "Wysłane przez {issuer} dla twojego konta: \"{account}\"",
-  "@requestInfo": {
+  "authRequest": "Żądanie uwierzytelnienia",
+  "@authRequest": {
+    "description": "Title of the push request dialog."
+  },
+  "authRequestInfo": "Wysłane przez {issuer} dla twojego konta: \"{account}\"",
+  "@authRequestInfo": {
+    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
@@ -429,5 +433,9 @@
         "example": "GitHub"
       }
     }
+  },
+  "authRequestQuestion": null,
+  "@authRequestQuestion": {
+    "description": "Question of the push request dialog."
   }
 }

@@ -20,25 +20,25 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'de';
 
-  static String m0(name) => "Sind Sie sicher dass Sie ${name} löschen möchten?";
+  static String m0(issuer, account) =>
+      "Gesendet von ${issuer} für Ihr Konto: \"${account}\"";
 
-  static String m1(name) => "Ausrollen von ${name} ist fehlgeschlagen.";
+  static String m1(name) => "Sind Sie sicher dass Sie ${name} löschen möchten?";
 
-  static String m2(name) =>
+  static String m2(name) => "Ausrollen von ${name} ist fehlgeschlagen.";
+
+  static String m3(name) =>
       "Der Rollout von Token ${name} ist fehlgeschlagen, der Server konnte nicht erreicht werden.";
 
-  static String m3(e) =>
+  static String m4(e) =>
       "Ein unbekannter Fehler ist aufgetreten. Aurollen nicht möglich: ${e}";
 
-  static String m4(name) => "Der Token ${name} ist abgelaufen.";
+  static String m5(name) => "Der Token ${name} ist abgelaufen.";
 
-  static String m5(name) =>
+  static String m6(name) =>
       "Fehler beim Abrufen der Authentifizierungsanfragen von ${name}";
 
-  static String m6(serial) => "Abfrage für ${serial} fehlgeschlagen.";
-
-  static String m7(issuer, account) =>
-      "Gesendet von ${issuer} für Ihr Konto: \"${account}\"";
+  static String m7(serial) => "Abfrage für ${serial} fehlgeschlagen.";
 
   static String m8(statusCode) => "Statuscode: ${statusCode}";
 
@@ -63,14 +63,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
       "Gerätepasswort oder Biometrie wird benötigt",
     ),
+    "authRequest": MessageLookupByLibrary.simpleMessage(
+      "Authentifizierungs-Anfrage",
+    ),
+    "authRequestInfo": m0,
+    "authRequestQuestion": MessageLookupByLibrary.simpleMessage(
+      "Möchten Sie die Authentifizierungs-Anfrage bestätigen?",
+    ),
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Bitte authentifizieren Sie sich, um die Anfrage anzunehmen.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Bitte authentifizieren Sie sich, um die Anfrage abzulehnen.",
-    ),
-    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
-      "Authentifizierung",
     ),
     "autoTheme": MessageLookupByLibrary.simpleMessage("Automatisch"),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
@@ -97,7 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmDeletion": MessageLookupByLibrary.simpleMessage(
       "Löschen bestätigen",
     ),
-    "confirmDeletionOf": m0,
+    "confirmDeletionOf": m1,
     "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
       "Unter Umständen können Sie sich nicht mehr einloggen, wenn Sie diesen Token löschen.\nBitte stellen Sie sicher, dass Sie sich ohne diesen Token in den dazugehörigen Account einloggen können.",
     ),
@@ -149,20 +153,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "Die Fehlerprotokolldatei ist angehängt.\nSie können diesen Text durch zusätzliche Informationen über den Fehler ersetzen.",
     ),
-    "errorRollOutFailed": m1,
-    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutFailed": m2,
+    "errorRollOutNoConnectionToServer": m3,
     "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
       "Das Ausrollen dieses Tokens ist nicht mehr möglich.",
     ),
     "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
       "SSL-Handshake fehlgeschlagen. Roll-out nicht möglich.",
     ),
-    "errorRollOutUnknownError": m3,
+    "errorRollOutUnknownError": m4,
     "errorSynchronizationNoNetworkConnection": MessageLookupByLibrary.simpleMessage(
       "Die Synchronisation ist fehlgeschlagen, da der eduMFA Server nicht erreicht werden konnte.",
     ),
-    "errorTokenExpired": m4,
-    "errorWhenPullingChallenges": m5,
+    "errorTokenExpired": m5,
+    "errorWhenPullingChallenges": m6,
     "feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Generiere Telefonanteil",
@@ -240,7 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pollingFailed": MessageLookupByLibrary.simpleMessage(
       "Abfrage fehlgeschlagen.",
     ),
-    "pollingFailedFor": m6,
+    "pollingFailedFor": m7,
     "privacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Datenschutzerklärung",
     ),
@@ -248,7 +252,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Die Push-Anfrage konnte nicht verarbeitet werden.",
     ),
     "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-    "requestInfo": m7,
     "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
       "Fordert regelmäßig Push-Anfragen vom Server an. Aktivieren Sie diese Funktion, wenn Nachrichten ansonsten nicht erhalten werden.",
     ),

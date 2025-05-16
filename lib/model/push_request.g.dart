@@ -8,7 +8,6 @@ part of 'push_request.dart';
 
 PushRequest _$PushRequestFromJson(Map<String, dynamic> json) => PushRequest(
       title: json['title'] as String,
-      question: json['question'] as String,
       uri: Uri.parse(json['uri'] as String),
       nonce: json['nonce'] as String,
       sslVerify: json['sslVerify'] as bool,
@@ -22,7 +21,6 @@ PushRequest _$PushRequestFromJson(Map<String, dynamic> json) => PushRequest(
 Map<String, dynamic> _$PushRequestToJson(PushRequest instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'question': instance.question,
       'id': instance.id,
       'uri': instance.uri.toString(),
       'nonce': instance.nonce,

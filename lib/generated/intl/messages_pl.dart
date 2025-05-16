@@ -20,24 +20,24 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pl';
 
-  static String m0(name) => "Jesteś pewien, że chcesz usunąć token: ${name}?";
+  static String m0(issuer, account) =>
+      "Wysłane przez ${issuer} dla twojego konta: \"${account}\"";
 
-  static String m1(name) => "Wdrażanie tokenu ${name} nieudane.";
+  static String m1(name) => "Jesteś pewien, że chcesz usunąć token: ${name}?";
 
-  static String m2(name) => "Brak połączenia z serwerem";
+  static String m2(name) => "Wdrażanie tokenu ${name} nieudane.";
 
-  static String m3(e) =>
+  static String m3(name) => "Brak połączenia z serwerem";
+
+  static String m4(e) =>
       "Napotkano nieznany błąd. Wdrożenie tokenu niemożliwe: ${e}";
 
-  static String m4(name) => "Token ${name} wygasł.";
+  static String m5(name) => "Token ${name} wygasł.";
 
-  static String m5(name) =>
+  static String m6(name) =>
       "Wystąpił błąd podczas odpytywania o wyzwania ${name}";
 
-  static String m6(serial) => "Zapytanie dla ${serial} nie powiodło się.";
-
-  static String m7(issuer, account) =>
-      "Wysłane przez ${issuer} dla twojego konta: \"${account}\"";
+  static String m7(serial) => "Zapytanie dla ${serial} nie powiodło się.";
 
   static String m8(statusCode) => "Kod statusu: ${statusCode}";
 
@@ -54,14 +54,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
       "Skonfigurowane ustawienia zabezpieczeń albo uwierzytelnianie biometryczne jest wymagane.",
     ),
+    "authRequest": MessageLookupByLibrary.simpleMessage(
+      "Żądanie uwierzytelnienia",
+    ),
+    "authRequestInfo": m0,
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Uwierzytelnij, aby zaakceptować żądanie push.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Uwierzytelnij, aby odrzucić żądanie push.",
-    ),
-    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
-      "Żądanie uwierzytelnienia",
     ),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Wymagana autentykacja",
@@ -82,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmDeletion": MessageLookupByLibrary.simpleMessage(
       "Potwierdź usunięcie",
     ),
-    "confirmDeletionOf": m0,
+    "confirmDeletionOf": m1,
     "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
       "Usunięcie tego tokenu może uniemożliwić zalogowanie się. Upewnij się, że możesz zalogować się na powiązane konto bez tego tokenu.",
     ),
@@ -128,20 +129,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "Plik dziennika błędów jest dołączony.\nTekst ten można zastąpić dodatkowymi informacjami o błędzie.",
     ),
-    "errorRollOutFailed": m1,
-    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutFailed": m2,
+    "errorRollOutNoConnectionToServer": m3,
     "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
       "Wstać z łóżka tego tokena nie jest już możliwe.",
     ),
     "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
       "Uścisk dłoni SSL nie powiódł się. Rozwijanie nie jest możliwe.",
     ),
-    "errorRollOutUnknownError": m3,
+    "errorRollOutUnknownError": m4,
     "errorSynchronizationNoNetworkConnection": MessageLookupByLibrary.simpleMessage(
       "Synchronizacja tokenów push nieudana, ponieważ serwer eduMFA jest nieosiągalny.",
     ),
-    "errorTokenExpired": m4,
-    "errorWhenPullingChallenges": m5,
+    "errorTokenExpired": m5,
+    "errorWhenPullingChallenges": m6,
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Generowanie sekretu po stronie telefonu...",
     ),
@@ -207,7 +208,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pollingFailed": MessageLookupByLibrary.simpleMessage(
       "Zapytanie nie powiodło się.",
     ),
-    "pollingFailedFor": m6,
+    "pollingFailedFor": m7,
     "privacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Polityka prywatności",
     ),
@@ -215,7 +216,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Żądanie push nie mogło zostać przetworzone.",
     ),
     "pushToken": MessageLookupByLibrary.simpleMessage("Push token"),
-    "requestInfo": m7,
     "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
       "Wysyłaj zapytanie o push challenge cyklicznie. Włącz, jeśli push nie przychodzi normalnie.",
     ),

@@ -20,22 +20,22 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
-  static String m0(name) => "¿Está seguro de que desea eliminar ${name}?";
+  static String m0(issuer, account) =>
+      "Enviado por ${issuer} para su cuenta: \"${account}\"";
 
-  static String m1(name) => "Error en la extracción de el token ${name}.";
+  static String m1(name) => "¿Está seguro de que desea eliminar ${name}?";
 
-  static String m2(name) =>
+  static String m2(name) => "Error en la extracción de el token ${name}.";
+
+  static String m3(name) =>
       "El despliegue del token ${name} ha fallado, no se ha podido acceder al servidor.";
 
-  static String m4(name) => "El token ${name} ha caducado.";
+  static String m5(name) => "El token ${name} ha caducado.";
 
-  static String m5(name) =>
+  static String m6(name) =>
       "Se ha producido un error al buscar retos de ${name}";
 
-  static String m6(serial) => "Fallo de sondeo para ${serial}";
-
-  static String m7(issuer, account) =>
-      "Enviado por ${issuer} para su cuenta: \"${account}\"";
+  static String m7(serial) => "Fallo de sondeo para ${serial}";
 
   static String m8(statusCode) => "Código de estado: ${statusCode}";
 
@@ -52,14 +52,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
       "Se requieren credenciales de dispositivo o datos biométricos",
     ),
+    "authRequest": MessageLookupByLibrary.simpleMessage("Autenticación"),
+    "authRequestInfo": m0,
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Por favor, autentifíquese para aceptar la solicitud push.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Por favor, autentifíquese para rechazar la solicitud push.",
-    ),
-    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
-      "Autenticación",
     ),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Autenticación necesaria",
@@ -82,7 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmDeletion": MessageLookupByLibrary.simpleMessage(
       "Confiem supresión",
     ),
-    "confirmDeletionOf": m0,
+    "confirmDeletionOf": m1,
     "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
       "Es posible que ya no pueda iniciar sesión si elimina este token.\nAsegúrese de que puede iniciar sesión en la cuenta asociada sin este token.",
     ),
@@ -129,8 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "Se adjunta el archivo de registro de errores.\nPuede sustituir este texto por información adicional sobre el error.",
     ),
-    "errorRollOutFailed": m1,
-    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutFailed": m2,
+    "errorRollOutNoConnectionToServer": m3,
     "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
       "El despliegue de este token ya no es posible.",
     ),
@@ -140,8 +139,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorSynchronizationNoNetworkConnection": MessageLookupByLibrary.simpleMessage(
       "Error al sincronizar los tokens. No se ha podido acceder al servidor de EduMFA.",
     ),
-    "errorTokenExpired": m4,
-    "errorWhenPullingChallenges": m5,
+    "errorTokenExpired": m5,
+    "errorWhenPullingChallenges": m6,
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Generar parte telefónico",
     ),
@@ -200,7 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phonePart": MessageLookupByLibrary.simpleMessage("Pieza de teléfono:"),
     "pollingFailed": MessageLookupByLibrary.simpleMessage("Consulta fallida."),
-    "pollingFailedFor": m6,
+    "pollingFailedFor": m7,
     "privacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Política de privacidad",
     ),
@@ -208,7 +207,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "No se ha podido procesar la solicitud push.",
     ),
     "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-    "requestInfo": m7,
     "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
       "Solicita retos push al servidor periódicamente. Habilite esta opción si los retos push no se reciben normalmente.",
     ),

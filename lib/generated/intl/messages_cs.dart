@@ -20,24 +20,24 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'cs';
 
-  static String m0(name) => "Opravdu chcete smazat token ${name}?";
+  static String m0(issuer, account) =>
+      "Odesláno ${issuer} pro váš účet: \"${account}\"";
 
-  static String m1(name) => "Registrace tokenu ${name} selhala.";
+  static String m1(name) => "Opravdu chcete smazat token ${name}?";
 
-  static String m2(name) =>
+  static String m2(name) => "Registrace tokenu ${name} selhala.";
+
+  static String m3(name) =>
       "Registrace tokenu ${name} selhala. Server není dostupný.";
 
-  static String m3(e) =>
+  static String m4(e) =>
       "Vyskytla se neznámá chyba. Registrace není možná: ${e}";
 
-  static String m4(name) => "Platnost tokenu ${name} vypršela.";
+  static String m5(name) => "Platnost tokenu ${name} vypršela.";
 
-  static String m5(name) => "Při dotazování na výzvy ${name} došlo k chybě.";
+  static String m6(name) => "Při dotazování na výzvy ${name} došlo k chybě.";
 
-  static String m6(serial) => "Dotaz na ${serial} se nezdařil.";
-
-  static String m7(issuer, account) =>
-      "Odesláno ${issuer} pro váš účet: \"${account}\"";
+  static String m7(serial) => "Dotaz na ${serial} se nezdařil.";
 
   static String m8(statusCode) => "Stavový kód: ${statusCode}";
 
@@ -54,14 +54,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
       "Vyžadován zámek zařízení nebo biometrické ověření",
     ),
+    "authRequest": MessageLookupByLibrary.simpleMessage("Žádost o ověření"),
+    "authRequestInfo": m0,
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Pro přijetí požadavku na push notifikaci se přihlaste.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Pro odmítnutí požadavku na push notifikaci se přihlaste.",
-    ),
-    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
-      "Žádost o ověření",
     ),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Vyžadováno přihlášení",
@@ -82,7 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Zkontrolujte prosím síťové připojení a zkuste to znovu.",
     ),
     "confirmDeletion": MessageLookupByLibrary.simpleMessage("Potvrdit smazání"),
-    "confirmDeletionOf": m0,
+    "confirmDeletionOf": m1,
     "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
       "Pokud tento token odstraníte, nebude již možné se přihlásit.\nProsím, ujistěte se, že se můžete přihlásit k přidruženému účtu bez tohoto tokenu.",
     ),
@@ -131,21 +130,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě.",
     ),
-    "errorRollOutFailed": m1,
-    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutFailed": m2,
+    "errorRollOutNoConnectionToServer": m3,
     "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
       "Roll-out tohoto tokenu již není možný.",
     ),
     "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
       "SSL handshake se nezdařil. Roll-out není možný.",
     ),
-    "errorRollOutUnknownError": m3,
+    "errorRollOutUnknownError": m4,
     "errorSynchronizationNoNetworkConnection":
         MessageLookupByLibrary.simpleMessage(
           "Synchronizace tokenů selhala, připojení k serveru eduMFA se nezdařilo.",
         ),
-    "errorTokenExpired": m4,
-    "errorWhenPullingChallenges": m5,
+    "errorTokenExpired": m5,
+    "errorWhenPullingChallenges": m6,
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Generování klientské části",
     ),
@@ -207,7 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phonePart": MessageLookupByLibrary.simpleMessage("Klientská část:"),
     "pollingFailed": MessageLookupByLibrary.simpleMessage("Dotaz se nezdařil."),
-    "pollingFailedFor": m6,
+    "pollingFailedFor": m7,
     "privacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Zásady ochrany osobních údajů",
     ),
@@ -215,7 +214,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Požadavek na odeslání se nepodařilo zpracovat.",
     ),
     "pushToken": MessageLookupByLibrary.simpleMessage("Push notifikace"),
-    "requestInfo": m7,
     "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
       "Periodicky získávat výzvy ze serveru. Povolte pokud nefunguje příjem push notifikací.",
     ),

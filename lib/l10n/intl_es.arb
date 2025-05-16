@@ -420,9 +420,13 @@
   },
   "noMailAppTitle": "No hay aplicación de correo electrónico",
   "noMailAppDescription": "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico.",
-  "authenticationRequest": "Autenticación",
-  "requestInfo": "Enviado por {issuer} para su cuenta: \"{account}\"",
-  "@requestInfo": {
+  "authRequest": "Autenticación",
+  "@authRequest": {
+    "description": "Title of the push request dialog."
+  },
+  "authRequestInfo": "Enviado por {issuer} para su cuenta: \"{account}\"",
+  "@authRequestInfo": {
+    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
@@ -431,5 +435,9 @@
         "example": "GitHub"
       }
     }
+  },
+  "authRequestQuestion": null,
+  "@authRequestQuestion": {
+    "description": "Question of the push request dialog."
   }
 }

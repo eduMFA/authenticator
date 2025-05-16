@@ -1213,22 +1213,32 @@ class S {
   }
 
   /// `Authentication request`
-  String get authenticationRequest {
+  String get authRequest {
     return Intl.message(
       'Authentication request',
-      name: 'authenticationRequest',
-      desc: '',
+      name: 'authRequest',
+      desc: 'Title of the push request dialog.',
       args: [],
     );
   }
 
   /// `Sent by {issuer} for your account: "{account}"`
-  String requestInfo(Object issuer, Object account) {
+  String authRequestInfo(Object issuer, Object account) {
     return Intl.message(
       'Sent by $issuer for your account: "$account"',
-      name: 'requestInfo',
+      name: 'authRequestInfo',
       desc: 'Description of the authentication request.',
       args: [issuer, account],
+    );
+  }
+
+  /// `Do you want to confirm the authentication request?`
+  String get authRequestQuestion {
+    return Intl.message(
+      'Do you want to confirm the authentication request?',
+      name: 'authRequestQuestion',
+      desc: 'Question of the push request dialog.',
+      args: [],
     );
   }
 }

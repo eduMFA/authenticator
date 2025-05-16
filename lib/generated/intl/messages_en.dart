@@ -20,25 +20,25 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(name) => "Are you sure you want to delete ${name}?";
+  static String m0(issuer, account) =>
+      "Sent by ${issuer} for your account: \"${account}\"";
 
-  static String m1(name) => "Rolling out token ${name} failed.";
+  static String m1(name) => "Are you sure you want to delete ${name}?";
 
-  static String m2(name) =>
+  static String m2(name) => "Rolling out token ${name} failed.";
+
+  static String m3(name) =>
       "Rolling out token ${name} failed, the server could not be reached.";
 
-  static String m3(e) =>
+  static String m4(e) =>
       "An unknown error occurred. Roll-out not possible: ${e}";
 
-  static String m4(name) => "The token ${name} has expired.";
+  static String m5(name) => "The token ${name} has expired.";
 
-  static String m5(name) =>
+  static String m6(name) =>
       "An error occured when polling for challenges of ${name}";
 
-  static String m6(serial) => "Polling failed for ${serial}";
-
-  static String m7(issuer, account) =>
-      "Sent by ${issuer} for your account: \"${account}\"";
+  static String m7(serial) => "Polling failed for ${serial}";
 
   static String m8(statusCode) => "Status code: ${statusCode}";
 
@@ -63,14 +63,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
       "Device credentials or biometrics required",
     ),
+    "authRequest": MessageLookupByLibrary.simpleMessage(
+      "Authentication request",
+    ),
+    "authRequestInfo": m0,
+    "authRequestQuestion": MessageLookupByLibrary.simpleMessage(
+      "Do you want to confirm the authentication request?",
+    ),
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Please authenticate to accept the push request.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Please authenticate to decline the push request.",
-    ),
-    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
-      "Authentication request",
     ),
     "autoTheme": MessageLookupByLibrary.simpleMessage("Auto"),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
@@ -95,7 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please check your network connection and try again.",
     ),
     "confirmDeletion": MessageLookupByLibrary.simpleMessage("Confirm deletion"),
-    "confirmDeletionOf": m0,
+    "confirmDeletionOf": m1,
     "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
       "You may no longer be able to log in if you delete this token.\nPlease make sure that you can log in to the associated account without this token.",
     ),
@@ -141,21 +145,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "The error log file is attached.\nYou can replace this text with additional information about the error.",
     ),
-    "errorRollOutFailed": m1,
-    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutFailed": m2,
+    "errorRollOutNoConnectionToServer": m3,
     "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
       "Rolling out this Token is not possible anymore.",
     ),
     "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
       "SSL handshake failed. Roll-out not possible.",
     ),
-    "errorRollOutUnknownError": m3,
+    "errorRollOutUnknownError": m4,
     "errorSynchronizationNoNetworkConnection":
         MessageLookupByLibrary.simpleMessage(
           "Synchronizing tokens failed, eduMFA server could not be reached.",
         ),
-    "errorTokenExpired": m4,
-    "errorWhenPullingChallenges": m5,
+    "errorTokenExpired": m5,
+    "errorWhenPullingChallenges": m6,
     "feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Generating phone part",
@@ -227,13 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phonePart": MessageLookupByLibrary.simpleMessage("Phone part:"),
     "pollingFailed": MessageLookupByLibrary.simpleMessage("Polling failed."),
-    "pollingFailedFor": m6,
+    "pollingFailedFor": m7,
     "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy policy"),
     "pushRequestParseError": MessageLookupByLibrary.simpleMessage(
       "Push request could not be parsed.",
     ),
     "pushToken": MessageLookupByLibrary.simpleMessage("Push Token"),
-    "requestInfo": m7,
     "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
       "Request push challenges from the server periodically. Enable this if push challenges are not received normally.",
     ),

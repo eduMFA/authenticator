@@ -406,9 +406,13 @@
   },
   "noMailAppTitle": "Keine Mail-App gefunden",
   "noMailAppDescription": "Auf diesem Gerät ist keine E-Mail-App installiert oder initialisiert, bitte versuchen Sie es erneut, wenn Sie eine E-Mail-Nachricht senden können.",
-  "authenticationRequest": "Authentifizierung",
-  "requestInfo": "Gesendet von {issuer} für Ihr Konto: \"{account}\"",
-  "@requestInfo": {
+  "authRequest": "Authentifizierungs-Anfrage",
+  "@authRequest": {
+    "description": "Title of the push request dialog."
+  },
+  "authRequestInfo": "Gesendet von {issuer} für Ihr Konto: \"{account}\"",
+  "@authRequestInfo": {
+    "description": "Content of the push request dialog.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
@@ -417,5 +421,9 @@
         "example": "GitHub"
       }
     }
+  },
+  "authRequestQuestion": "Möchten Sie die Authentifizierungs-Anfrage bestätigen?",
+  "@authRequestQuestion": {
+    "description": "Question of the push request dialog."
   }
 }

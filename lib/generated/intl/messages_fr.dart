@@ -20,25 +20,25 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
-  static String m0(name) => "Confirmer la suppression de ${name}?";
+  static String m0(issuer, account) =>
+      "Envoyé par ${issuer} pour votre compte : \"${account}\"";
 
-  static String m1(name) => "Le déploiement du jeton ${name} a échoué.";
+  static String m1(name) => "Confirmer la suppression de ${name}?";
 
-  static String m2(name) =>
+  static String m2(name) => "Le déploiement du jeton ${name} a échoué.";
+
+  static String m3(name) =>
       "El despliegue del token ${name} ha fallado, no se ha podido acceder al servidor.";
 
-  static String m3(e) =>
+  static String m4(e) =>
       "Le déploiement a échoué suite à une erreur inconnue: ${e}";
 
-  static String m4(name) => "Le jeton ${name} a expiré.";
+  static String m5(name) => "Le jeton ${name} a expiré.";
 
-  static String m5(name) =>
+  static String m6(name) =>
       "Une erreur s\'est produite lors de l\'interrogation des défis de ${name}";
 
-  static String m6(serial) => "Echec de la requête pour ${serial}.";
-
-  static String m7(issuer, account) =>
-      "Envoyé par ${issuer} pour votre compte : \"${account}\"";
+  static String m7(serial) => "Echec de la requête pour ${serial}.";
 
   static String m8(statusCode) => "Code d\'état : ${statusCode}";
 
@@ -55,14 +55,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "authNotSupportedTitle": MessageLookupByLibrary.simpleMessage(
       "Informations d\'identification de l\'appareil ou données biométriques requises",
     ),
+    "authRequest": MessageLookupByLibrary.simpleMessage("Authentification"),
+    "authRequestInfo": m0,
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Veuillez vous authentifier pour accepter la demande de connexion.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Veuillez vous authentifier pour refuser la demande de connexion.",
-    ),
-    "authenticationRequest": MessageLookupByLibrary.simpleMessage(
-      "Authentification",
     ),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Authentification requise",
@@ -85,7 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmDeletion": MessageLookupByLibrary.simpleMessage(
       "Confirmer suppression",
     ),
-    "confirmDeletionOf": m0,
+    "confirmDeletionOf": m1,
     "confirmTokenDeletionHint": MessageLookupByLibrary.simpleMessage(
       "Il se peut que vous ne puissiez plus vous connecter si vous supprimez ce token.\nVeuillez vous assurer que vous pouvez vous connecter au compte associé sans ce token.",
     ),
@@ -136,21 +135,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "Le fichier journal des erreurs est joint.\nVous pouvez remplacer ce texte par des informations supplémentaires sur l\'erreur.",
     ),
-    "errorRollOutFailed": m1,
-    "errorRollOutNoConnectionToServer": m2,
+    "errorRollOutFailed": m2,
+    "errorRollOutNoConnectionToServer": m3,
     "errorRollOutNotPossibleAnymore": MessageLookupByLibrary.simpleMessage(
       "Le déploiement de ce jeton n\'est plus possible.",
     ),
     "errorRollOutSSLHandshakeFailed": MessageLookupByLibrary.simpleMessage(
       "Échec de la prise de contact SSL. Le déploiement n\'est pas possible.",
     ),
-    "errorRollOutUnknownError": m3,
+    "errorRollOutUnknownError": m4,
     "errorSynchronizationNoNetworkConnection":
         MessageLookupByLibrary.simpleMessage(
           "La synchronization a échoué car le serveur est injoignable.",
         ),
-    "errorTokenExpired": m4,
-    "errorWhenPullingChallenges": m5,
+    "errorTokenExpired": m5,
+    "errorWhenPullingChallenges": m6,
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Générer la part du téléphone",
     ),
@@ -214,7 +213,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pollingFailed": MessageLookupByLibrary.simpleMessage(
       "Échec de la requête.",
     ),
-    "pollingFailedFor": m6,
+    "pollingFailedFor": m7,
     "privacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Politique de confidentialité",
     ),
@@ -222,7 +221,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "La demande push n\'a pas pu être traitée.",
     ),
     "pushToken": MessageLookupByLibrary.simpleMessage("Jeton de type Push"),
-    "requestInfo": m7,
     "requestPushChallengesPeriodically": MessageLookupByLibrary.simpleMessage(
       "Demander des challenges push depuis le serveur périodiquement. Activer cette fonction si les challenges push ne sont pas reçus normalement.",
     ),

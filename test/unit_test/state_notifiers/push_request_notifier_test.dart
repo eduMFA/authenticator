@@ -48,7 +48,6 @@ void _testPushRequestNotifier() {
       await mockPushProvider.initialize(pushSubscriber: notifier, firebaseUtils: mockFirebaseUtils);
       final pr = PushRequest(
         title: 'title',
-        question: 'question',
         uri: Uri.parse('https://example.com/api/fetch?limit=10,20,30&max=100'),
         nonce: 'nonce',
         sslVerify: false,
@@ -67,7 +66,6 @@ void _testPushRequestNotifier() {
       final pr = PushRequest(
         title: 'title',
         serial: 'serial',
-        question: 'question',
         uri: Uri.parse('https://example.com/api/fetch?limit=10,20,30&max=100'),
         nonce: 'nonce',
         sslVerify: false,
@@ -104,7 +102,6 @@ void _testPushRequestNotifier() {
       final pr = PushRequest(
         title: 'title',
         serial: 'serial',
-        question: 'question',
         uri: Uri.parse('https://example.com/api/fetch?limit=10,20,30&max=100'),
         nonce: 'nonce',
         sslVerify: false,

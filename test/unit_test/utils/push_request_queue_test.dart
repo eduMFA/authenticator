@@ -42,7 +42,6 @@ void verifyCustomListBehavesLikeQueue() {
       PushRequestQueue fifo = PushRequestQueue();
       var pushRequest = PushRequest(
         title: 'title',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -77,7 +76,6 @@ void verifyCustomListBehavesLikeQueue() {
 
       var one = PushRequest(
         title: 'one',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -86,7 +84,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var two = PushRequest(
         title: 'two',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -95,7 +92,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var three = PushRequest(
         title: 'three',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -104,7 +100,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var four = PushRequest(
         title: 'four',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -113,7 +108,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var five = PushRequest(
         title: 'five',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -151,7 +145,6 @@ void verifyCustomListBehavesLikeQueue() {
 
       var one = PushRequest(
         title: 'one',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -160,7 +153,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var two = PushRequest(
         title: 'two',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -169,7 +161,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var three = PushRequest(
         title: 'three',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -178,7 +169,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var four = PushRequest(
         title: 'four',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,
@@ -187,7 +177,6 @@ void verifyCustomListBehavesLikeQueue() {
       );
       var five = PushRequest(
         title: 'five',
-        question: 'question',
         uri: uri,
         nonce: 'nonce',
         sslVerify: false,

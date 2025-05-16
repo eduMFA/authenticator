@@ -422,9 +422,13 @@
   },
   "noMailAppTitle": "Geen mail app gevonden",
   "noMailAppDescription": "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden.",
-  "authenticationRequest": "Verificatieverzoek",
-  "requestInfo": "Verzonden door {issuer} voor uw account: \"{account}\"",
-  "@requestInfo": {
+  "authRequest": "Verificatieverzoek",
+  "@authRequest": {
+    "description": "Title of the push request dialog."
+  },
+  "authRequestInfo": "Verzonden door {issuer} voor uw account: \"{account}\"",
+  "@authRequestInfo": {
+    "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
         "example": "eduMFA"
@@ -433,5 +437,9 @@
         "example": "GitHub"
       }
     }
+  },
+  "authRequestQuestion": null,
+  "@authRequestQuestion": {
+    "description": "Question of the push request dialog."
   }
 }

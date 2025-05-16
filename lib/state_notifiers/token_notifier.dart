@@ -239,7 +239,6 @@ class TokenNotifier extends StateNotifier<TokenState> {
     String signedData = '${pr.nonce}|'
         '${pr.uri}|'
         '${pr.serial}|'
-        '${pr.question}|'
         '${pr.title}|'
         '${pr.sslVerify ? '1' : '0'}';
 

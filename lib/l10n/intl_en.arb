@@ -415,9 +415,12 @@
   },
   "noMailAppTitle": "No mail app found",
   "noMailAppDescription": "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
-  "authenticationRequest": "Authentication request",
-  "requestInfo": "Sent by {issuer} for your account: \"{account}\"",
-  "@requestInfo": {
+  "authRequest": "Authentication request",
+  "@authRequest": {
+    "description": "Title of the push request dialog."
+  },
+  "authRequestInfo": "Sent by {issuer} for your account: \"{account}\"",
+  "@authRequestInfo": {
     "description": "Description of the authentication request.",
     "placeholders": {
       "issuer": {
@@ -427,5 +430,9 @@
         "example": "GitHub"
       }
     }
+  },
+  "authRequestQuestion": "Do you want to confirm the authentication request?",
+  "@authRequestQuestion": {
+    "description": "Question of the push request dialog."
   }
 }

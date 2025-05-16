@@ -8,7 +8,6 @@ part 'push_request.g.dart';
 @JsonSerializable()
 class PushRequest {
   final String title;
-  final String question;
   final int id;
   final Uri uri;
   final String nonce;
@@ -20,7 +19,6 @@ class PushRequest {
 
   const PushRequest({
     required this.title,
-    required this.question,
     required this.uri,
     required this.nonce,
     required this.sslVerify,
@@ -34,7 +32,6 @@ class PushRequest {
 
   PushRequest copyWith({
     String? title,
-    String? question,
     Uri? uri,
     String? nonce,
     bool? sslVerify,
@@ -46,7 +43,6 @@ class PushRequest {
   }) {
     return PushRequest(
       title: title ?? this.title,
-      question: question ?? this.question,
       uri: uri ?? this.uri,
       nonce: nonce ?? this.nonce,
       sslVerify: sslVerify ?? this.sslVerify,
@@ -66,10 +62,9 @@ class PushRequest {
 
   @override
   String toString() {
-    return 'PushRequest{title: $title, question: $question, '
-        'id: $id, uri: $uri, _nonce: $nonce, sslVerify: $sslVerify, '
-        'expirationDate: $expirationDate, serial: $serial, '
-        'signature: $signature, accepted: $accepted}';
+    return 'PushRequest{title: $title, id: $id, uri: $uri, _nonce: $nonce, '
+        'sslVerify: $sslVerify, expirationDate: $expirationDate, '
+        'serial: $serial, signature: $signature, accepted: $accepted}';
   }
 
   factory PushRequest.fromJson(Map<String, dynamic> json) => _$PushRequestFromJson(json);
@@ -84,7 +79,6 @@ class PushRequest {
     }
     return PushRequest(
       title: data[PUSH_REQUEST_TITLE],
-      question: data[PUSH_REQUEST_QUESTION],
       uri: Uri.parse(data[PUSH_REQUEST_URL]),
       nonce: data[PUSH_REQUEST_NONCE],
       id: data[PUSH_REQUEST_NONCE].hashCode,
@@ -100,9 +94,6 @@ class PushRequest {
   static void verifyData(Map<String, dynamic> data) {
     if (data[PUSH_REQUEST_TITLE] is! String) {
       throw ArgumentError('Push request title is ${data[PUSH_REQUEST_TITLE].runtimeType}. Expected String.');
-    }
-    if (data[PUSH_REQUEST_QUESTION] is! String) {
-      throw ArgumentError('Push request question is ${data[PUSH_REQUEST_QUESTION].runtimeType}. Expected String.');
     }
     if (data[PUSH_REQUEST_URL] is! String) {
       throw ArgumentError('Push request url is ${data[PUSH_REQUEST_URL].runtimeType}. Expected String.');

@@ -42,7 +42,6 @@ void _testTokenNotifier() {
       final queue = PushRequestQueue()
         ..add(PushRequest(
             title: 'title',
-            question: 'question',
             uri: Uri.parse('https://example.com'),
             nonce: 'nonce',
             sslVerify: false,
@@ -187,7 +186,6 @@ void _testTokenNotifier() {
       ];
       final pr = PushRequest(
         title: 'title',
-        question: 'question',
         uri: Uri.parse('https://example.com'),
         nonce: 'nonce',
         serial: 'serial',
@@ -217,7 +215,6 @@ void _testTokenNotifier() {
       final mockRepo = MockTokenRepository();
       final pr = PushRequest(
           title: 'title',
-          question: 'question',
           uri: Uri.parse('https://example.com'),
           nonce: 'nonce',
           serial: 'serial',
