@@ -88,7 +88,7 @@ dependencies:
 
   # Utilities
   collection: ^1.19.1
-  intl: ^0.19.0
+  intl: any
   logger: ^2.5.0
   quick_actions: ^1.1.0
   uuid: ^4.5.1
