@@ -42,8 +42,8 @@ dependencies:
   package_info_plus: ^8.3.0
 
   # Firebase
-  firebase_core: ^3.13.0
-  firebase_messaging: ^15.2.5
+  firebase_core: ^3.13.1
+  firebase_messaging: ^15.2.6
 
   # Image and Media
   flutter_svg: ^2.1.0
@@ -60,7 +60,7 @@ dependencies:
   url_launcher: ^6.3.1
 
   # Notifications
-  flutter_local_notifications: ^19.2.0
+  flutter_local_notifications: ^19.2.1
 
   # Security and Authentication
   flutter_secure_storage: ^9.2.4
