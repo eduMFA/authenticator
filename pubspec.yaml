@@ -43,7 +43,7 @@ dependencies:
 
   # Firebase
   firebase_core: ^3.15.2
-  firebase_messaging: ^15.2.10
+  firebase_messaging: ^16.0.0
 
   # Image and Media
   flutter_svg: ^2.2.0
