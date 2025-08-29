@@ -32,41 +32,41 @@ dependencies:
 
   # Cryptography
   asn1lib: ^1.6.5
-  base32: ^2.1.3
+  base32: ^2.2.0
   hex: ^0.2.0
   mutex: ^3.1.0
   pointycastle: ^4.0.0
 
   # Device Info
   device_info_plus: ^11.5.0
-  package_info_plus: ^8.3.0
+  package_info_plus: ^8.3.1
 
   # Firebase
-  firebase_core: ^3.15.1
-  firebase_messaging: ^15.2.9
+  firebase_core: ^3.15.2
+  firebase_messaging: ^15.2.10
 
   # Image and Media
   flutter_svg: ^2.2.0
   image: ^4.5.4
-  image_picker: ^1.1.2
+  image_picker: ^1.2.0
   lottie: ^3.3.1
   mobile_scanner: ^7.0.1
 
   # Networking and URI
-  app_links: ^6.4.0
-  connectivity_plus: ^6.1.4
+  app_links: ^6.4.1
+  connectivity_plus: ^6.1.5
   flutter_mailer: ^3.0.1
-  http: ^1.4.0
+  http: ^1.5.0
   url_launcher: ^6.3.2
 
   # Notifications
-  flutter_local_notifications: ^19.3.0
+  flutter_local_notifications: ^19.4.1
 
   # Security and Authentication
   flutter_secure_storage: ^9.2.4
   local_auth: ^2.3.0
-  local_auth_android: ^1.0.49
-  local_auth_darwin: ^1.5.0
+  local_auth_android: ^1.0.52
+  local_auth_darwin: ^1.6.0
   permission_handler: ^12.0.1
 
   # Serialization
@@ -82,14 +82,14 @@ dependencies:
   # UI
   cupertino_icons: ^1.0.8
   easy_dynamic_theme: ^2.3.1
-  dynamic_color: ^1.7.0
+  dynamic_color: ^1.8.1
   haptic_feedback: ^0.5.1+1
   path_provider: ^2.1.5
 
   # Utilities
   collection: ^1.19.1
   intl: any
-  logger: ^2.6.0
+  logger: ^2.6.1
   quick_actions: ^1.1.0
   uuid: ^4.5.1
   version: ^3.0.2
