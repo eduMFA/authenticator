@@ -832,10 +832,10 @@ packages:
     dependency: "direct main"
     description:
       name: local_auth_darwin
-      sha256: "0e9706a8543a4a2eee60346294d6a633dd7c3ee60fae6b752570457c4ff32055"
+      sha256: "699873970067a40ef2f2c09b4c72eb1cfef64224ef041b3df9fdc5c4c1f91f49"
       url: "https://pub.dev"
     source: hosted
-    version: "1.6.0"
+    version: "1.6.1"
   local_auth_platform_interface:
     dependency: transitive
     description:
