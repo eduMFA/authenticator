@@ -46,10 +46,10 @@ dependencies:
   firebase_messaging: ^15.2.10
 
   # Image and Media
-  flutter_svg: ^2.2.0
+  flutter_svg: ^2.2.1
   image: ^4.5.4
   image_picker: ^1.2.0
-  lottie: ^3.3.1
+  lottie: ^3.3.2
   mobile_scanner: ^7.0.1
 
   # Networking and URI
@@ -60,12 +60,12 @@ dependencies:
   url_launcher: ^6.3.2
 
   # Notifications
-  flutter_local_notifications: ^19.4.1
+  flutter_local_notifications: ^19.4.2
 
   # Security and Authentication
   flutter_secure_storage: ^9.2.4
   local_auth: ^2.3.0
-  local_auth_android: ^1.0.52
+  local_auth_android: ^1.0.53
   local_auth_darwin: ^1.6.0
   permission_handler: ^12.0.1
 
