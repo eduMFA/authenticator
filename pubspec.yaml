@@ -65,7 +65,7 @@ dependencies:
   # Security and Authentication
   flutter_secure_storage: ^9.2.4
   local_auth: ^2.3.0
-  local_auth_android: ^1.0.53
+  local_auth_android: 2.0.4
   local_auth_darwin: ^1.6.1
   permission_handler: ^12.0.1
 
