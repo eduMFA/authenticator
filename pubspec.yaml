@@ -73,7 +73,7 @@ dependencies:
   json_annotation: ^4.9.0
 
   # State Management
-  flutter_riverpod: ^2.6.1
+  flutter_riverpod: 3.1.0
   flutterlifecyclehooks: ^5.0.0
 
   # Storage
