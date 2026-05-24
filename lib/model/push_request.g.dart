@@ -15,6 +15,7 @@ PushRequest _$PushRequestFromJson(Map<String, dynamic> json) => PushRequest(
       expirationDate: DateTime.parse(json['expirationDate'] as String),
       serial: json['serial'] as String?,
       signature: json['signature'] as String?,
+      question: json['question'] as String?,
       accepted: json['accepted'] as bool?,
     );
 
@@ -28,5 +29,6 @@ Map<String, dynamic> _$PushRequestToJson(PushRequest instance) =>
       'expirationDate': instance.expirationDate.toIso8601String(),
       'serial': instance.serial,
       'signature': instance.signature,
+      'question': instance.question,
       'accepted': instance.accepted,
     };

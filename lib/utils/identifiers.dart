@@ -58,3 +58,4 @@ const String PUSH_REQUEST_SERIAL = 'serial'; // 3.
 const String PUSH_REQUEST_TITLE = 'title'; // 4.
 const String PUSH_REQUEST_SSL_VERIFY = 'sslverify'; // 5.
 const String PUSH_REQUEST_SIGNATURE = 'signature'; // 6.
+const String PUSH_REQUEST_QUESTION = 'question'; // 7.
