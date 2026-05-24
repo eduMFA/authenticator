@@ -45,9 +45,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "accept": MessageLookupByLibrary.simpleMessage("Přijmout"),
     "addToken": MessageLookupByLibrary.simpleMessage("Přidat token"),
+    "addTokenSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Namiřte fotoaparát na obrazovku a naskenujte QR kód",
+    ),
+    "addTokenTitle": MessageLookupByLibrary.simpleMessage(
+      "Spárovat nový push token",
+    ),
     "allTokensSynchronized": MessageLookupByLibrary.simpleMessage(
       "Všechny tokeny jsou synchronizované.",
     ),
+    "appVersion": MessageLookupByLibrary.simpleMessage("Verze aplikace"),
+    "appearance": MessageLookupByLibrary.simpleMessage("Vzhled"),
     "authNotSupportedBody": MessageLookupByLibrary.simpleMessage(
       "Tato akce vyžaduje, aby bylo zařízení chráněno zámkem zařízení nebo biometrickým ověřením.",
     ),
@@ -56,12 +64,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "authRequest": MessageLookupByLibrary.simpleMessage("Žádost o ověření"),
     "authRequestInfo": m0,
+    "authRequestQuestion": MessageLookupByLibrary.simpleMessage(
+      "Chcete potvrdit žádost o ověření?",
+    ),
     "authToAcceptPushRequest": MessageLookupByLibrary.simpleMessage(
       "Pro přijetí požadavku na push notifikaci se přihlaste.",
     ),
     "authToDeclinePushRequest": MessageLookupByLibrary.simpleMessage(
       "Pro odmítnutí požadavku na push notifikaci se přihlaste.",
     ),
+    "autoTheme": MessageLookupByLibrary.simpleMessage("Automaticky"),
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Vyžadováno přihlášení",
     ),
@@ -73,6 +85,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "biometricSuccess": MessageLookupByLibrary.simpleMessage(
       "Přihlášení bylo úspěšné",
+    ),
+    "cameraPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
+      "Přístup k fotoaparátu byl trvale odepřen. Povolte jej prosím v nastavení systému.",
     ),
     "cameraPermissionPermanentlyDeniedButton":
         MessageLookupByLibrary.simpleMessage("Udělit oprávnění"),
@@ -126,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Prosím, autentifikujte se pro úpravu uzamčeného tokenu.",
     ),
+    "editToken": MessageLookupByLibrary.simpleMessage("Upravit token"),
     "enablePolling": MessageLookupByLibrary.simpleMessage("Povolit polling"),
     "errorMailBody": MessageLookupByLibrary.simpleMessage(
       "Přiložen je soubor protokolu o chybách.\nTento text můžete nahradit dalšími informacemi o chybě.",
@@ -145,6 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "errorTokenExpired": m5,
     "errorWhenPullingChallenges": m6,
+    "feedback": MessageLookupByLibrary.simpleMessage("Zpětná vazba"),
     "generatingPhonePart": MessageLookupByLibrary.simpleMessage(
       "Generování klientské části",
     ),
@@ -154,6 +171,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
       "Generování páru klíčů RSA se nezdařilo",
     ),
+    "github": MessageLookupByLibrary.simpleMessage("GitHub"),
     "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
       "Otevřít nastavení",
     ),
@@ -161,12 +179,20 @@ class MessageLookup extends MessageLookupByLibrary {
       "Není nastaveno přihlášení zámkem zařízení ani biometrické ověření. Aktivujte je v nastavení zařízení.",
     ),
     "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
+    "licenses": MessageLookupByLibrary.simpleMessage("Licence open source"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Světlý"),
     "lock": MessageLookupByLibrary.simpleMessage("Zamknout"),
+    "lockDescription": MessageLookupByLibrary.simpleMessage(
+      "Zamknout token biometrickým ověřením.",
+    ),
     "lockOut": MessageLookupByLibrary.simpleMessage(
       "Biometrické ověření je deaktivováno. Pro aktivaci zamkněte a znovu odemkněte obrazovku/zařízení.",
     ),
     "name": MessageLookupByLibrary.simpleMessage("Název"),
+    "nameFieldEmpty": MessageLookupByLibrary.simpleMessage(
+      "Název nesmí být prázdný",
+    ),
+    "next": MessageLookupByLibrary.simpleMessage("Další"),
     "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
       "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",
     ),
@@ -185,6 +211,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "noResultTitle": MessageLookupByLibrary.simpleMessage(
       "Nejsou nainstalovány žádné tokeny.",
     ),
+    "noSettingsSelected": MessageLookupByLibrary.simpleMessage(
+      "Vyberte nastavení",
+    ),
     "onBoardingText1": MessageLookupByLibrary.simpleMessage(
       "vícefázové ověření\nusnadněno",
     ),
@@ -200,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onBoardingTitle3": MessageLookupByLibrary.simpleMessage(
       "Navštivte náš profil Github",
     ),
+    "or": MessageLookupByLibrary.simpleMessage("NEBO"),
     "parsingResponse": MessageLookupByLibrary.simpleMessage("Rozbor odpovědi"),
     "parsingResponseFailed": MessageLookupByLibrary.simpleMessage(
       "Parsování odpovědi se nezdařilo",
@@ -222,6 +252,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "rolloutCompleted": MessageLookupByLibrary.simpleMessage(
       "Zavedení dokončeno",
     ),
+    "saveChanges": MessageLookupByLibrary.simpleMessage("Uložit změny"),
+    "search": MessageLookupByLibrary.simpleMessage("Hledat"),
     "secretKey": MessageLookupByLibrary.simpleMessage("Tajný klíč"),
     "send": MessageLookupByLibrary.simpleMessage("Odeslat"),
     "sendErrorLogDescription": MessageLookupByLibrary.simpleMessage(
@@ -256,11 +288,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tokeny se synchronizují.",
     ),
     "theme": MessageLookupByLibrary.simpleMessage("Vzhled"),
+    "tokens": MessageLookupByLibrary.simpleMessage("Tokeny"),
     "tokensDoNotSupportSynchronization": MessageLookupByLibrary.simpleMessage(
       "Následující tokeny nepodporují synchronizaci a musí být znovu zaregistrovány:",
     ),
     "unexpectedError": MessageLookupByLibrary.simpleMessage(
       "Nastala neočekávaná chyba.",
     ),
+    "uploadQrCodeButton": MessageLookupByLibrary.simpleMessage("Nahrát QR kód"),
+    "website": MessageLookupByLibrary.simpleMessage("Webové stránky"),
   };
 }
