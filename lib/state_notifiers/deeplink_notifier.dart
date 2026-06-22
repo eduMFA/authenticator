@@ -8,21 +8,22 @@ import 'package:edumfa_authenticator/utils/riverpod_state_listener.dart';
 
 bool _initialUriIsHandled = false;
 
-class DeeplinkNotifier extends StateNotifier<DeepLink?> {
+class DeeplinkNotifier extends Notifier<DeepLink?> {
   final List<StreamSubscription> _subs = [];
   final List<DeeplinkSource> _sources;
-  DeeplinkNotifier({required this._sources})
-      : super(null) {
-    _handleInitialUri();
-    _handleIncomingLinks();
-  }
+  DeeplinkNotifier({required List<DeeplinkSource> sources})
+      : _sources = sources;
 
   @override
-  void dispose() {
-    for (var sub in _subs) {
-      sub.cancel();
-    }
-    super.dispose();
+  DeepLink? build() {
+    ref.onDispose(() {
+      for (var sub in _subs) {
+        sub.cancel();
+      }
+    });
+    _handleInitialUri();
+    _handleIncomingLinks();
+    return null;
   }
 
   /// Handle incoming links - the ones that the app will recieve from the OS
@@ -33,7 +34,7 @@ class DeeplinkNotifier extends StateNotifier<DeepLink?> {
     for (var source in _sources) {
       _subs.add(source.stream.listen((Uri? uri) {
         Logger.info('Got uri from ${source.name}');
-        if (!mounted) return;
+        if (!ref.mounted) return;
         if (uri == null) return;
         state = DeepLink(uri);
       }, onError: (Object err) {
@@ -50,7 +51,7 @@ class DeeplinkNotifier extends StateNotifier<DeepLink?> {
     for (var source in _sources) {
       final initialUri = await source.initialUri;
       if (initialUri != null) {
-        if (!mounted) return;
+        if (!ref.mounted) return;
         state = DeepLink(initialUri, fromInit: true);
         Logger.info('Got initial uri from ${source.name}');
         return; // There can only be one initial uri

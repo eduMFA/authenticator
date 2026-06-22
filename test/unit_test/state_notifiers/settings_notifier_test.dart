@@ -24,9 +24,9 @@ void _testSettingsNotifier() {
   group('SettingsNotifier', () {
     final mockRepo = MockSettingsRepository();
     test('load state from repo on creation', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
+      final testProvider = NotifierProvider<SettingsNotifier, SettingsState>(() => SettingsNotifier(
             initialState: SettingsState(
               isFirstRun: true,
               enablePolling: false,
@@ -44,13 +44,13 @@ void _testSettingsNotifier() {
     });
 
     test('addCrashReportRecipient', () {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final copyWithSettings = _state.copyWith(
         crashReportRecipients: {'someone', 'anotherOne'},
       );
       when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
       when(mockRepo.saveSettings(copyWithSettings)).thenAnswer((_) async => true);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
+      final testProvider = NotifierProvider<SettingsNotifier, SettingsState>(() => SettingsNotifier(
             initialState: _state,
             repository: mockRepo,
           ));
@@ -64,13 +64,13 @@ void _testSettingsNotifier() {
       });
     });
     test('setPolling', () {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final copyWithSettings = _state.copyWith(
         enablePolling: !_state.enablePolling,
       );
       when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
       when(mockRepo.saveSettings(copyWithSettings)).thenAnswer((_) async => true);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
+      final testProvider = NotifierProvider<SettingsNotifier, SettingsState>(() => SettingsNotifier(
             initialState: _state,
             repository: mockRepo,
           ));
@@ -84,13 +84,13 @@ void _testSettingsNotifier() {
       });
     });
     test('setVerboseLogging', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final copyWithSettings = _state.copyWith(
         verboseLogging: !_state.verboseLogging,
       );
       when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
       when(mockRepo.saveSettings(copyWithSettings)).thenAnswer((_) async => true);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
+      final testProvider = NotifierProvider<SettingsNotifier, SettingsState>(() => SettingsNotifier(
             initialState: _state,
             repository: mockRepo,
           ));
@@ -104,13 +104,13 @@ void _testSettingsNotifier() {
       });
     });
     test('toggleVerboseLogging', () {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final copyWithSettings = _state.copyWith(
         verboseLogging: !_state.verboseLogging,
       );
       when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
       when(mockRepo.saveSettings(copyWithSettings)).thenAnswer((_) async => true);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
+      final testProvider = NotifierProvider<SettingsNotifier, SettingsState>(() => SettingsNotifier(
             initialState: _state,
             repository: mockRepo,
           ));
@@ -124,13 +124,13 @@ void _testSettingsNotifier() {
       });
     });
     test('setFirstRun', () {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final copyWithSettings = _state.copyWith(
         isFirstRun: !_state.isFirstRun,
       );
       when(mockRepo.loadSettings()).thenAnswer((_) async => _state);
       when(mockRepo.saveSettings(copyWithSettings)).thenAnswer((_) async => true);
-      final testProvider = StateNotifierProvider<SettingsNotifier, SettingsState>((ref) => SettingsNotifier(
+      final testProvider = NotifierProvider<SettingsNotifier, SettingsState>(() => SettingsNotifier(
             initialState: _state,
             repository: mockRepo,
           ));

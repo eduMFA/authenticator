@@ -1,6 +1,7 @@
 import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart';
@@ -25,6 +26,7 @@ class TestsAppWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
+      retry: (_, _) => null,
       overrides: overrides,
       child: EasyDynamicThemeWidget(child: child),
     );

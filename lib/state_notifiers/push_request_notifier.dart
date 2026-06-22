@@ -23,6 +23,7 @@
 
 import 'dart:async';
 
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 import 'package:edumfa_authenticator/model/push_request.dart';
@@ -31,15 +32,19 @@ import 'package:edumfa_authenticator/utils/firebase_utils.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/network_utils.dart';
 import 'package:edumfa_authenticator/utils/push_provider.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 
 /// Interface between the [PushProvider] and the UI.
-class PushRequestNotifier extends StateNotifier<PushRequest?> {
+class PushRequestNotifier extends Notifier<PushRequest?> {
   // Used for periodically polling for push challenges
 
   final PushProvider _pushProvider;
   final EduMFAIOClient _ioClient;
   final RsaUtils _rsaUtils;
+  final FirebaseUtils _firebaseUtils;
+  final PushRequest? _initState;
+  final bool _attachProviderListeners;
 
   PushRequestNotifier({
     PushRequest? initState,
@@ -47,11 +52,33 @@ class PushRequestNotifier extends StateNotifier<PushRequest?> {
     EduMFAIOClient? ioClient,
     RsaUtils? rsaUtils,
     FirebaseUtils? firebaseUtils,
+    bool attachProviderListeners = false,
   })  : _ioClient = ioClient ?? const EduMFAIOClient(),
         _pushProvider = pushProvider ?? PushProvider(),
         _rsaUtils = rsaUtils ?? const RsaUtils(),
-        super(initState) {
-    _pushProvider.initialize(pushSubscriber: this, firebaseUtils: firebaseUtils ?? FirebaseUtils());
+        _firebaseUtils = firebaseUtils ?? FirebaseUtils(),
+        _initState = initState,
+        _attachProviderListeners = attachProviderListeners;
+
+  @override
+  PushRequest? build() {
+    Logger.info("New PushRequestNotifier created", name: 'pushRequestProvider');
+    if (_attachProviderListeners) {
+      ref.listen(settingsProvider, (previous, next) {
+        if (previous?.enablePolling != next.enablePolling) {
+          Logger.info("Polling enabled changed from ${previous?.enablePolling} to ${next.enablePolling}", name: 'pushRequestProvider#settingsProvider');
+          _pushProvider.setPollingEnabled(next.enablePolling);
+        }
+      });
+      ref.listen(appStateProvider, (previous, next) {
+        if (previous == AppLifecycleState.paused && next == AppLifecycleState.resumed) {
+          Logger.info('Polling for challenges on resume', name: 'pushRequestProvider#appStateProvider');
+          _pushProvider.pollForChallenges(isManually: false);
+        }
+      });
+    }
+    _pushProvider.initialize(pushSubscriber: this, firebaseUtils: _firebaseUtils);
+    return _initState;
   }
 
   // ACTIONS

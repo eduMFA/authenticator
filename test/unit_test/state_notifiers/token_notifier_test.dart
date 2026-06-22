@@ -34,7 +34,7 @@ void main() {
 void _testTokenNotifier() {
   group('TokenNotifier', () {
     test('refreshRolledOutPushTokens', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockRepo = MockTokenRepository();
       final before = <PushToken>[
         PushToken(label: 'label', issuer: 'issuer', id: 'id', serial: 'serial', isRolledOut: true, pushRequests: PushRequestQueue()),
@@ -52,8 +52,8 @@ void _testTokenNotifier() {
       ];
       final responses = [before, after];
       when(mockRepo.loadTokens()).thenAnswer((_) async => responses.removeAt(0));
-      final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-        (ref) => TokenNotifier(repository: mockRepo),
+      final testProvider = NotifierProvider<TokenNotifier, TokenState>(
+        () => TokenNotifier(repository: mockRepo),
       );
       final notifier = container.read(testProvider.notifier);
       expect((await notifier.loadStateFromRepo())?.tokens, after);
@@ -63,7 +63,7 @@ void _testTokenNotifier() {
       verify(mockRepo.loadTokens()).called(2);
     });
     test('addTokenFromOtpAuth: rolloutPushToken', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockRepo = MockTokenRepository();
       final mockRsaUtils = MockRsaUtils();
       final mockIOClient = MockEduMFAIOClient();
@@ -124,8 +124,15 @@ void _testTokenNotifier() {
         ),
       );
 
-      final notifier = TokenNotifier(repository: mockRepo, rsaUtils: mockRsaUtils, ioClient: mockIOClient, firebaseUtils: mockFirebaseUtils);
-      final testProvider = StateNotifierProvider<TokenNotifier, TokenState>((ref) => notifier);
+      final testProvider = NotifierProvider<TokenNotifier, TokenState>(
+        () => TokenNotifier(
+          repository: mockRepo,
+          rsaUtils: mockRsaUtils,
+          ioClient: mockIOClient,
+          firebaseUtils: mockFirebaseUtils,
+        ),
+      );
+      final notifier = container.read(testProvider.notifier);
       await notifier.handleQrCodeUri(
           Uri(
               scheme: 'edumfa-push',
@@ -169,7 +176,7 @@ void _testTokenNotifier() {
       expect(pushToken.sslVerify, pushTokenShouldBe.sslVerify);
     });
     test('addPushRequestToToken', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockRepo = MockTokenRepository();
       final mockRsaUtils = MockRsaUtils();
       final before = <PushToken>[
@@ -199,8 +206,8 @@ void _testTokenNotifier() {
       when(mockRepo.loadTokens()).thenAnswer((_) async => before);
       when(mockRepo.saveOrReplaceTokens([after.first])).thenAnswer((_) async => []);
       when(mockRsaUtils.verifyRSASignature(any, any, any)).thenReturn(true);
-      final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-        (ref) => TokenNotifier(repository: mockRepo, rsaUtils: mockRsaUtils),
+      final testProvider = NotifierProvider<TokenNotifier, TokenState>(
+        () => TokenNotifier(repository: mockRepo, rsaUtils: mockRsaUtils),
       );
       final notifier = container.read(testProvider.notifier);
       expect(await notifier.addPushRequestToToken(pr), true);
@@ -211,7 +218,7 @@ void _testTokenNotifier() {
       verify(mockRsaUtils.verifyRSASignature(any, any, any)).called(1);
     });
     test('removePushRequest', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockRepo = MockTokenRepository();
       final pr = PushRequest(
           title: 'title',
@@ -229,8 +236,8 @@ void _testTokenNotifier() {
       ];
       when(mockRepo.loadTokens()).thenAnswer((_) async => before);
       when(mockRepo.saveOrReplaceTokens([after.first])).thenAnswer((_) async => []);
-      final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-        (ref) => TokenNotifier(repository: mockRepo),
+      final testProvider = NotifierProvider<TokenNotifier, TokenState>(
+        () => TokenNotifier(repository: mockRepo),
       );
       final notifier = container.read(testProvider.notifier);
       await notifier.removePushRequest(pr);
@@ -241,7 +248,7 @@ void _testTokenNotifier() {
     });
 
     test('rolloutPushToken', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockRepo = MockTokenRepository();
       final mockIOClient = MockEduMFAIOClient();
       final mockFirebaseUtils = MockFirebaseUtils();
@@ -265,8 +272,8 @@ void _testTokenNotifier() {
         body: anyNamed('body'),
         sslVerify: anyNamed('sslVerify'),
       )).thenAnswer((_) => Future.value(Response('{"detail": {"public_key": "publicKey"}}', 200)));
-      final testProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-        (ref) => TokenNotifier(
+      final testProvider = NotifierProvider<TokenNotifier, TokenState>(
+        () => TokenNotifier(
           repository: mockRepo,
           rsaUtils: mockRsaUtils,
           ioClient: mockIOClient,

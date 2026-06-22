@@ -9,7 +9,9 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:http/http.dart';
 import 'package:pointycastle/asymmetric/api.dart';
@@ -33,7 +35,7 @@ import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 import 'package:edumfa_authenticator/utils/utils.dart';
 import 'package:edumfa_authenticator/utils/view_utils.dart';
 
-class TokenNotifier extends StateNotifier<TokenState> {
+class TokenNotifier extends Notifier<TokenState> {
   static final Map<String, Timer> _timers = {};
   late Future<TokenState> loadingRepo;
   late Future<List<Token>?> updatingTokens = Future(() => null);
@@ -41,6 +43,8 @@ class TokenNotifier extends StateNotifier<TokenState> {
   final RsaUtils _rsaUtils;
   final EduMFAIOClient _ioClient;
   final FirebaseUtils _firebaseUtils;
+  final TokenState? _initialState;
+  final bool _attachProviderListeners;
 
   TokenNotifier({
     TokenState? initialState,
@@ -48,14 +52,59 @@ class TokenNotifier extends StateNotifier<TokenState> {
     RsaUtils? rsaUtils,
     EduMFAIOClient? ioClient,
     FirebaseUtils? firebaseUtils,
+    bool attachProviderListeners = false,
   })  : _rsaUtils = rsaUtils ?? const RsaUtils(),
         _repo = repository ?? const SecureTokenRepository(),
         _ioClient = ioClient ?? const EduMFAIOClient(),
         _firebaseUtils = firebaseUtils ?? FirebaseUtils(),
-        super(
-          initialState ?? TokenState(),
-        ) {
+        _initialState = initialState,
+        _attachProviderListeners = attachProviderListeners;
+
+  @override
+  TokenState build() {
+    Logger.info("New TokenNotifier created");
+    if (_attachProviderListeners) {
+      ref.listen(deeplinkProvider, (previous, newLink) {
+        if (newLink == null) {
+          Logger.info("Received null deeplink", name: 'tokenProvider#deeplinkProvider');
+          return;
+        }
+        Logger.info("Received new deeplink", name: 'tokenProvider#deeplinkProvider');
+        handleLink(newLink.uri);
+      });
+
+      ref.listen(pushRequestProvider, (previous, newPushRequest) {
+        if (newPushRequest == null) {
+          Logger.info("Received null pushRequest", name: 'tokenProvider#pushRequestProvider');
+          return;
+        }
+        if (newPushRequest.accepted == null) {
+          Logger.info("Received new pushRequest", name: 'tokenProvider#pushRequestProvider');
+          addPushRequestToToken(newPushRequest);
+        }
+        if (newPushRequest.accepted != null) {
+          Logger.info("Received pushRequest with accepted=${newPushRequest.accepted}... removing it from state.", name: 'tokenProvider#pushRequestProvider');
+          removePushRequest(newPushRequest);
+          FlutterLocalNotificationsPlugin().cancelAll();
+        }
+      });
+
+      ref.listen(appStateProvider, (previous, next) {
+        Logger.info('tokenProvider reviced new AppState. Changed from $previous to $next');
+        if (previous == AppLifecycleState.paused && next == AppLifecycleState.resumed) {
+          Logger.info('Refreshing tokens on resume', name: 'tokenProvider#appStateProvider');
+          loadStateFromRepo();
+        }
+        if (previous == AppLifecycleState.resumed && next == AppLifecycleState.paused) {
+          Logger.info('Saving tokens and cancelling all notifications on pause', name: 'tokenProvider#appStateProvider');
+          FlutterLocalNotificationsPlugin().cancelAll();
+          saveStateToRepo();
+        }
+      });
+    }
+
     _init();
+    return _initialState ?? TokenState();
   }
 
   Future<void> _init() async {
@@ -311,7 +360,7 @@ class TokenNotifier extends StateNotifier<TokenState> {
       Logger.info('Ignoring rollout request: Token "${token.id}" is expired. ', name: 'token_notifier.dart#rolloutPushToken');
 
       if (globalNavigatorKey.currentContext != null) {
-        globalRef?.read(statusMessageProvider.notifier).state = (
+        globalRef?.read(statusMessageProvider.notifier).setMessage(
           S.of(globalNavigatorKey.currentContext!).errorRollOutNotPossibleAnymore,
           S.of(globalNavigatorKey.currentContext!).errorTokenExpired(token.label),
         );
@@ -396,14 +445,14 @@ class TokenNotifier extends StateNotifier<TokenState> {
 
         try {
           final message = response.body.isNotEmpty ? (json.decode(response.body)['result']?['error']?['message']) : '';
-          globalRef?.read(statusMessageProvider.notifier).state = (
+          globalRef?.read(statusMessageProvider.notifier).setMessage(
             S.of(globalNavigatorKey.currentContext!).errorRollOutFailed(token.label),
             message,
           );
         } on FormatException {
           // Format Exception is thrown if the response body is not a valid json. This happens if the server is not reachable.
 
-          globalRef?.read(statusMessageProvider.notifier).state = (
+          globalRef?.read(statusMessageProvider.notifier).setMessage(
             S.of(globalNavigatorKey.currentContext!).errorRollOutFailed(token.label),
             S.of(globalNavigatorKey.currentContext!).statusCode(response.statusCode)
           );

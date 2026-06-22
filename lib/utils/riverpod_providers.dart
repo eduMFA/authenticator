@@ -4,7 +4,6 @@ import 'package:app_links/app_links.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:edumfa_authenticator/model/push_request.dart';
@@ -18,121 +17,47 @@ import 'package:edumfa_authenticator/state_notifiers/settings_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
-import 'package:edumfa_authenticator/utils/push_provider.dart';
 import 'package:edumfa_authenticator/utils/riverpod_state_listener.dart';
 
 // Never use globalRef to .watch() a provider. only use it to .read() a provider
 // Otherwise the whole app will rebuild on every state change of the provider
 WidgetRef? globalRef;
 
-final tokenProvider = StateNotifierProvider<TokenNotifier, TokenState>(
-  (ref) {
-    Logger.info("New TokenNotifier created");
-    final newTokenNotifier = TokenNotifier();
-
-    ref.listen(deeplinkProvider, (previous, newLink) {
-      if (newLink == null) {
-        Logger.info("Received null deeplink", name: 'tokenProvider#deeplinkProvider');
-        return;
-      }
-      Logger.info("Received new deeplink", name: 'tokenProvider#deeplinkProvider');
-      newTokenNotifier.handleLink(newLink.uri);
-    });
-
-    ref.listen(pushRequestProvider, (previous, newPushRequest) {
-      if (newPushRequest == null) {
-        Logger.info("Received null pushRequest", name: 'tokenProvider#pushRequestProvider');
-        return;
-      }
-      if (newPushRequest.accepted == null) {
-        Logger.info("Received new pushRequest", name: 'tokenProvider#pushRequestProvider');
-        newTokenNotifier.addPushRequestToToken(newPushRequest);
-      }
-      if (newPushRequest.accepted != null) {
-        Logger.info("Received pushRequest with accepted=${newPushRequest.accepted}... removing it from state.", name: 'tokenProvider#pushRequestProvider');
-        newTokenNotifier.removePushRequest(newPushRequest);
-        FlutterLocalNotificationsPlugin().cancelAll();
-      }
-    });
-
-    ref.listen(
-      appStateProvider,
-      (previous, next) {
-        Logger.info('tokenProvider reviced new AppState. Changed from $previous to $next');
-        if (previous == AppLifecycleState.paused && next == AppLifecycleState.resumed) {
-          Logger.info('Refreshing tokens on resume', name: 'tokenProvider#appStateProvider');
-          newTokenNotifier.loadStateFromRepo();
-        }
-        if (previous == AppLifecycleState.resumed && next == AppLifecycleState.paused) {
-          Logger.info('Saving tokens and cancelling all notifications on pause', name: 'tokenProvider#appStateProvider');
-          FlutterLocalNotificationsPlugin().cancelAll();
-          newTokenNotifier.saveStateToRepo();
-        }
-      },
-    );
-    return newTokenNotifier;
-  },
+final tokenProvider = NotifierProvider<TokenNotifier, TokenState>(
+  () => TokenNotifier(attachProviderListeners: true),
   name: 'tokenProvider',
 );
 
-final settingsProvider = StateNotifierProvider<SettingsNotifier, SettingsState>(
-  (ref) {
-    // Using Logger here will cause a circular dependency because Logger uses settingsProvider (logging verbosity)
-    return SettingsNotifier(repository: PreferenceSettingsRepository());
-  },
+final settingsProvider = NotifierProvider<SettingsNotifier, SettingsState>(
+  // Using Logger here will cause a circular dependency because Logger uses settingsProvider (logging verbosity)
+  () => SettingsNotifier(repository: PreferenceSettingsRepository()),
   name: 'settingsProvider',
 );
 
-final pushRequestProvider = StateNotifierProvider<PushRequestNotifier, PushRequest?>(
-  (ref) {
-    Logger.info("New PushRequestNotifier created", name: 'pushRequestProvider');
-    final pushProvider = PushProvider();
-    ref.listen(settingsProvider, (previous, next) {
-      if (previous?.enablePolling != next.enablePolling) {
-        Logger.info("Polling enabled changed from ${previous?.enablePolling} to ${next.enablePolling}", name: 'pushRequestProvider#settingsProvider');
-        pushProvider.setPollingEnabled(next.enablePolling);
-      }
-    });
-
-    final pushRequestNotifier = PushRequestNotifier(
-      pushProvider: pushProvider,
-    );
-
-    ref.listen(appStateProvider, (previous, next) {
-      if (previous == AppLifecycleState.paused && next == AppLifecycleState.resumed) {
-        Logger.info('Polling for challenges on resume', name: 'pushRequestProvider#appStateProvider');
-        pushProvider.pollForChallenges(isManually: false);
-      }
-    });
-
-    return pushRequestNotifier;
-  },
+final pushRequestProvider = NotifierProvider<PushRequestNotifier, PushRequest?>(
+  () => PushRequestNotifier(attachProviderListeners: true),
   name: 'pushRequestProvider',
 );
 
-final deeplinkProvider = StateNotifierProvider<DeeplinkNotifier, DeepLink?>(
-  (ref) {
-    Logger.info("New DeeplinkNotifier created", name: 'deeplinkProvider');
-    return DeeplinkNotifier(sources: [
+final deeplinkProvider = NotifierProvider<DeeplinkNotifier, DeepLink?>(
+  () => DeeplinkNotifier(
+    sources: [
       DeeplinkSource(
           name: 'uni_links',
           stream: AppLinks().uriLinkStream,
           initialUri: Future.value(null)
       ),
-    ]);
-  },
+    ],
+  ),
   name: 'deeplinkProvider',
 );
 
-final appStateProvider = StateProvider<AppLifecycleState?>(
-  (ref) {
-    Logger.info("New AppStateNotifier created", name: 'appStateProvider');
-    return null;
-  },
+final appStateProvider = NotifierProvider<AppStateNotifier, AppLifecycleState?>(
+  AppStateNotifier.new,
   name: 'appStateProvider',
 );
 
-final tokenFilterProvider = StateProvider<TokenFilter?>((ref) => null);
+final tokenFilterProvider = NotifierProvider<TokenFilterNotifier, TokenFilter?>(TokenFilterNotifier.new);
 
 final connectivityProvider = StreamProvider<List<ConnectivityResult>>(
   (ref) {
@@ -143,7 +68,7 @@ final connectivityProvider = StreamProvider<List<ConnectivityResult>>(
           Logger.info("First connectivity check: $connectivity", name: 'connectivityProvider#initialCheck');
           final hasNoConnection = connectivity.contains(ConnectivityResult.none);
           if (hasNoConnection && newState.hasPushTokens && globalNavigatorKey.currentContext != null) {
-            ref.read(statusMessageProvider.notifier).state = (S.of(globalNavigatorKey.currentContext!).noNetworkConnection, null);
+            ref.read(statusMessageProvider.notifier).setMessage(S.of(globalNavigatorKey.currentContext!).noNetworkConnection, null);
           }
         });
       },
@@ -152,16 +77,49 @@ final connectivityProvider = StreamProvider<List<ConnectivityResult>>(
   },
 );
 
-final statusMessageProvider = StateProvider<(String, String?)?>(
-  (ref) {
-    Logger.info("New statusMessageProvider created", name: 'statusMessageProvider');
-    return null;
-  },
+final statusMessageProvider = NotifierProvider<StatusMessageNotifier, (String, String?)?>(
+  StatusMessageNotifier.new,
 );
 
-final appConstraintsProvider = StateProvider<BoxConstraints?>(
-  (ref) {
+final appConstraintsProvider = NotifierProvider<AppConstraintsNotifier, BoxConstraints?>(
+  AppConstraintsNotifier.new,
+);
+
+class AppStateNotifier extends Notifier<AppLifecycleState?> {
+  @override
+  AppLifecycleState? build() {
+    Logger.info("New AppStateNotifier created", name: 'appStateProvider');
+    return null;
+  }
+
+  void setState(AppLifecycleState? value) => state = value;
+}
+
+class TokenFilterNotifier extends Notifier<TokenFilter?> {
+  @override
+  TokenFilter? build() => null;
+
+  void setFilter(TokenFilter? value) => state = value;
+}
+
+class StatusMessageNotifier extends Notifier<(String, String?)?> {
+  @override
+  (String, String?)? build() {
+    Logger.info("New statusMessageProvider created", name: 'statusMessageProvider');
+    return null;
+  }
+
+  void setMessage(String message, String? details) => state = (message, details);
+
+  void clear() => state = null;
+}
+
+class AppConstraintsNotifier extends Notifier<BoxConstraints?> {
+  @override
+  BoxConstraints? build() {
     Logger.info("New constraintsProvider created", name: 'appConstraintsProvider');
     return null;
-  },
-);
+  }
+
+  void setConstraints(BoxConstraints value) => state = value;
+}
