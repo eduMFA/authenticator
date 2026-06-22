@@ -237,45 +237,13 @@
   "@language": {
     "description": "Título del grupo de configuración lingüística."
   },
-  "biometricRequiredTitle": "Biometría no configurada",
-  "@biometricRequiredTitle": {
-    "description": "Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters."
-  },
   "biometricHint": "Autenticación necesaria",
   "@biometricHint": {
     "description": "Hint message advising the user how to authenticate with biometrics. It is used on Android side. Maximum 60 characters."
   },
-  "biometricNotRecognized": "No reconocido. Inténtelo de nuevo.",
-  "@biometricNotRecognized": {
-    "description": "Message to let the user know that authentication was failed. It is used on Android side. Maximum 60 characters."
-  },
-  "biometricSuccess": "Autenticación correcta",
-  "@biometricSuccess": {
-    "description": "Message to let the user know that authentication was successful. It is used on Android side. Maximum 60 characters."
-  },
-  "deviceCredentialsRequiredTitle": "No se han configurado las credenciales del dispositivo.",
-  "@deviceCredentialsRequiredTitle": {
-    "description": "Message showed as a title in a dialog which indicates the user has not set up credentials authentication on their device. It is used on Android side. Maximum 60 characters."
-  },
-  "deviceCredentialsSetupDescription": "Configurar las credenciales del dispositivo en los ajustes del dispositivo",
-  "@deviceCredentialsSetupDescription": {
-    "description": "Message advising the user to go to the settings and configure device credentials on their device. It shows in a dialog on Android side."
-  },
   "signInTitle": "Autenticación necesaria",
   "@signInTitle": {
     "description": "Message showed as a title in a dialog which indicates the user that they need to scan biometric to continue. It is used on Android side. Maximum 60 characters."
-  },
-  "goToSettingsButton": "Ir a la configuración",
-  "@goToSettingsButton": {
-    "description": "Message showed on a button that the user can click to go to settings pages from the current dialog. It is used on both Android and iOS side. Maximum 30 characters."
-  },
-  "goToSettingsDescription": "La autenticación por credenciales o biométrica no está configurada en tu dispositivo. Por favor, configúrala en los ajustes del dispositivo.",
-  "@goToSettingsDescription": {
-    "description": "Message advising the user to go to the settings and configure device credentials or biometrics on their device."
-  },
-  "lockOut": "La autenticación biométrica está desactivada. Bloquea y desbloquea la pantalla para activarla.",
-  "@lockOut": {
-    "description": "Message advising the user to re-enable biometrics on their device. It shows in a dialog on iOS side."
   },
   "authNotSupportedTitle": "Se requieren credenciales de dispositivo o datos biométricos",
   "@authNotSupportedTitle": {

@@ -66,15 +66,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Authentification requise",
     ),
-    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-      "Pas reconnu. Réessayer.",
-    ),
-    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "La biométrie n\'est pas configurée",
-    ),
-    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-      "Authentification réussie",
-    ),
     "cameraPermissionPermanentlyDeniedButton":
         MessageLookupByLibrary.simpleMessage("Accorder l\'autorisation"),
     "cancel": MessageLookupByLibrary.simpleMessage("Annuler"),
@@ -119,12 +110,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
       "Veuillez vous authentifier pour supprimer le jeton verrouillé.",
     ),
-    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Les informations d\'identification de l\'appareil ne sont pas configurées",
-    ),
-    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-      "Configurer les informations d\'identification de l\'appareil dans les paramètres de l\'appareil",
-    ),
     "dismiss": MessageLookupByLibrary.simpleMessage("Fermer"),
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Veuillez vous authentifier pour modifier le jeton verrouillé.",
@@ -159,18 +144,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
       "La génération de la paire de clés RSA a échoué",
     ),
-    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
-      "Aller aux paramètres",
-    ),
-    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-      "L\'authentification par identifiants ou biométrie n\'est pas configurée sur votre appareil. Veuillez le configurer dans les paramètres de l\'appareil.",
-    ),
     "language": MessageLookupByLibrary.simpleMessage("Langue"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Thème lumineux"),
     "lock": MessageLookupByLibrary.simpleMessage("Bloquer"),
-    "lockOut": MessageLookupByLibrary.simpleMessage(
-      "L\'authentification biométrique est désactivée. Veuillez verrouiller et déverrouiller votre écran pour l\'activer.",
-    ),
     "name": MessageLookupByLibrary.simpleMessage("Nom"),
     "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
       "Aucune application de messagerie n\'est installée ou initialisée sur cet appareil. Veuillez réessayer lorsque vous serez en mesure d\'envoyer un message électronique.",

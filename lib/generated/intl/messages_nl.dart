@@ -65,15 +65,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Authenticatie vereist",
     ),
-    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-      "Niet herkend. Probeer opnieuw.",
-    ),
-    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Biometrie is niet ingesteld",
-    ),
-    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-      "Authenticatie geslaagd",
-    ),
     "cameraPermissionPermanentlyDeniedButton":
         MessageLookupByLibrary.simpleMessage("Toestemming verlenen"),
     "cancel": MessageLookupByLibrary.simpleMessage("Annuleren"),
@@ -118,12 +109,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
       "Verifieer om het vergrendelde token te verwijderen.",
     ),
-    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Inloggevens van het apparaat zijn niet ingesteld",
-    ),
-    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-      "Stel de inloggegevens in, bij de instellingen van het apparaat",
-    ),
     "dismiss": MessageLookupByLibrary.simpleMessage("Sluiten"),
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Verifieer om het vergrendelde token te bewerken.",
@@ -156,18 +141,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
       "Genereren RSA sleutelpaar mislukt",
     ),
-    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
-      "Ga naar instellingen",
-    ),
-    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-      "Authenticatie via inloggegevens of biometrie is niet ingesteld. Stel het in bij de instellingen van het apparaat.",
-    ),
     "language": MessageLookupByLibrary.simpleMessage("Taal"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Licht"),
     "lock": MessageLookupByLibrary.simpleMessage("Vergrendel"),
-    "lockOut": MessageLookupByLibrary.simpleMessage(
-      "Biometrische authenticatie staat uit. Vergrendel en ontgrendel het scherm om het aan te zetten.",
-    ),
     "name": MessageLookupByLibrary.simpleMessage("Naam"),
     "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
       "Er is geen e-mail app geïnstalleerd of geïnitialiseerd op dit apparaat, probeer het opnieuw wanneer u in staat bent om een e-mailbericht te verzenden.",

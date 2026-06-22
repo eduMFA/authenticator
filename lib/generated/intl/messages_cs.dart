@@ -65,15 +65,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Vyžadováno přihlášení",
     ),
-    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-      "Ověření se nezdařilo. Zkuste to znovu.",
-    ),
-    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Biometrické ověření není nastaveno",
-    ),
-    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-      "Přihlášení bylo úspěšné",
-    ),
     "cameraPermissionPermanentlyDeniedButton":
         MessageLookupByLibrary.simpleMessage("Udělit oprávnění"),
     "cancel": MessageLookupByLibrary.simpleMessage("Zrušit"),
@@ -116,12 +107,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
       "Prosím, autentifikujte se pro smazání uzamčeného tokenu.",
     ),
-    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Není nastaven zámek zařízení",
-    ),
-    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-      "Nastave zámek zařízení v nastavení zařízení",
-    ),
     "dismiss": MessageLookupByLibrary.simpleMessage("Zavřít"),
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Prosím, autentifikujte se pro úpravu uzamčeného tokenu.",
@@ -154,18 +139,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
       "Generování páru klíčů RSA se nezdařilo",
     ),
-    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
-      "Otevřít nastavení",
-    ),
-    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-      "Není nastaveno přihlášení zámkem zařízení ani biometrické ověření. Aktivujte je v nastavení zařízení.",
-    ),
     "language": MessageLookupByLibrary.simpleMessage("Jazyk"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Světlý"),
     "lock": MessageLookupByLibrary.simpleMessage("Zamknout"),
-    "lockOut": MessageLookupByLibrary.simpleMessage(
-      "Biometrické ověření je deaktivováno. Pro aktivaci zamkněte a znovu odemkněte obrazovku/zařízení.",
-    ),
     "name": MessageLookupByLibrary.simpleMessage("Název"),
     "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
       "There is no e-mail app installed or initialised on this device, please try again when you are able to send an email message.",

@@ -67,15 +67,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Wymagana autentykacja",
     ),
-    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-      "Nie rozpoznano. Spróbuj ponownie.",
-    ),
-    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Uwierzytelnianie biometryczne nie jest skonfigurowane.",
-    ),
-    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-      "Autentykacja zakończona sukcesem!",
-    ),
     "cancel": MessageLookupByLibrary.simpleMessage("Anuluj"),
     "checkYourNetwork": MessageLookupByLibrary.simpleMessage(
       "Sprawdź połączenie sieciowe i spróbuj ponownie.",
@@ -113,12 +104,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
       "Uwierzytelnij, aby usunąć zablokowany token.",
     ),
-    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Ustawienia zabezpieczeń urządzenia nie zostały skonfigurowane.",
-    ),
-    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-      "Skonfiguruj ustawienia zabezpieczeń w ustawieniach urządzenia.",
-    ),
     "dismiss": MessageLookupByLibrary.simpleMessage("Odrzuć"),
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Aby edytować zablokowany token, należy się uwierzytelnić.",
@@ -152,18 +137,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
       "Generowanie pary kluczy RSA nieudane",
     ),
-    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
-      "Idź do ustawień",
-    ),
-    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-      "Ustawienia zabezpieczeń, bądź uwierzytelnianie biometryczne nie są skonfigurowane w twoim urządzeniu. Skonfiguruj je w ustawieniach urządzenia.",
-    ),
     "language": MessageLookupByLibrary.simpleMessage("Język"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Jasny"),
     "lock": MessageLookupByLibrary.simpleMessage("Zablokuj"),
-    "lockOut": MessageLookupByLibrary.simpleMessage(
-      "Uwierzytelnianie biometryczne jest wyłączone. Zablokuj i odblokuj ponownie ekran, żeby je włączyć.",
-    ),
     "name": MessageLookupByLibrary.simpleMessage("Nazwa"),
     "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
       "Na tym urządzeniu nie zainstalowano ani nie zainicjowano aplikacji poczty e-mail, spróbuj ponownie, gdy będziesz w stanie wysłać wiadomość e-mail",

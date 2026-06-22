@@ -80,15 +80,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Authentifizierung wird benötigt",
     ),
-    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-      "Biometrie wurde nicht erkannt, bitte versuchen Sie es erneut",
-    ),
-    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Biometrie ist nicht eingerichtet",
-    ),
-    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-      "Authentifizierung erfolgreich",
-    ),
     "cameraPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
       "Die Kamera-Berechtigung ist dauerhaft entzogen. Bitte erlauben Sie die Kamera-Berechtigung in den Systemeinstellungen.",
     ),
@@ -136,12 +127,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
       "Bitte authentifizieren Sie sich, um den gesperrten Token zu löschen.",
     ),
-    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Gerätepasswort ist nicht eingerichtet",
-    ),
-    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-      "Setzen Sie bitte ein Gerätepasswort in den Einstellungen",
-    ),
     "dismiss": MessageLookupByLibrary.simpleMessage("Schließen"),
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Bitte authentifizieren Sie sich, um den gesperrten Token zu bearbeiten.",
@@ -178,21 +163,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Generieren des RSA Schlüsselpaars fehlgeschlagen",
     ),
     "github": MessageLookupByLibrary.simpleMessage("GitHub"),
-    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
-      "Gehe zu Einstellungen",
-    ),
-    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-      "Authentifizierung durch Gerätepasswort oder Biometrie ist nicht eingerichtet. Bitte aktivieren Sie dies in den Geräteeinstellungen.",
-    ),
     "language": MessageLookupByLibrary.simpleMessage("Sprache"),
     "licenses": MessageLookupByLibrary.simpleMessage("Open Source Lizenzen"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Hell"),
     "lock": MessageLookupByLibrary.simpleMessage("Sperren"),
     "lockDescription": MessageLookupByLibrary.simpleMessage(
       "Sperren eines Tokens mit biometrischer Authentifizierung.",
-    ),
-    "lockOut": MessageLookupByLibrary.simpleMessage(
-      "Biometrie ist deaktiviert. Bitte sperren und entsperren Sie Ihren Bildschirm um diese zu aktivieren.",
     ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameFieldEmpty": MessageLookupByLibrary.simpleMessage(

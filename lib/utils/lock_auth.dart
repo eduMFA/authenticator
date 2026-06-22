@@ -45,22 +45,12 @@ Future<bool> lockAuth({required String localizedReason}) async {
   }
 
   AndroidAuthMessages androidAuthStrings = AndroidAuthMessages(
-    biometricRequiredTitle: S.of(globalNavigatorKey.currentContext!).biometricRequiredTitle,
-    biometricHint: S.of(globalNavigatorKey.currentContext!).biometricHint,
-    biometricNotRecognized: S.of(globalNavigatorKey.currentContext!).biometricNotRecognized,
-    biometricSuccess: S.of(globalNavigatorKey.currentContext!).biometricSuccess,
-    deviceCredentialsRequiredTitle: S.of(globalNavigatorKey.currentContext!).deviceCredentialsRequiredTitle,
-    deviceCredentialsSetupDescription: S.of(globalNavigatorKey.currentContext!).deviceCredentialsSetupDescription,
+    signInHint: S.of(globalNavigatorKey.currentContext!).biometricHint,
     signInTitle: S.of(globalNavigatorKey.currentContext!).signInTitle,
-    goToSettingsButton: S.of(globalNavigatorKey.currentContext!).goToSettingsButton,
-    goToSettingsDescription: S.of(globalNavigatorKey.currentContext!).goToSettingsDescription,
     cancelButton: S.of(globalNavigatorKey.currentContext!).cancel,
   );
 
   IOSAuthMessages iOSAuthStrings = IOSAuthMessages(
-    lockOut: S.of(globalNavigatorKey.currentContext!).lockOut,
-    goToSettingsButton: S.of(globalNavigatorKey.currentContext!).goToSettingsButton,
-    goToSettingsDescription: S.of(globalNavigatorKey.currentContext!).goToSettingsDescription,
     cancelButton: S.of(globalNavigatorKey.currentContext!).cancel,
   );
 
@@ -73,6 +63,9 @@ Future<bool> lockAuth({required String localizedReason}) async {
       ]);
       authenticationInProgress = false;
     }
+  } on LocalAuthException catch (e, s) {
+    authenticationInProgress = false;
+    Logger.info("Authentication failed: ${e.code.name}", error: e, stackTrace: s);
   } on PlatformException catch (e, s) {
     authenticationInProgress = false;
     Logger.info("Authentication failed", error: e, stackTrace: s);

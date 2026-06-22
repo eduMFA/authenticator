@@ -28,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -594,17 +593,6 @@ class S {
     );
   }
 
-  /// `Biometrics not setup`
-  String get biometricRequiredTitle {
-    return Intl.message(
-      'Biometrics not setup',
-      name: 'biometricRequiredTitle',
-      desc:
-          'Message showed as a title in a dialog which indicates the user has not set up biometric authentication on their device. It is used on Android side. Maximum 60 characters.',
-      args: [],
-    );
-  }
-
   /// `Authentication required`
   String get biometricHint {
     return Intl.message(
@@ -616,50 +604,6 @@ class S {
     );
   }
 
-  /// `Not recognized. Try again.`
-  String get biometricNotRecognized {
-    return Intl.message(
-      'Not recognized. Try again.',
-      name: 'biometricNotRecognized',
-      desc:
-          'Message to let the user know that authentication was failed. It is used on Android side. Maximum 60 characters.',
-      args: [],
-    );
-  }
-
-  /// `Authentication successful`
-  String get biometricSuccess {
-    return Intl.message(
-      'Authentication successful',
-      name: 'biometricSuccess',
-      desc:
-          'Message to let the user know that authentication was successful. It is used on Android side. Maximum 60 characters.',
-      args: [],
-    );
-  }
-
-  /// `Device credentials not set up`
-  String get deviceCredentialsRequiredTitle {
-    return Intl.message(
-      'Device credentials not set up',
-      name: 'deviceCredentialsRequiredTitle',
-      desc:
-          'Message showed as a title in a dialog which indicates the user has not set up credentials authentication on their device. It is used on Android side. Maximum 60 characters.',
-      args: [],
-    );
-  }
-
-  /// `Setup device credentials in the device's settings`
-  String get deviceCredentialsSetupDescription {
-    return Intl.message(
-      'Setup device credentials in the device\'s settings',
-      name: 'deviceCredentialsSetupDescription',
-      desc:
-          'Message advising the user to go to the settings and configure device credentials on their device. It shows in a dialog on Android side.',
-      args: [],
-    );
-  }
-
   /// `Authentication required`
   String get signInTitle {
     return Intl.message(
@@ -667,39 +611,6 @@ class S {
       name: 'signInTitle',
       desc:
           'Message showed as a title in a dialog which indicates the user that they need to scan biometric to continue. It is used on Android side. Maximum 60 characters.',
-      args: [],
-    );
-  }
-
-  /// `Go to settings`
-  String get goToSettingsButton {
-    return Intl.message(
-      'Go to settings',
-      name: 'goToSettingsButton',
-      desc:
-          'Message showed on a button that the user can click to go to settings pages from the current dialog. It is used on both Android and iOS side. Maximum 30 characters.',
-      args: [],
-    );
-  }
-
-  /// `Authentication by credentials or biometrics is not set up on your device. Please set it up in the device's settings.`
-  String get goToSettingsDescription {
-    return Intl.message(
-      'Authentication by credentials or biometrics is not set up on your device. Please set it up in the device\'s settings.',
-      name: 'goToSettingsDescription',
-      desc:
-          'Message advising the user to go to the settings and configure device credentials or biometrics on their device.',
-      args: [],
-    );
-  }
-
-  /// `Biometric authentication is disabled. Please lock and unlock your screen to enable it.`
-  String get lockOut {
-    return Intl.message(
-      'Biometric authentication is disabled. Please lock and unlock your screen to enable it.',
-      name: 'lockOut',
-      desc:
-          'Message advising the user to re-enable biometrics on their device. It shows in a dialog on iOS side.',
       args: [],
     );
   }

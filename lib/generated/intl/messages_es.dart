@@ -63,15 +63,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Autenticación necesaria",
     ),
-    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-      "No reconocido. Inténtelo de nuevo.",
-    ),
-    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Biometría no configurada",
-    ),
-    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-      "Autenticación correcta",
-    ),
     "cameraPermissionPermanentlyDeniedButton":
         MessageLookupByLibrary.simpleMessage("Conceder permiso"),
     "cancel": MessageLookupByLibrary.simpleMessage("Anular"),
@@ -114,12 +105,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
       "Por favor, autentíquese para eliminar el token bloqueado.",
     ),
-    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "No se han configurado las credenciales del dispositivo.",
-    ),
-    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-      "Configurar las credenciales del dispositivo en los ajustes del dispositivo",
-    ),
     "dismiss": MessageLookupByLibrary.simpleMessage("Desestimar"),
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Por favor, autentíquese para editar el token bloqueado.",
@@ -150,17 +135,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "generatingRSAKeyPairFailed": MessageLookupByLibrary.simpleMessage(
       "Error al generar el par de claves RSA",
     ),
-    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
-      "Ir a la configuración",
-    ),
-    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-      "La autenticación por credenciales o biométrica no está configurada en tu dispositivo. Por favor, configúrala en los ajustes del dispositivo.",
-    ),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Luminoso"),
     "lock": MessageLookupByLibrary.simpleMessage("Cierre"),
-    "lockOut": MessageLookupByLibrary.simpleMessage(
-      "La autenticación biométrica está desactivada. Bloquea y desbloquea la pantalla para activarla.",
-    ),
     "name": MessageLookupByLibrary.simpleMessage("Nombre"),
     "noMailAppDescription": MessageLookupByLibrary.simpleMessage(
       "No hay ninguna app de correo electrónico instalada o inicializada en este dispositivo, inténtalo de nuevo cuando puedas enviar un mensaje de correo electrónico.",

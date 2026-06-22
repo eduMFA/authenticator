@@ -80,15 +80,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "biometricHint": MessageLookupByLibrary.simpleMessage(
       "Authentication required",
     ),
-    "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
-      "Not recognized. Try again.",
-    ),
-    "biometricRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Biometrics not setup",
-    ),
-    "biometricSuccess": MessageLookupByLibrary.simpleMessage(
-      "Authentication successful",
-    ),
     "cameraPermissionPermanentlyDenied": MessageLookupByLibrary.simpleMessage(
       "Camera permission is permanently denied. Please grant camera permission in the system settings.",
     ),
@@ -130,12 +121,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "deleteLockedToken": MessageLookupByLibrary.simpleMessage(
       "Please authenticate to delete the locked token.",
     ),
-    "deviceCredentialsRequiredTitle": MessageLookupByLibrary.simpleMessage(
-      "Device credentials not set up",
-    ),
-    "deviceCredentialsSetupDescription": MessageLookupByLibrary.simpleMessage(
-      "Setup device credentials in the device\'s settings",
-    ),
     "dismiss": MessageLookupByLibrary.simpleMessage("Dismiss"),
     "editLockedToken": MessageLookupByLibrary.simpleMessage(
       "Please authenticate to edit the locked token.",
@@ -171,21 +156,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Generating RSA key pair failed",
     ),
     "github": MessageLookupByLibrary.simpleMessage("GitHub"),
-    "goToSettingsButton": MessageLookupByLibrary.simpleMessage(
-      "Go to settings",
-    ),
-    "goToSettingsDescription": MessageLookupByLibrary.simpleMessage(
-      "Authentication by credentials or biometrics is not set up on your device. Please set it up in the device\'s settings.",
-    ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "licenses": MessageLookupByLibrary.simpleMessage("Open Source Licenses"),
     "lightTheme": MessageLookupByLibrary.simpleMessage("Light"),
     "lock": MessageLookupByLibrary.simpleMessage("Lock"),
     "lockDescription": MessageLookupByLibrary.simpleMessage(
       "Lock a token with biometric authentication.",
-    ),
-    "lockOut": MessageLookupByLibrary.simpleMessage(
-      "Biometric authentication is disabled. Please lock and unlock your screen to enable it.",
     ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "nameFieldEmpty": MessageLookupByLibrary.simpleMessage(
