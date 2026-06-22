@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:version/version.dart';
 
 import 'package:edumfa_authenticator/interfaces/repo/settings_repository.dart';

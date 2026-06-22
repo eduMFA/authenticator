@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/riverpod_state_listener.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
 bool _initialUriIsHandled = false;
 

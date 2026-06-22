@@ -5,6 +5,7 @@ import 'package:edumfa_authenticator/model/states/token_state.dart';
 import 'package:edumfa_authenticator/processors/scheme_processors/navigation_scheme_processors/navigation_scheme_processor_interface.dart';
 import 'package:edumfa_authenticator/state_notifiers/deeplink_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
 abstract class NotifierProviderListener<T extends Notifier<S>, S> {
   final NotifierProvider<T, S> provider;
