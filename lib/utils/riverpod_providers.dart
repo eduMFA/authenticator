@@ -20,6 +20,7 @@ import 'package:edumfa_authenticator/utils/globals.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/push_provider.dart';
 import 'package:edumfa_authenticator/utils/riverpod_state_listener.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
 // Never use globalRef to .watch() a provider. only use it to .read() a provider
 // Otherwise the whole app will rebuild on every state change of the provider

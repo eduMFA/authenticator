@@ -9,7 +9,7 @@ import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:http/http.dart';
 import 'package:pointycastle/asymmetric/api.dart';
