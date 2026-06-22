@@ -38,60 +38,60 @@ dependencies:
   pointycastle: ^4.0.0
 
   # Device Info
-  device_info_plus: ^12.0.0
-  package_info_plus: ^9.0.0
+  device_info_plus: ^12.4.0
+  package_info_plus: ^9.0.1
 
   # Firebase
-  firebase_core: ^4.1.0
-  firebase_messaging: ^16.0.1
+  firebase_core: ^4.11.0
+  firebase_messaging: ^16.4.0
 
   # Image and Media
-  flutter_svg: ^2.2.1
-  image: ^4.5.4
-  image_picker: ^1.2.0
-  lottie: ^3.3.2
-  mobile_scanner: ^7.0.1
+  flutter_svg: ^2.3.0
+  image: ^4.8.0
+  image_picker: ^1.2.2
+  lottie: ^3.3.3
+  mobile_scanner: ^7.2.0
 
   # Networking and URI
   app_links: ^6.4.1
-  connectivity_plus: ^7.0.0
-  flutter_mailer: ^3.0.1
-  http: ^1.5.0
+  connectivity_plus: ^7.1.1
+  flutter_mailer: ^3.0.2
+  http: ^1.6.0
   url_launcher: ^6.3.2
 
   # Notifications
-  flutter_local_notifications: ^19.4.2
+  flutter_local_notifications: ^19.5.0
 
   # Security and Authentication
   flutter_secure_storage: ^9.2.4
   local_auth: ^2.3.0
-  local_auth_android: ^1.0.53
+  local_auth_android: ^1.0.56
   local_auth_darwin: ^1.6.1
-  permission_handler: ^12.0.1
+  permission_handler: ^12.0.3
 
   # Serialization
-  json_annotation: ^4.9.0
+  json_annotation: ^4.12.0
 
   # State Management
   flutter_riverpod: ^2.6.1
   flutterlifecyclehooks: ^5.0.0
 
   # Storage
-  shared_preferences: ^2.5.3
+  shared_preferences: ^2.5.5
 
   # UI
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.9
   easy_dynamic_theme: ^2.3.1
   dynamic_color: ^1.8.1
   haptic_feedback: 0.6.0
-  path_provider: ^2.1.5
+  path_provider: ^2.1.6
 
   # Utilities
   collection: ^1.19.1
   intl: any
-  logger: ^2.6.1
+  logger: ^2.7.0
   quick_actions: ^1.1.0
-  uuid: ^4.5.1
+  uuid: ^4.5.3
   version: ^3.0.2
 
 dev_dependencies:
@@ -103,13 +103,13 @@ dev_dependencies:
     sdk: flutter
 
   # Code Generation
-  build_runner: ^2.5.3
-  json_serializable: ^6.9.4
+  build_runner: ^2.15.0
+  json_serializable: ^6.14.0
 
   # Linting and Mocking
   flutter_lints: ^6.0.0
-  mockito: ^5.4.6
-  test: ^1.25.8
+  mockito: ^5.6.4
+  test: ^1.31.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
