@@ -39,7 +39,7 @@ dependencies:
 
   # Device Info
   device_info_plus: ^12.4.0
-  package_info_plus: ^9.0.1
+  package_info_plus: ^10.0.0
 
   # Firebase
   firebase_core: ^4.11.0
