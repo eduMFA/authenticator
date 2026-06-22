@@ -63,7 +63,7 @@ dependencies:
   flutter_local_notifications: ^19.5.0
 
   # Security and Authentication
-  flutter_secure_storage: ^9.2.4
+  flutter_secure_storage: ^10.0.0
   local_auth: ^3.0.1
   local_auth_android: ^2.0.9
   local_auth_darwin: ^2.0.3
