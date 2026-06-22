@@ -21,8 +21,8 @@ version: 6.0.1+601001
 # iOS    : CFBundleShortVersionString + CFBundleVersion
 
 environment:
-  sdk: ^3.7.0
-  flutter: 3.38.6
+  sdk: ^3.10.3
+  flutter: 3.41.9
 
 dependencies:
   flutter:
@@ -109,7 +109,7 @@ dev_dependencies:
   # Linting and Mocking
   flutter_lints: ^6.0.0
   mockito: ^5.6.4
-  test: ^1.26.3
+  test: ^1.30.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

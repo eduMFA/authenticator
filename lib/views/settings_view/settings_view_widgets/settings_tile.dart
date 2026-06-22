@@ -45,7 +45,7 @@ class SettingsTile extends StatelessWidget {
       title: Row(
         children: [
           Text(title),
-          if (titleIcon != null) titleIcon!,
+          ?titleIcon,
         ],
       ),
       subtitle: subtitle != null

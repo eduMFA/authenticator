@@ -20,7 +20,7 @@ class SettingsListTileButton extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  if (title != null) title!,
+                  ?title,
                   if (icon != null)
                     IconButton(
                       onPressed: onPressed,

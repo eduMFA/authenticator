@@ -75,9 +75,9 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
       await Navigator.push<bool>(
         context,
         PageRouteBuilder(
-          pageBuilder: (_, __, ___) => SplashScreen._initialView!,
+          pageBuilder: (_, _, _) => SplashScreen._initialView!,
           transitionDuration: _splashScreenDuration,
-          transitionsBuilder: (_, a, __, view) => FadeTransition(
+          transitionsBuilder: (_, a, _, view) => FadeTransition(
             opacity: CurvedAnimation(
               curve: const Interval(0, 1, curve: Curves.easeOut),
               parent: a,
@@ -95,10 +95,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
     final ViewWidget nextView = ref.read(settingsProvider).isFirstRun ? const OnboardingView() : const MainView();
     final routeBuilder = SplashScreen._initialView == null
         ? PageRouteBuilder(
-            pageBuilder: (_, __, ___) => nextView,
+            pageBuilder: (_, _, _) => nextView,
             transitionDuration: _splashScreenDuration,
             settings: nextView.routeSettings,
-            transitionsBuilder: (_, a, __, view) => FadeTransition(
+            transitionsBuilder: (_, a, _, view) => FadeTransition(
               opacity: CurvedAnimation(
                 curve: const Interval(0, 1, curve: Curves.easeOut),
                 parent: a,
@@ -107,7 +107,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
             ),
           )
         : PageRouteBuilder(
-            pageBuilder: (_, __, ___) => nextView,
+            pageBuilder: (_, _, _) => nextView,
           );
     Navigator.of(context).popUntil((route) => route.isFirst);
     Navigator.pushReplacement(context, routeBuilder);

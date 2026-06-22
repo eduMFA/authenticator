@@ -101,7 +101,7 @@ class EduMFAIOClient {
     }
 
     HttpClient httpClient = HttpClient();
-    httpClient.badCertificateCallback = ((_, __, ___) => !sslVerify);
+    httpClient.badCertificateCallback = ((_, _, _) => !sslVerify);
     httpClient.userAgent = 'eduMFA-App'
         '/${(await PackageInfo.fromPlatform()).version}'
         ' ${Platform.operatingSystem}'
