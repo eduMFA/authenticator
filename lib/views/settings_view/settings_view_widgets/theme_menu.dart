@@ -13,46 +13,44 @@ class ThemeMenu extends StatelessWidget {
       child: DefaultDialog(
         scrollable: true,
         title: Text(S.of(context).theme),
-        content: Column(
-          children: [
-            RadioListTile(
-              title: Text(
-                S.of(context).autoTheme,
-                style: TextTheme.of(context).titleMedium,
+        content: RadioGroup<ThemeMode>(
+          groupValue: EasyDynamicTheme.of(context).themeMode,
+          onChanged: (dynamic themeMode) => _changeTheme(context, themeMode),
+          child: Column(
+            children: [
+              RadioListTile(
+                title: Text(
+                  S.of(context).autoTheme,
+                  style: TextTheme.of(context).titleMedium,
+                ),
+                value: ThemeMode.system,
+                controlAffinity: ListTileControlAffinity.trailing,
+                toggleable: true,
               ),
-              value: ThemeMode.system,
-              groupValue: EasyDynamicTheme.of(context).themeMode,
-              controlAffinity: ListTileControlAffinity.trailing,
-              toggleable: true,
-              onChanged: (dynamic themeMode) => _changeTheme(context, themeMode),
-            ),
-            RadioListTile(
-              title: Text(
-                S.of(context).lightTheme,
-                style: TextTheme.of(context).titleMedium,
-                overflow: TextOverflow.fade,
-                softWrap: false,
+              RadioListTile(
+                title: Text(
+                  S.of(context).lightTheme,
+                  style: TextTheme.of(context).titleMedium,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                ),
+                value: ThemeMode.light,
+                controlAffinity: ListTileControlAffinity.trailing,
+                toggleable: true,
               ),
-              value: ThemeMode.light,
-              groupValue: EasyDynamicTheme.of(context).themeMode,
-              controlAffinity: ListTileControlAffinity.trailing,
-              toggleable: true,
-              onChanged: (dynamic themeMode) => _changeTheme(context, themeMode),
-            ),
-            RadioListTile(
-              title: Text(
-                S.of(context).darkTheme,
-                style: TextTheme.of(context).titleMedium,
-                overflow: TextOverflow.fade,
-                softWrap: false,
+              RadioListTile(
+                title: Text(
+                  S.of(context).darkTheme,
+                  style: TextTheme.of(context).titleMedium,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                ),
+                value: ThemeMode.dark,
+                controlAffinity: ListTileControlAffinity.trailing,
+                toggleable: true,
               ),
-              value: ThemeMode.dark,
-              groupValue: EasyDynamicTheme.of(context).themeMode,
-              controlAffinity: ListTileControlAffinity.trailing,
-              toggleable: true,
-              onChanged: (dynamic themeMode) => _changeTheme(context, themeMode),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -70,5 +68,4 @@ class ThemeMenu extends StatelessWidget {
     }
     Navigator.pop(context);
   }
-
 }

@@ -30,10 +30,7 @@ class SettingsGroup extends StatelessWidget {
   final List<Widget> _children;
   final bool _isActive;
 
-  const SettingsGroup({super.key, required String title, required List<Widget> children, bool isActive = true})
-      : _title = title,
-        _children = children,
-        _isActive = isActive;
+  const SettingsGroup({super.key, required this._title, required this._children, this._isActive = true});
 
   @override
   Widget build(BuildContext context) {
