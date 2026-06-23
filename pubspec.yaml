@@ -38,8 +38,8 @@ dependencies:
   pointycastle: ^4.0.0
 
   # Device Info
-  device_info_plus: ^12.4.0
-  package_info_plus: ^9.0.1
+  device_info_plus: ^13.1.0
+  package_info_plus: ^10.1.0
 
   # Firebase
   firebase_core: ^4.11.0
