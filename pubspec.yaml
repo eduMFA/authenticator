@@ -22,7 +22,7 @@ version: 6.0.1+601001
 
 environment:
   sdk: ^3.12.0
-  flutter: 3.44.2
+  flutter: 3.44.3
 
 dependencies:
   flutter:
@@ -38,8 +38,8 @@ dependencies:
   pointycastle: ^4.0.0
 
   # Device Info
-  device_info_plus: ^12.4.0
-  package_info_plus: ^9.0.1
+  device_info_plus: ^13.1.0
+  package_info_plus: ^10.1.0
 
   # Firebase
   firebase_core: ^4.11.0
@@ -60,10 +60,10 @@ dependencies:
   url_launcher: ^6.3.2
 
   # Notifications
-  flutter_local_notifications: ^19.5.0
+  flutter_local_notifications: ^22.0.0
 
   # Security and Authentication
-  flutter_secure_storage: ^9.2.4
+  flutter_secure_storage: ^10.0.0
   local_auth: ^3.0.1
   local_auth_android: ^2.0.9
   local_auth_darwin: ^2.0.3

@@ -339,10 +339,13 @@ class TokenNotifier extends Notifier<TokenState> {
       return false;
     }
     String signature = pr.signature;
+    // Must match the server's sign_string in eduMFA pushtoken.py:
+    // "{nonce}|{url}|{serial}|{question}|{title}|{sslverify}"
     String signedData =
         '${pr.nonce}|'
         '${pr.uri}|'
         '${pr.serial}|'
+        '${pr.question}|'
         '${pr.title}|'
         '${pr.sslVerify ? '1' : '0'}';
 

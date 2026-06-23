@@ -15,6 +15,7 @@ class PushRequest {
   final DateTime expirationDate;
   final String serial;
   final String signature;
+  final String question;
   final bool? accepted;
 
   const PushRequest({
@@ -26,9 +27,11 @@ class PushRequest {
     required this.expirationDate,
     String? serial,
     String? signature,
+    String? question,
     this.accepted,
   })  : serial = serial ?? '',
-        signature = signature ?? '';
+        signature = signature ?? '',
+        question = question ?? '';
 
   PushRequest copyWith({
     String? title,
@@ -39,6 +42,7 @@ class PushRequest {
     DateTime? expirationDate,
     String? serial,
     String? signature,
+    String? question,
     bool? accepted,
   }) {
     return PushRequest(
@@ -50,6 +54,7 @@ class PushRequest {
       expirationDate: expirationDate ?? this.expirationDate,
       serial: serial ?? this.serial,
       signature: signature ?? this.signature,
+      question: question ?? this.question,
       accepted: accepted ?? this.accepted,
     );
   }
@@ -64,7 +69,7 @@ class PushRequest {
   String toString() {
     return 'PushRequest{title: $title, id: $id, uri: $uri, _nonce: $nonce, '
         'sslVerify: $sslVerify, expirationDate: $expirationDate, '
-        'serial: $serial, signature: $signature, accepted: $accepted}';
+        'serial: $serial, signature: $signature, question: $question, accepted: $accepted}';
   }
 
   factory PushRequest.fromJson(Map<String, dynamic> json) => _$PushRequestFromJson(json);
@@ -86,6 +91,7 @@ class PushRequest {
       serial: data[PUSH_REQUEST_SERIAL],
       expirationDate: DateTime.now().add(const Duration(minutes: 2)),
       signature: data[PUSH_REQUEST_SIGNATURE],
+      question: data[PUSH_REQUEST_QUESTION],
     );
   }
 
