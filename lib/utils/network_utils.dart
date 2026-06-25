@@ -57,7 +57,7 @@ class EduMFAIOClient {
       if (isRetry) {
         Logger.warning('SocketException while retrying', name: 'utils.dart#triggerNetworkAccessPermission');
         if (globalNavigatorKey.currentState?.context != null) {
-          globalRef?.read(statusMessageProvider.notifier).state = (
+          globalRef?.read(statusMessageProvider.notifier).setMessage(
             S.of(await globalContext).connectionFailed,
             S.of(await globalContext).checkYourNetwork,
           );
@@ -74,7 +74,7 @@ class EduMFAIOClient {
       Logger.warning('ClientException', name: 'utils.dart#triggerNetworkAccessPermission');
       ioClient.close();
       if (globalNavigatorKey.currentState?.context == null) return false;
-      globalRef?.read(statusMessageProvider.notifier).state = (
+      globalRef?.read(statusMessageProvider.notifier).setMessage(
         S.of(await globalContext).connectionFailed,
         S.of(await globalContext).checkYourNetwork,
       );

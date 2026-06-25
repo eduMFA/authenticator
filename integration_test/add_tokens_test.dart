@@ -29,8 +29,8 @@ void main() {
     (tester) async {
       await tester.pumpWidget(TestsAppWrapper(
         overrides: [
-          settingsProvider.overrideWith((ref) => SettingsNotifier(repository: mockSettingsRepository)),
-          tokenProvider.overrideWith((ref) => TokenNotifier(repository: mockTokenRepository)),
+          settingsProvider.overrideWith(() => SettingsNotifier(repository: mockSettingsRepository)),
+          tokenProvider.overrideWith(() => TokenNotifier(repository: mockTokenRepository)),
         ],
         child: const EduMFAAuthenticator(),
       ));
