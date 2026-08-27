@@ -36,17 +36,18 @@ void main() {
 void _testPushRequestNotifier() {
   group('PushRequestNotifier', () {
     test('newRequest', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockPushProvider = _MockPushProvider();
       final mockFirebaseUtils = MockFirebaseUtils();
-      final notifier = PushRequestNotifier(
-        pushProvider: mockPushProvider,
-        firebaseUtils: mockFirebaseUtils,
-        ioClient: MockEduMFAIOClient(),
-        rsaUtils: MockRsaUtils(),
+      final testProvider = NotifierProvider<PushRequestNotifier, PushRequest?>(
+        () => PushRequestNotifier(
+          pushProvider: mockPushProvider,
+          firebaseUtils: mockFirebaseUtils,
+          ioClient: MockEduMFAIOClient(),
+          rsaUtils: MockRsaUtils(),
+        ),
       );
-      final testProvider = StateNotifierProvider<PushRequestNotifier, PushRequest?>((ref) => notifier);
-      await mockPushProvider.initialize(pushSubscriber: notifier, firebaseUtils: mockFirebaseUtils);
+      container.read(testProvider.notifier);
       final pr = PushRequest(
         title: 'title',
         uri: Uri.parse('https://example.com/api/fetch?limit=10,20,30&max=100'),
@@ -59,7 +60,7 @@ void _testPushRequestNotifier() {
       expect(container.read(testProvider), pr);
     });
     test('accept', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockPushProvider = _MockPushProvider();
       final mockIoClient = MockEduMFAIOClient();
       final mockRsaUtils = MockRsaUtils();
@@ -80,7 +81,7 @@ void _testPushRequestNotifier() {
               body: {'nonce': 'nonce', 'serial': 'serial', 'signature': 'signature'},
               sslVerify: false))
           .thenAnswer((_) async => Response('', 200));
-      final testProvider = StateNotifierProvider<PushRequestNotifier, PushRequest?>((ref) {
+      final testProvider = NotifierProvider<PushRequestNotifier, PushRequest?>(() {
         final notifier = PushRequestNotifier(
           pushProvider: mockPushProvider,
           ioClient: mockIoClient,
@@ -95,7 +96,7 @@ void _testPushRequestNotifier() {
       expect(container.read(testProvider)!.accepted, isTrue);
     });
     test('decline', () async {
-      final container = ProviderContainer();
+      final container = ProviderContainer(retry: (_, _) => null);
       final mockPushProvider = _MockPushProvider();
       final mockIoClient = MockEduMFAIOClient();
       final mockRsaUtils = MockRsaUtils();
@@ -116,7 +117,7 @@ void _testPushRequestNotifier() {
               body: {'nonce': 'nonce', 'serial': 'serial', 'signature': 'signature', 'decline': '1'},
               sslVerify: false))
           .thenAnswer((_) async => Response('', 200));
-      final testProvider = StateNotifierProvider<PushRequestNotifier, PushRequest?>((ref) {
+      final testProvider = NotifierProvider<PushRequestNotifier, PushRequest?>(() {
         final notifier = PushRequestNotifier(
           pushProvider: mockPushProvider,
           ioClient: mockIoClient,

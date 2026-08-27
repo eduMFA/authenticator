@@ -9,16 +9,21 @@ import 'package:edumfa_authenticator/utils/push_provider.dart';
 /// This class provies access to the device specific settings.
 /// It also ensures that the settings are saved to the device.
 /// To Update a state use: ref.read(settingsProvider.notifier).anyMethod(value)
-class SettingsNotifier extends StateNotifier<SettingsState> {
+class SettingsNotifier extends Notifier<SettingsState> {
   late Future<SettingsState> loadingRepo;
   final SettingsRepository _repo;
+  final SettingsState? _initialState;
 
   SettingsNotifier({
     required SettingsRepository repository,
     SettingsState? initialState,
   })  : _repo = repository,
-        super(initialState ?? SettingsState()) {
+        _initialState = initialState;
+
+  @override
+  SettingsState build() {
     loadFromRepo();
+    return _initialState ?? SettingsState();
   }
   void loadFromRepo() async {
     loadingRepo = Future(() async {

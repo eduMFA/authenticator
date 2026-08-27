@@ -38,7 +38,7 @@ class _StatusBarState extends ConsumerState<StatusBar> {
         currentStatusMessage = null;
         statusbarOverlay!.remove();
         statusbarOverlay = null;
-        ref.read(statusMessageProvider.notifier).state = null;
+        ref.read(statusMessageProvider.notifier).clear();
         _tryPop();
       });
     };

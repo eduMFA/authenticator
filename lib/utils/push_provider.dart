@@ -242,7 +242,7 @@ class PushProvider {
     if (connectivityResult.contains(ConnectivityResult.none)) {
       if (isManually) {
         Logger.info('Tried to poll without any internet connection available.', name: 'push_provider.dart#pollForChallenges');
-        globalRef?.read(statusMessageProvider.notifier).state = (
+        globalRef?.read(statusMessageProvider.notifier).setMessage(
           S.of(globalNavigatorKey.currentContext!).pollingFailed,
           S.of(globalNavigatorKey.currentContext!).noNetworkConnection,
         );
@@ -269,7 +269,7 @@ class PushProvider {
     Logger.info(rsaUtils.runtimeType.toString(), name: 'push_provider.dart#pollForChallenge');
     String? signature = await rsaUtils.trySignWithToken(token, message);
     if (signature == null) {
-      globalRef?.read(statusMessageProvider.notifier).state = (
+      globalRef?.read(statusMessageProvider.notifier).setMessage(
         S.of(globalNavigatorKey.currentContext!).pollingFailedFor(token.serial),
         S.of(globalNavigatorKey.currentContext!).couldNotSignMessage,
       );
@@ -289,7 +289,7 @@ class PushProvider {
           ? await instance!._ioClient.doGet(url: token.url!, parameters: parameters, sslVerify: token.sslVerify)
           : await const EduMFAIOClient().doGet(url: token.url!, parameters: parameters, sslVerify: token.sslVerify);
     } catch (e) {
-      globalRef?.read(statusMessageProvider.notifier).state = (
+      globalRef?.read(statusMessageProvider.notifier).setMessage(
         S.of(globalNavigatorKey.currentContext!).errorWhenPullingChallenges(token.serial),
         null,
       );
@@ -302,7 +302,7 @@ class PushProvider {
           challengeList = _getAndValidateDataFromResponse(response);
         } catch (_) {
           if (isManually) {
-            globalRef?.read(statusMessageProvider.notifier).state = (
+            globalRef?.read(statusMessageProvider.notifier).setMessage(
               S.of(globalNavigatorKey.currentContext!).errorWhenPullingChallenges(token.serial),
               S.of(globalNavigatorKey.currentContext!).pushRequestParseError,
             );
@@ -316,7 +316,7 @@ class PushProvider {
       case 403:
         final error = getErrorMessageFromResponse(response);
         if (isManually) {
-          globalRef?.read(statusMessageProvider.notifier).state = (
+          globalRef?.read(statusMessageProvider.notifier).setMessage(
             S.of(globalNavigatorKey.currentContext!).pollingFailedFor(token.serial),
             error ?? S.of(globalNavigatorKey.currentContext!).statusCode(response.statusCode),
           );
@@ -328,7 +328,7 @@ class PushProvider {
       default:
         final error = getErrorMessageFromResponse(response);
         if (isManually) {
-          globalRef?.read(statusMessageProvider.notifier).state = (
+          globalRef?.read(statusMessageProvider.notifier).setMessage(
             S.of(globalNavigatorKey.currentContext!).pollingFailedFor(token.serial),
             error ?? S.of(globalNavigatorKey.currentContext!).statusCode(response.statusCode),
           );
