@@ -23,7 +23,8 @@
 
 import 'dart:async';
 
-import 'package:flutter_riverpod/legacy.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 import 'package:edumfa_authenticator/model/push_request.dart';
 import 'package:edumfa_authenticator/model/tokens/push_token.dart';
@@ -31,36 +32,76 @@ import 'package:edumfa_authenticator/utils/firebase_utils.dart';
 import 'package:edumfa_authenticator/utils/logger.dart';
 import 'package:edumfa_authenticator/utils/network_utils.dart';
 import 'package:edumfa_authenticator/utils/push_provider.dart';
+import 'package:edumfa_authenticator/utils/riverpod_providers.dart';
 import 'package:edumfa_authenticator/utils/rsa_utils.dart';
 
 /// Interface between the [PushProvider] and the UI.
-class PushRequestNotifier extends StateNotifier<PushRequest?> {
+class PushRequestNotifier extends Notifier<PushRequest?> {
   // Used for periodically polling for push challenges
 
   final PushProvider _pushProvider;
   final EduMFAIOClient _ioClient;
   final RsaUtils _rsaUtils;
+  final FirebaseUtils _firebaseUtils;
+  final PushRequest? _initState;
+  final bool _attachProviderListeners;
 
   PushRequestNotifier({
-    PushRequest? initState,
+    this._initState,
     PushProvider? pushProvider,
     EduMFAIOClient? ioClient,
     RsaUtils? rsaUtils,
     FirebaseUtils? firebaseUtils,
-  })  : _ioClient = ioClient ?? const EduMFAIOClient(),
-        _pushProvider = pushProvider ?? PushProvider(),
-        _rsaUtils = rsaUtils ?? const RsaUtils(),
-        super(initState) {
-    _pushProvider.initialize(pushSubscriber: this, firebaseUtils: firebaseUtils ?? FirebaseUtils());
+    this._attachProviderListeners = false,
+  }) : _ioClient = ioClient ?? const EduMFAIOClient(),
+       _pushProvider = pushProvider ?? PushProvider(),
+       _rsaUtils = rsaUtils ?? const RsaUtils(),
+       _firebaseUtils = firebaseUtils ?? FirebaseUtils();
+
+  @override
+  PushRequest? build() {
+    Logger.info("New PushRequestNotifier created", name: 'pushRequestProvider');
+    if (_attachProviderListeners) {
+      ref.listen(settingsProvider, (previous, next) {
+        if (previous?.enablePolling != next.enablePolling) {
+          Logger.info(
+            "Polling enabled changed from ${previous?.enablePolling} to ${next.enablePolling}",
+            name: 'pushRequestProvider#settingsProvider',
+          );
+          _pushProvider.setPollingEnabled(next.enablePolling);
+        }
+      });
+      ref.listen(appStateProvider, (previous, next) {
+        if (previous == AppLifecycleState.paused &&
+            next == AppLifecycleState.resumed) {
+          Logger.info(
+            'Polling for challenges on resume',
+            name: 'pushRequestProvider#appStateProvider',
+          );
+          _pushProvider.pollForChallenges(isManually: false);
+        }
+      });
+    }
+    _pushProvider.initialize(
+      pushSubscriber: this,
+      firebaseUtils: _firebaseUtils,
+    );
+    return _initState;
   }
 
   // ACTIONS
   Future<bool> acceptPop(PushToken pushToken) async {
     final pushRequest = pushToken.pushRequests.tryPop();
     if (pushRequest == null) return false;
-    Logger.info('Approving push request.', name: 'push_request_notifier.dart#approve');
+    Logger.info(
+      'Approving push request.',
+      name: 'push_request_notifier.dart#approve',
+    );
     final updatedPushRequest = pushRequest.copyWith(accepted: true);
-    final successfullyApproved = await _handleReaction(pushRequest: updatedPushRequest, token: pushToken);
+    final successfullyApproved = await _handleReaction(
+      pushRequest: updatedPushRequest,
+      token: pushToken,
+    );
     if (!successfullyApproved) {
       pushToken.pushRequests.add(pushRequest);
       return false;
@@ -72,9 +113,15 @@ class PushRequestNotifier extends StateNotifier<PushRequest?> {
   Future<bool> declinePop(PushToken pushToken) async {
     final pushRequest = pushToken.pushRequests.tryPop();
     if (pushRequest == null) return false;
-    Logger.info('Decline push request.', name: 'push_request_notifier.dart#decline');
+    Logger.info(
+      'Decline push request.',
+      name: 'push_request_notifier.dart#decline',
+    );
     final updatedPushRequest = pushRequest.copyWith(accepted: false);
-    final successfullyDeclined = await _handleReaction(pushRequest: updatedPushRequest, token: pushToken);
+    final successfullyDeclined = await _handleReaction(
+      pushRequest: updatedPushRequest,
+      token: pushToken,
+    );
     if (!successfullyDeclined) {
       pushToken.pushRequests.add(pushRequest);
       return false;
@@ -85,10 +132,16 @@ class PushRequestNotifier extends StateNotifier<PushRequest?> {
 
   void newRequest(PushRequest pushRequest) => state = pushRequest;
 
-  Future<bool> _handleReaction({required PushRequest pushRequest, required PushToken token}) async {
+  Future<bool> _handleReaction({
+    required PushRequest pushRequest,
+    required PushToken token,
+  }) async {
     if (pushRequest.accepted == null) return false;
 
-    Logger.info('Push auth request accepted=${pushRequest.accepted}, sending response to edumfa', name: 'token_widgets.dart#handleReaction');
+    Logger.info(
+      'Push auth request accepted=${pushRequest.accepted}, sending response to edumfa',
+      name: 'token_widgets.dart#handleReaction',
+    );
 
     // signature ::=  {nonce}|{serial}[|decline]
     String msg = '${pushRequest.nonce}|${token.serial}';
@@ -114,9 +167,16 @@ class PushRequestNotifier extends StateNotifier<PushRequest?> {
       body["decline"] = "1";
     }
 
-    Response response = await _ioClient.doPost(sslVerify: pushRequest.sslVerify, url: pushRequest.uri, body: body);
+    Response response = await _ioClient.doPost(
+      sslVerify: pushRequest.sslVerify,
+      url: pushRequest.uri,
+      body: body,
+    );
     if (response.statusCode != 200) {
-      Logger.warning('Sending push request response failed.', name: 'token_widgets.dart#handleReaction');
+      Logger.warning(
+        'Sending push request response failed.',
+        name: 'token_widgets.dart#handleReaction',
+      );
       return false;
     }
 

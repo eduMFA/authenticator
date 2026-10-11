@@ -52,8 +52,8 @@ void main() {
   testWidgets('Views Test', (tester) async {
     await tester.pumpWidget(TestsAppWrapper(
       overrides: [
-        settingsProvider.overrideWith((ref) => SettingsNotifier(repository: mockSettingsRepository)),
-        tokenProvider.overrideWith((ref) => TokenNotifier(
+        settingsProvider.overrideWith(() => SettingsNotifier(repository: mockSettingsRepository)),
+        tokenProvider.overrideWith(() => TokenNotifier(
               repository: mockTokenRepository,
               rsaUtils: mockRsaUtils,
               firebaseUtils: mockFirebaseUtils,

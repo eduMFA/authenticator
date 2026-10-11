@@ -26,6 +26,7 @@ class TestsAppWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
+      retry: (_, _) => null,
       overrides: overrides,
       child: EasyDynamicThemeWidget(child: child),
     );

@@ -30,7 +30,7 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    var tokenFilter = ref.read(tokenFilterProvider.notifier).state;
+    var tokenFilter = ref.read(tokenFilterProvider);
     return SearchBar(
       key: _searchBarKey,
       controller: _searchController,
@@ -46,9 +46,11 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
       },
       onTap: () async => await Haptics.vibrate(HapticsType.soft),
       onChanged: (value) {
-        ref.read(tokenFilterProvider.notifier).state = _searchController.text.isEmpty
-            ? null
-            : TokenFilter(searchQuery: value);
+        ref.read(tokenFilterProvider.notifier).setFilter(
+              _searchController.text.isEmpty
+                  ? null
+                  : TokenFilter(searchQuery: value),
+            );
         setState(() {});
       },
       leading: SizedBox(
@@ -75,7 +77,7 @@ class _TokenSearchBarState extends ConsumerState<TokenSearchBar> {
                 ? IconButton(
                     onPressed: () {
                       _searchController.clear();
-                      ref.read(tokenFilterProvider.notifier).state = null;
+                      ref.read(tokenFilterProvider.notifier).setFilter(null);
                       setState(() {});
                     },
                     icon: const Icon(Icons.close)

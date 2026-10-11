@@ -7,18 +7,18 @@ import 'package:edumfa_authenticator/state_notifiers/deeplink_notifier.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
 import 'package:flutter_riverpod/legacy.dart';
 
-abstract class StateNotifierProviderListener<T extends StateNotifier<S>, S> {
-  final StateNotifierProvider<T, S> provider;
+abstract class NotifierProviderListener<T extends Notifier<S>, S> {
+  final NotifierProvider<T, S> provider;
   final void Function(S? previous, S next) onNewState;
-  const StateNotifierProviderListener({required this.provider, required this.onNewState});
+  const NotifierProviderListener({required this.provider, required this.onNewState});
   void buildListen(WidgetRef ref) {
     ref.listen(provider, onNewState);
   }
 }
 
-abstract class DeepLinkListener extends StateNotifierProviderListener<DeeplinkNotifier, DeepLink?> {
+abstract class DeepLinkListener extends NotifierProviderListener<DeeplinkNotifier, DeepLink?> {
   const DeepLinkListener({
-    required StateNotifierProvider<DeeplinkNotifier, DeepLink?> deeplinkProvider,
+    required NotifierProvider<DeeplinkNotifier, DeepLink?> deeplinkProvider,
     required super.onNewState,
   }) : super(provider: deeplinkProvider);
 }
@@ -40,9 +40,9 @@ class NavigationDeepLinkListener extends DeepLinkListener {
   }
 }
 
-abstract class TokenStateListener extends StateNotifierProviderListener<TokenNotifier, TokenState> {
+abstract class TokenStateListener extends NotifierProviderListener<TokenNotifier, TokenState> {
   const TokenStateListener({
-    required StateNotifierProvider<TokenNotifier, TokenState> tokenProvider,
+    required NotifierProvider<TokenNotifier, TokenState> tokenProvider,
     required super.onNewState,
   }) : super(provider: tokenProvider);
 }

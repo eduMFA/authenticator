@@ -76,7 +76,7 @@ class EduMFAAuthenticator extends ConsumerWidget {
 
     return LayoutBuilder(builder: (context, constraints) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        ref.read(appConstraintsProvider.notifier).state = constraints;
+        ref.read(appConstraintsProvider.notifier).setConstraints(constraints);
       });
       return DynamicColorBuilder(
           builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {

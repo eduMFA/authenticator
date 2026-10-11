@@ -16,6 +16,7 @@ class AppWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleTouchRecognizer(
       child: ProviderScope(
+        retry: (_, _) => null,
         child: StateObserver(
           listeners: [
             NavigationDeepLinkListener(deeplinkProvider: deeplinkProvider),
