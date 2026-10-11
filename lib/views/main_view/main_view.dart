@@ -5,6 +5,7 @@ import 'package:edumfa_authenticator/utils/utils.dart';
 import 'package:edumfa_authenticator/views/settings_view/settings_view.dart';
 import 'package:edumfa_authenticator/views/tokens_view/tokens_view.dart';
 import 'package:edumfa_authenticator/views/view_interface.dart';
+import 'package:edumfa_authenticator/widgets/migration_notice_popup.dart';
 import 'package:edumfa_authenticator/widgets/navigation_item.dart';
 import 'package:edumfa_authenticator/widgets/push_request_listener.dart';
 import 'package:flutter/material.dart';
@@ -32,11 +33,12 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
 
   @override
   void initState() {
-    _views = [
-      TokensView(key: _tokensViewKey),
-      const SettingsView(),
-    ];
+    _views = [TokensView(key: _tokensViewKey), const SettingsView()];
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      showMigrationNoticePopup(context);
+    });
   }
 
   @override
@@ -68,18 +70,24 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                   NavigationRail(
                     selectedIndex: _selectedIndex,
                     onDestinationSelected: _onDestinationSelected,
-                    destinations: _getNavigationItems(context)
-                        .map((item) => item.toRailDestination()).toList(),
+                    destinations: _getNavigationItems(
+                      context,
+                    ).map((item) => item.toRailDestination()).toList(),
                     labelType: NavigationRailLabelType.all,
                     groupAlignment: 0,
                     leading: SizedBox(
-                      height: 56,  // 56 is the default for FAB
+                      height: 56, // 56 is the default for FAB
                       child: _selectedIndex == 0
                           ? FloatingActionButton(
                               tooltip: S.of(context).addToken,
                               child: const Icon(Icons.add),
-                              onPressed: () async => await _tokensViewKey.currentState!.showAddTokenSheet(_tokensViewKey.currentContext!)
-                          ) : null,
+                              onPressed: () async => await _tokensViewKey
+                                  .currentState!
+                                  .showAddTokenSheet(
+                                    _tokensViewKey.currentContext!,
+                                  ),
+                            )
+                          : null,
                     ),
                   ),
                   Expanded(
@@ -88,22 +96,25 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
                       child: SafeArea(
                         bottom: false,
                         child: ClipRRect(
-                            borderRadius: const BorderRadius.vertical(top: Radius.circular(16.0)),
-                            child: _views[_selectedIndex],
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(16.0),
+                          ),
+                          child: _views[_selectedIndex],
                         ),
                       ),
-                    )
+                    ),
                   ),
                 ],
-            )
+              )
             : _views[_selectedIndex],
         bottomNavigationBar: !isTablet(context)
             ? NavigationBar(
                 selectedIndex: _selectedIndex,
                 onDestinationSelected: _onDestinationSelected,
-                destinations: _getNavigationItems(context)
-                    .map((item) => item.toDestination()).toList(),
-            )
+                destinations: _getNavigationItems(
+                  context,
+                ).map((item) => item.toDestination()).toList(),
+              )
             : null,
       ),
     );
@@ -140,13 +151,22 @@ class _MainViewState extends ConsumerState<MainView> with LifecycleMixin {
       }
       Navigator.of(context).popUntil((route) => route.isFirst);
       Future.delayed(const Duration(seconds: 1), () {
-        if (_tokensViewKey.currentState == null || _tokensViewKey.currentContext == null) return;
+        if (_tokensViewKey.currentState == null ||
+            _tokensViewKey.currentContext == null) {
+          return;
+        }
         if (!ModalRoute.of(_tokensViewKey.currentContext!)!.isCurrent) return;
-        _tokensViewKey.currentState!.showAddTokenSheet(_tokensViewKey.currentContext!);
+        _tokensViewKey.currentState!.showAddTokenSheet(
+          _tokensViewKey.currentContext!,
+        );
       });
     });
     quickActions.setShortcutItems(<ShortcutItem>[
-      ShortcutItem(type: 'add_token', localizedTitle: S.of(context).addToken, icon: 'add_icon'),
+      ShortcutItem(
+        type: 'add_token',
+        localizedTitle: S.of(context).addToken,
+        icon: 'add_icon',
+      ),
     ]);
   }
 }
