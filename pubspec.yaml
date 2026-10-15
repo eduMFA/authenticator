@@ -42,7 +42,7 @@ dependencies:
   package_info_plus: ^10.1.0
 
   # Firebase
-  firebase_core: ^4.11.0
+  firebase_core: ^5.0.0
   firebase_messaging: ^16.4.0
 
   # Image and Media
