@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:edumfa_authenticator/interfaces/repo/token_repository.dart';
 import 'package:edumfa_authenticator/model/enums/push_token_rollout_state.dart';
+import 'package:edumfa_authenticator/model/states/token_filter.dart';
 import 'package:edumfa_authenticator/model/tokens/push_token.dart';
 import 'package:edumfa_authenticator/model/tokens/token.dart';
 import 'package:edumfa_authenticator/state_notifiers/token_notifier.dart';
@@ -274,4 +275,9 @@ void main() {
     expect(repo.records, isEmpty);
   });
 
+  test('search treats punctuation as literal text', () {
+    final token = pendingToken('token').copyWith(label: 'Work [account]');
+    expect(TokenFilter(searchQuery: '[').filterTokens([token]), [token]);
+    expect(TokenFilter(searchQuery: '.*').filterTokens([token]), isEmpty);
+  });
 }
