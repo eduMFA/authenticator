@@ -187,14 +187,14 @@ class PushProvider {
     Logger.info('Incoming push challenge.', name: 'push_provider.dart#_handleIncomingRequestBackground');
     PushRequest pushRequest = PushRequest.fromMessageData(data);
     Logger.info('Incoming push challenge for token with serial.', name: 'push_provider.dart#_handleIncomingRequestBackground');
-    _addPushRequestToTokenInSecureStoreage(pushRequest);
+    await _addPushRequestToTokenInSecureStoreage(pushRequest);
   }
 
-  static void _addPushRequestToTokenInSecureStoreage(PushRequest pushRequest) async {
+  static Future<void> _addPushRequestToTokenInSecureStoreage(PushRequest pushRequest) async {
     Logger.info('Adding push request to token in secure storage.', name: 'push_provider.dart#_addPushRequestToTokenInSecureStoreage');
     var tokens = await const SecureTokenRepository().loadTokens();
     PushToken? token = tokens.firstWhereOrNull((token) => token is PushToken && token.serial == pushRequest.serial) as PushToken?;
-    if (token == null) {
+    if (token == null || !token.isRolledOut) {
       Logger.warning('Token not found.', name: 'push_provider.dart#_addPushRequestToTokenInSecureStoreage');
       return;
     }
