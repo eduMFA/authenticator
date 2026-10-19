@@ -4,6 +4,8 @@ import 'package:app_links/app_links.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -30,6 +32,16 @@ final tokenProvider = StateNotifierProvider<TokenNotifier, TokenState>(
   (ref) {
     Logger.info("New TokenNotifier created");
     final newTokenNotifier = TokenNotifier();
+
+    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+      final subscription = const FlutterSecureStorage().onCupertinoProtectedDataAvailabilityChanged?.listen(
+        (available) {
+          if (available) newTokenNotifier.loadStateFromRepo();
+        },
+        onError: (Object error) => Logger.warning('Could not observe Keychain availability (${error.runtimeType}).'),
+      );
+      ref.onDispose(() => subscription?.cancel());
+    }
 
     ref.listen(deeplinkProvider, (previous, newLink) {
       if (newLink == null) {
@@ -65,9 +77,9 @@ final tokenProvider = StateNotifierProvider<TokenNotifier, TokenState>(
           newTokenNotifier.loadStateFromRepo();
         }
         if (previous == AppLifecycleState.resumed && next == AppLifecycleState.paused) {
-          Logger.info('Saving tokens and cancelling all notifications on pause', name: 'tokenProvider#appStateProvider');
+          Logger.info('Cancelling notifications and token timers on pause', name: 'tokenProvider#appStateProvider');
           FlutterLocalNotificationsPlugin().cancelAll();
-          newTokenNotifier.saveStateToRepo();
+          newTokenNotifier.onAppPaused();
         }
       },
     );
