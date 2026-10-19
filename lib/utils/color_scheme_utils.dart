@@ -1,16 +1,55 @@
-import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart' as material_ui;
 
-// The Dynamic Color package doesn't initialize new ColorScheme roles.
-// This causes some issues with some colors being off. This method combines
-// a solution for this issues, but also handling for devices that doesn't
-// support dynamic colors. GitHub issue:
-// https://github.com/material-foundation/flutter-packages/issues/582
-ColorScheme generateColorScheme(Color? primaryColor, Color fallbackColor, [Brightness? brightness]) {
-  final Color seedColor = primaryColor ?? fallbackColor;
-  final ColorScheme newScheme = ColorScheme.fromSeed(
-    seedColor: seedColor,
-    brightness: brightness ?? Brightness.light,
+/// Adapts dynamic_color's material_ui scheme without changing its palette.
+extension FlutterColorScheme on material_ui.ColorScheme {
+  ColorScheme toFlutterColorScheme() => ColorScheme(
+    brightness: brightness,
+    primary: primary,
+    onPrimary: onPrimary,
+    primaryContainer: primaryContainer,
+    onPrimaryContainer: onPrimaryContainer,
+    primaryFixed: primaryFixed,
+    primaryFixedDim: primaryFixedDim,
+    onPrimaryFixed: onPrimaryFixed,
+    onPrimaryFixedVariant: onPrimaryFixedVariant,
+    secondary: secondary,
+    onSecondary: onSecondary,
+    secondaryContainer: secondaryContainer,
+    onSecondaryContainer: onSecondaryContainer,
+    secondaryFixed: secondaryFixed,
+    secondaryFixedDim: secondaryFixedDim,
+    onSecondaryFixed: onSecondaryFixed,
+    onSecondaryFixedVariant: onSecondaryFixedVariant,
+    tertiary: tertiary,
+    onTertiary: onTertiary,
+    tertiaryContainer: tertiaryContainer,
+    onTertiaryContainer: onTertiaryContainer,
+    tertiaryFixed: tertiaryFixed,
+    tertiaryFixedDim: tertiaryFixedDim,
+    onTertiaryFixed: onTertiaryFixed,
+    onTertiaryFixedVariant: onTertiaryFixedVariant,
+    error: error,
+    onError: onError,
+    errorContainer: errorContainer,
+    onErrorContainer: onErrorContainer,
+    surface: surface,
+    onSurface: onSurface,
+    surfaceDim: surfaceDim,
+    surfaceBright: surfaceBright,
+    surfaceContainerLowest: surfaceContainerLowest,
+    surfaceContainerLow: surfaceContainerLow,
+    surfaceContainer: surfaceContainer,
+    surfaceContainerHigh: surfaceContainerHigh,
+    surfaceContainerHighest: surfaceContainerHighest,
+    onSurfaceVariant: onSurfaceVariant,
+    outline: outline,
+    outlineVariant: outlineVariant,
+    shadow: shadow,
+    scrim: scrim,
+    inverseSurface: inverseSurface,
+    onInverseSurface: onInverseSurface,
+    inversePrimary: inversePrimary,
+    surfaceTint: surfaceTint,
   );
-  return newScheme.harmonized();
 }

@@ -79,16 +79,13 @@ class EduMFAAuthenticator extends ConsumerWidget {
         ref.read(appConstraintsProvider.notifier).state = constraints;
       });
       return DynamicColorBuilder(
-          builder: (ColorScheme? lightDynamic, ColorScheme? darkDynamic) {
-            ThemeData lightTheme = ThemeData(colorScheme: generateColorScheme(
-                lightDynamic?.primary,
-                brandColor
-            ));
-            ThemeData darkTheme = ThemeData(colorScheme: generateColorScheme(
-                darkDynamic?.primary,
-                brandColor,
-                Brightness.dark
-            ));
+          builder: (lightDynamic, darkDynamic) {
+            ThemeData lightTheme = ThemeData(
+              colorScheme: lightDynamic?.toFlutterColorScheme() ?? ColorScheme.fromSeed(seedColor: brandColor),
+            );
+            ThemeData darkTheme = ThemeData(
+              colorScheme: darkDynamic?.toFlutterColorScheme() ?? ColorScheme.fromSeed(seedColor: brandColor, brightness: Brightness.dark),
+            );
             final navigationRailThemeData = NavigationRailThemeData(
                 backgroundColor: Colors.black,
                 unselectedLabelTextStyle: TextStyle(color: darkTheme.colorScheme.onSurface),
