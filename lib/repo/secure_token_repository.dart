@@ -27,6 +27,7 @@ import 'dart:convert';
 
 import 'package:edumfa_authenticator/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:mutex/mutex.dart';
@@ -49,7 +50,7 @@ class SecureTokenRepository implements TokenRepository {
 
   /// Function [f] is executed, protected by Mutex [_m].
   /// That means, that calls of this method will always be executed serial.
-  static Future protect(Future<dynamic> Function() f) => _m.protect(f);
+  static Future<T> protect<T>(Future<T> Function() f) => _m.protect(f);
 
   static const FlutterSecureStorage _storage = FlutterSecureStorage(
     // Keep unreadable data until the user explicitly confirms deletion.
@@ -57,6 +58,17 @@ class SecureTokenRepository implements TokenRepository {
   );
 
   static const String _GLOBAL_PREFIX = 'app_v3_';
+  static const _iosWrites = MethodChannel('io.edumfa.authenticator/token_storage');
+
+  static Future<void> _write(String key, String value) async {
+    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+      // The plugin's update/delete/add fallback can lose the old value while locked.
+      // This channel updates or adds, but never deletes an existing Keychain item.
+      await _iosWrites.invokeMethod<void>('write', {'key': key, 'value': value});
+    } else {
+      await _storage.write(key: key, value: value);
+    }
+  }
 
   // ###########################################################################
   // TOKENS
@@ -83,8 +95,14 @@ class SecureTokenRepository implements TokenRepository {
 
   Future<bool> _saveOrReplaceToken(Token token) async {
     try {
-      await _storage.write(key: _GLOBAL_PREFIX + token.id, value: jsonEncode(token));
-    } catch (_) {
+      await _write(_GLOBAL_PREFIX + token.id, jsonEncode(token));
+    } catch (e) {
+      // Do not log token JSON, keys, or platform exception details containing values.
+      Logger.warning(
+        'Token write failed (${e.runtimeType}${e is PlatformException ? ', ${e.code}' : ''}).',
+        name: 'secure_token_repository.dart#saveOrReplaceToken',
+        verbose: true,
+      );
       return false;
     }
     return true;
@@ -106,54 +124,40 @@ class SecureTokenRepository implements TokenRepository {
       }
       keyValueMap = await _storage.readAll();
     } on PlatformException catch (e, s) {
-      Logger.warning("Token found, but could not be decrypted.", name: 'storage_utils.dart#loadTokens', error: e, stackTrace: s, verbose: true);
-      _decryptErrorDialog();
-      return [];
+      Logger.warning(
+        'Token storage could not be read (${e.code}); existing records were preserved.',
+        name: 'secure_token_repository.dart#loadTokens',
+        stackTrace: s,
+        verbose: true,
+      );
+      // Only a reported upgrade failure may offer a reset. Access errors do not establish corruption.
+      if (e.code == 'secure_storage_upgrade_failed') {
+        _decryptErrorDialog();
+      } else {
+        showMessage(message: 'Tokens could not be loaded. Unlock your device and retry.');
+      }
+      rethrow;
     }
 
     List<Token> tokenList = [];
 
-    for (var i = 0; i < keyValueMap.length; i++) {
-      final value = keyValueMap.values.elementAt(i);
-      final key = keyValueMap.keys.elementAt(i);
-      Map<String, dynamic>? serializedToken;
-
+    for (final entry in keyValueMap.entries) {
+      if (!entry.key.startsWith(_GLOBAL_PREFIX) || entry.key == _CURRENT_APP_TOKEN_KEY || entry.key == _NEW_APP_TOKEN_KEY) {
+        continue;
+      }
       try {
-        serializedToken = jsonDecode(value);
-      } on FormatException catch (e, s) {
-        if (key == _CURRENT_APP_TOKEN_KEY || key == _NEW_APP_TOKEN_KEY) {
-          continue;
-        }
-        _storage.delete(key: key);
+        final serializedToken = jsonDecode(entry.value) as Map<String, dynamic>;
+        serializedToken['issuer'] ??= '';
+        serializedToken['label'] ??= '';
+        tokenList.add(Token.fromJson(serializedToken));
+      } catch (e) {
+        // Preserve unreadable records for recovery and keep loading healthy tokens.
         Logger.warning(
-          'Could not deserialize token from secure storage. Value: $value, key: $key',
-          name: 'storage_utils.dart#loadAllTokens',
-          error: e,
-          stackTrace: s,
+          'Skipping an unreadable token record (${e.runtimeType}); stored data was preserved.',
+          name: 'secure_token_repository.dart#loadTokens',
           verbose: true,
         );
-        // Skip everything that does not fit a serialized token
-        continue;
       }
-
-      if (serializedToken == null || !serializedToken.containsKey('type')) {
-        Logger.warning(
-            'Could not deserialize token from secure storage. Value: $value\nserializedToken = $serializedToken\ncontainsKey(type) = ${serializedToken?.containsKey('type')} ',
-            name: 'storage_utils.dart#loadAllTokens');
-        // Skip everything that fits for deserialization but is not a token
-        continue;
-      }
-
-      // TODO token.version might be deprecated, is there a reason to use it?
-      // TODO when the token version (token.version) changed handle this here.
-
-      // TODO Is this still needed? Can a json annotation be used instead to
-      //  define default values?
-      // Handle new fields here
-      serializedToken['issuer'] ??= '';
-      serializedToken['label'] ??= '';
-
-      tokenList.add(Token.fromJson(serializedToken));
     }
 
     //Logger.info('Loaded ${tokenList.length} tokens from secure storage');
@@ -169,8 +173,12 @@ class SecureTokenRepository implements TokenRepository {
       }
     }
     if (failedTokens.isNotEmpty) {
-      Logger.warning('Could not delete all tokens from secure storage',
-          name: 'storage_utils.dart#deleteTokens', error: 'Failed tokens: $failedTokens', stackTrace: StackTrace.current);
+      Logger.warning(
+        'Could not delete all tokens from secure storage',
+        name: 'storage_utils.dart#deleteTokens',
+        error: 'Failed token count: ${failedTokens.length}',
+        stackTrace: StackTrace.current,
+      );
     }
     return failedTokens;
   }
@@ -178,7 +186,7 @@ class SecureTokenRepository implements TokenRepository {
   /// Deletes the saved json of [token] from the secure storage.
   Future<bool> _deleteToken(Token token) async {
     try {
-      _storage.delete(key: _GLOBAL_PREFIX + token.id);
+      await _storage.delete(key: _GLOBAL_PREFIX + token.id);
     } catch (e, s) {
       Logger.warning('Could not delete token from secure storage', name: 'storage_utils.dart#deleteToken', error: e, stackTrace: s);
       return false;
@@ -193,14 +201,14 @@ class SecureTokenRepository implements TokenRepository {
 
   static const _CURRENT_APP_TOKEN_KEY = '${_GLOBAL_PREFIX}CURRENT_APP_TOKEN';
 
-  static Future<void> setCurrentFirebaseToken(String str) async => _storage.write(key: _CURRENT_APP_TOKEN_KEY, value: str);
+  static Future<void> setCurrentFirebaseToken(String str) => _write(_CURRENT_APP_TOKEN_KEY, str);
 
   static Future<String?> getCurrentFirebaseToken() async => _storage.read(key: _CURRENT_APP_TOKEN_KEY);
 
   static const _NEW_APP_TOKEN_KEY = '${_GLOBAL_PREFIX}NEW_APP_TOKEN';
 
   // This is used for checking if the token was updated.
-  static Future<void> setNewFirebaseToken(String str) async => _storage.write(key: _NEW_APP_TOKEN_KEY, value: str);
+  static Future<void> setNewFirebaseToken(String str) => _write(_NEW_APP_TOKEN_KEY, str);
 
   static Future<String?> getNewFirebaseToken() async => _storage.read(key: _NEW_APP_TOKEN_KEY);
 }
@@ -279,8 +287,8 @@ Future<bool?> _decryptErrorDeleteTokenConfirmationDialog() => showAsyncDialog<bo
                 name: 'storage_utils.dart#_decryptErrorDeleteTokenConfirmationDialog',
                 verbose: true,
               );
-              Navigator.pop(context, true);
               await SecureTokenRepository._storage.deleteAll();
+              if (context.mounted) Navigator.pop(context, true);
             },
             child: Text(
               S.of(context).decryptErrorButtonDelete,
