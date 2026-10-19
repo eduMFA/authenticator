@@ -80,7 +80,7 @@ dependencies:
   shared_preferences: ^2.5.5
 
   # UI
-  cupertino_icons: ^1.0.9
+  cupertino_icons: ^2.0.0
   easy_dynamic_theme: ^2.3.1
   dynamic_color: ^1.8.1
   haptic_feedback: 0.6.5
