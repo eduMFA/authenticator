@@ -38,8 +38,8 @@ dependencies:
   pointycastle: ^4.0.0
 
   # Device Info
-  device_info_plus: ^13.1.0
-  package_info_plus: ^10.1.0
+  device_info_plus: ^13.3.0
+  package_info_plus: ^10.2.2
 
   # Firebase
   firebase_core: ^5.0.0
@@ -50,7 +50,7 @@ dependencies:
   image: ^4.8.0
   image_picker: ^1.2.2
   lottie: ^3.3.3
-  mobile_scanner: ^7.2.0
+  mobile_scanner: ^7.4.2
 
   # Networking and URI
   app_links: ^7.0.0
@@ -84,7 +84,7 @@ dependencies:
   easy_dynamic_theme: ^2.3.1
   dynamic_color: ^2.1.0
   material_ui: ^1.7.0
-  haptic_feedback: 0.6.5
+  haptic_feedback: 0.8.0
   path_provider: ^2.1.6
 
   # Utilities
