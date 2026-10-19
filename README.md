@@ -10,6 +10,8 @@ The App is a fork of [pi-authenticator](https://github.com/privacyidea/pi-authen
 
 # Development
 
+Use Flutter 3.47.7 (bundled Dart 3.13.5). The Flutter version in `pubspec.yaml` also selects the SDK used by CI. Run `flutter pub get` after installing this version.
+
 We use the [Flutter](https://flutter.dev/) framework for developing our application. This enables us to use a single code base for both Android and iOS, for development itself we use [Android Studio](https://developer.android.com/studio) with the official [Flutter plugin](https://github.com/flutter/flutter-intellij).
 
 The app can be build for android by running `flutter build apk [--release | --debug]` at the root of the project, for building the iOS version the command is `flutter build ipa`. Building for iOS requires to run this on an Apple device.

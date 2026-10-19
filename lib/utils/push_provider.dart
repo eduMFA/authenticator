@@ -141,7 +141,7 @@ class PushProvider {
       }
       // Here we can be sure that the data is valid
       try {
-        return _handleIncomingRequestForeground(data);
+        await _handleIncomingRequestForeground(data);
       } catch (e, s) {
         final errorMessage = S.of(globalNavigatorKey.currentContext!).unexpectedError;
         Logger.error(errorMessage, name: 'push_provider.dart#_foregroundHandler', error: e, stackTrace: s);
@@ -162,7 +162,7 @@ class PushProvider {
       }
       // Here we can be sure that the data is valid
       try {
-        return _handleIncomingRequestBackground(data);
+        await _handleIncomingRequestBackground(data);
       } catch (e, s) {
         Logger.error('Something went wrong while handling the push request in the background.',
             name: 'push_provider.dart#_backgroundHandler', error: e, stackTrace: s);
