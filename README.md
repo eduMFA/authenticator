@@ -19,6 +19,14 @@ For testing purposes the application can be run in release mode by running `flut
 
 For serializing the model of this application (i.e., the tokens) we use generated files. If the model was changed, run the script `update_serialization.sh` to update the generated files.
 
+## Secure storage upgrades
+
+The app uses `flutter_secure_storage` 11 with the existing default storage namespace and encryption algorithms. Android API 24 or newer is required, which is already the minimum for the configured Flutter SDK.
+
+Before releasing this version to Android users on `flutter_secure_storage` 9 or earlier, release an intermediate app version using 10.x and have users open it to migrate their stored tokens. Installing a v10-based app without opening it does not migrate data. Version 11 removed the legacy ciphers and EncryptedSharedPreferences backend, so users who skip the migration cannot have their old tokens decrypted by v11. See the [upstream migration notes](https://pub.dev/packages/flutter_secure_storage/changelog).
+
+The repository checks upgrade status before loading tokens and shows the existing decryption recovery dialog when legacy data is unreadable. Automatic deletion on Android storage errors is disabled; deletion requires the user's confirmation in that dialog. Native upgrade preservation still needs testing with a v10 installation containing tokens before publishing.
+
 # Tests
 
 Tests are located under `test`. These can be run from within Android Studio, if the necessary plugins are installed or directly by running `flutter test` at the root of the project. For additional information please view the official [Flutter documentation](https://flutter.dev/docs/testing).

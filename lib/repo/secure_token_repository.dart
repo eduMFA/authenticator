@@ -51,7 +51,10 @@ class SecureTokenRepository implements TokenRepository {
   /// That means, that calls of this method will always be executed serial.
   static Future protect(Future<dynamic> Function() f) => _m.protect(f);
 
-  static const FlutterSecureStorage _storage = FlutterSecureStorage();
+  static const FlutterSecureStorage _storage = FlutterSecureStorage(
+    // Keep unreadable data until the user explicitly confirms deletion.
+    aOptions: AndroidOptions(resetOnError: false),
+  );
 
   static const String _GLOBAL_PREFIX = 'app_v3_';
 
@@ -93,6 +96,14 @@ class SecureTokenRepository implements TokenRepository {
   Future<List<Token>> loadTokens() async {
     late Map<String, String> keyValueMap;
     try {
+      final upgradeStatus = await _storage.checkUpgradeStatus();
+      if (upgradeStatus.hasDataLoss) {
+        throw PlatformException(
+          code: 'secure_storage_upgrade_failed',
+          message: 'Secure storage requires recovery after an upgrade.',
+          details: upgradeStatus.reason.name,
+        );
+      }
       keyValueMap = await _storage.readAll();
     } on PlatformException catch (e, s) {
       Logger.warning("Token found, but could not be decrypted.", name: 'storage_utils.dart#loadTokens', error: e, stackTrace: s, verbose: true);
