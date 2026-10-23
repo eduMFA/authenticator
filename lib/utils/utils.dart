@@ -56,26 +56,18 @@ String splitPeriodically(String str, int period) {
   return result.trim();
 }
 
-/// If permission is already given, this function does nothing
-void checkNotificationPermission() async {
-  if (kIsWeb || !Platform.isAndroid && !Platform.isIOS) return;
-  var status = await Permission.notification.status;
-  Logger.info('Notification permission status: $status');
-  // TODO what to do if permanently denied?
-  // Add a dialog before requesting?
-
-  if (!status.isPermanentlyDenied) {
-    if (status.isDenied) {
-      try {
-        await Permission.notification.request();
-      } catch (e) {
-        await Future.delayed(const Duration(seconds: 5));
-        checkNotificationPermission();
-        Logger.warning('Error requesting notification permission: $e');
-      }
+/// Checks the current permission and makes at most one request per call.
+Future<void> checkNotificationPermission() async {
+  if (kIsWeb || (defaultTargetPlatform != TargetPlatform.android && defaultTargetPlatform != TargetPlatform.iOS)) return;
+  try {
+    final status = await Permission.notification.status;
+    Logger.info('Notification permission status: $status');
+    if (status.isDenied || status.isPermanentlyDenied) {
+      final result = await Permission.notification.request();
+      Logger.info('Notification permission request result: $result');
     }
-  } else {
-    Logger.info('Notification permission is permanently denied!');
+  } catch (e) {
+    Logger.warning('Notification permission check failed (${e.runtimeType}).');
   }
 }
 
